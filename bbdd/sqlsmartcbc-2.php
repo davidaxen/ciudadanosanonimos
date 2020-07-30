@@ -1,9 +1,14 @@
 <?php
 
-$server = "localhost";
+/*$server = "localhost";
 $username="smartcbc";
 $password="Jas170174@#";
-$dbname ="bbddsmartcbc";
+$dbname ="bbddsmartcbc";*/
+
+$server = "localhost";
+$username="root";
+$password="";
+$dbname ="bbddciudadanos";
 
 $conn = new mysqli($server, $username, $password, $dbname);
 
