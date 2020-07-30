@@ -1,0 +1,45 @@
+<?php  
+include('bbdd.php');
+if ($ide!=null){;
+
+include('../../portada_n/cabecera3.php');?>
+
+<script type="text/javascript" language="javascript" src="ajax.js"></script>
+
+<div id="main">
+<div class="titulo">
+<p class="enc">ENVIO DE <?php  echo strtoupper($nc);?></p></div>
+<div class="contenido">
+
+<form action="intro2.php" method="post" enctype="multipart/form-data">
+<input type="hidden" name="tabla" value="intro">
+<table>
+<tr><td><b>Pais</b></td><td><?php include('provincias.php'); ?></td></tr>
+<tr><td><b>Ciudad</b></td><td>
+<div id="listamunicipios">
+      <select name="provincia" id="obj_municipio" >
+        <option>Seleccionar...</option>
+      </select>
+    </div>
+</td></tr>
+<tr><td><b>Fecha de Finalización</b></td><td><input type="text" name="fechafin"> Ej:2020/01/01</td></tr>
+<tr><td colspan="2"><b>Pregunta</b></td></tr>
+<tr><td colspan="2"><input type="text" name="texto" maxlength="250" size="100"></td></tr>
+<tr><td colspan="2"><b>Respuestas propuestas</b></td></tr>
+<tr><td colspan="2">* solo rellena los espacios necesarios</td></tr>
+<tr><td colspan="2"><input type="text" name="resp[0]" maxlength="250" size="100"></td></tr>
+<tr><td colspan="2"><input type="text" name="resp[1]" maxlength="250" size="100"></td></tr>
+<tr><td colspan="2"><input type="text" name="resp[2]" maxlength="250" size="100"></td></tr>
+<tr><td colspan="2"><input type="text" name="resp[3]" maxlength="250" size="100"></td></tr>
+<tr><td colspan="2"><input type="text" name="resp[4]" maxlength="250" size="100"></td></tr>
+<tr><td colspan="2"><input type="checkbox" name="otrosmot" value="1">Otros Motivos</td></tr>
+<tr><td><b>Ficheros</b></td><td><input type="file" name="fichero"></td></tr>
+<tr><td colspan="2"><input type="submit" class="envio" value="enviar" name="enviar"></td></tr>
+</table>
+</form>
+</div>
+</div>
+
+<?php } else {;
+include ('../../cierre.php');
+ };?>

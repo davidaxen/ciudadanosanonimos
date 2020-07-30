@@ -1,0 +1,975 @@
+[03-Apr-2020 09:44:22 Europe/Madrid] PHP Warning:  mysqli::__construct(): (28000/1045): Access denied for user 'bbddsmartcbc'@'localhost' (using password: YES) in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/bbdd/sqlsmartcbc-3.php on line 7
+[03-Apr-2020 09:44:23 Europe/Madrid] PHP Warning:  mysqli::__construct(): (28000/1045): Access denied for user 'bbddsmartcbc'@'localhost' (using password: YES) in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/bbdd/sqlsmartcbc-3.php on line 7
+[03-Apr-2020 09:44:24 Europe/Madrid] PHP Warning:  mysqli::__construct(): (28000/1045): Access denied for user 'bbddsmartcbc'@'localhost' (using password: YES) in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/bbdd/sqlsmartcbc-3.php on line 7
+[03-Apr-2020 09:47:51 Europe/Madrid] PHP Warning:  mysqli::__construct(): (28000/1045): Access denied for user 'bbddsmartcbc'@'localhost' (using password: YES) in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/bbdd/sqlsmartcbc-3.php on line 7
+[03-Apr-2020 09:47:51 Europe/Madrid] PHP Warning:  mysqli::__construct(): (28000/1045): Access denied for user 'bbddsmartcbc'@'localhost' (using password: YES) in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/bbdd/sqlsmartcbc-3.php on line 7
+[03-Apr-2020 09:48:00 Europe/Madrid] PHP Warning:  mysqli::__construct(): (28000/1045): Access denied for user 'bbddsmartcbc'@'localhost' (using password: YES) in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/bbdd/sqlsmartcbc-3.php on line 7
+[03-Apr-2020 09:48:01 Europe/Madrid] PHP Warning:  mysqli::__construct(): (28000/1045): Access denied for user 'bbddsmartcbc'@'localhost' (using password: YES) in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/bbdd/sqlsmartcbc-3.php on line 7
+[03-Apr-2020 09:48:02 Europe/Madrid] PHP Warning:  mysqli::__construct(): (28000/1045): Access denied for user 'bbddsmartcbc'@'localhost' (using password: YES) in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/bbdd/sqlsmartcbc-3.php on line 7
+[03-Apr-2020 10:36:15 Europe/Madrid] PHP Notice:  Undefined variable: colorborder in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexprueba38.php on line 86
+[03-Apr-2020 10:36:15 Europe/Madrid] PHP Warning:  include(js/tabjs.htm): failed to open stream: No such file or directory in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexprueba38.php on line 175
+[03-Apr-2020 10:36:15 Europe/Madrid] PHP Warning:  include(): Failed opening 'js/tabjs.htm' for inclusion (include_path='.:/opt/alt/php73/usr/share/pear') in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexprueba38.php on line 175
+[03-Apr-2020 10:44:22 Europe/Madrid] PHP Notice:  Undefined variable: colorborder in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexprueba38.php on line 86
+[03-Apr-2020 10:44:22 Europe/Madrid] PHP Warning:  include(js/tabjs.htm): failed to open stream: No such file or directory in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexprueba38.php on line 175
+[03-Apr-2020 10:44:22 Europe/Madrid] PHP Warning:  include(): Failed opening 'js/tabjs.htm' for inclusion (include_path='.:/opt/alt/php73/usr/share/pear') in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexprueba38.php on line 175
+[03-Apr-2020 10:54:17 Europe/Madrid] PHP Notice:  Undefined variable: colorborder in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexprueba38.php on line 86
+[03-Apr-2020 10:54:17 Europe/Madrid] PHP Warning:  include(js/tabjs.htm): failed to open stream: No such file or directory in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexprueba38.php on line 175
+[03-Apr-2020 10:54:17 Europe/Madrid] PHP Warning:  include(): Failed opening 'js/tabjs.htm' for inclusion (include_path='.:/opt/alt/php73/usr/share/pear') in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexprueba38.php on line 175
+[03-Apr-2020 11:22:52 Europe/Madrid] PHP Notice:  Undefined variable: colorborder in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexprueba38.php on line 86
+[03-Apr-2020 16:09:25 Europe/Madrid] PHP Notice:  Undefined variable: colorborder in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexprueba38.php on line 86
+[03-Apr-2020 17:01:26 Europe/Madrid] PHP Notice:  Undefined variable: colorborder in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexpruebadatos.php on line 32
+[03-Apr-2020 17:01:48 Europe/Madrid] PHP Warning:  include(../portada_n/cabecera2.php): failed to open stream: No such file or directory in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/intro2p.php on line 5
+[03-Apr-2020 17:01:48 Europe/Madrid] PHP Warning:  include(): Failed opening '../portada_n/cabecera2.php' for inclusion (include_path='.:/opt/alt/php73/usr/share/pear') in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/intro2p.php on line 5
+[03-Apr-2020 17:02:12 Europe/Madrid] PHP Notice:  Undefined variable: colorborder in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexprueba41.php on line 26
+[03-Apr-2020 17:02:12 Europe/Madrid] PHP Warning:  include(../bbdd/sqlsmartcbc-3.php): failed to open stream: No such file or directory in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/portada_n/bbdd2.php on line 2
+[03-Apr-2020 17:02:12 Europe/Madrid] PHP Warning:  include(): Failed opening '../bbdd/sqlsmartcbc-3.php' for inclusion (include_path='.:/opt/alt/php73/usr/share/pear') in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/portada_n/bbdd2.php on line 2
+[03-Apr-2020 17:03:45 Europe/Madrid] PHP Notice:  Undefined variable: colorborder in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexprueba41.php on line 26
+[03-Apr-2020 17:03:45 Europe/Madrid] PHP Warning:  include(../bbdd/sqlsmartcbc-3.php): failed to open stream: No such file or directory in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/portada_n/bbdd2.php on line 2
+[03-Apr-2020 17:03:45 Europe/Madrid] PHP Warning:  include(): Failed opening '../bbdd/sqlsmartcbc-3.php' for inclusion (include_path='.:/opt/alt/php73/usr/share/pear') in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/portada_n/bbdd2.php on line 2
+[03-Apr-2020 17:07:22 Europe/Madrid] PHP Notice:  Undefined variable: colorborder in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexprueba41.php on line 26
+[03-Apr-2020 17:07:22 Europe/Madrid] PHP Warning:  include(../bbdd/sqlsmartcbc-3.php): failed to open stream: No such file or directory in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/portada_n/bbdd2.php on line 2
+[03-Apr-2020 17:07:22 Europe/Madrid] PHP Warning:  include(): Failed opening '../bbdd/sqlsmartcbc-3.php' for inclusion (include_path='.:/opt/alt/php73/usr/share/pear') in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/portada_n/bbdd2.php on line 2
+[03-Apr-2020 17:15:43 Europe/Madrid] PHP Notice:  Undefined variable: colorborder in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexprueba41.php on line 26
+[03-Apr-2020 17:15:43 Europe/Madrid] PHP Warning:  include(../bbdd/sqlsmartcbc-3.php): failed to open stream: No such file or directory in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/portada_n/bbdd2.php on line 2
+[03-Apr-2020 17:15:43 Europe/Madrid] PHP Warning:  include(): Failed opening '../bbdd/sqlsmartcbc-3.php' for inclusion (include_path='.:/opt/alt/php73/usr/share/pear') in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/portada_n/bbdd2.php on line 2
+[03-Apr-2020 17:21:29 Europe/Madrid] PHP Fatal error:  Uncaught Error: Call to undefined function mysql_query() in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/inicio2.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/inicio2.php on line 9
+[03-Apr-2020 17:21:50 Europe/Madrid] PHP Fatal error:  Uncaught Error: Call to undefined function mysql_query() in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/inicio2.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/inicio2.php on line 9
+[03-Apr-2020 17:22:03 Europe/Madrid] PHP Notice:  Undefined variable: dia1 in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/menu_n/cartel.php on line 4
+[03-Apr-2020 17:22:03 Europe/Madrid] PHP Notice:  Undefined variable: hora1 in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/menu_n/cartel.php on line 4
+[03-Apr-2020 17:22:03 Europe/Madrid] PHP Notice:  Undefined variable: colorborder in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexpruebasuperada.php on line 32
+[03-Apr-2020 17:22:03 Europe/Madrid] PHP Notice:  Undefined offset: 21 in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexpruebasuperada.php on line 262
+[03-Apr-2020 17:22:03 Europe/Madrid] PHP Notice:  Undefined offset: 22 in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexpruebasuperada.php on line 262
+[03-Apr-2020 17:22:03 Europe/Madrid] PHP Notice:  Undefined offset: 23 in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexpruebasuperada.php on line 262
+[03-Apr-2020 17:22:03 Europe/Madrid] PHP Notice:  Undefined offset: 24 in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexpruebasuperada.php on line 262
+[03-Apr-2020 17:22:03 Europe/Madrid] PHP Notice:  Undefined offset: 25 in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexpruebasuperada.php on line 262
+[03-Apr-2020 17:22:03 Europe/Madrid] PHP Notice:  Undefined offset: 26 in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexpruebasuperada.php on line 262
+[03-Apr-2020 17:22:03 Europe/Madrid] PHP Notice:  Undefined offset: 27 in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexpruebasuperada.php on line 262
+[03-Apr-2020 17:22:03 Europe/Madrid] PHP Notice:  Undefined offset: 28 in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexpruebasuperada.php on line 262
+[03-Apr-2020 17:22:03 Europe/Madrid] PHP Notice:  Undefined offset: 29 in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexpruebasuperada.php on line 262
+[03-Apr-2020 17:22:03 Europe/Madrid] PHP Notice:  Undefined offset: 30 in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexpruebasuperada.php on line 262
+[03-Apr-2020 17:22:03 Europe/Madrid] PHP Notice:  Undefined offset: 31 in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexpruebasuperada.php on line 262
+[03-Apr-2020 17:22:03 Europe/Madrid] PHP Notice:  Undefined offset: 32 in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexpruebasuperada.php on line 262
+[03-Apr-2020 17:22:03 Europe/Madrid] PHP Notice:  Undefined offset: 33 in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexpruebasuperada.php on line 262
+[03-Apr-2020 17:22:03 Europe/Madrid] PHP Notice:  Undefined offset: 34 in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexpruebasuperada.php on line 262
+[03-Apr-2020 17:22:03 Europe/Madrid] PHP Notice:  Undefined offset: 35 in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexpruebasuperada.php on line 262
+[03-Apr-2020 17:22:03 Europe/Madrid] PHP Notice:  Undefined offset: 36 in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexpruebasuperada.php on line 262
+[03-Apr-2020 17:22:03 Europe/Madrid] PHP Notice:  Undefined offset: 37 in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexpruebasuperada.php on line 262
+[03-Apr-2020 17:22:03 Europe/Madrid] PHP Notice:  Undefined offset: 38 in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexpruebasuperada.php on line 262
+[03-Apr-2020 17:22:03 Europe/Madrid] PHP Notice:  Undefined offset: 39 in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexpruebasuperada.php on line 262
+[03-Apr-2020 17:22:03 Europe/Madrid] PHP Notice:  Undefined offset: 40 in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexpruebasuperada.php on line 262
+[03-Apr-2020 17:22:03 Europe/Madrid] PHP Notice:  Undefined offset: 41 in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexpruebasuperada.php on line 262
+[03-Apr-2020 17:22:03 Europe/Madrid] PHP Warning:  mysqli_field_count() expects parameter 1 to be mysqli, object given in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexpruebasuperada.php on line 282
+[03-Apr-2020 17:22:03 Europe/Madrid] PHP Warning:  mysqli_field_count() expects parameter 1 to be mysqli, object given in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexpruebasuperada.php on line 293
+[03-Apr-2020 17:22:03 Europe/Madrid] PHP Warning:  mysqli_field_count() expects parameter 1 to be mysqli, object given in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexpruebasuperada.php on line 300
+[03-Apr-2020 17:22:03 Europe/Madrid] PHP Warning:  mysqli_field_count() expects parameter 1 to be mysqli, object given in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexpruebasuperada.php on line 307
+[03-Apr-2020 17:22:03 Europe/Madrid] PHP Warning:  mysqli_field_count() expects parameter 1 to be mysqli, object given in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexpruebasuperada.php on line 315
+[03-Apr-2020 17:22:03 Europe/Madrid] PHP Warning:  mysqli_field_count() expects parameter 1 to be mysqli, object given in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexpruebasuperada.php on line 323
+[03-Apr-2020 17:22:03 Europe/Madrid] PHP Warning:  mysqli_field_count() expects parameter 1 to be mysqli, object given in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexpruebasuperada.php on line 331
+[03-Apr-2020 17:22:03 Europe/Madrid] PHP Warning:  mysqli_field_count() expects parameter 1 to be mysqli, object given in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexpruebasuperada.php on line 339
+[03-Apr-2020 17:22:03 Europe/Madrid] PHP Notice:  Undefined variable: idpais in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexpruebasuperada.php on line 439
+[03-Apr-2020 17:22:03 Europe/Madrid] PHP Notice:  Undefined variable: idpais in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexpruebasuperada.php on line 439
+[03-Apr-2020 17:22:03 Europe/Madrid] PHP Notice:  Undefined variable: idpais in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexpruebasuperada.php on line 439
+[03-Apr-2020 17:22:03 Europe/Madrid] PHP Notice:  Undefined variable: idpais in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexpruebasuperada.php on line 439
+[03-Apr-2020 17:22:03 Europe/Madrid] PHP Notice:  Undefined variable: idpais in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexpruebasuperada.php on line 439
+[03-Apr-2020 17:22:03 Europe/Madrid] PHP Notice:  Undefined variable: idpais in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexpruebasuperada.php on line 439
+[03-Apr-2020 17:22:03 Europe/Madrid] PHP Notice:  Undefined variable: idpais in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexpruebasuperada.php on line 439
+[03-Apr-2020 17:22:03 Europe/Madrid] PHP Notice:  Undefined variable: idpais in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexpruebasuperada.php on line 439
+[03-Apr-2020 17:22:03 Europe/Madrid] PHP Notice:  Undefined variable: idpais in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexpruebasuperada.php on line 439
+[03-Apr-2020 17:22:03 Europe/Madrid] PHP Notice:  Undefined variable: idpais in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexpruebasuperada.php on line 439
+[03-Apr-2020 17:22:03 Europe/Madrid] PHP Notice:  Undefined variable: idpais in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexpruebasuperada.php on line 439
+[03-Apr-2020 17:22:03 Europe/Madrid] PHP Notice:  Undefined variable: idpais in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexpruebasuperada.php on line 439
+[03-Apr-2020 17:22:03 Europe/Madrid] PHP Notice:  Undefined variable: idpais in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexpruebasuperada.php on line 439
+[03-Apr-2020 17:22:03 Europe/Madrid] PHP Notice:  Undefined variable: idpais in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexpruebasuperada.php on line 439
+[03-Apr-2020 17:22:03 Europe/Madrid] PHP Notice:  Undefined variable: idpais in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexpruebasuperada.php on line 439
+[03-Apr-2020 17:22:03 Europe/Madrid] PHP Notice:  Undefined variable: idpais in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexpruebasuperada.php on line 439
+[03-Apr-2020 17:22:03 Europe/Madrid] PHP Notice:  Undefined variable: idpais in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexpruebasuperada.php on line 439
+[03-Apr-2020 17:22:03 Europe/Madrid] PHP Notice:  Undefined variable: idpais in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexpruebasuperada.php on line 439
+[03-Apr-2020 17:22:03 Europe/Madrid] PHP Notice:  Undefined variable: idpais in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexpruebasuperada.php on line 439
+[03-Apr-2020 17:22:03 Europe/Madrid] PHP Notice:  Undefined variable: idpais in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexpruebasuperada.php on line 439
+[03-Apr-2020 17:22:03 Europe/Madrid] PHP Notice:  Undefined variable: idpais in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexpruebasuperada.php on line 439
+[03-Apr-2020 17:22:03 Europe/Madrid] PHP Notice:  Undefined variable: idpais in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexpruebasuperada.php on line 439
+[03-Apr-2020 17:22:03 Europe/Madrid] PHP Notice:  Undefined variable: idpais in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexpruebasuperada.php on line 439
+[03-Apr-2020 17:22:03 Europe/Madrid] PHP Notice:  Undefined variable: idpais in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexpruebasuperada.php on line 439
+[03-Apr-2020 17:22:03 Europe/Madrid] PHP Notice:  Undefined variable: idpais in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexpruebasuperada.php on line 439
+[03-Apr-2020 17:22:03 Europe/Madrid] PHP Notice:  Undefined variable: idpais in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexpruebasuperada.php on line 439
+[03-Apr-2020 17:22:03 Europe/Madrid] PHP Notice:  Undefined variable: idpais in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexpruebasuperada.php on line 439
+[03-Apr-2020 17:22:03 Europe/Madrid] PHP Notice:  Undefined variable: idpais in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexpruebasuperada.php on line 439
+[03-Apr-2020 17:22:03 Europe/Madrid] PHP Notice:  Undefined variable: idpais in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexpruebasuperada.php on line 439
+[03-Apr-2020 17:22:03 Europe/Madrid] PHP Notice:  Undefined variable: idpais in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexpruebasuperada.php on line 439
+[03-Apr-2020 17:22:03 Europe/Madrid] PHP Notice:  Undefined variable: idpais in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexpruebasuperada.php on line 439
+[03-Apr-2020 17:22:03 Europe/Madrid] PHP Notice:  Undefined variable: idpais in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexpruebasuperada.php on line 439
+[03-Apr-2020 17:22:03 Europe/Madrid] PHP Notice:  Undefined variable: idpais in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexpruebasuperada.php on line 439
+[03-Apr-2020 17:22:03 Europe/Madrid] PHP Notice:  Undefined variable: idpais in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexpruebasuperada.php on line 439
+[03-Apr-2020 17:22:03 Europe/Madrid] PHP Notice:  Undefined variable: idpais in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexpruebasuperada.php on line 439
+[03-Apr-2020 17:22:03 Europe/Madrid] PHP Notice:  Undefined variable: idpais in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexpruebasuperada.php on line 439
+[03-Apr-2020 17:22:03 Europe/Madrid] PHP Notice:  Undefined variable: idpais in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexpruebasuperada.php on line 439
+[03-Apr-2020 17:22:03 Europe/Madrid] PHP Notice:  Undefined variable: idpais in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexpruebasuperada.php on line 439
+[03-Apr-2020 17:22:03 Europe/Madrid] PHP Notice:  Undefined variable: idpais in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexpruebasuperada.php on line 439
+[03-Apr-2020 17:22:03 Europe/Madrid] PHP Notice:  Undefined variable: idpais in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexpruebasuperada.php on line 439
+[03-Apr-2020 17:22:03 Europe/Madrid] PHP Notice:  Undefined variable: idpais in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexpruebasuperada.php on line 439
+[03-Apr-2020 17:22:03 Europe/Madrid] PHP Notice:  Undefined variable: idpais in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexpruebasuperada.php on line 439
+[03-Apr-2020 17:22:03 Europe/Madrid] PHP Notice:  Undefined variable: idpais in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexpruebasuperada.php on line 439
+[03-Apr-2020 17:22:03 Europe/Madrid] PHP Notice:  Undefined variable: idpais in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexpruebasuperada.php on line 439
+[03-Apr-2020 17:22:03 Europe/Madrid] PHP Notice:  Undefined variable: idpais in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexpruebasuperada.php on line 439
+[03-Apr-2020 17:22:03 Europe/Madrid] PHP Notice:  Undefined variable: idpais in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexpruebasuperada.php on line 439
+[03-Apr-2020 17:22:03 Europe/Madrid] PHP Notice:  Undefined variable: idpais in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexpruebasuperada.php on line 439
+[03-Apr-2020 17:22:03 Europe/Madrid] PHP Notice:  Undefined variable: idpais in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexpruebasuperada.php on line 439
+[03-Apr-2020 17:22:03 Europe/Madrid] PHP Notice:  Undefined variable: idpais in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexpruebasuperada.php on line 439
+[03-Apr-2020 17:22:03 Europe/Madrid] PHP Notice:  Undefined variable: idpais in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexpruebasuperada.php on line 439
+[03-Apr-2020 17:22:03 Europe/Madrid] PHP Notice:  Undefined variable: idpais in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexpruebasuperada.php on line 439
+[03-Apr-2020 17:22:03 Europe/Madrid] PHP Notice:  Undefined variable: idpais in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexpruebasuperada.php on line 439
+[03-Apr-2020 17:22:03 Europe/Madrid] PHP Notice:  Undefined variable: idpais in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexpruebasuperada.php on line 439
+[03-Apr-2020 17:22:03 Europe/Madrid] PHP Notice:  Undefined variable: idpais in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexpruebasuperada.php on line 439
+[03-Apr-2020 17:22:03 Europe/Madrid] PHP Notice:  Undefined variable: idpais in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexpruebasuperada.php on line 439
+[03-Apr-2020 17:22:03 Europe/Madrid] PHP Notice:  Undefined variable: idpais in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexpruebasuperada.php on line 439
+[03-Apr-2020 17:22:03 Europe/Madrid] PHP Notice:  Undefined variable: idpais in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexpruebasuperada.php on line 439
+[03-Apr-2020 17:22:03 Europe/Madrid] PHP Notice:  Undefined variable: idpais in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexpruebasuperada.php on line 439
+[03-Apr-2020 17:22:03 Europe/Madrid] PHP Notice:  Undefined variable: idpais in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexpruebasuperada.php on line 439
+[03-Apr-2020 17:22:03 Europe/Madrid] PHP Notice:  Undefined variable: idpais in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexpruebasuperada.php on line 439
+[03-Apr-2020 17:22:03 Europe/Madrid] PHP Notice:  Undefined variable: idpais in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexpruebasuperada.php on line 439
+[03-Apr-2020 17:22:03 Europe/Madrid] PHP Notice:  Undefined variable: idpais in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexpruebasuperada.php on line 439
+[03-Apr-2020 17:22:03 Europe/Madrid] PHP Notice:  Undefined variable: idpais in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexpruebasuperada.php on line 439
+[03-Apr-2020 17:22:03 Europe/Madrid] PHP Notice:  Undefined variable: idpais in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexpruebasuperada.php on line 439
+[03-Apr-2020 17:22:03 Europe/Madrid] PHP Notice:  Undefined variable: idpais in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexpruebasuperada.php on line 439
+[03-Apr-2020 17:22:03 Europe/Madrid] PHP Notice:  Undefined variable: idpais in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexpruebasuperada.php on line 439
+[03-Apr-2020 17:22:03 Europe/Madrid] PHP Notice:  Undefined variable: idpais in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexpruebasuperada.php on line 439
+[03-Apr-2020 17:22:03 Europe/Madrid] PHP Notice:  Undefined variable: idpais in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexpruebasuperada.php on line 439
+[03-Apr-2020 17:22:03 Europe/Madrid] PHP Notice:  Undefined variable: idpais in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexpruebasuperada.php on line 439
+[03-Apr-2020 17:22:03 Europe/Madrid] PHP Notice:  Undefined variable: idpais in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexpruebasuperada.php on line 439
+[03-Apr-2020 17:22:03 Europe/Madrid] PHP Notice:  Undefined variable: idpais in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexpruebasuperada.php on line 439
+[03-Apr-2020 17:22:03 Europe/Madrid] PHP Notice:  Undefined variable: idpais in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexpruebasuperada.php on line 439
+[03-Apr-2020 17:22:03 Europe/Madrid] PHP Notice:  Undefined variable: idpais in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexpruebasuperada.php on line 439
+[03-Apr-2020 17:22:03 Europe/Madrid] PHP Notice:  Undefined variable: idpais in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexpruebasuperada.php on line 439
+[03-Apr-2020 17:22:03 Europe/Madrid] PHP Notice:  Undefined variable: idpais in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexpruebasuperada.php on line 439
+[03-Apr-2020 17:22:03 Europe/Madrid] PHP Notice:  Undefined variable: idpais in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexpruebasuperada.php on line 439
+[03-Apr-2020 17:22:03 Europe/Madrid] PHP Notice:  Undefined variable: idpais in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexpruebasuperada.php on line 439
+[03-Apr-2020 17:22:03 Europe/Madrid] PHP Notice:  Undefined variable: idpais in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexpruebasuperada.php on line 439
+[03-Apr-2020 17:22:03 Europe/Madrid] PHP Notice:  Undefined variable: idpais in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexpruebasuperada.php on line 439
+[03-Apr-2020 17:22:03 Europe/Madrid] PHP Notice:  Undefined variable: idpais in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexpruebasuperada.php on line 439
+[03-Apr-2020 17:22:03 Europe/Madrid] PHP Notice:  Undefined variable: idpais in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexpruebasuperada.php on line 439
+[03-Apr-2020 17:22:03 Europe/Madrid] PHP Notice:  Undefined variable: idpais in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexpruebasuperada.php on line 439
+[03-Apr-2020 17:22:03 Europe/Madrid] PHP Notice:  Undefined variable: idpais in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexpruebasuperada.php on line 439
+[03-Apr-2020 17:22:03 Europe/Madrid] PHP Notice:  Undefined variable: idpais in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexpruebasuperada.php on line 439
+[03-Apr-2020 17:22:03 Europe/Madrid] PHP Notice:  Undefined variable: idpais in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexpruebasuperada.php on line 439
+[03-Apr-2020 17:22:03 Europe/Madrid] PHP Notice:  Undefined variable: idpais in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexpruebasuperada.php on line 439
+[03-Apr-2020 17:22:03 Europe/Madrid] PHP Notice:  Undefined variable: idpais in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexpruebasuperada.php on line 439
+[03-Apr-2020 17:22:03 Europe/Madrid] PHP Notice:  Undefined variable: idpais in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexpruebasuperada.php on line 439
+[03-Apr-2020 17:22:03 Europe/Madrid] PHP Notice:  Undefined variable: idpais in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexpruebasuperada.php on line 439
+[03-Apr-2020 17:22:03 Europe/Madrid] PHP Notice:  Undefined variable: idpais in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexpruebasuperada.php on line 439
+[03-Apr-2020 17:22:03 Europe/Madrid] PHP Notice:  Undefined variable: idpais in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexpruebasuperada.php on line 439
+[03-Apr-2020 17:22:03 Europe/Madrid] PHP Notice:  Undefined variable: idpais in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexpruebasuperada.php on line 439
+[03-Apr-2020 17:22:03 Europe/Madrid] PHP Notice:  Undefined variable: idpais in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexpruebasuperada.php on line 439
+[03-Apr-2020 17:22:03 Europe/Madrid] PHP Notice:  Undefined variable: idpais in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexpruebasuperada.php on line 439
+[03-Apr-2020 17:22:03 Europe/Madrid] PHP Notice:  Undefined variable: idpais in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexpruebasuperada.php on line 439
+[03-Apr-2020 17:22:03 Europe/Madrid] PHP Notice:  Undefined variable: idpais in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexpruebasuperada.php on line 439
+[03-Apr-2020 17:22:03 Europe/Madrid] PHP Notice:  Undefined variable: idpais in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexpruebasuperada.php on line 439
+[03-Apr-2020 17:22:03 Europe/Madrid] PHP Notice:  Undefined variable: idpais in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexpruebasuperada.php on line 439
+[03-Apr-2020 17:22:03 Europe/Madrid] PHP Notice:  Undefined variable: idpais in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexpruebasuperada.php on line 439
+[03-Apr-2020 17:22:03 Europe/Madrid] PHP Notice:  Undefined variable: idpais in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexpruebasuperada.php on line 439
+[03-Apr-2020 17:22:03 Europe/Madrid] PHP Notice:  Undefined variable: idpais in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexpruebasuperada.php on line 439
+[03-Apr-2020 17:22:03 Europe/Madrid] PHP Notice:  Undefined variable: idpais in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexpruebasuperada.php on line 439
+[03-Apr-2020 17:22:03 Europe/Madrid] PHP Notice:  Undefined variable: idpais in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexpruebasuperada.php on line 439
+[03-Apr-2020 17:22:03 Europe/Madrid] PHP Notice:  Undefined variable: idpais in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexpruebasuperada.php on line 439
+[03-Apr-2020 17:22:03 Europe/Madrid] PHP Notice:  Undefined variable: idpais in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexpruebasuperada.php on line 439
+[03-Apr-2020 17:22:03 Europe/Madrid] PHP Notice:  Undefined variable: idpais in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexpruebasuperada.php on line 439
+[03-Apr-2020 17:22:03 Europe/Madrid] PHP Notice:  Undefined variable: idpais in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexpruebasuperada.php on line 439
+[03-Apr-2020 17:22:03 Europe/Madrid] PHP Notice:  Undefined variable: idpais in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexpruebasuperada.php on line 439
+[03-Apr-2020 17:22:03 Europe/Madrid] PHP Notice:  Undefined variable: idpais in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexpruebasuperada.php on line 439
+[03-Apr-2020 17:22:03 Europe/Madrid] PHP Notice:  Undefined variable: idpais in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexpruebasuperada.php on line 439
+[03-Apr-2020 17:22:03 Europe/Madrid] PHP Notice:  Undefined variable: idpais in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexpruebasuperada.php on line 439
+[03-Apr-2020 17:22:03 Europe/Madrid] PHP Notice:  Undefined variable: idpais in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexpruebasuperada.php on line 439
+[03-Apr-2020 17:22:03 Europe/Madrid] PHP Notice:  Undefined variable: idpais in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexpruebasuperada.php on line 439
+[03-Apr-2020 17:22:03 Europe/Madrid] PHP Notice:  Undefined variable: idpais in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexpruebasuperada.php on line 439
+[03-Apr-2020 17:22:03 Europe/Madrid] PHP Notice:  Undefined variable: idpais in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexpruebasuperada.php on line 439
+[03-Apr-2020 17:22:03 Europe/Madrid] PHP Notice:  Undefined variable: idpais in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexpruebasuperada.php on line 439
+[03-Apr-2020 17:22:03 Europe/Madrid] PHP Notice:  Undefined variable: idpais in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexpruebasuperada.php on line 439
+[03-Apr-2020 17:22:03 Europe/Madrid] PHP Notice:  Undefined variable: idpais in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexpruebasuperada.php on line 439
+[03-Apr-2020 17:22:03 Europe/Madrid] PHP Notice:  Undefined variable: idpais in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexpruebasuperada.php on line 439
+[03-Apr-2020 17:22:03 Europe/Madrid] PHP Notice:  Undefined variable: idpais in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexpruebasuperada.php on line 439
+[03-Apr-2020 17:22:04 Europe/Madrid] PHP Notice:  Undefined variable: idpais in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexpruebasuperada.php on line 439
+[03-Apr-2020 17:22:04 Europe/Madrid] PHP Notice:  Undefined variable: idpais in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexpruebasuperada.php on line 439
+[03-Apr-2020 17:22:04 Europe/Madrid] PHP Notice:  Undefined variable: idpais in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexpruebasuperada.php on line 439
+[03-Apr-2020 17:22:04 Europe/Madrid] PHP Notice:  Undefined variable: idpais in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexpruebasuperada.php on line 439
+[03-Apr-2020 17:22:04 Europe/Madrid] PHP Notice:  Undefined variable: idpais in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexpruebasuperada.php on line 439
+[03-Apr-2020 17:22:04 Europe/Madrid] PHP Notice:  Undefined variable: idpais in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexpruebasuperada.php on line 439
+[03-Apr-2020 17:22:04 Europe/Madrid] PHP Notice:  Undefined variable: idpais in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexpruebasuperada.php on line 439
+[03-Apr-2020 17:22:04 Europe/Madrid] PHP Notice:  Undefined variable: idpais in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexpruebasuperada.php on line 439
+[03-Apr-2020 17:22:04 Europe/Madrid] PHP Notice:  Undefined variable: idpais in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexpruebasuperada.php on line 439
+[03-Apr-2020 17:22:04 Europe/Madrid] PHP Notice:  Undefined variable: idpais in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexpruebasuperada.php on line 439
+[03-Apr-2020 17:22:04 Europe/Madrid] PHP Notice:  Undefined variable: idpais in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexpruebasuperada.php on line 439
+[03-Apr-2020 17:22:04 Europe/Madrid] PHP Notice:  Undefined variable: idpais in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexpruebasuperada.php on line 439
+[03-Apr-2020 17:22:04 Europe/Madrid] PHP Notice:  Undefined variable: idpais in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexpruebasuperada.php on line 439
+[03-Apr-2020 17:22:04 Europe/Madrid] PHP Notice:  Undefined variable: idpais in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexpruebasuperada.php on line 439
+[03-Apr-2020 17:22:04 Europe/Madrid] PHP Notice:  Undefined variable: idpais in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexpruebasuperada.php on line 439
+[03-Apr-2020 17:22:04 Europe/Madrid] PHP Notice:  Undefined variable: idpais in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexpruebasuperada.php on line 439
+[03-Apr-2020 17:22:04 Europe/Madrid] PHP Notice:  Undefined variable: idpais in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexpruebasuperada.php on line 439
+[03-Apr-2020 17:22:04 Europe/Madrid] PHP Notice:  Undefined variable: idpais in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexpruebasuperada.php on line 439
+[03-Apr-2020 17:22:04 Europe/Madrid] PHP Notice:  Undefined variable: idpais in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexpruebasuperada.php on line 439
+[03-Apr-2020 17:22:04 Europe/Madrid] PHP Notice:  Undefined variable: idpais in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexpruebasuperada.php on line 439
+[03-Apr-2020 17:22:04 Europe/Madrid] PHP Notice:  Undefined variable: idpais in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexpruebasuperada.php on line 439
+[03-Apr-2020 17:22:04 Europe/Madrid] PHP Notice:  Undefined variable: idpais in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexpruebasuperada.php on line 439
+[03-Apr-2020 17:22:04 Europe/Madrid] PHP Notice:  Undefined variable: idpais in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexpruebasuperada.php on line 439
+[03-Apr-2020 17:22:04 Europe/Madrid] PHP Notice:  Undefined variable: idpais in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexpruebasuperada.php on line 439
+[03-Apr-2020 17:22:04 Europe/Madrid] PHP Notice:  Undefined variable: idpais in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexpruebasuperada.php on line 439
+[03-Apr-2020 17:22:04 Europe/Madrid] PHP Notice:  Undefined variable: idpais in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexpruebasuperada.php on line 439
+[03-Apr-2020 17:22:04 Europe/Madrid] PHP Notice:  Undefined variable: idpais in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexpruebasuperada.php on line 439
+[03-Apr-2020 17:22:04 Europe/Madrid] PHP Notice:  Undefined variable: idpais in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexpruebasuperada.php on line 439
+[03-Apr-2020 17:22:04 Europe/Madrid] PHP Notice:  Undefined variable: idpais in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexpruebasuperada.php on line 439
+[03-Apr-2020 17:22:04 Europe/Madrid] PHP Notice:  Undefined variable: idpais in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexpruebasuperada.php on line 439
+[03-Apr-2020 17:22:04 Europe/Madrid] PHP Notice:  Undefined variable: idpais in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexpruebasuperada.php on line 439
+[03-Apr-2020 17:22:04 Europe/Madrid] PHP Notice:  Undefined variable: idpais in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexpruebasuperada.php on line 439
+[03-Apr-2020 17:22:04 Europe/Madrid] PHP Notice:  Undefined variable: idpais in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexpruebasuperada.php on line 439
+[03-Apr-2020 17:22:04 Europe/Madrid] PHP Notice:  Undefined variable: idpais in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexpruebasuperada.php on line 439
+[03-Apr-2020 17:22:04 Europe/Madrid] PHP Notice:  Undefined variable: idpais in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexpruebasuperada.php on line 439
+[03-Apr-2020 17:22:04 Europe/Madrid] PHP Notice:  Undefined variable: idpais in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexpruebasuperada.php on line 439
+[03-Apr-2020 17:22:04 Europe/Madrid] PHP Notice:  Undefined variable: idpais in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexpruebasuperada.php on line 439
+[03-Apr-2020 17:22:04 Europe/Madrid] PHP Notice:  Undefined variable: idpais in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexpruebasuperada.php on line 439
+[03-Apr-2020 17:22:04 Europe/Madrid] PHP Notice:  Undefined variable: idpais in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexpruebasuperada.php on line 439
+[03-Apr-2020 17:22:04 Europe/Madrid] PHP Notice:  Undefined variable: idpais in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexpruebasuperada.php on line 439
+[03-Apr-2020 17:22:04 Europe/Madrid] PHP Notice:  Undefined variable: idpais in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexpruebasuperada.php on line 439
+[03-Apr-2020 17:22:04 Europe/Madrid] PHP Notice:  Undefined variable: idpais in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexpruebasuperada.php on line 439
+[03-Apr-2020 17:22:04 Europe/Madrid] PHP Notice:  Undefined variable: idpais in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexpruebasuperada.php on line 439
+[03-Apr-2020 17:22:04 Europe/Madrid] PHP Notice:  Undefined variable: idpais in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexpruebasuperada.php on line 439
+[03-Apr-2020 17:22:04 Europe/Madrid] PHP Notice:  Undefined variable: idpais in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexpruebasuperada.php on line 439
+[03-Apr-2020 17:22:04 Europe/Madrid] PHP Notice:  Undefined variable: idpais in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexpruebasuperada.php on line 439
+[03-Apr-2020 17:22:04 Europe/Madrid] PHP Notice:  Undefined variable: idpais in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexpruebasuperada.php on line 439
+[03-Apr-2020 17:22:04 Europe/Madrid] PHP Notice:  Undefined variable: idpais in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexpruebasuperada.php on line 439
+[03-Apr-2020 17:22:04 Europe/Madrid] PHP Notice:  Undefined variable: idpais in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexpruebasuperada.php on line 439
+[03-Apr-2020 17:22:04 Europe/Madrid] PHP Notice:  Undefined variable: idpais in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexpruebasuperada.php on line 439
+[03-Apr-2020 17:22:04 Europe/Madrid] PHP Notice:  Undefined variable: idpais in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexpruebasuperada.php on line 439
+[03-Apr-2020 17:22:04 Europe/Madrid] PHP Notice:  Undefined variable: idpais in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexpruebasuperada.php on line 439
+[03-Apr-2020 17:22:04 Europe/Madrid] PHP Notice:  Undefined variable: idpais in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexpruebasuperada.php on line 439
+[03-Apr-2020 17:22:04 Europe/Madrid] PHP Notice:  Undefined variable: idpais in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexpruebasuperada.php on line 439
+[03-Apr-2020 17:22:04 Europe/Madrid] PHP Notice:  Undefined variable: idpais in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexpruebasuperada.php on line 439
+[03-Apr-2020 17:22:04 Europe/Madrid] PHP Notice:  Undefined variable: idpais in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexpruebasuperada.php on line 439
+[03-Apr-2020 17:22:04 Europe/Madrid] PHP Notice:  Undefined variable: idpais in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexpruebasuperada.php on line 439
+[03-Apr-2020 17:22:04 Europe/Madrid] PHP Notice:  Undefined variable: idpais in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexpruebasuperada.php on line 439
+[03-Apr-2020 17:22:04 Europe/Madrid] PHP Notice:  Undefined variable: idpais in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexpruebasuperada.php on line 439
+[03-Apr-2020 17:22:04 Europe/Madrid] PHP Notice:  Undefined variable: idpais in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexpruebasuperada.php on line 439
+[03-Apr-2020 17:22:04 Europe/Madrid] PHP Notice:  Undefined variable: idpais in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexpruebasuperada.php on line 439
+[03-Apr-2020 17:22:04 Europe/Madrid] PHP Notice:  Undefined variable: idpais in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexpruebasuperada.php on line 439
+[03-Apr-2020 17:22:04 Europe/Madrid] PHP Notice:  Undefined variable: idpais in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexpruebasuperada.php on line 439
+[03-Apr-2020 17:22:04 Europe/Madrid] PHP Notice:  Undefined variable: idpais in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexpruebasuperada.php on line 439
+[03-Apr-2020 17:22:04 Europe/Madrid] PHP Notice:  Undefined variable: idpais in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexpruebasuperada.php on line 439
+[03-Apr-2020 17:22:04 Europe/Madrid] PHP Notice:  Undefined variable: idpais in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexpruebasuperada.php on line 439
+[03-Apr-2020 17:22:04 Europe/Madrid] PHP Notice:  Undefined variable: idpais in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexpruebasuperada.php on line 439
+[03-Apr-2020 17:22:04 Europe/Madrid] PHP Notice:  Undefined variable: idpais in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexpruebasuperada.php on line 439
+[03-Apr-2020 17:22:04 Europe/Madrid] PHP Notice:  Undefined variable: idpais in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexpruebasuperada.php on line 439
+[03-Apr-2020 17:22:04 Europe/Madrid] PHP Notice:  Undefined variable: idpais in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexpruebasuperada.php on line 439
+[03-Apr-2020 17:22:04 Europe/Madrid] PHP Notice:  Undefined variable: idpais in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexpruebasuperada.php on line 439
+[03-Apr-2020 17:22:04 Europe/Madrid] PHP Notice:  Undefined variable: idpais in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexpruebasuperada.php on line 439
+[03-Apr-2020 17:22:04 Europe/Madrid] PHP Notice:  Undefined variable: idpais in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexpruebasuperada.php on line 439
+[03-Apr-2020 17:22:04 Europe/Madrid] PHP Notice:  Undefined variable: idpais in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexpruebasuperada.php on line 439
+[03-Apr-2020 17:22:04 Europe/Madrid] PHP Notice:  Undefined variable: idpais in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexpruebasuperada.php on line 439
+[03-Apr-2020 17:22:04 Europe/Madrid] PHP Notice:  Undefined variable: idpais in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexpruebasuperada.php on line 439
+[03-Apr-2020 17:22:04 Europe/Madrid] PHP Notice:  Undefined variable: idpais in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexpruebasuperada.php on line 439
+[03-Apr-2020 17:22:04 Europe/Madrid] PHP Notice:  Undefined variable: idpais in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexpruebasuperada.php on line 439
+[03-Apr-2020 17:22:04 Europe/Madrid] PHP Notice:  Undefined variable: idpais in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexpruebasuperada.php on line 439
+[03-Apr-2020 17:22:04 Europe/Madrid] PHP Notice:  Undefined variable: idpais in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexpruebasuperada.php on line 439
+[03-Apr-2020 17:22:04 Europe/Madrid] PHP Notice:  Undefined variable: idpais in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexpruebasuperada.php on line 439
+[03-Apr-2020 17:22:04 Europe/Madrid] PHP Notice:  Undefined variable: idpais in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexpruebasuperada.php on line 439
+[03-Apr-2020 17:22:04 Europe/Madrid] PHP Notice:  Undefined variable: idpais in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexpruebasuperada.php on line 439
+[03-Apr-2020 17:22:04 Europe/Madrid] PHP Notice:  Undefined variable: idpais in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexpruebasuperada.php on line 439
+[03-Apr-2020 17:22:04 Europe/Madrid] PHP Notice:  Undefined variable: idpais in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexpruebasuperada.php on line 439
+[03-Apr-2020 17:22:04 Europe/Madrid] PHP Notice:  Undefined variable: idpais in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexpruebasuperada.php on line 439
+[03-Apr-2020 17:22:04 Europe/Madrid] PHP Notice:  Undefined variable: idpais in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexpruebasuperada.php on line 439
+[03-Apr-2020 17:22:04 Europe/Madrid] PHP Notice:  Undefined variable: idpais in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexpruebasuperada.php on line 439
+[03-Apr-2020 17:22:04 Europe/Madrid] PHP Notice:  Undefined variable: idpais in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexpruebasuperada.php on line 439
+[03-Apr-2020 17:22:04 Europe/Madrid] PHP Notice:  Undefined variable: idpais in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexpruebasuperada.php on line 439
+[03-Apr-2020 17:22:04 Europe/Madrid] PHP Notice:  Undefined variable: idpais in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexpruebasuperada.php on line 439
+[03-Apr-2020 17:22:04 Europe/Madrid] PHP Notice:  Undefined variable: idpais in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexpruebasuperada.php on line 439
+[03-Apr-2020 17:22:04 Europe/Madrid] PHP Notice:  Undefined variable: idpais in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexpruebasuperada.php on line 439
+[03-Apr-2020 17:22:04 Europe/Madrid] PHP Notice:  Undefined variable: idpais in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexpruebasuperada.php on line 439
+[03-Apr-2020 17:22:04 Europe/Madrid] PHP Notice:  Undefined variable: idpais in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexpruebasuperada.php on line 439
+[03-Apr-2020 17:22:04 Europe/Madrid] PHP Notice:  Undefined variable: idpais in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexpruebasuperada.php on line 439
+[03-Apr-2020 17:22:04 Europe/Madrid] PHP Notice:  Undefined variable: idpais in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexpruebasuperada.php on line 439
+[03-Apr-2020 17:22:04 Europe/Madrid] PHP Notice:  Undefined variable: idpais in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexpruebasuperada.php on line 439
+[03-Apr-2020 17:22:04 Europe/Madrid] PHP Notice:  Undefined variable: idpais in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexpruebasuperada.php on line 439
+[03-Apr-2020 17:22:04 Europe/Madrid] PHP Notice:  Undefined variable: idpais in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexpruebasuperada.php on line 439
+[03-Apr-2020 17:22:04 Europe/Madrid] PHP Notice:  Undefined variable: idpais in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexpruebasuperada.php on line 439
+[03-Apr-2020 17:22:04 Europe/Madrid] PHP Notice:  Undefined variable: idpais in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexpruebasuperada.php on line 439
+[03-Apr-2020 17:22:04 Europe/Madrid] PHP Notice:  Undefined variable: idpais in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexpruebasuperada.php on line 439
+[03-Apr-2020 17:22:04 Europe/Madrid] PHP Notice:  Undefined variable: idpais in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexpruebasuperada.php on line 439
+[03-Apr-2020 17:22:04 Europe/Madrid] PHP Notice:  Undefined variable: idpais in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexpruebasuperada.php on line 439
+[03-Apr-2020 17:22:04 Europe/Madrid] PHP Notice:  Undefined variable: idpais in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexpruebasuperada.php on line 439
+[03-Apr-2020 17:22:04 Europe/Madrid] PHP Notice:  Undefined variable: idpais in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexpruebasuperada.php on line 439
+[03-Apr-2020 17:22:04 Europe/Madrid] PHP Notice:  Undefined variable: idpais in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexpruebasuperada.php on line 439
+[03-Apr-2020 17:24:58 Europe/Madrid] PHP Notice:  Undefined variable: colorborder in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexprueba41.php on line 26
+[03-Apr-2020 17:24:58 Europe/Madrid] PHP Warning:  include(../bbdd/sqlsmartcbc-3.php): failed to open stream: No such file or directory in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/portada_n/bbdd2.php on line 2
+[03-Apr-2020 17:24:58 Europe/Madrid] PHP Warning:  include(): Failed opening '../bbdd/sqlsmartcbc-3.php' for inclusion (include_path='.:/opt/alt/php73/usr/share/pear') in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/portada_n/bbdd2.php on line 2
+[03-Apr-2020 18:47:24 Europe/Madrid] PHP Notice:  Undefined variable: dia1 in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/menu_n/cartel.php on line 4
+[03-Apr-2020 18:47:24 Europe/Madrid] PHP Notice:  Undefined variable: hora1 in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/menu_n/cartel.php on line 4
+[03-Apr-2020 18:47:24 Europe/Madrid] PHP Notice:  Undefined variable: colorborder in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexpruebadatos.php on line 32
+[03-Apr-2020 18:47:32 Europe/Madrid] PHP Warning:  include(../portada_n/cabecera2.php): failed to open stream: No such file or directory in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/intro2p.php on line 5
+[03-Apr-2020 18:47:32 Europe/Madrid] PHP Warning:  include(): Failed opening '../portada_n/cabecera2.php' for inclusion (include_path='.:/opt/alt/php73/usr/share/pear') in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/intro2p.php on line 5
+[03-Apr-2020 18:47:57 Europe/Madrid] PHP Notice:  Undefined variable: colorborder in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexprueba41.php on line 26
+[03-Apr-2020 18:47:57 Europe/Madrid] PHP Warning:  include(../bbdd/sqlsmartcbc-3.php): failed to open stream: No such file or directory in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/portada_n/bbdd2.php on line 2
+[03-Apr-2020 18:47:57 Europe/Madrid] PHP Warning:  include(): Failed opening '../bbdd/sqlsmartcbc-3.php' for inclusion (include_path='.:/opt/alt/php73/usr/share/pear') in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/portada_n/bbdd2.php on line 2
+[03-Apr-2020 18:50:02 Europe/Madrid] PHP Notice:  Undefined variable: colorborder in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexprueba38.php on line 86
+[03-Apr-2020 22:56:10 Europe/Madrid] PHP Notice:  Undefined variable: colorborder in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexprueba38.php on line 86
+[04-Apr-2020 11:43:07 Europe/Madrid] PHP Notice:  Undefined variable: colorborder in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexprueba38.php on line 86
+[04-Apr-2020 11:43:52 Europe/Madrid] PHP Notice:  Undefined variable: colorborder in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexprueba41.php on line 26
+[04-Apr-2020 11:43:52 Europe/Madrid] PHP Warning:  include(../bbdd/sqlsmartcbc-3.php): failed to open stream: No such file or directory in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/portada_n/bbdd2.php on line 2
+[04-Apr-2020 11:43:52 Europe/Madrid] PHP Warning:  include(): Failed opening '../bbdd/sqlsmartcbc-3.php' for inclusion (include_path='.:/opt/alt/php73/usr/share/pear') in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/portada_n/bbdd2.php on line 2
+[04-Apr-2020 11:46:51 Europe/Madrid] PHP Notice:  Undefined variable: colorborder in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexprueba41.php on line 26
+[04-Apr-2020 11:46:51 Europe/Madrid] PHP Warning:  include(../bbdd/sqlsmartcbc-3.php): failed to open stream: No such file or directory in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/portada_n/bbdd2.php on line 2
+[04-Apr-2020 11:46:51 Europe/Madrid] PHP Warning:  include(): Failed opening '../bbdd/sqlsmartcbc-3.php' for inclusion (include_path='.:/opt/alt/php73/usr/share/pear') in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/portada_n/bbdd2.php on line 2
+[04-Apr-2020 11:48:21 Europe/Madrid] PHP Notice:  Undefined variable: colorborder in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexprueba41.php on line 25
+[04-Apr-2020 12:13:38 Europe/Madrid] PHP Notice:  Undefined variable: colorborder in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexprueba41.php on line 25
+[04-Apr-2020 12:15:15 Europe/Madrid] PHP Notice:  Undefined variable: colorborder in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexprueba41.php on line 25
+[04-Apr-2020 12:18:41 Europe/Madrid] PHP Notice:  Undefined variable: colorborder in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexprueba41.php on line 25
+[04-Apr-2020 12:53:22 Europe/Madrid] PHP Notice:  Undefined variable: colorborder in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexprueba41.php on line 25
+[04-Apr-2020 12:54:52 Europe/Madrid] PHP Notice:  Undefined variable: colorborder in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexprueba41.php on line 25
+[04-Apr-2020 12:55:17 Europe/Madrid] PHP Notice:  Undefined variable: colorborder in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexprueba41.php on line 25
+[04-Apr-2020 12:56:31 Europe/Madrid] PHP Notice:  Undefined variable: colorborder in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexprueba41.php on line 25
+[04-Apr-2020 13:02:40 Europe/Madrid] PHP Notice:  Undefined variable: colorborder in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexprueba41.php on line 25
+[04-Apr-2020 13:05:56 Europe/Madrid] PHP Notice:  Undefined variable: colorborder in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexprueba41.php on line 25
+[04-Apr-2020 13:09:40 Europe/Madrid] PHP Notice:  Undefined variable: colorborder in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexprueba41.php on line 25
+[04-Apr-2020 13:10:54 Europe/Madrid] PHP Notice:  Undefined variable: colorborder in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexprueba41.php on line 25
+[04-Apr-2020 16:51:07 Europe/Madrid] PHP Notice:  Undefined variable: colorborder in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexprueba41.php on line 25
+[04-Apr-2020 17:01:03 Europe/Madrid] PHP Notice:  Undefined variable: colorborder in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexprueba41.php on line 25
+[04-Apr-2020 17:20:16 Europe/Madrid] PHP Notice:  Undefined variable: colorborder in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexprueba41.php on line 25
+[04-Apr-2020 17:29:31 Europe/Madrid] PHP Notice:  Undefined variable: colorborder in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexprueba41.php on line 25
+[04-Apr-2020 17:33:29 Europe/Madrid] PHP Notice:  Undefined variable: colorborder in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexprueba38.php on line 86
+[04-Apr-2020 18:49:22 Europe/Madrid] PHP Notice:  Undefined variable: pass in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/inicio_n.php on line 23
+[04-Apr-2020 18:49:22 Europe/Madrid] PHP Notice:  Undefined variable: user in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/inicio_n.php on line 27
+[04-Apr-2020 18:49:22 Europe/Madrid] PHP Notice:  Undefined variable: user in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/inicio_n.php on line 45
+[04-Apr-2020 18:50:17 Europe/Madrid] PHP Notice:  Undefined variable: gente in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/inicio1.php on line 9
+[04-Apr-2020 18:50:17 Europe/Madrid] PHP Notice:  Undefined variable: idpr in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/inicio1.php on line 15
+[04-Apr-2020 18:50:17 Europe/Madrid] PHP Notice:  Undefined variable: nemp in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/portada_n/cabeceralibre.php on line 7
+[04-Apr-2020 18:50:17 Europe/Madrid] PHP Notice:  Undefined variable: nemp in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/menu_n/cartel.php on line 3
+[04-Apr-2020 18:50:17 Europe/Madrid] PHP Notice:  Undefined variable: img in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/portada_n/cabeceralibre.php on line 98
+[04-Apr-2020 18:50:17 Europe/Madrid] PHP Notice:  Undefined variable: idpr in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexpruebadatos.php on line 9
+[04-Apr-2020 18:50:17 Europe/Madrid] PHP Notice:  Undefined variable: colorborder in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexpruebadatos.php on line 32
+[04-Apr-2020 18:50:17 Europe/Madrid] PHP Notice:  Undefined variable: ide in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexpruebadatos.php on line 76
+[04-Apr-2020 18:50:38 Europe/Madrid] PHP Notice:  Undefined variable: colorborder in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexprueba38.php on line 86
+[04-Apr-2020 18:55:01 Europe/Madrid] PHP Notice:  Undefined variable: colorborder in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexprueba38.php on line 86
+[04-Apr-2020 19:04:48 Europe/Madrid] PHP Notice:  Undefined variable: colorborder in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexprueba38.php on line 86
+[04-Apr-2020 19:04:51 Europe/Madrid] PHP Notice:  Undefined variable: colorborder in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexprueba38.php on line 86
+[04-Apr-2020 19:06:00 Europe/Madrid] PHP Notice:  Undefined variable: colorborder in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexprueba38.php on line 86
+[06-Apr-2020 01:37:10 Europe/Madrid] PHP Notice:  Undefined variable: dia1 in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/menu_n/cartel.php on line 4
+[06-Apr-2020 01:37:10 Europe/Madrid] PHP Notice:  Undefined variable: hora1 in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/menu_n/cartel.php on line 4
+[06-Apr-2020 01:37:10 Europe/Madrid] PHP Notice:  Undefined variable: colorborder in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexpruebadatos.php on line 32
+[06-Apr-2020 01:37:18 Europe/Madrid] PHP Warning:  include(../portada_n/cabecera2.php): failed to open stream: No such file or directory in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/intro2p.php on line 5
+[06-Apr-2020 01:37:18 Europe/Madrid] PHP Warning:  include(): Failed opening '../portada_n/cabecera2.php' for inclusion (include_path='.:/opt/alt/php73/usr/share/pear') in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/intro2p.php on line 5
+[06-Apr-2020 01:40:44 Europe/Madrid] PHP Notice:  Undefined variable: colorborder in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexprueba41.php on line 25
+[06-Apr-2020 01:41:14 Europe/Madrid] PHP Notice:  Undefined variable: colorborder in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexprueba41.php on line 25
+[06-Apr-2020 01:45:53 Europe/Madrid] PHP Notice:  Undefined variable: colorborder in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexpruebadatos.php on line 32
+[06-Apr-2020 01:46:01 Europe/Madrid] PHP Warning:  include(../portada_n/cabecera2.php): failed to open stream: No such file or directory in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/intro2p.php on line 5
+[06-Apr-2020 01:46:01 Europe/Madrid] PHP Warning:  include(): Failed opening '../portada_n/cabecera2.php' for inclusion (include_path='.:/opt/alt/php73/usr/share/pear') in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/intro2p.php on line 5
+[06-Apr-2020 01:46:02 Europe/Madrid] PHP Notice:  Undefined variable: colorborder in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexprueba41.php on line 25
+[06-Apr-2020 09:52:57 Europe/Madrid] PHP Notice:  Undefined variable: colorborder in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexprueba38.php on line 86
+[06-Apr-2020 09:54:27 Europe/Madrid] PHP Notice:  Undefined variable: colorborder in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexprueba38.php on line 86
+[06-Apr-2020 09:56:47 Europe/Madrid] PHP Notice:  Undefined variable: colorborder in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexprueba38.php on line 86
+[06-Apr-2020 20:43:12 Europe/Madrid] PHP Notice:  Undefined variable: dia1 in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/menu_n/cartel.php on line 4
+[06-Apr-2020 20:43:12 Europe/Madrid] PHP Notice:  Undefined variable: hora1 in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/menu_n/cartel.php on line 4
+[06-Apr-2020 20:43:12 Europe/Madrid] PHP Notice:  Undefined variable: colorborder in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexpruebadatos.php on line 32
+[06-Apr-2020 20:43:27 Europe/Madrid] PHP Warning:  include(../portada_n/cabecera2.php): failed to open stream: No such file or directory in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/intro2p.php on line 5
+[06-Apr-2020 20:43:27 Europe/Madrid] PHP Warning:  include(): Failed opening '../portada_n/cabecera2.php' for inclusion (include_path='.:/opt/alt/php73/usr/share/pear') in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/intro2p.php on line 5
+[06-Apr-2020 20:43:27 Europe/Madrid] PHP Notice:  Undefined variable: rgpd in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/intro2p.php on line 18
+[06-Apr-2020 20:43:29 Europe/Madrid] PHP Notice:  Undefined variable: dia1 in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/menu_n/cartel.php on line 4
+[06-Apr-2020 20:43:29 Europe/Madrid] PHP Notice:  Undefined variable: hora1 in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/menu_n/cartel.php on line 4
+[06-Apr-2020 20:43:29 Europe/Madrid] PHP Notice:  Undefined variable: colorborder in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexpruebadatos.php on line 32
+[06-Apr-2020 18:45:34 UTC] PHP Notice:  Undefined index: HTTP_ACCEPT in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/index.php on line 24
+[06-Apr-2020 20:46:17 Europe/Madrid] PHP Notice:  Undefined variable: dia1 in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/menu_n/cartel.php on line 4
+[06-Apr-2020 20:46:17 Europe/Madrid] PHP Notice:  Undefined variable: hora1 in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/menu_n/cartel.php on line 4
+[06-Apr-2020 20:46:17 Europe/Madrid] PHP Notice:  Undefined variable: colorborder in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexpruebadatos.php on line 32
+[06-Apr-2020 18:46:19 UTC] PHP Notice:  Undefined index: HTTP_ACCEPT in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/index.php on line 24
+[06-Apr-2020 20:46:23 Europe/Madrid] PHP Notice:  Undefined variable: dia1 in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/menu_n/cartel.php on line 4
+[06-Apr-2020 20:46:23 Europe/Madrid] PHP Notice:  Undefined variable: hora1 in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/menu_n/cartel.php on line 4
+[06-Apr-2020 20:46:23 Europe/Madrid] PHP Notice:  Undefined variable: colorborder in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexpruebadatos.php on line 32
+[06-Apr-2020 18:46:24 UTC] PHP Notice:  Undefined index: HTTP_ACCEPT in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/index.php on line 24
+[06-Apr-2020 20:46:25 Europe/Madrid] PHP Notice:  Undefined variable: dia1 in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/menu_n/cartel.php on line 4
+[06-Apr-2020 20:46:25 Europe/Madrid] PHP Notice:  Undefined variable: hora1 in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/menu_n/cartel.php on line 4
+[06-Apr-2020 20:46:25 Europe/Madrid] PHP Notice:  Undefined variable: colorborder in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexpruebadatos.php on line 32
+[06-Apr-2020 18:46:26 UTC] PHP Notice:  Undefined index: HTTP_ACCEPT in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/index.php on line 24
+[06-Apr-2020 20:47:04 Europe/Madrid] PHP Warning:  include(../portada_n/cabecera2.php): failed to open stream: No such file or directory in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/intro2p.php on line 5
+[06-Apr-2020 20:47:04 Europe/Madrid] PHP Warning:  include(): Failed opening '../portada_n/cabecera2.php' for inclusion (include_path='.:/opt/alt/php73/usr/share/pear') in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/intro2p.php on line 5
+[06-Apr-2020 20:47:04 Europe/Madrid] PHP Notice:  Undefined variable: rgpd in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/intro2p.php on line 18
+[06-Apr-2020 20:47:04 Europe/Madrid] PHP Notice:  Undefined variable: dia1 in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/menu_n/cartel.php on line 4
+[06-Apr-2020 20:47:04 Europe/Madrid] PHP Notice:  Undefined variable: hora1 in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/menu_n/cartel.php on line 4
+[06-Apr-2020 20:47:04 Europe/Madrid] PHP Notice:  Undefined variable: colorborder in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexpruebadatos.php on line 32
+[06-Apr-2020 18:47:05 UTC] PHP Notice:  Undefined index: HTTP_ACCEPT in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/index.php on line 24
+[06-Apr-2020 18:47:06 UTC] PHP Notice:  Undefined index: HTTP_ACCEPT in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/index.php on line 24
+[06-Apr-2020 20:47:11 Europe/Madrid] PHP Warning:  include(../portada_n/cabecera2.php): failed to open stream: No such file or directory in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/intro2p.php on line 5
+[06-Apr-2020 20:47:12 Europe/Madrid] PHP Warning:  include(): Failed opening '../portada_n/cabecera2.php' for inclusion (include_path='.:/opt/alt/php73/usr/share/pear') in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/intro2p.php on line 5
+[06-Apr-2020 20:47:12 Europe/Madrid] PHP Notice:  Undefined variable: rgpd in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/intro2p.php on line 18
+[06-Apr-2020 20:47:12 Europe/Madrid] PHP Notice:  Undefined variable: dia1 in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/menu_n/cartel.php on line 4
+[06-Apr-2020 20:47:12 Europe/Madrid] PHP Notice:  Undefined variable: hora1 in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/menu_n/cartel.php on line 4
+[06-Apr-2020 20:47:12 Europe/Madrid] PHP Notice:  Undefined variable: colorborder in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexpruebadatos.php on line 32
+[06-Apr-2020 18:47:12 UTC] PHP Notice:  Undefined index: HTTP_ACCEPT in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/index.php on line 24
+[06-Apr-2020 18:47:13 UTC] PHP Notice:  Undefined index: HTTP_ACCEPT in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/index.php on line 24
+[06-Apr-2020 20:48:52 Europe/Madrid] PHP Warning:  include(../portada_n/cabecera2.php): failed to open stream: No such file or directory in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/intro2p.php on line 5
+[06-Apr-2020 20:48:52 Europe/Madrid] PHP Warning:  include(): Failed opening '../portada_n/cabecera2.php' for inclusion (include_path='.:/opt/alt/php73/usr/share/pear') in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/intro2p.php on line 5
+[06-Apr-2020 20:48:52 Europe/Madrid] PHP Notice:  Undefined variable: avisolegal in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/intro2p.php on line 18
+[06-Apr-2020 20:48:52 Europe/Madrid] PHP Notice:  Undefined variable: dia1 in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/menu_n/cartel.php on line 4
+[06-Apr-2020 20:48:52 Europe/Madrid] PHP Notice:  Undefined variable: hora1 in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/menu_n/cartel.php on line 4
+[06-Apr-2020 20:48:52 Europe/Madrid] PHP Notice:  Undefined variable: colorborder in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexpruebadatos.php on line 32
+[06-Apr-2020 18:48:53 UTC] PHP Notice:  Undefined index: HTTP_ACCEPT in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/index.php on line 24
+[06-Apr-2020 18:48:54 UTC] PHP Notice:  Undefined index: HTTP_ACCEPT in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/index.php on line 24
+[06-Apr-2020 20:49:01 Europe/Madrid] PHP Warning:  include(../portada_n/cabecera2.php): failed to open stream: No such file or directory in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/intro2p.php on line 5
+[06-Apr-2020 20:49:01 Europe/Madrid] PHP Warning:  include(): Failed opening '../portada_n/cabecera2.php' for inclusion (include_path='.:/opt/alt/php73/usr/share/pear') in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/intro2p.php on line 5
+[06-Apr-2020 18:49:02 UTC] PHP Notice:  Undefined index: HTTP_ACCEPT in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/index.php on line 24
+[06-Apr-2020 20:49:02 Europe/Madrid] PHP Notice:  Undefined variable: ayuda in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/menu_n/submenumovil.php on line 86
+[06-Apr-2020 20:49:02 Europe/Madrid] PHP Notice:  Undefined variable: trab in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/menu_n/submenumovil.php on line 89
+[06-Apr-2020 20:49:02 Europe/Madrid] PHP Notice:  Undefined variable: ges in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/menu_n/submenumovil.php on line 93
+[06-Apr-2020 20:49:02 Europe/Madrid] PHP Notice:  Undefined variable: ges in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/menu_n/submenumovil.php on line 99
+[06-Apr-2020 20:49:02 Europe/Madrid] PHP Notice:  Undefined variable: colorborder in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexprueba41.php on line 25
+[06-Apr-2020 18:49:03 UTC] PHP Notice:  Undefined index: HTTP_ACCEPT in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/index.php on line 24
+[06-Apr-2020 20:49:54 Europe/Madrid] PHP Notice:  Undefined variable: ayuda in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/menu_n/submenumovil.php on line 86
+[06-Apr-2020 20:49:54 Europe/Madrid] PHP Notice:  Undefined variable: trab in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/menu_n/submenumovil.php on line 89
+[06-Apr-2020 20:49:54 Europe/Madrid] PHP Notice:  Undefined variable: ges in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/menu_n/submenumovil.php on line 93
+[06-Apr-2020 20:49:54 Europe/Madrid] PHP Notice:  Undefined variable: ges in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/menu_n/submenumovil.php on line 99
+[06-Apr-2020 20:49:54 Europe/Madrid] PHP Notice:  Undefined variable: colorborder in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexprueba41.php on line 25
+[06-Apr-2020 18:49:56 UTC] PHP Notice:  Undefined index: HTTP_ACCEPT in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/index.php on line 24
+[06-Apr-2020 18:59:18 UTC] PHP Notice:  Undefined index: HTTP_ACCEPT in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/index.php on line 24
+[06-Apr-2020 22:44:36 UTC] PHP Notice:  Undefined index: HTTP_ACCEPT in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/index.php on line 24
+[07-Apr-2020 00:24:37 UTC] PHP Notice:  Undefined index: HTTP_ACCEPT in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/index.php on line 24
+[07-Apr-2020 15:46:48 Europe/Madrid] PHP Notice:  Undefined variable: ayuda in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/menu_n/submenumovil.php on line 86
+[07-Apr-2020 15:46:48 Europe/Madrid] PHP Notice:  Undefined variable: trab in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/menu_n/submenumovil.php on line 89
+[07-Apr-2020 15:46:48 Europe/Madrid] PHP Notice:  Undefined variable: ges in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/menu_n/submenumovil.php on line 93
+[07-Apr-2020 15:46:48 Europe/Madrid] PHP Notice:  Undefined variable: ges in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/menu_n/submenumovil.php on line 99
+[07-Apr-2020 15:46:48 Europe/Madrid] PHP Notice:  Undefined variable: colorborder in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexprueba41.php on line 25
+[07-Apr-2020 15:47:05 Europe/Madrid] PHP Notice:  Undefined variable: ayuda in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/menu_n/submenumovil.php on line 86
+[07-Apr-2020 15:47:05 Europe/Madrid] PHP Notice:  Undefined variable: trab in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/menu_n/submenumovil.php on line 89
+[07-Apr-2020 15:47:05 Europe/Madrid] PHP Notice:  Undefined variable: ges in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/menu_n/submenumovil.php on line 93
+[07-Apr-2020 15:47:05 Europe/Madrid] PHP Notice:  Undefined variable: ges in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/menu_n/submenumovil.php on line 99
+[07-Apr-2020 15:47:05 Europe/Madrid] PHP Notice:  Undefined variable: colorborder in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexprueba41.php on line 25
+[07-Apr-2020 15:56:58 Europe/Madrid] PHP Notice:  Undefined variable: ayuda in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/menu_n/submenumovil.php on line 86
+[07-Apr-2020 15:56:58 Europe/Madrid] PHP Notice:  Undefined variable: trab in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/menu_n/submenumovil.php on line 89
+[07-Apr-2020 15:56:58 Europe/Madrid] PHP Notice:  Undefined variable: ges in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/menu_n/submenumovil.php on line 93
+[07-Apr-2020 15:56:58 Europe/Madrid] PHP Notice:  Undefined variable: ges in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/menu_n/submenumovil.php on line 99
+[07-Apr-2020 15:56:58 Europe/Madrid] PHP Notice:  Undefined variable: colorborder in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexprueba41.php on line 25
+[07-Apr-2020 15:57:42 Europe/Madrid] PHP Notice:  Undefined variable: ayuda in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/menu_n/submenumovil.php on line 86
+[07-Apr-2020 15:57:42 Europe/Madrid] PHP Notice:  Undefined variable: trab in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/menu_n/submenumovil.php on line 89
+[07-Apr-2020 15:57:42 Europe/Madrid] PHP Notice:  Undefined variable: ges in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/menu_n/submenumovil.php on line 93
+[07-Apr-2020 15:57:42 Europe/Madrid] PHP Notice:  Undefined variable: ges in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/menu_n/submenumovil.php on line 99
+[07-Apr-2020 15:57:42 Europe/Madrid] PHP Notice:  Undefined variable: colorborder in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexprueba41.php on line 25
+[07-Apr-2020 15:57:49 Europe/Madrid] PHP Notice:  Undefined variable: ayuda in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/menu_n/submenumovil.php on line 86
+[07-Apr-2020 15:57:49 Europe/Madrid] PHP Notice:  Undefined variable: trab in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/menu_n/submenumovil.php on line 89
+[07-Apr-2020 15:57:49 Europe/Madrid] PHP Notice:  Undefined variable: ges in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/menu_n/submenumovil.php on line 93
+[07-Apr-2020 15:57:49 Europe/Madrid] PHP Notice:  Undefined variable: ges in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/menu_n/submenumovil.php on line 99
+[07-Apr-2020 15:57:49 Europe/Madrid] PHP Notice:  Undefined variable: colorborder in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexprueba41.php on line 25
+[07-Apr-2020 15:58:21 Europe/Madrid] PHP Notice:  Undefined variable: ayuda in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/menu_n/submenumovil.php on line 86
+[07-Apr-2020 15:58:21 Europe/Madrid] PHP Notice:  Undefined variable: trab in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/menu_n/submenumovil.php on line 89
+[07-Apr-2020 15:58:21 Europe/Madrid] PHP Notice:  Undefined variable: ges in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/menu_n/submenumovil.php on line 93
+[07-Apr-2020 15:58:21 Europe/Madrid] PHP Notice:  Undefined variable: ges in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/menu_n/submenumovil.php on line 99
+[07-Apr-2020 15:58:21 Europe/Madrid] PHP Notice:  Undefined variable: colorborder in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexprueba41.php on line 25
+[07-Apr-2020 15:58:34 Europe/Madrid] PHP Notice:  Undefined variable: ayuda in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/menu_n/submenumovil.php on line 86
+[07-Apr-2020 15:58:34 Europe/Madrid] PHP Notice:  Undefined variable: trab in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/menu_n/submenumovil.php on line 89
+[07-Apr-2020 15:58:34 Europe/Madrid] PHP Notice:  Undefined variable: ges in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/menu_n/submenumovil.php on line 93
+[07-Apr-2020 15:58:34 Europe/Madrid] PHP Notice:  Undefined variable: ges in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/menu_n/submenumovil.php on line 99
+[07-Apr-2020 15:58:34 Europe/Madrid] PHP Notice:  Undefined variable: colorborder in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexprueba41.php on line 25
+[07-Apr-2020 14:13:31 UTC] PHP Notice:  Undefined index: HTTP_ACCEPT in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/index.php on line 24
+[07-Apr-2020 20:04:22 UTC] PHP Notice:  Undefined index: HTTP_ACCEPT in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/index.php on line 24
+[07-Apr-2020 20:04:29 UTC] PHP Notice:  Undefined index: HTTP_ACCEPT in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/index.php on line 24
+[07-Apr-2020 20:04:30 UTC] PHP Notice:  Undefined index: HTTP_ACCEPT in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/index.php on line 24
+[07-Apr-2020 22:04:51 Europe/Madrid] PHP Notice:  Undefined variable: ayuda in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/menu_n/submenumovil.php on line 86
+[07-Apr-2020 22:04:51 Europe/Madrid] PHP Notice:  Undefined variable: trab in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/menu_n/submenumovil.php on line 89
+[07-Apr-2020 22:04:51 Europe/Madrid] PHP Notice:  Undefined variable: ges in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/menu_n/submenumovil.php on line 93
+[07-Apr-2020 22:04:51 Europe/Madrid] PHP Notice:  Undefined variable: ges in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/menu_n/submenumovil.php on line 99
+[07-Apr-2020 22:04:51 Europe/Madrid] PHP Notice:  Undefined variable: colorborder in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexprueba41.php on line 25
+[07-Apr-2020 20:04:52 UTC] PHP Notice:  Undefined index: HTTP_ACCEPT in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/index.php on line 24
+[07-Apr-2020 22:05:01 Europe/Madrid] PHP Notice:  Undefined variable: ayuda in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/menu_n/submenumovil.php on line 86
+[07-Apr-2020 22:05:01 Europe/Madrid] PHP Notice:  Undefined variable: trab in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/menu_n/submenumovil.php on line 89
+[07-Apr-2020 22:05:01 Europe/Madrid] PHP Notice:  Undefined variable: ges in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/menu_n/submenumovil.php on line 93
+[07-Apr-2020 22:05:01 Europe/Madrid] PHP Notice:  Undefined variable: ges in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/menu_n/submenumovil.php on line 99
+[07-Apr-2020 22:05:01 Europe/Madrid] PHP Notice:  Undefined variable: colorborder in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexprueba41.php on line 25
+[07-Apr-2020 20:05:02 UTC] PHP Notice:  Undefined index: HTTP_ACCEPT in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/index.php on line 24
+[07-Apr-2020 22:05:19 Europe/Madrid] PHP Notice:  Undefined variable: ayuda in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/menu_n/submenumovil.php on line 86
+[07-Apr-2020 22:05:19 Europe/Madrid] PHP Notice:  Undefined variable: trab in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/menu_n/submenumovil.php on line 89
+[07-Apr-2020 22:05:19 Europe/Madrid] PHP Notice:  Undefined variable: ges in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/menu_n/submenumovil.php on line 93
+[07-Apr-2020 22:05:19 Europe/Madrid] PHP Notice:  Undefined variable: ges in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/menu_n/submenumovil.php on line 99
+[07-Apr-2020 22:05:19 Europe/Madrid] PHP Notice:  Undefined variable: colorborder in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexprueba41.php on line 25
+[07-Apr-2020 20:05:20 UTC] PHP Notice:  Undefined index: HTTP_ACCEPT in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/index.php on line 24
+[07-Apr-2020 20:05:27 UTC] PHP Notice:  Undefined index: HTTP_ACCEPT in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/index.php on line 24
+[07-Apr-2020 20:05:33 UTC] PHP Notice:  Undefined index: HTTP_ACCEPT in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/index.php on line 24
+[07-Apr-2020 20:05:40 UTC] PHP Notice:  Undefined index: HTTP_ACCEPT in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/index.php on line 24
+[07-Apr-2020 20:05:41 UTC] PHP Notice:  Undefined index: HTTP_ACCEPT in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/index.php on line 24
+[07-Apr-2020 22:05:44 Europe/Madrid] PHP Notice:  Undefined variable: ayuda in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/menu_n/submenumovil.php on line 86
+[07-Apr-2020 22:05:44 Europe/Madrid] PHP Notice:  Undefined variable: trab in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/menu_n/submenumovil.php on line 89
+[07-Apr-2020 22:05:44 Europe/Madrid] PHP Notice:  Undefined variable: ges in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/menu_n/submenumovil.php on line 93
+[07-Apr-2020 22:05:44 Europe/Madrid] PHP Notice:  Undefined variable: ges in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/menu_n/submenumovil.php on line 99
+[07-Apr-2020 22:05:44 Europe/Madrid] PHP Notice:  Undefined variable: colorborder in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexprueba41.php on line 25
+[07-Apr-2020 20:05:45 UTC] PHP Notice:  Undefined index: HTTP_ACCEPT in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/index.php on line 24
+[07-Apr-2020 22:07:09 Europe/Madrid] PHP Notice:  Undefined variable: ayuda in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/menu_n/submenumovil.php on line 86
+[07-Apr-2020 22:07:09 Europe/Madrid] PHP Notice:  Undefined variable: trab in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/menu_n/submenumovil.php on line 89
+[07-Apr-2020 22:07:09 Europe/Madrid] PHP Notice:  Undefined variable: ges in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/menu_n/submenumovil.php on line 93
+[07-Apr-2020 22:07:09 Europe/Madrid] PHP Notice:  Undefined variable: ges in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/menu_n/submenumovil.php on line 99
+[07-Apr-2020 22:07:09 Europe/Madrid] PHP Notice:  Undefined variable: colorborder in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexprueba41.php on line 25
+[07-Apr-2020 22:07:27 Europe/Madrid] PHP Notice:  Undefined variable: ayuda in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/menu_n/submenumovil.php on line 86
+[07-Apr-2020 22:07:27 Europe/Madrid] PHP Notice:  Undefined variable: trab in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/menu_n/submenumovil.php on line 89
+[07-Apr-2020 22:07:27 Europe/Madrid] PHP Notice:  Undefined variable: ges in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/menu_n/submenumovil.php on line 93
+[07-Apr-2020 22:07:27 Europe/Madrid] PHP Notice:  Undefined variable: ges in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/menu_n/submenumovil.php on line 99
+[07-Apr-2020 22:07:27 Europe/Madrid] PHP Notice:  Undefined variable: colorborder in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexprueba41.php on line 25
+[07-Apr-2020 22:07:43 Europe/Madrid] PHP Notice:  Undefined variable: ayuda in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/menu_n/submenumovil.php on line 86
+[07-Apr-2020 22:07:43 Europe/Madrid] PHP Notice:  Undefined variable: trab in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/menu_n/submenumovil.php on line 89
+[07-Apr-2020 22:07:43 Europe/Madrid] PHP Notice:  Undefined variable: ges in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/menu_n/submenumovil.php on line 93
+[07-Apr-2020 22:07:43 Europe/Madrid] PHP Notice:  Undefined variable: ges in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/menu_n/submenumovil.php on line 99
+[07-Apr-2020 22:07:43 Europe/Madrid] PHP Notice:  Undefined variable: colorborder in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexprueba41.php on line 25
+[07-Apr-2020 22:08:13 Europe/Madrid] PHP Notice:  Undefined variable: ayuda in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/menu_n/submenumovil.php on line 86
+[07-Apr-2020 22:08:13 Europe/Madrid] PHP Notice:  Undefined variable: trab in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/menu_n/submenumovil.php on line 89
+[07-Apr-2020 22:08:13 Europe/Madrid] PHP Notice:  Undefined variable: ges in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/menu_n/submenumovil.php on line 93
+[07-Apr-2020 22:08:13 Europe/Madrid] PHP Notice:  Undefined variable: ges in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/menu_n/submenumovil.php on line 99
+[07-Apr-2020 22:08:13 Europe/Madrid] PHP Notice:  Undefined variable: colorborder in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexprueba41.php on line 25
+[07-Apr-2020 22:08:18 Europe/Madrid] PHP Notice:  Undefined variable: ayuda in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/menu_n/submenumovil.php on line 86
+[07-Apr-2020 22:08:18 Europe/Madrid] PHP Notice:  Undefined variable: trab in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/menu_n/submenumovil.php on line 89
+[07-Apr-2020 22:08:18 Europe/Madrid] PHP Notice:  Undefined variable: ges in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/menu_n/submenumovil.php on line 93
+[07-Apr-2020 22:08:18 Europe/Madrid] PHP Notice:  Undefined variable: ges in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/menu_n/submenumovil.php on line 99
+[07-Apr-2020 22:08:18 Europe/Madrid] PHP Notice:  Undefined variable: colorborder in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexprueba41.php on line 25
+[07-Apr-2020 22:29:19 Europe/Madrid] PHP Notice:  Undefined variable: colorborder in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexprueba41.php on line 25
+[07-Apr-2020 22:29:40 Europe/Madrid] PHP Notice:  Undefined variable: colorborder in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexprueba41.php on line 25
+[08-Apr-2020 16:12:39 Europe/Madrid] PHP Notice:  Undefined variable: colorborder in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexprueba41.php on line 25
+[08-Apr-2020 16:21:39 Europe/Madrid] PHP Notice:  Undefined variable: colorborder in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexprueba41.php on line 25
+[08-Apr-2020 17:08:28 Europe/Madrid] PHP Notice:  Undefined variable: colorborder in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexprueba41.php on line 25
+[09-Apr-2020 00:46:31 Europe/Madrid] PHP Notice:  Undefined variable: dia1 in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/menu_n/cartel.php on line 4
+[09-Apr-2020 00:46:31 Europe/Madrid] PHP Notice:  Undefined variable: hora1 in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/menu_n/cartel.php on line 4
+[09-Apr-2020 00:46:31 Europe/Madrid] PHP Notice:  Undefined variable: colorborder in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexpruebadatos.php on line 32
+[09-Apr-2020 00:47:19 Europe/Madrid] PHP Notice:  Undefined variable: dia1 in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/menu_n/cartel.php on line 4
+[09-Apr-2020 00:47:19 Europe/Madrid] PHP Notice:  Undefined variable: hora1 in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/menu_n/cartel.php on line 4
+[09-Apr-2020 00:47:19 Europe/Madrid] PHP Notice:  Undefined variable: colorborder in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexpruebadatos.php on line 32
+[09-Apr-2020 00:49:20 Europe/Madrid] PHP Notice:  Undefined variable: dia1 in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/menu_n/cartel.php on line 4
+[09-Apr-2020 00:49:20 Europe/Madrid] PHP Notice:  Undefined variable: hora1 in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/menu_n/cartel.php on line 4
+[09-Apr-2020 00:49:20 Europe/Madrid] PHP Notice:  Undefined variable: colorborder in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexpruebadatos.php on line 32
+[09-Apr-2020 00:49:31 Europe/Madrid] PHP Notice:  Undefined variable: dia1 in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/menu_n/cartel.php on line 4
+[09-Apr-2020 00:49:31 Europe/Madrid] PHP Notice:  Undefined variable: hora1 in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/menu_n/cartel.php on line 4
+[09-Apr-2020 00:49:31 Europe/Madrid] PHP Notice:  Undefined variable: colorborder in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexpruebadatos.php on line 32
+[09-Apr-2020 00:50:33 Europe/Madrid] PHP Notice:  Undefined variable: dia1 in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/menu_n/cartel.php on line 4
+[09-Apr-2020 00:50:33 Europe/Madrid] PHP Notice:  Undefined variable: hora1 in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/menu_n/cartel.php on line 4
+[09-Apr-2020 00:50:33 Europe/Madrid] PHP Notice:  Undefined variable: colorborder in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexpruebadatos.php on line 32
+[09-Apr-2020 00:51:36 Europe/Madrid] PHP Warning:  include(../portada_n/cabecera2.php): failed to open stream: No such file or directory in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/intro2p.php on line 5
+[09-Apr-2020 00:51:36 Europe/Madrid] PHP Warning:  include(): Failed opening '../portada_n/cabecera2.php' for inclusion (include_path='.:/opt/alt/php73/usr/share/pear') in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/intro2p.php on line 5
+[09-Apr-2020 00:51:36 Europe/Madrid] PHP Notice:  Undefined variable: rgpd in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/intro2p.php on line 18
+[09-Apr-2020 00:51:36 Europe/Madrid] PHP Notice:  Undefined variable: dia1 in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/menu_n/cartel.php on line 4
+[09-Apr-2020 00:51:36 Europe/Madrid] PHP Notice:  Undefined variable: hora1 in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/menu_n/cartel.php on line 4
+[09-Apr-2020 00:51:36 Europe/Madrid] PHP Notice:  Undefined variable: colorborder in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexpruebadatos.php on line 32
+[10-Apr-2020 13:16:25 Europe/Madrid] PHP Notice:  Undefined variable: colorborder in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexprueba41.php on line 25
+[10-Apr-2020 23:01:13 Europe/Madrid] PHP Notice:  Undefined variable: colorborder in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexprueba38.php on line 86
+[11-Apr-2020 02:03:54 Europe/Madrid] PHP Notice:  Undefined variable: ayuda in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/menu_n/submenumovil.php on line 86
+[11-Apr-2020 02:03:54 Europe/Madrid] PHP Notice:  Undefined variable: trab in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/menu_n/submenumovil.php on line 89
+[11-Apr-2020 02:03:54 Europe/Madrid] PHP Notice:  Undefined variable: ges in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/menu_n/submenumovil.php on line 93
+[11-Apr-2020 02:03:54 Europe/Madrid] PHP Notice:  Undefined variable: ges in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/menu_n/submenumovil.php on line 99
+[11-Apr-2020 02:03:54 Europe/Madrid] PHP Notice:  Undefined variable: colorborder in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexprueba41.php on line 25
+[11-Apr-2020 02:04:01 Europe/Madrid] PHP Notice:  Undefined variable: ayuda in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/menu_n/submenumovil.php on line 86
+[11-Apr-2020 02:04:01 Europe/Madrid] PHP Notice:  Undefined variable: trab in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/menu_n/submenumovil.php on line 89
+[11-Apr-2020 02:04:01 Europe/Madrid] PHP Notice:  Undefined variable: ges in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/menu_n/submenumovil.php on line 93
+[11-Apr-2020 02:04:01 Europe/Madrid] PHP Notice:  Undefined variable: ges in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/menu_n/submenumovil.php on line 99
+[11-Apr-2020 02:04:01 Europe/Madrid] PHP Notice:  Undefined variable: colorborder in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexprueba41.php on line 25
+[11-Apr-2020 09:15:54 UTC] PHP Notice:  Undefined index: HTTP_ACCEPT in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/index.php on line 24
+[11-Apr-2020 15:45:19 Europe/Madrid] PHP Notice:  Undefined variable: ayuda in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/menu_n/submenumovil.php on line 86
+[11-Apr-2020 15:45:19 Europe/Madrid] PHP Notice:  Undefined variable: trab in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/menu_n/submenumovil.php on line 89
+[11-Apr-2020 15:45:19 Europe/Madrid] PHP Notice:  Undefined variable: ges in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/menu_n/submenumovil.php on line 93
+[11-Apr-2020 15:45:19 Europe/Madrid] PHP Notice:  Undefined variable: ges in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/menu_n/submenumovil.php on line 99
+[11-Apr-2020 15:45:19 Europe/Madrid] PHP Notice:  Undefined variable: colorborder in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexprueba41.php on line 25
+[11-Apr-2020 15:45:55 Europe/Madrid] PHP Notice:  Undefined variable: ayuda in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/menu_n/submenumovil.php on line 86
+[11-Apr-2020 15:45:55 Europe/Madrid] PHP Notice:  Undefined variable: trab in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/menu_n/submenumovil.php on line 89
+[11-Apr-2020 15:45:55 Europe/Madrid] PHP Notice:  Undefined variable: ges in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/menu_n/submenumovil.php on line 93
+[11-Apr-2020 15:45:55 Europe/Madrid] PHP Notice:  Undefined variable: ges in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/menu_n/submenumovil.php on line 99
+[11-Apr-2020 15:45:55 Europe/Madrid] PHP Notice:  Undefined variable: colorborder in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexprueba41.php on line 25
+[11-Apr-2020 22:37:24 Europe/Madrid] PHP Notice:  Undefined variable: colorborder in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexprueba38.php on line 86
+[12-Apr-2020 01:00:12 Europe/Madrid] PHP Notice:  Undefined variable: colorborder in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexprueba38.php on line 86
+[12-Apr-2020 01:05:48 Europe/Madrid] PHP Notice:  Undefined variable: colorborder in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexprueba41.php on line 25
+[12-Apr-2020 01:07:17 Europe/Madrid] PHP Notice:  Undefined variable: colorborder in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexprueba41.php on line 25
+[12-Apr-2020 01:37:10 Europe/Madrid] PHP Notice:  Undefined variable: dia1 in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/menu_n/cartel.php on line 4
+[12-Apr-2020 01:37:10 Europe/Madrid] PHP Notice:  Undefined variable: hora1 in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/menu_n/cartel.php on line 4
+[12-Apr-2020 01:37:10 Europe/Madrid] PHP Notice:  Undefined variable: colorborder in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexpruebadatos.php on line 32
+[12-Apr-2020 01:38:22 Europe/Madrid] PHP Warning:  include(../portada_n/cabecera2.php): failed to open stream: No such file or directory in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/intro2p.php on line 5
+[12-Apr-2020 01:38:22 Europe/Madrid] PHP Warning:  include(): Failed opening '../portada_n/cabecera2.php' for inclusion (include_path='.:/opt/alt/php73/usr/share/pear') in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/intro2p.php on line 5
+[12-Apr-2020 01:38:22 Europe/Madrid] PHP Notice:  Undefined variable: colorborder in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexprueba41.php on line 25
+[12-Apr-2020 01:40:01 Europe/Madrid] PHP Notice:  Undefined variable: colorborder in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexprueba41.php on line 25
+[12-Apr-2020 01:44:00 Europe/Madrid] PHP Notice:  Undefined variable: colorborder in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexprueba41.php on line 25
+[12-Apr-2020 01:44:45 Europe/Madrid] PHP Notice:  Undefined variable: colorborder in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexprueba41.php on line 25
+[12-Apr-2020 01:45:21 Europe/Madrid] PHP Notice:  Undefined variable: colorborder in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexprueba41.php on line 25
+[12-Apr-2020 02:15:15 Europe/Madrid] PHP Notice:  Undefined variable: colorborder in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexprueba41.php on line 25
+[12-Apr-2020 02:15:23 Europe/Madrid] PHP Notice:  Undefined variable: colorborder in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexprueba41.php on line 25
+[12-Apr-2020 02:18:08 Europe/Madrid] PHP Notice:  Undefined variable: colorborder in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexprueba41.php on line 25
+[12-Apr-2020 02:28:08 Europe/Madrid] PHP Notice:  Undefined variable: colorborder in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexprueba41.php on line 25
+[12-Apr-2020 02:32:13 Europe/Madrid] PHP Notice:  Undefined variable: colorborder in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexprueba41.php on line 25
+[12-Apr-2020 02:33:42 Europe/Madrid] PHP Notice:  Undefined variable: colorborder in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexprueba41.php on line 25
+[12-Apr-2020 02:34:14 Europe/Madrid] PHP Notice:  Undefined variable: colorborder in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexprueba41.php on line 25
+[12-Apr-2020 02:40:49 Europe/Madrid] PHP Notice:  Undefined variable: colorborder in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexprueba38.php on line 86
+[12-Apr-2020 07:39:05 UTC] PHP Notice:  Undefined index: HTTP_ACCEPT in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/index.php on line 24
+[12-Apr-2020 12:49:22 Europe/Madrid] PHP Notice:  Undefined variable: colorborder in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexprueba41.php on line 25
+[12-Apr-2020 12:50:16 Europe/Madrid] PHP Notice:  Undefined variable: colorborder in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexprueba41.php on line 25
+[12-Apr-2020 12:51:09 Europe/Madrid] PHP Notice:  Undefined variable: colorborder in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexprueba41.php on line 25
+[12-Apr-2020 12:51:57 Europe/Madrid] PHP Notice:  Undefined variable: colorborder in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexprueba41.php on line 25
+[12-Apr-2020 20:26:04 Europe/Madrid] PHP Notice:  Undefined variable: ayuda in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/menu_n/submenumovil.php on line 86
+[12-Apr-2020 20:26:05 Europe/Madrid] PHP Notice:  Undefined variable: trab in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/menu_n/submenumovil.php on line 89
+[12-Apr-2020 20:26:05 Europe/Madrid] PHP Notice:  Undefined variable: ges in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/menu_n/submenumovil.php on line 93
+[12-Apr-2020 20:26:05 Europe/Madrid] PHP Notice:  Undefined variable: ges in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/menu_n/submenumovil.php on line 99
+[12-Apr-2020 20:26:05 Europe/Madrid] PHP Notice:  Undefined variable: colorborder in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexprueba41.php on line 25
+[12-Apr-2020 22:18:33 UTC] PHP Notice:  Undefined index: HTTP_ACCEPT in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/index.php on line 24
+[13-Apr-2020 11:54:01 UTC] PHP Notice:  Undefined index: HTTP_ACCEPT in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/index.php on line 24
+[13-Apr-2020 11:54:51 UTC] PHP Notice:  Undefined index: HTTP_ACCEPT in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/index.php on line 24
+[13-Apr-2020 11:55:06 UTC] PHP Notice:  Undefined index: HTTP_ACCEPT in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/index.php on line 24
+[13-Apr-2020 13:55:08 Europe/Madrid] PHP Notice:  Undefined variable: ayuda in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/menu_n/submenumovil.php on line 86
+[13-Apr-2020 13:55:08 Europe/Madrid] PHP Notice:  Undefined variable: trab in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/menu_n/submenumovil.php on line 89
+[13-Apr-2020 13:55:08 Europe/Madrid] PHP Notice:  Undefined variable: ges in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/menu_n/submenumovil.php on line 93
+[13-Apr-2020 13:55:08 Europe/Madrid] PHP Notice:  Undefined variable: ges in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/menu_n/submenumovil.php on line 99
+[13-Apr-2020 13:55:08 Europe/Madrid] PHP Notice:  Undefined variable: colorborder in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexprueba41.php on line 25
+[13-Apr-2020 11:55:09 UTC] PHP Notice:  Undefined index: HTTP_ACCEPT in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/index.php on line 24
+[13-Apr-2020 11:55:18 UTC] PHP Notice:  Undefined index: HTTP_ACCEPT in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/index.php on line 24
+[13-Apr-2020 16:24:52 UTC] PHP Notice:  Undefined index: HTTP_ACCEPT in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/index.php on line 24
+[13-Apr-2020 16:25:10 UTC] PHP Notice:  Undefined index: HTTP_ACCEPT in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/index.php on line 24
+[13-Apr-2020 19:16:26 Europe/Madrid] PHP Notice:  Undefined variable: com in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/inicio1.php on line 5
+[15-Apr-2020 00:48:57 Europe/Madrid] PHP Notice:  Undefined variable: dia1 in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/menu_n/cartel.php on line 4
+[15-Apr-2020 00:48:57 Europe/Madrid] PHP Notice:  Undefined variable: hora1 in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/menu_n/cartel.php on line 4
+[15-Apr-2020 00:48:57 Europe/Madrid] PHP Notice:  Undefined variable: colorborder in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexpruebadatos.php on line 32
+[15-Apr-2020 00:49:15 Europe/Madrid] PHP Warning:  include(../portada_n/cabecera2.php): failed to open stream: No such file or directory in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/intro2p.php on line 5
+[15-Apr-2020 00:49:15 Europe/Madrid] PHP Warning:  include(): Failed opening '../portada_n/cabecera2.php' for inclusion (include_path='.:/opt/alt/php73/usr/share/pear') in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/intro2p.php on line 5
+[15-Apr-2020 00:49:15 Europe/Madrid] PHP Notice:  Undefined variable: colorborder in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexprueba41.php on line 25
+[15-Apr-2020 00:49:55 Europe/Madrid] PHP Notice:  Undefined variable: colorborder in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexprueba41.php on line 25
+[15-Apr-2020 00:50:10 Europe/Madrid] PHP Notice:  Undefined variable: colorborder in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexprueba41.php on line 25
+[15-Apr-2020 00:50:21 Europe/Madrid] PHP Notice:  Undefined variable: colorborder in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexprueba41.php on line 25
+[15-Apr-2020 14:34:57 Europe/Madrid] PHP Notice:  Undefined variable: dia1 in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/menu_n/cartel.php on line 4
+[15-Apr-2020 14:34:57 Europe/Madrid] PHP Notice:  Undefined variable: hora1 in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/menu_n/cartel.php on line 4
+[15-Apr-2020 14:34:57 Europe/Madrid] PHP Notice:  Undefined variable: colorborder in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexpruebadatos.php on line 32
+[15-Apr-2020 14:35:24 Europe/Madrid] PHP Warning:  include(../portada_n/cabecera2.php): failed to open stream: No such file or directory in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/intro2p.php on line 5
+[15-Apr-2020 14:35:24 Europe/Madrid] PHP Warning:  include(): Failed opening '../portada_n/cabecera2.php' for inclusion (include_path='.:/opt/alt/php73/usr/share/pear') in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/intro2p.php on line 5
+[15-Apr-2020 14:35:24 Europe/Madrid] PHP Notice:  Undefined variable: avisolegal in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/intro2p.php on line 18
+[15-Apr-2020 14:35:25 Europe/Madrid] PHP Notice:  Undefined variable: dia1 in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/menu_n/cartel.php on line 4
+[15-Apr-2020 14:35:25 Europe/Madrid] PHP Notice:  Undefined variable: hora1 in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/menu_n/cartel.php on line 4
+[15-Apr-2020 14:35:25 Europe/Madrid] PHP Notice:  Undefined variable: colorborder in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexpruebadatos.php on line 32
+[15-Apr-2020 14:35:49 Europe/Madrid] PHP Warning:  include(../portada_n/cabecera2.php): failed to open stream: No such file or directory in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/intro2p.php on line 5
+[15-Apr-2020 14:35:49 Europe/Madrid] PHP Warning:  include(): Failed opening '../portada_n/cabecera2.php' for inclusion (include_path='.:/opt/alt/php73/usr/share/pear') in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/intro2p.php on line 5
+[15-Apr-2020 14:35:49 Europe/Madrid] PHP Notice:  Undefined variable: ayuda in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/menu_n/submenumovil.php on line 86
+[15-Apr-2020 14:35:49 Europe/Madrid] PHP Notice:  Undefined variable: trab in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/menu_n/submenumovil.php on line 89
+[15-Apr-2020 14:35:49 Europe/Madrid] PHP Notice:  Undefined variable: ges in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/menu_n/submenumovil.php on line 93
+[15-Apr-2020 14:35:49 Europe/Madrid] PHP Notice:  Undefined variable: ges in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/menu_n/submenumovil.php on line 99
+[15-Apr-2020 14:35:49 Europe/Madrid] PHP Notice:  Undefined variable: colorborder in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexprueba41.php on line 25
+[15-Apr-2020 14:38:22 Europe/Madrid] PHP Notice:  Undefined variable: ayuda in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/menu_n/submenumovil.php on line 86
+[15-Apr-2020 14:38:22 Europe/Madrid] PHP Notice:  Undefined variable: trab in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/menu_n/submenumovil.php on line 89
+[15-Apr-2020 14:38:22 Europe/Madrid] PHP Notice:  Undefined variable: ges in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/menu_n/submenumovil.php on line 93
+[15-Apr-2020 14:38:22 Europe/Madrid] PHP Notice:  Undefined variable: ges in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/menu_n/submenumovil.php on line 99
+[15-Apr-2020 14:38:22 Europe/Madrid] PHP Notice:  Undefined variable: colorborder in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexprueba41.php on line 25
+[15-Apr-2020 14:40:36 Europe/Madrid] PHP Notice:  Undefined variable: com in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/inicio1.php on line 5
+[15-Apr-2020 14:40:41 Europe/Madrid] PHP Notice:  Undefined variable: com in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/inicio1.php on line 5
+[15-Apr-2020 14:40:44 Europe/Madrid] PHP Notice:  Undefined variable: com in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/inicio1.php on line 5
+[15-Apr-2020 14:42:01 Europe/Madrid] PHP Notice:  Undefined variable: ayuda in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/menu_n/submenumovil.php on line 86
+[15-Apr-2020 14:42:01 Europe/Madrid] PHP Notice:  Undefined variable: trab in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/menu_n/submenumovil.php on line 89
+[15-Apr-2020 14:42:01 Europe/Madrid] PHP Notice:  Undefined variable: ges in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/menu_n/submenumovil.php on line 93
+[15-Apr-2020 14:42:01 Europe/Madrid] PHP Notice:  Undefined variable: ges in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/menu_n/submenumovil.php on line 99
+[15-Apr-2020 14:42:01 Europe/Madrid] PHP Notice:  Undefined variable: colorborder in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexprueba41.php on line 25
+[15-Apr-2020 14:42:23 Europe/Madrid] PHP Notice:  Undefined variable: ayuda in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/menu_n/submenumovil.php on line 86
+[15-Apr-2020 14:42:23 Europe/Madrid] PHP Notice:  Undefined variable: trab in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/menu_n/submenumovil.php on line 89
+[15-Apr-2020 14:42:23 Europe/Madrid] PHP Notice:  Undefined variable: ges in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/menu_n/submenumovil.php on line 93
+[15-Apr-2020 14:42:23 Europe/Madrid] PHP Notice:  Undefined variable: ges in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/menu_n/submenumovil.php on line 99
+[15-Apr-2020 14:42:23 Europe/Madrid] PHP Notice:  Undefined variable: colorborder in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexprueba41.php on line 25
+[15-Apr-2020 14:42:39 Europe/Madrid] PHP Notice:  Undefined variable: ayuda in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/menu_n/submenumovil.php on line 86
+[15-Apr-2020 14:42:39 Europe/Madrid] PHP Notice:  Undefined variable: trab in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/menu_n/submenumovil.php on line 89
+[15-Apr-2020 14:42:39 Europe/Madrid] PHP Notice:  Undefined variable: ges in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/menu_n/submenumovil.php on line 93
+[15-Apr-2020 14:42:39 Europe/Madrid] PHP Notice:  Undefined variable: ges in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/menu_n/submenumovil.php on line 99
+[15-Apr-2020 14:42:39 Europe/Madrid] PHP Notice:  Undefined variable: colorborder in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexprueba41.php on line 25
+[16-Apr-2020 00:19:36 Europe/Madrid] PHP Notice:  Undefined variable: ayuda in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/menu_n/submenumovil.php on line 86
+[16-Apr-2020 00:19:36 Europe/Madrid] PHP Notice:  Undefined variable: trab in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/menu_n/submenumovil.php on line 89
+[16-Apr-2020 00:19:36 Europe/Madrid] PHP Notice:  Undefined variable: ges in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/menu_n/submenumovil.php on line 93
+[16-Apr-2020 00:19:36 Europe/Madrid] PHP Notice:  Undefined variable: ges in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/menu_n/submenumovil.php on line 99
+[16-Apr-2020 00:19:36 Europe/Madrid] PHP Notice:  Undefined variable: colorborder in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexprueba41.php on line 25
+[16-Apr-2020 01:59:06 Europe/Madrid] PHP Notice:  Undefined variable: colorborder in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexprueba38.php on line 86
+[16-Apr-2020 15:50:53 Europe/Madrid] PHP Notice:  Undefined variable: ayuda in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/menu_n/submenumovil.php on line 86
+[16-Apr-2020 15:50:54 Europe/Madrid] PHP Notice:  Undefined variable: trab in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/menu_n/submenumovil.php on line 89
+[16-Apr-2020 15:50:54 Europe/Madrid] PHP Notice:  Undefined variable: ges in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/menu_n/submenumovil.php on line 93
+[16-Apr-2020 15:50:54 Europe/Madrid] PHP Notice:  Undefined variable: ges in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/menu_n/submenumovil.php on line 99
+[16-Apr-2020 15:50:54 Europe/Madrid] PHP Notice:  Undefined variable: colorborder in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexprueba41.php on line 25
+[16-Apr-2020 15:51:38 Europe/Madrid] PHP Notice:  Undefined variable: ayuda in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/menu_n/submenumovil.php on line 86
+[16-Apr-2020 15:51:38 Europe/Madrid] PHP Notice:  Undefined variable: trab in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/menu_n/submenumovil.php on line 89
+[16-Apr-2020 15:51:38 Europe/Madrid] PHP Notice:  Undefined variable: ges in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/menu_n/submenumovil.php on line 93
+[16-Apr-2020 15:51:38 Europe/Madrid] PHP Notice:  Undefined variable: ges in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/menu_n/submenumovil.php on line 99
+[16-Apr-2020 15:51:38 Europe/Madrid] PHP Notice:  Undefined variable: colorborder in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexprueba41.php on line 25
+[16-Apr-2020 21:56:19 Europe/Madrid] PHP Notice:  Undefined variable: com in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/inicio1.php on line 5
+[17-Apr-2020 04:49:22 Europe/Madrid] PHP Notice:  Undefined variable: ayuda in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/menu_n/submenumovil.php on line 86
+[17-Apr-2020 04:49:22 Europe/Madrid] PHP Notice:  Undefined variable: trab in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/menu_n/submenumovil.php on line 89
+[17-Apr-2020 04:49:22 Europe/Madrid] PHP Notice:  Undefined variable: ges in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/menu_n/submenumovil.php on line 93
+[17-Apr-2020 04:49:22 Europe/Madrid] PHP Notice:  Undefined variable: ges in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/menu_n/submenumovil.php on line 99
+[17-Apr-2020 04:49:22 Europe/Madrid] PHP Notice:  Undefined variable: colorborder in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexprueba41.php on line 25
+[17-Apr-2020 04:50:23 Europe/Madrid] PHP Notice:  Undefined variable: ayuda in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/menu_n/submenumovil.php on line 86
+[17-Apr-2020 04:50:23 Europe/Madrid] PHP Notice:  Undefined variable: trab in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/menu_n/submenumovil.php on line 89
+[17-Apr-2020 04:50:23 Europe/Madrid] PHP Notice:  Undefined variable: ges in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/menu_n/submenumovil.php on line 93
+[17-Apr-2020 04:50:23 Europe/Madrid] PHP Notice:  Undefined variable: ges in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/menu_n/submenumovil.php on line 99
+[17-Apr-2020 04:50:23 Europe/Madrid] PHP Notice:  Undefined variable: colorborder in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexprueba41.php on line 25
+[23-Apr-2020 21:31:32 UTC] PHP Notice:  Undefined index: HTTP_ACCEPT in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/index.php on line 24
+[27-Apr-2020 17:04:49 Europe/Madrid] PHP Notice:  Undefined variable: dia1 in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/menu_n/cartel.php on line 4
+[27-Apr-2020 17:04:49 Europe/Madrid] PHP Notice:  Undefined variable: hora1 in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/menu_n/cartel.php on line 4
+[27-Apr-2020 17:04:49 Europe/Madrid] PHP Notice:  Undefined variable: colorborder in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexpruebadatos.php on line 32
+[27-Apr-2020 17:05:13 Europe/Madrid] PHP Warning:  include(../portada_n/cabecera2.php): failed to open stream: No such file or directory in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/intro2p.php on line 5
+[27-Apr-2020 17:05:13 Europe/Madrid] PHP Warning:  include(): Failed opening '../portada_n/cabecera2.php' for inclusion (include_path='.:/opt/alt/php73/usr/share/pear') in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/intro2p.php on line 5
+[27-Apr-2020 17:05:13 Europe/Madrid] PHP Notice:  Undefined variable: colorborder in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexprueba41.php on line 25
+[27-Apr-2020 17:10:46 Europe/Madrid] PHP Notice:  Undefined variable: colorborder in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexprueba41.php on line 25
+[27-Apr-2020 17:11:07 Europe/Madrid] PHP Notice:  Undefined variable: colorborder in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexprueba41.php on line 25
+[27-Apr-2020 17:11:27 Europe/Madrid] PHP Notice:  Undefined variable: colorborder in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexprueba41.php on line 25
+[27-Apr-2020 17:11:57 Europe/Madrid] PHP Notice:  Undefined variable: colorborder in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexprueba41.php on line 25
+[27-Apr-2020 17:12:41 Europe/Madrid] PHP Notice:  Undefined variable: colorborder in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexprueba41.php on line 25
+[27-Apr-2020 17:25:04 Europe/Madrid] PHP Notice:  Undefined variable: colorborder in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexpruebadatos.php on line 32
+[27-Apr-2020 17:25:10 Europe/Madrid] PHP Warning:  include(../portada_n/cabecera2.php): failed to open stream: No such file or directory in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/intro2p.php on line 5
+[27-Apr-2020 17:25:10 Europe/Madrid] PHP Warning:  include(): Failed opening '../portada_n/cabecera2.php' for inclusion (include_path='.:/opt/alt/php73/usr/share/pear') in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/intro2p.php on line 5
+[27-Apr-2020 17:25:10 Europe/Madrid] PHP Notice:  Undefined variable: colorborder in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexprueba41.php on line 25
+[27-Apr-2020 17:25:20 Europe/Madrid] PHP Notice:  Undefined variable: colorborder in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexprueba41.php on line 25
+[27-Apr-2020 17:25:34 Europe/Madrid] PHP Notice:  Undefined variable: colorborder in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexprueba41.php on line 25
+[27-Apr-2020 17:25:41 Europe/Madrid] PHP Notice:  Undefined variable: colorborder in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexprueba41.php on line 25
+[27-Apr-2020 23:51:00 UTC] PHP Notice:  Undefined index: HTTP_ACCEPT in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/index.php on line 24
+[27-Apr-2020 23:51:08 UTC] PHP Notice:  Undefined index: HTTP_ACCEPT in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/index.php on line 24
+[27-Apr-2020 23:51:09 UTC] PHP Notice:  Undefined index: HTTP_ACCEPT in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/index.php on line 24
+[27-Apr-2020 23:51:30 UTC] PHP Notice:  Undefined index: HTTP_ACCEPT in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/index.php on line 24
+[28-Apr-2020 01:52:19 Europe/Madrid] PHP Notice:  Undefined variable: dia1 in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/menu_n/cartel.php on line 4
+[28-Apr-2020 01:52:19 Europe/Madrid] PHP Notice:  Undefined variable: hora1 in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/menu_n/cartel.php on line 4
+[28-Apr-2020 01:52:20 Europe/Madrid] PHP Notice:  Undefined variable: colorborder in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexpruebadatos.php on line 32
+[27-Apr-2020 23:52:20 UTC] PHP Notice:  Undefined index: HTTP_ACCEPT in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/index.php on line 24
+[28-Apr-2020 01:53:15 Europe/Madrid] PHP Warning:  include(../portada_n/cabecera2.php): failed to open stream: No such file or directory in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/intro2p.php on line 5
+[28-Apr-2020 01:53:15 Europe/Madrid] PHP Warning:  include(): Failed opening '../portada_n/cabecera2.php' for inclusion (include_path='.:/opt/alt/php73/usr/share/pear') in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/intro2p.php on line 5
+[28-Apr-2020 01:53:15 Europe/Madrid] PHP Notice:  Undefined variable: rgpd in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/intro2p.php on line 18
+[27-Apr-2020 23:53:15 UTC] PHP Notice:  Undefined index: HTTP_ACCEPT in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/index.php on line 24
+[28-Apr-2020 01:53:15 Europe/Madrid] PHP Notice:  Undefined variable: dia1 in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/menu_n/cartel.php on line 4
+[28-Apr-2020 01:53:15 Europe/Madrid] PHP Notice:  Undefined variable: hora1 in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/menu_n/cartel.php on line 4
+[28-Apr-2020 01:53:15 Europe/Madrid] PHP Notice:  Undefined variable: colorborder in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexpruebadatos.php on line 32
+[27-Apr-2020 23:53:16 UTC] PHP Notice:  Undefined index: HTTP_ACCEPT in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/index.php on line 24
+[28-Apr-2020 01:53:21 Europe/Madrid] PHP Notice:  Undefined variable: dia1 in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/menu_n/cartel.php on line 4
+[28-Apr-2020 01:53:21 Europe/Madrid] PHP Notice:  Undefined variable: hora1 in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/menu_n/cartel.php on line 4
+[28-Apr-2020 01:53:21 Europe/Madrid] PHP Notice:  Undefined variable: colorborder in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexpruebadatos.php on line 32
+[27-Apr-2020 23:53:21 UTC] PHP Notice:  Undefined index: HTTP_ACCEPT in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/index.php on line 24
+[28-Apr-2020 01:53:24 Europe/Madrid] PHP Notice:  Undefined variable: dia1 in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/menu_n/cartel.php on line 4
+[28-Apr-2020 01:53:24 Europe/Madrid] PHP Notice:  Undefined variable: hora1 in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/menu_n/cartel.php on line 4
+[28-Apr-2020 01:53:24 Europe/Madrid] PHP Notice:  Undefined variable: colorborder in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexpruebadatos.php on line 32
+[27-Apr-2020 23:53:25 UTC] PHP Notice:  Undefined index: HTTP_ACCEPT in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/index.php on line 24
+[28-Apr-2020 10:04:14 Europe/Madrid] PHP Notice:  Undefined variable: dia1 in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/menu_n/cartel.php on line 4
+[28-Apr-2020 10:04:14 Europe/Madrid] PHP Notice:  Undefined variable: hora1 in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/menu_n/cartel.php on line 4
+[28-Apr-2020 10:04:14 Europe/Madrid] PHP Notice:  Undefined variable: colorborder in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexpruebadatos.php on line 32
+[28-Apr-2020 10:04:30 Europe/Madrid] PHP Notice:  Undefined variable: dia1 in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/menu_n/cartel.php on line 4
+[28-Apr-2020 10:04:30 Europe/Madrid] PHP Notice:  Undefined variable: hora1 in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/menu_n/cartel.php on line 4
+[28-Apr-2020 10:04:30 Europe/Madrid] PHP Notice:  Undefined variable: colorborder in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexpruebadatos.php on line 32
+[28-Apr-2020 10:04:35 Europe/Madrid] PHP Notice:  Undefined variable: dia1 in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/menu_n/cartel.php on line 4
+[28-Apr-2020 10:04:35 Europe/Madrid] PHP Notice:  Undefined variable: hora1 in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/menu_n/cartel.php on line 4
+[28-Apr-2020 10:04:35 Europe/Madrid] PHP Notice:  Undefined variable: colorborder in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexpruebadatos.php on line 32
+[28-Apr-2020 10:04:41 Europe/Madrid] PHP Notice:  Undefined variable: dia1 in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/menu_n/cartel.php on line 4
+[28-Apr-2020 10:04:41 Europe/Madrid] PHP Notice:  Undefined variable: hora1 in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/menu_n/cartel.php on line 4
+[28-Apr-2020 10:04:41 Europe/Madrid] PHP Notice:  Undefined variable: colorborder in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexpruebadatos.php on line 32
+[28-Apr-2020 10:05:19 Europe/Madrid] PHP Notice:  Undefined variable: dia1 in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/menu_n/cartel.php on line 4
+[28-Apr-2020 10:05:20 Europe/Madrid] PHP Notice:  Undefined variable: hora1 in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/menu_n/cartel.php on line 4
+[28-Apr-2020 10:05:20 Europe/Madrid] PHP Notice:  Undefined variable: colorborder in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexpruebadatos.php on line 32
+[28-Apr-2020 10:06:11 Europe/Madrid] PHP Notice:  Undefined variable: dia1 in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/menu_n/cartel.php on line 4
+[28-Apr-2020 10:06:11 Europe/Madrid] PHP Notice:  Undefined variable: hora1 in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/menu_n/cartel.php on line 4
+[28-Apr-2020 10:06:11 Europe/Madrid] PHP Notice:  Undefined variable: colorborder in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexpruebadatos.php on line 32
+[28-Apr-2020 15:13:07 Europe/Madrid] PHP Notice:  Undefined variable: dia1 in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/menu_n/cartel.php on line 4
+[28-Apr-2020 15:13:07 Europe/Madrid] PHP Notice:  Undefined variable: hora1 in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/menu_n/cartel.php on line 4
+[28-Apr-2020 15:13:07 Europe/Madrid] PHP Notice:  Undefined variable: colorborder in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexpruebadatos.php on line 32
+[28-Apr-2020 15:13:19 Europe/Madrid] PHP Warning:  include(../portada_n/cabecera2.php): failed to open stream: No such file or directory in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/intro2p.php on line 5
+[28-Apr-2020 15:13:19 Europe/Madrid] PHP Warning:  include(): Failed opening '../portada_n/cabecera2.php' for inclusion (include_path='.:/opt/alt/php73/usr/share/pear') in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/intro2p.php on line 5
+[28-Apr-2020 15:13:19 Europe/Madrid] PHP Notice:  Undefined variable: colorborder in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexprueba41.php on line 25
+[28-Apr-2020 15:16:24 Europe/Madrid] PHP Notice:  Undefined variable: dia1 in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/menu_n/cartel.php on line 4
+[28-Apr-2020 15:16:24 Europe/Madrid] PHP Notice:  Undefined variable: hora1 in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/menu_n/cartel.php on line 4
+[28-Apr-2020 15:16:24 Europe/Madrid] PHP Notice:  Undefined variable: colorborder in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexpruebadatos.php on line 32
+[28-Apr-2020 15:17:33 Europe/Madrid] PHP Warning:  include(../portada_n/cabecera2.php): failed to open stream: No such file or directory in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/intro2p.php on line 5
+[28-Apr-2020 15:17:33 Europe/Madrid] PHP Warning:  include(): Failed opening '../portada_n/cabecera2.php' for inclusion (include_path='.:/opt/alt/php73/usr/share/pear') in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/intro2p.php on line 5
+[28-Apr-2020 15:17:34 Europe/Madrid] PHP Notice:  Undefined variable: colorborder in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexprueba41.php on line 25
+[28-Apr-2020 15:48:33 Europe/Madrid] PHP Notice:  Undefined variable: colorborder in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexprueba41.php on line 25
+[28-Apr-2020 15:50:20 Europe/Madrid] PHP Notice:  Undefined variable: colorborder in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexprueba41.php on line 25
+[28-Apr-2020 15:50:38 Europe/Madrid] PHP Notice:  Undefined variable: colorborder in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexprueba41.php on line 25
+[28-Apr-2020 15:50:52 Europe/Madrid] PHP Notice:  Undefined variable: colorborder in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexprueba41.php on line 25
+[28-Apr-2020 15:51:17 Europe/Madrid] PHP Notice:  Undefined variable: colorborder in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexprueba41.php on line 25
+[28-Apr-2020 19:28:14 Europe/Madrid] PHP Notice:  Undefined variable: com in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/inicio1.php on line 5
+[28-Apr-2020 17:28:14 UTC] PHP Notice:  Undefined index: HTTP_ACCEPT in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/index.php on line 24
+[28-Apr-2020 20:54:18 Europe/Madrid] PHP Notice:  Undefined variable: dia1 in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/menu_n/cartel.php on line 4
+[28-Apr-2020 20:54:18 Europe/Madrid] PHP Notice:  Undefined variable: hora1 in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/menu_n/cartel.php on line 4
+[28-Apr-2020 20:54:18 Europe/Madrid] PHP Notice:  Undefined variable: colorborder in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexpruebadatos.php on line 32
+[28-Apr-2020 20:54:23 Europe/Madrid] PHP Notice:  Undefined variable: dia1 in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/menu_n/cartel.php on line 4
+[28-Apr-2020 20:54:23 Europe/Madrid] PHP Notice:  Undefined variable: hora1 in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/menu_n/cartel.php on line 4
+[28-Apr-2020 20:54:23 Europe/Madrid] PHP Notice:  Undefined variable: colorborder in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexpruebadatos.php on line 32
+[28-Apr-2020 20:54:31 Europe/Madrid] PHP Notice:  Undefined variable: dia1 in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/menu_n/cartel.php on line 4
+[28-Apr-2020 20:54:31 Europe/Madrid] PHP Notice:  Undefined variable: hora1 in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/menu_n/cartel.php on line 4
+[28-Apr-2020 20:54:31 Europe/Madrid] PHP Notice:  Undefined variable: colorborder in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexpruebadatos.php on line 32
+[28-Apr-2020 20:55:22 Europe/Madrid] PHP Warning:  include(../portada_n/cabecera2.php): failed to open stream: No such file or directory in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/intro2p.php on line 5
+[28-Apr-2020 20:55:22 Europe/Madrid] PHP Warning:  include(): Failed opening '../portada_n/cabecera2.php' for inclusion (include_path='.:/opt/alt/php73/usr/share/pear') in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/intro2p.php on line 5
+[28-Apr-2020 20:55:22 Europe/Madrid] PHP Warning:  include(../portada_n/cabecera2.php): failed to open stream: No such file or directory in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/intro2p.php on line 5
+[28-Apr-2020 20:55:22 Europe/Madrid] PHP Warning:  include(): Failed opening '../portada_n/cabecera2.php' for inclusion (include_path='.:/opt/alt/php73/usr/share/pear') in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/intro2p.php on line 5
+[28-Apr-2020 20:55:24 Europe/Madrid] PHP Notice:  Undefined variable: ayuda in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/menu_n/submenumovil.php on line 86
+[28-Apr-2020 20:55:24 Europe/Madrid] PHP Notice:  Undefined variable: trab in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/menu_n/submenumovil.php on line 89
+[28-Apr-2020 20:55:24 Europe/Madrid] PHP Notice:  Undefined variable: ges in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/menu_n/submenumovil.php on line 93
+[28-Apr-2020 20:55:25 Europe/Madrid] PHP Notice:  Undefined variable: ges in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/menu_n/submenumovil.php on line 99
+[28-Apr-2020 20:55:25 Europe/Madrid] PHP Notice:  Undefined variable: colorborder in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexprueba41.php on line 25
+[28-Apr-2020 23:03:45 Europe/Madrid] PHP Notice:  Undefined variable: colorborder in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexprueba38.php on line 86
+[28-Apr-2020 23:22:48 Europe/Madrid] PHP Notice:  Undefined variable: colorborder in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexprueba38.php on line 86
+[29-Apr-2020 10:41:01 Europe/Madrid] PHP Notice:  Undefined variable: com in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/inicio1.php on line 5
+[29-Apr-2020 08:41:02 UTC] PHP Notice:  Undefined index: HTTP_ACCEPT in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/index.php on line 24
+[29-Apr-2020 11:07:26 Europe/Madrid] PHP Notice:  Undefined variable: colorborder in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexprueba38.php on line 86
+[29-Apr-2020 12:10:35 Europe/Madrid] PHP Notice:  Undefined variable: dia1 in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/menu_n/cartel.php on line 4
+[29-Apr-2020 12:10:35 Europe/Madrid] PHP Notice:  Undefined variable: hora1 in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/menu_n/cartel.php on line 4
+[29-Apr-2020 12:10:35 Europe/Madrid] PHP Notice:  Undefined variable: colorborder in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexpruebadatos.php on line 32
+[29-Apr-2020 12:10:52 Europe/Madrid] PHP Notice:  Undefined variable: dia1 in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/menu_n/cartel.php on line 4
+[29-Apr-2020 12:10:52 Europe/Madrid] PHP Notice:  Undefined variable: hora1 in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/menu_n/cartel.php on line 4
+[29-Apr-2020 12:10:52 Europe/Madrid] PHP Notice:  Undefined variable: colorborder in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexpruebadatos.php on line 32
+[29-Apr-2020 12:11:02 Europe/Madrid] PHP Notice:  Undefined variable: dia1 in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/menu_n/cartel.php on line 4
+[29-Apr-2020 12:11:02 Europe/Madrid] PHP Notice:  Undefined variable: hora1 in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/menu_n/cartel.php on line 4
+[29-Apr-2020 12:11:02 Europe/Madrid] PHP Notice:  Undefined variable: colorborder in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexpruebadatos.php on line 32
+[29-Apr-2020 12:11:05 Europe/Madrid] PHP Notice:  Undefined variable: dia1 in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/menu_n/cartel.php on line 4
+[29-Apr-2020 12:11:05 Europe/Madrid] PHP Notice:  Undefined variable: hora1 in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/menu_n/cartel.php on line 4
+[29-Apr-2020 12:11:05 Europe/Madrid] PHP Notice:  Undefined variable: colorborder in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexpruebadatos.php on line 32
+[30-Apr-2020 18:49:02 Europe/Madrid] PHP Notice:  Undefined variable: dia1 in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/menu_n/cartel.php on line 4
+[30-Apr-2020 18:49:02 Europe/Madrid] PHP Notice:  Undefined variable: hora1 in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/menu_n/cartel.php on line 4
+[30-Apr-2020 18:49:02 Europe/Madrid] PHP Notice:  Undefined variable: colorborder in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexpruebadatos.php on line 32
+[30-Apr-2020 18:49:13 Europe/Madrid] PHP Warning:  include(../portada_n/cabecera2.php): failed to open stream: No such file or directory in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/intro2p.php on line 5
+[30-Apr-2020 18:49:13 Europe/Madrid] PHP Warning:  include(): Failed opening '../portada_n/cabecera2.php' for inclusion (include_path='.:/opt/alt/php73/usr/share/pear') in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/intro2p.php on line 5
+[30-Apr-2020 18:49:14 Europe/Madrid] PHP Notice:  Undefined variable: ayuda in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/menu_n/submenumovil.php on line 86
+[30-Apr-2020 18:49:14 Europe/Madrid] PHP Notice:  Undefined variable: trab in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/menu_n/submenumovil.php on line 89
+[30-Apr-2020 18:49:14 Europe/Madrid] PHP Notice:  Undefined variable: ges in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/menu_n/submenumovil.php on line 93
+[30-Apr-2020 18:49:14 Europe/Madrid] PHP Notice:  Undefined variable: ges in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/menu_n/submenumovil.php on line 99
+[30-Apr-2020 18:49:14 Europe/Madrid] PHP Notice:  Undefined variable: colorborder in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexprueba41.php on line 25
+[30-Apr-2020 18:50:37 Europe/Madrid] PHP Notice:  Undefined variable: ayuda in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/menu_n/submenumovil.php on line 86
+[30-Apr-2020 18:50:37 Europe/Madrid] PHP Notice:  Undefined variable: trab in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/menu_n/submenumovil.php on line 89
+[30-Apr-2020 18:50:37 Europe/Madrid] PHP Notice:  Undefined variable: ges in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/menu_n/submenumovil.php on line 93
+[30-Apr-2020 18:50:37 Europe/Madrid] PHP Notice:  Undefined variable: ges in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/menu_n/submenumovil.php on line 99
+[30-Apr-2020 18:50:37 Europe/Madrid] PHP Notice:  Undefined variable: colorborder in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexprueba41.php on line 25
+[30-Apr-2020 18:54:37 Europe/Madrid] PHP Notice:  Undefined variable: ayuda in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/menu_n/submenumovil.php on line 86
+[30-Apr-2020 18:54:37 Europe/Madrid] PHP Notice:  Undefined variable: trab in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/menu_n/submenumovil.php on line 89
+[30-Apr-2020 18:54:37 Europe/Madrid] PHP Notice:  Undefined variable: ges in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/menu_n/submenumovil.php on line 93
+[30-Apr-2020 18:54:37 Europe/Madrid] PHP Notice:  Undefined variable: ges in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/menu_n/submenumovil.php on line 99
+[30-Apr-2020 18:54:37 Europe/Madrid] PHP Notice:  Undefined variable: colorborder in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexprueba41.php on line 25
+[30-Apr-2020 18:54:44 Europe/Madrid] PHP Notice:  Undefined variable: ayuda in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/menu_n/submenumovil.php on line 86
+[30-Apr-2020 18:54:44 Europe/Madrid] PHP Notice:  Undefined variable: trab in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/menu_n/submenumovil.php on line 89
+[30-Apr-2020 18:54:44 Europe/Madrid] PHP Notice:  Undefined variable: ges in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/menu_n/submenumovil.php on line 93
+[30-Apr-2020 18:54:44 Europe/Madrid] PHP Notice:  Undefined variable: ges in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/menu_n/submenumovil.php on line 99
+[30-Apr-2020 18:54:44 Europe/Madrid] PHP Notice:  Undefined variable: colorborder in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexprueba41.php on line 25
+[30-Apr-2020 18:54:52 Europe/Madrid] PHP Notice:  Undefined variable: ayuda in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/menu_n/submenumovil.php on line 86
+[30-Apr-2020 18:54:52 Europe/Madrid] PHP Notice:  Undefined variable: trab in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/menu_n/submenumovil.php on line 89
+[30-Apr-2020 18:54:52 Europe/Madrid] PHP Notice:  Undefined variable: ges in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/menu_n/submenumovil.php on line 93
+[30-Apr-2020 18:54:52 Europe/Madrid] PHP Notice:  Undefined variable: ges in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/menu_n/submenumovil.php on line 99
+[30-Apr-2020 18:54:52 Europe/Madrid] PHP Notice:  Undefined variable: colorborder in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexprueba41.php on line 25
+[30-Apr-2020 18:56:06 Europe/Madrid] PHP Notice:  Undefined variable: ayuda in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/menu_n/submenumovil.php on line 86
+[30-Apr-2020 18:56:06 Europe/Madrid] PHP Notice:  Undefined variable: trab in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/menu_n/submenumovil.php on line 89
+[30-Apr-2020 18:56:06 Europe/Madrid] PHP Notice:  Undefined variable: ges in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/menu_n/submenumovil.php on line 93
+[30-Apr-2020 18:56:06 Europe/Madrid] PHP Notice:  Undefined variable: ges in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/menu_n/submenumovil.php on line 99
+[30-Apr-2020 18:56:06 Europe/Madrid] PHP Notice:  Undefined variable: colorborder in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexprueba41.php on line 25
+[30-Apr-2020 20:58:48 Europe/Madrid] PHP Notice:  Undefined variable: dia1 in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/menu_n/cartel.php on line 4
+[30-Apr-2020 20:58:48 Europe/Madrid] PHP Notice:  Undefined variable: hora1 in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/menu_n/cartel.php on line 4
+[30-Apr-2020 20:58:48 Europe/Madrid] PHP Notice:  Undefined variable: colorborder in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexpruebadatos.php on line 32
+[30-Apr-2020 20:59:39 Europe/Madrid] PHP Warning:  include(../portada_n/cabecera2.php): failed to open stream: No such file or directory in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/intro2p.php on line 5
+[30-Apr-2020 20:59:39 Europe/Madrid] PHP Warning:  include(): Failed opening '../portada_n/cabecera2.php' for inclusion (include_path='.:/opt/alt/php73/usr/share/pear') in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/intro2p.php on line 5
+[30-Apr-2020 20:59:40 Europe/Madrid] PHP Notice:  Undefined variable: colorborder in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexprueba41.php on line 25
+[30-Apr-2020 21:04:09 Europe/Madrid] PHP Notice:  Undefined variable: colorborder in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexprueba41.php on line 25
+[30-Apr-2020 21:04:51 Europe/Madrid] PHP Notice:  Undefined variable: colorborder in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexprueba41.php on line 25
+[30-Apr-2020 21:05:15 Europe/Madrid] PHP Notice:  Undefined variable: colorborder in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexprueba41.php on line 25
+[30-Apr-2020 21:05:30 Europe/Madrid] PHP Notice:  Undefined variable: colorborder in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexprueba41.php on line 25
+[01-May-2020 11:44:20 Europe/Madrid] PHP Notice:  Undefined variable: com in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/inicio1.php on line 5
+[01-May-2020 17:44:30 Europe/Madrid] PHP Notice:  Undefined variable: colorborder in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexprueba38.php on line 86
+[06-May-2020 19:24:39 Europe/Madrid] PHP Notice:  Undefined variable: dia1 in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/menu_n/cartel.php on line 4
+[06-May-2020 19:24:39 Europe/Madrid] PHP Notice:  Undefined variable: hora1 in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/menu_n/cartel.php on line 4
+[06-May-2020 19:24:39 Europe/Madrid] PHP Notice:  Undefined variable: colorborder in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexpruebadatos.php on line 32
+[06-May-2020 19:24:53 Europe/Madrid] PHP Warning:  include(../portada_n/cabecera2.php): failed to open stream: No such file or directory in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/intro2p.php on line 5
+[06-May-2020 19:24:53 Europe/Madrid] PHP Warning:  include(): Failed opening '../portada_n/cabecera2.php' for inclusion (include_path='.:/opt/alt/php73/usr/share/pear') in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/intro2p.php on line 5
+[06-May-2020 19:24:53 Europe/Madrid] PHP Notice:  Undefined variable: rgpd in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/intro2p.php on line 18
+[06-May-2020 19:24:53 Europe/Madrid] PHP Notice:  Undefined variable: dia1 in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/menu_n/cartel.php on line 4
+[06-May-2020 19:24:53 Europe/Madrid] PHP Notice:  Undefined variable: hora1 in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/menu_n/cartel.php on line 4
+[06-May-2020 19:24:53 Europe/Madrid] PHP Notice:  Undefined variable: colorborder in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexpruebadatos.php on line 32
+[06-May-2020 19:24:58 Europe/Madrid] PHP Notice:  Undefined variable: dia1 in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/menu_n/cartel.php on line 4
+[06-May-2020 19:24:58 Europe/Madrid] PHP Notice:  Undefined variable: hora1 in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/menu_n/cartel.php on line 4
+[06-May-2020 19:24:58 Europe/Madrid] PHP Notice:  Undefined variable: colorborder in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexpruebadatos.php on line 32
+[06-May-2020 19:25:04 Europe/Madrid] PHP Notice:  Undefined variable: dia1 in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/menu_n/cartel.php on line 4
+[06-May-2020 19:25:04 Europe/Madrid] PHP Notice:  Undefined variable: hora1 in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/menu_n/cartel.php on line 4
+[06-May-2020 19:25:04 Europe/Madrid] PHP Notice:  Undefined variable: colorborder in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexpruebadatos.php on line 32
+[06-May-2020 19:25:07 Europe/Madrid] PHP Warning:  include(../portada_n/cabecera2.php): failed to open stream: No such file or directory in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/intro2p.php on line 5
+[06-May-2020 19:25:07 Europe/Madrid] PHP Warning:  include(): Failed opening '../portada_n/cabecera2.php' for inclusion (include_path='.:/opt/alt/php73/usr/share/pear') in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/intro2p.php on line 5
+[06-May-2020 19:25:07 Europe/Madrid] PHP Notice:  Undefined variable: rgpd in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/intro2p.php on line 18
+[06-May-2020 19:25:08 Europe/Madrid] PHP Notice:  Undefined variable: dia1 in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/menu_n/cartel.php on line 4
+[06-May-2020 19:25:08 Europe/Madrid] PHP Notice:  Undefined variable: hora1 in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/menu_n/cartel.php on line 4
+[06-May-2020 19:25:08 Europe/Madrid] PHP Notice:  Undefined variable: colorborder in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexpruebadatos.php on line 32
+[07-May-2020 03:45:16 UTC] PHP Notice:  Undefined index: HTTP_ACCEPT in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/index.php on line 24
+[07-May-2020 23:57:38 Europe/Madrid] PHP Notice:  Undefined variable: com in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/inicio1.php on line 5
+[10-May-2020 22:17:45 Europe/Madrid] PHP Notice:  Undefined variable: com in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/inicio1.php on line 5
+[16-May-2020 03:27:23 Europe/Madrid] PHP Notice:  Undefined variable: com in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/inicio1.php on line 5
+[17-May-2020 20:43:57 Europe/Madrid] PHP Notice:  Undefined variable: colorborder in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexprueba41.php on line 25
+[17-May-2020 20:44:36 Europe/Madrid] PHP Notice:  Undefined variable: colorborder in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexprueba41.php on line 25
+[17-May-2020 20:45:15 Europe/Madrid] PHP Notice:  Undefined variable: colorborder in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexprueba41.php on line 25
+[17-May-2020 20:45:20 Europe/Madrid] PHP Notice:  Undefined variable: colorborder in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexprueba41.php on line 25
+[17-May-2020 20:45:24 Europe/Madrid] PHP Notice:  Undefined variable: colorborder in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexprueba41.php on line 25
+[17-May-2020 20:46:26 Europe/Madrid] PHP Notice:  Undefined variable: colorborder in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexprueba41.php on line 25
+[17-May-2020 21:19:07 Europe/Madrid] PHP Notice:  Undefined variable: colorborder in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexprueba41.php on line 25
+[17-May-2020 21:19:24 Europe/Madrid] PHP Notice:  Undefined variable: colorborder in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexprueba41.php on line 25
+[17-May-2020 21:20:56 Europe/Madrid] PHP Notice:  Undefined variable: colorborder in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexprueba41.php on line 25
+[02-Jun-2020 01:56:59 Europe/Madrid] PHP Notice:  Undefined variable: com in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/inicio1.php on line 5
+[08-Jun-2020 02:19:13 Europe/Madrid] PHP Notice:  Undefined variable: com in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/inicio1.php on line 5
+[15-Jun-2020 04:33:33 Europe/Madrid] PHP Notice:  Undefined variable: user in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/inicio_n.php on line 16
+[15-Jun-2020 04:33:33 Europe/Madrid] PHP Notice:  Undefined variable: pass in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/inicio_n.php on line 23
+[15-Jun-2020 04:33:33 Europe/Madrid] PHP Notice:  Undefined variable: user in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/inicio_n.php on line 27
+[15-Jun-2020 04:33:33 Europe/Madrid] PHP Notice:  Undefined variable: user in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/inicio_n.php on line 45
+[16-Jun-2020 09:04:06 UTC] PHP Notice:  Undefined index: HTTP_ACCEPT in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/index.php on line 24
+[17-Jun-2020 15:08:49 Europe/Madrid] PHP Notice:  Undefined variable: dia1 in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/menu_n/cartel.php on line 4
+[17-Jun-2020 15:08:49 Europe/Madrid] PHP Notice:  Undefined variable: hora1 in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/menu_n/cartel.php on line 4
+[17-Jun-2020 15:08:49 Europe/Madrid] PHP Notice:  Undefined variable: colorborder in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexpruebadatos.php on line 32
+[17-Jun-2020 15:09:27 Europe/Madrid] PHP Warning:  include(../portada_n/cabecera2.php): failed to open stream: No such file or directory in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/intro2p.php on line 5
+[17-Jun-2020 15:09:27 Europe/Madrid] PHP Warning:  include(): Failed opening '../portada_n/cabecera2.php' for inclusion (include_path='.:/opt/alt/php73/usr/share/pear') in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/intro2p.php on line 5
+[17-Jun-2020 15:09:27 Europe/Madrid] PHP Notice:  Undefined variable: colorborder in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexprueba41.php on line 25
+[17-Jun-2020 15:10:10 Europe/Madrid] PHP Notice:  Undefined variable: colorborder in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexprueba41.php on line 25
+[17-Jun-2020 15:11:22 Europe/Madrid] PHP Notice:  Undefined variable: colorborder in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexprueba41.php on line 25
+[17-Jun-2020 15:11:47 Europe/Madrid] PHP Notice:  Undefined variable: colorborder in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexprueba41.php on line 25
+[17-Jun-2020 15:12:21 Europe/Madrid] PHP Notice:  Undefined variable: colorborder in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexprueba41.php on line 25
+[17-Jun-2020 15:12:42 Europe/Madrid] PHP Notice:  Undefined variable: colorborder in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexprueba41.php on line 25
+[27-Jun-2020 20:58:19 Europe/Madrid] PHP Notice:  Undefined variable: user in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/inicio_n.php on line 16
+[27-Jun-2020 20:58:19 Europe/Madrid] PHP Notice:  Undefined variable: pass in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/inicio_n.php on line 23
+[27-Jun-2020 20:58:19 Europe/Madrid] PHP Notice:  Undefined variable: user in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/inicio_n.php on line 27
+[27-Jun-2020 20:58:19 Europe/Madrid] PHP Notice:  Undefined variable: user in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/inicio_n.php on line 45
+[07-Jul-2020 11:21:20 Europe/Madrid] PHP Notice:  Undefined variable: colorborder in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexprueba41.php on line 25
+[07-Jul-2020 11:21:51 Europe/Madrid] PHP Notice:  Undefined variable: colorborder in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexprueba41.php on line 25
+[08-Jul-2020 05:15:57 Europe/Madrid] PHP Notice:  Undefined variable: user in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/inicio_n.php on line 16
+[08-Jul-2020 05:15:57 Europe/Madrid] PHP Notice:  Undefined variable: pass in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/inicio_n.php on line 23
+[08-Jul-2020 05:15:57 Europe/Madrid] PHP Notice:  Undefined variable: user in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/inicio_n.php on line 27
+[08-Jul-2020 05:15:57 Europe/Madrid] PHP Notice:  Undefined variable: user in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/inicio_n.php on line 45
+[21-Jul-2020 13:07:50 Europe/Madrid] PHP Notice:  Undefined variable: ayuda in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/menu_n/submenumovil.php on line 86
+[21-Jul-2020 13:07:50 Europe/Madrid] PHP Notice:  Undefined variable: trab in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/menu_n/submenumovil.php on line 89
+[21-Jul-2020 13:07:50 Europe/Madrid] PHP Notice:  Undefined variable: ges in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/menu_n/submenumovil.php on line 93
+[21-Jul-2020 13:07:50 Europe/Madrid] PHP Notice:  Undefined variable: ges in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/menu_n/submenumovil.php on line 99
+[21-Jul-2020 13:07:50 Europe/Madrid] PHP Notice:  Undefined variable: colorborder in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexprueba41.php on line 25
+[21-Jul-2020 13:09:26 Europe/Madrid] PHP Notice:  Undefined variable: ayuda in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/menu_n/submenumovil.php on line 86
+[21-Jul-2020 13:09:26 Europe/Madrid] PHP Notice:  Undefined variable: trab in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/menu_n/submenumovil.php on line 89
+[21-Jul-2020 13:09:26 Europe/Madrid] PHP Notice:  Undefined variable: ges in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/menu_n/submenumovil.php on line 93
+[21-Jul-2020 13:09:26 Europe/Madrid] PHP Notice:  Undefined variable: ges in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/menu_n/submenumovil.php on line 99
+[21-Jul-2020 13:09:26 Europe/Madrid] PHP Notice:  Undefined variable: colorborder in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexprueba41.php on line 25
+[21-Jul-2020 13:10:28 Europe/Madrid] PHP Notice:  Undefined variable: ayuda in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/menu_n/submenumovil.php on line 86
+[21-Jul-2020 13:10:28 Europe/Madrid] PHP Notice:  Undefined variable: trab in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/menu_n/submenumovil.php on line 89
+[21-Jul-2020 13:10:28 Europe/Madrid] PHP Notice:  Undefined variable: ges in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/menu_n/submenumovil.php on line 93
+[21-Jul-2020 13:10:28 Europe/Madrid] PHP Notice:  Undefined variable: ges in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/menu_n/submenumovil.php on line 99
+[21-Jul-2020 13:10:28 Europe/Madrid] PHP Notice:  Undefined variable: colorborder in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexprueba41.php on line 25
+[21-Jul-2020 13:10:57 Europe/Madrid] PHP Notice:  Undefined variable: ayuda in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/menu_n/submenumovil.php on line 86
+[21-Jul-2020 13:10:57 Europe/Madrid] PHP Notice:  Undefined variable: trab in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/menu_n/submenumovil.php on line 89
+[21-Jul-2020 13:10:57 Europe/Madrid] PHP Notice:  Undefined variable: ges in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/menu_n/submenumovil.php on line 93
+[21-Jul-2020 13:10:57 Europe/Madrid] PHP Notice:  Undefined variable: ges in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/menu_n/submenumovil.php on line 99
+[21-Jul-2020 13:10:57 Europe/Madrid] PHP Notice:  Undefined variable: colorborder in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexprueba41.php on line 25
+[21-Jul-2020 13:13:29 Europe/Madrid] PHP Notice:  Undefined variable: com in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/inicio1.php on line 5
+[21-Jul-2020 13:13:39 Europe/Madrid] PHP Notice:  Undefined variable: com in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/inicio1.php on line 5
+[21-Jul-2020 13:13:51 Europe/Madrid] PHP Notice:  Undefined variable: com in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/inicio1.php on line 5
+[24-Jul-2020 20:48:28 Europe/Madrid] PHP Notice:  Undefined variable: user in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/inicio_n.php on line 16
+[24-Jul-2020 20:48:28 Europe/Madrid] PHP Notice:  Undefined variable: pass in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/inicio_n.php on line 23
+[24-Jul-2020 20:48:28 Europe/Madrid] PHP Notice:  Undefined variable: user in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/inicio_n.php on line 27
+[24-Jul-2020 20:48:28 Europe/Madrid] PHP Notice:  Undefined variable: user in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/inicio_n.php on line 45
+[27-Jul-2020 18:55:46 UTC] PHP Notice:  Undefined index: HTTP_ACCEPT in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/index.php on line 24
+[28-Jul-2020 17:25:55 Europe/Madrid] PHP Notice:  Undefined variable: ayuda in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/menu_n/submenumovil.php on line 86
+[28-Jul-2020 17:25:55 Europe/Madrid] PHP Notice:  Undefined variable: trab in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/menu_n/submenumovil.php on line 89
+[28-Jul-2020 17:25:55 Europe/Madrid] PHP Notice:  Undefined variable: ges in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/menu_n/submenumovil.php on line 93
+[28-Jul-2020 17:25:55 Europe/Madrid] PHP Notice:  Undefined variable: ges in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/menu_n/submenumovil.php on line 99
+[28-Jul-2020 17:25:55 Europe/Madrid] PHP Notice:  Undefined variable: colorborder in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexprueba41.php on line 25
+[28-Jul-2020 17:27:35 Europe/Madrid] PHP Notice:  Undefined variable: ayuda in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/menu_n/submenumovil.php on line 86
+[28-Jul-2020 17:27:35 Europe/Madrid] PHP Notice:  Undefined variable: trab in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/menu_n/submenumovil.php on line 89
+[28-Jul-2020 17:27:35 Europe/Madrid] PHP Notice:  Undefined variable: ges in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/menu_n/submenumovil.php on line 93
+[28-Jul-2020 17:27:35 Europe/Madrid] PHP Notice:  Undefined variable: ges in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/menu_n/submenumovil.php on line 99
+[28-Jul-2020 17:27:35 Europe/Madrid] PHP Notice:  Undefined variable: colorborder in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexprueba41.php on line 25
+[28-Jul-2020 17:27:41 Europe/Madrid] PHP Notice:  Undefined variable: ayuda in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/menu_n/submenumovil.php on line 86
+[28-Jul-2020 17:27:41 Europe/Madrid] PHP Notice:  Undefined variable: trab in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/menu_n/submenumovil.php on line 89
+[28-Jul-2020 17:27:41 Europe/Madrid] PHP Notice:  Undefined variable: ges in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/menu_n/submenumovil.php on line 93
+[28-Jul-2020 17:27:41 Europe/Madrid] PHP Notice:  Undefined variable: ges in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/menu_n/submenumovil.php on line 99
+[28-Jul-2020 17:27:41 Europe/Madrid] PHP Notice:  Undefined variable: colorborder in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexprueba41.php on line 25
+[28-Jul-2020 17:27:46 Europe/Madrid] PHP Notice:  Undefined variable: ayuda in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/menu_n/submenumovil.php on line 86
+[28-Jul-2020 17:27:46 Europe/Madrid] PHP Notice:  Undefined variable: trab in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/menu_n/submenumovil.php on line 89
+[28-Jul-2020 17:27:46 Europe/Madrid] PHP Notice:  Undefined variable: ges in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/menu_n/submenumovil.php on line 93
+[28-Jul-2020 17:27:46 Europe/Madrid] PHP Notice:  Undefined variable: ges in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/menu_n/submenumovil.php on line 99
+[28-Jul-2020 17:27:46 Europe/Madrid] PHP Notice:  Undefined variable: colorborder in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexprueba41.php on line 25
+[29-Jul-2020 11:13:22 Europe/Madrid] PHP Notice:  Undefined variable: user in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/inicio_n.php on line 16
+[29-Jul-2020 11:13:23 Europe/Madrid] PHP Notice:  Undefined variable: pass in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/inicio_n.php on line 23
+[29-Jul-2020 11:13:23 Europe/Madrid] PHP Notice:  Undefined variable: user in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/inicio_n.php on line 27
+[29-Jul-2020 11:13:23 Europe/Madrid] PHP Notice:  Undefined variable: user in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/inicio_n.php on line 45
+[29-Jul-2020 11:32:51 Europe/Madrid] PHP Notice:  Undefined variable: colorborder in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexprueba41.php on line 25
+[29-Jul-2020 11:33:49 Europe/Madrid] PHP Notice:  Undefined variable: colorborder in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexprueba41.php on line 25
+[29-Jul-2020 11:34:32 Europe/Madrid] PHP Notice:  Undefined variable: colorborder in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexprueba38.php on line 86
+[29-Jul-2020 11:36:27 Europe/Madrid] PHP Notice:  Undefined variable: colorborder in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/indexprueba41.php on line 25

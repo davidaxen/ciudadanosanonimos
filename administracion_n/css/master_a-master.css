@@ -1,0 +1,582 @@
+#u6417
+{
+	border-color: #000000;
+	background-color: #FFFFFF;
+	position: fixed;
+}
+
+#u6454
+{
+	position: fixed;
+	/*
+	background: transparent url("../images/smcbc_logo_master.png") no-repeat center center;
+   */
+	background-size: contain;
+}
+
+#pamphletu6575
+{
+	position: fixed;
+}
+
+#u6579
+{
+	position: absolute;
+	border-style: none;
+	border-color: transparent;
+	background-color: transparent;
+}
+
+#u6593-4
+{
+	background-color: transparent;
+	text-align: center;
+	position: relative;
+}
+
+#u6579:hover #u6593-4 p,#u6579:hover #u6593-4 span
+{
+	color: #856284;
+	visibility: inherit;
+	font-family: nova-square, sans-serif;
+	font-weight: 400;
+	font-style: normal;
+}
+
+#u6635
+{
+	position: absolute;
+	border-style: none;
+	border-color: transparent;
+	background-color: transparent;
+}
+
+#u6643-4
+{
+	background-color: transparent;
+	text-align: center;
+	position: relative;
+}
+
+#u6635:hover #u6643-4 p,#u6635:hover #u6643-4 span
+{
+	color: #856284;
+	visibility: inherit;
+	font-family: nova-square, sans-serif;
+	font-weight: 400;
+	font-style: normal;
+}
+
+#u6661
+{
+	position: absolute;
+	border-style: none;
+	border-color: transparent;
+	background-color: transparent;
+}
+
+#u6663-4
+{
+	background-color: transparent;
+	text-align: center;
+	position: relative;
+}
+
+#u6661:hover #u6663-4 p,#u6661:hover #u6663-4 span
+{
+	color: #856284;
+	visibility: inherit;
+	font-family: nova-square, sans-serif;
+	font-weight: 400;
+	font-style: normal;
+}
+
+#u7282
+{
+	position: absolute;
+	border-style: none;
+	border-color: transparent;
+	background-color: transparent;
+}
+
+#u7430-4
+{
+	background-color: transparent;
+	text-align: center;
+	position: relative;
+}
+
+#u7282:hover #u7430-4 p,#u7282:hover #u7430-4 span
+{
+	color: #856284;
+	visibility: inherit;
+	font-family: nova-square, sans-serif;
+	font-weight: 400;
+	font-style: normal;
+}
+
+#u7437
+{
+	position: absolute;
+	border-style: none;
+	border-color: transparent;
+	background-color: transparent;
+}
+
+#u7440-4
+{
+	background-color: transparent;
+	text-align: center;
+	position: relative;
+}
+
+#u7437:hover #u7440-4 p,#u7437:hover #u7440-4 span
+{
+	color: #856284;
+	visibility: inherit;
+	font-family: nova-square, sans-serif;
+	font-weight: 400;
+	font-style: normal;
+}
+
+#u6579.PamphletThumbSelected #u6593-4 p,#u6579.PamphletThumbSelected #u6593-4 span,#u6635.PamphletThumbSelected #u6643-4 p,#u6635.PamphletThumbSelected #u6643-4 span,#u6661.PamphletThumbSelected #u6663-4 p,#u6661.PamphletThumbSelected #u6663-4 span,#u7282.PamphletThumbSelected #u7430-4 p,#u7282.PamphletThumbSelected #u7430-4 span,#u7437.PamphletThumbSelected #u7440-4 p,#u7437.PamphletThumbSelected #u7440-4 span
+{
+	color: #856284;
+	visibility: inherit;
+	text-align: center;
+	font-size: 15px;
+	font-family: nova-square, sans-serif;
+	font-weight: 400;
+	font-style: normal;
+}
+
+#u6593-2  span,#u6643-2  span,#u6663-2  span,#u7430-2  span,#u7440-2  span /* line-height set on spans of mixed font sized paras */
+{
+	line-height: 1.2;
+}
+
+#u6593,#u6643,#u6663,#u7430,#u7440
+{
+	font-size: 15px;
+	color: #689ED3;
+	font-family: nova-square, sans-serif;
+	font-weight: 400;
+}
+
+#u6580
+{
+	position: absolute;
+	background-color: transparent;
+}
+
+#u6581
+{
+	background: #856284 url("../images/u6581-grad.png") repeat-y left top;
+	background: -webkit-gradient(linear, left center, right center, from(#FFFFFF),color-stop(28%, #856284));
+	background: -webkit-linear-gradient(left,#FFFFFF ,#856284 28%);
+	background: linear-gradient(to right,#FFFFFF ,#856284 28%);
+	border-style: none;
+	border-color: #FC6B02;
+	position: relative;
+}
+
+#u8044-4
+{
+	background-color: transparent;
+	text-align: center;
+	line-height: 3;
+	font-weight: bold;
+	position: relative;
+}
+
+#u8044-4:hover
+{
+	background-color: #689ED3;
+}
+
+#u8044-2
+{
+	padding-bottom: 1px;
+}
+
+#u8039-4
+{
+	background-color: transparent;
+	text-align: center;
+	line-height: 3;
+	font-weight: bold;
+	position: relative;
+}
+
+#u8039-4:hover
+{
+	background-color: #689ED3;
+}
+
+#u8039-2
+{
+	padding-bottom: 1px;
+}
+
+#u8042-4
+{
+	background-color: transparent;
+	text-align: center;
+	line-height: 3;
+	font-weight: bold;
+	position: relative;
+}
+
+#u8042-4:hover
+{
+	background-color: #689ED3;
+}
+
+#u8042-2
+{
+	padding-bottom: 1px;
+}
+
+#u8043-4
+{
+	background-color: transparent;
+	text-align: center;
+	line-height: 3;
+	font-weight: bold;
+	position: relative;
+}
+
+#u8043-4:hover
+{
+	background-color: #689ED3;
+}
+
+#u8043-2
+{
+	padding-bottom: 1px;
+}
+
+#u6637
+{
+	background: #856284 url("../images/u6637-grad.png") repeat-y left top;
+	background: -webkit-gradient(linear, left center, right center, from(#FFFFFF),color-stop(34%, #856284));
+	background: -webkit-linear-gradient(left,#FFFFFF ,#856284 34%);
+	background: linear-gradient(to right,#FFFFFF ,#856284 34%);
+	border-style: none;
+	border-color: #FC6B02;
+	position: relative;
+}
+
+#u7287-4
+{
+	background-color: transparent;
+	text-align: center;
+	line-height: 3;
+	font-weight: bold;
+	position: relative;
+}
+
+#u7287-2
+{
+	padding-bottom: 1px;
+}
+
+#u7288-4
+{
+	background-color: transparent;
+	text-align: center;
+	line-height: 3;
+	font-weight: bold;
+	position: relative;
+}
+
+#u7288-2
+{
+	padding-bottom: 1px;
+}
+
+#u7289-4
+{
+	background-color: transparent;
+	text-align: center;
+	line-height: 3;
+	font-weight: bold;
+	position: relative;
+}
+
+#u7289-2
+{
+	padding-bottom: 1px;
+}
+
+#u7290-4
+{
+	background-color: transparent;
+	text-align: center;
+	line-height: 3;
+	font-weight: bold;
+	position: relative;
+}
+
+#u7290-2
+{
+	padding-bottom: 1px;
+}
+
+#u7291-4
+{
+	background-color: transparent;
+	text-align: center;
+	line-height: 3;
+	font-weight: bold;
+	position: relative;
+}
+
+#u7291-2
+{
+	padding-bottom: 1px;
+}
+
+#u6660
+{
+	background: #856284 url("../images/u6581-grad.png") repeat-y left top;
+	background: -webkit-gradient(linear, left center, right center, from(#FFFFFF),color-stop(28%, #856284));
+	background: -webkit-linear-gradient(left,#FFFFFF ,#856284 28%);
+	background: linear-gradient(to right,#FFFFFF ,#856284 28%);
+	border-style: none;
+	border-color: #FC6B02;
+	position: relative;
+}
+
+#u7753-4
+{
+	background-color: transparent;
+	text-align: center;
+	line-height: 3;
+	font-weight: bold;
+	position: relative;
+}
+
+#u7287-4:hover,#u7288-4:hover,#u7289-4:hover,#u7290-4:hover,#u7291-4:hover,#u7753-4:hover
+{
+	background-color: #689ED3;
+}
+
+#u7753-2
+{
+	padding-bottom: 1px;
+}
+
+#u7754-4
+{
+	background-color: transparent;
+	text-align: center;
+	line-height: 3;
+	font-weight: bold;
+	position: relative;
+}
+
+#u7754-2
+{
+	padding-bottom: 1px;
+}
+
+#u7755-4
+{
+	background-color: transparent;
+	text-align: center;
+	line-height: 3;
+	font-weight: bold;
+	position: relative;
+}
+
+#u7755-2
+{
+	padding-bottom: 1px;
+}
+
+#u7756-4
+{
+	background-color: transparent;
+	text-align: center;
+	line-height: 3;
+	font-weight: bold;
+	position: relative;
+}
+
+#u7756-2
+{
+	padding-bottom: 1px;
+}
+
+#u7757-4
+{
+	background-color: transparent;
+	text-align: center;
+	line-height: 3;
+	font-weight: bold;
+	position: relative;
+}
+
+#u7754-4:hover,#u7755-4:hover,#u7756-4:hover,#u7757-4:hover
+{
+	background-color: #689ED3;
+}
+
+#u7757-4.MuseLinkActive
+{
+	background-color: #DC5B05;
+}
+
+#u7757-2
+{
+	padding-bottom: 1px;
+}
+
+#u7284
+{
+	border-style: none;
+	border-color: #FC6B02;
+	background-color: transparent;
+	position: relative;
+}
+
+#u7439
+{
+	background: #856284 url("../images/u6581-grad.png") repeat-y left top;
+	background: -webkit-gradient(linear, left center, right center, from(#FFFFFF),color-stop(28%, #856284));
+	background: -webkit-linear-gradient(left,#FFFFFF ,#856284 28%);
+	background: linear-gradient(to right,#FFFFFF ,#856284 28%);
+	border-style: none;
+	border-color: #FC6B02;
+	position: relative;
+}
+
+#u7441-4
+{
+	background-color: transparent;
+	text-align: center;
+	line-height: 3;
+	font-weight: bold;
+	position: relative;
+}
+
+#u7441-4:hover
+{
+	background-color: #689ED3;
+}
+
+#u8044-4.MuseLinkActive,#u8039-4.MuseLinkActive,#u8042-4.MuseLinkActive,#u8043-4.MuseLinkActive,#u7753-4.MuseLinkActive,#u7441-4.MuseLinkActive
+{
+	background-color: transparent;
+}
+
+#u7441-2
+{
+	padding-bottom: 1px;
+}
+
+#u7442-4
+{
+	background-color: transparent;
+	text-align: center;
+	line-height: 3;
+	font-weight: bold;
+	position: relative;
+}
+
+#u7442-2
+{
+	padding-bottom: 1px;
+}
+
+#u7443-4
+{
+	background-color: transparent;
+	text-align: center;
+	line-height: 3;
+	font-weight: bold;
+	position: relative;
+}
+
+#u7443-2
+{
+	padding-bottom: 1px;
+}
+
+#u7444-4
+{
+	background-color: transparent;
+	text-align: center;
+	line-height: 3;
+	font-weight: bold;
+	position: relative;
+}
+
+#u7444-2
+{
+	padding-bottom: 1px;
+}
+
+#u8044,#u8039,#u8042,#u8043,#u7287,#u7288,#u7289,#u7290,#u7291,#u7753,#u7754,#u7755,#u7756,#u7757,#u7441,#u7442,#u7443,#u7444
+{
+	font-size: 14px;
+	letter-spacing: 1px;
+	color: #FFFFFF;
+	font-weight: 400;
+}
+
+.PamphletWidget .ThumbGroup .Thumb,.PamphletNextButton,.PamphletPrevButton,.PamphletCloseButton /* pamphlet2 */
+{
+	cursor: pointer;
+}
+
+#u8051,#u8148
+{
+	border-style: none;
+	border-color: transparent;
+	background-color: transparent;
+	position: relative;
+}
+
+#u8057
+{
+	background-color: transparent;
+	position: relative;
+}
+
+#u7442-4:hover,#u7443-4:hover,#u7444-4:hover,#u8047
+{
+	background-color: #689ED3;
+}
+
+#u6578,#u8047_align_to_page
+{
+	position: relative;
+}
+
+#u8048-8
+{
+	background-color: transparent;
+	line-height: 2.5;
+	text-align: center;
+	font-size: 18px;
+	color: #FFFFFF;
+	position: relative;
+}
+
+#u6593-2,#u6643-2,#u6663-2,#u7430-2,#u7440-2,#u8048-6
+{
+	line-height: 0px;/* 0 for mixed font sized paras; applied on spans instead */
+}
+
+#u8048-6  span,#u8048-6  a /* line-height set on spans of mixed font sized paras */
+{
+	line-height: 2.5;
+}
+
+#u8048,#u8048-2,#u8048-4
+{
+	font-size: 14px;
+}
+

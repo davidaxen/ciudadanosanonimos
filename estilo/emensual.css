@@ -1,0 +1,27 @@
+.enc 	{width:700;font-family:Verdana,Tahoma,Arial;font-weight:bold;font-size:18px;color:0000aa;text-align:center;}
+
+.subenc 	{text-transform:capitalize;font-family:Verdana,Tahoma,Arial;font-weight:bold;font-size:10px;color:000000;text-align:center;}
+
+.subenc2	{font-family:Verdana,Tahoma,Arial;font-weight:bold;font-size:13px;color:000000;text-align:right;}
+
+.subenc3	{font-family:Verdana,Tahoma,Arial;font-weight:bold;font-size:15px;color:000000;text-align:right;width:150;}
+
+
+.ser2 {font-family:Verdana,Tahoma,Arial;font-size:11px;width:150}
+
+.par {font-family:Verdana,Tahoma,Arial;font-size:11px;background-color:ccffcc;}
+.impar {font-family:Verdana,Tahoma,Arial;font-size:11px;}
+
+#v {text-align:right;width:7;}
+#cat {text-align:left;width:250;text-transform:uppercase;}
+#ref {text-align:right;width:50;}
+#fec {text-align:right;width:75;}
+#imp {text-align:right;width:100;}
+#obs {text-align:left;width:300;text-transform:uppercase;}
+
+#amor {text-align:left;text-transform:uppercase;font-size:16px}
+#impmor {text-align:right;font-size:16px}
+
+.subencmor 	{text-transform:capitalize;font-family:Verdana,Tahoma,Arial;font-weight:bold;font-size:14px;color:000000;text-align:center;}
+
+

@@ -1,0 +1,77 @@
+<head>
+<title>GESTION DE EMPRESAS</TITLE>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<script language="javascript">
+var navegador = navigator.userAgent.toLowerCase();
+
+function CojerValorCookie(indice) {
+	//indice indica el comienzo del valor
+	var galleta = document.cookie
+	//busca el final del valor, dado por ;, a partir de indice
+	var finDeCadena = galleta.indexOf(";", indice)
+	//si no existe el ;, el final del valor lo marca la longitud total de la cookie
+	if (finDeCadena == -1)
+	finDeCadena = galleta.length
+
+	return unescape(galleta.substring(indice, finDeCadena))
+	}
+
+function CojerCookie(nombre) {
+	var galleta = document.cookie
+	//construye la cadena con el nombre del valor
+	var arg = nombre + "="
+	var alen = arg.length			//longitud del nombre del valor
+	var glen = galleta.length		//longitud de la cookie
+
+	var i = 0
+	while (i < glen) {
+	var j = i + alen					//posiciona j al final del nombre del valor
+	if (galleta.substring(i, j) == arg)	//si en la cookie estamo ya en nombre del valor		
+	return CojerValorCookie(j)		//devuleve el valor, que esta a partir de j
+
+	i = galleta.indexOf(" ", i) + 1		//pasa al siguiente
+	if (i == 0)
+	break							//fin de la cookie
+	}
+	return null								//no se encuentra el nombre del valor
+}
+
+function GuardarCookie (nombre, valor) {
+	//crea la cookie: incluye el nombre y la ruta donde esta guardada
+	//cada valor esta separado por ; y un espacio
+	document.cookie = nombre + "=" + escape(valor) + "; path=/"
+}
+
+//inicia secuencia de test
+//guarda la cookie
+GuardarCookie("miGalleta", "Prueba")
+//espera 1 segundo (algunos navegadores requieren un tiempo para guardar la cookie)
+setTimeout("test()",1000)
+//lee la cookie y muestra un mensaje u otro en funcion de que la lectura tenga exito o no
+
+function test() {
+	if ( CojerCookie("miGalleta") == "Prueba" ) {
+		//alert('Las cookies están habilitadas.')
+		
+//alert(navegador.appName);
+
+//if( navegador.search(/iphone|ipod|android/) > -1 ){
+     window.location='index.php'
+//}else{
+//    window.location='indexm.php'
+//	}
+	} else {
+		alert('Lo sentimos, las cookies NO están habilitadas.')
+window.location='inicio.html'
+
+	}
+}
+
+</script>
+</head>
+<body>
+<p>
+Comprobación de Datos, un momento por favor.
+</p>
+
+</body>

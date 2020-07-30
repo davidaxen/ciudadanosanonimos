@@ -1,0 +1,162 @@
+@import url(https://fonts.googleapis.com/css?family=Montserrat:400,700);
+/* ----[ LINKS ]----*/
+
+/* all menu links */
+#nav a, #subMenusContainer a{
+	text-decoration:none;
+	display:block;
+	padding:8px 5px;
+	background-color:#000 ;
+	-moz-border-radius: 7px;
+	-webkit-border-radius: 7px;
+			font-family:'Montserrat',Verdana,Tahoma,Arial;
+font-size:16px;
+color:#557da6;
+}
+
+/* Just main menu links --[for non-javascript users this applies to submenu links as well]*/
+#nav a{
+	margin:0;
+	float:left;	
+}
+
+/* Just sub menu links */
+#subMenusContainer a, #nav li li a{
+	text-align:left;
+	/*color:#FFF;*/
+}
+
+/* All menu links on hover or focus */
+#nav a:hover, #nav a:focus, #subMenusContainer a:hover, #subMenusContainer a:focus, #nav a.mainMenuParentBtnFocused, #subMenusContainer a.subMenuParentBtnFocused{
+	background-color:#bbc5ec ;
+	/*F6C739*/
+	color:#FFF;
+}
+
+/* sub menu links on hover or focus */
+#subMenusContainer a:hover, 
+#subMenusContainer a:focus, 
+#nav a.mainMenuParentBtnFocused, 
+#subMenusContainer a.subMenuParentBtnFocused,
+#nav li a:hover,
+#nav li a:focus{
+	background-color:#bbc5ec ;
+	color:#FFF;
+}
+
+/* Parent Sub Menu Links ---[javascript users only]*/
+.subMenuParentBtn{ 
+	background: url(../img/arrow_right.gif) right center no-repeat;  
+}
+
+/* Parent Sub Menu Links on hover or focus ---[javascript users only]*/
+.subMenuParentBtnFocused{ 
+	background: url(../img/arrow_right_over.gif) right center no-repeat;  
+}
+
+/* Parent Main Menu Links ---[javascript users only]*/
+.mainMenuParentBtn{	
+	 background: url(../img/arrow_down.gif) right center no-repeat; 
+}
+
+/* Parent Main Menu Links on hover or focus ---[javascript users only]*/
+.mainMenuParentBtnFocused{	
+	background: url(../img/arrow_down_over.gif) right center no-repeat; 
+}
+
+/* ----[ OLs ULs, LIs, and DIVs ]----*/
+
+/* Submenu Outer Wrapper - each submenu is inside a div with this class - javascript users only */
+.smOW{ 
+	display:none; 
+	position: absolute; 
+	overflow:hidden; 
+	/*the 2px left & right padding lets you have a 1px border 
+	  on the ul or ol inside since overflow is set to hidden*/
+	padding:0 2px;
+	margin:0 0 0 -2px;
+}
+
+
+/* All ULs and OLs */
+#nav, #nav ul, #nav ol, #subMenusContainer ul, #subMenusContainer ol { 
+	padding: 0;
+	margin: 0;
+	list-style: none;
+	line-height: 1em;
+}
+
+/* All submenu OLs and ULs */
+#nav ol, #nav ul, #subMenusContainer ul, #subMenusContainer ol {	
+	/*border around submenu goes here*/	 
+	-moz-border-radius: 8px;
+	-webkit-border-radius: 8px;
+	background:#fff;	
+	border:1px solid #C3D46A;
+	left:0;
+}
+
+
+/* List items in main menu --[for non-javascript users this applies to submenus as well]  */
+#nav li { 
+	/*great place to use a background image as a divider*/
+	display:block;
+	list-style:none;
+	position:relative;
+	float:left;
+
+}
+
+#subMenusContainer li{
+	list-style: none;
+}
+
+/* main menu ul or ol elment */
+#nav{
+	display:block;
+	position: absolute;
+	list-style:none;
+	margin:0 0 0 0;
+	z-index:5;
+	top:10px;
+	//left:270;
+	text-align: center;
+	display:block;
+	  //border:solid #E69623;
+	//border-width:3px 0 3px 0;
+
+}
+
+#subMenusContainer{	display:block; 	position:absolute;	top:0;	left:0;	width:100%;	height:0;	overflow:visible;	z-index:1000000000; }
+
+
+/* --------------------------[ The below is just for non-javscript users ]--------------------------*/
+#nav li li{	float:none; }
+
+#nav li li a{ /* Just submenu links*/	
+	position:relative;
+	float:none;
+}
+
+#nav li ul { /* second-level lists */
+	position: absolute;
+	width: 12em;
+	margin-left: -1000em; /* using left instead of display to hide menus because display: none isn't read by screen readers */
+	margin-top:2.2em;
+}
+
+/* third-and-above-level lists */
+#nav li ul ul { margin: -1em 0 0 -1000em;width: 15em; }
+#nav li:hover ul ul {	margin-left: -1000em; }
+
+ /* lists nested under hovered list items */
+#nav li:hover ul{	margin-left: 0; }
+#nav li li:hover ul {	margin-left: 12em; margin-top:-2.0em;}
+
+/* extra positioning rules for limited noscript keyboard accessibility */
+#nav li a:focus + ul {  margin-left: 0; margin-top:2.2em; }
+#nav li li a:focus + ul { left:0; margin-left: 1010em; margin-top:-2.2em;}
+#nav li li a:focus {left:0;  margin-left:1000em; margin-top:0;}
+#nav li li li a:focus {left:0; margin-left: 2010em;  margin-top:-1em;}
+#nav li:hover a:focus{ margin-left: 0; }
+#nav li li:hover a:focus + ul { margin-left: 20em; }

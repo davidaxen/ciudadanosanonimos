@@ -1,0 +1,246 @@
+
+html{
+	top:0;
+	height: 100%;
+	text-align:center;
+	margin:0 auto;
+	padding:0;
+	/*
+	background: url(../img/fondowebn.jpg) no-repeat center center #fff;
+	overflow:noscroll;
+	*/
+}
+
+body {
+	top:0;
+	height: 100%;
+	width:100%;
+	margin: 0 auto;
+	padding:0;
+	text-align:left; 
+	font-family: Arial, Helvetica, sans-serif;
+	//font-size:14px;
+	line-height:1.5em;
+	background: #066;
+}
+
+a:link{ color: #CF7F18; }
+
+a:visited{ color: #AD660C; }
+
+a:hover, a:focus{ color: #FF9814;	text-decoration:none; }
+
+p{	margin:1em 0; }
+
+h1 + p, h2 + p, h3 + p, h4 + p, h5 + p, h6 + p{	margin-top:-0.05em;}
+
+h1, h2, h3, h4, h5, h6{ color: #9CA716; margin-bottom:0.5em; }
+
+h1{ font-size:24px;}
+
+h2{	font-size:20px;}
+
+h3{	font-size:18px;}
+
+h4{	font-size:16px;}
+
+h5{	font-size:14px;}
+
+h6{	font-size:12px;}
+
+ol, ul{	margin: 1em 0 1em 2em; }
+
+ol ol, ol ul, ul ol, ul ul{ margin-top:0; margin-bottom:0; }
+
+ol li{	list-style:decimal }
+ol li ol li{ list-style:upper-alpha; }
+ol li ol li ol li{ list-style:upper-roman; }
+
+/*ul li{ list-style:disc;}*/
+
+em{font-style:italic;}
+
+strong{font-weight:bold;}
+
+em strong, strong em{ font-weight:bold; font-style:italic; }
+
+
+#container1 {	
+	padding:0;
+	width:300px;
+	height:360px;
+	background:#fff;
+	margin:0px 0 0 0;
+	z-index:10;
+	border:solid #E69623;
+	border-width:1px 1px 1px 1px;
+	position: fixed;
+	left:60px;	
+	top:120px;
+};
+#container2 {
+	padding:0;
+	width:300px;
+	height:360px;
+	background:#fff;
+	margin:0px 0 0 0;
+	z-index:10;
+	border:solid #E69623;
+	border-width:1px 1px 1px 1px;
+	position: fixed;
+	left:360px;
+	top:120px;
+};
+#container3 {
+		padding:0;
+	width:300px;
+	height:360px;
+	background:#fff;
+	margin:0px 0 0 0;
+	z-index:10;
+	border:solid #E69623;
+	border-width:1px 1px 1px 1px;
+	left:660px;
+	top:120px;
+};
+
+
+#content{
+	position:fixed;
+	display:inline;
+	width: 10px;
+	left:560px;
+	top:62px;
+	margin:0 0 0 0px;
+	padding:15px 0;
+	border:solid #E69623;
+	border-width:1px 1px 1px 1px;
+
+}
+
+//colocación del logotipo - submenu - pie
+#logo{
+	display:block;
+	position: absolute;
+	width:200px;
+	height:60px;
+	//background: url('../img/<?php  echo $img;?>') no-repeat 0 0;
+	left:5px;
+	margin:0 0 0 0px;
+	top:5px;
+	overflow:hidden;
+	text-indent:999em;
+	line-height:999em;
+	//border:solid #E69623;
+	//border-width:1px 0 1px 0;
+}
+
+#logo2{
+	position:absolute;
+	display:block;
+	width: 245px;
+	left:5px;
+	margin:0 0 0 0px;
+	padding:15px 0;
+	top:0px;
+	//border:solid #E69623;
+	//border-width:1px 0 1px 0;
+}
+
+#submenu00 {
+	position:absolute;
+	display:block;
+	width: 245px;
+	left:0px;
+	height: 37px;
+	margin:0 0 0 0px;
+	//padding:15px 0;
+	top:75px;
+	z-index:100;
+	border:solid #E69623;
+	border-width:1px 0 1px 0;
+}
+
+
+
+
+#footer {
+	position:absolute;
+	//bottom: 0;
+	margin:0;
+	width:100%;
+	text-align:right;
+	left:0;
+}
+//fin colocación del logotipo - submenu - pie
+
+
+
+
+#estad{
+	position:absolute;
+	display:block;
+	width: 200px;
+	left:5px;
+	margin:0 0 0 0px;
+	padding:15px 0;
+	top:100px;
+}
+
+
+
+
+
+#submenu01{
+	position:absolute;
+	display:block;
+	width: 245px;
+	height:170px;
+	left:5px;
+	margin:0 0 0 0px;
+	//padding:5px 0;
+	top:130px;
+	//border:solid #E69623;
+	//border-width:1px 0 1px 0;
+}
+
+#submenu02{
+	position:absolute;
+	display:block;
+	width: 245px;
+	height:170px;
+	left:5px;
+	margin:0 0 0 0px;
+	//padding:5px 0;
+	top:300px;
+  //border:solid #E69623;
+	//border-width:1px 0 1px 0;
+}
+
+#submenu03{
+	position:absolute;
+	padding:0;
+	display:block;
+	width: 245px;
+	height:170px;
+	left:5px;
+	margin:0 0 0 0px;
+	padding:5px 0;
+	top:455px;
+	//border:solid #E69623;
+	//border-width:1px 0 1px 0;
+}
+
+#submenu04{
+	position:absolute;
+  padding:0;
+	display:block;
+	width: 245px;
+	height:170px;
+	left:5px;
+	margin:0 0 0 0px;
+	padding:5px 0;
+	top:640px;
+	//border:solid #E69623;
+	//border-width:1px 0 1px 0;
+}

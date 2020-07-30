@@ -1,0 +1,21 @@
+.enc 	{width:700;font-family:Verdana,Tahoma,Arial;font-weight:bold;font-size:18px;color:0000aa;text-align:center;}
+
+.subenc 	{text-transform:capitalize;font-family:Verdana,Tahoma,Arial;font-weight:bold;font-size:10px;color:000000;text-align:center;}
+
+.subenc2	{font-family:Verdana,Tahoma,Arial;font-weight:bold;font-size:10px;color:000000;text-align:right;}
+
+.ser {font-family:Verdana,Tahoma,Arial;font-size:11px;width:120}
+.ser2 {font-family:Verdana,Tahoma,Arial;font-size:11px;width:200}
+
+.par {font-family:Verdana,Tahoma,Arial;font-size:10px;background-color:ccffcc;}
+.impar {font-family:Verdana,Tahoma,Arial;font-size:10px;}
+
+#cat {text-align:left;width:150;text-transform:uppercase;}
+#mes {text-align:right;width:60;}
+#tot {text-align:right;width:80;font-weight:bold}
+#pre {text-align:right;width:80;}
+
+
+.mayor {font-family:Verdana,Tahoma,Arial;font-size=11px;background-color:00aa00;text-align:right}
+
+.menor {font-family:Verdana,Tahoma,Arial;font-size:11px;background-color=aa0000;text-align:right}

@@ -1,0 +1,13 @@
+[03-Apr-2020 09:13:52 UTC] PHP Warning:  include(../js/busqueda.php): failed to open stream: No such file or directory in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/empleados_n/lempleados2.php on line 75
+[03-Apr-2020 09:13:52 UTC] PHP Warning:  include(): Failed opening '../js/busqueda.php' for inclusion (include_path='.:/opt/alt/php73/usr/share/pear') in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/empleados_n/lempleados2.php on line 75
+[03-Apr-2020 09:14:32 UTC] PHP Warning:  include(../js/acordeonjs.php): failed to open stream: No such file or directory in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/empleados_n/iempleados.php on line 330
+[03-Apr-2020 09:14:32 UTC] PHP Warning:  include(): Failed opening '../js/acordeonjs.php' for inclusion (include_path='.:/opt/alt/php73/usr/share/pear') in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/empleados_n/iempleados.php on line 330
+[03-Apr-2020 17:48:28 UTC] PHP Notice:  Undefined index: pais in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/empleados_n/lempleados2.php on line 129
+[03-Apr-2020 17:48:28 UTC] PHP Notice:  Undefined variable: email in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/empleados_n/lempleados2.php on line 135
+[03-Apr-2020 17:48:28 UTC] PHP Notice:  Undefined index: pais in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/empleados_n/lempleados2.php on line 129
+[03-Apr-2020 17:48:28 UTC] PHP Notice:  Undefined variable: email in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/empleados_n/lempleados2.php on line 135
+[03-Apr-2020 17:48:28 UTC] PHP Notice:  Undefined index: pais in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/empleados_n/lempleados2.php on line 129
+[03-Apr-2020 17:48:28 UTC] PHP Notice:  Undefined variable: email in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/empleados_n/lempleados2.php on line 135
+[03-Apr-2020 17:49:15 UTC] PHP Notice:  Undefined index: pais in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/empleados_n/lempleados2.php on line 129
+[03-Apr-2020 17:49:15 UTC] PHP Notice:  Undefined index: pais in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/empleados_n/lempleados2.php on line 129
+[03-Apr-2020 17:49:15 UTC] PHP Notice:  Undefined index: pais in /home/sguinaldo/public_html/ciudadanosanonimos.com/control/empleados_n/lempleados2.php on line 129

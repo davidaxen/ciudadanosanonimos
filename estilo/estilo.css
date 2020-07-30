@@ -1,0 +1,248 @@
+.enc 	{width:500;font-family:Verdana,Tahoma,Arial;font-weight:bold;font-size:18px;color:0000aa;text-align:center;}
+
+.enc2 	{width:500;font-family:Verdana,Tahoma,Arial;font-weight:bold;font-size:14px;color:0000aa;}
+
+.subenc 	{text-transform:capitalize;font-family:Verdana,Tahoma,Arial;font-weight:bold;font-size:10px;color:000000;text-align:center;}
+.2par {font-size:10px;background-color:#ccffcc;text-transform:capitalize;font-weight:bold;color:000000;text-align:center;}
+
+.subenc4 	{text-transform:capitalize;font-family:Verdana,Tahoma,Arial;font-weight:bold;font-size:10px;color:000000;text-align:right;}
+.subenc5 	{text-transform:capitalize;font-family:Verdana,Tahoma,Arial;font-weight:bold;font-size:10px;color:000000;text-align:left;}
+
+.subenc6 	{text-transform:capitalize;font-family:Verdana,Tahoma,Arial;font-weight:bold;font-size:12px;color:000000;text-align:center;}
+.subenc7 	{text-transform:capitalize;font-family:Verdana,Tahoma,Arial;font-size:10px;color:000000;text-align:left;}
+
+.subenc2	{font-family:Verdana,Tahoma,Arial;font-weight:bold;font-size:13px;color:000000;text-align:right;}
+
+.subenc22	{font-family:Verdana,Tahoma,Arial;font-weight:bold;font-size:13px;color:000000;text-align:center;}
+
+.subenc3	{font-family:Verdana,Tahoma,Arial;font-weight:bold;font-size:12px;color:000000;text-align:left;}
+
+
+.ser {font-family:Verdana,Tahoma,Arial;font-size:11px;width:100}
+.ser2 {font-family:Verdana,Tahoma,Arial;font-size:11px;width:150}
+
+.mpar {font-family:Verdana,Tahoma,Arial;font-size:11px;background-color:FE2B2B;text-align:left;width:65;}
+
+.mimpar {font-family:Verdana,Tahoma,Arial;font-size:11px;text-align:right;width:65;}
+
+.fpar {font-family:Verdana,Tahoma,Arial;font-size:11px;background-color:ccffcc;text-align:left;width:72;}
+
+.fimpar {font-family:Verdana,Tahoma,Arial;font-size:11px;text-align:left;width:72;}
+
+.mayor {font-family:Verdana,Tahoma,Arial;font-size:11px;background-color:00aa00;text-align:right}
+
+.menor {font-family:Verdana,Tahoma,Arial;font-size:11px;background-color:aa0000;text-align:right}
+.menor1 {font-family:Verdana,Tahoma,Arial;font-size:11px;background-color:white;text-align:left}
+.menor1v {font-family:Verdana,Tahoma,Arial;font-size:11px;background-color:white;color:aa0000;text-align:left}
+.menor1c {font-family:Verdana,Tahoma,Arial;font-size:11px;background-color:white;color:00aa00;text-align:left}
+
+.menor2 {font-weight:bold;font-family:Verdana,Tahoma,Arial;font-size:11px;background-color:white;text-align:left}
+
+.menor3 {font-weight:bold;font-family:Verdana,Tahoma,Arial;font-size:10px;background-color:white;text-align:right}
+
+.menor4 {font-style:italic;font-family:Verdana,Tahoma,Arial;font-size:11px;background-color:white;text-align:left}
+
+.menor5 {text-decoration:underline;font-family:Verdana,Tahoma,Arial;font-size:11px;background-color:white;text-align:left}
+
+
+
+.cpar {font-family:Verdana,Tahoma,Arial;font-size:11px;background-color:ccccff;text-align:left;width:100;}
+
+.cimpar {font-family:Verdana,Tahoma,Arial;font-size:11px;text-align:left;width:100;}
+
+
+.par {font-family:Verdana,Tahoma,Arial;font-size:11px;background-color:ccffcc;text-align:right;width:65;}
+
+.impar {font-family:Verdana,Tahoma,Arial;font-size:11px;text-align:right;width:65;}
+
+
+.opar {font-family:Verdana,Tahoma,Arial;font-size:9px;background-color:ccffcc;width:450;text-transform:uppercase}
+
+.oimpar {font-family:Verdana,Tahoma,Arial;font-size:9px;width:450;text-transform:uppercase}
+
+
+.c2par {font-family:Verdana,Tahoma,Arial;font-size:11px;background-color:ccffcc;text-align:left;width:250;}
+
+.c2impar {font-family:Verdana,Tahoma,Arial;font-size:11px;text-align:left;width:250;}
+
+.1par {font-family:Verdana,Tahoma,Arial;font-size:12px;background-color:ccffcc;text-align:right;width:200;}
+
+.vpar {font-family:Verdana,Tahoma,Arial;font-size:11px;background-color:ccffcc;text-align:left;width:5;}
+
+.vimpar {font-family:Verdana,Tahoma,Arial;font-size:11px;text-align:left;width:5;}
+
+
+
+.rpar {font-family:Verdana,Tahoma,Arial;font-size:11px;background-color:ccffcc;text-algn:left;width:150;}
+
+.rimpar {font-family:Verdana,Tahoma,Arial;font-size:11px;text-align:left;width:150;}
+
+.rportada {font-weight:bold;font-family:Verdana,Tahoma,Arial;font-size:11px;background-color:ff0000;text-align:left;width:150;}
+
+#menupor {top:50;left:10;position:absolute;width:600}
+.menuspor {top:50;left:200;position:absolute;width:600}
+
+#menu {top:200;left:10;position:absolute;width:600}
+
+#menu20 {top:100;left:400;position:absolute;width:600}
+#menu00 {top:0;right:10;position:absolute;width:225}
+#menu01 {top:0;left:0;position:absolute;}
+
+#menu11 {top:100;left:40;position:absolute;width:300}
+#menu12 {top:220;left:40;position:absolute;width:300}
+#menu13 {top:370;left:40;position:absolute;width:300}
+#menu14 {top:500;left:40;position:absolute;width:300}
+#menu15 {top:600;left:40;position:absolute;width:300}
+
+#menu21 {top:100;left:40;position:absolute;width:300}
+#menu22 {top:220;left:40;position:absolute;width:300}
+#menu23 {top:370;left:40;position:absolute;width:300}
+#menu24 {top:500;left:40;position:absolute;width:300}
+#menu25 {top:600;left:40;position:absolute;width:300}
+
+#menu31 {top:100;left:40;position:absolute;width:300}
+#menu32 {top:200;left:40;position:absolute;width:300}
+#menu33 {top:300;left:40;position:absolute;width:300}
+#menu34 {top:500;left:40;position:absolute;width:300}
+#menu35 {top:600;left:40;position:absolute;width:300}
+
+#menu41 {top:100;left:40;position:absolute;width:300}
+#menu42 {top:200;left:40;position:absolute;width:300}
+#menu43 {top:300;left:40;position:absolute;width:300}
+#menu44 {top:500;left:40;position:absolute;width:300}
+#menu45 {top:600;left:40;position:absolute;width:300}
+
+#menu51 {top:100;left:40;position:absolute;width:300}
+#menu52 {top:200;left:40;position:absolute;width:300}
+#menu53 {top:300;left:40;position:absolute;width:300}
+#menu54 {top:500;left:40;position:absolute;width:300}
+#menu55 {top:600;left:40;position:absolute;width:300}
+
+#menu61 {top:100;left:40;position:absolute;width:350}
+#menu62 {top:220;left:40;position:absolute;width:350}
+#menu63 {top:370;left:40;position:absolute;width:350}
+#menu64 {top:440;left:40;position:absolute;width:350}
+#menu65 {top:500;left:40;position:absolute;width:350}
+
+
+
+a {font-family:Tahoma,Verdana,Arial;text-transform:uppercase;color:0000aa;font-size:9px}
+a:hover {color:red}
+
+.notas {width:350;font-family:Tahoma,Verdana,Arial;font-weight:normal;font-size:12px}
+#enl {text-decoration:none}
+
+
+
+input {font-family:verdana;font-weight:bold}
+select {font.family:verdana;font-weight:bold}
+
+form {color:white;font-family:verdana}
+span {font-family:Verdana,Arial;font-weight:bold;font-size:12px}
+td {color:#000;font-family:verdana};
+
+h3 {text-decoration:underline}
+#banner {top:350;left:100;position:absolute}
+#logo	{top:10;left:18;position:absolute}
+#dire	{text-transform:uppercase;top:100;left:150;position:absolute;font-family:Verdana,Arial;font-weight:bold;font-size:10}
+#emp	{top:0;left:0;position:absolute}
+#submenu {top:0;left:420;position:absolute}
+
+
+
+#ley {top:170;left:630;position:absolute;width:350;text-align:justify;visibility:hidden}
+.ver {top:170;left:270;position:absolute;width:350;text-align:justify;}
+
+.menup2 {width:380;top:45;left:250;position:absolute;font-family:Verdana,Arial;font-weight:bold;font-size:18px}
+.menup3 {width:380;top:105;left:250;position:absolute;font-family:Verdana,Arial;font-weight:bold;font-size:18px}
+.menup4 {width:380;top:170;left:250;position:absolute;font-family:Verdana,Arial;font-weight:bold;font-size:18px}
+
+
+.obra {font-family:Verdana,Arial;font-size:20px;font-weight:bold}
+#ver1 {visibility:visible}
+#ver2 {visibility:hidden}
+#ver3 {visibility:hidden}
+#ver4 {visibility:hidden}
+#ver5 {visibility:hidden}
+#ver6 {visibility:hidden}
+#ver7 {visibility:hidden}
+#ver8 {visibility:hidden}
+#ver9 {visibility:hidden}
+#ver10 {visibility:hidden}
+
+
+
+.tit	{font-family:Verdana,Arial;font-weight:bold;font-size:20px;text-decoration:underline}
+.subtit	{font-family:Verdana,Arial;font-weight:bold;font-size:16px}
+.ssubtit{font-family:Verdana,Arial;font-weight:bold;font-size:14px}
+.list	{font-family:Verdana,Arial;font-size:12px;text-decoration:underline}
+
+.envio {text-transform:capitalize;background-color:2d80d9;font-family:Verdana,Tahoma,Arial;font-size:11px;border-style:ridge;color:white}
+
+.menup {
+	height:25px;
+	width:150px;
+	font-family: Arial, Helvetica, Century Gothic, sans-serif;
+  border-top-right-radius:15px;
+  border-top-left-radius:15px;
+/* 
+  -moz-border-radius-topright:15px;
+  -moz-border-radius-topleft:15px;
+  -ms-border-radius-topleft:15px; 
+  -ms-border-radius-topright:15px; 
+*/  
+  font-size:14px;
+  font-weight:bold;
+  margin:0px;
+  text-align:center;
+  }
+#menu1 {	background-color:#DEE9F7;color:#016EA3;}
+#menu2 {	background-color:#016EA3;color:#DEE9F7;}
+#menu3 {	background-color:#016EA3;color:#DEE9F7;}
+#menu4 {	background-color:#016EA3;color:#DEE9F7;}
+#menu5 {	background-color:#016EA3;color:#DEE9F7;}
+#menusel {	background-color:#F32525;color:#DEE9F7;}
+
+.pos5{
+	position:absolute;
+	top:110px;
+	left:11px;
+}
+.pos6{
+	position:absolute;
+	top:190px;
+	left:11px;
+}
+.pos7, .pos71, .pos72 {
+	background-repeat: no-repeat;
+	background-position: center top;
+	background-color:#DEE9F7;
+	margin:0px;
+	position:absolute;
+	padding:10px 10px;
+	border:0px;
+	height:350px;
+	width:1050px;
+	display:block;
+	clear:both;
+	font-family: Arial, Helvetica, Century Gothic, sans-serif;
+  border-top-right-radius:15px;
+  border-bottom-right-radius:15px;
+  border-bottom-left-radius:15px;
+  -moz-border-radius-topright:15px;
+  -moz-border-radius-bottomright:15px;
+  -moz-border-radius-bottomleft:15px;
+  -ms-border-radius-topright:15px; 
+}
+.pos7 {
+	top:220px;
+	left:14px;
+	}
+.pos71 {
+	top:140px;
+	left:14px;
+	}
+.pos72 {
+	top:140px;
+	left:14px;
+	}
