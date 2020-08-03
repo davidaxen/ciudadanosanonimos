@@ -10,27 +10,41 @@ $username="root";
 $password="";
 $dbname ="bbddciudadanos";
 
-$conn = new mysqli($server, $username, $password, $dbname);
+try{
+
+	$conn = new PDO("mysql:host=$server;dbname=$dbname", $username, $password);
+	$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+}catch(PDOException $e){
+	echo "Error al conectar a la BBDD: " . $e->getMessage();
+}
+
+
+/*$conn = new mysqli($server, $username, $password, $dbname);
 
 if ($conn-> connect_error){
     die("Connection failed:  " . $conn->connect_error);
-}
+}*/
 $sql="select * from usuarios";
-$result=mysqli_query ($sql) or die ("Invalid result idempresas");
+$temp=$conn->query($sql);
+$temp2=$conn->query($sql);
+$result=$temp->fetchAll();
+$rows=count($result);
+//$result=mysqli_query ($sql) or die ("Invalid result idempresas");
 
 
 //$sql = "SELECT * FROM usuarios";
 //$result = $conn->query($sql);
 
-if($result->num_rows > 0) {
-    while($row = $result->fetch_assoc()) {
+if($rows > 0) {
+    while($row = $temp2->fetch()) {
         echo $row["user"] . $row["pass"] . "<br>";
     }
 }else {
     echo "More posts coming soon!";
 }
 
-$conn->close();
+$conn=null;
 ?>
 <?
 /*

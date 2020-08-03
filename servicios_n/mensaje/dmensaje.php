@@ -98,11 +98,11 @@ $row10=mysqli_num_rows($result10);
 </td>
 </tr>
 
-<?php };?>
+<?php }; ?>
 
 </table>
 
-<?php };?>
+<?php }; ?>
 
 
 
@@ -117,4 +117,4 @@ $row10=mysqli_num_rows($result10);
 
 <?php } else {;
 include ('../../cierre.php');
- };?>
+ }; ?>
