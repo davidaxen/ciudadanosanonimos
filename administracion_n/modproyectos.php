@@ -25,9 +25,12 @@ a hover: {text-decoration:none}
 <input type="hidden" name="idproyectos" value="<?php  echo $idproyectos;?>">
 
 <?php 
-$sql="SELECT * from proyectos where idproyectos='".$idproyectos."'"; 
-$result=mysqli_query ($conn,$sql) or die ("Invalid result");
-$resultado=mysqli_fetch_array($result);
+$sql="SELECT * from proyectos where idproyectos='".$idproyectos."'";
+$result=$conn->query($sql);
+$resultado=$result->fetch();
+
+/*$result=mysqli_query ($conn,$sql) or die ("Invalid result");
+$resultado=mysqli_fetch_array($result);*/
 $nombre=$resultado['nombre'];
 $web=$resultado['web'];
 $diasprueba=$resultado['diasprueba'];
@@ -80,13 +83,11 @@ $pagweb=$resultado['pagina'];
 </td></tr>
 
 <?php 
-$sqle="SELECT * from empresas where estado='1'"; 
-$resulte=mysqli_query ($conn,$sqle) or die ("Invalid result");
-$rowe=mysqli_num_rows($resulte);
+$sqle="SELECT * from empresas where estado='1'";
+$resulte=$conn->query($sqle);
+/*$resulte=mysqli_query ($conn,$sqle) or die ("Invalid result");
+$rowe=mysqli_num_rows($resulte);*/
 ?>
-
-
-
 <tr><td>
 <table>
 <tr><td>Empresa Gestora del Proyecto</td><td>
@@ -96,11 +97,12 @@ $rowe=mysqli_num_rows($resulte);
 <?php };?>
 
 <?php
-for($t=0;$t<$rowe;$t++){;
+/*for($t=0;$t<$rowe;$t++){;
 mysqli_data_seek($resulte,$t);
-$resultadoe=mysqli_fetch_array($resulte);
-$idemp=$resultadoe['idempresas'];
-$nombreemp=$resultadoe['nombre'];
+$resultadoe=mysqli_fetch_array($resulte);*/
+foreach ($resulte as $rowemos) {
+$idemp=$rowemos['idempresas'];
+$nombreemp=$rowemos['nombre'];
 ?>
 <option value="<?php echo $idemp;?>" <?php if ($idemp==$gestorp){;?>selected<?php };?> ><?php echo strtoupper($nombreemp);?></option>
 <?php
@@ -154,9 +156,12 @@ $dat=array('clientes','gestores','empleados','empresas','empresa','usuario','vis
 
 
 <?php 
-$sql1="SELECT * from proyectosadministrar where idproyectos='".$idproyectos."'"; 
-$result1=mysqli_query ($conn,$sql1) or die ("Invalid result");
-$resultado1=mysqli_fetch_array($result1);
+$sql1="SELECT * from proyectosadministrar where idproyectos='".$idproyectos."'";
+$result1=$conn->query($sql1);
+$resultado1=$result1->fetch();
+
+/*$result1=mysqli_query ($conn,$sql1) or die ("Invalid result");
+$resultado1=mysqli_fetch_array($result1);*/
 
 
 for ($t=0;$t<count($encab);$t++){;?>
@@ -197,9 +202,12 @@ $datosaa=$resultado1[$dat[$t]];
 <div class="panel" style="column-count:2">
 
 <?php 
-$sql1="SELECT * from proyectosnombreadm where idproyectos='".$idproyectos."'"; 
-$result1=mysqli_query ($conn,$sql1) or die ("Invalid result");
-$resultado1=mysqli_fetch_array($result1);
+$sql1="SELECT * from proyectosnombreadm where idproyectos='".$idproyectos."'";
+$result1=$conn->query($sql1);
+$resultado1=$result1->fetch();
+
+/*$result1=mysqli_query ($conn,$sql1) or die ("Invalid result");
+$resultado1=mysqli_fetch_array($result1);*/
  
 for ($t=0;$t<count($encab);$t++){;
 $tituloaa=$resultado1[$dat[$t]];
@@ -306,9 +314,12 @@ default:
 <div class="panel" style="column-count:2">
 
 <?php 
-$sql1="SELECT * from proyectosnombre where idproyectos='".$idproyectos."'"; 
-$result1=mysqli_query ($conn,$sql1) or die ("Invalid result");
-$resultado1=mysqli_fetch_array($result1);
+$sql1="SELECT * from proyectosnombre where idproyectos='".$idproyectos."'";
+$result1=$conn->query($sql1);
+$resultado1=$result1->fetch();
+
+/*$result1=mysqli_query ($conn,$sql1) or die ("Invalid result");
+$resultado1=mysqli_fetch_array($result1);*/
  
 for ($t=0;$t<count($encab);$t++){;
 $tituloa=$resultado1[$dat[$t]];
@@ -372,8 +383,11 @@ default:
 <div   style="column-count:2">
 <?php 
 $sql10="SELECT * from precioproyectos where idproyectos='".$idproyectos."'"; 
-$result10=mysqli_query ($conn,$sql10) or die ("Invalid result");
-$resultado10=mysqli_fetch_array($result10);
+$result10=$conn->query($sql10);
+$resultado10=$result10->fetch();
+
+/*$result10=mysqli_query ($conn,$sql10) or die ("Invalid result");
+$resultado10=mysqli_fetch_array($result10);*/
  for ($t=0;$t<count($encab);$t++){;
  
 $precioa=$resultado10[$dat[$t]];
@@ -424,14 +438,16 @@ default:
 <table>
 <tr><td colspan="2">Precios Bloques Trabajadores</td></tr>
 <?php 
-$sql11="SELECT * from precioempleados where idproyectos='".$idproyectos."'"; 
-$result11=mysqli_query ($conn,$sql11) or die ("Invalid result");
+$sql11="SELECT * from precioempleados where idproyectos='".$idproyectos."'";
+$result11=$conn->query($sql11);
+$resultado11=$result11->fetchAll();
+//$result11=mysqli_query ($conn,$sql11) or die ("Invalid result");
 
 for($y=0;$y<5;$y++){;
-mysqli_data_seek($result11, $y);
-$resultado11=mysqli_fetch_array($result11);
-$numemple=$resultado11['numempleados'];
-$pemple=$resultado11['preciogrupo'];
+/*mysqli_data_seek($result11, $y);
+$resultado11=mysqli_fetch_array($result11);*/
+$numemple=$resultado11[$y]['numempleados'];
+$pemple=$resultado11[$y]['preciogrupo'];
 ?>
 <input type="hidden" name="vnumtraba[<?php echo $y;?>]" value="<?php  echo $numemple;?>">
 <input type="hidden" name="pnumtraba[<?php echo $y;?>]" value="<?php  echo $pemple;?>">
@@ -450,13 +466,16 @@ $pemple=$resultado11['preciogrupo'];
 <tr><td colspan="2">Precios Bloques Clientes / Puestos de Trabajo</td></tr>
 <?php 
 $sql11="SELECT * from preciocliente where idproyectos='".$idproyectos."'"; 
-$result11=mysqli_query ($conn,$sql11) or die ("Invalid result");
+$result11=$conn->query($sql11);
+$resultado11=$result11->fetchAll();
+
+//$result11=mysqli_query ($conn,$sql11) or die ("Invalid result");
 
 for($y=0;$y<5;$y++){;
-mysqli_data_seek($result11, $y);
-$resultado11=mysqli_fetch_array($result11);
-$numclie=$resultado11['numcliente'];
-$pclie=$resultado11['preciogrupo'];
+/*mysqli_data_seek($result11, $y);
+$resultado11=mysqli_fetch_array($result11);*/
+$numclie=$resultado11[$y]['numcliente'];
+$pclie=$resultado11[$y]['preciogrupo'];
 ?>
 <input type="hidden" name="vnumclia[<?php echo $y;?>]" value="<?php  echo $numclie;?>">
 <input type="hidden" name="pnumclia[<?php echo $y;?>]" value="<?php  echo $pclie;?>">
@@ -473,12 +492,14 @@ $pclie=$resultado11['preciogrupo'];
 <tr><td colspan="2">Precios Bloques Personalizacion</td></tr>
 <?php 
 $sql11="SELECT * from preciopersonalizacion where idproyectos='".$idproyectos."'"; 
-$result11=mysqli_query ($conn,$sql11) or die ("Invalid result");
+$result11=$conn->query($sql11);
+$resultado11=$result11->fetchAll();
 
+/*$result11=mysqli_query ($conn,$sql11) or die ("Invalid result");
 mysqli_data_seek($result11, 0);
-$resultado11=mysqli_fetch_array($result11);
-$numper=$resultado11['numcliente'];
-$pper=$resultado11['preciogrupo'];
+$resultado11=mysqli_fetch_array($result11);*/
+$numper=$resultado11[0]['numcliente'];
+$pper=$resultado11[0]['preciogrupo'];
 ?>
 <input type="hidden" name="vpersonalizaciona[0]" value="<?php  echo $numper;?>">
 <input type="hidden" name="ppersonalizaciona[0]" value="<?php  echo $pper;?>">

@@ -25,28 +25,35 @@ if ($datos!='datos'){;
 <?php 
 }else{;
 
-$sql="SELECT * from proyectos where estado='".$estador."' order by idproyectos asc"; 
-$result=mysqli_query ($conn,$sql) or die ("Invalid result");
-$row=mysqli_num_rows($result);
+$sql="SELECT * from proyectos where estado='".$estador."' order by idproyectos asc";
+$result=$conn->query($sql);
+
+/*$result=mysqli_query ($conn,$sql) or die ("Invalid result");
+$row=mysqli_num_rows($result);*/
 ?>
-<?include ('../js/busqueda.php');?>
+<?php include ('../js/busqueda.php');?>
 
 
 <table width="800" class="table-bordered table pull-right" id="mytable">
 <tr class="enctab"><td>Nº Proyecto</td><td>Nombre Proyecto</td><td>Web</td><td>Dias de Prueba</td><td>Logotipo</td><td>Empresas asociadas</td></tr>
-<?php  for ($i=0; $i<$row; $i++){;
+<?php  
+/*for ($i=0; $i<$row; $i++){;
 mysqli_data_seek($result, $i);
-$resultado=mysqli_fetch_array($result);
-$idproyectos=$resultado['idproyectos'];
-$sqlt="SELECT * from empresas where estado='1' and idproyectos='".$idproyectos."'"; 
-$resultt=mysqli_query ($conn,$sqlt) or die ("Invalid result");
-$rowt=mysqli_num_rows($resultt);
+$resultado=mysqli_fetch_array($result);*/
+foreach ($result as $rowmos) {
+$idproyectos=$rowmos['idproyectos'];
+$sqlt="SELECT * from empresas where estado='1' and idproyectos='".$idproyectos."'";
+$resultt=$conn->query($sqlt);
+$rowt=count($resultt->fetchAll());
+
+/*$resultt=mysqli_query ($conn,$sqlt) or die ("Invalid result");
+$rowt=mysqli_num_rows($resultt);*/
 
 
-$nombre=$resultado['nombre'];
-$web=$resultado['web'];
-$diasprueba=$resultado['diasprueba'];
-$logo=$resultado['logo'];
+$nombre=$rowmos['nombre'];
+$web=$rowmos['web'];
+$diasprueba=$rowmos['diasprueba'];
+$logo=$rowmos['logo'];
 ?>
 <tr class="dattab">
 <td><?php  echo $idproyectos;?></td>

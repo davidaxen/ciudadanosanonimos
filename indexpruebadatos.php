@@ -8,8 +8,11 @@ if ($com=='comprobacion'){;
 
 $sql56="select * from proyectos where idproyectos='".$idpr."'";
 //echo $sql56;
-$result56=mysqli_query ($conn, $sql56) or die ("Invalid result sql56");
-$resultados56 = mysqli_fetch_array ($result56);
+$result56=$conn->query($sql56);
+$resultados56=$result56->fetch();
+
+/*$result56=mysqli_query ($conn, $sql56) or die ("Invalid result sql56");
+$resultados56 = mysqli_fetch_array ($result56);*/
 $rgpdt=$resultados56['rgpd'];
 $avisolegalt=$resultados56['avisolegal'];
 
@@ -75,8 +78,11 @@ $avisolegalt=$resultados56['avisolegal'];
 <?php 
 $sql="select * from portadapag,paginapor where paginapor.idpag=portadapag.idpag and idempresa='".$ide."' and paginapor.idpag in ('1','2') order by idportada asc";
 //echo $sql;
-$result=mysqli_query ($conn, $sql) or die ("Invalid result idempresas");
-$row=mysqli_num_rows($result);
+$result=$conn->query($sql56);
+$row=count($result->fetchAll());
+
+/*$result=mysqli_query ($conn, $sql) or die ("Invalid result idempresas");
+$row=mysqli_num_rows($result);*/
 ?>
 
 

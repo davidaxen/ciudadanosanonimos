@@ -2,6 +2,7 @@
 include('bbdd.php');
 //print_r($_COOKIE);
 
+
 if ($com=='comprobacion'){
 	
 
@@ -75,7 +76,7 @@ setcookie("pag1",$pag1);
 				
 				
 				$sql10="select * from visitas where usuario='".$gente."' order by dia desc,hora desc";
-				$result10=$conn->query($sql);
+				$result10=$conn->query($sql10);
 				$resultados10=$result10->fetchAll();
 				$row10=count($resultados10);
 
@@ -101,7 +102,6 @@ setcookie("pag1",$pag1);
 	
 	};		
 	
-		
 }else{;
 
 include ('cierre.php');
