@@ -5,6 +5,7 @@ extract($_POST);
 extract($_GET);
 
 $sql31="select * from menuserviciosnombre where idempresa='".$ide."'";
+
 $result31=$conn->query($sql31);
 $resultado31=$result31->fetch();
 
@@ -18,5 +19,6 @@ $resultado32=$result32->fetch();
 
 /*$result32=mysqli_query($conn,$sql32) or die ("Invalid result menucontabilidad");
 $resultado32=mysqli_fetch_array($result32);*/
+
 $ic=$resultado32['mensaje'];
 ?>

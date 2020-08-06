@@ -1,4 +1,4 @@
-<?php  
+<?php
 include('bbdd.php');
 if ($ide!=null){;
 
@@ -82,6 +82,7 @@ Listado de <?php echo ucfirst($nc);?>
 <?php 
 $sql="SELECT * from mensajes where idempresa='".$ide."' and fechafin>'".$fechac."' or fechafin is null order by fechafin desc";
 //echo $sql;
+
 $result=$conn->query($sql);
 
 /*$result=mysqli_query ($conn,$sql) or die ("Invalid result0");
@@ -94,16 +95,19 @@ $idmensaje=$rowmos['id'];
 $fechafin=$rowmos['fechafin'];
 $texto=$rowmos['texto'];
 
+
 ?>
 <tr class="dattab"><td><?php  echo $fechafin;?></td><td><?php  echo $texto;?></td><td>
 <?php
 $sql10="SELECT * from respuestamensajes where idempresa='".$ide."' and idmensaje='".$idmensaje."'";
 //echo $sql10;
+
 $result10=$conn->query($sql10);
 $row10=count($result10->fetchAll());
 
 /*$result10=mysqli_query ($conn,$sql10) or die ("Invalid result0");
 $row10=mysqli_num_rows($result10);*/
+
 ?>
 <a href="infpuntcont.php?id=<?php echo $idmensaje;?>"><img src="../../img/pencil.png" width="25px"></a>
 </td>
@@ -129,3 +133,4 @@ $row10=mysqli_num_rows($result10);*/
 <?php } else {;
 include ('../../cierre.php');
  }; ?>
+
