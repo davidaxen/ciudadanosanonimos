@@ -9,8 +9,11 @@ if ($com=='comprobacion'){;
 
 $sql56="select * from previopago where idempresas='".$ide."'";
 //echo $sql56;
-$result56=mysql_query ($sql56) or die ("Invalid result previopago");
-$row=mysql_affected_rows();
+$result56=$conn->query($sql56);
+$row=count($result56->fetchAll());
+
+/*$result56=mysql_query ($sql56) or die ("Invalid result previopago");
+$row=mysql_affected_rows();*/
 
 if($row>0){;
 

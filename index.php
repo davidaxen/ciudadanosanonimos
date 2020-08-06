@@ -75,9 +75,15 @@ $idprt=1;
 
 if ($idprt!=null){;
 $sql="select * from proyectos where idproyectos='".$idprt."'";
-$result=mysqli_query ($conn, $sql) or die ("Este dominio no tiene acceso al sistema, por favor hable con el departamento Tecnico");
+$result=$conn->query($sql);
+$resultrow=$conn->query($sql);
+
+$row=count($resultrow->fetchAll());
+$resultados=$result->fetch();
+
+/*$result=mysqli_query ($conn, $sql) or die ("Este dominio no tiene acceso al sistema, por favor hable con el departamento Tecnico");
 $row=mysqli_num_rows($result);
-$resultados = mysqli_fetch_array ($result);
+$resultados = mysqli_fetch_array ($result);*/
 
 
 if ($row==0){

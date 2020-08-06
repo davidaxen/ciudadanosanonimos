@@ -17,8 +17,10 @@ $sql="select * from menuservicios where user='".$gente."' and idempresa='".$ide.
 
 $result=$conn->query($sql);
 $resultado=$result->fetch();
-//$result=mysqli_query ($conn,$sql) or die ("Invalid result menucontabilidad");
-//$resultado=mysqli_fetch_array($result);
+
+/*$result=mysqli_query ($conn,$sql) or die ("Invalid result menucontabilidad");
+$resultado=mysqli_fetch_array($result);*/
+
 $cqr1[]=$resultado['entrada'];
 $cqr1[]=$resultado['accdiarias'];
 $cqr1[]=$resultado['accmantenimiento'];
@@ -51,8 +53,10 @@ $sql="select * from servicios where idempresa='".$ide."'";
 
 $result=$conn->query($sql);
 $resultado=$result->fetch();
-//$result=mysqli_query ($conn,$sql) or die ("Invalid result menucontabilidad");
-//$resultado=mysqli_fetch_array($result);
+
+/*$result=mysqli_query ($conn,$sql) or die ("Invalid result menucontabilidad");
+$resultado=mysqli_fetch_array($result);*/
+
 $cqr2[]=$resultado['entrada'];
 $cqr2[]=$resultado['accdiarias'];
 $cqr2[]=$resultado['accmantenimiento'];
@@ -113,10 +117,13 @@ $ca[$t]=0;
 
 $sql31="select * from menuserviciosnombre where idempresa='".$ide."'";
 //echo $sql31;
-	$result31=$conn->query($sql31);
-	$resultado31=$result31->fetch();
-//$result31=mysqli_query ($conn,$sql31) or die ("Invalid result menucontabilidad");
-//$resultado31=mysqli_fetch_array($result31);
+
+$result31=$conn->query($sql31);
+$resultado31=$result31->fetch();
+
+/*$result31=mysqli_query ($conn,$sql31) or die ("Invalid result menucontabilidad");
+$resultado31=mysqli_fetch_array($result31);*/
+
 $ncqr[]=$resultado31['entrada'];
 $ncqr[]=$resultado31['accdiarias'];
 $ncqr[]=$resultado31['accmantenimiento'];
@@ -146,10 +153,13 @@ $nca[]=$resultado31['jornadas'];
 
 $sql32="select * from menuserviciosimg where idempresa='".$ide."'";
 //echo $sql32;
-	$result32=$conn->query($sql32);
-	$resultado32=$result32->fetch();
-//$result32=mysqli_query ($conn,$sql32) or die ("Invalid result menucontabilidad");
-//$resultado32=mysqli_fetch_array($result32);
+
+$result32=$conn->query($sql32);
+$resultado32=$result32->fetch();
+
+/*$result32=mysqli_query ($conn,$sql32) or die ("Invalid result menucontabilidad");
+$resultado32=mysqli_fetch_array($result32);*/
+
 $icqr[]=$resultado32['entrada'];
 $icqr[]=$resultado32['accdiarias'];
 $icqr[]=$resultado32['accmantenimiento'];
@@ -178,10 +188,13 @@ $ica[]=$resultado32['jornadas'];
 
 $sql33="select * from menuserviciosenlace where idempresa='".$ide."'";
 //echo $sql33;
-	$result33=$conn->query($sql33);
-	$resultado33=$result33->fetch();
-//$result33=mysqli_query ($conn,$sql33) or die ("Invalid result menucontabilidad");
-//$resultado33=mysqli_fetch_array($result33);
+
+$result33=$conn->query($sql33);
+$resultado33=$result33->fetch();
+
+/*$result33=mysqli_query ($conn,$sql33) or die ("Invalid result menucontabilidad");
+$resultado33=mysqli_fetch_array($result33);*/
+
 $encqr[]=$resultado33['entrada'];
 $encqr[]=$resultado33['accdiarias'];
 $encqr[]=$resultado33['accmantenimiento'];
@@ -207,10 +220,13 @@ $enca[]=$resultado33['jornadas'];
 
 $sql33="select * from menuserviciosayuda where idempresa='".$ide."'";
 //echo $sql33;
-	$result33=$conn->query($sql33);
-	$resultado33=$result33->fetch();
-//$result33=mysqli_query ($conn,$sql33) or die ("Invalid result menucontabilidad");
-//$resultado33=mysqli_fetch_array($result33);
+
+$result33=$conn->query($sql33);
+$resultado33=$result33->fetch();
+
+/*$result33=mysqli_query ($conn,$sql33) or die ("Invalid result menucontabilidad");
+$resultado33=mysqli_fetch_array($result33);*/
+
 $encqra[]=$resultado33['entrada'];
 $encqra[]=$resultado33['accdiarias'];
 $encqra[]=$resultado33['accmantenimiento'];

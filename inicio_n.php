@@ -14,7 +14,9 @@ $img=null;
 
 if($img==null){;
 $sql55 = "INSERT INTO visitas (usuario,dia,hora,ip) VALUES ('$user','$dt','$tm','$ip')";
-$result55=mysqli_query ($conn, $sql55) or die ("Invalid result user");
+$result55=$conn->query($sql55);
+
+//$result55=mysqli_query ($conn, $sql55) or die ("Invalid result user");
 };
 
 			$output=FALSE;
@@ -26,8 +28,11 @@ $result55=mysqli_query ($conn, $sql55) or die ("Invalid result user");
 
 $sql="select * from usuarios where user='".$user."' and password='".$pass."'";
 //echo $sql;
-$result=mysqli_query ($conn, $sql) or die ("Invalid result idempresas");
-$resultados = mysqli_fetch_array ($result);
+$result=$conn->query($sql);
+$resultados=$result->fetch();
+
+/*$result=mysqli_query ($conn, $sql) or die ("Invalid result idempresas");
+$resultados = mysqli_fetch_array ($result);*/
 	$idusuario=$resultados['id'];
 	$estado=$resultados['estado'];
 	$validar=$resultados['validar'];
@@ -59,8 +64,11 @@ $resultados = mysqli_fetch_array ($result);
 				
 	$sql1="select * from empresas where idempresas='".$ide."'"; 
 	//echo $sql1;
-	$result1=mysqli_query ($conn, $sql1) or die ("Invalid result sql1 ");
-	$resultados1 = mysqli_fetch_array ($result1);
+	$result1=$conn->query($sql1);
+	$resultados1=$result1->fetch();
+
+	/*$result1=mysqli_query ($conn, $sql1) or die ("Invalid result sql1 ");
+	$resultados1 = mysqli_fetch_array ($result1);*/
 				$nemp=$resultados1['nombre'];
 				$img=$resultados1['logotipo'];
 				$imgpeq=$resultados1['logotipopeq'];
