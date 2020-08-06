@@ -132,7 +132,6 @@ $sql="select * from portadapag,paginapor where paginapor.idpag=portadapag.idpag 
 $result=$conn->query($sql);
 $resultmos=$conn->query($sql);
 $resultmos1=$conn->query($sql);
-$row=count($result->fetchAll());
 
 /*$result=mysqli_query ($conn, $sql) or die ("Invalid result idempresas");
 $row=mysqli_num_rows($result);*/

@@ -17,8 +17,11 @@ if ($ide!=null){;
 if ($tabla=='intro'){;
 
 $sql="select * from mensajes order by id desc";
-$result=mysqli_query ($conn,$sql) or die ("Invalid result mensajes");
-$resultado=mysqli_fetch_array($result);
+$result=$conn->query($sql);
+$resultado=$result->fetch();
+
+/*$result=mysqli_query ($conn,$sql) or die ("Invalid result mensajes");
+$resultado=mysqli_fetch_array($result);*/
 $id=$resultado['id'];
 $idn=$id+1;
 
@@ -35,14 +38,16 @@ $sql1.="'$fechafin',";
 };
 $sql1.="'$fichero','$otrosmot')";
 //echo $sql1;
-$result1=mysqli_query ($conn,$sql1) or die ("Invalid result ipuntcont2");
+$result1=$conn->exec($sql1);
+//$result1=mysqli_query ($conn,$sql1) or die ("Invalid result ipuntcont2");
 
 for ($j=0;$j<count($resp);$j++){;
 if ($resp[$j]!=null){;
 $sql10 = "INSERT INTO respuesta (idmensaje,idempresa,valor,texto) VALUES 
 ('$idn','$ide','$j','$resp[$j]')";
 //echo $sql10;
-$result10=mysqli_query ($conn,$sql10) or die ("Invalid result ipuntcont2");
+$result10=$conn->exec($sql10);
+//$result10=mysqli_query ($conn,$sql10) or die ("Invalid result ipuntcont2");
 };
 };
 
@@ -55,7 +60,8 @@ if ($tabla=='modificar'){;
 
 $sql1 = "UPDATE mensajes SET texto='".$texto."', pais='".$idpais."', localidad='".$localidad."',provincia='".$provincia."',cp='".$cp."',fechafin='".$fechafin."' WHERE id='".$id."'";
 //echo $sql1;
-$result1=mysqli_query ($conn,$sql1) or die ("Invalid result ipuntcont2");
+$result1=$conn->exec($sql1);
+//$result1=mysqli_query ($conn,$sql1) or die ("Invalid result ipuntcont2");
 
 };
 

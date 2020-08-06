@@ -65,8 +65,10 @@ a hover: {text-decoration:none}
 <tr><td>Nombre del Proyecto</td><td><input type="text" name="nombre2" size="100"></td></tr>
 <?php 
 $sqle="SELECT * from empresas where estado='1'"; 
-$resulte=mysqli_query ($conn,$sqle) or die ("Invalid result");
-$rowe=mysqli_num_rows($resulte);
+$resulte=$conn->query($sqle);
+
+/*$resulte=mysqli_query ($conn,$sqle) or die ("Invalid result");
+$rowe=mysqli_num_rows($resulte);*/
 ?>
 </table>
 </td></tr>
@@ -78,11 +80,12 @@ $rowe=mysqli_num_rows($resulte);
 <select name="datosn[4]">
 <option value="">Elige un gestor</option>
 <?php
-for($t=0;$t<$rowe;$t++){;
+/*for($t=0;$t<$rowe;$t++){;
 mysqli_data_seek($resulte,$t);
-$resultadoe=mysqli_fetch_array($resulte);
-$idemp=$resultadoe['idempresas'];
-$nombreemp=$resultadoe['nombre'];
+$resultadoe=mysqli_fetch_array($resulte);*/
+foreach ($resulte as $rowmose) {
+$idemp=$rowmose['idempresas'];
+$nombreemp=$rowmose['nombre'];
 ?>
 <option value="<?php echo $idemp;?>" ><?php echo strtoupper($nombreemp);?></option>
 <?php
