@@ -18,8 +18,14 @@ if ($enviar=='enviar'){;
 $sql13 = "INSERT INTO ayuda(menu,seccion,subseccion,titulo) 
 VALUES ('$menu','$seccion','$subseccion','$texto')";
 //echo $sql13;
-$result13=mysqli_query ($conn,$sql13) or die ("Invalid result iclientes");
+//$result13=mysqli_query ($conn,$sql13) or die ("Invalid result iclientes");
 echo ("introduccida ayuda");
+
+$result13=$conn->query($sql13);
+//$resultmos13=$conn->query($sql13);
+//$num_rows=$result->fetchAll();
+//$row=count($num_rows);
+
 ?>
 <?php }else{;?>
 

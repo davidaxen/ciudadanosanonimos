@@ -1,4 +1,4 @@
-<?php  
+<?php
 include('bbdd.php');
 if ($ide!=null){;
 
@@ -48,7 +48,7 @@ $texto=$resultado['texto'];
 
 ?>
 <tr class="dattab"><td><?php  echo $fechafin;?></td><td><?php  echo $texto;?></td><td>
-<?
+<?php
 $sql10="SELECT * from respuestamensajes where idempresa='".$ide."' and idmensaje='".$idmensaje."'";
 //echo $sql10;
 $result10=mysqli_query ($conn,$sql10) or die ("Invalid result0");
@@ -76,23 +76,40 @@ Listado de <?php echo ucfirst($nc);?>
 <?php 
 $sql="SELECT * from mensajes where idempresa='".$ide."' and fechafin>'".$fechac."' or fechafin is null order by fechafin desc";
 //echo $sql;
-$result=mysqli_query ($conn,$sql) or die ("Invalid result0");
-$row=mysqli_num_rows($result);
 
-for ($i=0;$i<$row;$i++){;
-mysqli_data_seek($result, $i);
-$resultado=mysqli_fetch_array($result);
-$idmensaje=$resultado['id'];
-$fechafin=$resultado['fechafin'];
-$texto=$resultado['texto'];
+	$result=$conn->query($sql);
+	$resultmos=$conn->query($sql);
+	$num_rows=$result->fetchAll();
+	$row=count($num_rows);
+
+//$result=mysqli_query ($conn,$sql) or die ("Invalid result0");
+//$row=mysqli_num_rows($result);
+
+foreach ($resultmos as $row1) {
+	
+$idmensaje=$row1['id'];
+$fechafin=$row1['fechafin'];
+$texto=$row1['texto'];
+//for ($i=0;$i<$row;$i++){;
+//mysqli_data_seek($result, $i);
+//$resultado=mysqli_fetch_array($result);
+//$idmensaje=$resultado['id'];
+//$fechafin=$resultado['fechafin'];
+//$texto=$resultado['texto'];
 
 ?>
 <tr class="dattab"><td><?php  echo $fechafin;?></td><td><?php  echo $texto;?></td><td>
-<?
+<?php
 $sql10="SELECT * from respuestamensajes where idempresa='".$ide."' and idmensaje='".$idmensaje."'";
 //echo $sql10;
-$result10=mysqli_query ($conn,$sql10) or die ("Invalid result0");
-$row10=mysqli_num_rows($result10);
+
+$result10=$conn->query($sql10);
+$num_rows=$result->fetchAll();
+$row10=count($num_rows);
+
+
+//$result10=mysqli_query ($conn,$sql10) or die ("Invalid result0");
+//$row10=mysqli_num_rows($result10);
 ?>
 <a href="infpuntcont.php?id=<?php echo $idmensaje;?>"><img src="../../img/pencil.png" width="25px"></a>
 </td>
@@ -118,3 +135,4 @@ $row10=mysqli_num_rows($result10);
 <?php } else {;
 include ('../../cierre.php');
  }; ?>
+
