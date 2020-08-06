@@ -4,14 +4,23 @@ include('bbdd.php');
 if ($ide!=null){;
 
 $sql31="select * from menuadministracionnombre where idempresa='".$ide."'";
-$result31=mysqli_query($conn,$sql31) or die ("Invalid result menucontabilidad");
-$resultado31=mysqli_fetch_array($result31);
-$nc=$resultado31['empleados'];
+//$result31=mysqli_query($conn,$sql31) or die ("Invalid result menucontabilidad");
+//$resultado31=mysqli_fetch_array($result31);
+
+	$result31=$conn->query($sql31);
+	$resultado31=$result31->fetch();
+	$nc=$resultado31['empleados'];
+    //$result2mos1=$conn->query($sql2);
+    //$fetchAll2=$result2->fetchAll();
+    //$row2=count($fetchAll2);
+
 
 $sql32="select * from menuadministracionimg where idempresa='".$ide."'";
-$result32=mysqli_query($conn,$sql32) or die ("Invalid result menucontabilidad");
-$resultado32=mysqli_fetch_array($result32);
-$ic=$resultado32['empleados'];
+//$result32=mysqli_query($conn,$sql32) or die ("Invalid result menucontabilidad");
+//$resultado32=mysqli_fetch_array($result32);
+	$result32=$conn->query($sql32);
+	$resultado32=$result32->fetch();
+	$ic=$resultado32['empleados'];
 
 
 include('../portada_n/cabecera2.php');
@@ -69,8 +78,13 @@ $sql1.=" and estado='".$estadoe."' ";
 };
 $sql1.=" order by idempleado asc";
 //echo $sql1;
-$result=mysqli_query ($conn,$sql1) or die ("Invalid result1");
-$row=mysqli_num_rows($result);
+
+	$result=$conn->query($sql1);
+	$resultmos=$conn->query($sql1);
+	$num_rows=$result->fetchAll();
+	$row=count($num_rows);
+//$result=mysqli_query ($conn,$sql1) or die ("Invalid result1");
+//$row=mysqli_num_rows($result);
 ?>
 <table><tr><td><?php include ('../js/busqueda.php');?></td>
 
@@ -118,18 +132,26 @@ $row=mysqli_num_rows($result);
 
 
 <?php 
-for ($i=0; $i<$row; $i++){;
-mysqli_data_seek($result,$i);
-$resultado=mysqli_fetch_array($result);
+
+foreach ($resultmos as $row1) {
+	$idempleado=$row1['idempleado'];
+	$email1=$row1['email1'];
+	$pais=$row1['nacionalidad'];
+	$localidad=$row1['localidad'];
+	$provincia=$row1['provincia'];
+	$cp=$row1['cp'];
+//for ($i=0; $i<$row; $i++){;
+//mysqli_data_seek($result,$i);
+//$resultado=mysqli_fetch_array($result);
 ?>
 <tr class="dattab">
 <?php 
-$idempleado=$resultado['idempleado'];
-$email1=$resultado['email1'];
-$pais=$resultado['nacionalidad'];
-$localidad=$resultado['localidad'];
-$provincia=$resultado['provincia'];
-$cp=$resultado['cp'];
+//$idempleado=$resultado['idempleado'];
+//$email1=$resultado['email1'];
+//$pais=$resultado['nacionalidad'];
+//$localidad=$resultado['localidad'];
+//$provincia=$resultado['provincia'];
+//$cp=$resultado['cp'];
 ?>
 <td><?php  echo strtoupper($idempleado);?></td>
 <td><?php  echo strtoupper($email1);?></td>
