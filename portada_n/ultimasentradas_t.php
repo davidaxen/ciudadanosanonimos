@@ -5,9 +5,12 @@ $fechac=date("Y-m-d",time());
 
 
 $sql1="SELECT * from mensajes where  idempresa='".$ide."' and fechafin>'".$fechac."' or fechafin is null";
-//echo $sql1; 
-$result1=mysqli_query ($conn,$sql1) or die ("Invalid result 1");
-$row1=mysqli_num_rows($result1);
+//echo $sql1;
+
+$result1=$conn->query($sql1);
+
+/*$result1=mysqli_query ($conn,$sql1) or die ("Invalid result 1");
+$row1=mysqli_num_rows($result1);*/
 
 ?>
 <style>
@@ -74,20 +77,24 @@ function refrescar1()
 <!--onload="setTimeout('refrescar1()', 5000);"-->
 <body  >
 <?php 
-for ($j=0;$j<$row1;$j++){;
+/*for ($j=0;$j<$row1;$j++){;
 mysqli_data_seek($result1,$j);
-$resultado1=mysqli_fetch_array($result1);
-$pais=$resultado1['pais'];
-$provincia=$resultado1['provincia'];
-$localidad=$resultado1['localidad'];
-$cp=$resultado1['cp'];
-$texto=$resultado1['texto'];
-$idmensaje=$resultado1['id'];
+$resultado1=mysqli_fetch_array($result1);*/
+foreach ($result1 as $row1mos) {
+$pais=$row1mos['pais'];
+$provincia=$row1mos['provincia'];
+$localidad=$row1mos['localidad'];
+$cp=$row1mos['cp'];
+$texto=$row1mos['texto'];
+$idmensaje=$row1mos['id'];
 
 $sql10="SELECT * from respuestamensajes where  idempresa='".$ide."' and id='".$idmensaje."' and idempleado='".$idtrab."'";
 //echo $sql10; 
-$result10=mysqli_query ($conn,$sql10) or die ("Invalid result 1");
-$row10=mysqli_num_rows($result10);
+$result10=$conn->query($sql10);
+$row10=count($result10->fetchAll());
+
+/*$result10=mysqli_query ($conn,$sql10) or die ("Invalid result 1");
+$row10=mysqli_num_rows($result10);*/
 if ($row10==0){;
 ?>
 

@@ -13,16 +13,21 @@ include('../../portada_n/cabecera3.php');?>
 <form action="introrespuesta.php" method="post" enctype="multipart/form-data">
 <input type="hidden" name="id" value="<?php echo $id;?>">
 <?php 
-$sql="SELECT * from mensajes where id='".$id."'"; 
-$result=mysqli_query ($conn,$sql) or die ("Invalid result");
-$resultado=mysqli_fetch_array($result);
+$sql="SELECT * from mensajes where id='".$id."'";
+$result=$conn->query($sql);
+$resultado=$result->fetch();
+
+/*$result=mysqli_query ($conn,$sql) or die ("Invalid result");
+$resultado=mysqli_fetch_array($result);*/
 $texto=$resultado['texto'];
 $fichero=$resultado['fichero'];
 $otrosmot=$resultado['otrosmot'];
 
-$sql2="SELECT * from respuesta where idmensaje='".$id."'"; 
-$result2=mysqli_query ($conn,$sql2) or die ("Invalid result");
-$row2=mysqli_num_rows($result2);
+$sql2="SELECT * from respuesta where idmensaje='".$id."'";
+$result2=$conn->query($sql2);
+
+/*$result2=mysqli_query ($conn,$sql2) or die ("Invalid result");
+$row2=mysqli_num_rows($result2);*/
 ?>
 <table>
 <tr><td><span class="caja2"><b>PREGUNTA</b></span></td></tr>
@@ -31,11 +36,12 @@ $row2=mysqli_num_rows($result2);
 <tr><td>
 <div class="main">
 <?php 
-for ($j=0;$j<$row2;$j++){;
+/*for ($j=0;$j<$row2;$j++){;
 mysqli_data_seek($result2, $j);
-$resultado2=mysqli_fetch_array($result2);
-$valor=$resultado2['valor'];
-$textores=$resultado2['texto'];
+$resultado2=mysqli_fetch_array($result2);*/
+foreach ($result2 as $row2mos) {
+$valor=$row2mos['valor'];
+$textores=$row2mos['texto'];
 ?>
 <span class="caja">
  <b><?php echo strtoupper($textores);?></b><br/>
