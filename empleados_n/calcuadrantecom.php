@@ -1,8 +1,11 @@
 <?php 
 include('bbdd.php');
 $sql10="select idclientes,nombre from clientes where idempresas='".$ide."' and idclientes='".$clientes."'";
-$result10=mysqli_query ($conn,$sql10) or die ("Invalid result0");
-$resultado10=mysqli_fetch_array($result10);
+
+$result10=$conn->query($sql10);
+$resultado10=$result10->fetch();
+//$result10=mysqli_query ($conn,$sql10) or die ("Invalid result0");
+//$resultado10=mysqli_fetch_array($result10);
 $nombrep=$resultado10['nombre'];
 
 if ($mes==0) {;
@@ -14,8 +17,11 @@ $t102=date("Y-n-j",mktime(0,0,0,$mes+1,0,$año));
 };
 
 $sql40="select sum(horas) as thoras from cuadrante where idempresas='".$ide."' and idcomunidad='".$clientes."' and fecha between '".$t101."' and '".$t102."'";
-$result40=mysqli_query ($conn,$sql40) or die ("Invalid result0");
-$resultado40=mysqli_fetch_array($result40);
+
+$result140=$conn->query($sql40);
+$resultado40=$result40->fetch();
+//$result40=mysqli_query ($conn,$sql40) or die ("Invalid result0");
+//$resultado40=mysqli_fetch_array($result40);
 $thoras=$resultado40['thoras'];
 
 ?>
@@ -44,8 +50,11 @@ $t101=date("Y-n-j",mktime(0,0,0,$month,1,$year));
 $t102=date("Y-n-j",mktime(0,0,0,$month+1,0,$year));
 
 $sql40="select sum(horas) as thoras from cuadrante where idempresas='".$ide."' and idcomunidad='".$clientes."' and fecha between '".$t101."' and '".$t102."'";
-$result40=mysqli_query ($conn,$sql40) or die ("Invalid result0");
-$resultado40=mysqli_fetch_array($result40);
+
+$result40=$conn->query($sql40);
+$resultado40=$result10->fetch();
+//$result40=mysqli_query ($conn,$sql40) or die ("Invalid result0");
+//$resultado40=mysqli_fetch_array($result40);
 $thoras=$resultado40['thoras'];
 
 echo "<table>";
@@ -71,9 +80,14 @@ $AlineacionHorizontalTexto = 'center';
 $AlineacionVerticalTexto = 'center'; 
 
 // ----------- INICIO Dias Festivos ---------- 
-$sql="select * from diasfestivos where año='".$year."' order by mes asc"; 
-$result=mysqli_query ($conn,$sql) or die ("Invalid query");
-$row=mysqli_num_rows($result);
+$sql="select * from diasfestivos where año='".$year."' order by mes asc";
+
+$result=$conn->query($sql);
+$resultmos=$conn->query($sql);
+$num_rows=$result10->fetchAll();
+$row=count($num_rows);
+//$result=mysqli_query ($conn,$sql) or die ("Invalid query");
+//$row=mysqli_num_rows($result);
 
 if ($row==0){;
 
@@ -94,11 +108,15 @@ $DiasFestivos[11] = '9/9'; // 9 de septiembre
 $DiasFestivos[12] = '17/4'; // Jueves Santo 
 $DiasFestivos[13] = '18/4'; // Viernes Santo 
 }else{;
-for ($l=0;$l<$row;$l++){;
-mysqi_data_seek($result,$l);
-$resultado=mysqli_fetch_array($result);
-$df=$resultado['dia']; 
-$mf=$resultado['mes']; 
+
+foreach ($resultmos as $row) {
+
+
+//for ($l=0;$l<$row;$l++){;
+//mysqi_data_seek($result,$l);
+//$resultado=mysqli_fetch_array($result);
+$df=$row['dia']; 
+$mf=$row['mes']; 
 $DiasFestivos[$l] = $df.'/'.$mf;
 };
 };
@@ -241,19 +259,31 @@ $calendar .= ("' ").
 
 
 $sql0="select turno, idempleado, horas from cuadrante where idempresas='".$ide."' and idcomunidad='".$clientes."' and fecha='".$fecha_b."' order by turno asc";
-$result0=mysqli_query ($conn,$sql0) or die ("Invalid result0");
-$row0=mysqli_num_rows($result0);
 
-for ($l=0;$l<$row0;$l++){;
-mysqli_data_seek($result0,$l);
-$resultado0=mysqli_fetch_array($result0);
-$idempleado=$resultado0['idempleado'];
-$horas=$resultado0['horas'];
-$turno=$resultado0['turno'];
+$result0=$conn->query($sql0);
+$resultmos=$conn->query($sql);
+$num_rows=$result0->fetchAll();
+$row0=count($num_rows);
+
+//$result0=mysqli_query ($conn,$sql0) or die ("Invalid result0");
+//$row0=mysqli_num_rows($result0);
+
+foreach ($resultmos as $row0) {
+
+
+//for ($l=0;$l<$row0;$l++){;
+//mysqli_data_seek($result0,$l);
+//$resultado0=mysqli_fetch_array($result0);
+$idempleado=$row0['idempleado'];
+$horas=$row0['horas'];
+$turno=$row0['turno'];
 
 $sql20="select nombre, 1apellido as pa, 2apellido as sa from empleados where idempresa='".$ide."' and idempleado='".$idempleado."'";
-$result20=mysqli_query ($conn,$sql20) or die ("Invalid result0");
-$resultado20=mysqli_fetch_array($result20);
+
+$result20=$conn->query($sql20);
+$resultado20=$result20->fetch();
+//$result20=mysqli_query ($conn,$sql20) or die ("Invalid result0");
+//$resultado20=mysqli_fetch_array($result20);
 $nombree=$resultado20['nombre'];
 $apellidope=$resultado20['pa'];
 $apellidose=$resultado20['sa'];
