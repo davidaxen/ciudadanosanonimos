@@ -33,11 +33,18 @@ if ($datos!='datos'){;
 
 $sql="SELECT * from validar"; 
 if($estadovalidar!="todos"){;
-$sql.=" where validar='".$estadovalidar."'"; 
+$sql.=" where validar=:estadovalidar"; 
 };
 $sql.=" order by idvalidar asc"; 
 //echo $sql;
-$result=mysqli_query ($conn,$sql) or die ("Invalid result");
+
+$result=$conn->prepare($sql);
+$resultmos=$conn->prepare($sql);
+$result->bindParam(':estadovalidar',$estadovalidar);
+$result->execute();
+//$resultado11r=$result11r->fetch();
+
+//$result=mysqli_query ($conn,$sql) or die ("Invalid result");
 $row=mysqli_num_rows($result);
 ?>
 <?include ('../js/busqueda.php');?>
@@ -49,17 +56,22 @@ $row=mysqli_num_rows($result);
 <td>Tipo</td>
 <?php };?>
 <td>Nº Empresa</td><td>Nombre Empresa</td><td>NIF</td><td>Per.Con.</td><td>Tel.Con.</td><td>Email</td><td>Proyecto</td></tr>
-<?php  for ($i=0; $i<$row; $i++){;
-mysqli_data_seek($result, $i);
-$resultado=mysqli_fetch_array($result);
-$validar=$resultado['validar'];
-$idvalidar=$resultado['idvalidar'];
-$nombreemp=$resultado['nombreemp'];
-$nifemp=$resultado['nifemp'];
-$percontacto=$resultado['percontacto'];
-$telcontacto=$resultado['telcontacto'];
-$emailemp=$resultado['email'];
-$idpremp=$resultado['idpr'];
+<?php 
+
+foreach ($resultmos as $row1) {
+
+
+//for ($i=0; $i<$row; $i++){;
+//mysqli_data_seek($result, $i);
+//$resultado=mysqli_fetch_array($result);
+$validar=$row1['validar'];
+$idvalidar=$row1['idvalidar'];
+$nombreemp=$row1['nombreemp'];
+$nifemp=$row1['nifemp'];
+$percontacto=$row1['percontacto'];
+$telcontacto=$row1['telcontacto'];
+$emailemp=$row1['email'];
+$idpremp=$row1['idpr'];
 
 
 ?>
@@ -85,9 +97,16 @@ case 3:$nvalidar="Sin contrato";break;
 <td><?php  echo$email;?></td>
 <td>
 <?php 
-$sqli="SELECT * from proyectos where idproyectos='".$idpremp."'"; 
-$resulti=mysqli_query ($conn,$sqli) or die ("Invalid resulti");
-$resultadoi=mysqli_fetch_array($resulti);
+$sqli="SELECT * from proyectos where idproyectos=:idpremp"; 
+
+
+$resulti=$conn->prepare($sqli);
+$resulti->bindParam(':idpremp',$idpremp);
+$resulti->execute();
+$resultadoi=$resulti->fetch();
+
+//$resulti=mysqli_query ($conn,$sqli) or die ("Invalid resulti");
+//$resultadoi=mysqli_fetch_array($resulti);
 $logopremp=$resultadoi['logo'];
 ?>
 <img src="images/<?php  echo$logopremp;?>" width="50">

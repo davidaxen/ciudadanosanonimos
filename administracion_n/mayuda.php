@@ -30,12 +30,18 @@ if ($datos!='datos'){;
 <?php 
 }else{;
 
-$sql="SELECT * from ayuda where menu='".$menu."' order by seccion asc,subseccion asc"; 
+$sql="SELECT * from ayuda where menu=:menu order by seccion asc,subseccion asc"; 
 //$result=mysqli_query ($conn,$sql) or die ("Invalid result");
 //$row=mysqli_num_rows($result);
 
-$result=$conn->query($sql);
-$resultmos=$conn->query($sql);
+
+$result=$conn->prepare($sql);
+$resultmos=$conn->prepare($sql);
+$result->bindParam(':menu',$menu);
+$result->execute();
+//$resultadoi=$resulti->fetch();
+//$result=$conn->query($sql);
+//$resultmos=$conn->query($sql);
 $num_rows=$result->fetchAll();
 $row=count($num_rows);
 
