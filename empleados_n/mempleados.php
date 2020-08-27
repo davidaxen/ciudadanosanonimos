@@ -4,13 +4,22 @@ include('bbdd.php');
 if ($ide!=null){;
 
 $sql31="select * from menuadministracionnombre where idempresa='".$ide."'";
-$result31=mysqli_query($conn,$sql31) or die ("Invalid result menucontabilidad");
-$resultado31=mysqli_fetch_array($result31);
+
+$result31=$conn->query($sql31);
+$resultado31=$result31->fetchAll();
+
+//$result31=mysqli_query($conn,$sql31) or die ("Invalid result menucontabilidad");
+//$resultado31=mysqli_fetch_array($result31);
 $nc=$resultado31['empleados'];
 
 $sql32="select * from menuadministracionimg where idempresa='".$ide."'";
-$result32=mysqli_query($conn,$sql32) or die ("Invalid result menucontabilidad");
-$resultado32=mysqli_fetch_array($result32);
+
+$result32=$conn->query($sql32);
+$resultado32=$result32->fetchAll();
+//$row=count($num_rows);
+
+//$result32=mysqli_query($conn,$sql32) or die ("Invalid result menucontabilidad");
+//$resultado32=mysqli_fetch_array($result32);
 $ic=$resultado32['empleados'];
 
 include('../portada_n/cabecera2.php');?>
@@ -53,8 +62,14 @@ $sql.=" order by nombre asc";
 }else{
 $sql.=" order by idempleado asc";
 };
-$result=mysqli_query ($conn,$sql) or die ("Invalid result");
-$row=mysqli_num_rows($result);
+
+$result=$conn->query($sql);
+$resultmos=$conn->query($sql);
+$num_rows=$result10->fetchAll();
+$row=count($num_rows);
+
+//$result=mysqli_query ($conn,$sql) or die ("Invalid result");
+//$row=mysqli_num_rows($result);
 ?>
 <?php  include ('../js/busqueda.php');?>
 
@@ -63,14 +78,18 @@ $row=mysqli_num_rows($result);
 <tr><td>N&ordm; Empleado</td><td>Nombre Empleado</td><td>Nif</td><td>Opcion</td></tr>
 </thead>
 
-<?php  for ($i=0; $i<$row; $i++){;
-mysqli_data_seek($result,$i);
-$resultado=mysqli_fetch_array($result);
-$idempleado=$resultado['idempleado'];
-$nombre=$resultado['nombre'];
-$apellido1=$resultado['1apellido'];
-$apellido2=$resultado['2apellido'];
-$nif=$resultado['nif'];
+<?php  
+
+foreach ($resultmos as $row) {
+
+//for ($i=0; $i<$row; $i++){;
+//mysqli_data_seek($result,$i);
+//$resultado=mysqli_fetch_array($result);
+$idempleado=$row['idempleado'];
+$nombre=$row['nombre'];
+$apellido1=$row['1apellido'];
+$apellido2=$row['2apellido'];
+$nif=$row['nif'];
 $nempleado=$nombre.", ".$apellido1." ".$apellido2;
 ?>
 <tr class="menor1">

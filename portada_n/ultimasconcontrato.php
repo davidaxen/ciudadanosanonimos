@@ -13,8 +13,13 @@ $sql="SELECT * from validar";
 $sql.=" where validar in ('2')"; 
 $sql.=" order by idvalidar desc"; 
 //echo $sql;
-$result=mysqli_query ($conn,$sql) or die ("Invalid result");
-$row=mysqli_affected_rows();
+
+$result=$conn->query($sql);
+$num_rows=$result10->fetchAll();
+$row=count($num_rows);
+
+//$result=mysqli_query ($conn,$sql) or die ("Invalid result");
+//$row=mysqli_affected_rows();
 ?>
 <table>
 <tr class="enctab">
@@ -30,7 +35,7 @@ $row=mysqli_affected_rows();
 <?php }else{;?>
 <tr class="dattab">
 <?php };?>
-<td><?php $validar=mysqli_result($result,$i,'validar');?>
+<td><?php $validar=$num_rows['validar'];?>
 <?php 
 switch($validar){;
 case 0:$nvalidar="Sin validar";break;
@@ -50,8 +55,13 @@ case 3:$nvalidar="Sin contrato";break;
 <td><?php $idpremp=mysqli_result($result,$i,'idpr');?>
 <?php 
 $sqli="SELECT * from proyectos where idproyectos='".$idpremp."'"; 
-$resulti=mysqli_query ($conn,$sqli) or die ("Invalid resulti");
-$logopremp=mysqli_result($resulti,0,'logo');
+
+$resulti=$conn->query($sqli);
+$num_rows=$resulti->fetchAll();
+$row=count($num_rows);
+
+//$resulti=mysqli_query ($conn,$sqli) or die ("Invalid resulti");
+$logopremp=$num_rows[0]['logo'];
 ?>
 <img src="../administracion_n/images/<?php  echo $logopremp;?>" width="50">
 

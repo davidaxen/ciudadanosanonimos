@@ -3,13 +3,23 @@ include('bbdd.php');
 if ($ide!=null){;
 
 $sql31="select * from menuadministracionnombre where idempresa='".$ide."'";
-$result31=mysqli_query($conn,$sql31) or die ("Invalid result menucontabilidad");
-$resultado31=mysqli_fetch_array($result31);
+
+$result31=$conn->query($sql31);
+//$resultad=$conn->query($sql);
+$resultado31=$result31->fetchAll();
+//$row=count($num_rows);
+//$result31=mysqli_query($conn,$sql31) or die ("Invalid result menucontabilidad");
+//$resultado31=mysqli_fetch_array($result31);
 $nc=$resultado31['empleados'];
 
 $sql32="select * from menuadministracionimg where idempresa='".$ide."'";
-$result32=mysqli_query($conn,$sql32) or die ("Invalid result menucontabilidad");
-$resultado32=mysqli_fetch_array($result32);
+
+$result32=$conn->query($sql32);
+//$resultmos=$conn->query($sql);
+$resultado32=$result32->fetchAll();
+//$row=count($num_rows);
+//$result32=mysqli_query($conn,$sql32) or die ("Invalid result menucontabilidad");
+//$resultado32=mysqli_fetch_array($result32);
 $ic=$resultado32['empleados'];
 
  include('../portada_n/cabecera2.php');?>
@@ -52,12 +62,19 @@ a hover: {text-decoration:none}
 
 <?php 
 $sql10="select lictra from empresas where idempresas='".$ide."'"; 
-$result10=mysqli_query ($conn,$sql10) or die ("Invalid result lic");
-$resultado10=mysqli_fetch_array($result10);
+
+
+$result10=$conn->query($sql10);
+$resultado10=$result10->fetchAll();
+//$result10=mysqli_query ($conn,$sql10) or die ("Invalid result lic");
+//$resultado10=mysqli_fetch_array($result10);
 $lictra=$resultado10['lictra'];
-$sql10="select count(idempleado) as tot from empleados where idempresa='".$ide."' and estado='1'"; 
-$result10=mysqli_query ($conn,$sql10) or die ("Invalid result empleados");
-$resultado10=mysqli_fetch_array($result10);
+$sql10="select count(idempleado) as tot from empleados where idempresa='".$ide."' and estado='1'";
+
+$result10=$conn->query($sql10);
+$resultado10=$result10->fetchAll();
+//$result10=mysqli_query ($conn,$sql10) or die ("Invalid result empleados");
+//$resultado10=mysqli_fetch_array($result10);
 $tota=$resultado10['tot'];
 
 //echo $lictra;
@@ -95,14 +112,23 @@ if ($lictra>$tota){;?>
 <tr><td>Pais de Nacimiento</td><td colspan="2">
 <?php 
 $sql="select * from pais order by nombrepais asc"; 
-$result=mysqli_query ($conn,$sql) or die ("Invalid result empleados");
-$row=mysqli_num_rows($result);
+
+$result=$conn->query($sql);
+$resultmos=$conn->query($sql);
+$num_rows=$result->fetchAll();
+$row=count($num_rows);
+//$result=mysqli_query ($conn,$sql) or die ("Invalid result empleados");
+//$row=mysqli_num_rows($result);
 ?><select name="pais">
-<?php for ($i;$i<$row;$i++){;
-mysqli_data_seek($result,$i);
-$resultado=mysqli_fetch_array($result);
-$idpais=$resultado['idpais'];
-$nombrepais=$resultado['nombrepais'];
+<?php 
+
+foreach ($resultmos as $row) {
+
+//for ($i;$i<$row;$i++){;
+//mysqli_data_seek($result,$i);
+//$resultado=mysqli_fetch_array($result);
+$idpais=$row['idpais'];
+$nombrepais=$row['nombrepais'];
 ?>
 <option value="<?php  echo $idpais;?>" <?php if ($idpais==724){;?>selected<?php };?> ><?php  echo $nombrepais;?>
 <?php };?>
@@ -141,7 +167,9 @@ $nombrepais=$resultado['nombrepais'];
 <div class="pos71c" id="ver3" >
 <?php 
 $sql10="select * from empresas where idempresas='".$ide."'"; 
-$result10=mysqli_query ($conn,$sql10) or die ("Invalid result clientes");
+
+$result10=$conn->query($sql10);
+//$result10=mysqli_query ($conn,$sql10) or die ("Invalid result clientes");
 ?>
 <div id="divicolumna2">
 <table>
@@ -149,20 +177,32 @@ $result10=mysqli_query ($conn,$sql10) or die ("Invalid result clientes");
 
 <?php 
 $sql2s="select * from servicios where idempresa='".$ide."' ";
-$result2s=mysqli_query ($conn,$sql2s) or die ("Invalid result2p");
-$socos=mysqli_fetch_array($result2s);
-$rows=mysqli_num_rows($result2s);
-$cols=mysqli_num_fields($result2s);
+
+$result2s=$conn->query($sql2s);
+$socos=$result2s->fetchAll();
+$rows=count($num_rows);
+
+//$result2s=mysqli_query ($conn,$sql2s) or die ("Invalid result2p");
+//$socos=mysqli_fetch_array($result2s);
+//$rows=mysqli_num_rows($result2s);
+//$cols=mysqli_num_fields($result2s);
 
 $dat=array('entrada','incidencia','mensaje','alarma','accdiarias','accmantenimiento','niveles','productos','revision','trabajo','siniestro','control','mediciones','jornadas','informes','ruta','envases','incidenciasplus','seguimiento');
 
 
 $sql31="select * from menuserviciosnombre where idempresa='".$ide."'";
-$result31=mysqli_query ($conn,$sql31) or die ("Invalid result menucontabilidad");
-$resultado31=mysqli_fetch_array($result31);
+
+$result31=$conn->query($sql31);
+$resultado31=$result31->fetchAll();
+//$result31=mysqli_query ($conn,$sql31) or die ("Invalid result menucontabilidad");
+//$resultado31=mysqli_fetch_array($result31);
 $sql32="select * from menuserviciosimg where idempresa='".$ide."'";
-$result32=mysqli_query ($conn,$sql32) or die ("Invalid result menucontabilidad");
-$resultado32=mysqli_fetch_array($result32);
+
+$result32=$conn->query($sql32);
+$resultado32=$result32->fetchAll();
+
+//$result32=mysqli_query ($conn,$sql32) or die ("Invalid result menucontabilidad");
+//$resultado32=mysqli_fetch_array($result32);
 ?>
 
 <?php 

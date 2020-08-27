@@ -20,8 +20,13 @@ include('bbdd.php');
 if ($enviar==null){;
 
 $sql0="select idclientes,nombre from clientes where idempresas='".$ide."' and estado='1'";
-$result0=mysqli_query ($conn,$sql0) or die ("Invalid result0");
-$row0=mysqli_num_rows($result0);
+
+$result0=$conn->query($sql0);
+$resultmos0=$conn->query($sql0);
+$num_rows=$result0->fetchAll();
+$row0=count($num_rows);
+//$result0=mysqli_query ($conn,$sql0) or die ("Invalid result0");
+//$row0=mysqli_num_rows($result0);
 ?>
 <form action="calcuadrantecom.php" method="post">
 <table>
@@ -30,11 +35,15 @@ $row0=mysqli_num_rows($result0);
 <select name="clientes">
 <option value=" "> 
 <option value="0">Sin determinar
-<?php  for ($j=0; $j<$row0; $j++){;
-mysqli_data_seek($result0,$j);
-$resultado0=mysqli_fetch_array($result0);
-$idp=$resultado0['idclientes'];
-$nombrep=$resultado0['nombre'];
+<?php  
+
+foreach ($resultmos0 as $row0) {
+
+//for ($j=0; $j<$row0; $j++){;
+//mysqli_data_seek($result0,$j);
+//$resultado0=mysqli_fetch_array($result0);
+$idp=$row0['idclientes'];
+$nombrep=$row0['nombre'];
 ?>
 <option value="<?php  echo $idp?>"><?php  echo $nombrep?>
 <?php };?>

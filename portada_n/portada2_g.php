@@ -7,7 +7,10 @@ $adme=array('../facturacion_n/contpisc.php?tipo=1','../facturacion_n/contpisc.ph
 
 $sql01a="SELECT * from menuadministracionnombre where idempresa='".$ide."'"; 
 //echo $sql01a;
-$result01a=mysqli_query ($conn,$sql01a) or die ("Invalid result 01a");
+
+$result01a=$conn->query($sql01a);
+
+//$result01a=mysqli_query ($conn,$sql01a) or die ("Invalid result 01a");
 $admn[]=mysqli_result($result01a,0,'clientes');
 $admn[]=mysqli_result($result01a,0,'puestos');
 $admn[]=mysqli_result($result01a,0,'empleados');
@@ -15,7 +18,10 @@ $admn[]=mysqli_result($result01a,0,'empleados');
 
 $sql02a="SELECT * from menuadministracionimg where idempresa='".$ide."'"; 
 //echo $sql02a;
-$result02a=mysqli_query ($conn,$sql02a) or die ("Invalid result 02a");
+
+$result=$conn->query($sql02a);
+
+//$result02a=mysqli_query ($conn,$sql02a) or die ("Invalid result 02a");
 $admimg[]=mysqli_result($result02a,0,'clientes');
 $admimg[]=mysqli_result($result02a,0,'puestos');
 $admimg[]=mysqli_result($result02a,0,'empleados');
@@ -35,7 +41,10 @@ $fechapman=date("Y-m-d", mktime (0,0,0,$mes,$dia+2,$año));
 
 $sql01="SELECT * from portadai where idempresa='".$ide."'"; 
 //echo $sql01;
-$result01=mysqli_query ($conn,$sql01) or die ("Invalid result 01");
+
+$result01=$conn->query($sql01);
+
+//$result01=mysqli_query ($conn,$sql01) or die ("Invalid result 01");
 $dato[]=mysqli_result($result01,0,'cuadrante');
 $dato[]=mysqli_result($result01,0,'entrada');
 $dato[]=mysqli_result($result01,0,'incidencia');
@@ -54,7 +63,10 @@ $dato[]=mysqli_result($result01,0,'mediciones');
 
 $sql02="SELECT * from menuserviciosimg where idempresa='".$ide."'"; 
 //echo $sql01;
-$result02=mysqli_query ($conn,$sql02) or die ("Invalid result 02");
+
+$result02=$conn->query($sql02);
+
+//$result02=mysqli_query ($conn,$sql02) or die ("Invalid result 02");
 $datoi[]=mysqli_result($result02,0,'cuadrante');
 $datoi[]=mysqli_result($result02,0,'entrada');
 $datoi[]=mysqli_result($result02,0,'incidencia');
@@ -73,7 +85,10 @@ $dtinfi=mysqli_result($result02,0,'informes');
 
 $sql03="SELECT * from menuserviciosnombre where idempresa='".$ide."'"; 
 //echo $sql01;
-$result03=mysqli_query ($conn,$sql03) or die ("Invalid result 03");
+
+$result03=$conn->query($sql03);
+
+//$result03=mysqli_query ($conn,$sql03) or die ("Invalid result 03");
 $valores[]=mysqli_result($result03,0,'cuadrante');
 $valores[]=mysqli_result($result03,0,'entrada');
 $valores[]=mysqli_result($result03,0,'incidencia');
@@ -126,6 +141,9 @@ if ($dato[$j]==1){;
 <?php 
 $idpccat=$ipcat[$j];
 $sql04="SELECT * from categorias where idpccat='".$idpccat."'"; 
+
+$result04=$conn->query($sql04);
+
 $result04=mysqli_query ($conn,$sql04) or die ("Invalid result 04");
 //$imagen=mysqli_result($result02,0,'imagen2');
 $pagina=mysqli_result($result04,0,'pagina');

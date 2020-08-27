@@ -5,13 +5,20 @@ if ($ide!=null){;
 
 
 $sql31="select * from menuadministracionnombre where idempresa='".$ide."'";
-$result31=mysqli_query($conn,$sql31) or die ("Invalid result menucontabilidad");
-$resultado31=mysqli_fetch_array($result31);
+
+$result31=$conn->query($sql31);
+$resultado31=$result31->fetchAll();
+//$result31=mysqli_query($conn,$sql31) or die ("Invalid result menucontabilidad");
+//$resultado31=mysqli_fetch_array($result31);
 $nc=$resultado31['empleados'];
 
 $sql32="select * from menuadministracionimg where idempresa='".$ide."'";
-$result32=mysqli_query($conn,$sql32) or die ("Invalid result menucontabilidad");
-$resultado32=mysqli_fetch_array($result32);
+
+$result32=$conn->query($sql32);
+$resultado32=$result32->fetchAll();
+
+//$result32=mysqli_query($conn,$sql32) or die ("Invalid result menucontabilidad");
+//$resultado32=mysqli_fetch_array($result32);
 $ic=$resultado32['empleados'];
 
  include('../portada_n/cabecera2.php');
@@ -29,12 +36,22 @@ $ic=$resultado32['empleados'];
 <?php 
 
 $sql11="select * from proveedores where idempresas='".$ide."'";
-$result11=mysqli_query ($conn,$sql11) or die ("Invalid result lic");
-$row11=mysqli_num_rows($result11);
 
-$sql="select * from empleados where idempresa='".$ide."' and idempleado='".$idempleado."' order by idempleado desc"; 
-$result=mysqli_query ($conn,$sql) or die ("Invalid result clientes");
-$resultado=mysqli_fetch_array($result);
+$result11=$conn->query($sql11);
+$result11mos=$conn->query($sql11);
+$resultado=$result11->query($sql11);
+$num_rows=$result11->fetchAll();
+$row=count($num_rows);
+
+//$result11=mysqli_query ($conn,$sql11) or die ("Invalid result lic");
+//$row11=mysqli_num_rows($result11);
+
+$sql="select * from empleados where idempresa='".$ide."' and idempleado='".$idempleado."' order by idempleado desc";
+
+$result=$conn->query($sql);
+$resultado=$result10->fetchAll();
+//$result=mysqli_query ($conn,$sql) or die ("Invalid result clientes");
+//$resultado=mysqli_fetch_array($result);
 $idc=$resultado['idempleado'];
 $nombre=$resultado['nombre'];
 $apellido1=$resultado['1apellido'];
@@ -110,16 +127,24 @@ $grupo=$resultado['grupo'];
 <tr><td>Pais de Nacimiento</td><td colspan="2">
 <?php 
 $sql4="select * from pais order by nombrepais asc"; 
-$result4=mysqli_query ($conn,$sql4) or die ("Invalid result empleados");
-$row4=mysqli_num_rows($result4);
+
+$result4=$conn->query($sql4);
+$result4mos=$conn->query($sql4);
+$num_rows=$result4->fetchAll();
+$row4=count($num_rows);
+//$result4=mysqli_query ($conn,$sql4) or die ("Invalid result empleados");
+//$row4=mysqli_num_rows($result4);
 ?>
 <select name="idpais1">
 <?php 
-for ($i=0;$i<$row4;$i++){;
-mysqli_data_seek($result4,$i);
-$resultado4=mysqli_fetch_array($result4);
-$idpais1=$resultado4['idpais'];
-$nombrepais=$resultado4['nombrepais'];
+
+foreach ($result4mos as $row) {
+
+//for ($i=0;$i<$row4;$i++){;
+//mysqli_data_seek($result4,$i);
+//$resultado4=mysqli_fetch_array($result4);
+$idpais1=$row4['idpais'];
+$nombrepais=$row4['nombrepais'];
 ?>
 <option value="<?php  echo $idpais1;?>" <?php if ($idpais==$idpais1){;?>selected<?php };?> ><?php  echo $nombrepais;?>
 <?php };?>
@@ -145,11 +170,15 @@ $nombrepais=$resultado4['nombrepais'];
 <tr><td>Proveedores:</td><td>
 <select name="proveedor">
 <option value=""></option>
-<?php for ($i=0;$i<$row11;$i++){;
-mysqli_data_seek($result11,$i);
-$resultado11=mysqli_fetch_array($result11);
-$idproveedor=$resultado11['idproveedor'];
-$nombreprov=$resultado11['nombre'];
+<?php 
+
+foreach ($result11mos as $row11) {
+
+//for ($i=0;$i<$row11;$i++){;
+//mysqli_data_seek($result11,$i);
+//$resultado11=mysqli_fetch_array($result11);
+$idproveedor=$row11['idproveedor'];
+$nombreprov=$row11['nombre'];
 ?>
 <option value="<?php  echo $idproveedor;?>"
 <?php if($idproveedor==$idproveedoremp){?>selected<?php };?>
@@ -189,8 +218,11 @@ $nombreprov=$resultado11['nombre'];
 <?php
 
 $sqlpr="select * from proyectos where idproyectos='".$idpr."'";
-$resultpr=mysqli_query ($conn,$sqlpr) or die ("Invalid result clientes");
-$resultadopr=mysqli_fetch_array($resultpr);
+
+$resultpr=$conn->query($sqlpr);
+$resultadopr=$resultpr->fetchAll();
+//$resultpr=mysqli_query ($conn,$sqlpr) or die ("Invalid result clientes");
+//$resultadopr=mysqli_fetch_array($resultpr);
 $grupoprecio=$resultadopr['tipoprecios'];
 
 
@@ -201,16 +233,23 @@ echo "Precios por grupo<br/>";
 echo "<table>";
 
 $sqlprg="select * from proyectosgrupos where idproyectos='".$idpr."'";
-$resultprg=mysqli_query ($conn,$sqlprg) or die ("Invalid result clientes");
-$rowsprg=mysqli_num_rows($resultprg);
+
+$resultprg=$conn->query($sqlprg);
+$resultprgmos=$conn->query($sqlprg);
+$num_rows=$resultprg->fetchAll();
+$row=count($num_rows);
+//$resultprg=mysqli_query ($conn,$sqlprg) or die ("Invalid result clientes");
+//$rowsprg=mysqli_num_rows($resultprg);
 
 echo "<tr>";
-for($yh=0;$yh<$rowsprg;$yh++){;
-mysqli_data_seek($resultprg,$yh);
-$resultadoprg=mysqli_fetch_array($resultprg);
 
-$tipoprg=$resultadoprg['tipo'];
-$imgprg=$resultadoprg['img'];
+foreach ($resultprgmos as $rowsprg) {
+//for($yh=0;$yh<$rowsprg;$yh++){;
+//mysqli_data_seek($resultprg,$yh);
+//$resultadoprg=mysqli_fetch_array($resultprg);
+
+$tipoprg=$rowsprg['tipo'];
+$imgprg=$rowsprg['img'];
 $hy=$yh+1;
 echo "<td class='tit'><img src='../img/".$imgprg."' width='50px'><br/>".strtoupper($tipoprg);
 echo "<br/><center><input type='radio' name='grupo1' value='$hy' onclick='mod($hy,1,$rowsprg)'";
@@ -231,18 +270,28 @@ $valortg=$resultado[$dat[$rt]];
 echo "<input type='hidden' name='$dat[$rt]' value='$valortg'>";
 };
 
-for($yh=0;$yh<$rowsprg;$yh++){;
-mysqli_data_seek($resultprg,$yh);
-$resultadoprg=mysqli_fetch_array($resultprg);
+
+foreach ($resultprgmos as $rowsprg) {
+
+//for($yh=0;$yh<$rowsprg;$yh++){;
+//mysqli_data_seek($resultprg,$yh);
+//$resultadoprg=mysqli_fetch_array($resultprg);
 $hy=$yh+1;
 
 
 $sql31="select * from menuserviciosnombre where idempresa='".$ide."'";
-$result31=mysqli_query ($conn,$sql31) or die ("Invalid result menucontabilidad");
-$resultado31=mysqli_fetch_array($result31);
+
+$result31=$conn->query($sql31);
+$resultado31=$result31->fetchAll();
+//$result31=mysqli_query ($conn,$sql31) or die ("Invalid result menucontabilidad");
+//$resultado31=mysqli_fetch_array($result31);
 $sql32="select * from menuserviciosimg where idempresa='".$ide."'";
-$result32=mysqli_query ($conn,$sql32) or die ("Invalid result menucontabilidad");
-$resultado32=mysqli_fetch_array($result32);
+
+$result32=$conn->query($sql32);
+$resultado32=$result32->fetchAll();
+
+//$result32=mysqli_query ($conn,$sql32) or die ("Invalid result menucontabilidad");
+//$resultado32=mysqli_fetch_array($result32);
 
 echo "<div id='inicioy$hy' ";
 if ($grupo==$hy){;
@@ -279,20 +328,29 @@ echo "</table></div>";
 
 <?php 
 $sql10="select * from servicios where idempresa='".$ide."'"; 
-$result10=mysqli_query ($conn,$sql10) or die ("Invalid result clientes");
-$resultado10=mysqli_fetch_array($result10);
+
+$result10=$conn->query($sql10);
+$resultado10=$result10->fetchAll();
+//$result10=mysqli_query ($conn,$sql10) or die ("Invalid result clientes");
+//$resultado10=mysqli_fetch_array($result10);
 
 $dat=array('entrada','incidencia','mensaje','alarma','accdiarias','accmantenimiento','niveles','productos','revision','trabajo','siniestro','control','mediciones','jornadas','informes','ruta','envases','incidenciasplus','seguimiento','teletrabajo');
 
 
 $sql31="select * from menuserviciosnombre where idempresa='".$ide."'";
-$result31=mysqli_query ($conn,$sql31) or die ("Invalid result menucontabilidad");
-$resultado31=mysqli_fetch_array($result31);
 
+$result31=$conn->query($sql31);
+$resultado31=$result31->fetchAll();
+
+//$result31=mysqli_query ($conn,$sql31) or die ("Invalid result menucontabilidad");
+//$resultado31=mysqli_fetch_array($result31);
 $sql32="select * from menuserviciosimg where idempresa='".$ide."'";
-$result32=mysqli_query ($conn,$sql32) or die ("Invalid result menucontabilidad");
-$resultado32=mysqli_fetch_array($result32);
 
+$result32=$conn->query($sql32);
+$resultado32=$result32->fetchAll();
+
+//$result32=mysqli_query ($conn,$sql32) or die ("Invalid result menucontabilidad");
+//$resultado32=mysqli_fetch_array($result32);
 for ($rt=0;$rt<count($dat);$rt++){;
 $valoref=$resultado10[$dat[$rt]];
 $serimg=$resultado32[$dat[$rt]];

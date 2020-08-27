@@ -23,8 +23,11 @@ $mes=$mesa[1];
 
 
 $sql01="SELECT * from categorias where idpccat='".$idpccat."'"; 
-$result01=mysqli_query ($conn,$sql01) or die ("Invalid result 1");
-$resultado01 = mysqli_fetch_array ($result01);
+
+$result01=$conn->query($sql01);
+$resultado01=$result10->fetchAll();
+//$result01=mysqli_query ($conn,$sql01) or die ("Invalid result 1");
+//$resultado01 = mysqli_fetch_array ($result01);
 $categoria=$resultado01['nombre'];
 
 
