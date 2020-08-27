@@ -5,15 +5,27 @@ include('bbdd.php');
 <?php  include('../portada_n/cabecera2.php');
 
 $sql31="select * from menuadministracionnombre where idempresa='".$ide."'";
-$result31=mysql_query ($sql31) or die ("Invalid result menucontabilidad");
-$resultado31=mysqli_fetch_array($result31);
+
+$result31=$conn->query($sql31);
+//$resultmos=$conn->query($sql);
+$resultado31=$result31->fetchAll();
+//$row=count($num_rows);
+
+//$result31=mysql_query ($sql31) or die ("Invalid result menucontabilidad");
+//$resultado31=mysqli_fetch_array($result31);
 switch($tipo){
 case 1: $nc=$resultado31['clientes'];break;
 case 2: $nc=$resultado31['puestos'];break;
 }
 $sql32="select * from menuadministracionimg where idempresa='".$ide."'";
-$result32=mysql_query ($sql32) or die ("Invalid result menucontabilidad");
-$resultado32=mysqli_fetch_array($result32);
+
+
+$result32=$conn->query($sql32);
+//$resultmos=$conn->query($sql32);
+$resultado32=$result32->fetchAll();
+//$row=count($num_rows);
+//$result32=mysql_query ($sql32) or die ("Invalid result menucontabilidad");
+//$resultado32=mysqli_fetch_array($result32);
 switch($tipo){
 case 1: $ic=$resultado32['clientes'];break;
 case 2: $ic=$resultado32['puestos'];break;
@@ -43,11 +55,24 @@ $dat2=array('entrada','incidencia','mensaje','alarma','accdiarias','accmantenimi
 $dat=array('mensaje','alarma','accdiarias','accmantenimiento','niveles','productos','revision','trabajo','siniestro','control','mediciones','jornadas','informes','ruta','envases','incidenciasplus','seguimiento');
 
 $sql10="select * from servicios where idempresa='".$ide."'"; 
+
+$result10=$conn->query($sql10);
+//$resultmos=$conn->query($sql);
+$num_rows=$result->fetchAll();
+$row10=count($num_rows);
+
 $result10=mysql_query ($sql10) or die ("Invalid result clientes");
 
+$result10=$conn->query($sql10);
+//$resultmos=$conn->query($sql);
+$num_rows=$result10->fetchAll();
+$row=count($num_rows);
 
 $sql31="select * from menuserviciosnombre where idempresa='".$ide."'";
-$result31=mysql_query ($sql31) or die ("Invalid result menucontabilidad");
+
+$result31=$conn->query($sql31);
+
+//$result31=mysql_query ($sql31) or die ("Invalid result menucontabilidad");
 ?>
 
 
@@ -129,9 +154,15 @@ if ($dgtt==1){;
              {
              	
 $sqlid="SELECT idempleado from empleados where idempresa='".$ide."' order by idempleado desc";
+
+$resultid=$conn->query($sqlid);
+//$resultmos=$conn->query($sql);
+$num_rows=$result->fetchAll();
+$row=count($num_rows);
+
 //echo $sqlid;
-$resultid=mysql_query($sqlid);
-$row=mysql_affected_rows();
+//$resultid=mysql_query($sqlid);
+//$row=mysql_affected_rows();
 if ($row==0){;
 $idnue=11;
 }else{;
@@ -157,7 +188,9 @@ $sql.=",'$valor[$yh]'";
 }              
                $sql.=")";
                 //echo $sql.'<br>';
-               mysql_query($sql) or die('Error: '.mysql_error());
+
+               $resultid=$conn->query($sql);
+               //mysql_query($sql) or die('Error: '.mysql_error());
 
 $sql2 = "INSERT INTO usuarios (user,password,idempresas,idempleados,trabajador,tusuario,modulo) VALUES ('$valor[3]','aaaaaaaa','$ide','$idnue','1','3','41')";
 $result2=mysql_query ($sql2) or die ("Invalid result usuarios");

@@ -21,14 +21,23 @@ include('bbdd.php');
 <tr><td>Fecha de Contratación:</td><td><input type="text" name="dia" maxlength="2" size=2>-<input type="text" name="mes" maxlength="2" size=2>-<input type="text" name="año" maxlength="4" size=4></td></tr>
 <tr><td>Rama de la Empresa</td></td><td>
 <?php $sql1="select * from afiliacion where idempresa='".$ide."'"; 
-$result1=mysqli_query ($conn,$sql1) or die ("Invalid result empleados");
-$row1=mysqli_num_rows($result1);?>
+
+$result1=$conn->query($sql1);
+$resultmos=$conn->query($sql1);
+$num_rows=$result1->fetchAll();
+$row1=count($num_rows);
+//$result1=mysqli_query ($conn,$sql1) or die ("Invalid result empleados");
+//$row1=mysqli_num_rows($result1);?>
 <select name="rama">
-<?php for ($j;$j<$row1;$j++){;
-mysqli_data_seek($result1,$j);
-$resultado1=mysqli_fetch_array($result1);
-$rama=$resultado1['id'];
-$nombrerama=$resultado1['nombre'];
+<?php 
+
+foreach ($resultmos as $row1) {
+
+//for ($j;$j<$row1;$j++){;
+//mysqli_data_seek($result1,$j);
+//$resultado1=mysqli_fetch_array($result1);
+$rama=$row1['id'];
+$nombrerama=$row1['nombre'];
 ?>
 <option value="<?php  echo $rama;?>"><?php  echo $nombrerama;?>
 <?php };?>

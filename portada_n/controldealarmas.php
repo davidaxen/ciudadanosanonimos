@@ -14,17 +14,25 @@ if($seg=="00"){;
 
 $sql="select * from empresas where estado='1'";
 //echo $sql.'<br/>';
-$result=mysqli_query ($conn,$sql) or die ("Invalid result 1");
-$row=mysqli_num_rows($result);
+
+$result=$conn->query($sql);
+$resultmos=$conn->query($sql);
+$num_rows=$result10->fetchAll();
+$row=count($num_rows);
+
+//$result=mysqli_query ($conn,$sql) or die ("Invalid result 1");
+//$row=mysqli_num_rows($result);
 
 echo 'Total de empresas'.$row.'</br>';
 
-for ($t=0;$t<$row;$t++){;
-mysqli_data_seek($result,$t);
-$resultado=mysqli_fetch_array($result);
-$ide=$resultado['idempresas'];
-$emailempresa=$resultado['email'];
-$emailadmin2=$resultado['emailadmin'];
+foreach ($resultmos as $row) {
+
+//for ($t=0;$t<$row;$t++){;
+//mysqli_data_seek($result,$t);
+//$resultado=mysqli_fetch_array($result);
+$ide=$row['idempresas'];
+$emailempresa=$row['email'];
+$emailadmin2=$row['emailadmin'];
 
 //echo $horario1.'<br/>';
 $horario1=0;
@@ -51,16 +59,25 @@ $sql1.=" and finicio<='".$ft."' and ffin>='".$ft."' ";
 $sql1.=" and horario between '".$hfi."' and '".$hff."' ";
 $sql1.="order by horario asc"; 
 //echo $sql1.'<br/>';
-$result1=mysqli_query ($conn,$sql1) or die ("Invalid result 1");
-$row1=mysqli_num_rows($result1);
+
+$result1=$conn->query($sql1);
+$resultmos1=$conn->query($sql1);
+$num_rows=$result10->fetchAll();
+$row=count($num_rows);
+
+//$result1=mysqli_query ($conn,$sql1) or die ("Invalid result 1");
+//$row1=mysqli_num_rows($result1);
 
 
 echo "funcionamiento".$row1." - ".$ide."<br/>";
-for ($j=0;$j<$row1;$j++){;
-mysqli_data_seek($result1,$j);
-$resultado1=mysqli_fetch_array($result1);
-$idclientes=$resultado1['idclientes'];
-$horario=$resultado1['horario'];
+
+foreach ($resultmos1 as $row1) {
+
+//for ($j=0;$j<$row1;$j++){;
+//mysqli_data_seek($result1,$j);
+//$resultado1=mysqli_fetch_array($result1);
+$idclientes=$row1['idclientes'];
+$horario=$row1['horario'];
 $h1=strtok($horario,':');
 $m1=strtok(':');
 $s1=strtok(':');
@@ -77,8 +94,13 @@ if (($horalimite==$hff) or ($horario==$hff)) {;
 $sql10="SELECT * from almpc where idpiscina='".$idclientes."' and idempresas='".$ide."'
 and idpccat='1' and idpcsubcat='1' and dia='".$ft."' and hora between '".$hfi."' and '".$hff."' ";
 //echo $sql10;
-$result10=mysqli_query ($conn,$sql10) or die ("Invalid result 10");
-$row10=mysqli_num_rows($result10);
+
+$result10=$conn->query($sql10);
+$num_rows=$result10->fetchAll();
+$row=count($num_rows);
+
+//$result10=mysqli_query ($conn,$sql10) or die ("Invalid result 10");
+//$row10=mysqli_num_rows($result10);
 
 if ($row10==0){;
 
@@ -86,20 +108,32 @@ if ($horalimite==$hff){;
 $sql13 = "INSERT INTO retrasojor(idempresas,idclientes,dia,hora,dsemana,ingreso) 
 VALUES ('$ide','$idclientes','$ft','$hff','$tf','2')";
 //echo $sql13;
-$result13=mysqli_query ($conn,$sql13) or die ("Invalid result iclientes");
+
+$result13=$conn->query($sql13);
+
+//$result13=mysqli_query ($conn,$sql13) or die ("Invalid result iclientes");
 
 
 $sql18="SELECT * from vecinos,vecinoscom where vecinos.idcliente=vecinoscom.idcliente and vecinos.idempresa=vecinoscom.idempresa and vecinoscom.idcliente='".$idclientes."' and vecinoscom.idempresa='".$ide."' and jornada='1' and estado='1'";
 //echo $sql18;
+
+$result=$conn->query($sql18);
+$resultmos18=$conn->query($sql18);
+$num_rows=$result10->fetchAll();
+$row=count($num_rows);
+
 $result18=mysqli_query ($conn,$sql18) or die ("Invalid result 18");
 $row18=mysqli_num_rows($result18);
 
 if ($row18>0){;
 $emaile=" ";
-for ($te=0;$te<$row18;$te++){;
-mysqli_data_seek($result18,$te);
-$resultado18=mysqli_fetch_array($result18);
-$emaile.=$resultado18['email'];
+
+foreach ($resultmos18 as $row18) {
+
+//for ($te=0;$te<$row18;$te++){;
+//mysqli_data_seek($result18,$te);
+//$resultado18=mysqli_fetch_array($result18);
+$emaile.=$row18['email'];
 $y=$te+1;
 
 if ($y<$row18){;
@@ -112,8 +146,12 @@ $emaile.=",";
 
 $sql16="SELECT * from clientes where idclientes='".$idclientes."' and idempresas='".$ide."'";
 //echo $sql16;
-$result16=mysqli_query ($conn,$sql16) or die ("Invalid result 10");
-$resultado16=mysqli_fetch_array($result16);
+
+$result16=$conn->query($sql16);
+$resultado16=$result16->fetchAll();
+
+//$result16=mysqli_query ($conn,$sql16) or die ("Invalid result 10");
+//$resultado16=mysqli_fetch_array($result16);
 $nomcliente=$resultado16['nombre'];
 $nomcliente=strtoupper($nomcliente);
 $asunto="Puesto de Trabajo ".$nomcliente." sin personal";

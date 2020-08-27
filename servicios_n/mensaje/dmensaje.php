@@ -34,9 +34,16 @@ Listado de <?php echo ucfirst($nc);?>
 <table class="table-bordered table pull-right" id="mytable">
 <tr class="enctab"><td>Fecha Finalizacion</td><td>Texto</td><td>Opciones</td></tr>
 <?php 
-$sql="SELECT * from mensajes where idempresa='".$ide."' and fechafin>'".$fechac."' or fechafin is null order by fechafin desc";
+$sql="SELECT * from mensajes where idempresa=:ide and fechafin>:fechac or fechafin is null order by fechafin desc";
 //echo $sql;
-$result=$conn->query($sql);
+
+$result=$conn->prepare($sql);
+$result->bindParam(':ide',$ide);
+$result->bindParam(':fechac',$fechac);
+$result->execute();
+$resultado=$result->fetch();
+
+//$result=$conn->query($sql);
 
 /*$result=mysqli_query ($conn,$sql) or die ("Invalid result0");
 $row=mysqli_num_rows($result);
@@ -52,9 +59,16 @@ $texto=$rowmos['texto'];
 ?>
 <tr class="dattab"><td><?php  echo $fechafin;?></td><td><?php  echo $texto;?></td><td>
 <?php
-$sql10="SELECT * from respuestamensajes where idempresa='".$ide."' and idmensaje='".$idmensaje."'";
+$sql10="SELECT * from respuestamensajes where idempresa=:ide and idmensaje=:idmensaje";
+
+$result10=$conn->prepare($sql10);
+$result10->bindParam(':ide',$ide);
+$result10->bindParam(':idmensaje',$idmensaje);
+$result10->execute();
+//$resultado=$result->fetch();
+
 //echo $sql10;
-$result10=$conn->query($sql10);
+//$result10=$conn->query($sql10);
 $row10=count($result10->fetchAll());
 
 /*$result10=mysqli_query ($conn,$sql10) or die ("Invalid result0");
@@ -80,10 +94,16 @@ Listado de <?php echo ucfirst($nc);?>
 <table class="table-bordered table pull-right" id="mytable">
 <tr class="enctab"><td>Fecha Finalizacion</td><td>Texto</td><td>Opciones</td></tr>
 <?php 
-$sql="SELECT * from mensajes where idempresa='".$ide."' and fechafin>'".$fechac."' or fechafin is null order by fechafin desc";
+$sql="SELECT * from mensajes where idempresa=:ide and fechafin>:fechac or fechafin is null order by fechafin desc";
 //echo $sql;
 
-$result=$conn->query($sql);
+$result=$conn->prepare($sql);
+$result->bindParam(':ide',$ide);
+$result->bindParam(':fechac',$fechac);
+$result->execute();
+//$resultado=$result->fetch();
+
+//$result=$conn->query($sql);
 
 /*$result=mysqli_query ($conn,$sql) or die ("Invalid result0");
 $row=mysqli_num_rows($result);
@@ -99,10 +119,15 @@ $texto=$rowmos['texto'];
 ?>
 <tr class="dattab"><td><?php  echo $fechafin;?></td><td><?php  echo $texto;?></td><td>
 <?php
-$sql10="SELECT * from respuestamensajes where idempresa='".$ide."' and idmensaje='".$idmensaje."'";
+$sql10="SELECT * from respuestamensajes where idempresa=:ide and idmensaje=:idmensaje";
 //echo $sql10;
 
-$result10=$conn->query($sql10);
+$result10=$conn->prepare($sql10);
+$result10->bindParam(':ide',$ide);
+$result10->bindParam(':idmensaje',$idmensaje);
+$result10->execute();
+//$resultado=$result->fetch();
+//$result10=$conn->query($sql10);
 $row10=count($result10->fetchAll());
 
 /*$result10=mysqli_query ($conn,$sql10) or die ("Invalid result0");

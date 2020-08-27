@@ -16,12 +16,21 @@ if ($ide!=null){;
 if ($enviar=='enviar'){;
 
 $sql13 = "INSERT INTO ayuda(menu,seccion,subseccion,titulo) 
-VALUES ('$menu','$seccion','$subseccion','$texto')";
+VALUES (:menu,:seccion,:subseccion,:texto)";
 //echo $sql13;
+
+
+$result13=$conn->prepare($sql13);
+$result13->bindParam(':menu',$menu);
+$result13->bindParam(':seccion',$seccion);
+$result13->bindParam(':subseccion',$subseccion);
+$result13->bindParam(':texto',$texto);
+$result13->execute();
+
 //$result13=mysqli_query ($conn,$sql13) or die ("Invalid result iclientes");
 echo ("introduccida ayuda");
 
-$result13=$conn->query($sql13);
+//$result13=$conn->query($sql13);
 //$resultmos13=$conn->query($sql13);
 //$num_rows=$result->fetchAll();
 //$row=count($num_rows);

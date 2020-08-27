@@ -11,15 +11,21 @@ $admimg=array('iconlis.png');
 
 $sql02="SELECT * from menuserviciosimg where idempresa='".$ide."'"; 
 //echo $sql01;
-$result02=mysqli_query ($conn,$sql02) or die ("Invalid result 02");
-$resultado02=mysqli_fetch_array($result02);
+
+$result02=$conn->query($sql02);
+$resultado02=$result02->fetchAll();
+//$result02=mysqli_query ($conn,$sql02) or die ("Invalid result 02");
+//$resultado02=mysqli_fetch_array($result02);
 $datoi[]=$resultado02['entrada'];
 
 
 $sql03="SELECT * from menuserviciosnombre where idempresa='".$ide."'"; 
 //echo $sql01;
-$result03=mysqli_query ($conn,$sql03) or die ("Invalid result 03");
-$resultado03=mysqli_fetch_array($result03);
+
+$result03=$conn->query($sql03);
+$resultado03=$result10->fetchAll();
+//$result03=mysqli_query ($conn,$sql03) or die ("Invalid result 03");
+//$resultado03=mysqli_fetch_array($result03);
 $valores[]=$resultado03['entrada'];
 
 $ipcat=array('entrada');
@@ -54,21 +60,31 @@ if ($idtrab!=null){;
 
 $sql01="SELECT * from empleados where idempresa='".$ide."' and idempleado='".$idtrab."'"; 
 //echo $sql01;
-$result01=mysqli_query ($conn,$sql01) or die ("Invalid result 01");
-$resultados01 = mysqli_fetch_array ($result01);
+
+$result01=$conn->query($sql01);
+$resultados01=$result01->fetchAll();
+//$result01=mysqli_query ($conn,$sql01) or die ("Invalid result 01");
+//$resultados01 = mysqli_fetch_array ($result01);
 $teletrabajos=$resultados01['teletrabajo'];
 
 
 $sql02="SELECT * from menuserviciosimg where idempresa='".$ide."'"; 
 //echo $sql01;
-$result02=mysqli_query ($conn,$sql02) or die ("Invalid result 02");
-$resultados02 = mysqli_fetch_array ($result02);
+
+$result02=$conn->query($sql02);
+$resultados02=$result02->fetchAll();
+
+//$result02=mysqli_query ($conn,$sql02) or die ("Invalid result 02");
+//$resultados02 = mysqli_fetch_array ($result02);
 $teletrabajoi=$resultados02['teletrabajo'];
 
 $sql03="SELECT * from menuserviciosnombre where idempresa='".$ide."'"; 
 //echo $sql01;
-$result03=mysqli_query ($conn,$sql03) or die ("Invalid result 03");
-$resultados03 = mysqli_fetch_array ($result03);
+
+$result03=$conn->query($sql03);
+$resultados03=$result03->fetchAll();
+//$result03=mysqli_query ($conn,$sql03) or die ("Invalid result 03");
+//$resultados03 = mysqli_fetch_array ($result03);
 $teletrabajon=$resultados03['teletrabajo'];
 
 

@@ -15,8 +15,13 @@ $sql="SELECT * from empresas where estado='1'";
 $sql.=" and mesalta between  '".$mt."' and '".$mt2."'";
 $sql.=" and yearalta < '".$yt."'";
 $sql.=" order by mesalta asc, idempresas asc"; 
-$result=mysqli_query ($conn,$sql) or die ("Invalid result");
-$row=mysqli_affected_rows();
+
+$result=$conn->query($sql);
+$num_rows=$result->fetchAll();
+$row=count($num_rows);
+
+//$result=mysqli_query ($conn,$sql) or die ("Invalid result");
+//$row=mysqli_affected_rows();
 ?>
 <table>
 <tr class="enctab"><td>Nº</td><td>Nombre Empresa</td><td>NIF</td><td>L. Admin.</td><td>L. Cli.</td><td>L. Empl.</td><td>Fecha Alta</td></tr>

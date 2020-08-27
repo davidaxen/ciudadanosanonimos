@@ -11,8 +11,11 @@ include('bbdd.php');
 </head>
 <?php 
 $sql1="select * from usuarios where user='".$user."' and password='".$pass."'"; 
-$result1=mysqli_query ($conn,$sql1) or die ("Invalid result empresas");
-$resultado1=mysqli_fetch_array($result1);
+
+$result1=$conn->query($sql1);
+$resultado1=$result1->fetchAll();
+//$result1=mysqli_query ($conn,$sql1) or die ("Invalid result empresas");
+//$resultado1=mysqli_fetch_array($result1);
 $trab=$resultado1['trabajadores'];
 ?>
 <script>
@@ -50,8 +53,12 @@ prod.options.add(o);
 <?php 
 $sql2="select idempleado, nombre, 1apellido as pa, 2apellido as sa, estado from empleados where idempresa='".$ide."' order by idempleado";
 //$sql2="SELECT idclientes,nombre,estado from clientes where idempresas='".$ide."' order by idclientes asc";
+
+$result2=$conn->query($sql2);
+//$resultado2=$result2->fetchAll();
+
 $result2=mysqli_query ($conn,$sql2) or die ("Invalid result");
-while ($empl = mysqli_fetch_array($result2)){;
+while ($empl =$result2->fetchAll()){;
 ?>
 
 if (depto == "<?php  echo $empl['estado']?>"){
@@ -76,16 +83,29 @@ if ($enviar==null){;
 
 if  ($trab=='1'){;
 $sql2="select idempleado from empleados where nif='".$user."' and idempresa='".$ide."'"; 
-$result2=mysqli_query ($conn,$sql2) or die ("Invalid result empleados");
-$resultado2=mysqli_fetch_array($result2);
+
+$result2=$conn->query($sql2);
+$resultado2=$result2->fetchAll();
+
+//$result2=mysqli_query ($conn,$sql2) or die ("Invalid result empleados");
+//$resultado2=mysqli_fetch_array($result2);
 $idempl=$resultado2['idempleado'];
 $sql20="select idempleado, nombre, 1apellido as pa, 2apellido as sa from empleados where idempresa='".$ide."' and idempleado='".$idempl."'";
-$result20=mysqli_query ($conn,$sql20) or die ("Invalid result0");
-$row20=mysqli_num_rows($result20);
+
+$result20=$conn->query($sql20);
+$num_rows=$result20->fetchAll();
+$row20=count($num_rows);
+//$result20=mysqli_query ($conn,$sql20) or die ("Invalid result0");
+//$row20=mysqli_num_rows($result20);
 }else{;
 $sql20="select idempleado, nombre, 1apellido as pa, 2apellido as sa from empleados where idempresa='".$ide."' and estado='1'";
-$result20=mysqli_query ($conn,$sql20) or die ("Invalid result0");
-$row20=mysqli_num_rows($result20);
+
+$result20=$conn->query($sql20);
+//$resultmos=$conn->query($sql);
+
+$row20=count($num_rows);
+//$result20=mysqli_query ($conn,$sql20) or die ("Invalid result0");
+//$row20=mysqli_num_rows($result20);
 };
 ?>
 <form action="calcuadranteemp.php" method="post">
@@ -95,8 +115,9 @@ $row20=mysqli_num_rows($result20);
 <tr><td>Nombre de Empleado</td></tr>
 <tr><td>
 <input type="hidden" name="empleado" value="<?php  echo $idempl;?>">
-<?php 
-$resultado20=mysqli_fetch_array($result20);
+<?php
+$resultado20=$result20->fetchAll(); 
+//$resultado20=mysqli_fetch_array($result20);
 $nombree=$resultado20['nombre'];
 $apellidope=$resultado20['pa'];
 $apellidose=$resultado20['sa'];?>

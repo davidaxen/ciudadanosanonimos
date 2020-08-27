@@ -34,7 +34,10 @@ include('bbdd.php');
 <?php 
 $sql01="SELECT * from portadai where idempresa='".$ide."'"; 
 //echo $sql01;
-$result01=mysqli_query ($conn,$sql01) or die ("Invalid result 1");
+
+$result01=$conn->query($sql01);
+
+//$result01=mysqli_query ($conn,$sql01) or die ("Invalid result 1");
 $valores=array('cuadrante','entrada','incidencia','mensaje','alarma','accdiarias','accmantenimiento','niveles','productos','revision','trabajo','siniestro');
 $ipcat=array('0','1','20','30','40','3','4','2','5','6','7','8');
 $dato[]=mysqli_result($result01,0,'cuadrante');
@@ -50,13 +53,20 @@ $dato[]=mysqli_result($result01,0,'revision');
 $dato[]=mysqli_result($result01,0,'trabajo');
 $dato[]=mysqli_result($result01,0,'siniestro');
 $t=1;
-for ($j=0;$j<count($valores);$j++){;
+for ($j=0;$j<count($valores);$j++){
 //echo $valores[$j].'-'.$dato[$j].'-'.$ipcat[$j];
 if ($dato[$j]==1){;
 $idpccat=$ipcat[$j];
-$sql02="SELECT * from categorias where idpccat='".$idpccat."'"; 
-$result02=mysqli_query ($conn,$sql02) or die ("Invalid result 1");
-$imagen=mysqli_result($result02,0,'imagen');
+$sql02="SELECT * from categorias where idpccat='".$idpccat."'";
+
+$result02=$conn->query($sql02);
+
+//$result02=mysqli_query ($conn,$sql02) or die ("Invalid result 1");
+
+
+//comentar con david
+$imagen=$num_rows[0]['imagen'];
+//$imagen=mysqli_result($result02,0,'imagen');
 
 ?>
 

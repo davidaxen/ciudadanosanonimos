@@ -23,19 +23,26 @@ $sql.=" and idempleado='".$idempleado."'";
 $sql.=" order by  idempleado asc, idpiscina asc";
 
 //echo $sql;
-$result=mysqli_query ($conn,$sql) or die ("Invalid result0");
-$row=mysqli_num_rows($result);
+
+$result=$conn->query($sql);
+$resultmos=$conn->query($sql);
+$num_rows=$result->fetchAll();
+$row=count($num_rows);
+
+//$result=mysqli_query ($conn,$sql) or die ("Invalid result0");
+//$row=mysqli_num_rows($result);
 
 $j=0;
 
-for ($i=0;$i<$row;$i++){;
-mysqli_data_seek($result,$i);
-$resultado=mysqli_fetch_array($result);
+foreach ($resultmos as $row) {
 
-$idpcsubcat=$resultado['idpcsubcat'];
-$fecha_b=$resultado['dia'];
-$idempleado=$resultado['idempleado'];
-$idclientes=$resultado['idpiscina'];
+//for ($i=0;$i<$row;$i++){;
+//mysqli_data_seek($result,$i);
+//$resultado=mysqli_fetch_array($result);
+$idpcsubcat=$row['idpcsubcat'];
+$fecha_b=$row['dia'];
+$idempleado=$row['idempleado'];
+$idclientes=$row['idpiscina'];
 
 if ( ($idempleadot!=$idempleado) or ($idclientest!=$idclientes) ) {
 	if ($idpcsubcat==1){
@@ -224,8 +231,11 @@ for ($t=0;$t<count($resumenvalores);$t++){;
 
 $idempleadot=$resumenvalores[$t]['idempleado'];
 $sql10="SELECT * from empleados where idempresa='".$ide."' and idempleado='".$idempleadot."'"; 
-$result10=mysqli_query ($conn,$sql10) or die ("Invalid result1");
-$resultado10=mysqli_fetch_array($result10);
+
+$result10=$conn->query($sql10);
+$resultado10=$result10->fetchAll();
+//$result10=mysqli_query ($conn,$sql10) or die ("Invalid result1");
+//$resultado10=mysqli_fetch_array($result10);
 $nombre=$resultado10['nombre'];
 $papellido=$resultado10['1apellido'];
 $sapellido=$resultado10['2apellido'];
