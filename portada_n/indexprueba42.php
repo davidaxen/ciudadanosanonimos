@@ -22,18 +22,26 @@ if ($com=='comprobacion'){;
 <?php 
 $sql="select * from portadapag where idempresa='".$ide."'";
 //echo $sql;
-$result=mysqli_query ($conn, $sql) or die ("Invalid result idempresas");
-$row=mysqli_num_rows($result);
+
+$result=$conn->query($sql);
+$resultmos=$conn->query($sql);
+$num_rows=$result->fetchAll();
+$row=count($num_rows);
+//$result=mysqli_query ($conn, $sql) or die ("Invalid result idempresas");
+//$row=mysqli_num_rows($result);
 ?>
 
 
 <div class="tab">
 <?php 
-for ($j=0;$j<$row;$j++){;
-mysqli_data_seek($result,$j);
-$resultado=mysqli_fetch_array($result);
-$titulo=$resultado['titulo'];
-$pagport=$resultado['pag'];
+
+foreach ($result as $row) {
+
+//for ($j=0;$j<$row;$j++){;
+//mysqli_data_seek($result,$j);
+//$resultado=mysqli_fetch_array($result);
+$titulo=$row['titulo'];
+$pagport=$row['pag'];
 ?>
 
   <button class="tablinks" onclick="openCity(event, '<?php  echo $titulo;?>')" <?php if($j==0){;?>id="defaultOpen"<?php }?> ><?php  echo $titulo;?></button>
@@ -47,11 +55,14 @@ $pagport=$resultado['pag'];
 
 
 <?php 
-for ($j=0;$j<$row;$j++){;
-mysqli_data_seek($result,$j);
-$resultado=mysqli_fetch_array($result);
-$titulo=$resultado['titulo'];
-$pagport=$resultado['pag'];
+
+foreach ($resultmos as $row) {
+
+//for ($j=0;$j<$row;$j++){;
+//mysqli_data_seek($result,$j);
+//$resultado=mysqli_fetch_array($result);
+$titulo=$row['titulo'];
+$pagport=$row['pag'];
 ?>
 <div id="<?php  echo $titulo;?>" class="tabcontent">
   <h3><?php  echo $titulo;?></h3>

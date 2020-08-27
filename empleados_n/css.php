@@ -25,8 +25,13 @@ case "11" : $sql1.=" and finicio between '".date("Y-n-j",mktime(0,0,0,$mes,1,$fa
 case "12" : $sql1.=" and finicio between '".date("Y-n-j",mktime(0,0,0,$mes,1,$faño))."' and '".date("Y-n-j",mktime(0,0,0,$mes,31,$faño))."'";$tmes="Diciembre";$fmes=1;$fañot=$faño+1;break;
 }; 
 $sql1.=" and nomina.idempresa=empleados.idempresa and nomina.idempresa='".$ide."' group by nomina.idempleado";
-$result1=mysqli_query ($conn,$sql1) or die ("Invalid result1");
-$row=mysqli_num_rows($result1);
+
+$result1=$conn->query($sql1);
+$resultmos=$conn->query($sql1);
+$num_rows=$result1->fetchAll();
+$row1=count($num_rows);
+//$result1=mysqli_query ($conn,$sql1) or die ("Invalid result1");
+//$row=mysqli_num_rows($result1);
 
 
 $titulo="Pago Seg Social - ".$mes."-".$faño;
@@ -52,17 +57,21 @@ $sset=0;
     <td width="109" height="25"><font face="Tahoma" size="1">Seguridad Social para cotizacion:</font></td>
     <td width="109" height="25"><font face="Tahoma" size="1">Seguridad Social empleados:</font></td>
   </tr>  
-  <?php for ($j=0;$j<$row;$j++){;
-  mysqli_data_seek($result1,$j);
-  $resultado1=mysqli_fetch_array($result1);
-  $sst=$resultado1['value'];
-$salariot=$resultado1['valor'];
-$nombreemp=$resultado1['nombre'];
-$primapeemp=$resultado1['1apellido'];
-$segapeemp=$resultado1['2apellido'];
-$nif=$resultado1['nif'];
-$nss=$resultado1['nss'];
-$sse=$resultado1['sset'];
+  <?php 
+
+foreach ($resultmos as $row) {
+
+  //for ($j=0;$j<$row;$j++){;
+  //mysqli_data_seek($result1,$j);
+  //$resultado1=mysqli_fetch_array($result1);
+  $sst=$row['value'];
+$salariot=$row['valor'];
+$nombreemp=$row['nombre'];
+$primapeemp=$row['1apellido'];
+$segapeemp=$row['2apellido'];
+$nif=$row['nif'];
+$nss=$row['nss'];
+$sse=$row['sset'];
 $sset=$sset+$sse;
 ?>
    <tr>
@@ -81,8 +90,14 @@ $sset=$sset+$sse;
 include('../contabilidad/sqlcontabilidad.php');
 
 $sql33="select * from asientos where obs='".$titulo."' and idempresas='".$ide."' and año='".$faño."'"; 
-$result33=mysqli_query ($conn,$sql33) or die ("Invalid result33");
-$row33=mysqli_num_rows($result33);
+
+$result33=$conn->query($sql33);
+$resultmos33=$conn->query($sql33);
+$num_rows=$result33->fetchAll();
+$row33=count($num_rows);
+
+//$result33=mysqli_query ($conn,$sql33) or die ("Invalid result33");
+//$row33=mysqli_num_rows($result33);
 ?>
 <?php if ($row33==null){;?>
 <form action="css.php" method="get">
@@ -100,23 +115,32 @@ $row33=mysqli_num_rows($result33);
 Asiento Realizado
 <table>
 <tr><td>Asiento</td><td>Cuenta</td><td>Fecha</td><td>Observaciones</td><td>Debe</td><td>Haber</td></tr>
-<?php for ($i=0;$i<$row33;$i++){;
-mysqli_data_seek($result33,$i);
-$resultado33=mysqli_fetch_array($result33);
-$idasiento=$resultado33['idasiento'];
-$categoria=$resultado33['categoria'];
-$fecha=$resultado33['fecha'];
-$debe=$resultado33['debe'];
-$debe=$resultado33['debe'];
-$haber=$resultado33['haber'];
-$obs=$resultado33['obs'];
+<?php 
+
+foreach ($resultmos33 as $row33) {
+
+//for ($i=0;$i<$row33;$i++){;
+//mysqli_data_seek($result33,$i);
+//$resultado33=mysqli_fetch_array($result33);
+$idasiento=$row33['idasiento'];
+$categoria=$row33['categoria'];
+$fecha=$row33['fecha'];
+$debe=$row33['debe'];
+$debe=$row33['debe'];
+$haber=$row33['haber'];
+$obs=$row33['obs'];
 ?>
 <tr>
 <td><?php  echo $idasiento;?></td>
 <?php 
 $sql34="select descripcion from cuentas where subcuenta='".$categoria."'"; 
-$result34=mysqli_query ($conn,$sql34) or die ("Invalid result34");
-$resultado34=mysqli_fetch_array($result34);
+
+$result34=$conn->query($sql34);
+$resultmos=$conn->query($sql34);
+$resultado34=$result->fetchAll();
+//$row34=count($num_rows);
+//$result34=mysqli_query ($conn,$sql34) or die ("Invalid result34");
+//$resultado34=mysqli_fetch_array($result34);
 $ncat=$resultado34['descripcion'];
 ?>
 <td><?php  echo $categoria;?> - <?php  echo $ncat;?></td>
@@ -140,8 +164,14 @@ $ncat=$resultado34['descripcion'];
 <?php 
 include('../contabilidad/sqlcontabilidad.php');
 $sql21="select idasiento from asientos where idempresas='".$ide."' order by idasiento desc";
-$result21=mysqli_query ($conn,$sql21) or die ("Invalid result categoria");
-ç$resultado21=mysqli_fetch_array($result21);
+
+$result21=$conn->query($sql21);
+//$resultmos21=$conn->query($sql21);
+$resultado21=$result->fetchAll();
+//$row=count($num_rows);
+
+//$result21=mysqli_query ($conn,$sql21) or die ("Invalid result categoria");
+//$resultado21=mysqli_fetch_array($result21);
 $idasiento=$resultado21['idasiento'];
 if ($idasiento!=null){;
 $idasiento=$idasiento+1;
@@ -156,30 +186,48 @@ $segsocemp=$banco-$sset;
 $mest=$mesa-1;
 
 $sql21="select subcuenta from cuentas where cuenta='476' and idempresa='".$ide."'";
-$result21=mysqli_query ($conn,$sql21) or die ("Invalid result22");
+
+$result21=$conn->query($sql21);
+$coss=$result21->fetchAll();
+
+//$result21=mysqli_query ($conn,$sql21) or die ("Invalid result22");
 $coss=$resultado21['subcuenta'];
 
 $sql22="select subcuenta from cuentas where cuenta='572' and idempresa='".$ide."'";
-$result22=mysqli_query ($conn,$sql22) or die ("Invalid result22");
-$resultado22=mysqli_fetch_array($result22);
+
+$result22=$conn->query($sql22);
+$resultado22=$result22->fetchAll();
+//$result22=mysqli_query ($conn,$sql22) or die ("Invalid result22");
+//$resultado22=mysqli_fetch_array($result22);
 $cban=$resultado22['subcuenta'];
 
 $sql23="select subcuenta from cuentas where cuenta='642' and idempresa='".$ide."'";
-$result23=mysqli_query ($conn,$sql23) or die ("Invalid result22");
-$resultado23=mysqli_fetch_array($result23);
+
+$result23=$conn->query($sql23);
+$resultado23=$result23->fetchAll();
+//$result23=mysqli_query ($conn,$sql23) or die ("Invalid result22");
+//$resultado23=mysqli_fetch_array($result23);
 $csse=$resultado23['subcuenta'];
 
 $sql11="insert into asientos (idasiento,idempresas,fecha,año,debe,haber,categoria,obs) 
 values ('$idasiento','$ide','$fechaa','$faño','$sset','','$coss','$titulo')";
-$result11=mysqli_query ($conn,$sql11) or die ("Invalid result11");
+//$result11=mysqli_query ($conn,$sql11) or die ("Invalid result11");
+$result11=$conn->query($sql11);
+
 
 $sql12="insert into asientos (idasiento,idempresas,fecha,año,debe,haber,categoria,obs) 
 values ('$idasiento','$ide','$fechaa','$faño','$segsocemp','','$csse','$titulo')";
-$result12=mysqli_query ($conn,$sql12) or die ("Invalid result12");
+
+$result12=$conn->query($sql12);
+
+//$result12=mysqli_query ($conn,$sql12) or die ("Invalid result12");
 
 $sql13="insert into asientos (idasiento,idempresas,fecha,año,debe,haber,categoria,obs) 
 values ('$idasiento','$ide','$fechaa','$faño','','$banco','$cban','$titulo')";
-$result13=mysqli_query ($conn,$sql13) or die ("Invalid result12");
+
+$result13=$conn->query($sql13);
+
+//$result13=mysqli_query ($conn,$sql13) or die ("Invalid result12");
 
 
 

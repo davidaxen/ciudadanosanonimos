@@ -14,8 +14,13 @@ if($clivp!=0){;
 $sql1.=" and idcomunidad='".$clivp."'";
 };
 $sql1.=" order by idempleado"; 
-$result1=mysqli_query ($conn,$sql1) or die ("Invalid result 1");
-$row1=mysqli_affected_rows();
+
+$result1=$conn->query($sql1);
+$result1mos=$conn->query($sql1);
+$num_rows=$result1->fetchAll();
+$row1=count($num_rows);
+//$result1=mysqli_query ($conn,$sql1) or die ("Invalid result 1");
+//$row1=mysqli_affected_rows();
 ?>
 
 <?php 
@@ -30,25 +35,32 @@ if ($ide!=null){;
 <div class="contenido">
 <table border="0">
 <tr class="subenc6"><td>Personal</td><td>Telefonos</td><td>Puesto de Trabajo</td><td>Hora</td><td>Turno</td></tr>
-<?php for ($j=0;$j<$row1;$j++){;
-$idempleado=mysqli_result($result1,$j,'idempleado');
-$idcomunidad=mysqli_result($result1,$j,'idcomunidad');
-$hora=mysqli_result($result1,$j,'horas');
-$turno=mysqli_result($result1,$j,'turno');
+<?php 
 
+foreach ($result1mos as $row1) {
+
+//for ($j=0;$j<$row1;$j++){;
+$idempleado=$row1['idempleado'];
+$idcomunidad=$row1['idcomunidad'];
+$hora=$row1['horas'];
+$turno=$row1['turno'];
 
 $sql10="SELECT * from empleados where idempleado='".$idempleado."' and idempresa='".$ide."'"; 
-$result10=mysqli_query ($conn,$sql10) or die ("Invalid result 10");
-$nombre=mysqli_result($result10,0,'nombre');
-$priape=mysqli_result($result10,0,'1apellido');
-$segape=mysqli_result($result10,0,'2apellido');
-$tele1=mysqli_result($result10,0,'tele1');
-$tele2=mysqli_result($result10,0,'tele2');
+
+$result10=$conn->query($sql10);
+//$result10=mysqli_query ($conn,$sql10) or die ("Invalid result 10");
+$nombre=$num_rows[0]['nombre'];
+$priape=$num_rows[0]['1apellido'];
+$segape=$num_rows[0]['2apellido'];
+$tele1=$num_rows[0]['tele1'];
+$tele2=$num_rows[0]['tele2'];
 $nombretrab=$nombre.' '.$priape.' '.$segape;
 
 $sql11="SELECT * from clientes where idclientes='".$idcomunidad."' and idempresas='".$ide."'"; 
-$result11=mysqli_query ($conn,$sql11) or die ("Invalid result 11");
-$nombrecom=mysqli_result($result11,0,'nombre');
+
+$result11=$conn->query($sql11);
+//$result11=mysqli_query ($conn,$sql11) or die ("Invalid result 11");
+$nombrecom=$num_rows[0]['nombre'];
 
 ?>
 <tr class="subenc7"><td><?php  echo strtoupper($nombretrab);?></td>

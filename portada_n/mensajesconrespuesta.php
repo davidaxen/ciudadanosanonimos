@@ -20,27 +20,37 @@ function refrescar1()
 
 $sql="SELECT * from mensajes where idempresa='".$ide."' and respondido='1' order by diaresp desc";
 //echo $sql;
-$result=mysqli_query ($conn,$sql) or die ("Invalid result0");
-$row=mysqli_num_rows($result);
 
-for ($i=0;$i<$row;$i++){;
-mysqli_data_seek($result,$i);
-$resultado=mysqli_fetch_array($result);
-$idempleado=$resultado['idempleado'];
-$dia=$resultado['dia'];
-$texto=$resultado['texto'];
-$textoresp=$resultado['respuesta'];
-$diaresp=$resultado['diaresp'];
-$horaresp=$resultado['horaresp'];
+$result=$conn->query($sql);
+$resultmos=$conn->query($sql);
+$num_rows=$result10->fetchAll();
+$row=count($num_rows);
 
+//$result=mysqli_query ($conn,$sql) or die ("Invalid result0");
+//$row=mysqli_num_rows($result);
 
+foreach ($resultmos as $row) {
+
+//for ($i=0;$i<$row;$i++){;
+//mysqli_data_seek($result,$i);
+//$resultado=mysqli_fetch_array($result);
+$idempleado=$row['idempleado'];
+$dia=$row['dia'];
+$texto=$row['texto'];
+$textoresp=$row['respuesta'];
+$diaresp=$row['diaresp'];
+$horaresp=$row['horaresp'];
 
 $sql2="SELECT * from empleados where idempresa='".$ide."' and idempleado='".$idempleado."'"; 
-$result2=mysqli_query ($conn,$sql2) or die ("Invalid result");
-$row2=mysqli_num_rows($result2);
+
+$result=$conn->query($sql);
+$resultmos=$conn->query($sql);
+$row=count($num_rows);
+//$result2=mysqli_query ($conn,$sql2) or die ("Invalid result");
+//$row2=mysqli_num_rows($result2);
 //echo $row2;
 if ($row2!=0){;
-$resultado2=mysqli_fetch_array($result2);
+$resultado2=$result10->fetchAll();
 $nombre=$resultado2['nombre'];
 $apellidop=$resultado2['1apellido'];
 $apellidos=$resultado2['2apellido'];
