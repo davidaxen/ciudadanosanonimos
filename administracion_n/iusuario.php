@@ -68,14 +68,20 @@ include('../portada_n/cabecera2.php');?>
 </head>
 
 <?php  
-$sql10="select licadm from empresas where idempresas='".$ide."'"; 
-$result10=mysqli_query ($conn,$sql10) or die ("Invalid result lic");
-$resultado10=mysqli_fetch_array($result10);
+$sql10="select licadm from empresas where idempresas='".$ide."'";
+$result10=$conn->query($sql10);
+$resultado10=$result10->fetch();
+
+/*$result10=mysqli_query ($conn,$sql10) or die ("Invalid result lic");
+$resultado10=mysqli_fetch_array($result10);*/
 $licadm=$resultado10['licadm'];
 
 $sql10="select count(idusuario) as tot from usuariost where idempresa='".$ide."' and estado='1'"; 
-$result10=mysqli_query ($conn,$sql10) or die ("Invalid result empleados");
-$resultado10=mysqli_fetch_array($result10);
+$result10=$conn->query($sql10);
+$resultado10=$result10->fetch();
+
+/*$result10=mysqli_query ($conn,$sql10) or die ("Invalid result empleados");
+$resultado10=mysqli_fetch_array($result10);*/
 $tota=$resultado10['tot'];
 
 //echo $lictra;
@@ -122,8 +128,11 @@ onclick="at5('administracion','administracionemp','administracioncli','administr
 </tr>
 <?php  
 $sql23="select * from empresas where idempresas='".$ide."' ";
-$result23=mysqli_query ($conn,$sql23) or die ("Invalid result232");
-$resultado23=mysqli_fetch_array($result23);
+$result23=$conn->query($sql23);
+$resultado23=$result23->fetch();
+
+/*$result23=mysqli_query ($conn,$sql23) or die ("Invalid result232");
+$resultado23=mysqli_fetch_array($result23);*/
 $cuadrante=$resultado23['cuadrante'];
 $entrada=$resultado23['entrada'];
 $incidencia=$resultado23['incidencia'];

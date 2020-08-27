@@ -19,7 +19,9 @@ a hover: {text-decoration:none}
 if ($modificar=='Modificar Compra'){;
 
 $sqlborrar="DELETE FROM previopago WHERE idempresas ='".$ide."'";
-$resultborrar=mysqli_query ($conn,$sqlborrar) or die ("Invalid resultborrar");
+$resultborrar=$conn->exec($sqlborrar);
+
+//$resultborrar=mysqli_query ($conn,$sqlborrar) or die ("Invalid resultborrar");
 
 };
 ?>
@@ -42,8 +44,10 @@ En este caso tiene las siguientes opciones de producto:
 <?php 
 $sqlopc="select * from precioopc where idpr='".$idpr."'";
 //echo $sqlopc;
-$resultopc=mysqli_query ($conn,$sqlopc) or die ("Invalid resultopc");
-$rowopc=mysqli_affected_rows();
+$resultopc=$conn->query($sqlopc);
+
+/*$resultopc=mysqli_query ($conn,$sqlopc) or die ("Invalid resultopc");
+$rowopc=mysqli_affected_rows();*/
 ?>
 
 	<form action="administracion_n/vercompra.php" method="post" name="formulario22" id="formulario">
@@ -56,9 +60,10 @@ $rowopc=mysqli_affected_rows();
 <tr><td>Opci&oacute;n</td><td>
 <select name="opcion" onchange="myFuncion22()">
 <option value=""></option>
-<?php for ($jopc=0;$jopc<$rowopc;$jopc++){;
-$nombreopc=mysqli_result($resultopc,$jopc,'nombre');
-$idopc=mysqli_result($resultopc,$jopc,'idopcion');
+<?php //for ($jopc=0;$jopc<$rowopc;$jopc++){;
+	foreach ($resultopc as $rowopcmos) {
+$nombreopc=$rowopcmos['nombre'];
+$idopc=$rowopcmos['idopcion'];
 ?>
 
 <option value="<?php  echo$idopc;?>"><?php  echo$nombreopc;?></option>
@@ -83,9 +88,12 @@ $dat=array('cuadrante','entrada','incidencia','mensaje','alarma','accdiarias','a
 
 $sqlpn="select * from proyectosnombre where idproyectos='".$idpr."'";
 //echo $sqlpn;
-$resultpn=mysqli_query ($conn,$sqlpn) or die ("Invalid resultpn");
+$resultpn=$conn->query($sqlpn);
+$resultadopn=$resultpn->fetchAll();
+
+//$resultpn=mysqli_query ($conn,$sqlpn) or die ("Invalid resultpn");
 for ($pn=0;$pn<count($dat);$pn++){;
-$encab[$pn]=mysqli_result($resultpn,0,$dat[$pn]);
+$encab[$pn]=$resultadopn[0][$dat[$pn]];
 };
 //print_r($encab);
 ?>
@@ -100,17 +108,19 @@ var valor=formulario22.opcion.value;
 
 
 switch(valor){
-<?php for ($jopc=0;$jopc<$rowopc;$jopc++){;
-$idopc2=mysqli_result($resultopc,$jopc,'idopcion');
-$caracopc=mysqli_result($resultopc,$jopc,'caracteristicas');
-$precioopc=mysqli_result($resultopc,$jopc,'precio');
-$caracprecioopc=mysqli_result($resultopc,$jopc,'caracprecio');
+<?php 
+//for ($jopc=0;$jopc<$rowopc;$jopc++){;
+foreach ($resultopc as $rowopmos2) {
+$idopc2=rowopmos2'idopcion'];
+$caracopc=$rowopmos2['caracteristicas'];
+$precioopc=$rowopmos2['precio'];
+$caracprecioopc=$rowopmos2['caracprecio'];
 
 
 $caracopc="Servicios Incluidos:<br/>";
 $caracopc.="<div id='divicolumna22'><ul>";
 for ($t=0;$t<count($encab);$t++){;
-$vcar=mysqli_result($resultopc,$jopc,$dat[$t]);
+$vcar=rowopmos2[$dat[$t]];
 if($vcar=='1'){
 $caracopc.="<li>".$encab[$t]."</li>";
 };

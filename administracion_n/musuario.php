@@ -25,9 +25,14 @@ if ($datos!='datos'){;
 <?php 
 }else{;
 
-$sql="SELECT * from usuariost where idempresa='".$ide."' and estado='".$estado."'"; 
-$result=mysqli_query ($conn,$sql) or die ("Invalid result");
-$row=mysqli_num_rows($result);
+$sql="SELECT * from usuariost where idempresa='".$ide."' and estado='".$estado."'";
+$result=$conn->query($sql);
+$resultmos=$conn->query($sql);
+$resultado=$result->fetchAll();
+$row=count($resultado);
+
+/*$result=mysqli_query ($conn,$sql) or die ("Invalid result");
+$row=mysqli_num_rows($result);*/
 ?>
 <?php if ($row==0){?>
 Si usuarios
@@ -40,14 +45,15 @@ Si usuarios
 </tr>
 <?php };
 
-for ($i=0; $i<$row; $i++){;
+/*for ($i=0; $i<$row; $i++){;
 mysqli_data_seek($result, $i);
-$resultado=mysqli_fetch_array($result);
+$resultado=mysqli_fetch_array($result);*/
+foreach ($resultmos as $rowmos) {
 ?>
 <tr class="menor1">
-<td><?php $idclientes=$resultado['idusuario'];?><?php  echo$idclientes;?></td>
-<td><?php $nombre=$resultado['nombre'];?><?php  echo$nombre;?></td>
-<td><?php $nif=$resultado['nif'];?><?php  echo$nif;?></td>
+<td><?php $idclientes=$rowmos['idusuario'];?><?php  echo$idclientes;?></td>
+<td><?php $nombre=$rowmos['nombre'];?><?php  echo$nombre;?></td>
+<td><?php $nif=$rowmos['nif'];?><?php  echo$nif;?></td>
 <td>
 <a href="modusuario.php?nif=<?php  echo$nif;?>">
 <img src="../img/modificar.gif" border=0></a>

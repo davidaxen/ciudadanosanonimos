@@ -1,6 +1,20 @@
 <?php
 $sql="select * from menufacturacion where user='".$user."' and idempresa='".$ide."'";
-$result=mysqli_query ($conn,$conn,$sql) or die ("Invalid result menuempleados");
+$result=$conn->query($sql);
+$resultado=$result->fetchAll();
+
+$f1=$resultado[0]['clientes'];
+$f2=$resultado[0]['gestores'];
+$f3=$resultado[0]['proveedores'];
+$f4=$resultado[0]['banco'];
+$f5=$resultado[0]['grupos'];
+$f6=$resultado[0]['facturas'];
+$f7=$resultado[0]['albaran'];
+$f8=$resultado[0]['facturasrecibidas'];
+$f9=$resultado[0]['hacienda'];
+
+
+/*$result=mysqli_query ($conn,$conn,$sql) or die ("Invalid result menuempleados");
 $f1=mysqli_result($result,0,'clientes');
 $f2=mysqli_result($result,0,'gestores');
 $f3=mysqli_result($result,0,'proveedores');
@@ -9,10 +23,23 @@ $f5=mysqli_result($result,0,'grupos');
 $f6=mysqli_result($result,0,'facturas');
 $f7=mysqli_result($result,0,'albaran');
 $f8=mysqli_result($result,0,'facturasrecibidas');
-$f9=mysqli_result($result,0,'hacienda');
+$f9=mysqli_result($result,0,'hacienda');*/
 
 $sql30="select * from menufacturacionnombre where user='".$user."' and idempresa='".$ide."'";
-$result30=mysqli_query ($conn,$conn,$sql30) or die ("Invalid result menuempleados");
+$result30=$conn->query($sql30);
+$resultado30=$result30->fetchAll();
+
+$nf1=$resultado30[0]['clientes'];
+$nf2=$resultado30[0]['gestores'];
+$nf3=$resultado30[0]['proveedores'];
+$nf4=$resultado30[0]['banco'];
+$nf5=$resultado30[0]['grupos'];
+$nf6=$resultado30[0]['facturas'];
+$nf7=$resultado30[0]['albaran'];
+$nf8=$resultado30[0]['facturasrecibidas'];
+$nf9=$resultado30[0]['hacienda'];
+
+/*$result30=mysqli_query ($conn,$conn,$sql30) or die ("Invalid result menuempleados");
 $nf1=mysqli_result($result30,0,'clientes');
 $nf2=mysqli_result($result30,0,'gestores');
 $nf3=mysqli_result($result30,0,'proveedores');
@@ -21,7 +48,7 @@ $nf5=mysqli_result($result30,0,'grupos');
 $nf6=mysqli_result($result30,0,'facturas');
 $nf7=mysqli_result($result30,0,'albaran');
 $nf8=mysqli_result($result30,0,'facturasrecibidas');
-$nf9=mysqli_result($result30,0,'hacienda');
+$nf9=mysqli_result($result30,0,'hacienda');*/
 ?>
 
 

@@ -3,7 +3,19 @@
 
 $sql1="select * from usuarios where user='".$user."' and password='".$pass."'"; 
 //echo $sql1;
-$result1=mysqli_query ($conn,$conn,$sql1) or die ("Invalid result empresas 1");
+$result1=$conn->query($sql1);
+$resultado1=$result1->fetchAll();
+$madmi=$resultado1[0]['administracion'];
+$mfact=$resultado1[0]['facturacion'];
+$memple=$resultado1[0]['empleados'];
+$mconta=$resultado1[0]['contabilidad'];
+$mutil=$resultado1[0]['utilidades'];
+$mexist=$resultado1[0]['existencias'];
+$mperso=$resultado1[0]['personalizado'];
+$cli=$resultado1[0]['cliente'];
+$ges=$resultado1[0]['gestor'];
+
+/*$result1=mysqli_query ($conn,$conn,$sql1) or die ("Invalid result empresas 1");
 $madmi=mysqli_result($result1,0,'administracion');
 $mfact=mysqli_result($result1,0,'facturacion');
 $memple=mysqli_result($result1,0,'empleados');
@@ -12,7 +24,7 @@ $mutil=mysqli_result($result1,0,'utilidades');
 $mexist=mysqli_result($result1,0,'existencias');
 $mperso=mysqli_result($result1,0,'personalizado');
 $cli=mysqli_result($result1,0,'cliente');
-$ges=mysqli_result($result1,0,'gestor');
+$ges=mysqli_result($result1,0,'gestor');*/
 ?>
    <ul id="nav">
  <!-- ADMINISTRACION --><?php if ($madmi=="1"){?><?php  include('administracion.php');?><?php };?><!-- FIN ADMINISTRACION -->  

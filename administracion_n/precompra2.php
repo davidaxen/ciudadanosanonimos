@@ -25,7 +25,8 @@ ul li {
 if ($modificar=='Modificar Compra'){;
 
 $sqlborrar="DELETE FROM previopago WHERE idempresas ='".$ide."'";
-$resultborrar=mysqli_query ($conn,$sqlborrar) or die ("Invalid resultborrar");
+$resultborrar=$conn->exec($sqlborrar);
+//$resultborrar=mysqli_query ($conn,$sqlborrar) or die ("Invalid resultborrar");
 
 };
 ?>
@@ -52,38 +53,44 @@ $camposc=array('mensaje','incidenciasplus');
 $camposa=array('cuadrante','jornadas');
 
 $sqlopc="select * from precioproyectos where idproyectos='".$idpr."' and estado='1'";
-$resultopc=mysqli_query ($conn,$sqlopc) or die ("Invalid resultopc");
+$resultopc=$conn->query($sqlopc);
+$resultadoopc=$resultopc->fetchAll();
+
+//$resultopc=mysqli_query ($conn,$sqlopc) or die ("Invalid resultopc");
 for($numqr=0;$numqr<count($camposqr);$numqr++){;
-$pqr[]=mysqli_result($resultopc,0,$camposqr[$numqr]);
+$pqr[]=$resultadoopc[0][$camposqr[$numqr]];
 };
 for($nump=0;$nump<count($camposp);$nump++){;
-$pp[]=mysqli_result($resultopc,0,$camposp[$nump]);
+$pp[]=$resultadoopc[0][$camposp[$nump]];
 };
 
 for($numc=0;$numc<count($camposc);$numc++){;
-$pc[]=mysqli_result($resultopc,0,$camposc[$numc]);
+$pc[]=$resultadoopc[0][$camposc[$numc]];
 };
 
 for($numa=0;$numa<count($camposa);$numa++){;
-$pa[]=mysqli_result($resultopc,0,$camposa[$numa]);
+$pa[]=$resultadoopc[0][$camposa[$numa]];
 };
 
 
 $sql="select * from proyectos where idproyectos='".$idpr."'";
-$result=mysqli_query ($conn,$sql) or die ("Invalid result menuproyectos");
+$result=$conn->query($sql);
+$resultado=$result->fetchAll();
+
+//$result=mysqli_query ($conn,$sql) or die ("Invalid result menuproyectos");
 for($numqr=0;$numqr<count($camposqr);$numqr++){;
-$cqr[]=mysqli_result($result,0,$camposqr[$numqr]);
+$cqr[]=$resultado[0][$camposqr[$numqr]];
 };
 for($nump=0;$nump<count($camposp);$nump++){;
-$cp[]=mysqli_result($result,0,$camposp[$nump]);
+$cp[]=$resultado[0][$camposp[$nump]];
 };
 
 for($numc=0;$numc<count($camposc);$numc++){;
-$cc[]=mysqli_result($result,0,$camposc[$numc]);
+$cc[]=$resultado[0][$camposc[$numc]];
 };
 
 for($numa=0;$numa<count($camposa);$numa++){;
-$ca[]=mysqli_result($result,0,$camposa[$numa]);
+$ca[]=$resultado[0][$camposa[$numa]];
 };
 
 
@@ -112,7 +119,7 @@ $ca[]=mysqli_result($result,0,$camposa[$numa]);
 		<input type="checkbox" readonly disabled checked value="basico">
 		<input type="hidden" name="pbasico" checked value="1">
 		Paquete b&aacute;sico: 
-		<?php $pbasico=mysqli_result($resultopc,0,'pbasico');?> <?php  echo$pbasico;?> &euro;/a&ntilde;o sin iva
+		<?php $pbasico=$resultadoopc[0]['pbasico'];?> <?php  echo$pbasico;?> &euro;/a&ntilde;o sin iva
 		<br>
 		<ul>
 		<li>Incluye:
@@ -121,9 +128,9 @@ $ca[]=mysqli_result($result,0,$camposa[$numa]);
 				<li>Incidencias</li>
 				<input type="hidden" name="entrada" value="1">
 				<input type="hidden" name="incidencia" value="1">
-				<?php $numadm=mysqli_result($result,0,'numadm');?>
-				<?php $numtrab=mysqli_result($result,0,'numtrab');?>
-				<?php $numcli=mysqli_result($result,0,'numcli');?>
+				<?php $numadm=$resultado[0]['numadm'];?>
+				<?php $numtrab=$resultado[0]['numtrab'];?>
+				<?php $numcli=$resultado[0]['numcli'];?>
 				<input type="hidden" name="numadm" value="<?php  echo$numadm;?>">
 				<input type="hidden" name="numtrab" value="<?php  echo$numtrab;?>">
 				<input type="hidden" name="numcli" value="<?php  echo$numcli;?>">
@@ -144,38 +151,44 @@ $ca[]=mysqli_result($result,0,$camposa[$numa]);
 
 
 $sql31="select * from proyectosnombre where idproyectos='".$idpr."'";
-$result31=mysqli_query ($conn,$sql31) or die ("Invalid result menucontabilidad");
+$result31=$conn->query($sql31);
+$resultado31=$result31->fetchAll();
+
+//$result31=mysqli_query ($conn,$sql31) or die ("Invalid result menucontabilidad");
 for($numqr=0;$numqr<count($camposqr);$numqr++){;
-$ncqr[]=mysqli_result($result31,0,$camposqr[$numqr]);
+$ncqr[]=$resultado31[0][$camposqr[$numqr]];
 };
 for($nump=0;$nump<count($camposp);$nump++){;
-$ncp[]=mysqli_result($result31,0,$camposp[$nump]);
+$ncp[]=$resultado31[0][$camposp[$nump]];
 };
 
 for($numc=0;$numc<count($camposc);$numc++){;
-$ncc[]=mysqli_result($result31,0,$camposc[$numc]);
+$ncc[]=$resultado31[0][$camposc[$numc]];
 };
 
 for($numa=0;$numa<count($camposa);$numa++){;
-$nca[]=mysqli_result($result31,0,$camposa[$numa]);
+$nca[]=$resultado31[0][$camposa[$numa]];
 };
 
 
 $sql32="select * from proyectosimg where idproyectos='".$idpr."'";
-$result32=mysqli_query ($conn,$sql32) or die ("Invalid result menucontabilidad");
+$result32=$conn->query($sql32);
+$resultado32=$result32->fetchAll();
+
+//$result32=mysqli_query ($conn,$sql32) or die ("Invalid result menucontabilidad");
 for($numqr=0;$numqr<count($camposqr);$numqr++){;
-$icqr[]=mysqli_result($result32,0,$camposqr[$numqr]);
+$icqr[]=$resultado32[0][$camposqr[$numqr]];
 };
 for($nump=0;$nump<count($camposp);$nump++){;
-$icp[]=mysqli_result($result32,0,$camposp[$nump]);
+$icp[]=$resultado32[0][$camposp[$nump]];
 };
 
 for($numc=0;$numc<count($camposc);$numc++){;
-$icc[]=mysqli_result($result32,0,$camposc[$numc]);
+$icc[]=$resultado32[0][$camposc[$numc]];
 };
 
 for($numa=0;$numa<count($camposa);$numa++){;
-$ica[]=mysqli_result($result32,0,$camposa[$numa]);
+$ica[]=$resultado32[0][$camposa[$numa]];
 };
 
 
@@ -241,12 +254,15 @@ $valorca=array_count_values($ca);
 <ul>
 <?php 		
 $sqlemp="select * from precioempleados where idproyectos='".$idpr."' and estado='1'";
-$resultemp=mysqli_query ($conn,$sqlemp) or die ("Invalid result precioempleados");
+$resultemp=$conn->query($sqlemp);
+
+/*$resultemp=mysqli_query ($conn,$sqlemp) or die ("Invalid result precioempleados");
 $rowemp=mysqli_affected_rows();
-for ($j=0;$j<$rowemp;$j++){;
-$nombregrupo=mysqli_result($resultemp,$j,'nombregrupo');
-$numempleados=mysqli_result($resultemp,$j,'numempleados');
-$preciogrupo=mysqli_result($resultemp,$j,'preciogrupo');
+for ($j=0;$j<$rowemp;$j++){;*/
+foreach ($resultemp as $rowempmos) {
+$nombregrupo=$rowempmos['nombregrupo'];
+$numempleados=$rowempmos['numempleados'];
+$preciogrupo=$rowempmos['preciogrupo'];
 ?>
 <input type="radio" name="paqtrabajadores" value="<?php  echo$numempleados;?>" onclick="myFuncion22()"><?php  echo$nombregrupo;?> - <?php  echo$preciogrupo;?>  &euro;/a&ntilde;o
 <?php 
@@ -287,12 +303,15 @@ function myFuncion23(){
 <ul>
 <?php 		
 $sqlcli="select * from preciocliente where idproyectos='".$idpr."' and estado='1'";
-$resultcli=mysqli_query ($conn,$sqlcli) or die ("Invalid result preciocliente");
+$resultcli=$conn->query($sqlcli);
+
+/*$resultcli=mysqli_query ($conn,$sqlcli) or die ("Invalid result preciocliente");
 $rowcli=mysqli_affected_rows();
-for ($j=0;$j<$rowcli;$j++){;
-$nombregrupo=mysqli_result($resultcli,$j,'nombregrupo');
-$numclientes=mysqli_result($resultcli,$j,'numcliente');
-$preciogrupo=mysqli_result($resultcli,$j,'preciogrupo');
+for ($j=0;$j<$rowcli;$j++){;*/
+foreach ($resultcli as $rowclimos) {
+$nombregrupo=$rowclimos['nombregrupo'];
+$numclientes=$rowclimos['numcliente'];
+$preciogrupo=$rowclimos['preciogrupo'];
 ?>
 <input type="radio" name="paqclientes" value="<?php  echo$numclientes;?>" onclick="myFuncion23()"><?php  echo$nombregrupo;?> - <?php  echo$preciogrupo;?>  &euro;/a&ntilde;o
 <?php 
@@ -307,12 +326,15 @@ $preciogrupo=mysqli_result($resultcli,$j,'preciogrupo');
 <ul>
 <?php 		
 $sqlperso="select * from preciopersonalizacion where idproyectos='".$idpr."' and estado='1'";
-$resultperso=mysqli_query ($conn,$sqlperso) or die ("Invalid result precioperso");
+$resultperso=$conn->query($sqlperso);
+
+/*$resultperso=mysqli_query ($conn,$sqlperso) or die ("Invalid result precioperso");
 $rowperso=mysqli_affected_rows();
-for ($j=0;$j<$rowperso;$j++){;
-$nombregrupo=mysqli_result($resultperso,$j,'nombregrupo');
-$nomvar=mysqli_result($resultperso,$j,'nombrevariable');
-$preciogrupo=mysqli_result($resultperso,$j,'preciogrupo');
+for ($j=0;$j<$rowperso;$j++){;*/
+	foreach ($resultperso as $rowpersomos) {
+$nombregrupo=$rowpersomos['nombregrupo'];
+$nomvar=$rowpersomos['nombrevariable'];
+$preciogrupo=$rowpersomos['preciogrupo'];
 ?>
 <input type="checkbox" name="nomvar[<?php  echo$j;?>]" value="1"><?php  echo$nombregrupo;?> - <?php  echo$preciogrupo;?>  &euro;/a&ntilde;o
 <?php 

@@ -13,8 +13,10 @@ include('../../portada_n/cabecera3.php');?>
 <form action="introrespuesta.php" method="post" enctype="multipart/form-data">
 <input type="hidden" name="id" value="<?php echo $id;?>">
 <?php 
-$sql="SELECT * from mensajes where id='".$id."'";
-$result=$conn->query($sql);
+$sql="SELECT * from mensajes where id=:id";
+$result=$conn->prepare($sql);
+$result->bindParam(':id', $id);
+$result->execute();
 $resultado=$result->fetch();
 
 /*$result=mysqli_query ($conn,$sql) or die ("Invalid result");
@@ -23,8 +25,10 @@ $texto=$resultado['texto'];
 $fichero=$resultado['fichero'];
 $otrosmot=$resultado['otrosmot'];
 
-$sql2="SELECT * from respuesta where idmensaje='".$id."'";
-$result2=$conn->query($sql2);
+$sql2="SELECT * from respuesta where idmensaje=:id";
+$result2=$conn->prepare($sql2);
+$result2->bindParam(':id', $id);
+$result2->execute();
 
 /*$result2=mysqli_query ($conn,$sql2) or die ("Invalid result");
 $row2=mysqli_num_rows($result2);*/

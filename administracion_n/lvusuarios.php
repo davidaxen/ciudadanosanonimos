@@ -41,16 +41,19 @@ $row=mysqli_num_rows($result);
 <tr class="enctab"><td>Visitas ( Dia - Hora )</td></tr>
 
 <?php 
-$sql1="SELECT * from visitas where usuario='".$usuarios."' order by dia desc,hora desc"; 
-$result1=mysqli_query ($conn,$sql1) or die ("Invalid result");
+$sql1="SELECT * from visitas where usuario='".$usuarios."' order by dia desc,hora desc";
+$result1=$conn->query($sql1);
+
+/*$result1=mysqli_query ($conn,$sql1) or die ("Invalid result");
 $row=mysqli_num_rows($result1);
 for ($j=0;$j<$row;$j++){;
 mysqli_data_seek($result1,$j);
-$resultado1=mysqli_fetch_array($result1);
+$resultado1=mysqli_fetch_array($result1);*/
+foreach ($result1 as $row1mos) {
 ?>
 <tr class="dattab">
 <td>
-<?php $dia=$resultado1['dia'];?><?php  echo$dia;?>-<?php $hora=$resultado1['hora'];?><?php  echo$hora;?>
+<?php $dia=$row1mos['dia'];?><?php  echo$dia;?>-<?php $hora=$row1mos['hora'];?><?php  echo$hora;?>
 </td>
 </tr>
 <?php };?>

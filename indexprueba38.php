@@ -143,6 +143,7 @@ $row=mysqli_num_rows($result);*/
 /*for ($j=0;$j<$row;$j++){;
 mysqli_data_seek($result,$j);
 $resultado=mysqli_fetch_array($result);*/
+$j=0;
 foreach ($resultmos as $rowmos) {
 $tituloport=$rowmos['titulo'];
 $pagport=$rowmos['pag'];
@@ -153,6 +154,7 @@ $iconoport=$rowmos['icono'];
   <img src="../img/iconos/<?php echo $iconoport;?>" width="32px" style="vertical-align:middle;"> <?php  echo $tituloport;?></button>
   
  <?php 
+ $j=$j+1;
 };
 ?> 
 </div>
@@ -164,6 +166,7 @@ $iconoport=$rowmos['icono'];
 /*for ($j=0;$j<$row;$j++){;
 mysqli_data_seek($result,$j);
 $resultado=mysqli_fetch_array($result);*/
+$j=0;
 foreach ($resultmos1 as $rowmos1) {
 $tituloport=$rowmos1['titulo'];
 $pagport=$rowmos1['pag'];
@@ -176,6 +179,7 @@ $iconoport=$rowmos1['icono'];
 
 
 <?php 
+$j=$j+1;
 };
 ?>
 <?php include ('js/tabjs.htm');?>
@@ -184,10 +188,6 @@ $iconoport=$rowmos1['icono'];
 
 </div>
 </div>
-
-
-
-    
 
 </body>
 

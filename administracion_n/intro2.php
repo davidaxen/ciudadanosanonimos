@@ -28,10 +28,26 @@ $mal=null;
 if ($tabla=="idproveedor"){;
 
 $sql1 = "INSERT INTO proveedores (idproveedor,nombre,nif,cp,domicilio,provincia,localidad,idempresas,estado,telefono,email) 
-VALUES ('$idp','$proveedor','$nifp','$cpp','$direccionp',
-'$provinciap','$localidadp','$ide','1','$telefonop','$emailp')";
+VALUES (:idp,:proveedor,:nifp,:cpp,:direccionp,
+:provinciap,:localidadp,:ide,'1',:telefonop,:emailp)";
 //echo $sql1;
-$result1=mysqli_query ($conn,$sql1) or die ("Invalid result iproveedores");
+
+$result1=$conn->prepare($sql1);
+$result1->bindParam(':idp', $idp);
+$result1->bindParam(':proveedor', $proveedor);
+$result1->bindParam(':nifp', $nifp);
+$result1->bindParam(':cpp', $cpp);
+$result1->bindParam(':direccionp', $direccionp);
+
+$result1->bindParam(':provinciap', $provinciap);
+$result1->bindParam(':localidadp', $localidadp);
+$result1->bindParam(':ide', $ide);
+$result1->bindParam(':telefonop', $telefonop);
+$result1->bindParam(':emailp', $emailp);
+
+$result1->execute();
+
+//$result1=mysqli_query ($conn,$sql1) or die ("Invalid result iproveedores");
 
 
 };

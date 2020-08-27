@@ -3,9 +3,11 @@ include('bbdd.php');
 $idpr=1;
 if ($idpr!=null){;
 
-$sql="SELECT * from proyectos where idproyectos='".$idpr."'"; 
-$result=mysqli_query ($conn,$sql) or die ("Invalid result");
-$resultado=mysqli_fetch_array($result);
+$sql="SELECT * from proyectos where idproyectos='".$idpr."'";
+$result=$conn->query($sql);
+$resultado=$result->fetch();
+/*$result=mysqli_query ($conn,$sql) or die ("Invalid result");
+$resultado=mysqli_fetch_array($result);*/
 $nombre=$resultado['nombre'];
 $logo=$resultado['logo'];
 

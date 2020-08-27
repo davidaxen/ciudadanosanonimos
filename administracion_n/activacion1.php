@@ -15,10 +15,15 @@ $parte=explode('?',$url);
 $parte2=explode('#;&',$parte2des);
 
 		
-$sql="SELECT * from validar where codvalidar='".$parte[1]."'"; 
+$sql="SELECT * from validar where codvalidar=:parte"; 
 //echo $sql;
-$result=mysqli_query ($conn,$sql) or die ("Invalid result");
-$resultado=mysqli_fetch_array($result);
+$result=$conn->prepare($sql);
+$result->bindParam(':parte', $parte[1]);
+$result->execute();
+$resultado=$result->fetch();
+
+/*$result=mysqli_query ($conn,$sql) or die ("Invalid result");
+$resultado=mysqli_fetch_array($result);*/
 $emailbbdd=$resultado['email'];
 $passbbdd=$resultado['password'];
 $validar=$resultado['validar'];
@@ -81,8 +86,11 @@ $nombreemp=strtoupper($resultado['nombreemp']);
 
 include('introempleados.php');
 
-$sql="UPDATE validar SET validar='1' where idvalidar='".$idvalidar."'"; 
-$result=mysqli_query ($conn,$sql) or die ("Invalid result");
+$sql="UPDATE validar SET validar='1' where idvalidar=:idvalidar"; 
+$result=$conn->prepare($sql);
+$result->bindParam(':idvalidar', $idvalidar);
+$result->execute();
+//$result=mysqli_query ($conn,$sql) or die ("Invalid result");
 
 
 echo '<br/>La validaci&oacute;n esta tramitada ya puede acceder pinche <a href="http://control.ciudadanosanonimos.com?idpr='.$idpr.'" target="_blank">Aqu&iacute;</a><br/>';

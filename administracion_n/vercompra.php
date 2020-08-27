@@ -33,26 +33,31 @@ $dat=array('cuadrante','entrada','incidencia','mensaje','alarma','accdiarias','a
 
 $sqlpn="select * from proyectosnombre where idproyectos='".$idpr."'";
 //echo $sqlpn;
-$resultpn=mysqli_query ($conn,$sqlpn) or die ("Invalid resultpn");
+$resultpn=$conn->query($sqlpn);
+$resultadopn=$resultpn->fetchAll();
+
+//$resultpn=mysqli_query ($conn,$sqlpn) or die ("Invalid resultpn");
 for ($pn=0;$pn<count($dat);$pn++){;
-$encab[$pn]=mysqli_result($resultpn,0,$dat[$pn]);
+$encab[$pn]=$resultadopn[0][$dat[$pn]];
 };
 //print_r($encab);
 ?>
 
 <?php 
 $sqlopc="select * from precioopc where idpr='".$idpr."' and idopcion='".$opcion."'";
-$resultopc=mysqli_query ($conn,$sqlopc) or die ("Invalid resultopc");
+$resultopc=$conn->query($sqlopc);
+$resultadopc=$resultopc->fetchAll();
+//$resultopc=mysqli_query ($conn,$sqlopc) or die ("Invalid resultopc");
 $jopc=0;
-$nombreopc=mysqli_result($resultopc,$jopc,'nombre');
-$precio=mysqli_result($resultopc,$jopc,'precio');
-$caracprecioopc=mysqli_result($resultopc,$jopc,'caracprecio');
-$variablesopc=mysqli_result($resultopc,$jopc,'variables');
+$nombreopc=$resultadopc[$jopc]['nombre'];
+$precio=$resultadopc[$jopc]['precio'];
+$caracprecioopc=$resultadopc[$jopc]['caracprecio'];
+$variablesopc=$resultadopc[$jopc]['variables'];
 
 $caracopc="<div id='divicolumna22'>";
 $caracopc.="<ul>";
 for ($t=0;$t<count($encab);$t++){;
-$vcar=mysqli_result($resultopc,$jopc,$dat[$t]);
+$vcar=$resultadopc[$jopc][$dat[$t]];
 if($vcar=='1'){
 $caracopc.="<li>".$encab[$t]."</li>";
 $caracopc.="<input type='hidden' name='".$dat[$t]."' value='1'>";
@@ -65,9 +70,11 @@ $caracopc.="</ul></div>";
 
 
 $sqliva="select * from iva order by fecha desc";
-$resultiva=mysqli_query ($conn,$sqliva) or die ("Invalid resultiva");
+$resultiva=$conn->query($sqliva);
+$resultadoiva=$resultiva->fetchAll();
+//$resultiva=mysqli_query ($conn,$sqliva) or die ("Invalid resultiva");
 $jiva=0;
-$iva=mysqli_result($resultiva,$jiva,'iva');
+$iva=$resultadoiva[$jiva]['iva'];
 
 $precioiva=($precio*($iva/100))+$precio;
 
