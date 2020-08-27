@@ -37,8 +37,10 @@ $sql.=" where validar='".$estadovalidar."'";
 };
 $sql.=" order by idvalidar asc"; 
 //echo $sql;
-$result=mysqli_query ($conn,$sql) or die ("Invalid result");
-$row=mysqli_num_rows($result);
+$result=$conn->query($sql);
+
+/*$result=mysqli_query ($conn,$sql) or die ("Invalid result");
+$row=mysqli_num_rows($result);*/
 ?>
 <?include ('../js/busqueda.php');?>
 
@@ -49,17 +51,19 @@ $row=mysqli_num_rows($result);
 <td>Tipo</td>
 <?php };?>
 <td>Nº Empresa</td><td>Nombre Empresa</td><td>NIF</td><td>Per.Con.</td><td>Tel.Con.</td><td>Email</td><td>Proyecto</td></tr>
-<?php  for ($i=0; $i<$row; $i++){;
+<?php  
+/*for ($i=0; $i<$row; $i++){;
 mysqli_data_seek($result, $i);
-$resultado=mysqli_fetch_array($result);
-$validar=$resultado['validar'];
-$idvalidar=$resultado['idvalidar'];
-$nombreemp=$resultado['nombreemp'];
-$nifemp=$resultado['nifemp'];
-$percontacto=$resultado['percontacto'];
-$telcontacto=$resultado['telcontacto'];
-$emailemp=$resultado['email'];
-$idpremp=$resultado['idpr'];
+$resultado=mysqli_fetch_array($result);*/
+foreach ($result as $rowmos) {
+$validar=$rowmos['validar'];
+$idvalidar=$rowmos['idvalidar'];
+$nombreemp=$rowmos['nombreemp'];
+$nifemp=$rowmos['nifemp'];
+$percontacto=$rowmos['percontacto'];
+$telcontacto=$rowmos['telcontacto'];
+$emailemp=$rowmos['email'];
+$idpremp=$rowmos['idpr'];
 
 
 ?>
@@ -85,9 +89,12 @@ case 3:$nvalidar="Sin contrato";break;
 <td><?php  echo$email;?></td>
 <td>
 <?php 
-$sqli="SELECT * from proyectos where idproyectos='".$idpremp."'"; 
-$resulti=mysqli_query ($conn,$sqli) or die ("Invalid resulti");
-$resultadoi=mysqli_fetch_array($resulti);
+$sqli="SELECT * from proyectos where idproyectos='".$idpremp."'";
+$resulti=$conn->query($sqli);
+$resultadoi=$resulti->fetch();
+
+/*$resulti=mysqli_query ($conn,$sqli) or die ("Invalid resulti");
+$resultadoi=mysqli_fetch_array($resulti);*/
 $logopremp=$resultadoi['logo'];
 ?>
 <img src="images/<?php  echo$logopremp;?>" width="50">

@@ -30,9 +30,11 @@ if ($datos!='datos'){;
 }else{;
 
 
-$sqlp="select * from proyectos where gestorproyecto='".$ide."' order by idproyectos asc"; 
-$resultp=mysqli_query ($conn,$sqlp) or die ("Invalid result idproyectos");
-$rowp=mysqli_num_rows($resultp);
+$sqlp="select * from proyectos where gestorproyecto='".$ide."' order by idproyectos asc";
+$resultp=$conn->query($sqlp);
+
+/*$resultp=mysqli_query ($conn,$sqlp) or die ("Invalid result idproyectos");
+$rowp=mysqli_num_rows($resultp);*/
 
 
 $sql="SELECT * from empresas where";
@@ -43,15 +45,17 @@ $sql.=" estado='".$estador."' and";
 if ($rowp>0){;
 $sql.=" idproyectos ";
 if ($rowp==1){
-	$resultadop=mysqli_fetch_array($resultp);
+	//$resultadop=mysqli_fetch_array($resultp);
+	$resultadop=$resultp->fetch();
 	$idprt=$resultadop['idproyectos'];
 $sql.=" ='".$idprt."'";	
 	}else{;
 $sql.=" in (";		
-	for ($j=0;$j<$rowp;$j++){
-		mysqli_data_seek($resultp,$j);
-	$resultadop=mysqli_fetch_array($resultp);
-	$idprt=$resultadop['idproyectos'];		
+	/*for ($j=0;$j<$rowp;$j++){
+	mysqli_data_seek($resultp,$j);
+	$resultadop=mysqli_fetch_array($resultp);*/
+	foreach ($resultp as $rowpmos) {
+	$idprt=$rowpmos['idproyectos'];		
 		$sql.=$idprt;
 		$t=$j+1;
 		if($t<$rowp){
@@ -66,8 +70,10 @@ $sql.=")";
 
 $sql.=" order by idempresas asc"; 
 //echo $sql;
-$result=mysqli_query ($conn,$sql) or die ("Invalid result");
-$row=mysqli_num_rows($result);
+$result=$conn->query($sql);
+
+/*$result=mysqli_query ($conn,$sql) or die ("Invalid result");
+$row=mysqli_num_rows($result);*/
 ?>
 <?php 
 switch($estador){;
@@ -82,15 +88,17 @@ case 1: $tdf="Alta";break;
 
 <table width="800" class="table-bordered table pull-right" id="mytable">
 <tr class="subenc"><td>Nº Empresa</td><td>Nombre Empresa</td><td>NIF</td><td>Logotipo</td><td>Opciones</td></tr>
-<?php  for ($i=0; $i<$row; $i++){;
+<?php  
+/*for ($i=0; $i<$row; $i++){;
 mysqli_data_seek($result,$i);
-$resultado=mysqli_fetch_array($result);
+$resultado=mysqli_fetch_array($result);*/
+foreach ($result as $rowmos) {
 ?>
 <tr class="menor1">
-<td><?php $idempresas=$resultado['idempresas'];?><?php  echo$idempresas;?></td>
-<td><?php $nombre=$resultado['nombre'];?><?php  echo$nombre;?></td>
-<td><?php $nif=$resultado['nif'];?><?php  echo$nif;?></td>
-<td><?php $logotipo=$resultado['logotipo'];?><img src="../img/<?php  echo$logotipo;?>" width="50"></td>
+<td><?php $idempresas=$rowmos['idempresas'];?><?php  echo$idempresas;?></td>
+<td><?php $nombre=$rowmos['nombre'];?><?php  echo$nombre;?></td>
+<td><?php $nif=$rowmos['nif'];?><?php  echo$nif;?></td>
+<td><?php $logotipo=$rowmos['logotipo'];?><img src="../img/<?php  echo$logotipo;?>" width="50"></td>
 <td><a href="modempresa.php?idempresas=<?php  echo$idempresas;?>"><img src="../img/modificar.gif" border="0"></a></td>
 </tr>
 <?php };?>

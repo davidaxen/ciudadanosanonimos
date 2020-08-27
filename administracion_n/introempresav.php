@@ -7,20 +7,28 @@ if ($nif2!=null){;
 $usuario2=$nif2;
 $sql24="select * from usuarios where user='".$usuario2."' and password='".$clave2."'";
 //echo $sql24;
-$result24=mysqli_query ($conn,$sql24) or die ("Invalid result24");
-$row24=mysqli_num_rows($result24);
+$result24=$conn->query($sql24);
+$row24=count($result24->fetchAll());
+
+/*$result24=mysqli_query ($conn,$sql24) or die ("Invalid result24");
+$row24=mysqli_num_rows($result24);*/
 
 if ($row24==0){;
 
 $sql23="select idempresas from empresas order by idempresas desc";
-$result23=mysqli_query ($conn,$sql23) or die ("Invalid result23");
-$row=mysqli_num_rows($result23);
+$result23=$conn->query($sql23);
+$result23mos=$conn->query($sql23);
+$row=count($result23mos->fetchAll());
+
+/*$result23=mysqli_query ($conn,$sql23) or die ("Invalid result23");
+$row=mysqli_num_rows($result23);*/
 
 
 if ($row==0){;
 $idempresas="1";
 }else{;
-$resultado23=mysqli_fetch_array($result23);
+$resultado23=$result23->fetch();
+//$resultado23=mysqli_fetch_array($result23);
 $idemp=$resultado23['idempresas'];
 $idempresas=$idemp+1;
 };
@@ -100,7 +108,9 @@ VALUES ('$idempresas','$nombre2','$nif2','$domicilio2','$cp2','$ncc2','$nombrer'
 '$dat2[0]','$dat2[1]','$dat2[2]','$dat2[3]','$dat2[4]','$dat2[5]','$dat2[6]','$dat2[7]','$dat2[8]','$dat2[9]',
 '$colortt2','$colormt2','1','$email2','$emailadm2','$web2','$licadm','$liccli','$lictra','$frase','$ide','0','$idpr')";
 echo $sql1.'<br/>';
-$result1=mysqli_query ($conn,$sql1) or die ("Invalid result sql1");
+$result1=$conn->exec($sql1);
+
+//$result1=mysqli_query ($conn,$sql1) or die ("Invalid result sql1");
 
 			$output=FALSE;
 			$key=hash('sha256', SECRET_KEY);
@@ -113,7 +123,9 @@ $result1=mysqli_query ($conn,$sql1) or die ("Invalid result sql1");
 $sql2 = "INSERT INTO usuarios (user,password,idempresas,administracion,servicios,informes,datoslateral,portada,datoslateral2,documentacion,tusuario) 
 VALUES ('$usuario2','$clave2','$idempresas','1','1','1','1','1','1','1','1')";
 //echo $sql2.'<br/>';
-$result2=mysqli_query ($conn,$sql2) or die ("Invalid result icarnet");
+$result2=$conn->exec($sql2);
+
+//$result2=mysqli_query ($conn,$sql2) or die ("Invalid result icarnet");
 
 /*
 $sql2 = "UPDATE usuarios SET idempresas='".$idempresas."',administracion='1',servicios='1',informes='1',datoslateral='1',portada='1',datoslateral2='1',
@@ -126,30 +138,42 @@ $result2=mysqli_query ($conn,$sql2) or die ("Invalid result sql2");
 
 $sql11 = "INSERT INTO puntservicios (idempresas,idpccat,idpcsubcat,subcategoria,rellr,rellg,rellb,activo) VALUES ('$idempresas','1','1','ENTRADA','255','255','255','1')";
 //echo $sql11.'<br/>';
-$result11=mysqli_query ($conn,$sql11) or die ("Invalid result sql11");
+$result11=$conn->exec($sql11);
+
+//$result11=mysqli_query ($conn,$sql11) or die ("Invalid result sql11");
 
 $sql11a = "INSERT INTO puntservicios (idempresas,idpccat,idpcsubcat,subcategoria,rellr,rellg,rellb,activo) VALUES ('$idempresas','1','2','SALIDA','255','255','255','1')";
 //echo $sql11.'<br/>';
-$result11a=mysqli_query ($conn,$sql11a) or die ("Invalid result sql11a");
+$result11a=$conn->exec($sql11a);
+
+//$result11a=mysqli_query ($conn,$sql11a) or die ("Invalid result sql11a");
 
 
 $sql11a = "INSERT INTO puntservicios (idempresas,idpccat,idpcsubcat,subcategoria,rellr,rellg,rellb,activo) VALUES ('$idempresas','5','0','OTROS PRODUCTOS','255','255','255','1')";
 //echo $sql11.'<br/>';
-$result11a=mysqli_query ($conn,$sql11a) or die ("Invalid result sql11a");
+$result11a=$conn->exec($sql11a);
+
+//$result11a=mysqli_query ($conn,$sql11a) or die ("Invalid result sql11a");
 
 $sql11p = "INSERT INTO portadapag (idempresa,idpag) VALUES ('$idempresas','1')";
 //echo $sql11p.'<br/>';
-$result11p=mysqli_query ($conn,$sql11p) or die ("Invalid result sql11p");
+$result11p=$conn->exec($sql11p);
+
+//$result11p=mysqli_query ($conn,$sql11p) or die ("Invalid result sql11p");
 
 $sql11p1 = "INSERT INTO portadapag (idempresa,idpag) VALUES ('$idempresas','2')";
 //echo $sql11p1.'<br/>';
-$result11p1=mysqli_query ($conn,$sql11p1) or die ("Invalid result sql11p1");
+$result11p1=$conn->exec($sql11p1);
+
+//$result11p1=mysqli_query ($conn,$sql11p1) or die ("Invalid result sql11p1");
 
 
 $sql3 = "INSERT INTO menuadministracion (user,idempresa,clientes,gestores,empleados,empresas,empresa,usuario,visita) 
 VALUES ('$usuario2','$idempresas','1','1','1','0','0','1','1')";
 //echo $sql3.'<br/>';
-$result3=mysqli_query ($conn,$sql3) or die ("Invalid result icarnet");
+$result3=$conn->exec($sql3);
+
+//$result3=mysqli_query ($conn,$sql3) or die ("Invalid result icarnet");
 
 /*
 $sql3 = "INSERT INTO menuadministracion (user,idempresa,clientes,gestores,empleados,empresas,empresa,usuario,visita) 
@@ -221,7 +245,8 @@ $sqlvarios.=",";
 $sqlvarios.=")";
 
 //echo $sqlvarios.'<br/>';
-$resultvarios=mysqli_query ($conn,$sqlvarios) or die ("Invalid result sqlvarios[".$ht."]");
+$resultvarios=$conn->exec($sqlvarios);
+//$resultvarios=mysqli_query ($conn,$sqlvarios) or die ("Invalid result sqlvarios[".$ht."]");
 
 };
 
@@ -281,13 +306,16 @@ $datbbdd1=array('menuinformeenlace','menuinformeimg','menuserviciosenlace','menu
 for ($ht1=0;$ht1<count($datbbdd1);$ht1++){;
 $sqlvarios1a= "INSERT INTO ".$datbbdd1[$ht1]." (idempresa)";
 $sqlvarios1a.=" values ('$idempresas')";
-$resultvarios1a=mysqli_query ($conn,$sqlvarios1a) or die ("Invalid result slqvarios1a[".$ht1."]");
+$resultvarios1a=$conn->exec($sqlvarios1a);
+
+//$resultvarios1a=mysqli_query ($conn,$sqlvarios1a) or die ("Invalid result slqvarios1a[".$ht1."]");
 };
 $datbbdd2=array('usuariosenlace','usuariosimg','usuariosnombre');
 for ($ht2=0;$ht2<count($datbbdd2);$ht2++){;
 $sqlvarios2a= "INSERT INTO ".$datbbdd2[$ht2]." (idempresas)";
 $sqlvarios2a.=" values ('$idempresas')";
-$resultvarios1a=mysqli_query ($conn,$sqlvarios2a) or die ("Invalid result slqvarios2a[".$ht2."]");
+$resultvarios1a=$conn->exec($sqlvarios2a);
+//$resultvarios1a=mysqli_query ($conn,$sqlvarios2a) or die ("Invalid result slqvarios2a[".$ht2."]");
 };
 
 
@@ -296,7 +324,10 @@ $resultvarios1a=mysqli_query ($conn,$sqlvarios2a) or die ("Invalid result slqvar
 //$camposbbdd=array('cuadrante','entrada','incidencia','mensaje','alarma','accdiarias','accmantenimiento','niveles','productos','revision','trabajo','siniestro','control','mediciones','jornadas','informes','ruta','envases','incidenciasplus');
 $sql2n="select * from proyectosnombre where idproyectos='".$idpr."'";
 //echo $sql24;
-$result2n=mysqli_query ($conn,$sql2n) or die ("Invalid result2n");
+$result2n=$conn->query($sql2n);
+$resultado2n=$result2n->fetchAll();
+
+//$result2n=mysqli_query ($conn,$sql2n) or die ("Invalid result2n");
 
 $datbbddnombre=array('menuinformenombre','menuserviciosnombre');
 
@@ -306,10 +337,12 @@ $sqlvariosna2=" WHERE idempresa='".$idempresas."'";
 
 
 for ($nn=0;$nn<count($camposbbdd);$nn++){;
-$valorn=mysqli_result($result2n,0,$camposbbdd[$nn]);
+$valorn=$resultado2n[0][$camposbbdd[$nn]];	
+//$valorn=mysqli_result($result2n,0,$camposbbdd[$nn]);
 $sqlvariosna1=" ".$camposbbdd[$nn]."='".$valorn."'";
 $sqlvariosna=$sqlvariosna0.$sqlvariosna1.$sqlvariosna2;
-$resultvariosna=mysqli_query ($conn,$sqlvariosna) or die ("Invalid result slqvariosna[".$nn."]");
+$resultvariosna=$conn->exec($sqlvariosna);
+//$resultvariosna=mysqli_query ($conn,$sqlvariosna) or die ("Invalid result slqvariosna[".$nn."]");
 };
 
 };

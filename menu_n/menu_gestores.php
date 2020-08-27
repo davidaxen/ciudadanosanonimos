@@ -12,8 +12,11 @@ if ($ide!=null){;
 
 <?php 
 $sql="select * from menugestores where user='".$user."' and idempresa='".$ide."'";
-$result=mysqli_query ($conn,$sql) or die ("Invalid result menugestores");
-$resultado=mysqli_fetch_array($result);
+$result=$conn->query($sql);
+$resultado=$result->fetch();
+
+/*$result=mysqli_query ($conn,$sql) or die ("Invalid result menugestores");
+$resultado=mysqli_fetch_array($result);*/
 $cqr[]=$resultado['entrada'];
 $cqr[]=$resultado['accdiarias'];
 $cqr[]=$resultado['accmantenimiento'];
@@ -38,8 +41,11 @@ $ca[]=$resultado['cuadrante'];
 $ca[]=$resultado['jornadas'];
 
 $sql31="select * from menugestoresnombre where idempresa='".$ide."'";
-$result31=mysqli_query ($conn,$sql31) or die ("Invalid result menugestoresnombre");
-$resultado31=mysqli_fetch_array($result31);
+$result31=$conn->query($sql31);
+$resultado31=$result31->fetch();
+
+/*$result31=mysqli_query ($conn,$sql31) or die ("Invalid result menugestoresnombre");
+$resultado31=mysqli_fetch_array($result31);*/
 $ncqr[]=$resultado31['entrada'];
 $ncqr[]=$resultado31['accdiarias'];
 $ncqr[]=$resultado31['accmantenimiento'];
@@ -66,8 +72,11 @@ $nca[]=$resultado31['jornadas'];
 
 
 $sql32="select * from menugestoresimg where idempresa='".$ide."'";
-$result32=mysqli_query ($conn,$sql32) or die ("Invalid result menugestoresimg");
-$resultado32=mysqli_fetch_array($result32);
+$result32=$conn->query($sql32);
+$resultado32=$result32->fetch();
+
+/*$result32=mysqli_query ($conn,$sql32) or die ("Invalid result menugestoresimg");
+$resultado32=mysqli_fetch_array($result32);*/
 $icqr[]=$resultado32['entrada'];
 $icqr[]=$resultado32['accdiarias'];
 $icqr[]=$resultado32['accmantenimiento'];
@@ -93,8 +102,11 @@ $ica[]=$resultado32['cuadrante'];
 $ica[]=$resultado32['jornadas'];
 
 $sql33="select * from menugestoresenlace where idempresa='".$ide."'";
-$result33=mysqli_query ($conn,$sql33) or die ("Invalid result menugestoresenlace");
-$resultado33=mysqli_fetch_array($result33);
+$result33=$conn->query($sql33);
+$resultado33=$result33->fetch();
+
+/*$result33=mysqli_query ($conn,$sql33) or die ("Invalid result menugestoresenlace");
+$resultado33=mysqli_fetch_array($result33);*/
 $encqr[]=$resultado33['entrada'];
 $encqr[]=$resultado33['accdiarias'];
 $encqr[]=$resultado33['accmantenimiento'];

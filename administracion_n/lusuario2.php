@@ -4,13 +4,19 @@ if ($ide!=null){;
 
 
 $sql31="select * from menuadministracionnombre where idempresa='".$ide."'";
-$result31=mysqli_query($conn,$sql31) or die ("Invalid result menucontabilidad");
-$resultado31=mysqli_fetch_array($result31);
+$result31=$conn->query($sql31);
+$resultado31=$result31->fetch();
+
+/*$result31=mysqli_query($conn,$sql31) or die ("Invalid result menucontabilidad");
+$resultado31=mysqli_fetch_array($result31);*/
 $nc=$resultado31['usuario'];
 
 $sql32="select * from menuadministracionimg where idempresa='".$ide."'";
-$result32=mysqli_query($conn,$sql32) or die ("Invalid result menucontabilidad");
-$resultado32=mysqli_fetch_array($result32);
+$result32=$conn->query($sql32);
+$resultado32=$result32->fetch();
+
+/*$result32=mysqli_query($conn,$sql32) or die ("Invalid result menucontabilidad");
+$resultado32=mysqli_fetch_array($result32);*/
 $ic=$resultado32['usuario'];
 
 
@@ -48,8 +54,10 @@ if ($datos!='datos'){;
 }else{;
 
 $sql="SELECT * from usuariost where idempresa='".$ide."' and estado='".$estado."'"; 
-$result=mysqli_query ($conn,$sql) or die ("Invalid result");
-$row=mysqli_affected_rows();
+$result=$conn->query($sql);
+
+/*$result=mysqli_query ($conn,$sql) or die ("Invalid result");
+$row=mysqli_affected_rows();*/
 ?>
 
 <table><tr><td><?php include ('../js/busqueda.php');?></td>
@@ -94,30 +102,33 @@ Carta para todos los usuarios</a>
 <td>Informes</td>
 </tr>
 </thead>
-<?php  for ($i=0; $i<$row; $i++){;?>
+<?php  
+	//for ($i=0; $i<$row; $i++){;
+	foreach ($result as $rowmos) {
+	?>
 <tr class="dattab">
-<td><?php $idclientes=mysqli_result($result,$i,'idusuario');?><?php  echo$idclientes;?></td>
-<td><?php $nombre=mysqli_result($result,$i,'nombre');?><?php  echo$nombre;?></td>
-<td><?php $nif=mysqli_result($result,$i,'nif');?><?php  echo$nif;?></td>
+<td><?php $idclientes=$rowmos['idusuario'];?><?php  echo$idclientes;?></td>
+<td><?php $nombre=$rowmos['nombre'];?><?php  echo$nombre;?></td>
+<td><?php $nif=$rowmos['nif'];?><?php  echo$nif;?></td>
 <td>
 <a href="pdfcartu.php?dato=<?php  echo$nif;?>">
 <img src="../img/modificar.gif" border=0></a>
 </td>
 
 
-<td><?php $portada=mysqli_result($result,$i,'portada');?>
+<td><?php $portada=$rowmos['portada'];?>
 <input type="radio" name="portada<?php  echo$i;?>" value="1" <?php if ($portada==1){;?>checked="checked"<?php };?>  disabled></td>
 
-<td><?php $administracion=mysqli_result($result,$i,'administracion');?>
+<td><?php $administracion=$rowmos['administracion'];?>
 <input type="radio" name="administracion<?php  echo$i;?>" value="1" <?php if ($administracion==1){;?>checked="checked"<?php };?>  disabled></td>
 
-<td><?php $servicios=mysqli_result($result,$i,'servicios');?>
+<td><?php $servicios=$rowmos['servicios'];?>
 <input type="radio" name="servicios<?php  echo$i;?>" value="1" <?php if ($servicios==1){;?>checked="checked"<?php };?>  disabled></td>
 
-<td><?php $documentacion=mysqli_result($result,$i,'documentacion');?>
+<td><?php $documentacion=$rowmos['documentacion'];?>
 <input type="radio" name="documentacion<?php  echo$i;?>" value="1" <?php if ($documentacion==1){;?>checked="checked"<?php };?>  disabled></td>
 
-<td><?php $informes=mysqli_result($result,$i,'informes');?>
+<td><?php $informes=$rowmos['informes'];?>
 <input type="radio" name="informes<?php  echo$i;?>" value="1" <?php if ($informes==1){;?>checked="checked"<?php };?>  disabled></td>
 
 

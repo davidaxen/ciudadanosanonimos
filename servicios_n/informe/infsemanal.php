@@ -15,20 +15,23 @@ if ($ide!=null){; include('../../portada_n/cabecera3.php');
 
 
 <?php 
-$sql="SELECT * from empleados where idempresa='".$ide."'"; 
-$result=mysqli_query ($conn,$sql) or die ("Invalid result");
-$row=mysqli_num_rows($result);
+$sql="SELECT * from empleados where idempresa='".$ide."'";
+$result=$conn->query($sql);
+
+/*$result=mysqli_query ($conn,$sql) or die ("Invalid result");
+$row=mysqli_num_rows($result);*/
 ?>
 <select name="idempleado" id="combobox">
 <option></option>
 <?php 
-for ($i=0;$i<$row;$i++){;
+/*for ($i=0;$i<$row;$i++){;
 mysqli_data_seek($result, $i);
-$resultado=mysqli_fetch_array($result);
-$idempleado=$resultado['idempleado'];
-$nombre=$resultado['nombre'];
-$papellido=$resultado['1apellido'];
-$sapellido=$resultado['2apellido'];
+$resultado=mysqli_fetch_array($result);*/
+foreach ($result as $rowmos) {
+$idempleado=$rowmos['idempleado'];
+$nombre=$rowmos['nombre'];
+$papellido=$rowmos['1apellido'];
+$sapellido=$rowmos['2apellido'];
 ?>
 <option value="<?php  echo $idempleado;?>"><?php  echo $nombre;?>, <?php  echo $papellido;?> <?php  echo $sapellido;?>
 <?php };?>

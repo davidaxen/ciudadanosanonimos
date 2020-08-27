@@ -69,9 +69,12 @@ if ($ide!=null){;
 
 
 <?php 
-$sql="select * from usuariost where idempresa='".$ide."' and nif='".$nif."'"; 
-$result=mysqli_query ($conn,$sql) or die ("Invalid result usuarios");
-$resultado=mysqli_fetch_array($result);
+$sql="select * from usuariost where idempresa='".$ide."' and nif='".$nif."'";
+$result=$conn->query($sql);
+$resultado=$result->fetch();
+
+/*$result=mysqli_query ($conn,$sql) or die ("Invalid result usuarios");
+$resultado=mysqli_fetch_array($result);*/
 $estado=$resultado['estado'];
 $nombre=$resultado['nombre'];
 $portada=$resultado['portada'];
@@ -82,9 +85,12 @@ $informes=$resultado['informes'];
 ?>
 
 <?php 
-$sql="select * from menuadministracion where idempresa='".$ide."' and user='".$nif."'"; 
-$result=mysqli_query ($conn,$sql) or die ("Invalid result usuarios");
-$resultado=mysqli_fetch_array($result);
+$sql="select * from menuadministracion where idempresa='".$ide."' and user='".$nif."'";
+$result=$conn->query($sql);
+$resultado=$result->fetch();
+
+/*$result=mysqli_query ($conn,$sql) or die ("Invalid result usuarios");
+$resultado=mysqli_fetch_array($result);*/
 $administracioncli=$resultado['clientes'];
 $administracionges=$resultado['gestores'];
 $administracionempl=$resultado['empleados'];
@@ -95,9 +101,12 @@ $administracionvis=$resultado['visita'];
 
 
 <?php 
-$sql="select * from menuservicios where idempresa='".$ide."' and user='".$nif."'"; 
-$result=mysqli_query ($conn,$sql) or die ("Invalid result usuarios");
-$resultado=mysqli_fetch_array($result);
+$sql="select * from menuservicios where idempresa='".$ide."' and user='".$nif."'";
+$result=$conn->query($sql);
+$resultado=$result->fetch();
+
+/*$result=mysqli_query ($conn,$sql) or die ("Invalid result usuarios");
+$resultado=mysqli_fetch_array($result);*/
 $servicioscua=$resultado['cuadrante'];
 $serviciosent=$resultado['entrada'];
 $serviciosinc=$resultado['incidencia'];
@@ -114,9 +123,12 @@ $serviciosmed=$resultado['mediciones'];
 ?>
 
 <?php 
-$sql="select * from menuinforme where idempresa='".$ide."' and user='".$nif."'"; 
-$result=mysqli_query ($conn,$sql) or die ("Invalid result usuarios");
-$resultado=mysqli_fetch_array($result);
+$sql="select * from menuinforme where idempresa='".$ide."' and user='".$nif."'";
+$result=$conn->query($sql);
+$resultado=$result->fetch();
+
+/*$result=mysqli_query ($conn,$sql) or die ("Invalid result usuarios");
+$resultado=mysqli_fetch_array($result);*/
 $informescua=$resultado['cuadrante'];
 $informesent=$resultado['entrada'];
 $informesinc=$resultado['incidencia'];
@@ -235,9 +247,27 @@ onclick="at5('administracion','administracionempn','administracionclin','adminis
 </tr>
 <?php 
 $sql23="select * from empresas where idempresas='".$ide."' ";
-$result23=mysqli_query ($conn,$sql23) or die ("Invalid result232");
+$result23=$conn->query($sql23);
+$resultado23=$result23->fetchAll();
+
+//$result23=mysqli_query ($conn,$sql23) or die ("Invalid result232");
 $i=0;
-$cuadrante=mysqli_result($result23,$i,'cuadrante');
+
+$cuadrante=$resultado23[$i]['cuadrante'];
+$entrada=$resultado23[$i]['entrada'];
+$incidencia=$resultado23[$i]['incidencia'];
+$mensaje=$resultado23[$i]['mensaje'];
+$alarma=$resultado23[$i]['alarma'];
+$accdiarias=$resultado23[$i]['accdiarias'];
+$accmantenimiento=$resultado23[$i]['accmantenimiento'];
+$niveles=$resultado23[$i]['niveles'];
+$productos=$resultado23[$i]['productos'];
+$revision=$resultado23[$i]['revision'];
+$trabajo=$resultado23[$i]['trabajo'];
+$siniestro=$resultado23[$i]['siniestro'];
+$mediciones=$resultado23[$i]['mediciones'];
+
+/*$cuadrante=mysqli_result($result23,$i,'cuadrante');
 $entrada=mysqli_result($result23,$i,'entrada');
 $incidencia=mysqli_result($result23,$i,'incidencia');
 $mensaje=mysqli_result($result23,$i,'mensaje');
@@ -249,7 +279,7 @@ $productos=mysqli_result($result23,$i,'productos');
 $revision=mysqli_result($result23,$i,'revision');
 $trabajo=mysqli_result($result23,$i,'trabajo');
 $siniestro=mysqli_result($result23,$i,'siniestro');
-$mediciones=mysqli_result($result23,$i,'mediciones');
+$mediciones=mysqli_result($result23,$i,'mediciones');*/
 ?>
 
 

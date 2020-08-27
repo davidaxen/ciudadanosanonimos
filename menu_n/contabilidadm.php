@@ -16,13 +16,23 @@ $ide=$mi_array['ide'];
 }  
 
 $sql="select * from menucontabilidad where user='".$user."' and idempresa='".$ide."'";
-$result=mysqli_query ($conn,$conn,$sql) or die ("Invalid result menucontabilidad");
+$result=$conn->query($sql);
+$resultado=$result->fetchAll();
+
+$c1=$resultado[0]['cobros'];
+$c2=$resultado[0]['pagos'];
+$c3=$resultado[0]['recibos'];
+$c4=$resultado[0]['asientos'];
+$c5=$resultado[0]['listados'];
+$c6=$resultado[0]['informes'];
+
+/*$result=mysqli_query ($conn,$conn,$sql) or die ("Invalid result menucontabilidad");
 $c1=mysqli_result($result,0,'cobros');
 $c2=mysqli_result($result,0,'pagos');
 $c3=mysqli_result($result,0,'recibos');
 $c4=mysqli_result($result,0,'asientos');
 $c5=mysqli_result($result,0,'listados');
-$c6=mysqli_result($result,0,'informes');
+$c6=mysqli_result($result,0,'informes');*/
 ?>
 <html>
 <head runat="server" >

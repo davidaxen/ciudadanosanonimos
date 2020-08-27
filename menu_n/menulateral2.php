@@ -3,8 +3,11 @@
 
 $sql1="select * from usuarios where user='".$user."' and password='".$pass."'"; 
 //echo $sql1;
-$result1=mysqli_query ($conn,$sql1) or die ("Invalid result empresas 1");
-$resultado1=mysqli_fetch_array($result1);
+$result1=$conn->query($sql1);
+$resultado1=$result1->fetch();
+
+/*$result1=mysqli_query ($conn,$sql1) or die ("Invalid result empresas 1");
+$resultado1=mysqli_fetch_array($result1);*/
 $madmi=$resultado1['administracion'];
 $mfact=$resultado1['facturacion'];
 $memple=$resultado1['empleados'];

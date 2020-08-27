@@ -32,11 +32,13 @@ if ($datos!='datos'){;
 $sql="SELECT * from empresas ";
 
 if($estador!="todas"){;
-$sql.="where estado='".$estador."'";
+$sql.="where estado=:estador";
 };
 $sql.=" order by idempresas asc"; 
 //echo $sql;
-$result=$conn->query($sql);
+$result=$conn->prepare($sql);
+$result->bindParam(':estador', $estador);
+$result->execute();
 
 /*$result=mysqli_query ($conn,$sql) or die ("Invalid result");
 $row=mysqli_num_rows($result);*/

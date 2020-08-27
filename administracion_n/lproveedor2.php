@@ -4,13 +4,19 @@ include('bbdd.php');
 if ($ide!=null){;
 
 $sql31="select * from menuadministracionnombre where idempresa='".$ide."'";
-$result31=mysqli_query ($conn,$sql31) or die ("Invalid result menucontabilidad");
-$resultado31=mysqli_fetch_array($result31);
+$result31=$conn->query($sql31);
+$resultado31=$result31->fetch();
+
+/*$result31=mysqli_query ($conn,$sql31) or die ("Invalid result menucontabilidad");
+$resultado31=mysqli_fetch_array($result31);*/
 $nc=$resultado31['proveedor'];
 
 $sql32="select * from menuadministracionimg where idempresa='".$ide."'";
-$result32=mysqli_query ($conn,$sql32) or die ("Invalid result menucontabilidad");
-$resultado32=mysqli_fetch_array($result32);
+$result32=$conn->query($sql32);
+$resultado32=$result32->fetch();
+
+/*$result32=mysqli_query ($conn,$sql32) or die ("Invalid result menucontabilidad");
+$resultado32=mysqli_fetch_array($result32);*/
 $ic=$resultado32['proveedor'];
 
 include('../portada_n/cabecera2.php');?>
@@ -51,8 +57,13 @@ case 1: echo  "<font color='green'>ALTA</font>";break;
 }else{;
 
 $sql="SELECT * from proveedores where idempresas='".$ide."' and estado='".$estadoe."'"; 
-$result=mysqli_query ($conn,$sql) or die ("Invalid result");
-$row=mysqli_num_rows($result);
+$result=$conn->query($sql);
+$resultmos=$conn->query($sql);
+$resultado=$result->fetchAll();
+$row=count($resultado);
+
+/*$result=mysqli_query ($conn,$sql) or die ("Invalid result");
+$row=mysqli_num_rows($result);*/
 ?>
 <!--<a href="pdfcartt.php?dato=todo">Carta para todos los clientes</a><br/>-->
 
@@ -98,14 +109,15 @@ echo  "No tiene ning&uacuten proveedor dado de ";
 <tr class="enctab"><td>Nº Proveedor</td><td>Nombre Proveedor</td><td>NIF</td><td>Telefono</td><td>E-mail</td><td>Doc</td></tr>
 
 <?php 
-for ($i=0; $i<$row; $i++){;
+/*for ($i=0; $i<$row; $i++){;
 mysqli_data_seek($result, $i);
-$resultado=mysqli_fetch_array($result);
-$idproveedor=$resultado['idproveedor'];
-$nombre=$resultado['nombre'];
-$nif=$resultado['nif'];
-$telefonop=$resultado['telefono'];
-$emailp=$resultado['email'];
+$resultado=mysqli_fetch_array($result);*/
+foreach ($resultmos as $rowmos) {
+$idproveedor=$rowmos['idproveedor'];
+$nombre=$rowmos['nombre'];
+$nif=$rowmos['nif'];
+$telefonop=$rowmos['telefono'];
+$emailp=$rowmos['email'];
 ?>
 <tr class="dattab">
 <td><?php  echo $idproveedor;?></td>

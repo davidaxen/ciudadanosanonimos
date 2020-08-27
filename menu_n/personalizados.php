@@ -4,7 +4,23 @@
 <?php
 
 $sql="SELECT * from menupersonalizados where user='".$user."' and idempresa='".$ide."'";
-$result=mysqli_query ($conn,$conn,$sql) or die ("Invalid result");
+$result=$conn->query($sql);
+$resultado=$result->fetchAll();
+$p1=$resultado[0]['documentos'];
+$p2=$resultado[0]['piscinas'];
+$p3=$resultado[0]['pcontrol'];
+$p4=$resultado[0]['carnet'];
+$p5=$resultado[0]['contratos'];
+$p6=$resultado[0]['asignacion'];
+$p7=$resultado[0]['candidatos'];
+$p8=$resultado[0]['precios'];
+$p9=$resultado[0]['presupuesto'];
+$p10=$resultado[0]['datos'];
+$p11=$resultado[0]['notas'];
+$p12=$resultado[0]['smartcbc'];
+
+
+/*$result=mysqli_query ($conn,$conn,$sql) or die ("Invalid result");
 $p1=mysqli_result($result,0,'documentos');
 $p2=mysqli_result($result,0,'piscinas');
 $p3=mysqli_result($result,0,'pcontrol');
@@ -15,13 +31,15 @@ $p7=mysqli_result($result,0,'candidatos');
 $p8=mysqli_result($result,0,'precios');
 $p9=mysqli_result($result,0,'presupuesto');
 $p10=mysqli_result($result,0,'datos');
-
 $p11=mysqli_result($result,0,'notas');
-$p12=mysqli_result($result,0,'smartcbc');
+$p12=mysqli_result($result,0,'smartcbc');*/
 
 $sql="SELECT * from personalizados where idempresas='".$ide."'";
-$result=mysqli_query ($conn,$conn,$sql) or die ("Invalid result");
-$row=mysqli_affected_rows();
+$result=$conn->query($sql);
+$row=count($result->fetchAll());
+
+/*$result=mysqli_query ($conn,$conn,$sql) or die ("Invalid result");
+$row=mysqli_affected_rows();*/
 ?>
 
 			<li><a href="#">Personalizados</a>

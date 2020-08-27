@@ -3,9 +3,11 @@ include('bbdd.php');
 include ('../yo.php');
 if ($idpr!=null){;
 
-$sql="SELECT * from proyectos where idproyectos='".$idpr."'"; 
-$result=mysqli_query ($conn,$sql) or die ("Invalid result");
-$resultado=mysqli_fetch_array($result);
+$sql="SELECT * from proyectos where idproyectos='".$idpr."'";
+$result=$conn->query($sql);
+$resultado=$result->fetch();
+/*$result=mysqli_query ($conn,$sql) or die ("Invalid result");
+$resultado=mysqli_fetch_array($result);*/
 $nombre=$resultado['nombre'];
 $logo=$resultado['logo'];
 ?>
@@ -82,7 +84,8 @@ $codvalidarinc=$nifemp.'#;&'.$psw;
 $sql1 = "INSERT INTO validar (email,nombreemp,nifemp,codvalidar,password,telcontacto,idpr) 
 VALUES ('$emailemp','$nombremp','$nifemp','$codvalidarinc','$pass','$telcontacto','$idpr')";
 //echo $sql1;
-$result1=mysqli_query ($conn,$sql1) or die ("Invalid result iproveedores");
+$result1=$conn->exec($sql1);
+//$result1=mysqli_query ($conn,$sql1) or die ("Invalid result iproveedores");
 
 
 

@@ -43,27 +43,40 @@ $camposap=array('cuadrante','jornadas');
 
 <?php 
 $sqlprep="select * from previopago where idempresas='".$ide."'";
-$resultprep=mysqli_query ($conn,$sqlprep) or die ("Invalid resultprep");
+$resultprep=$conn->query($sqlprep);
+$resultadoprep=$resultprep->fetchAll();
+$idpr=$resultadoprep[0]['idproyectos'];
+$opcion=$resultadoprep[0]['opcion'];
+
+/*$resultprep=mysqli_query ($conn,$sqlprep) or die ("Invalid resultprep");
 $idpr=mysqli_result($resultprep,0,'idproyectos');
-$opcion=mysqli_result($resultprep,0,'opcion');
+$opcion=mysqli_result($resultprep,0,'opcion');*/
 for($numqr=0;$numqr<count($camposqrp);$numqr++){;
-$camposqr[]=mysqli_result($resultprep,0,$camposqrp[$numqr]);
+//$camposqr[]=mysqli_result($resultprep,0,$camposqrp[$numqr]);
+$camposqr[]=$resultadoprep[0][$camposqrp[$numqr]];
 };
 for($nump=0;$nump<count($campospp);$nump++){;
-$camposp[]=mysqli_result($resultprep,0,$campospp[$nump]);
+//$camposp[]=mysqli_result($resultprep,0,$campospp[$nump]);
+$camposp[]=$resultadoprep[0][$campospp[$nump]];
 };
 
 for($numc=0;$numc<count($camposcp);$numc++){;
-$camposc[]=mysqli_result($resultprep,0,$camposcp[$numc]);
+//$camposc[]=mysqli_result($resultprep,0,$camposcp[$numc]);
+$camposc[]=$resultadoprep[0][$camposcp[$numc]];
 };
 
 for($numa=0;$numa<count($camposap);$numa++){;
-$camposa[]=mysqli_result($resultprep,0,$camposap[$numa]);
+//$camposa[]=mysqli_result($resultprep,0,$camposap[$numa]);
+$camposa[]=$resultadoprep[0][$camposap[$numa]];
 };
 
-$personalizacion=mysqli_result($resultprep,0,'personalizacion');
+$personalizacion=$resultadoprep[0]['personalizacion'];
+$lictrab=$resultadoprep[0]['lictrab'];
+$liccli=$resultadoprep[0]['liccli'];
+
+/*$personalizacion=mysqli_result($resultprep,0,'personalizacion');
 $lictrab=mysqli_result($resultprep,0,'lictrab');
-$liccli=mysqli_result($resultprep,0,'liccli');
+$liccli=mysqli_result($resultprep,0,'liccli');*/
 $numempleados=$lictrab-5;
 $numclientes=$liccli-50;
 ?>
@@ -72,38 +85,52 @@ $numclientes=$liccli-50;
 
 <?php 
 $sqlopc="select * from precioproyectos where idproyectos='".$idpr."' and estado='1'";
-$resultopc=mysqli_query ($conn,$sqlopc) or die ("Invalid resultopc");
+$resultopc=$conn->query($sqlopc);
+$resultadopc=$resultopc->fetchAll();
+
+//$resultopc=mysqli_query ($conn,$sqlopc) or die ("Invalid resultopc");
 for($numqr=0;$numqr<count($camposqrp);$numqr++){;
-$pqr[]=mysqli_result($resultopc,0,$camposqrp[$numqr]);
+//$pqr[]=mysqli_result($resultopc,0,$camposqrp[$numqr]);
+$pqr[]=$resultadopc[0][$camposqrp[$numqr]];
 };
 for($nump=0;$nump<count($campospp);$nump++){;
-$pp[]=mysqli_result($resultopc,0,$campospp[$nump]);
+//$pp[]=mysqli_result($resultopc,0,$campospp[$nump]);
+$pp[]=$resultadopc[0][$campospp[$nump]];
 };
 
 for($numc=0;$numc<count($camposcp);$numc++){;
-$pc[]=mysqli_result($resultopc,0,$camposcp[$numc]);
+//$pc[]=mysqli_result($resultopc,0,$camposcp[$numc]);
+$pc[]=$resultadopc[0][$camposcp[$numc]];
 };
 
 for($numa=0;$numa<count($camposap);$numa++){;
-$pa[]=mysqli_result($resultopc,0,$camposap[$numa]);
+//$pa[]=mysqli_result($resultopc,0,$camposap[$numa]);
+$pa[]=$resultadopc[0][$camposap[$numa]];
 };
 
 
 $sql="select * from proyectos where idproyectos='".$idpr."'";
-$result=mysqli_query ($conn,$sql) or die ("Invalid result menuproyectos");
+$result=$conn->query($sql);
+$resultado=$result->fetchAll();
+
+//$result=mysqli_query ($conn,$sql) or die ("Invalid result menuproyectos");
 for($numqr=0;$numqr<count($camposqrp);$numqr++){;
-$cqr[]=mysqli_result($result,0,$camposqrp[$numqr]);
+//$cqr[]=mysqli_result($result,0,$camposqrp[$numqr]);
+$cqr[]=$resultado[0][$camposqrp[$numqr]];
 };
 for($nump=0;$nump<count($campospp);$nump++){;
-$cp[]=mysqli_result($result,0,$campospp[$nump]);
+//$cp[]=mysqli_result($result,0,$campospp[$nump]);
+$cp[]=$resultado[0][$campospp[$nump]];
 };
 
 for($numc=0;$numc<count($camposcp);$numc++){;
-$cc[]=mysqli_result($result,0,$camposcp[$numc]);
+//$cc[]=mysqli_result($result,0,$camposcp[$numc]);
+$cc[]=$resultado[0][$camposcp[$numc]];
 };
 
 for($numa=0;$numa<count($camposap);$numa++){;
-$ca[]=mysqli_result($result,0,$camposap[$numa]);
+//$ca[]=mysqli_result($result,0,$camposap[$numa]);
+$ca[]=$resultado[0][$camposap[$numa]];
 };
 
 
@@ -122,7 +149,9 @@ $ca[]=mysqli_result($result,0,$camposap[$numa]);
 		<input type="checkbox" readonly disabled checked value="basico">
 		<input type="hidden" name="pbasico" checked value="1">
 		Paquete b&aacute;sico: 
-		<?php $pbasico=mysqli_result($resultopc,0,'pbasico');?> <?php  echo$pbasico;?> &euro;/a&ntilde;o sin iva
+		<?php //$pbasico=mysqli_result($resultopc,0,'pbasico');
+		$pbasico=$resultadopc[0]['pbasico'];
+		?> <?php  echo$pbasico;?> &euro;/a&ntilde;o sin iva
 		<?php $precio=$precio+$pbasico;?>
 		<br>
 
@@ -133,9 +162,18 @@ $ca[]=mysqli_result($result,0,$camposap[$numa]);
 				<li>Incidencias</li>
 				<input type="hidden" name="entrada" value="1">
 				<input type="hidden" name="incidencia" value="1">
-				<?php $numadm=mysqli_result($result,0,'numadm');?>
-				<?php $numtrab=mysqli_result($result,0,'numtrab');?>
-				<?php $numcli=mysqli_result($result,0,'numcli');?>
+				<?php 
+				//$numadm=mysqli_result($result,0,'numadm');
+				$numadm=$resultado[0]['numadm'];
+				?>
+				<?php 
+				//$numtrab=mysqli_result($result,0,'numtrab');
+				$numtrab=$resultado[0]['numtrab'];
+				?>
+				<?php 
+				//$numcli=mysqli_result($result,0,'numcli');
+				$numcli=$resultado[0]['numcli'];
+				?>
 				<input type="hidden" name="numadm" value="<?php  echo$numadm;?>">
 				<input type="hidden" name="numtrab" value="<?php  echo$numtrab;?>">
 				<input type="hidden" name="numcli" value="<?php  echo$numcli;?>">
@@ -155,38 +193,52 @@ $ca[]=mysqli_result($result,0,$camposap[$numa]);
 
 
 $sql31="select * from proyectosnombre where idproyectos='".$idpr."'";
-$result31=mysqli_query ($conn,$sql31) or die ("Invalid result menucontabilidad");
+$result31=$conn->query($sql31);
+$resultado31=$result31->fetchAll();
+
+//$result31=mysqli_query ($conn,$sql31) or die ("Invalid result menucontabilidad");
 for($numqr=0;$numqr<count($camposqrp);$numqr++){;
-$ncqr[]=mysqli_result($result31,0,$camposqrp[$numqr]);
+//$ncqr[]=mysqli_result($result31,0,$camposqrp[$numqr]);
+$ncqr[]=$resultado31[0][$camposqrp[$numqr]];
 };
 for($nump=0;$nump<count($campospp);$nump++){;
-$ncp[]=mysqli_result($result31,0,$campospp[$nump]);
+//$ncp[]=mysqli_result($result31,0,$campospp[$nump]);
+$ncp[]=$resultado31[0][$campospp[$nump]];
 };
 
 for($numc=0;$numc<count($camposcp);$numc++){;
-$ncc[]=mysqli_result($result31,0,$camposcp[$numc]);
+//$ncc[]=mysqli_result($result31,0,$camposcp[$numc]);
+$ncc[]=$resultado31[0][$camposcp[$numc]];
 };
 
 for($numa=0;$numa<count($camposap);$numa++){;
-$nca[]=mysqli_result($result31,0,$camposap[$numa]);
+//$nca[]=mysqli_result($result31,0,$camposap[$numa]);
+$nca[]=$resultado31[0][$camposap[$numa]];
 };
 
 
 $sql32="select * from proyectosimg where idproyectos='".$idpr."'";
-$result32=mysqli_query ($conn,$sql32) or die ("Invalid result menucontabilidad");
+$result32=$conn->query($sql32);
+$resultado32=$result32->fetchAll();
+
+//$result32=mysqli_query ($conn,$sql32) or die ("Invalid result menucontabilidad");
 for($numqr=0;$numqr<count($camposqrp);$numqr++){;
-$icqr[]=mysqli_result($result32,0,$camposqrp[$numqr]);
+//$icqr[]=mysqli_result($result32,0,$camposqrp[$numqr]);
+$icqr[]=$resultado32[0][$camposqrp[$numqr]];
 };
 for($nump=0;$nump<count($campospp);$nump++){;
-$icp[]=mysqli_result($result32,0,$campospp[$nump]);
+//$icp[]=mysqli_result($result32,0,$campospp[$nump]);
+$icp[]=$resultado32[0][$campospp[$nump]];
 };
 
 for($numc=0;$numc<count($camposcp);$numc++){;
-$icc[]=mysqli_result($result32,0,$camposcp[$numc]);
+//$icc[]=mysqli_result($result32,0,$camposcp[$numc]);
+$icc[]=$resultado32[0][$camposcp[$numc]];
 };
 
 for($numa=0;$numa<count($camposap);$numa++){;
-$ica[]=mysqli_result($result32,0,$camposap[$numa]);
+//$ica[]=mysqli_result($result32,0,$camposap[$numa]);
+$ica[]=$resultado32[0][$camposap[$numa]];
 };
 
 
@@ -275,10 +327,17 @@ $nume=5;
 $nume=$numempleados;
 };
 $sqlemp="select * from precioempleados where idproyectos='".$idpr."' and estado='1' and numempleados<='".$nume."' order by numempleados desc";
-$resultemp=mysqli_query ($conn,$sqlemp) or die ("Invalid result precioempleados");
+$resultemp=$conn->query($sqlemp);
+$resultadoemp=$resultemp->fetchAll();
+
+$nombregrupo=strtoupper($paqtrabajadores)."Numero de licencias adicionales ".$numempleados;
+$numempleados2=$resultadoemp[0]['numempleados'];
+$preciog=$resultadoemp[0]['preciogrupo'];
+
+/*$resultemp=mysqli_query ($conn,$sqlemp) or die ("Invalid result precioempleados");
 $nombregrupo=strtoupper($paqtrabajadores)."Numero de licencias adicionales ".$numempleados;
 $numempleados2=mysqli_result($resultemp,0,'numempleados');
-$preciog=mysqli_result($resultemp,0,'preciogrupo');
+$preciog=mysqli_result($resultemp,0,'preciogrupo');*/
 $preciogrupo=($preciog/$numempleados2)*$numempleados;
 ?>
 <input type="hidden" name="paqtrabajadores" value="<?php  echo$numempleados;?>">
@@ -296,10 +355,17 @@ $numc=50;
 $numc=$numclientes;
 };
 $sqlcli="select * from preciocliente where idproyectos='".$idpr."' and estado='1' and numcliente<='".$numc."' order by numcliente desc";
-$resultcli=mysqli_query ($conn,$sqlcli) or die ("Invalid result preciocliente");
+$resultcli=$conn->query($sqlcli);
+$resultadocli=$resultcli->fetchAll();
+
+$nombregrupo=strtoupper($paqclientes)."Numero de licencias adicionales ".$numclientes;
+$numclientes2=$resultadocli[0]['numcliente'];
+$preciog=$resultadocli[0]['preciogrupo'];
+
+/*$resultcli=mysqli_query ($conn,$sqlcli) or die ("Invalid result preciocliente");
 $nombregrupo=strtoupper($paqclientes)."Numero de licencias adicionales ".$numclientes;
 $numclientes2=mysqli_result($resultcli,0,'numcliente');
-$preciog=mysqli_result($resultcli,0,'preciogrupo');
+$preciog=mysqli_result($resultcli,0,'preciogrupo');*/
 $preciogrupoc=($preciog/$numclientes2)*$numclientes;
 ?>
 <input type="hidden" name="paqclientes" value="<?php  echo$numclientes;?>">
@@ -311,11 +377,17 @@ $preciogrupoc=($preciog/$numclientes2)*$numclientes;
 <ul>
 <?php 		
 $sqlperso="select * from preciopersonalizacion where idproyectos='".$idpr."' and estado='1'";
-$resultperso=mysqli_query ($conn,$sqlperso) or die ("Invalid result precioperso");
-$rowperso=mysqli_affected_rows();
+$resultperso=$conn->query($sqlperso);
+$resultadoperso=$resultperso->fetchAll();
+$rowperso=count($resultadoperso);
+
+/*$resultperso=mysqli_query ($conn,$sqlperso) or die ("Invalid result precioperso");
+$rowperso=mysqli_affected_rows();*/
 for ($j=0;$j<$rowperso;$j++){;
-$nombregrupo=mysqli_result($resultperso,$j,'nombregrupo');
-$preciogrupo=mysqli_result($resultperso,$j,'preciogrupo');
+$nombregrupo=$resultadoperso[$j]['nombregrupo'];
+$preciogrupo=$resultadoperso[$j]['preciogrupo'];
+/*$nombregrupo=mysqli_result($resultperso,$j,'nombregrupo');
+$preciogrupo=mysqli_result($resultperso,$j,'preciogrupo');*/
 ?>
 <?php if ($personalizacion=='1'){;?>
 <input type="hidden" name="personalizacion" value="1">
@@ -333,9 +405,13 @@ $preciogrupo=mysqli_result($resultperso,$j,'preciogrupo');
 	<h3>Precio sin IVA:	<?php  echo$precio;?> &euro;/a&ntilde;o</h3>
 <?php 
 $sqliva="select * from iva order by fecha desc";
-$resultiva=mysqli_query ($conn,$sqliva) or die ("Invalid resultiva");
+$resultiva=$conn->query($sqliva);
+$resultadoiva=$resultiva->fetchAll();
+
+//$resultiva=mysqli_query ($conn,$sqliva) or die ("Invalid resultiva");
 $jiva=0;
-$iva=mysqli_result($resultiva,$jiva,'iva');
+$iva=$resultadoiva[$jiva]['iva'];
+//$iva=mysqli_result($resultiva,$jiva,'iva');
 ?>	
 IVA aplicable: <?php  echo$iva;?>%<br/>
 	<?php 
@@ -347,8 +423,12 @@ $precioiva=($precio*($iva/100))+$precio;
 <?php 
 session_start();
 $sqlpro="select * from proyectos where idproyectos='".$idpr."'";
-$resultpro=mysqli_query ($conn,$sqlpro) or die ("Invalid resultpro");
-$nombrepro=mysqli_result($resultpro,0,'nombre');
+$resultpro=$conn->query($sqlpro);
+$resultadopro=$resultpro->fetchAll();
+$nombrepro=$resultadopro[0]['nombre'];
+
+/*$resultpro=mysqli_query ($conn,$sqlpro) or die ("Invalid resultpro");
+$nombrepro=mysqli_result($resultpro,0,'nombre');*/
 $producto=strtoupper($nombrepro).' con caracteristicas seleccionadas';
 
 $_SESSION["precio"] = $precioiva;

@@ -4,15 +4,26 @@ include('bbdd.php');
  
 if ($nif!=null){;
 
-$sql="select * from usuariost where idempresa='".$ide."' and nif='".$nif."'"; 
-$result=mysqli_query ($conn,$sql) or die ("Invalid result usuarios");
+$sql="select * from usuariost where idempresa='".$ide."' and nif='".$nif."'";
+$result=$conn->query($sql);
+$resultado=$result->fetchAll();
+
+$estado=$resultado[0]['estado'];
+$nombre=$resultado[0]['nombre'];
+$portada=$resultado[0]['portada'];
+$administracion=$resultado[0]['administracion'];
+$servicios=$resultado[0]['servicios'];
+$documentacion=$resultado[0]['documentacion'];
+$informes=$resultado[0]['informes'];
+
+/*$result=mysqli_query ($conn,$sql) or die ("Invalid result usuarios");
 $estado=mysqli_result($result,0,'estado');
 $nombre=mysqli_result($result,0,'nombre');
 $portada=mysqli_result($result,0,'portada');
 $administracion=mysqli_result($result,0,'administracion');
 $servicios=mysqli_result($result,0,'servicios');
 $documentacion=mysqli_result($result,0,'documentacion');
-$informes=mysqli_result($result,0,'informes');
+$informes=mysqli_result($result,0,'informes');*/
 ?>
 
 <form action="intro2.php" method="post" name="form2">

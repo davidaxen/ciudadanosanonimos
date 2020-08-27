@@ -21,7 +21,7 @@ VALUES ('$dia[$j]','$mes[$j]','$year[$j]','$pais','$fecha')";
 //echo $sql13;
 //$result13=mysqli_query ($conn,$sql13) or die ("Invalid result iclientes");
 
-$result13=$conn->query($sql13);
+$result13=$conn->exec($sql13);
 //$resultmos=$conn->query($sql13);
 //$num_rows=$result13->fetchAll();
 //$row=count($num_rows);

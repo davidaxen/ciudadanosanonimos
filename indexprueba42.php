@@ -79,6 +79,7 @@ $row=mysqli_num_rows($result);*/
 /*for ($j=0;$j<$row;$j++){;
 mysqli_data_seek($result,$j);
 $resultado=mysqli_fetch_array($result);*/
+$j=0;
 foreach ($result as $rowmos) {
 $titulo=$rowmos['titulo'];
 $pagport=$rowmos['pag'];
@@ -87,6 +88,7 @@ $pagport=$rowmos['pag'];
   <button class="tablinks" onclick="openCity(event, 'd<?php  echo $j;?>')" <?php if($j==0){;?>id="defaultOpen"<?php }?> ><?php  echo $titulo;?></button>
   
  <?php 
+ $j=$j+1;
 };
 ?> 
 </div>
@@ -98,6 +100,7 @@ $pagport=$rowmos['pag'];
 /*for ($j=0;$j<$row;$j++){;
 mysqli_data_seek($result,$j);
 $resultado=mysqli_fetch_array($result);*/
+$j=0;
 foreach ($result as $rowmos) {
 $titulo=$rowmos['titulo'];
 $pagport=$rowmos['pag'];
@@ -109,6 +112,7 @@ $pagport=$rowmos['pag'];
 
 
 <?php 
+$j=$j+1;
 };
 ?>
 <?php include ('js/tabjs.htm');?>

@@ -1,9 +1,20 @@
 <?php
 
 $sql52="select * from menusmartcbc where user='".$user."' and idempresa='".$ide."'";
-$result52=mysqli_query ($conn,$conn,$sql52) or die ("Invalid result menuempleados");
+$result52=$conn->query($sql52);
+$resultado52=$result52->fetchAll();
+$e1=$resultado52[0]['clientes'];
+$e2=$resultado52[0]['empleados'];
+$e3=$resultado52[0]['asignaciones'];
+$e4=$resultado52[0]['categorias'];
+$e5=$resultado52[0]['subcategorias'];
+$e6=$resultado52[0]['mensajes'];
+$e7=$resultado52[0]['trabajos'];
+$e8=$resultado52[0]['pcontrol'];
+$e9=$resultado52[0]['informe'];
+$e10=$resultado52[0]['otros'];
 
-
+/*$result52=mysqli_query ($conn,$conn,$sql52) or die ("Invalid result menuempleados");
 $e1=mysqli_result($result52,0,'clientes');
 $e2=mysqli_result($result52,0,'empleados');
 $e3=mysqli_result($result52,0,'asignaciones');
@@ -13,7 +24,7 @@ $e6=mysqli_result($result52,0,'mensajes');
 $e7=mysqli_result($result52,0,'trabajos');
 $e8=mysqli_result($result52,0,'pcontrol');
 $e9=mysqli_result($result52,0,'informe');
-$e10=mysqli_result($result52,0,'otros');
+$e10=mysqli_result($result52,0,'otros');*/
 
 
 /*

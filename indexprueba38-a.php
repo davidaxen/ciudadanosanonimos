@@ -19,9 +19,11 @@ if ($com=='comprobacion'){;
 <div id="main4">
 
 <?php 
-$sql="select * from portadapag where idempresa='".$ide."'";
+$sql="select * from portadapag where idempresa=:ide";
 //echo $sql;
-$result=$conn->query($sql);
+$result=$conn->prepare($sql);
+$result->bindParam(':ide', $ide);
+$result->execute();
 
 /*$result=mysqli_query ($conn, $sql) or die ("Invalid result idempresas");
 $row=mysqli_num_rows($result);

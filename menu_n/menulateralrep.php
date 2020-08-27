@@ -3,31 +3,55 @@
 
 $sql1="select * from menurepresentante where idrepresentante='".$idrepresentante."'"; 
 //echo $sql1;
-$result1=mysqli_query ($conn,$conn,$sql1) or die ("Invalid result empresas 1");
+$result1=$conn->query($sql1);
+$resultado1=$result1->fetchAll();
+$ad[1]=$resultado1[0]['empresa'];
+$ad[2]=$resultado1[0]['trabajo'];
+$ad[3]=$resultado1[0]['cuenta'];
+
+/*$result1=mysqli_query ($conn,$conn,$sql1) or die ("Invalid result empresas 1");
 $ad[1]=mysqli_result($result1,0,'empresa');
 $ad[2]=mysqli_result($result1,0,'trabajo');
-$ad[3]=mysqli_result($result1,0,'cuenta');
+$ad[3]=mysqli_result($result1,0,'cuenta');*/
 
 
 $sql11="select * from menurepresentantenombre where idrepresentante='".$idrepresentante."'";
-$result11=mysqli_query ($conn,$conn,$sql11) or die ("Invalid result menucontabilidad");
+$result11=$conn->query($sql11);
+$resultado11=$result11->fetchAll();
+$nad[1]=$resultado11[0]['empresa'];
+$nad[2]=$resultado11[0]['trabajo'];
+$nad[3]=$resultado11[0]['cuenta'];
+
+/*$result11=mysqli_query ($conn,$conn,$sql11) or die ("Invalid result menucontabilidad");
 $nad[1]=mysqli_result($result11,0,'empresa');
 $nad[2]=mysqli_result($result11,0,'trabajo');
-$nad[3]=mysqli_result($result11,0,'cuenta');
+$nad[3]=mysqli_result($result11,0,'cuenta');*/
 
 
 $sql12="select * from menurepresentanteimg where idrepresentante='".$idrepresentante."'";
-$result12=mysqli_query ($conn,$conn,$sql12) or die ("Invalid result menucontabilidad");
+$result12=$conn->query($sql12);
+$resultado12=$result12->fetchAll();
+$iad[1]=$resultado12[0]['empresa'];
+$iad[2]=$resultado12[0]['trabajo'];
+$iad[3]=$resultado12[0]['cuenta'];
+
+/*$result12=mysqli_query ($conn,$conn,$sql12) or die ("Invalid result menucontabilidad");
 $iad[1]=mysqli_result($result12,0,'empresa');
 $iad[2]=mysqli_result($result12,0,'trabajo');
-$iad[3]=mysqli_result($result12,0,'cuenta');
+$iad[3]=mysqli_result($result12,0,'cuenta');*/
 
 
 $sql13="select * from menurepresentanteenlace where idrepresentante='".$idrepresentante."'";
-$result13=mysqli_query ($conn,$conn,$sql13) or die ("Invalid result menucontabilidad");
+$result13=$conn->query($sql13);
+$resultado13=$result13->fetchAll();
+$ead[1]=$resultado13[0]['empresa'];
+$ead[2]=$resultado13[0]['trabajo'];
+$ead[3]=$resultado13[0]['cuenta'];
+
+/*$result13=mysqli_query ($conn,$conn,$sql13) or die ("Invalid result menucontabilidad");
 $ead[1]=mysqli_result($result13,0,'empresa');
 $ead[2]=mysqli_result($result13,0,'trabajo');
-$ead[3]=mysqli_result($result13,0,'cuenta');
+$ead[3]=mysqli_result($result13,0,'cuenta');*/
  
 
 if ($estado==1){;

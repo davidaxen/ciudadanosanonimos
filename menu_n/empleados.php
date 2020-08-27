@@ -1,6 +1,23 @@
 <?php
 $sql="select * from menuempleados where user='".$user."' and idempresa='".$ide."'";
-$result=mysqli_query ($conn,$conn,$sql) or die ("Invalid result menuempleados");
+$result=$conn->query($sql);
+$resultado=$result->fetchAll();
+
+$e1=$resultado[0]['empleado'];
+$e2=$resultado[0]['recibos'];
+$e3=$resultado[0]['anticipos'];
+$e4=$resultado[0]['nominas'];
+$e5=$resultado[0]['liquidacion'];
+$e6=$resultado[0]['ficheros'];
+$e7=$resultado[0]['certificados'];
+$e8=$resultado[0]['irpf'];
+$e9=$resultado[0]['segsocial'];
+$e10=$resultado[0]['vacaciones'];
+$e11=$resultado[0]['cuadrantes'];
+$e12=$resultado[0]['ropa'];
+$e13=$resultado[0]['cotizacion'];
+
+/*$result=mysqli_query ($conn,$conn,$sql) or die ("Invalid result menuempleados");
 $e1=mysqli_result($result,0,'empleado');
 $e2=mysqli_result($result,0,'recibos');
 $e3=mysqli_result($result,0,'anticipos');
@@ -13,7 +30,7 @@ $e9=mysqli_result($result,0,'segsocial');
 $e10=mysqli_result($result,0,'vacaciones');
 $e11=mysqli_result($result,0,'cuadrantes');
 $e12=mysqli_result($result,0,'ropa');
-$e13=mysqli_result($result,0,'cotizacion');
+$e13=mysqli_result($result,0,'cotizacion');*/
 ?>
 
 <li><a href="#">Empleados</a>

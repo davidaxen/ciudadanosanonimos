@@ -7,15 +7,21 @@ include('bbdd.php');
 
 $sql="select * from proyectos where idproyectos='".$idpr."'";
 //echo $sql;
-$result=mysqli_query ($conn,$sql) or die ("Este dominio no tiene acceso al sistema, por favor hable con el departamento Tecnico");
-$row=mysqli_num_rows($result);
+$result=$conn->query($sql);
+$resultmos=$conn->query($sql);
+$resultadorow=$result->fetchAll();
+$row=count($resultadorow);
+
+/*$result=mysqli_query ($conn,$sql) or die ("Este dominio no tiene acceso al sistema, por favor hable con el departamento Tecnico");
+$row=mysqli_num_rows($result);*/
 
 if ($row==0){
 ?>
 Este dominio no tiene acceso al sistema, por favor hable con el departamento de sistemas.
 <?php 	
 	}else{;
-$resultado=mysqli_fetch_array($result);
+//$resultado=mysqli_fetch_array($result);
+$resultado=$resultmos->fetch();
 $nombre=$resultado['nombre'];
 $logo=$resultado['logo'];
 $fondo=$resultado['fondo'];
@@ -57,8 +63,12 @@ if ($tipo==1){;
 
 $sql23="select * from empleados where nif='".$dato."'";
 //echo $sql;
-$result23=mysqli_query ($conn,$sql23) or die ("Este dominio no tiene acceso al sistema, por favor hable con el departamento Tecnico");
-$row23=mysqli_num_rows($result23);
+$result23=$conn->query($sql23);
+$result23mos=$conn->query($sql23);
+$row23=count($result23->fetchAll());
+
+/*$result23=mysqli_query ($conn,$sql23) or die ("Este dominio no tiene acceso al sistema, por favor hable con el departamento Tecnico");
+$row23=mysqli_num_rows($result23);*/
 
 if($row23>0){;
 ?>
@@ -67,10 +77,11 @@ if($row23>0){;
 <span class="tit3">Hemos comprobado que estas dado de alta en varias empresas. Por favor selecciona a cual es la que no recuerdas tu acceso</span>
 <tr><td>Empresa</td><td><select name="ide">
 <?php 
-for ($i=0;$i<$row23;$i++){;
+/*for ($i=0;$i<$row23;$i++){;
 mysqli_data_seek($result23,$i);
-$resultado23=mysqli_fetch_array($result23);
-$ide=$resultado23['idempresa'];
+$resultado23=mysqli_fetch_array($result23);*/
+foreach ($result23mos as $row23mos) {
+$ide=$row23mos['idempresa'];
 $sql01="select * from empresas where idempresas='".$ide."'";
 //echo $sql;
 $result01=mysqli_query ($conn,$sql01) or die ("Este dominio no tiene acceso al sistema, por favor hable con el departamento Tecnico");

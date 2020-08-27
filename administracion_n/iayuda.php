@@ -21,7 +21,7 @@ VALUES ('$menu','$seccion','$subseccion','$texto')";
 //$result13=mysqli_query ($conn,$sql13) or die ("Invalid result iclientes");
 echo ("introduccida ayuda");
 
-$result13=$conn->query($sql13);
+$result13=$conn->exec($sql13);
 //$resultmos13=$conn->query($sql13);
 //$num_rows=$result->fetchAll();
 //$row=count($num_rows);
