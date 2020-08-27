@@ -6,16 +6,22 @@ include('bbdd.php');
 if ($idvalidar!=null){;
 
 $sql10="select * from validar where email='".$email."'";
-$result10=mysqli_query ($conn,$sql10) or die ("Invalid result 1");
-$idpr1=mysqli_result($result10,0,'idpr');
-$smsvalidar=mysqli_result($result10,0,'smsvalidar');
-$intentos=mysqli_result($result10,0,'intentos');
+$result10=$conn->query($sql10);
+$resultado10=$result10->fetchAll();
+
+//$result10=mysqli_query ($conn,$sql10) or die ("Invalid result 1");
+$idpr1=$resultado10[0]['idpr'];
+$smsvalidar=$resultado10[0]['smsvalidar'];
+$intentos=$resultado10[0]['intentos'];
 
 
 $sql="SELECT * from proyectos where idproyectos='".$idpr."'"; 
-$result=mysqli_query ($conn,$sql) or die ("Invalid result");
-$nombre=mysqli_result($result,0,'nombre');
-$logo=mysqli_result($result,0,'logo');
+$result=$conn->query($sql);
+$resultado=$result->fetchAll();
+
+//$result=mysqli_query ($conn,$sql) or die ("Invalid result");
+$nombre=$resultado[0]['nombre'];
+$logo=$resultado[0]['logo'];
 ?>
 
 
@@ -97,7 +103,8 @@ if ($smsvalidar!=$idvalidar){;
 $intentos=$intentos+1;
 $sql13 = "UPDATE validar SET intentos = '".$intentos."' WHERE email='".$email."'";
 //echo $sql13;
-$result13=mysqli_query ($conn,$sql13) or die ("Invalid result iclientes");
+$result13=$conn->exec($sql13);
+//$result13=mysqli_query ($conn,$sql13) or die ("Invalid result iclientes");
 
 
 ?>
@@ -131,18 +138,20 @@ $result13=mysqli_query ($conn,$sql13) or die ("Invalid result iclientes");
 <?php 
 }else{;
 
-$email=mysqli_result($result10,0,'email');
-$password=mysqli_result($result10,0,'password');
+$email=$resultado10[0]['email'];
+$password=$resultado10[0]['password'];
 
 
 $sql13 = "UPDATE validar SET validar = '1', diaentrada = NOW( ) WHERE email ='".$email."'";
 //echo $sql13;
-$result13=mysqli_query ($conn,$sql13) or die ("Invalid result validar");
+$result13=$conn->exec($sql13);
+//$result13=mysqli_query ($conn,$sql13) or die ("Invalid result validar");
 
 $sql12 = "INSERT INTO usuarios(user,password,validar,estado,tusuario,idpr) 
 VALUES ('$email','$password','0','2','1','$idpr')";
 //echo $sql12;
-$result12=mysqli_query ($conn,$sql12) or die ("Invalid result usuarios");
+$result12=$conn->exec($sql12);
+//$result12=mysqli_query ($conn,$sql12) or die ("Invalid result usuarios");
 
 
 $minnombre=strtolower($nombre);

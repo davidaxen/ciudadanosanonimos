@@ -21,26 +21,32 @@ include('../../portada_n/cabecera3.php');?>
 
 $sql="SELECT * from mensajes where idempresa='".$ide."' and respondido='0'";
 //echo $sql;
-$result=mysqli_query ($conn,$sql) or die ("Invalid result0");
-$row=mysqli_num_rows($result);
+$result=$conn->query($sql);
 
+/*$result=mysqli_query ($conn,$sql) or die ("Invalid result0");
+$row=mysqli_num_rows($result);
 for ($i=0;$i<$row;$i++){;
 mysqli_data_seek($result, $i);
-$resultado=mysqli_fetch_array($result);
-$idempleado=$resultado['idempleado'];
-$dia=$resultado['dia'];
-$texto=$resultado['texto'];
+$resultado=mysqli_fetch_array($result);*/
+foreach ($result as $rowmos) {
+$idempleado=$rowmos['idempleado'];
+$dia=$rowmos['dia'];
+$texto=$rowmos['texto'];
 
 
-$sql2="SELECT * from empleados where idempresa='".$ide."' and idempleado='".$idempleado."'"; 
-$result2=mysqli_query ($conn,$sql2) or die ("Invalid result");
+$sql2="SELECT * from empleados where idempresa='".$ide."' and idempleado='".$idempleado."'";
+$result2=$conn->query($sql2);
+$resultado2=$result2->fetchAll();
+$row2=count($resultado2);
+
+/*$result2=mysqli_query ($conn,$sql2) or die ("Invalid result");
 $row2=mysqli_num_rows($result2);
-$resultado2=mysqli_fetch_array($result2);
+$resultado2=mysqli_fetch_array($result2);*/
 //echo $row2;
 if ($row2!=0){;
-$nombre=$resultado2['nombre'];
-$apellidop=$resultado2['1apellido'];
-$apellidos=$resultado2['2apellido'];
+$nombre=$resultado2[0]['nombre'];
+$apellidop=$resultado2[0]['1apellido'];
+$apellidos=$resultado2[0]['2apellido'];
 $nombret=$nombre.' '.$apellidop.' '.$apellidos;
 }else{;
 $nombret="sin datos";

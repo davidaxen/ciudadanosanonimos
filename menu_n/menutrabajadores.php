@@ -5,10 +5,15 @@ extract($_POST);
 extract($_GET);
 extract($_COOKIE);
 
-$sql2="select idempleado,estado from empleados where nif='".$user."' and idempresa='".$ide."'"; 
-$result2=mysqli_query ($conn,$conn,$sql2) or die ("Invalid result empleados");
+$sql2="select idempleado,estado from empleados where nif='".$user."' and idempresa='".$ide."'";
+$result2=$conn->query($sql2);
+$resultado2=$result2->fetchAll();
+$idempl=$resultado2[0]['idempleado'];
+$estado=$resultado2[0]['estado'];
+
+/*$result2=mysqli_query ($conn,$conn,$sql2) or die ("Invalid result empleados");
 $idempl=mysqli_result($result2,0,'idempleado');
-$estado=mysqli_result($result2,0,'estado');
+$estado=mysqli_result($result2,0,'estado');*/
 ?>
 <table>
 <tr>

@@ -12,13 +12,26 @@ if (($ide!=null) or ($validar==0)){;
 </div>
 <!--<div class="contenido">-->
 <?php 
-$sql="SELECT * from validar where email='".$user."' and password='".$pass."'"; 
-$result=mysqli_query ($conn,$sql) or die ("Invalid result");
+$sql="SELECT * from validar where email=:user and password=:pass";
+$result=$conn->prepare($sql);
+$result->bindParam(':user', $user);
+$result->bindParam(':pass', $pass);
+$result->execute();
+$resultado=$result->fetchAll();
+
+$nombreemp=$resultado[0]['nombreemp'];
+$nifemp=$resultado[0]['nifemp'];
+$percontacto=$resultado[0]['percontacto'];
+$telcontacto=$resultado[0]['telcontacto'];
+$idpr=$resultado[0]['idpr'];
+
+
+/*$result=mysqli_query ($conn,$sql) or die ("Invalid result");
 $nombreemp=mysqli_result($result,0,'nombreemp');
 $nifemp=mysqli_result($result,0,'nifemp');
 $percontacto=mysqli_result($result,0,'percontacto');
 $telcontacto=mysqli_result($result,0,'telcontacto');
-$idpr=mysqli_result($result,0,'idpr');
+$idpr=mysqli_result($result,0,'idpr');*/
 ?>
 
 
@@ -174,13 +187,18 @@ a hover: {text-decoration:none}
 <td>Pais</td>
 <td>
 <?php 
-$sql="select * from pais order by nombrepais asc"; 
-$result=mysqli_query ($conn,$sql) or die ("Invalid result empleados");
-$row=mysqli_affected_rows();
+$sql="select * from pais order by nombrepais asc";
+$result=$conn->query($sql);
+//$result=mysqli_query ($conn,$sql) or die ("Invalid result empleados");
+//$row=mysqli_affected_rows();
 ?><select name="pais2">
-<?php for ($i;$i<$row;$i++){;
+<?php 
+foreach ($result as $rowmos) {
+    $idpais=$rowmos['idpais'];
+    $nombrepais=$rowmos['nombrepais'];
+/*for ($i;$i<$row;$i++){;
 $idpais=mysqli_result($result,$i,'idpais');
-$nombrepais=mysqli_result($result,$i,'nombrepais');
+$nombrepais=mysqli_result($result,$i,'nombrepais');*/
 ?>
 <option value="<?php  echo$idpais;?>" <?php if ($idpais==724){;?>selected<?php };?> ><?php  echo$nombrepais;?>
 <?php };?>
@@ -233,27 +251,42 @@ En esta operativa de prueba solo podr&aacute; usar:
 <?php 
 $dat=array('cuadrante','entrada','incidencia','mensaje','alarma','accdiarias','accmantenimiento','niveles','productos','revision','trabajo','siniestro','control','mediciones','jornadas','informes','ruta','envases','incidenciasplus');
 
-$sql1n="SELECT * from proyectosnombre where idproyectos='".$idpr."'"; 
-$result1n=mysqli_query ($conn,$sql1n) or die ("Invalid result");
-$datosproyn=mysqli_fetch_row($result1n);
+$sql1n="SELECT * from proyectosnombre where idproyectos=:idpr";
+$result1n=$conn->prepare($sql1n);
+$result1n->bindParam(':idpr', $idpr);
+$result1n->execute();
+$datosproyn=$result1n->fetch();
+
+
+/*$result1n=mysqli_query ($conn,$sql1n) or die ("Invalid result");
+$datosproyn=mysqli_fetch_row($result1n);*/
 
 for ($i=0;$i<count($dat);$i++){;
 $u=$i+5;
 $encab[$i]=$datosproyn[$u];
 };
 
-$sql1i="SELECT * from proyectosimg where idproyectos='".$idpr."'"; 
-$result1i=mysqli_query ($conn,$sql1i) or die ("Invalid result");
-$datosproyi=mysqli_fetch_row($result1i);
+$sql1i="SELECT * from proyectosimg where idproyectos=:idpr"; 
+$result1i=$conn->prepare($sql1i);
+$result1i->bindParam(':idpr', $idpr);
+$result1i->execute();
+$datosproyi=$result1i->fetch();
+
+/*$result1i=mysqli_query ($conn,$sql1i) or die ("Invalid result");
+$datosproyi=mysqli_fetch_row($result1i);*/
 
 for ($i=0;$i<count($dat);$i++){;
 $u=$i+5;
 $imgpt[$i]=$datosproyi[$u];
 };
 
-$sql1="SELECT * from proyectos where idproyectos='".$idpr."'"; 
-$result1=mysqli_query ($conn,$sql1) or die ("Invalid result");
-$datosproy=mysqli_fetch_row($result1);
+$sql1="SELECT * from proyectos where idproyectos=:idpr";
+$result1=$conn->prepare($sql1);
+$result1->bindParam(':idpr', $idpr);
+$result1->execute();
+$datosproy=$result1->fetch();
+/*$result1=mysqli_query ($conn,$sql1) or die ("Invalid result");
+$datosproy=mysqli_fetch_row($result1);*/
 
 for ($i=0;$i<count($dat);$i++){;
 $u=$i+19;

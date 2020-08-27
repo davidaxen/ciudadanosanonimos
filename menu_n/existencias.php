@@ -1,10 +1,18 @@
 <?php
 $sql="select * from menuexistencias where user='".$user."' and idempresa='".$ide."'";
-$result=mysqli_query ($conn,$conn,$sql) or die ("Invalid result menuexistencias");
+$result=$conn->query($sql);
+$resultado=$result->fetchAll();
+
+$ex1=$resultado[0]['materiales'];
+$ex2=$resultado[0]['herramientas'];
+$ex3=$resultado[0]['vestuario'];
+$ex4=$resultado[0]['tienda'];
+
+/*$result=mysqli_query ($conn,$conn,$sql) or die ("Invalid result menuexistencias");
 $ex1=mysqli_result($result,0,'materiales');
 $ex2=mysqli_result($result,0,'herramientas');
 $ex3=mysqli_result($result,0,'vestuario');
-$ex4=mysqli_result($result,0,'tienda');
+$ex4=mysqli_result($result,0,'tienda');*/
 ?>
 
 <!-- EXISTENCIAS -->

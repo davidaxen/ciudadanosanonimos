@@ -8,9 +8,12 @@ include('bbdd.php');
 $idpccat=8;
 
 
-$sql1="SELECT nombre,1apellido,2apellido from empleados where idempresa='".$ide."' and idempleado='".$idempleados."'"; 
-$result1=mysqli_query ($conn,$sql1) or die ("Invalid result1");
-$resultado1=mysqli_fetch_array($result1);
+$sql1="SELECT nombre,1apellido,2apellido from empleados where idempresa='".$ide."' and idempleado='".$idempleados."'";
+$result1=$conn->query($sql1);
+$resultado1=$result1->fetch();
+
+/*$result1=mysqli_query ($conn,$sql1) or die ("Invalid result1");
+$resultado1=mysqli_fetch_array($result1);*/
 $nombre=$resultado1['nombre'];
 $apellidop=$resultado1['1apellido'];
 $apellidos=$resultado1['2apellido'];
@@ -48,22 +51,21 @@ $fechaa=date("Y-m-d H:i:s", mktime(0, 0, 0, $m, $d, $y));
 $fechaf=date("Y-m-d H:i:s", mktime(0, 0, 0, $m, $d+1, $y));
 $sql="SELECT * from mensajes where idempresa='".$ide."' and idempleado='".$idempleados."' and dia between '".$fechaa."' and '".$fechaf."'";
 //echo $sql;
-$result=mysqli_query ($conn,$sql) or die ("Invalid result0");
+$result=$conn->query($sql);
+/*$result=mysqli_query ($conn,$sql) or die ("Invalid result0");
 $row=mysqli_num_rows($result);
-
-
-
 for ($i=0;$i<$row;$i++){;
 mysqli_data_seek($result, $i);
-$resultado=mysqli_fetch_array($result);
-$dia=$resultado['dia'];
-$texto=$resultado['texto'];
-$user=$resultado['user']
-$diaresp=$resultado['diaresp'];
-$horaresp=$resultado['horaresp'];
-$respuesta=$resultado['respuesta'];
-$lat=$resultado['lat'];
-$lon=$resultado['lon'];
+$resultado=mysqli_fetch_array($result);*/
+foreach ($result as $rowmos) {
+$dia=$rowmos['dia'];
+$texto=$rowmos['texto'];
+$user=$rowmos['user']
+$diaresp=$rowmos['diaresp'];
+$horaresp=$rowmos['horaresp'];
+$respuesta=$rowmos['respuesta'];
+$lat=$rowmos['lat'];
+$lon=$rowmos['lon'];
 
 echo "<tr><td>";
 echo $dia;
@@ -99,22 +101,22 @@ $fechaa=date("Y-m-d H:i:s", mktime(0, 0, 0, $m, 1, $y));
 $fechab=date("Y-m-d H:i:s", mktime(0, 0, 0, $m+1, 0, $y));
 $sql="SELECT * from mensajes where idempresa='".$ide."' and idempleado='".$idempleados."' and dia between '".$fechaa."' and '".$fechab."' order by id asc";
 //echo $sql;
-$result=mysqli_query ($conn,$sql) or die ("Invalid result0");
+$result=$conn->query($sql);
+
+/*$result=mysqli_query ($conn,$sql) or die ("Invalid result0");
 $row=mysqli_num_rows($result);
-
-
-
 for ($i=0;$i<$row;$i++){;
 mysqli_data_seek($result, $i);
-$resultado=mysqli_fetch_array($result);
-$dia=$resultado['dia'];
-$texto=$resultado['texto'];
-$user=$resultado['user'];
-$diaresp=$resultado['diaresp'];
-$horaresp=$resultado['horaresp'];
-$respuesta=$resultado['respuesta'];
-$lat=$resultado['lat'];
-$lon=$resultado['lon'];
+$resultado=mysqli_fetch_array($result);*/
+foreach ($result as $rowmos) {
+$dia=$rowmos['dia'];
+$texto=$rowmos['texto'];
+$user=$rowmos['user'];
+$diaresp=$rowmos['diaresp'];
+$horaresp=$rowmos['horaresp'];
+$respuesta=$rowmos['respuesta'];
+$lat=$rowmos['lat'];
+$lon=$rowmos['lon'];
 
 echo "<tr><td>";
 echo $dia;

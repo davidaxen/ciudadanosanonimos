@@ -112,15 +112,25 @@ tracking"></a></div></noscript>
 
 <?php 
 $sql10="select * from validar where email='".$email."'";
-$result10=mysqli_query ($conn,$sql10) or die ("Invalid result 10");
-$row10=mysqli_affected_rows();
+$result10=$conn->query($sql10);
+$resultado10=$result10->fetchAll();
+$row10=count($resultado10);
+
+/*$result10=mysqli_query ($conn,$sql10) or die ("Invalid result 10");
+$row10=mysqli_affected_rows();*/
 
 if ($row10!=0){;
-$validar=mysqli_result($result10,0,'validar');
+$validar=$resultado10[0]['validar'];
+$password=$resultado10[0]['password'];
+$codvalidar=$resultado10[0]['codvalidar'];
+$datovalidar=$resultado10[0]['datovalidar'];
+$idvalidar=$resultado10[0]['idvalidar'];
+
+/*$validar=mysqli_result($result10,0,'validar');
 $password=mysqli_result($result10,0,'password');
 $codvalidar=mysqli_result($result10,0,'codvalidar');
 $datovalidar=mysqli_result($result10,0,'datovalidar');
-$idvalidar=mysqli_result($result10,0,'idvalidar');
+$idvalidar=mysqli_result($result10,0,'idvalidar');*/
 $datos=str_split($datovalidar);
 
 //$abc=array('A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z','a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z');
@@ -146,12 +156,14 @@ if ($confirmar1==$dat){;
 
 $sql13 = "UPDATE validar SET validar = '1', diaentrada = NOW( ) WHERE idvalidar ='".$idvalidar."'";
 //echo $sql13;
-$result13=mysqli_query ($conn,$sql13) or die ("Invalid result validar");
+$result13=$conn->exec($sql13);
+//$result13=mysqli_query ($conn,$sql13) or die ("Invalid result validar");
 
 $sql12 = "INSERT INTO usuarios(user,password,validar) 
 VALUES ('$email','$password','0')";
 //echo $sql12;
-$result12=mysqli_query ($conn,$sql12) or die ("Invalid result usuarios");
+$result12=$conn->exec($sql12);
+//$result12=mysqli_query ($conn,$sql12) or die ("Invalid result usuarios");
 
 
 

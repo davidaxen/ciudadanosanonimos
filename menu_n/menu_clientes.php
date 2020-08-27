@@ -5,8 +5,11 @@ if ($ide!=null){;
  include('../portada_n/cabecera2.php');
  
 $sql11r="select * from usuariosnombre where idempresas='".$ide."'";
-$result11r=mysqli_query ($conn,$sql11r) or die ("Invalid result menucontabilidad");
-$resultado11r=mysqli_fetch_array($result11r);
+$result11r=$conn->query($sql11r);
+$resultado11r=$result11r->fetch();
+
+/*$result11r=mysqli_query ($conn,$sql11r) or die ("Invalid result menucontabilidad");
+$resultado11r=mysqli_fetch_array($result11r);*/
 $nadr=$resultado11r['servicios'];
 $nadr2=$resultado11r['informes'];
 ?>

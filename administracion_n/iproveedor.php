@@ -4,13 +4,19 @@ include('bbdd.php');
 include('../portada_n/cabecera2.php');
 
 $sql31="select * from menuadministracionnombre where idempresa='".$ide."'";
-$result31=mysqli_query ($conn,$sql31) or die ("Invalid result menucontabilidad");
-$resultado31=mysqli_fetch_array($result31);
+$result31=$conn->query($sql31);
+$resultado31=$result31->fetch();
+
+/*$result31=mysqli_query ($conn,$sql31) or die ("Invalid result menucontabilidad");
+$resultado31=mysqli_fetch_array($result31);*/
 $nc=$resultado31['proveedor'];
 
 $sql32="select * from menuadministracionimg where idempresa='".$ide."'";
-$result32=mysqli_query ($conn,$sql32) or die ("Invalid result menucontabilidad");
-$resultado32=mysqli_fetch_array($result32);
+$result32=$conn->query($sql32);
+$resultado32=$result32->fetch();
+
+/*$result32=mysqli_query ($conn,$sql32) or die ("Invalid result menucontabilidad");
+$resultado32=mysqli_fetch_array($result32);*/
 $ic=$resultado32['proveedor'];
 
 ?>
@@ -51,9 +57,15 @@ if ($idc==null){;?>
 <?php } else {;?>
 <?php 
 
-$sql="select idproveedor from proveedores where idempresas='".$ide."' order by idproveedor desc"; 
-$result=mysqli_query ($conn,$sql) or die ("Invalid result proveedor");
-$row=mysqli_num_rows($result);
+$sql="select idproveedor from proveedores where idempresas='".$ide."' order by idproveedor desc";
+$result=$conn->query($sql);
+$resultmos=$conn->query($sql);
+
+$resultado=$result->fetchAll();
+$row=count($resultado); 
+
+/*$result=mysqli_query ($conn,$sql) or die ("Invalid result proveedor");
+$row=mysqli_num_rows($result);*/
 ?>
 <form action="intro2.php" method="post">
 <table>
@@ -64,7 +76,8 @@ $row=mysqli_num_rows($result);
 if ($row==0){;
 $idp=10;
 }else{;
-$resultado=mysqli_fetch_array($result);
+$resultado=$resultmos->fetch();
+//$resultado=mysqli_fetch_array($result);
 $idp=$resultado['idproveedor'];
 $idp=$idp+1;
 };

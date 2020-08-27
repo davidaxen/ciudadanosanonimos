@@ -6,8 +6,11 @@ include('../../portada_n/cabecera3.php');
 
 $sql="SELECT * from mensajes where id='".$id."'";
 //echo $sql;
-$result=mysqli_query ($conn,$sql) or die ("Invalid result0");
-$resultado=mysqli_fetch_array($result);
+$result=$conn->query($sql);
+$resultado=$result->fetch();
+
+/*$result=mysqli_query ($conn,$sql) or die ("Invalid result0");
+$resultado=mysqli_fetch_array($result);*/
 $idmensaje=$resultado['id'];
 $fechafin=$resultado['fechafin'];
 $texto=$resultado['texto'];
@@ -38,17 +41,20 @@ $pais=$resultado['pais'];
 
 <?php 
 $sql="SELECT * from paises "; 
-$result=mysqli_query ($conn,$sql) or die ("Invalid result");
-$row=mysqli_num_rows($result);
+$result=$conn->query($sql);
+
+/*$result=mysqli_query ($conn,$sql) or die ("Invalid result");
+$row=mysqli_num_rows($result);*/
 ?>
 <select name="idpais">
 <option value="todos">Todos</option>
 <?php 
-for ($i=0;$i<$row;$i++){;
+/*for ($i=0;$i<$row;$i++){;
 mysqli_data_seek($result, $i);
-$resultado=mysqli_fetch_array($result);
-$idpais=$resultado['idpais'];
-$nombrepais=$resultado['nombrepais'];
+$resultado=mysqli_fetch_array($result);*/
+foreach ($result as $rowmos) {
+$idpais=$rowmos['idpais'];
+$nombrepais=$rowmos['nombrepais'];
 ?>
 <option value="<?php  echo $idpais;?>"
 <?php 

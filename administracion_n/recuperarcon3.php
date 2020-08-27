@@ -7,19 +7,24 @@ include('bbdd.php');
 
 $sql="select * from portada where dominio='".$dominio."'";
 //echo $sql;
-$result=mysqli_query ($conn,$sql) or die ("Este dominio no tiene acceso al sistema, por favor hable con el departamento Tecnico");
-$row=mysqli_affected_rows();
+$result=$conn->query($sql);
+$resultmos=$conn->query($sql);
+$resultadorow=$result->fetchAll();
+$row=count($resultadorow);
+
+/*$result=mysqli_query ($conn,$sql) or die ("Este dominio no tiene acceso al sistema, por favor hable con el departamento Tecnico");
+$row=mysqli_affected_rows();*/
 
 if ($row==0){
 ?>
 Este dominio no tiene acceso al sistema, por favor hable con el departamento de sistemas.
 <?php 	
 	}else{;
-$logo=mysqli_result($result,0,'logo');
-$imgder=mysqli_result($result,0,'imgderecha');
-$imgizq=mysqli_result($result,0,'imgizquierda');
-$fondo=mysqli_result($result,0,'fondo');
-$icono=mysqli_result($result,0,'icono');
+$logo=$resultadorow[0]['logo'];
+$imgder=$resultadorow[0]['imgderecha'];
+$imgizq=$resultadorow[0]['imgizquierda'];
+$fondo=$resultadorow[0]['fondo'];
+$icono=$resultadorow[0]['icono'];
 
 
 ?>
@@ -66,8 +71,11 @@ if ($tipo==1){;
 
 $sql="select * from empleados where nif='".$dni."' and idempresa='".$ide."'";
 //echo $sql;
-$result=mysqli_query ($conn,$sql) or die ("Este dominio no tiene acceso al sistema, por favor hable con el departamento Tecnico");
-$emailtra=mysqli_result($result,0,'email1');
+$result=$conn->query($sql);
+$resultado=$result->fetchAll();
+
+//$result=mysqli_query ($conn,$sql) or die ("Este dominio no tiene acceso al sistema, por favor hable con el departamento Tecnico");
+$emailtra=$resultado[0]['email1'];
 
 
 if ($emailtra!=$email){;
@@ -76,7 +84,7 @@ El correo electronico que nos ha remitido no corresponde al que tenemos en la ba
 Por favor, pongase en contacto con su empresa para obtener el usuario y la clave
 <?php 
 }else{;
-$idempleado=mysqli_result($result,0,'idempleado');
+$idempleado=$resultado[0]['idempleado'];
 $userempl=$ide.$idempleado;
 
 $nombre="NATIVECBC";
@@ -165,8 +173,11 @@ if ($tipo==2){;
 
 $sql="select * from gestores where telefono1='".$telef."' and idempresa='".$ide."'";
 //echo $sql;
-$result=mysqli_query ($conn,$sql) or die ("Este dominio no tiene acceso al sistema, por favor hable con el departamento Tecnico");
-$emailtra=mysqli_result($result,0,'email');
+$result=$conn->query($sql);
+$emailtra=$result->fetchAll();
+
+//$result=mysqli_query ($conn,$sql) or die ("Este dominio no tiene acceso al sistema, por favor hable con el departamento Tecnico");
+$emailtra=$emailtra[0]['email'];
 
 
 if ($emailtra!=$email){;
@@ -175,7 +186,7 @@ El correo electronico que nos ha remitido no corresponde al que tenemos en la ba
 Por favor, pongase en contacto con su empresa para obtener el usuario y la clave
 <?php 
 }else{;
-$userges=mysqli_result($result,0,'user');
+$userges=$emailtra[0]['user'];
 
 $nombre="NATIVECBC";
 $asunto="Tu usuario de acceso";

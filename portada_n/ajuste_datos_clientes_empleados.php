@@ -10,14 +10,17 @@ for ($j=0;$j<count($tablas);$j++){;
 for ($t=0;$t<count($datcli);$t++){;
 $sql="update ".$tablas[$j]." set ".$datcli[$t]."='0' where ".$datcli[$t]."=''";
 //echo $sql.'<br/>';
-$result=mysqli_query ($conn,$sql) or die ("Invalid result 1");
+$result=$conn->exec($sql);
+//$result=mysqli_query ($conn,$sql) or die ("Invalid result 1");
 
 };
 };
 
 $sql="update servicios set cuadrante='0' where cuadrante=''";
 //echo $sql.'<br/>';
-$result=mysqli_query ($conn,$sql) or die ("Invalid result 2");
+$result=$conn->exec($sql);
+
+//$result=mysqli_query ($conn,$sql) or die ("Invalid result 2");
 
 
 ?>

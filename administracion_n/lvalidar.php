@@ -38,6 +38,7 @@ $sql.=" where validar=:estadovalidar";
 $sql.=" order by idvalidar asc"; 
 //echo $sql;
 
+
 $result=$conn->prepare($sql);
 $resultmos=$conn->prepare($sql);
 $result->bindParam(':estadovalidar',$estadovalidar);
@@ -55,12 +56,12 @@ $row=mysqli_num_rows($result);
 <?php if ($estadovalidar=="todos"){;?>
 <td>Tipo</td>
 <?php };?>
-<td>Nº Empresa</td><td>Nombre Empresa</td><td>NIF</td><td>Per.Con.</td><td>Tel.Con.</td><td>Email</td><td>Proyecto</td></tr>
+<td>NÂº Empresa</td><td>Nombre Empresa</td><td>NIF</td><td>Per.Con.</td><td>Tel.Con.</td><td>Email</td><td>Proyecto</td></tr>
+
+
 <?php 
 
 foreach ($resultmos as $row1) {
-
-
 //for ($i=0; $i<$row; $i++){;
 //mysqli_data_seek($result, $i);
 //$resultado=mysqli_fetch_array($result);
@@ -97,6 +98,7 @@ case 3:$nvalidar="Sin contrato";break;
 <td><?php  echo$email;?></td>
 <td>
 <?php 
+
 $sqli="SELECT * from proyectos where idproyectos=:idpremp"; 
 
 
@@ -107,6 +109,7 @@ $resultadoi=$resulti->fetch();
 
 //$resulti=mysqli_query ($conn,$sqli) or die ("Invalid resulti");
 //$resultadoi=mysqli_fetch_array($resulti);
+
 $logopremp=$resultadoi['logo'];
 ?>
 <img src="images/<?php  echo$logopremp;?>" width="50">

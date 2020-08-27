@@ -23,6 +23,7 @@ VALUES (:dia,:mes,:year,:pais,:fecha,:comunidad)";
 echo ("introducida fecha: ".$fecha."<br/>");
 
 
+
 $result13=$conn->prepare($sql13);
 $result13->bindParam(':dia',$dia[$j]);
 $result13->bindParam(':mes',$mes[$j]);

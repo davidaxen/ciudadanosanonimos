@@ -7,17 +7,22 @@ if ($com=='comprobacion'){
 	
 
 
-$sql="select * from usuarios where user='".$gente."' and password='".$part."'";
+$sql="select * from usuarios where user=:gente and password=:part";
 //echo $sql;
 //echo hash('sha512',$part);
-$result=$conn->query($sql);
+$result=$conn->prepare($sql);
+$result->bindParam(':gente', $gente);
+$result->bindParam(':part', $part);
+$result->execute();
 $resultados=$result->fetch();
 /*$result=mysqli_query ($conn, $sql) or die ("Invalid result sql");
 $resultados = mysqli_fetch_array ($result);*/
 				
-$sql56="select * from proyectos where idproyectos='".$idpr."'";
+$sql56="select * from proyectos where idproyectos=:idpr";
 //echo $sql56;
-$result56=$conn->query($sql56);
+$result56=$conn->prepare($sql56);
+$result56->bindParam(':idpr', $idpr);
+$result56->execute();
 $resultados56=$result56->fetch();
 
 /*$result56=mysqli_query ($conn, $sql56) or die ("Invalid result sql56");
@@ -35,10 +40,12 @@ $ct=$resultados56['colorfondo'];
 				$rgpd=$resultados['rgpd'];
 				$avisolegal=$resultados['avisolegal'];
 
-$sqlc="select * from empresas where idempresas='".$idempresacontrol."'";
+$sqlc="select * from empresas where idempresas=:idempresacontrol";
 //echo $sql;
 //echo hash('sha512',$part);
-$resultc=$conn->query($sqlc);
+$resultc=$conn->prepare($sqlc);
+$resultc->bindParam(':idempresacontrol', $idempresacontrol);
+$resultc->execute();
 $resultadosc=$resultc->fetch();
 
 /*$resultc=mysqli_query ($conn, $sqlc) or die ("Invalid result sql");
@@ -75,8 +82,10 @@ setcookie("pag1",$pag1);
 				$idu=$resultados['id'];
 				
 				
-				$sql10="select * from visitas where usuario='".$gente."' order by dia desc,hora desc";
-				$result10=$conn->query($sql10);
+				$sql10="select * from visitas where usuario=:gente order by dia desc,hora desc";
+				$result10=$conn->prepare($sql10);
+				$result10->bindParam(':gente', $gente);
+				$result10->execute();
 				$resultados10=$result10->fetchAll();
 				$row10=count($resultados10);
 
@@ -94,7 +103,7 @@ setcookie("pag1",$pag1);
 				setcookie("hora1",$hora1);
 				};
 				
-				
+				//var_dump($modulo);
 				$pag='indexprueba'.$modulo.'.php'; 
 				//echo $pag;
 				include_once($pag);

@@ -5,8 +5,10 @@ include('bbdd.php');
 if ($ide!=null){;
  include('../portada_n/cabecera2.php');
  
-$sql11r="select * from usuariosnombre where idempresas='".$ide."'";
-$result11r=$conn->query($sql11r);
+$sql11r="select * from usuariosnombre where idempresas=:ide";
+$result11r=$conn->prepare($sql11r);
+$result11r->bindParam(':ide', $ide);
+$result11r->execute();
 $resultado11r=$result11r->fetch();
 
 /*$result11r=mysqli_query ($conn,$sql11r) or die ("Invalid result menucontabilidad");

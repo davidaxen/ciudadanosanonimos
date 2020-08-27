@@ -64,8 +64,10 @@ a hover: {text-decoration:none}
 
 
 <?php 
-$sql33="select * from portadai where idempresa='".$idempresas."'";
-$result33=$conn->query($sql33);
+$sql33="select * from portadai where idempresa=:idempresas";
+$result33=$conn->prepare($sql33);
+$result33->bindParam(':idempresas', $idempresas);
+$result33->execute();
 $soco33=$result33->fetch();
 /*$result33=mysqli_query ($conn,$sql33) or die ("Invalid result232");
 $soco33=mysqli_fetch_array($result33);*/
@@ -85,8 +87,10 @@ $ttg=6-$ttg;
 <input type="hidden" name="tablas" value="modificart">
 <input type="hidden" name="idcm" value="10">
 <?php 
-$sql23="select * from empresas where idempresas='".$idempresas."' ";
-$result23=$conn->query($sql23);
+$sql23="select * from empresas where idempresas=:idempresas ";
+$result23=$conn->prepare($sql23);
+$result23->bindParam(':idempresas', $idempresas);
+$result23->execute();
 $soco=$result23->fetch();
 $col=count($soco);
 
@@ -98,8 +102,10 @@ $col=mysqli_num_fields($result23);*/
 
 //$usera=mysqli_fetch_field_direct($result23, 2)->name;
 //echo  ($usera);
-$sql2s="select * from servicios where idempresa='".$idempresas."' ";
-$result2s=$conn->query($sql2s);
+$sql2s="select * from servicios where idempresa=:idempresas ";
+$result2s=$conn->prepare($sql2s);
+$result2s->bindParam(':idempresas', $idempresas);
+$result2s->execute();
 $socos=$result2s->fetch();
 $cols=count($socos);
 
@@ -112,8 +118,10 @@ $cols=mysqli_num_fields($result2s);*/
 
 
 
-$sql2p="select * from portadai where idempresa='".$idempresas."' ";
-$result2p=$conn->query($sql2p);
+$sql2p="select * from portadai where idempresa=:idempresas ";
+$result2p=$conn->prepare($sql2p);
+$result2p->bindParam(':idempresas', $idempresas);
+$result2p->execute();
 $socop=$result2p->fetch();
 $colp=count($socop);
 
@@ -124,8 +132,10 @@ $rowp=mysqli_num_rows($result2p);
 $colp=mysqli_num_fields($result2p);*/
 
 
-$sql2h="select * from hoja where idempresa='".$idempresas."' ";
-$result2h=$conn->query($sql2h);
+$sql2h="select * from hoja where idempresa=:idempresas ";
+$result2h=$conn->prepare($sql2h);
+$result2h->bindParam(':idempresas', $idempresas);
+$result2h->execute();
 $socoh=$result2h->fetch();
 $colh=count($socoh);
 
@@ -136,8 +146,10 @@ $rowh=mysqli_num_rows($result2h);
 $colh=mysqli_num_fields($result2h);*/
 
 
-$sql2e="select * from etiquetas where idempresa='".$idempresas."' ";
-$result2e=$conn->query($sql2e);
+$sql2e="select * from etiquetas where idempresa=:idempresas ";
+$result2e=$conn->prepare($sql2e);
+$result2e->bindParam(':idempresas', $idempresas);
+$result2e->execute();
 $socoe=$result2e->fetch();
 $cole=count($socoe);
 
@@ -148,8 +160,10 @@ $rowe=mysqli_num_rows($result2e);
 $cole=mysqli_num_fields($result2e);*/
 
 
-$sql2a="select * from administrar where idempresa='".$idempresas."' ";
-$result2a=$conn->query($sql2a);
+$sql2a="select * from administrar where idempresa=:idempresas ";
+$result2a=$conn->prepare($sql2a);
+$result2a->bindParam(':idempresas', $idempresas);
+$result2a->execute();
 $socoa=$result2a->fetch();
 $cola=count($socoa);
 
@@ -433,14 +447,18 @@ $colormt2=$rt2.$gt2.$bt2;
 <table>
 <tr><td>&nbsp;</td><td>Contratadas</td><td>Utilizadas</td><td>Dados de Baja</td></tr>
 <?php 
-$sql23a="select count(idusuario) as tot from usuariost where idempresa='".$idempresas."' and estado='1'";
-$result23a=$conn->query($sql23a);
+$sql23a="select count(idusuario) as tot from usuariost where idempresa=:idempresas and estado='1'";
+$result23a=$conn->prepare($sql23a);
+$result23a->bindParam(':idempresas', $idempresas);
+$result23a->execute();
 $resultado23a=$result23a->fetch();
 /*$result23a=mysqli_query ($conn,$sql23a) or die ("Invalid result23");
 $resultado23a=mysqli_fetch_array($result23a);*/
 $tota=$resultado23a['tot'];
-$sql23b="select count(idusuario) as tot from usuariost where idempresa='".$idempresas."' and estado='0'";
-$result23b=$conn->query($sql23b);
+$sql23b="select count(idusuario) as tot from usuariost where idempresa=:idempresas and estado='0'";
+$result23b=$conn->prepare($sql23b);
+$result23b->bindParam(':idempresas', $idempresas);
+$result23b->execute();
 $resultado23b=$result23b->fetch();
 /*$result23b=mysqli_query ($conn,$sql23b) or die ("Invalid result23");
 $resultado23b=mysqli_fetch_array($result23b);*/
@@ -452,14 +470,18 @@ $totb=$resultado23b['tot'];
 <input type="text" name="datosn[<?php  echo $i;?>]" value="<?php  echo $soco[$i];?>">
 </td><td><?php  echo $tota;?></td><td><?php  echo $totb;?></td></tr>
 <?php 
-$sql23a="select count(idclientes) as tot from clientes where idempresas='".$idempresas."' and estado='1'";
-$result23a=$conn->query($sql23a);
+$sql23a="select count(idclientes) as tot from clientes where idempresas=:idempresas and estado='1'";
+$result23a=$conn->prepare($sql23a);
+$result23a->bindParam(':idempresas', $idempresas);
+$result23a->execute();
 $resultado23a=$result23a->fetch();
 /*$result23a=mysqli_query ($conn,$sql23a) or die ("Invalid result23");
 $resultado23a=mysqli_fetch_array($result23a);*/
 $tota=$resultado23a['tot'];
-$sql23b="select count(idclientes) as tot from clientes where idempresas='".$idempresas."' and estado='0'";
-$result23b=$conn->query($sql23b);
+$sql23b="select count(idclientes) as tot from clientes where idempresas=:idempresas and estado='0'";
+$result23b=$conn->prepare($sql23b);
+$result23b->bindParam(':idempresas', $idempresas);
+$result23b->execute();
 $resultado23b=$result23b->fetch();
 /*$result23b=mysqli_query ($conn,$sql23b) or die ("Invalid result23");
 $resultado23b=mysqli_fetch_array($result23b);*/
@@ -471,14 +493,18 @@ $totb=$resultado23b['tot'];
 <input type="text" name="datosn[<?php  echo $i;?>]" value="<?php  echo $soco[$i];?>">
 </td><td><?php  echo $tota;?></td><td><?php  echo $totb;?></td></tr>
 <?php 
-$sql23a="select count(idempleado) as tot from empleados where idempresa='".$idempresas."' and estado='1'";
-$result23a=$conn->query($sql23a);
+$sql23a="select count(idempleado) as tot from empleados where idempresa=:idempresas and estado='1'";
+$result23a=$conn->prepare($sql23a);
+$result23a->bindParam(':idempresas', $idempresas);
+$result23a->execute();
 $resultado23a=$result23a->fetch();
 //$result23a=mysqli_query ($conn,$sql23a) or die ("Invalid result23");
 $tota=$resultado23a['tot'];
 
-$sql23b="select count(idempleado) as tot from empleados where idempresa='".$idempresas."' and estado='0'";
-$result23b=$conn->query($sql23b);
+$sql23b="select count(idempleado) as tot from empleados where idempresa=:idempresas and estado='0'";
+$result23b=$conn->prepare($sql23b);
+$result23b->bindParam(':idempresas', $idempresas);
+$result23b->execute();
 $resultado23b=$result23b->fetch();
 //$result23b=mysqli_query ($conn,$sql23b) or die ("Invalid result23");
 $totb=$resultado23b['tot'];

@@ -18,18 +18,21 @@ include('combo.php');?>
 
 
 <?php 
-$sql="SELECT * from clientes where idempresas='".$ide."'"; 
-$result=mysqli_query ($conn,$sql) or die ("Invalid result");
-$row=mysqli_num_rows($result);
+$sql="SELECT * from clientes where idempresas='".$ide."'";
+$result=$conn->query($sql);
+
+/*$result=mysqli_query ($conn,$sql) or die ("Invalid result");
+$row=mysqli_num_rows($result);*/
 ?>
 <select name="idclientes" id="combobox">
 <option value=""></option>
 <?php 
-for ($i=0;$i<$row;$i++){;
+/*for ($i=0;$i<$row;$i++){;
 mysqli_data_seek($result, $i);
-$resultado=mysqli_fetch_array($result);
-$idclientes=$resultado['idclientes'];
-$nombre=$resultado['nombre'];
+$resultado=mysqli_fetch_array($result);*/
+foreach ($result as $rowmos) {
+$idclientes=$rowmos['idclientes'];
+$nombre=$rowmos['nombre'];
 ?>
 <option value="<?php  echo $idclientes;?>"><?php  echo $nombre;?>
 <?php };?>
