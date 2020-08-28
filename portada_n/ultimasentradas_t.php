@@ -71,6 +71,55 @@ $row1=mysqli_num_rows($result1);*/
   top: 0;
 }
 
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  float: left;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+#wrap {
+    float: left;
+    position: relative;
+    left: 50%;
+}
+
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+
 .fade {
   -webkit-animation-name: fade;
   -webkit-animation-duration: 1.5s;
@@ -88,11 +137,38 @@ $row1=mysqli_num_rows($result1);*/
   to {opacity: 1}
 }
 
-
-
-
 </style>
 <script>
+
+var slideIndex = 1;
+showSlides(slideIndex);
+
+// Next/previous controls
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+// Thumbnail image controls
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
+}
+
 
 function refrescar1()
 {
@@ -134,17 +210,18 @@ if ($row10==0){;
 
 ?>
 
-<div class="slideshow-container">
-	<div class="mySlides fade">
+	<div class="slideshow-container">
+		<div class="mySlides fade">
 		<a href="../servicios_n/mensaje/responder.php?id=<?php echo $idmensaje;?>" target="_parent">
 		<span class="caja3">
 		<div class="numbertext"><?php echo "$i/$row"; ?></div>
 		<img src="../img/pencil.png" class="cuadro">
 		<p><?php  echo $texto;?></p>
 		</span>
-		</a>
+		</a>		
 	</div>
 </div>
+<br>
 
 <?php 
 };
@@ -154,5 +231,21 @@ $i=$i+1;
 
 <!--agregado nuedo SCROLL-->
 
+<!-- The dots/circles -->
+<?php 
+for ($i=1; $i <= $row; $i++) { 
+	
+ ?>
+<div id="wrap">
+	<div style="text-align:center">
+	  <span class="dot" onclick="currentSlide(<?php echo $i; ?>)"></span>
+	</div>
+</div>
+
+<?php } ?>
+
+<script>
+	currentSlide(1);
+</script>
 
 </body>
