@@ -8,12 +8,16 @@ $sql1="SELECT * from mensajes where  idempresa='".$ide."' and fechafin>'".$fecha
 //echo $sql1;
 
 $result1=$conn->query($sql1);
+$result1row=$conn->query($sql1);
+$row=count($result1row->fetchAll());
 
 /*$result1=mysqli_query ($conn,$sql1) or die ("Invalid result 1");
 $row1=mysqli_num_rows($result1);*/
 
 ?>
 <style>
+
+
 .main3 {
 	 /*width: calc (100% - 200px);*/
 	 width:100%;
@@ -29,7 +33,6 @@ $row1=mysqli_num_rows($result1);*/
 	 padding-left:5px;
 	 padding-right:5px;
     border: 0px solid ;
-    text-align:center;
     min-width: 100px;
     height: 90px;
     border-bottom:5px inset #000;
@@ -42,7 +45,6 @@ $row1=mysqli_num_rows($result1);*/
 	 text-align:center;
 }
 
-
 .main6 {
 	 /*width: calc (100% - 200px);
 
@@ -53,6 +55,37 @@ $row1=mysqli_num_rows($result1);*/
 	 padding:10px;
     border: 0px solid #fff;
     text-align:center;
+}
+
+/*agregado nuedo SCROLL*/
+
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+}
+
+.caja3 .numbertext {
+  font-size: 15px;
+  text-align: left;
+  top: 0;
+}
+
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
 }
 
 
@@ -67,6 +100,7 @@ function refrescar1()
 }
 
 </script>
+
 <style type="text/css" media="print">
 .nover {display:none}
 </style>
@@ -75,11 +109,12 @@ function refrescar1()
 		<meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
 		<meta http-equiv="content-type" content="application/xhtml+xml; charset=ISO-8859-1">
 <!--onload="setTimeout('refrescar1()', 5000);"-->
-<body  >
+<body >
 <?php 
 /*for ($j=0;$j<$row1;$j++){;
 mysqli_data_seek($result1,$j);
 $resultado1=mysqli_fetch_array($result1);*/
+$i=1;
 foreach ($result1 as $row1mos) {
 $pais=$row1mos['pais'];
 $provincia=$row1mos['provincia'];
@@ -88,25 +123,36 @@ $cp=$row1mos['cp'];
 $texto=$row1mos['texto'];
 $idmensaje=$row1mos['id'];
 
+
 $sql10="SELECT * from respuestamensajes where  idempresa='".$ide."' and id='".$idmensaje."' and idempleado='".$idtrab."'";
 //echo $sql10; 
 $result10=$conn->query($sql10);
 $row10=count($result10->fetchAll());
-
 /*$result10=mysqli_query ($conn,$sql10) or die ("Invalid result 1");
 $row10=mysqli_num_rows($result10);*/
 if ($row10==0){;
+
 ?>
 
-<a href="../servicios_n/mensaje/responder.php?id=<?php echo $idmensaje;?>" target="_parent"> 
-<span class="caja3">
-<img src="../img/pencil.png" class="cuadro">
-<p><?php  echo $texto;?></p>
-</span>
-</a>
+<div class="slideshow-container">
+	<div class="mySlides fade">
+		<a href="../servicios_n/mensaje/responder.php?id=<?php echo $idmensaje;?>" target="_parent">
+		<span class="caja3">
+		<div class="numbertext"><?php echo "$i/$row"; ?></div>
+		<img src="../img/pencil.png" class="cuadro">
+		<p><?php  echo $texto;?></p>
+		</span>
+		</a>
+	</div>
+</div>
 
 <?php 
 };
+
+$i=$i+1;
 };?>
+
+<!--agregado nuedo SCROLL-->
+
 
 </body>
