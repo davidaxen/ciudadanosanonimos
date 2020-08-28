@@ -47,6 +47,7 @@ include('portada_n/cabecera.php');?>
 	 padding:10px;
     border: 0px solid #fff;
     text-align:center;
+
 }
 
 
@@ -81,6 +82,22 @@ include('portada_n/cabecera.php');?>
 <div id="d0" class="tabcontent">
   <h3><img src="../img/iconos/serviciose.png" width="32px" style="vertical-align:middle;"> Preguntas Lanzadas</h3>
   <p><iframe style="border:0" name="bloque0" src="portada_n/ultimasentradas_t.php" width="100%" height="325" scrolling="auto"></iframe></p>
+
+
+
+
+<!--cambios-->
+
+
+
+
+
+<!--cambios-->
+
+
+
+
+
 </div>
 
 <div id="d1" class="tabcontent">
