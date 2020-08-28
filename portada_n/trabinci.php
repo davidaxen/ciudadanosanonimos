@@ -24,8 +24,14 @@ $sql12.=" and idpiscina='".$clivp."'";
 };
 $sql12.=" and texto!='0' order by id,idempleado"; 
 //echo $sql12;
-$result12=mysqli_query ($conn,$sql12) or die ("Invalid result 1");
-$row12=mysqli_num_rows($result12);
+
+$result12=$conn->query($sql12);
+$result12mos=$conn->query($sql12);
+$num_rows=$result12->fetchAll();
+$row12=count($num_rows);
+
+//$result12=mysqli_query ($conn,$sql12) or die ("Invalid result 1");
+//$row12=mysqli_num_rows($result12);
 //echo $row12;
 ?>
 
@@ -95,22 +101,28 @@ Incidencias enviadas el dia: <?php  echo $fechac;?>
 <table border="0">
 <tr class="subenc6"><td>Personal</td><td>Texto</td><td>Puesto de Trabajo</td><td>Hora</td><td>Mapa</td><td>Imagen</td><td>Asignar</td></tr>
 <?php 
-for ($j=0;$j<$row12;$j++){;
-mysqli_data_seek($result12,$j);
-$resultado12 = mysqli_fetch_array ($result12);
-$idempleado=$resultado12['idempleado'];
-$idpiscina=$resultado12['idpiscina'];
-$hora=$resultado12['hora'];
-$texto=$resultado12['texto'];
-$tiempo=$resultado12['tiempo'];
-$lat=$resultado12['lat'];
-$lon=$resultado12['lon'];
-$urgente=$resultado12['urgente'];
-$imagen=$resultado12['imagen'];
 
-$sql10="SELECT * from empleados where idempleado='".$idempleado."' and idempresa='".$ide."'"; 
-$result10=mysqli_query ($conn,$sql10) or die ("Invalid result 10");
-$resultado10 = mysqli_fetch_array ($result10);
+foreach ($result12mos as $row12) {
+
+//for ($j=0;$j<$row12;$j++){;
+//mysqli_data_seek($result12,$j);
+//$resultado12 = mysqli_fetch_array ($result12);
+$idempleado=$row12['idempleado'];
+$idpiscina=$row12['idpiscina'];
+$hora=$row12['hora'];
+$texto=$row12['texto'];
+$tiempo=$row12['tiempo'];
+$lat=$row12['lat'];
+$lon=$row12['lon'];
+$urgente=$row12['urgente'];
+$imagen=$row12['imagen'];
+
+$sql10="SELECT * from empleados where idempleado='".$idempleado."' and idempresa='".$ide."'";
+
+$result10=$conn->query($sql10);
+$resultado10=$result10->fetchAll();
+//$result10=mysqli_query ($conn,$sql10) or die ("Invalid result 10");
+//$resultado10 = mysqli_fetch_array ($result10);
 $nombre=$resultado10['nombre'];
 $priape=$resultado10['1apellido'];
 $segape=$resultado10['2apellido'];
@@ -123,9 +135,13 @@ $sql11="SELECT * from clientes where idclientes='".$idpiscina."' and idempresas=
 if ($idcli!=0){;
 $sql11.=" and nif='".$gente."'";
 }; 
-$result11=mysqli_query ($conn,$sql11) or die ("Invalid result 11");
-$resultado11 = mysqli_fetch_array ($result11);
-$row11=mysqli_num_rows($result11);
+
+$result11=$conn->query($sql11);
+$resultado11=$result11->fetchAll();
+$row11=count($num_rows);
+//$result11=mysqli_query ($conn,$sql11) or die ("Invalid result 11");
+//$resultado11 = mysqli_fetch_array ($result11);
+//$row11=mysqli_num_rows($result11);
 $nombrecom=$resultado11['nombre'];
 }else{;
 if($row11==0){;

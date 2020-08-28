@@ -21,11 +21,23 @@ $idmunicipio=strtok($municipio,"-");
 $idprovincia=strtok("-");
 
 $sql13 = "INSERT INTO festivosmunicipios(dia,mes,year,idpais,fecha,idprovincia,idmunicipio) 
-VALUES ('$dia[$j]','$mes[$j]','$year[$j]','$pais','$fecha','$idprovincia','$idmunicipio')";
+VALUES (:dia,:mes,:year,:pais,:fecha,:idprovincia,:idmunicipio)";
 //echo $sql13;
 //$result13=mysqli_query ($conn,$sql13) or die ("Invalid result iclientes");
 
-$result13=$conn->exec($sql13);
+
+
+$result13=$conn->prepare($sql13);
+$result13->bindParam(':dia',$dia[$j]);
+$result13->bindParam(':mes',$mes[$j]);
+$result13->bindParam(':year',$year[$j]);
+$result13->bindParam(':pais',$pais);
+$result13->bindParam(':fecha',$fecha);
+$result13->bindParam(':idprovincia',$idprovincia);
+$result13->bindParam(':idmunicipio',$idmunicipio);
+$result13->execute();
+
+//$result13=$conn->query($sql13);
 //$resultmos=$conn->query($sql);
 //$num_rows=$result->fetchAll();
 //$row=count($num_rows);

@@ -38,7 +38,10 @@ include('bbdd2.php');
 <?php 
 $sql01="SELECT * from portadai where idempresa='".$ide."'"; 
 //echo $sql01;
-$result01=mysqli_query ($conn,$sql01) or die ("Invalid result 1");
+
+$result01=$conn->query($sql01);
+
+//$result01=mysqli_query ($conn,$sql01) or die ("Invalid result 1");
 $valores=array('cuadrante','entrada','incidencia','mensaje','alarma','accdiarias','accmantenimiento','niveles','productos','revision','trabajo','siniestro');
 $ipcat=array('0','1','20','30','40','3','4','2','5','6','7','8');
 $dato[]=mysqli_result($result01,0,'cuadrante');
@@ -65,7 +68,10 @@ if ($dato[$j]==1){;
 <?php 
 $idpccat=$ipcat[$j];
 $sql02="SELECT * from categorias where idpccat='".$idpccat."'"; 
-$result02=mysqli_query ($conn,$sql02) or die ("Invalid result 1");
+
+$result02=$conn->query($sql02);
+
+//$result02=mysqli_query ($conn,$sql02) or die ("Invalid result 1");
 $imagen=mysqli_result($result02,0,'imagen');
 ?>
 <img src="img/<?php  echo $imagen;?>" width="140">

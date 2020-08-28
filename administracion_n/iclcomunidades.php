@@ -17,12 +17,23 @@ if ($enviar=='enviar'){;
 for ($j=0;$j<$valores;$j++){;
 $fecha=$year[$j]."-".$mes[$j]."-".$dia[$j];
 $sql13 = "INSERT INTO festivoscomunidad(dia,mes,year,pais,fecha,comunidad) 
-VALUES ('$dia[$j]','$mes[$j]','$year[$j]','$pais','$fecha','$comunidad')";
+VALUES (:dia,:mes,:year,:pais,:fecha,:comunidad)";
 //echo $sql13;
 //$result13=mysqli_query ($conn,$sql13) or die ("Invalid result iclientes");
 echo ("introducida fecha: ".$fecha."<br/>");
 
-$result13=$conn->exec($sql13);
+
+
+$result13=$conn->prepare($sql13);
+$result13->bindParam(':dia',$dia[$j]);
+$result13->bindParam(':mes',$mes[$j]);
+$result13->bindParam(':year',$year[$j]);
+$result13->bindParam(':pais',$pais);
+$result13->bindParam(':fecha',$fecha);
+$result13->bindParam(':comunidad',$comunidad);
+$result13->execute();
+
+//$result13=$conn->query($sql13);
 //$resultmos=$conn->query($sql);
 //$num_rows=$result->fetchAll();
 //$row=count($num_rows);

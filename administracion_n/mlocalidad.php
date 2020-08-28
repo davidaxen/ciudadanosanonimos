@@ -28,8 +28,8 @@ if ($datos!='datos'){;
 
 $sql="SELECT * from municipios";
 
-$result=$conn->query($sql);
-$resultmos=$conn->query($sql);
+$result=$conn->prepare($sql);
+$resultmos=$conn->prepare($sql);
 $num_rows=$result->fetchAll();
 $row=count($num_rows);
 //$result=mysqli_query ($conn,$sql) or die ("Invalid result");

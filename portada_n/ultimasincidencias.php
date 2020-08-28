@@ -14,6 +14,7 @@ $sql1.=" and idpiscina='".$idclienten1."'";
 };
 $sql1.=" order by tiempo desc, hora desc limit 0,5"; 
 //echo $sql1;
+
 $result1=$conn->query($sql1);
 
 /*$result1=mysqli_query ($conn,$sql1) or die ("Invalid result 1");
