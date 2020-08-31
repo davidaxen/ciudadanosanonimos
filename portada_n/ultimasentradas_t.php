@@ -76,7 +76,7 @@ $row1=mysqli_num_rows($result1);*/
   position: absolute;
   top: 50%;
   width: auto;
-  margin-top: -22px;
+  margin-top: -142px;
   padding: 16px;
   color: white;
   font-weight: bold;
@@ -93,8 +93,8 @@ $row1=mysqli_num_rows($result1);*/
 }
 
 /* On hover, add a black background color with a little bit see-through */
-.prev:hover, .next:hover {
-  background-color: rgba(0,0,0,0.8);
+.prev, .next {
+  background-color:black;
 }
 
 .dot {
@@ -209,19 +209,21 @@ $row10=mysqli_num_rows($result10);*/
 if ($row10==0){;
 
 ?>
+		<!-- Next and previous buttons -->
+	<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+  	<a class="next" onclick="plusSlides(1)">&#10095;</a>
+	<div class="slideshow-container" style="text-align:center;">
 
-	<div class="slideshow-container">
 		<div class="mySlides fade">
-		<a href="../servicios_n/mensaje/responder.php?id=<?php echo $idmensaje;?>" target="_parent">
+		<!--<a href="../servicios_n/mensaje/responder.php?id=<?php echo $idmensaje;?>" target="_parent">
 		<span class="caja3">
 		<div class="numbertext"><?php echo "$i/$row"; ?></div>
-		<img src="../img/pencil.png" class="cuadro">
+		<img src="../img/pencil.png" class="cuadro">-->
 		<p><?php  echo $texto;?></p>
 		</span>
-		</a>		
+		</div>
 	</div>
-</div>
-<br>
+
 
 <?php 
 };
@@ -237,6 +239,9 @@ for ($i=1; $i <= $row; $i++) {
 	
  ?>
 <div id="wrap">
+
+
+<br>
 	<div style="text-align:center">
 	  <span class="dot" onclick="currentSlide(<?php echo $i; ?>)"></span>
 	</div>
