@@ -32,15 +32,16 @@ $row1=mysqli_num_rows($result1);*/
 	 padding-top:5px;
 	 padding-left:5px;
 	 padding-right:5px;
-    border: 0px solid ;
-    min-width: 100px;
+    border: 0px solid;
+    width: 100%;
     height: 90px;
-    border-bottom:5px inset #000;
-    vertical-align: middle;
+    font-size: 18px;
+    /*border-bottom:5px inset #000;*/
+    /*vertical-align: middle;*/
     margin:5px;
-    border-radius: 8px;
+    /*border-radius: 8px;*/
     background-color:white;
-    box-shadow: 1px 15px 18px #888888;
+    /*box-shadow: 1px 15px 18px #888888;*/
 	 display:inline-table;
 	 text-align:center;
 }
@@ -60,7 +61,7 @@ $row1=mysqli_num_rows($result1);*/
 /*agregado nuedo SCROLL*/
 
 .slideshow-container {
-  max-width: 1000px;
+  max-width: 1250px;
   position: relative;
   margin: auto;
 }
@@ -69,32 +70,6 @@ $row1=mysqli_num_rows($result1);*/
   font-size: 15px;
   text-align: left;
   top: 0;
-}
-
-.prev, .next {
-  cursor: pointer;
-  position: absolute;
-  top: 50%;
-  width: auto;
-  margin-top: -22px;
-  padding: 16px;
-  color: white;
-  font-weight: bold;
-  font-size: 18px;
-  transition: 0.6s ease;
-  border-radius: 0 3px 3px 0;
-  user-select: none;
-}
-
-/* Position the "next button" to the right */
-.next {
-  right: 0;
-  border-radius: 3px 0 0 3px;
-}
-
-/* On hover, add a black background color with a little bit see-through */
-.prev:hover, .next:hover {
-  background-color: rgba(0,0,0,0.8);
 }
 
 .dot {
@@ -210,18 +185,66 @@ if ($row10==0){;
 
 ?>
 
-	<div class="slideshow-container">
-		<div class="mySlides fade">
-		<a href="../servicios_n/mensaje/responder.php?id=<?php echo $idmensaje;?>" target="_parent">
+<div class="slideshow-container" style="text-align: center;">
+	<div class="mySlides fade">
+		<!--<a href="../servicios_n/mensaje/responder.php?id=<?php echo $idmensaje;?>" target="_parent">-->
 		<span class="caja3">
-		<div class="numbertext"><?php echo "$i/$row"; ?></div>
-		<img src="../img/pencil.png" class="cuadro">
+		<div class="numbertext" style="font-size: 20px;"><?php echo "$i/$row"; ?></div>
+		<!--<img src="../img/pencil.png" class="cuadro">-->
 		<p><?php  echo $texto;?></p>
 		</span>
-		</a>		
+		<!--</a>-->
+
+
+
+		<?php
+			$sql="SELECT * from mensajes where id=:id";
+			$result=$conn->prepare($sql);
+			$result->bindParam(':id', $idmensaje);
+			$result->execute();
+			$resultado=$result->fetch();
+
+			$texto=$resultado['texto'];
+			$fichero=$resultado['fichero'];
+			$otrosmot=$resultado['otrosmot'];
+
+			$sql2="SELECT * from respuesta where idmensaje=:id";
+			$result2=$conn->prepare($sql2);
+			$result2->bindParam(':id', $idmensaje);
+			$result2->execute();
+		 ?>
+	 	<div class="main">
+			<?php 
+			foreach ($result2 as $row2mos) {
+			$valor=$row2mos['valor'];
+			$textores=$row2mos['texto'];
+			?>
+			<label>
+				<span class="caja">
+					 <b><?php echo strtoupper($textores);?></b><br/>
+					 <input type="radio" name="respuesta" value="<?php echo $valor;?>">
+				</span>
+			</label>
+
+			<?php };?>
+			<?php 
+			if($otrosmot=='1'){ ?>
+			<label>
+				<span class="caja">
+				 <b>Otros Motivos</b>
+				 <br/>
+				 <input type="radio" name="respuesta" value="99" id="radiotext">
+				 <br/>
+				 <br/>
+				 <input type="text" name="textotro" size="20" maxlength="250" onfocus="document.getElementById('radiotext').checked = true;">
+				</span>
+			</label>
+
+
+			<?php } ?>
+		</div>
 	</div>
 </div>
-<br>
 
 <?php 
 };
@@ -236,7 +259,7 @@ $i=$i+1;
 for ($i=1; $i <= $row; $i++) { 
 	
  ?>
-<div id="wrap">
+<div id="wrap" style="margin-top: 20px;">
 	<div style="text-align:center">
 	  <span class="dot" onclick="currentSlide(<?php echo $i; ?>)"></span>
 	</div>
