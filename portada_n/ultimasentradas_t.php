@@ -78,7 +78,8 @@ $row1=mysqli_num_rows($result1);*/
   position: absolute;
   top: 50%;
   width: auto;
-  margin-top: -142px;
+  margin-top: -50px;
+  vertical-align: center;
   padding: 16px;
   color: white;
   font-weight: bold;
@@ -214,8 +215,6 @@ if ($row10==0){;
 		<!-- Next and previous buttons -->
 	<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
   	<a class="next" onclick="plusSlides(1)">&#10095;</a>
-	<div class="slideshow-container" style="text-align:center;">
-
 
 <div class="slideshow-container" style="text-align: center;">
 	<div class="mySlides fade">
@@ -226,8 +225,6 @@ if ($row10==0){;
 		<p><?php  echo $texto;?></p>
 		</span>
 		<!--</a>-->
-
-
 
 		<?php
 			$sql="SELECT * from mensajes where id=:id";
