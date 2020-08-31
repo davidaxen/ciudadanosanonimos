@@ -69,14 +69,14 @@ include('portada_n/cabecera.php');?>
 <?php include ('estilo/tab.htm');?>
 
 
+<table>
+<th><div class="tab">
 
-<div class="tab">
-
-  <button class="tablinks" onclick="openCity(event, 'd0')" id="defaultOpen"><img src="../img/iconos/serviciose.png" width="32px" style="vertical-align:middle;"> Preguntas Lanzadas</button>
-  <button class="tablinks" onclick="openCity(event, 'd1')" id="defaultOpen"><img src="../img/iconos/incidencias.png" width="32px" style="vertical-align:middle;"> Ultimos Resultados</button>
+  <th><button class="tablinks" onclick="openCity(event, 'd0')" id="defaultOpen"><img src="../img/iconos/serviciose.png" width="32px" style="vertical-align:middle;"> Preguntas Lanzadas</button></th>
+  <th><button class="tablinks" onclick="openCity(event, 'd1')" id="defaultOpen"><img src="../img/iconos/incidencias.png" width="32px" style="vertical-align:middle;"> Ultimos Resultados</button></th>
 <!--  <button class="tablinks" onclick="openCity(event, 'd2')" id="defaultOpen"><img src="../img/iconos/mensajes.png" width="32px" style="vertical-align:middle;"> Ultimos mensajes enviados con respuesta</button>-->
-</div>
-
+</div></th>
+</table>
 
 
 <div id="d0" class="tabcontent">

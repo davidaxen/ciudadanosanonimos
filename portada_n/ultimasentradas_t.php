@@ -72,6 +72,33 @@ $row1=mysqli_num_rows($result1);*/
   top: 0;
 }
 
+
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -142px;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev, .next {
+  background-color:black;
+}
+
 .dot {
   cursor: pointer;
   height: 15px;
@@ -184,6 +211,11 @@ $row10=mysqli_num_rows($result10);*/
 if ($row10==0){;
 
 ?>
+		<!-- Next and previous buttons -->
+	<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+  	<a class="next" onclick="plusSlides(1)">&#10095;</a>
+	<div class="slideshow-container" style="text-align:center;">
+
 
 <div class="slideshow-container" style="text-align: center;">
 	<div class="mySlides fade">
