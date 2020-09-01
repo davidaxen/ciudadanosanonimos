@@ -4,12 +4,12 @@ include('bbdd.php');
 if ($ide!=null){;
 
 
- include('../../portada_n/cabecera3.php');?>
+ //include('../../portada_n/cabecera3.php');?>
 
-<div id="main">
+<!--<div id="main">
 <div class="titulo">
 <p class="enc">ENVIO DE RESPUESTA</p></div>
-<div class="contenido">
+<div class="contenido">-->
 
 
 <?php  
@@ -33,14 +33,16 @@ $result1->execute();
 
 
 
-LOS DATOS HAN SIDO INTRODUCCIDOS<p>
+<!--LOS DATOS HAN SIDO INTRODUCCIDOS<p>
 
 
 <a href="/inicio1.php" target="_parent">Volver a menu</a>
 </div>
-</div>
+</div>-->
 
-
+<script>
+	window.location.replace("../../portada_n/ultimasentradas_t.php");
+</script>
 
 <?php } else {;
 include ('../../cierre.php');
