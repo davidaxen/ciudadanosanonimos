@@ -1,4 +1,6 @@
 <?php   
+error_reporting(0);
+
 include('bbdd.php');
 
 $fecha=$_GET["fecha"];
@@ -16,21 +18,57 @@ $mes=$mesa[1];
 };
 //dia='".$fechac."' and
 
-$sql1="SELECT * from almpcinci where  idempresas='".$ide."' and idempleado='".$idtrab."' order by tiempo desc, hora desc limit 0,5";
-$result1=$conn->query($sql1);
-$result1mos=$conn->query($sql1);
-$row1=count($result1->fetchAll());
+$sql="SELECT * from mensajes where idempresa=:ide and fechafin>:fechac or fechafin is null order by fechafin desc";
+
+$result=$conn->prepare($sql);
+$result->bindParam(':ide',$ide);
+$result->bindParam(':fechac',$fechac);
+$result->execute();
+$resultado=$result->fetch();
+
+foreach ($result as $rowmos) {
+
+	$idmensaje=$rowmos['id'];
+	$fechafin=$rowmos['fechafin'];
+	$texto=$rowmos['texto'];
+?>
+<div style="font-size: 15px">
+<?php  echo $texto;?>
+<div>
+<br>
+<?php
+
+$sql10="SELECT * from respuestamensajes where idempresa=:ide and idmensaje=:idmensaje";
+
+$result10=$conn->prepare($sql10);
+$result10->bindParam(':ide',$ide);
+$result10->bindParam(':idmensaje',$idmensaje);
+$result10->execute();
+
+$row10=count($result10->fetchAll());
+if ($row10==0){
+?>
+<?php } ?>
+
+<?php } ?>
+
+<?php
+
+//$sql1="SELECT * from almpcinci where  idempresas='".$ide."' and idempleado='".$idtrab."' order by tiempo desc, hora desc limit 0,5";
+//$result1=$conn->query($sql1);
+//$result1mos=$conn->query($sql1);
+//$row1=count($result1->fetchAll());
 
 /*$result1=mysqli_query ($conn,$sql1) or die ("Invalid result 1");
 $row1=mysqli_num_rows($result1);*/
 
-$sql01="SELECT * from categorias where idpccat='".$idpccat."'";
-$result01=$conn->query($sql01);
-$resultado01=$result01->fetch();
+//$sql01="SELECT * from categorias where idpccat='".$idpccat."'";
+//$result01=$conn->query($sql01);
+//$resultado01=$result01->fetch();
 
 /*$result01=mysqli_query ($conn,$sql01) or die ("Invalid result 1");
 $resultado01=mysqli_fetch_array($result01);*/
-$categoria=$resultado01['nombre'];
+//$categoria=$resultado01['nombre'];
 
 
 
@@ -51,16 +89,15 @@ function refrescar()
 	   
 <meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
 <meta http-equiv="content-type" content="application/xhtml+xml; charset=ISO-8859-1">
-<body onload="setTimeout('refrescar()', 5000);">
+<!--<body onload="setTimeout('refrescar()', 5000);">-->
 
 <table>
-<tr class="enctab"><td>Puesto de Trabajo</td><td>Empleado</td><td>Dia</td><td>Hora</td><td>Informacion</td><td>Asignar</td></tr>
 
 <?php 
 /*for ($j=0;$j<$row1;$j++){;
 mysqli_data_seek($result1,$j);
 $resultado1=mysqli_fetch_array($result1);*/
-foreach ($result1mos as $row1mos) {
+/*foreach ($result1mos as $row1mos) {
 $idempleado=$row1mos['idempleado'];
 $idpiscina=$row1mos['idpiscina'];
 $dia=$row1mos['dia'];
@@ -75,8 +112,6 @@ $sql10="SELECT * from empleados where idempleado='".$idempleado."' and idempresa
 $result10=$conn->query($sql10);
 $resultado10=$result10->fetch();
 
-/*$result10=mysqli_query ($conn,$sql10) or die ("Invalid result 10");
-$resultado10=mysqli_fetch_array($result10);*/
 $nombre=$resultado10['nombre'];
 $priape=$resultado10['1apellido'];
 $segape=$resultado10['2apellido'];
@@ -88,8 +123,7 @@ $result11=$conn->query($sql11);
 $result11mos=$conn->query($sql11);
 $row11=count($result11->fetchAll());
 
-/*$result11=mysqli_query ($conn,$sql11) or die ("Invalid result 11");
-$row11=mysqli_num_rows($result11);*/
+
 
 if ($row11==0){;
 $nombrecom="Fuera de Puesto";
@@ -114,6 +148,6 @@ $f=fmod($j,2);
 <td><a href="../servicios_n/trabajo/ipuntcont.php?idclientesinc=<?php  echo $idpiscina;?>&descripcion=<?php  echo $texto;?>" target="_parent"><img src="../img/asignacion.png" width="20px"></a></td>
 
 </tr>
-<?php };?>
+<?php };*/?>
 </table>
 </body>
