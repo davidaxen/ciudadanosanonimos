@@ -77,7 +77,7 @@ $row1=mysqli_num_rows($result1);*/
   cursor: pointer;
   position: absolute;
   top: 50%;
-  width: auto;
+   width: auto;
   margin-top: -50px;
   vertical-align: center;
   padding: 16px;
