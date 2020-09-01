@@ -4,7 +4,7 @@ include('bbdd.php');
 $fechac=date("Y-m-d",time());
 
 
-$sql1="SELECT * from mensajes where  idempresa='".$ide."' and fechafin>'".$fechac."' or fechafin is null";
+$sql1="SELECT * from mensajes where  idempresa='".$ide."' and fechafin>'".$fechac."' or fechafin is null and id not in (SELECT idmensaje FROM respuestamensajes WHERE idempleado='".$idtrab."')";
 //echo $sql1;
 
 $result1=$conn->query($sql1);
@@ -40,7 +40,6 @@ $row1=mysqli_num_rows($result1);*/
     /*vertical-align: middle;*/
     margin:5px;
     /*border-radius: 8px;*/
-    background-color:white;
     /*box-shadow: 1px 15px 18px #888888;*/
 	 display:inline-table;
 	 text-align:center;
@@ -115,7 +114,7 @@ $row1=mysqli_num_rows($result1);*/
 #wrap {
     float: left;
     position: relative;
-    left: 50%;
+    left: 48%;
 }
 
 .active, .dot:hover {
@@ -146,12 +145,10 @@ $row1=mysqli_num_rows($result1);*/
 var slideIndex = 1;
 showSlides(slideIndex);
 
-// Next/previous controls
 function plusSlides(n) {
   showSlides(slideIndex += n);
 }
 
-// Thumbnail image controls
 function currentSlide(n) {
   showSlides(slideIndex = n);
 }
@@ -193,6 +190,8 @@ function refrescar1()
 /*for ($j=0;$j<$row1;$j++){;
 mysqli_data_seek($result1,$j);
 $resultado1=mysqli_fetch_array($result1);*/
+if ($row) {
+
 $i=1;
 foreach ($result1 as $row1mos) {
 $pais=$row1mos['pais'];
@@ -215,8 +214,9 @@ if ($row10==0){;
 		<!-- Next and previous buttons -->
 	<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
   	<a class="next" onclick="plusSlides(1)">&#10095;</a>
-
+<form action="../servicios_n/mensaje/introrespuesta.php" method="post" enctype="multipart/form-data">
 <div class="slideshow-container" style="text-align: center;">
+	<input type="hidden" name="id" value="<?php echo $idmensaje;?>">
 	<div class="mySlides fade">
 		<!--<a href="../servicios_n/mensaje/responder.php?id=<?php echo $idmensaje;?>" target="_parent">-->
 		<span class="caja3">
@@ -242,7 +242,7 @@ if ($row10==0){;
 			$result2->bindParam(':id', $idmensaje);
 			$result2->execute();
 		 ?>
-	 	<div class="main">
+	 	<div class="main" style="text-align: center;">
 			<?php 
 			foreach ($result2 as $row2mos) {
 			$valor=$row2mos['valor'];
@@ -272,9 +272,12 @@ if ($row10==0){;
 
 			<?php } ?>
 		</div>
+		<input type="submit" class="envio" value="enviar" name="enviar">
 	</div>
 </div>
 
+
+</form>
 <?php 
 };
 
@@ -288,16 +291,20 @@ $i=$i+1;
 for ($i=1; $i <= $row; $i++) { 
 	
  ?>
-<div id="wrap" style="margin-top: 20px;">
+<div id="wrap" style="margin-top: 10px;">
 	<div style="text-align:center">
 	  <span class="dot" onclick="currentSlide(<?php echo $i; ?>)"></span>
 	</div>
 </div>
 
-<?php } ?>
-
 <script>
 	currentSlide(1);
 </script>
 
+<?php }
+}else{
+?>
+<div style="font-size: 15px; text-align: center;">NO HAY PREGUNTAS DISPONIBLES</div>
+<?php
+} ?>
 </body>
