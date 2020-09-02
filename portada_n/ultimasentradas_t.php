@@ -80,10 +80,10 @@ $row1=mysqli_num_rows($result1);*/
   cursor: pointer;
   position: absolute;
   top: 50%;
-   width: auto;
+  width: auto;
   margin-top: -50px;
   vertical-align: center;
-  padding: 16px;
+  padding: 5px;
   color: white;
   font-weight: bold;
   font-size: 18px;
@@ -182,7 +182,8 @@ if ($row10==0){;
 ?>
 		<!-- Next and previous buttons -->
 	<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-  	<a class="next" onclick="plusSlides(1)">&#10095;</a>
+	<a class="next" onclick="plusSlides(1)">&#10095;</a>
+  	
 <form action="../servicios_n/mensaje/introrespuesta.php" method="post" enctype="multipart/form-data">
 <div class="slideshow-container" style="text-align: center;">
 	<input type="hidden" name="id" value="<?php echo $idmensaje;?>">

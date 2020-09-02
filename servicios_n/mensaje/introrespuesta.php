@@ -19,11 +19,11 @@ $sql1 = "INSERT INTO respuestamensajes (idempresa,idempleado,idmensaje,respuesta
 //echo $sql1;
 
 $result1=$conn->prepare($sql1);
-$result1->bindParam(':ide', $ide);
-$result1->bindParam(':idtrab', $idtrab);
-$result1->bindParam(':id', $id);
-$result1->bindParam(':respuesta', $respuesta);
-$result1->bindParam(':textotro', $textotro);
+$result1->bindValue(':ide', $ide);
+$result1->bindValue(':idtrab', $idtrab);
+$result1->bindValue(':id', $id);
+$result1->bindValue(':respuesta', $respuesta);
+$result1->bindValue(':textotro', $textotro);
 $result1->execute();
 //$result1=mysqli_query ($conn,$sql1) or die ("Invalid result ipuntcont1");
 
