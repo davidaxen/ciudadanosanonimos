@@ -32,8 +32,8 @@ foreach ($result as $rowmos) {
 	$fechafin=$rowmos['fechafin'];
 	$texto=$rowmos['texto'];
 ?>
-<div style="font-size: 15px">
-<?php  echo $texto;?>
+<div align="center" style="font-size: 15px" >
+<?php  echo "- ".$texto;?>
 <div>
 <br>
 <?php
