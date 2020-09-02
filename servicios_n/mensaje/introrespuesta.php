@@ -28,7 +28,7 @@ $result1->execute();
 //$result1=mysqli_query ($conn,$sql1) or die ("Invalid result ipuntcont1");
 
 
-
+header("location:../../portada_n/ultimasentradas_t.php");
 ?>
 
 
@@ -38,11 +38,12 @@ $result1->execute();
 
 <a href="/inicio1.php" target="_parent">Volver a menu</a>
 </div>
-</div>-->
+</div>
+
 
 <script>
 	window.location.replace("../../portada_n/ultimasentradas_t.php");
-</script>
+</script>-->
 
 <?php } else {;
 include ('../../cierre.php');

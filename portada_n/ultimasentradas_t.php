@@ -80,7 +80,7 @@ $row1=mysqli_num_rows($result1);*/
   cursor: pointer;
   position: absolute;
   top: 50%;
-   width: auto;
+  width: auto;
   margin-top: -50px;
   vertical-align: center;
   padding: 16px;
@@ -273,7 +273,8 @@ for ($i=1; $i <= $row; $i++) {
 <?php }
 }else{
 ?>
-<div style="font-size: 15px; text-align: center;">NO HAY PREGUNTAS DISPONIBLES</div>
+<div style="font-size: 15px; text-align: center;">GRACIAS POR RESPONDER A TODAS LAS PREGUNTAS</div>
+<a href="/inicio1.php" target="_parent" style="text-align: center;">Volver al inicio</a>
 <?php
 }
 

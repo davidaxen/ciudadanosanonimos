@@ -5,9 +5,10 @@
 require('bbdd.php');
 $sql="SELECT * from paises order by pais asc "; 
 //echo $sql;
-$rs_prov=mysqli_query ($conn,$sql) or die ("Invalid result");
+//$rs_prov=mysqli_query ($conn,$sql) or die ("Invalid result");
+$rs_prov=$conn->query($sql);
 //$rs_prov = $mysqli->query("SELECT * FROM paises");
-while($row_prov = $rs_prov->fetch_assoc()){
+while($row_prov = $rs_prov->fetch()){
 ?>                        
 <option value="<?php echo $row_prov['idpais']; ?>"><?php echo $row_prov['pais']; ?></option>
 <?php } ?>                          
