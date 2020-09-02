@@ -15,6 +15,10 @@ $row=count($result1row->fetchAll());
 $row1=mysqli_num_rows($result1);*/
 
 ?>
+<script src="../js/ultimasentradas_tjs.js">
+
+</script>
+
 <style>
 
 
@@ -140,9 +144,7 @@ $row1=mysqli_num_rows($result1);*/
 }
 
 </style>
-<script src="../js/ultimasentradas_tjs.php">
 
-</script>
 
 <style type="text/css" media="print">
 .nover {display:none}
