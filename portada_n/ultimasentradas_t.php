@@ -140,40 +140,7 @@ $row1=mysqli_num_rows($result1);*/
 }
 
 </style>
-<script>
-
-var slideIndex = 1;
-showSlides(slideIndex);
-
-function plusSlides(n) {
-  showSlides(slideIndex += n);
-}
-
-function currentSlide(n) {
-  showSlides(slideIndex = n);
-}
-
-function showSlides(n) {
-  var i;
-  var slides = document.getElementsByClassName("mySlides");
-  var dots = document.getElementsByClassName("dot");
-  if (n > slides.length) {slideIndex = 1}
-  if (n < 1) {slideIndex = slides.length}
-  for (i = 0; i < slides.length; i++) {
-      slides[i].style.display = "none";
-  }
-  for (i = 0; i < dots.length; i++) {
-      dots[i].className = dots[i].className.replace(" active", "");
-  }
-  slides[slideIndex-1].style.display = "block";
-  dots[slideIndex-1].className += " active";
-}
-
-
-function refrescar1()
-{
-	window.location.reload();
-}
+<script src="../js/ultimasentradas_tjs.php">
 
 </script>
 
@@ -306,5 +273,20 @@ for ($i=1; $i <= $row; $i++) {
 ?>
 <div style="font-size: 15px; text-align: center;">NO HAY PREGUNTAS DISPONIBLES</div>
 <?php
-} ?>
+}
+
+/*if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+	$sql1 = "INSERT INTO respuestamensajes (idempresa,idempleado,idmensaje,respuesta,textorespuesta) VALUES 
+	(:ide,:idtrab,:id,:respuesta,:textotro)";
+	//echo $sql1;
+
+	$result1=$conn->prepare($sql1);
+	$result1->bindParam(':ide', $ide);
+	$result1->bindParam(':idtrab', $idtrab);
+	$result1->bindParam(':id', $id);
+	$result1->bindParam(':respuesta', $respuesta);
+	$result1->bindParam(':textotro', $textotro);
+	$result1->execute();
+}*/
+ ?>
 </body>
