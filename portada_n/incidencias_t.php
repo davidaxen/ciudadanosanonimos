@@ -5,9 +5,9 @@ include('bbdd.php');
 
 ?>
 
-<strong><p style="text-align: center; font-family: Palatino, 'Palatino Linotype', serif; font-size: 18px;">Estamos trabajando en ello...</p></strong>
+<!--<strong><p style="text-align: center; font-family: Palatino, 'Palatino Linotype', serif; font-size: 18px;">Estamos trabajando en ello...</p></strong>-->
 
-<!--<style type="text/css" media="print">
+<style type="text/css" media="print">
 .nover {display:none}
 </style>
 
@@ -36,4 +36,4 @@ include('bbdd.php');
 			<input type="submit" class="envio" value="enviar" name="enviar">
 		</div>
 	</form>
-</body>-_>
+</body>
