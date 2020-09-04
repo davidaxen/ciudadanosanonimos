@@ -18,6 +18,8 @@ $sql1 = "INSERT INTO respuestamensajes (idempresa,idempleado,idmensaje,respuesta
 (:ide,:idtrab,:id,:respuesta,:textotro)";
 //echo $sql1;
 
+
+
 $result1=$conn->prepare($sql1);
 $result1->bindValue(':ide', $ide);
 $result1->bindValue(':idtrab', $idtrab);
