@@ -83,7 +83,7 @@ $row1=mysqli_num_rows($result1);*/
   width: auto;
   margin-top: -50px;
   vertical-align: center;
-  padding: 5px;
+  padding: 16px;
   color: white;
   font-weight: bold;
   font-size: 18px;
@@ -277,20 +277,5 @@ for ($i=1; $i <= $row; $i++) {
 <div style="font-size: 15px; text-align: center;">GRACIAS POR RESPONDER A TODAS LAS PREGUNTAS</div>
 <a href="/inicio1.php" target="_parent" style="text-align: center;">Volver al inicio</a>
 <?php
-}
-
-/*if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-	$sql1 = "INSERT INTO respuestamensajes (idempresa,idempleado,idmensaje,respuesta,textorespuesta) VALUES 
-	(:ide,:idtrab,:id,:respuesta,:textotro)";
-	//echo $sql1;
-
-	$result1=$conn->prepare($sql1);
-	$result1->bindParam(':ide', $ide);
-	$result1->bindParam(':idtrab', $idtrab);
-	$result1->bindParam(':id', $id);
-	$result1->bindParam(':respuesta', $respuesta);
-	$result1->bindParam(':textotro', $textotro);
-	$result1->execute();
-}*/
- ?>
+} ?>
 </body>
