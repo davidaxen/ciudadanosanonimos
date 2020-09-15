@@ -1,7 +1,7 @@
 <?php   
 include('bbdd.php');
 
-$sql1="SELECT * from almpcinci where  idempresas='".$ide."'";
+$sql1="SELECT * from incidencias where  idempresa='".$ide."'";
 if ($idcli!=0){;
 $sqln1="SELECT * from clientes where nif='".$gente."' and idempresas='".$ide."'";
 $resultn1=$conn->query($sqln1);
@@ -10,9 +10,9 @@ $resultadon1=$resultn1->fetch();
 /*$resultn1=mysqli_query ($conn, $sqln1) or die ("Invalido resulto n1");
 $resultadon1=mysqli_fetch_array($resultn1);*/
 $idclienten1=$resultadon1['idclientes'];
-$sql1.=" and idpiscina='".$idclienten1."'";
+//$sql1.=" and idpiscina='".$idclienten1."'";
 };
-$sql1.=" order by tiempo desc, hora desc limit 0,5"; 
+//$sql1.=" order by tiempo desc, hora desc limit 0,5"; 
 //echo $sql1;
 
 $result1=$conn->query($sql1);
@@ -37,23 +37,24 @@ function refrescar()
 	   
 <meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
 <meta http-equiv="content-type" content="application/xhtml+xml; charset=ISO-8859-1">
-<body onload="setTimeout('refrescar()', 5000);">
+<!--<body onload="setTimeout('refrescar()', 5000);">-->
 
 <table style="width:100%;">
-<tr class="enctab"><td>Puesto de Trabajo</td><td>Empleado</td><td>Dia</td><td>Hora</td><td>Informacion</td><td>Asignar</td></tr>
+<tr class="enctab"><td>Puesto de Trabajo</td><td>Empleado</td><!--<td>Dia</td><td>Hora</td>--><td>Informacion</td><!--<td>Asignar</td>--></tr>
 
 <?php 
 /*for ($j=0;$j<$row1;$j++){;
 mysqli_data_seek($result1,$j);
 $resultados1 = mysqli_fetch_array ($result1);*/
+$j=0;
 foreach ($result1 as $row1mos) {
 $idempleado=$row1mos['idempleado'];
-$idpiscina=$row1mos['idpiscina'];
+/*$idpiscina=$row1mos['idpiscina'];
 $dia=$row1mos['dia'];
 $hora=$row1mos['hora'];
 $tiempo=$row1mos['tiempo'];
 $lat=$row1mos['lat'];
-$lon=$row1mos['lon'];
+$lon=$row1mos['lon'];*/
 $texto=$row1mos['texto'];
 
 
@@ -70,7 +71,7 @@ $segape=$resultados10['2apellido'];
 $nombretrab=$nombre.' '.$priape.' '.$segape;
 
 
-$sql11="SELECT * from clientes where idclientes='".$idpiscina."' and idempresas='".$ide."'"; 
+$sql11="SELECT * from clientes where idclientes='".$idempleado."' and idempresas='".$ide."'"; 
 $result11=$conn->query($sql11);
 $result11fetch=$conn->query($sql11);
 
@@ -95,12 +96,14 @@ $f=fmod($j,2);
 
 <td><?php  echo strtoupper($nombrecom);?></td>
 <td><?php  echo strtoupper($nombretrab);?></td>
-<td><?php  echo strtoupper($dia);?></td>
-<td><?php  echo strtoupper($hora);?></td>
+<!--<td><?php  echo strtoupper($dia);?></td>
+<td><?php  echo strtoupper($hora);?></td>-->
 <td><?php  echo strtoupper($texto);?></td>
-<td><a href="../servicios_n/trabajo/ipuntcont.php?idclientesinc=<?php  echo $idpiscina;?>&descripcion=<?php  echo $texto;?>" target="_parent"><img src="../img/asignacion.png" width="20px"></a></td>
+<!--<td><a href="../servicios_n/trabajo/ipuntcont.php?idclientesinc=<?php  echo $idempleado;?>&descripcion=<?php  echo $texto;?>" target="_parent"><img src="../img/asignacion.png" width="20px"></a></td>-->
 
 </tr>
-<?php };?>
+<?php 
+$j=$j+1;
+};?>
 </table>
 </body>

@@ -96,6 +96,7 @@ include('portada_n/cabecera.php');?>
 <div id="d2" class="tabcontent">
   <h3><img src="../img/iconos/18-incidencia.png" width="32px" style="vertical-align:middle;"> Incidencias</h3>
   <p><iframe style="border:0" name="bloque0" src="portada_n/incidencias_t.php" width="100%" height="325" scrolling="no"></iframe></p>
+
 <!--
 <div id="d2" class="tabcontent">
   <h3><img src="../img/iconos/mensajes.png" width="32px" style="vertical-align:middle;"> Ultimos mensajes enviados con respuesta</h3>

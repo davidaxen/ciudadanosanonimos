@@ -5,6 +5,19 @@ include('bbdd.php');
 
 ?>
 
+<script>
+	function validateForm(){
+  		var data = document.getElementById("informacion").value;
+
+  		if (data.length != 0) {
+  			return true;
+  		}else{
+  			alert("Has olvidado introducir tu pregunta");
+  			return false;
+  		}
+	}
+</script>
+
 <!--<strong><p style="text-align: center; font-family: Palatino, 'Palatino Linotype', serif; font-size: 18px;">Estamos trabajando en ello...</p></strong>-->
 
 <style type="text/css" media="print">
@@ -26,10 +39,10 @@ include('bbdd.php');
 		<meta http-equiv="content-type" content="application/xhtml+xml; charset=ISO-8859-1">
 
 <body >
-	<form method="POST" action="introincidencias.php">
+	<form method="POST" action="introincidencias.php" onsubmit="return validateForm()">
 		<strong><p style="text-align: center; font-family: Palatino, 'Palatino Linotype', serif; font-size: 18px;">Escribe aquí cualquier tipo de duda, comentario que se te presente:</p></strong>
 		<div style="text-align: center; margin-top: 15px;">
-			<textarea rows="1" cols="50" name="incidencia" placeholder="Incidencias, dudas, comentarios..."></textarea>
+			<textarea id="informacion" rows="1" cols="50" name="incidencia" placeholder="Incidencias, dudas, comentarios..."></textarea>
 		</div>
 
 		<div style="text-align: center; margin-top: 20px;">

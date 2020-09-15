@@ -54,7 +54,10 @@ function myFunction(valor) {
     <h3 style="text-align: center;color:#000">SOLICITUD DE PARTICIPACI&Oacute;N EN CIUDADANOS ANONIMOS</h3>
   </div>
 
+
+
   <div class='container'>
+
 <table>
 <tr><td><b>Nombre/Apodo</b></td><td><input tabindex="2" name="nombreemp" id="nombre" type="text" required /></td></tr>
 
@@ -65,6 +68,10 @@ function myFunction(valor) {
 <img src='../img/iconos/pass.png' width='32px' onclick="myFunction('psw')" style='vertical-align:middle'>
 </td></tr>
 
+<tr><td><b>Repetir Contrase&ntilde;a</b></td><td><input tabindex="5" name="psw2" id="psw2" required type="password" required  onblur="contrase()"  />
+<img src='../img/iconos/pass.png' width='32px' onclick="myFunction('psw2')"  style='vertical-align:middle'>
+</td></tr>
+
 <div id="message">
   <h4>Condiciones para la contrase&ntilde;a:</h4>
   <span id="letter" class="invalid">Al menos una letra <b>minusculas</b></span><br/>
@@ -72,10 +79,6 @@ function myFunction(valor) {
   <span id="number" class="invalid">Al menos un <b>numero</b></span><br/>
   <span id="length" class="invalid">Minimo <b>8 caracteres</b></span><br/>
 </div>
-
-<tr><td><b>Repetir Contrase&ntilde;a</b></td><td><input tabindex="5" name="psw2" id="psw2" required type="password" required  onblur="contrase()"  />
-<img src='../img/iconos/pass.png' width='32px' onclick="myFunction('psw2')"  style='vertical-align:middle'>
-</td></tr>
 
 <tr><td><b>Tel&eacute;fono Contacto</b></td><td><input tabindex="6" name="telcontacto" id="telcontacto" required type="text" /></td></tr>
 
@@ -90,6 +93,7 @@ function myFunction(valor) {
 <tr><td colspan="2"><b>He podido leer y entiendo la <a href="https://www.ciudadanosanonimos.com/politica-y-aviso">Politica de Privacidad y Aviso Legal</a>
 </b><input name="politica" id="politica" required type="checkbox" /></td></tr>
 </table>
+
 <br/>
 <input type="hidden" name="idpr" value="<?php  echo $idpr;?>">
        
@@ -97,6 +101,7 @@ function myFunction(valor) {
   </div>
 
 </form>
+
 </div>
 </div>
 <p>
