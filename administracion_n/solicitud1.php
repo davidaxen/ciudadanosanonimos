@@ -53,6 +53,7 @@ function myFunction(valor) {
     <img src='../img/logo-ciud-anonimos.png' width='250px'>
     <h3 style="text-align: center;color:#000">SOLICITUD DE PARTICIPACI&Oacute;N EN CIUDADANOS ANONIMOS</h3>
   </div>
+
 <tr>
   <td><b>Nombre/Apodo</b><td>
   <input tabindex="2" name="nombreemp" id="nombre" type="text" required/>
@@ -67,6 +68,11 @@ function myFunction(valor) {
     <td style= ><img src='../img/iconos/pass.png' width='32px' onclick="myFunction('psw')"  style='vertical-align:middle'></td>
 </tr>
 
+
+<tr><td><b>Repetir Contrase&ntilde;a</b></td><td><input tabindex="5" name="psw2" id="psw2" required type="password" required  onblur="contrase()"  />
+<img src='../img/iconos/pass.png' width='32px' onclick="myFunction('psw2')"  style='vertical-align:middle'>
+</td></tr>
+
 <div id="message">
   <h4>Condiciones para la contrase&ntilde;a:</h4>
   <span id="letter" class="invalid">Al menos una letra <b>minusculas</b></span><br/>
@@ -74,6 +80,7 @@ function myFunction(valor) {
   <span id="number" class="invalid">Al menos un <b>numero</b></span><br/>
   <span id="length" class="invalid">Minimo <b>8 caracteres</b></span><br/>
 </div>
+
 <tr>
   <td><b>Repetir Contrase&ntilde;a</b></td>
   <td><input style="width: 95%" tabindex="5" name="psw2" id="psw2" required type="password" required  onblur="contrase()"/></td>
@@ -89,15 +96,18 @@ function myFunction(valor) {
 <tr>
   <td><b>Ciudad</b></td>
   <td><div id="listamunicipios">
+
       <select name="ciudad" id="obj_municipio" >
         <option>Seleccionar...</option>
       </select>
     </div>
+
   </td>
 </tr>
 <tr>
   <td colspan="2"><b>He podido leer y entiendo la <a href="https://www.ciudadanosanonimos.com/politica-y-aviso">Politica de Privacidad y Aviso Legal</a></td>
   <td style="padding-top: 17px; padding-right: 10px;"><input name="politica" id="politica" required type="checkbox"/></td>
+
 <input type="hidden" name="idpr" value="<?php  echo $idpr;?>">
 <tr>    
     <td></td>
@@ -105,7 +115,9 @@ function myFunction(valor) {
     <td></td>
 </tr>
 </form>
+
 </table>
+
 </div>
 </div>
 <p>
