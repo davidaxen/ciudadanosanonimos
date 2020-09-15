@@ -143,8 +143,6 @@ $ic=$resultado32['informes'];
 
 ?>
 <hr>
-<a href="/menu_n/menu_trabajador_servicios.php"><span class="menuini"><img src="/img/<?php  echo $ic1;?>" width="32px" style="vertical-align:middle;">&nbsp;&nbsp;<?php  echo $nc1;?></span></a>
-<hr>
 <a href="/menu_n/menu_trabajador.php"><span class="menuini"><img src="/img/<?php  echo $ic;?>" width="32px" style="vertical-align:middle;">&nbsp;&nbsp;<?php  echo $nc;?></span></a>
 <hr>
 <?php };?><!-- FIN TRABAJADORES -->
