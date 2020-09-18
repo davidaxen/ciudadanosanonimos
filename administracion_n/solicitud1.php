@@ -196,7 +196,6 @@ myInput.onkeyup = function() {
   var lowerCaseLetters = /[a-z]/g;
   //var lowerCaseLetters = /^[a-z]+$/;
   if(myInput.value.match(lowerCaseLetters)) { 
-
     myInput.setCustomValidity('');    
     /*letter.classList.remove("invalid");
     letter.classList.add("valid");*/
@@ -210,6 +209,7 @@ myInput.onkeyup = function() {
   // Validate capital letters
   var upperCaseLetters = /[A-Z]/g;
   if(myInput.value.match(upperCaseLetters)) {  
+
     myInput.setCustomValidity('');
     /*capital.classList.remove("invalid");
     capital.classList.add("valid");*/
