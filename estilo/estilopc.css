@@ -477,10 +477,10 @@ img a:hover img {
 .envio {text-transform:capitalize;background-color:#2d80d9;font-family:Verdana,Tahoma,Arial;font-size:11px;border-style:ridge;color:#ffffff}
 .envio:hover {background-color:#e2e41b;}
 
-.enctab 	{font-family:Arial,Verdana,Tahoma,Arial;font-weight:bold;font-size:12px;color:000000;text-align:center;}
-.dattab 	{font-family:Arial,Verdana,Tahoma,Arial;font-size:10px;color:000000;}
+.enctab 	{font-family:Arial,Verdana,Tahoma,Arial;font-weight:bold;font-size:15px;color:000000;text-align:center;}
+.dattab 	{font-family:Arial,Verdana,Tahoma,Arial;font-size:14px;color:000000;}
 .dattab2 {font-family:Arial,Verdana,Tahoma,Arial;font-size:10px;color:000000;background-color:#2d80d9;}
-.dattab3 {font-family:Arial,Verdana,Tahoma,Arial;font-size:10px;color:000000;background-color:#c9c9c9;}
+.dattab3 {font-family:Arial,Verdana,Tahoma,Arial;font-size:14px;color:000000;background-color:#c9c9c9;}
 .dattab4 {font-family:Arial,Verdana,Tahoma,Arial;font-size:10px;color:000000;background-color:#f61f1f;}
 
 /* hojas dentro de la pagina */

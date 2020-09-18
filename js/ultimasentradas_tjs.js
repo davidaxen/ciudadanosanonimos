@@ -32,3 +32,5 @@ function refrescar1()
 	window.location.reload();
 }
 
+
+

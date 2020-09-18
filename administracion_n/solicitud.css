@@ -8,6 +8,7 @@ width:500px;border: 3px solid #f1f1f1;}
 border: 0px solid #f1f1f1;}
 
 .cuadro {
+
 width: 34%;
 margin: 50px 0;
 margin-left: 490px;
@@ -16,6 +17,7 @@ background: #fff;
 overflow: hidden;
 box-shadow: 0 0 3px grey;
 border-top: 4px solid #536DFE;
+
 }
 
 button {

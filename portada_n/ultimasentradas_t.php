@@ -191,6 +191,14 @@ if ($row10==0){;
 		<!--<a href="../servicios_n/mensaje/responder.php?id=<?php echo $idmensaje;?>" target="_parent">-->
 		<span class="caja3">
 		<div class="numbertext" style="font-size: 20px;"><?php echo "$i/$row"; ?></div>
+		<div style="float: right; font-size: 18px;">Hemos recibido un total de: 
+			<?php 
+				$sqlCount="SELECT COUNT(*) FROM respuestamensajes WHERE idmensaje=$idmensaje"; 
+				$result=$conn->query($sqlCount);
+				$cantidad=$result->fetch();
+				echo "$cantidad[0]";
+
+			?> respuestas</div>
 		<!--<img src="../img/pencil.png" class="cuadro">-->
 		<p><?php  echo $texto;?></p>
 		</span>
@@ -213,6 +221,7 @@ if ($row10==0){;
 			$result2->execute();
 		 ?>
 	 	<div class="main" style="text-align: center;">
+
 			<?php 
 			foreach ($result2 as $row2mos) {
 			$valor=$row2mos['valor'];
@@ -242,7 +251,7 @@ if ($row10==0){;
 
 			<?php } ?>
 		</div>
-		<input type="submit" class="envio" value="enviar" name="enviar">
+		<input style="" type="submit" class="envio" value="enviar" name="enviar">
 	</div>
 </div>
 
