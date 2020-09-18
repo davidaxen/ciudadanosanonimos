@@ -99,7 +99,7 @@ if ($dispositivo=='movil'){;
 <?php if ($dispositivo!='movil'){;?>
 <!--colocacion izquierda-->
 <div id="mySidenav" class="sidenav">
-<?php  include('menu_n/menulateral.php');?>
+<?php  //include('menu_n/menulateral.php');?>
 </div>
 
 <?php };?>

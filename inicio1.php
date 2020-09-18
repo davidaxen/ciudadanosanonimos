@@ -104,7 +104,7 @@ setcookie("pag1",$pag1);
 				setcookie("hora1",$hora1);
 				};
 				
-				//var_dump($modulo);
+				var_dump($modulo);
 				$pag='indexprueba'.$modulo.'.php'; 
 				//echo $pag;
 				include_once($pag);
