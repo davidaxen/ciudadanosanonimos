@@ -64,7 +64,7 @@ function myFunction(valor) {
 </tr>
 <tr>
   <td><b>Contrase&ntilde;a</b></td>
-    <td><input style="width: 95%" type="password" tabindex=4 id="psw" name="psw" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required></td>
+    <td><input style="width: 95%" type="password" tabindex=4 id="psw" name="psw" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Al menos una minuscula, una mayuscula, un numero y minimo 8 caracteres" required></td>
     <td style= ><img src='../img/iconos/pass.png' width='32px' onclick="myFunction('psw')"  style='vertical-align:middle'></td>
 </tr>
 
@@ -73,19 +73,14 @@ function myFunction(valor) {
 <img src='../img/iconos/pass.png' width='32px' onclick="myFunction('psw2')"  style='vertical-align:middle'>
 </td></tr>
 
-<div id="message">
+<!--<div id="message">
   <h4>Condiciones para la contrase&ntilde;a:</h4>
   <span id="letter" class="invalid">Al menos una letra <b>minusculas</b></span><br/>
   <span id="capital" class="invalid">Al menos una letra <b>mayusculas</b></span><br/>
   <span id="number" class="invalid">Al menos un <b>numero</b></span><br/>
   <span id="length" class="invalid">Minimo <b>8 caracteres</b></span><br/>
-</div>
+</div>-->
 
-<tr>
-  <td><b>Repetir Contrase&ntilde;a</b></td>
-  <td><input style="width: 95%" tabindex="5" name="psw2" id="psw2" required type="password" required  onblur="contrase()"/></td>
-  <td><img src='../img/iconos/pass.png' width='32px' onclick="myFunction('psw2')" style='vertical-align:middle'></td>
-</tr>
 <tr>
   <td><b>Tel&eacute;fono Contacto</b></td>
   <td><input tabindex="6" name="telcontacto" id="telcontacto" required type="text"/></td>
@@ -196,52 +191,56 @@ myInput.onblur = function() {
 
 // When the user starts to type something inside the password field
 myInput.onkeyup = function() {
+
   // Validate lowercase letters
   var lowerCaseLetters = /[a-z]/g;
+  //var lowerCaseLetters = /^[a-z]+$/;
   if(myInput.value.match(lowerCaseLetters)) { 
 
     myInput.setCustomValidity('');    
-    letter.classList.remove("invalid");
-    letter.classList.add("valid");
+    /*letter.classList.remove("invalid");
+    letter.classList.add("valid");*/
   } else {
     myInput.setCustomValidity('Tiene que haber alguna mínuscula');
-    letter.classList.remove("valid");
-    letter.classList.add("invalid");
+    /*letter.classList.remove("valid");
+    letter.classList.add("invalid");*/
   }
-  
+
+
   // Validate capital letters
   var upperCaseLetters = /[A-Z]/g;
   if(myInput.value.match(upperCaseLetters)) {  
-
-    capital.classList.remove("invalid");
-    capital.classList.add("valid");
+    myInput.setCustomValidity('');
+    /*capital.classList.remove("invalid");
+    capital.classList.add("valid");*/
   } else {
     myInput.setCustomValidity('Tiene que haber alguna mayúscula');
-    capital.classList.remove("valid");
-    capital.classList.add("invalid");
+    /*capital.classList.remove("valid");
+    capital.classList.add("invalid");*/
   }
+
 
   // Validate numbers
   var numbers = /[0-9]/g;
   if(myInput.value.match(numbers)) {  
     myInput.setCustomValidity('');
-    number.classList.remove("invalid");
-    number.classList.add("valid");
+    /*number.classList.remove("invalid");
+    number.classList.add("valid");*/
   } else {
     myInput.setCustomValidity('Tiene que haber mínimo un numero');
-    number.classList.remove("valid");
-    number.classList.add("invalid");
+    /*number.classList.remove("valid");
+    number.classList.add("invalid");*/
   }
   
   // Validate length
   if(myInput.value.length >= 8) {
     myInput.setCustomValidity('');
-    length.classList.remove("invalid");
-    length.classList.add("valid");
+    /*length.classList.remove("invalid");
+    length.classList.add("valid");*/
   } else {
     myInput.setCustomValidity('Mínimo 8 caracteres');
-    length.classList.remove("valid");
-    length.classList.add("invalid");
+    /*length.classList.remove("valid");
+    length.classList.add("invalid");*/
   }
 }
 </script>
