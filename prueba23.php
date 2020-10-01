@@ -89,7 +89,7 @@ print_r($prueba);
 <option value="11">Noviembre
 <option value="12">Diciembre
 </select>
-/<input type="number" name="y1" maxlength=4 size=5 value="2019"></td></tr>
+<input type="number" name="y1" maxlength=4 size=5 value="2019"></td></tr>
 
 <tr><td>Fecha Final</td><td><input type="number" name="d2" maxlength=2 size=3>/
 <select name="m2">
