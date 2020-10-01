@@ -99,6 +99,10 @@ echo ("Este dominio no tiene acceso al sistema, comprueba todas la conexiones, p
    $colorlateral=$resultados['colorlateral'];
    //$icono=$resultados['icono'];
    $pagina=$resultados['pagina'];
+   //echo "$pagina";
+   //echo "$logo";
+   //echo "$bdescarga";
+   //echo "$idprt";
 
 //setcookie("colorarriba",$colorarriba);
 //setcookie("colorcentral",$colorcentral);
