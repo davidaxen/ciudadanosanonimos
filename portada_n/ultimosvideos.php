@@ -2,11 +2,10 @@
 include('bbdd.php');
 
 if ($ide!=null) {
-	$sql1="INSERT INTO videos (nombre,contenido) VALUES (:nombre,:contenido)";
+	$sql1="INSERT INTO videos (url) VALUES (:url)";
 
 	$result1=$conn->prepare($sql1);
-	$result1->bindValue(':nombre', $nombre);
-	$result1->bindValue(':contenido', $contenido);
+	$result1->bindValue(':url', $url);
 	$result1->execute();
 
 

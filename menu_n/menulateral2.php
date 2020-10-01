@@ -19,7 +19,8 @@ $cli=$resultado1['cliente'];
 $ges=$resultado1['gestor'];
 ?>
 <center>
- <!-- ADMINISTRACION --><?php ?><!-- FIN ADMINISTRACION -->  
+<a href="../inicio_n.php"><img src="../../img/inicio.png" width="48px"><br/>Inicio</a><br/>
+ <!-- ADMINISTRACION --><?php if ($madmi=="1"){?><a href="../menu_n/menu_administracion.php"><img src="../../img/administracion.png" width="48px"><br/>Administracion</a><br/><?php };?><!-- FIN ADMINISTRACION -->  
 <!-- FACTURACION --><?php if ($mfact=="1"){?>
 <a href="../menu_n/menu_gestiones.php"><img src="../../img/gestiones.png" width="48px"><br/>Gestiones</a><br/>
 <a href="../menu_n/menu_facturacion.php"><img src="../../img/facturacion.png" width="48px"><br/>Facturacion</a><br/>
