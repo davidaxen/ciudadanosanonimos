@@ -138,7 +138,9 @@ $row=mysqli_num_rows($result);*/
 ?>
 
 
-<div class="tab">
+<div align="center">
+<table>
+  <tr>
 <?php 
 /*for ($j=0;$j<$row;$j++){;
 mysqli_data_seek($result,$j);
@@ -150,13 +152,16 @@ $pagport=$rowmos['pag'];
 $iconoport=$rowmos['icono'];
 ?>
 
-  <button class="tablinks" onclick="openCity(event, 'd<?php  echo $j;?>')" <?php if($j==0){;?>id="defaultOpen"<?php }?> >
-  <img src="../img/iconos/<?php echo $iconoport;?>" width="32px" style="vertical-align:middle;"> <?php  echo $tituloport;?></button>
-  
+    <td> 
+    <button class="tablinks" onclick="openCity(event, 'd<?php  echo $j;?>')" <?php if($j==0){;?>id="defaultOpen"<?php }?>>
+    <img src="../img/iconos/<?php echo $iconoport;?>" width="32px" style="vertical-align:middle;"> <?php  echo $tituloport;?></button>
+  </td>
  <?php 
  $j=$j+1;
 };
 ?> 
+  </tr>
+</table>
 </div>
 
 
