@@ -1,11 +1,14 @@
 <?php 
-require_once('fpdf/fpdf.php');
+require_once('dompdf/autoload.inc.php');
+use Dompdf\Dompdf; 
 
-$pdf = new FPDF();
-$pdf->AddPage();
-$pdf->SetFont('Arial','B',16);
-$pdf->Cell(40,10,'Hello World!');
-$pdf->Image('marca5.jpg',80,22,35,38,'PNG','http://www.desarrolloweb.com');
-$pdf->Output();
+$pdf = new Dompdf();
+$pdf->loadHtml('<h1>Welcome to CodexWorld.com</h1>');
+$pdf->setPaper('A4', 'landscape'); 
+$pdf->render();
+$pdf->stream();
+
+//$pdf->Image('marca4.png',80,22,35,38,'PNG','http://www.desarrolloweb.com');
+//$pdf->Output();
 
  ?>

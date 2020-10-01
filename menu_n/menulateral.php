@@ -103,7 +103,7 @@ tr:hover {background-color:transparent;}
 <?php if (($idtrab==0) and ($idcli==0) and ($idges==0)){;?>
 <hr>
 <?php  for ($j=1;$j<count($ad)+1;$j++){;?>
-<?php if ($ad[$j]=='1'){;?>
+<?php if ($ad[$j]=='1' && $nad[$j]!='Administrar' && $nad[$j]!='Informes'){;?>
 <a href="<?php  echo $ead[$j];?>"><span class="menuini"><img src="/img/<?php  echo $iad[$j];?>" width="32px" style="vertical-align:middle;">
 &nbsp;&nbsp;<?php  echo $nad[$j];?></span></a>
 <hr>

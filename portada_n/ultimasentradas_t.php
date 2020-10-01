@@ -186,7 +186,10 @@ if ($row10==0){;
   	
 <form action="../servicios_n/mensaje/introrespuesta.php" method="post" enctype="multipart/form-data">
 <div class="slideshow-container" style="text-align: center;">
-	<div style="float: right; font-size: 18px; position: absolute; left: 70%;">Hemos recibido un total de: 
+	
+	<input type="hidden" name="id" value="<?php echo $idmensaje;?>">
+	<div class="mySlides fade">
+		<div style="float: right; font-size: 18px; position: absolute; left: 70%;">Hemos recibido un total de: 
 			<?php 
 				$sqlCount="SELECT COUNT(*) FROM respuestamensajes WHERE idmensaje=$idmensaje"; 
 				$result=$conn->query($sqlCount);
@@ -194,9 +197,6 @@ if ($row10==0){;
 				echo "$cantidad[0]";
 
 			?> respuestas</div>
-	<input type="hidden" name="id" value="<?php echo $idmensaje;?>">
-	<div class="mySlides fade">
-
 		<!--<a href="../servicios_n/mensaje/responder.php?id=<?php echo $idmensaje;?>" target="_parent">-->
 		<span class="caja3">
 		<div class="numbertext" style="font-size: 20px;"><?php echo "$i/$row"; ?></div>
