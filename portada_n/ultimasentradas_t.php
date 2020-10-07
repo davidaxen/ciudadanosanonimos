@@ -226,26 +226,6 @@ if ($row10==0){;
 		 ?>
 	 	<div class="main" style="text-align: center;">
 
-
-	 		
-
-			<!--<div class="links">
-			    <a class="openpop" href="<?php 
-			      $sql1="SELECT url from videos";
-			      $result1=$conn->query($sql1);
-			      $url=$result1->fetch(); 
-			      echo($url[0]);?>">VIDEOS</a>
-			</div>
-			<div class="wrapper">
-			    <div class="popup">
-			        <iframe src="">
-			            <p>Your browser does not support iframes.</p>
-			        </iframe>
-			<a href="#" class="close">X</a>
-			    </div>
-			</div>-->
-
-
 			<?php 
 			foreach ($result2 as $row2mos) {
 			$valor=$row2mos['valor'];
@@ -285,7 +265,18 @@ if ($row10==0){;
 
 		</br></br></br>
 
-		<table align="center" >
+
+<?php 
+	  $sql1="SELECT count(*) from videos WHERE idmensaje=(SELECT id FROM mensajes WHERE id = :id)";
+      $result1=$conn->prepare($sql1);
+	  $result1->bindParam(':id', $idmensaje);
+	  $result1->execute(); 
+	  $data=$result1->fetch();
+
+	  if ($data[0] != 0) {
+	  	?>
+
+	  	<table align="center" >
 			<tr>
 				<td>
 					<div style=" border: solid 5px; border-radius: 10px 10px 10px 10px; padding: 5px; align-content: center;" >
@@ -298,8 +289,10 @@ if ($row10==0){;
 				        webkitallowfullscreen="webkitallowfullscreen"
 
 						src="<?php 
-				          $sql1="SELECT url from videos";
-				          $result1=$conn->query($sql1);
+				          $sql1="SELECT url from videos WHERE idmensaje=(SELECT id FROM mensajes WHERE id = :id)";
+				          $result1=$conn->prepare($sql1);
+						  $result1->bindParam(':id', $idmensaje);
+						  $result1->execute();
 				          $url=$result1->fetch(); 
 				          echo($url[0]);?>">
 						</iframe>
@@ -309,6 +302,14 @@ if ($row10==0){;
 			
 		</table>
 
+
+	  	<?php 
+	  		}
+	  	?>
+	  
+
+
+		
 		
 	</div>
 </div>
