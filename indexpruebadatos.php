@@ -89,14 +89,21 @@ $row=mysqli_num_rows($result);*/
 <div class="tab">
 <form method="post" action="intro2p.php" name="login_form">
 <table>
-<tr><td>
-<textarea name="rgpdt" disabled cols="80" rows="15">
-<?php echo $rgpdt;?></textarea></td><td><input type='checkbox' name='rgpd' value="1">Aceptaci&oacute;n de RGPD</td></tr>
-<tr><td>
-<textarea name="avisolegalt" disabled cols="80" rows="15"><?php echo $avisolegalt;?></textarea>
-</td><td>
-<input type='checkbox' name="avisolegal" value="1">Aceptaci&oacute;n de Aviso Legal</td></tr>
-<tr><td><input type="submit" name="enviar"></td></tr>
+	<tr>
+		<td>
+			<textarea name="rgpdt" disabled cols="80" rows="15">
+				<?php echo $rgpdt;?></textarea></td><td><input type='checkbox' name='rgpd' value="1">Aceptaci&oacute;n de RGPD
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<textarea name="avisolegalt" disabled cols="80" rows="15"><?php echo $avisolegalt;?></textarea>
+		</td>
+	<td>
+		<input type='checkbox' name="avisolegal" value="1">Aceptaci&oacute;n de Aviso Legal</td></tr>
+	<tr>	
+		<td><input type="submit" name="enviar"></td>	
+	</tr>
 </table>
 </form>
 
