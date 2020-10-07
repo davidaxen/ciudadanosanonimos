@@ -22,6 +22,13 @@ $(document).ready(function () {
         $(this).parent().fadeOut("slow");
         $(".links").fadeIn("slow");
     });
+
+    /*$(".tablinks").click(function () {
+        //$(this).parent().fadeOut("slow");
+        $("iframe").attr("src", $(this).attr('href'));
+        $(".links").fadeIn("slow");
+        $(".popup").fadeOut('slow');
+    });*/
 });
 
 </script>
@@ -94,7 +101,7 @@ $(document).ready(function () {
   <th><button class="tablinks" onclick="openCity(event, 'd0')" id="defaultOpen"><img src="../img/iconos/serviciose.png" width="32px" style="vertical-align:middle;"> Preguntas Lanzadas</button></th>
   <th><button class="tablinks" onclick="openCity(event, 'd1')" id="defaultOpen"><img src="../img/iconos/incidencias.png" width="32px" style="vertical-align:middle;"> Ultimos Resultados</button></th>
   <th><button class="tablinks" onclick="openCity(event, 'd2')" id="defaultOpen"><img src="../img/iconos/18-incidencia.png" width="32px" style="vertical-align:middle;"> Incidencias</button></th>
-  <!--<th><button class="tablinks" onclick="openCity(event, 'd3')" id="defaultOpen"><img src="../img/iconos/18-incidencia.png" width="32px" style="vertical-align:middle;"> Videos</button></th>-->
+  <th><button class="tablinks" onclick="openCity(event, 'd3')" id="defaultOpen"><img src="../img/iconos/18-incidencia.png" width="32px" style="vertical-align:middle;"> Videos</button></th>
 
   
 <!--  <button class="tablinks" onclick="openCity(event, 'd2')" id="defaultOpen"><img src="../img/iconos/mensajes.png" width="32px" style="vertical-align:middle;"> Ultimos mensajes enviados con respuesta</button>-->
@@ -104,9 +111,7 @@ $(document).ready(function () {
 
 <div id="d0" class="tabcontent">
   <h3><img src="../img/iconos/serviciose.png" width="32px" style="vertical-align:middle;"> Preguntas Lanzadas</h3>
-  <p><iframe style="border:0" name="bloque0" src="portada_n/ultimasentradas_t.php" width="100%" height="325" scrolling="no"></iframe></p>
-
-
+  <p><iframe style="border:0" name="bloque0" src="portada_n/ultimasentradas_t.php" width="100%" height="680" scrolling="auto"></iframe></p>
 </div>
 
 <div id="d1" class="tabcontent">

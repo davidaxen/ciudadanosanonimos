@@ -19,6 +19,8 @@ $row1=mysqli_num_rows($result1);*/
 
 </script>
 
+
+
 <style>
 
 
@@ -224,6 +226,26 @@ if ($row10==0){;
 		 ?>
 	 	<div class="main" style="text-align: center;">
 
+
+	 		
+
+			<!--<div class="links">
+			    <a class="openpop" href="<?php 
+			      $sql1="SELECT url from videos";
+			      $result1=$conn->query($sql1);
+			      $url=$result1->fetch(); 
+			      echo($url[0]);?>">VIDEOS</a>
+			</div>
+			<div class="wrapper">
+			    <div class="popup">
+			        <iframe src="">
+			            <p>Your browser does not support iframes.</p>
+			        </iframe>
+			<a href="#" class="close">X</a>
+			    </div>
+			</div>-->
+
+
 			<?php 
 			foreach ($result2 as $row2mos) {
 			$valor=$row2mos['valor'];
@@ -252,8 +274,42 @@ if ($row10==0){;
 
 
 			<?php } ?>
+
+
+
 		</div>
+		
+		
+
 		<input style="" type="submit" class="envio" value="enviar" name="enviar">
+
+		</br></br></br>
+
+		<table align="center" >
+			<tr>
+				<td>
+					<div style=" border: solid 5px; border-radius: 10px 10px 10px 10px; padding: 5px; align-content: center;" >
+			 			<iframe width="400" height="275" 
+
+			 			allowfullscreen="allowfullscreen"
+				       	mozallowfullscreen="mozallowfullscreen" 
+				        msallowfullscreen="msallowfullscreen" 
+				        oallowfullscreen="oallowfullscreen" 
+				        webkitallowfullscreen="webkitallowfullscreen"
+
+						src="<?php 
+				          $sql1="SELECT url from videos";
+				          $result1=$conn->query($sql1);
+				          $url=$result1->fetch(); 
+				          echo($url[0]);?>">
+						</iframe>
+					</div>
+				</td>
+			</tr>
+			
+		</table>
+
+		
 	</div>
 </div>
 
