@@ -7,6 +7,7 @@ if ($com=='comprobacion'){;
 
 include('portada_n/cabecera.php');?>
 
+
 <script type="">
   
 $(document).ready(function () {
@@ -111,8 +112,11 @@ $(document).ready(function () {
 
 <div id="d0" class="tabcontent">
   <h3><img src="../img/iconos/serviciose.png" width="32px" style="vertical-align:middle;"> Preguntas Lanzadas</h3>
+
   <p><iframe style="border:0" name="bloque0" src="portada_n/ultimasentradas_t.php" width="100%" height="680" scrolling="auto"></iframe></p>
+
 </div>
+
 
 <div id="d1" class="tabcontent">
   <h3><img src="../img/iconos/incidencias.png" width="32px" style="vertical-align:middle;"> Ultimos Resultados</h3>
@@ -123,27 +127,13 @@ $(document).ready(function () {
 <div id="d2" class="tabcontent">
   <h3><img src="../img/iconos/18-incidencia.png" width="32px" style="vertical-align:middle;"> Incidencias</h3>
   <p><iframe style="border:0" name="bloque0" src="portada_n/incidencias_t.php" width="100%" height="325" scrolling="no"></iframe></p>
-
 </div>
-
 
 <div id="d3" class="tabcontent">
   <h3><img src="../img/iconos/18-incidencia.png" width="32px" style="vertical-align:middle;"> Videos</h3>
 
-   <div class="links">
-    <a class="openpop" href="<?php 
-      $sql1="SELECT url from videos";
-      $result1=$conn->query($sql1);
-      $url=$result1->fetch(); 
-      echo($url[0]);?>">VIDEOS</a>
-</div>
-<div class="wrapper">
-    <div class="popup">
-        <iframe src="">
-            <p>Your browser does not support iframes.</p>
-        </iframe>
-<a href="#" class="close">X</a>
-    </div>
+
+
 </div>
 
   <!--<p><iframe style="border:0;" name="bloque0" src="portada_n/videos_t.php" width="25%" height="25%" scrolling="no"></iframe></p>-->
