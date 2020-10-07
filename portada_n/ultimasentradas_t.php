@@ -19,6 +19,8 @@ $row1=mysqli_num_rows($result1);*/
 
 </script>
 
+
+
 <style>
 
 
@@ -186,12 +188,10 @@ if ($row10==0){;
   	
 <form action="../servicios_n/mensaje/introrespuesta.php" method="post" enctype="multipart/form-data">
 <div class="slideshow-container" style="text-align: center;">
+	
 	<input type="hidden" name="id" value="<?php echo $idmensaje;?>">
 	<div class="mySlides fade">
-		<!--<a href="../servicios_n/mensaje/responder.php?id=<?php echo $idmensaje;?>" target="_parent">-->
-		<span class="caja3">
-		<div class="numbertext" style="font-size: 20px;"><?php echo "$i/$row"; ?></div>
-		<div style="float: right; font-size: 18px;">Hemos recibido un total de: 
+		<div style="float: right; font-size: 18px; position: absolute; left: 70%;">Hemos recibido un total de: 
 			<?php 
 				$sqlCount="SELECT COUNT(*) FROM respuestamensajes WHERE idmensaje=$idmensaje"; 
 				$result=$conn->query($sqlCount);
@@ -199,6 +199,10 @@ if ($row10==0){;
 				echo "$cantidad[0]";
 
 			?> respuestas</div>
+		<!--<a href="../servicios_n/mensaje/responder.php?id=<?php echo $idmensaje;?>" target="_parent">-->
+		<span class="caja3">
+		<div class="numbertext" style="font-size: 20px;"><?php echo "$i/$row"; ?></div>
+		
 		<!--<img src="../img/pencil.png" class="cuadro">-->
 		<p><?php  echo $texto;?></p>
 		</span>
@@ -221,6 +225,26 @@ if ($row10==0){;
 			$result2->execute();
 		 ?>
 	 	<div class="main" style="text-align: center;">
+
+
+	 		
+
+			<!--<div class="links">
+			    <a class="openpop" href="<?php 
+			      $sql1="SELECT url from videos";
+			      $result1=$conn->query($sql1);
+			      $url=$result1->fetch(); 
+			      echo($url[0]);?>">VIDEOS</a>
+			</div>
+			<div class="wrapper">
+			    <div class="popup">
+			        <iframe src="">
+			            <p>Your browser does not support iframes.</p>
+			        </iframe>
+			<a href="#" class="close">X</a>
+			    </div>
+			</div>-->
+
 
 			<?php 
 			foreach ($result2 as $row2mos) {
@@ -250,8 +274,42 @@ if ($row10==0){;
 
 
 			<?php } ?>
+
+
+
 		</div>
+		
+		
+
 		<input style="" type="submit" class="envio" value="enviar" name="enviar">
+
+		</br></br></br>
+
+		<table align="center" >
+			<tr>
+				<td>
+					<div style=" border: solid 5px; border-radius: 10px 10px 10px 10px; padding: 5px; align-content: center;" >
+			 			<iframe width="400" height="275" 
+
+			 			allowfullscreen="allowfullscreen"
+				       	mozallowfullscreen="mozallowfullscreen" 
+				        msallowfullscreen="msallowfullscreen" 
+				        oallowfullscreen="oallowfullscreen" 
+				        webkitallowfullscreen="webkitallowfullscreen"
+
+						src="<?php 
+				          $sql1="SELECT url from videos";
+				          $result1=$conn->query($sql1);
+				          $url=$result1->fetch(); 
+				          echo($url[0]);?>">
+						</iframe>
+					</div>
+				</td>
+			</tr>
+			
+		</table>
+
+		
 	</div>
 </div>
 
