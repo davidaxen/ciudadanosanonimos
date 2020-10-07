@@ -29,12 +29,12 @@ $idn=$id+1;
 $day=date('Y-m-d H:i:s', time());
 $sql1 = "INSERT INTO mensajes (id,idempresa,idempleado,texto,user,dia,pais,localidad,provincia,cp,";
 if ($fechafin!=null){;
-$sql1.="fechafin,";
+	$sql1.="fechafin,";
 };
 $sql1.="fichero,otrosmot) VALUES 
 ('$idn','$ide','$idempleado','$texto','$user','$day','$idpais','$localidad','$provincia','$cp',";
 if($fechafin!=null){;
-$sql1.="'$fechafin',";
+	$sql1.="'$fechafin',";
 };
 $sql1.="'$fichero','$otrosmot')";
 //echo $sql1;
@@ -42,16 +42,19 @@ $result1=$conn->exec($sql1);
 //$result1=mysqli_query ($conn,$sql1) or die ("Invalid result ipuntcont2");
 
 for ($j=0;$j<count($resp);$j++){;
-if ($resp[$j]!=null){;
-$sql10 = "INSERT INTO respuesta (idmensaje,idempresa,valor,texto) VALUES 
-('$idn','$ide','$j','$resp[$j]')";
+	if ($resp[$j]!=null){;
+		$sql10 = "INSERT INTO respuesta (idmensaje,idempresa,valor,texto) VALUES 
+		('$idn','$ide','$j','$resp[$j]')";
 //echo $sql10;
-$result10=$conn->exec($sql10);
+		$result10=$conn->exec($sql10);
 //$result10=mysqli_query ($conn,$sql10) or die ("Invalid result ipuntcont2");
-};
+	};
 };
 
-
+if ($urlvideo!=null) {
+	$sql1="INSERT INTO videos(url, idmensaje) VALUES ('$urlvideo', $idn)";
+	$result=$conn->exec($sql1);
+}
 
 
 };

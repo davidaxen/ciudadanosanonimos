@@ -33,6 +33,7 @@ include('../../portada_n/cabecera3.php');?>
 <tr><td colspan="2"><input type="text" name="resp[3]" maxlength="250" size="100"></td></tr>
 <tr><td colspan="2"><input type="text" name="resp[4]" maxlength="250" size="100"></td></tr>
 <tr><td colspan="2"><input type="checkbox" name="otrosmot" value="1">Otros Motivos</td></tr>
+<tr><td colspan="2">URL del video: <input type="text" size="86" name="urlvideo"></td></tr>
 <tr><td><b>Ficheros</b></td><td><input type="file" name="fichero"></td></tr>
 <tr><td colspan="2"><input type="submit" class="envio" value="enviar" name="enviar"></td></tr>
 </table>
