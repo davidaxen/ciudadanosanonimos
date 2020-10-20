@@ -31,12 +31,12 @@ $sql1 = "INSERT INTO mensajes (id,idempresa,idempleado,texto,user,dia,pais,local
 if ($fechafin!=null){;
 	$sql1.="fechafin,";
 };
-$sql1.="fichero,otrosmot) VALUES 
+$sql1.="fichero,otrosmot,video) VALUES 
 ('$idn','$ide','$idempleado','$texto','$user','$day','$idpais','$localidad','$provincia','$cp',";
 if($fechafin!=null){;
 	$sql1.="'$fechafin',";
 };
-$sql1.="'$fichero','$otrosmot')";
+$sql1.="'$fichero','$otrosmot','$video')";
 //echo $sql1;
 $result1=$conn->exec($sql1);
 //$result1=mysqli_query ($conn,$sql1) or die ("Invalid result ipuntcont2");
