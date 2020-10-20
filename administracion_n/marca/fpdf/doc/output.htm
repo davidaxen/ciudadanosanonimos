@@ -7,36 +7,41 @@
 </head>
 <body>
 <h1>Output</h1>
-<code><b>string</b> Output([<b>string</b> name, <b>string</b> dest])</code>
-<h2>Description</h2>
-Send the document to a given destination: browser, file or string. In the case of browser, the
-plug-in may be used (if present) or a download ("Save as" dialog box) may be forced.
+<code><b>string</b> Output([<b>string</b> dest [, <b>string</b> name [, <b>boolean</b> isUTF8]]])</code>
+<h2>Descripción</h2>
+Envía el documento a un destino dado: una cadena, un fichero local o al navegador. En el
+último caso, puede utilizarse la extensión -plug in- (si existe) o forzarse un cuadro
+de diálogo de descarga.
 <br>
-The method first calls Close() if necessary to terminate the document.
-<h2>Parameters</h2>
+El método invoca ante todo a Close() si es necesario cerrar el documento.
+<h2>Parámetros</h2>
 <dl class="param">
-<dt><code>name</code></dt>
-<dd>
-The name of the file. If not specified, the document will be sent to the browser
-(destination <code>I</code>) with the name <code>doc.pdf</code>.
-</dd>
 <dt><code>dest</code></dt>
 <dd>
-Destination where to send the document. It can take one of the following values:
+Destino al que enviar el documento. Puede tener uno de los siguientes valores:
 <ul>
-<li><code>I</code>: send the file inline to the browser. The plug-in is used if available.
-The name given by <code>name</code> is used when one selects the "Save as" option on the
-link generating the PDF.</li>
-<li><code>D</code>: send to the browser and force a file download with the name given by
-<code>name</code>.</li>
-<li><code>F</code>: save to a local file with the name given by <code>name</code> (may include a path).</li>
-<li><code>S</code>: return the document as a string. <code>name</code> is ignored.</li>
+<li><code>I</code>: envía el fichero al navegador de forma que se usa la extensión (plug in) si está disponible.</li>
+<li><code>D</code>: envía el fichero al navegador y fuerza la descarga del fichero con el nombre especificado por <code>name</code>.</li>
+<li><code>F</code>: guarda el fichero en un fichero local de nombre <code>name</code>.</li>
+<li><code>S</code>: devuelve el documento como una cadena.</li>
 </ul>
+El valor por defecto es <code>I</code>.
+</dd>
+<dt><code>name</code></dt>
+<dd>
+El nombre del fichero. Éste es ignorado en caso de destino <code>S</code>.<br>
+El valor por defecto es <code>doc.pdf</code>.
+</dd>
+<dt><code>isUTF8</code></dt>
+<dd>
+Indica si <code>name</code> es codificado en ISO-8859-1 (<code>false</code>) ó UTF-8 (<code>true</code>).
+Solo usa destinos <code>I</code> y <code>D</code>.<br>
+El valor por defecto es <code>false</code>.
 </dd>
 </dl>
-<h2>See also</h2>
-<a href="close.htm">Close()</a>.
+<h2>Vea además</h2>
+<a href="close.htm">Close</a>
 <hr style="margin-top:1.5em">
-<div style="text-align:center"><a href="index.htm">Index</a></div>
+<div style="text-align:center"><a href="index.htm">Inicio</a></div>
 </body>
 </html>
