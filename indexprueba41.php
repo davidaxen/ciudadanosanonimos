@@ -102,7 +102,7 @@ $(document).ready(function () {
   <th><button class="tablinks" onclick="openCity(event, 'd0')" id="defaultOpen"><img src="../img/iconos/serviciose.png" width="32px" style="vertical-align:middle;"> Preguntas Lanzadas</button></th>
   <th><button class="tablinks" onclick="openCity(event, 'd1')" id="defaultOpen"><img src="../img/iconos/incidencias.png" width="32px" style="vertical-align:middle;"> Ultimos Resultados</button></th>
   <th><button class="tablinks" onclick="openCity(event, 'd2')" id="defaultOpen"><img src="../img/iconos/18-incidencia.png" width="32px" style="vertical-align:middle;"> Incidencias</button></th>
-  <th><button class="tablinks" onclick="openCity(event, 'd3')" id="defaultOpen"><img src="../img/iconos/18-incidencia.png" width="32px" style="vertical-align:middle;"> Videos</button></th>
+
 
   
 <!--  <button class="tablinks" onclick="openCity(event, 'd2')" id="defaultOpen"><img src="../img/iconos/mensajes.png" width="32px" style="vertical-align:middle;"> Ultimos mensajes enviados con respuesta</button>-->
@@ -128,9 +128,6 @@ $(document).ready(function () {
   <h3><img src="../img/iconos/18-incidencia.png" width="32px" style="vertical-align:middle;"> Incidencias</h3>
   <p><iframe style="border:0" name="bloque0" src="portada_n/incidencias_t.php" width="100%" height="325" scrolling="no"></iframe></p>
 </div>
-
-<div id="d3" class="tabcontent">
-  <h3><img src="../img/iconos/18-incidencia.png" width="32px" style="vertical-align:middle;"> Videos</h3>
 
 
 
