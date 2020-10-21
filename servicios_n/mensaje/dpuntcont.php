@@ -3,17 +3,21 @@ include('bbdd.php');
 if ($ide!=null){;
 
 include('../../portada_n/cabecera3.php');?>
-
+<link rel="stylesheet" type="text/css" href="video.css">
 <script type="text/javascript" language="javascript" src="ajax.js"></script>
 
 <div id="main">
 <div class="titulo">
-<p class="enc">ENVIO DE <?php  echo strtoupper($nc);?></p></div>
+
+</div>
+</div>
 <div class="contenido">
 
 <form action="intro2.php" method="post" enctype="multipart/form-data">
 <input type="hidden" name="tabla" value="intro">
-<table>
+<table border="4" align="center">
+
+<tr><td colspan="2"><p class="enc">ENVIO DE <?php  echo strtoupper($nc);?></p></td></tr>	
 <tr><td><b>Pais</b></td><td><?php include('provincias.php'); ?></td></tr>
 <tr><td><b>Ciudad</b></td><td>
 <div id="listamunicipios">
@@ -33,9 +37,9 @@ include('../../portada_n/cabecera3.php');?>
 <tr><td colspan="2"><input type="text" name="resp[3]" maxlength="250" size="100"></td></tr>
 <tr><td colspan="2"><input type="text" name="resp[4]" maxlength="250" size="100"></td></tr>
 <tr><td colspan="2"><input type="checkbox" name="otrosmot" value="1">Otros Motivos</td></tr>
-<tr><td colspan="2">URL del video: <input type="text" size="86" name="urlvideo"></td></tr>
+<tr><td colspan="2"><input type="checkbox" name="video" value="1">SELECCIONE SI LA PREGUNTA CONTIENE VIDEO</td></tr>
 <tr><td><b>Ficheros</b></td><td><input type="file" name="fichero"></td></tr>
-<tr><td colspan="2"><input type="submit" class="envio" value="enviar" name="enviar"></td></tr>
+<tr><td align="center" colspan="2"><input type="submit" class="envio" value="enviar" name="enviar"></td></tr>
 </table>
 </form>
 </div>
