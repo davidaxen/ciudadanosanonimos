@@ -4,7 +4,7 @@ include('bbdd.php');
 $fechac=date("Y-m-d",time());
 
 
-$sql1="SELECT * from mensajes where  idempresa='".$ide."' and fechafin>'".$fechac."' or fechafin is null and id not in (SELECT idmensaje FROM respuestamensajes WHERE idempleado='".$idtrab."')";
+$sql1="SELECT * from mensajes where  idempresa='".$ide."' and fechafin>'".$fechac."' or fechafin is null and id not in (SELECT idmensaje FROM respuestamensajes WHERE idempleado='".$idtrab."') AND video = 0 OR id IN (SELECT idmensaje FROM videos)";
 //echo $sql1;
 
 $result1=$conn->query($sql1);
@@ -267,7 +267,7 @@ if ($row10==0){;
 
 
 <?php 
-	  $sql1="SELECT count(*) from videos WHERE idmensaje=(SELECT id FROM mensajes WHERE id = :id)";
+	  $sql1="SELECT count(*) from videos WHERE idmensaje=(SELECT id FROM mensajes WHERE id = :id AND video = 1)";
       $result1=$conn->prepare($sql1);
 	  $result1->bindParam(':id', $idmensaje);
 	  $result1->execute(); 
