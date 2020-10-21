@@ -3,7 +3,7 @@ include('bbdd.php');
 if ($ide!=null){;
 
 include('../../portada_n/cabecera3.php');?>
-<style type="text/css"></style>
+<link rel="stylesheet" type="text/css" href="video.css">
 <script type="text/javascript" language="javascript" src="ajax.js"></script>
 
 <div id="main">
