@@ -47,5 +47,5 @@ include('../../portada_n/cabecera3.php');?>
 </div>
 
 <?php } else {;
-	include ('../../cierre.php');
+include ('../../cierre.php');
  };?>
