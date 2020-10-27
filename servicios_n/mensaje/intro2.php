@@ -1,4 +1,5 @@
 <?php  
+error_reporting(0);
 include('bbdd.php');
 
 if ($ide!=null){;
@@ -81,6 +82,9 @@ if (in_array($extensionPDF, $allowedExtsPDF)) {
           $rutapdf= $_FILES["fichero"]["name"];
           $sqlpdf= "INSERT INTO pdfs (url, idmensaje) VALUES ('pdfs/$idn/$rutapdf', '$idn')";
           $resultpdf=$conn->exec($sqlpdf);
+
+          $sqlmarcadeagua="UPDATE mensajes SET video=1 WHERE id = $idn";
+          $resultmarcadeagua=$conn->exec($sqlmarcadeagua);
       }
     }
 }

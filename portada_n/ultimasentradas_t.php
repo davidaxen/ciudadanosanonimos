@@ -4,7 +4,7 @@ include('bbdd.php');
 $fechac=date("Y-m-d",time());
 
 
-$sql1="SELECT * from mensajes where  idempresa='".$ide."' and fechafin>'".$fechac."' or fechafin is null and id not in (SELECT idmensaje FROM respuestamensajes WHERE idempleado='".$idtrab."')";
+$sql1="SELECT * from mensajes where  idempresa='".$ide."' and fechafin>'".$fechac."' or fechafin is null and id not in (SELECT idmensaje FROM respuestamensajes WHERE idempleado='".$idtrab."') AND video = 0";
 //echo $sql1;
 
 $result1=$conn->query($sql1);
@@ -63,27 +63,6 @@ $row1=mysqli_num_rows($result1);*/
     border: 0px solid #fff;
     text-align:center;
 }
-
-.pdflink {
-  background-color: red;
-  color: white;
-  padding: 1em 1.5em;
-  text-decoration: none;
-  text-transform: uppercase;
-}
-
-.pdflink:hover {
-  background-color: #555;
-}
-
-.pdflink:active {
-  background-color: black;
-}
-
-.pdflink:visited {
-  background-color: #ccc;
-}
-
 
 
 /*agregado nuedo SCROLL*/
@@ -307,7 +286,7 @@ if ($row10==0){;
       
           if ($check[0] !=0) {
           	$sql2="SELECT url from pdfs WHERE idmensaje=(SELECT id FROM mensajes WHERE id = :id)";
-          	$result2=$conn->prepare($sql1);
+          	$result2=$conn->prepare($sql2);
 			$result2->bindParam(':id', $idmensaje);
 			$result2->execute();
           	$url=$result2->fetch();
