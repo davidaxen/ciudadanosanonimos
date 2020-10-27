@@ -37,7 +37,8 @@ include('../../portada_n/cabecera3.php');?>
 <tr><td colspan="2"><input type="text" name="resp[3]" maxlength="250" size="100"></td></tr>
 <tr><td colspan="2"><input type="text" name="resp[4]" maxlength="250" size="100"></td></tr>
 <tr><td colspan="2"><input type="checkbox" name="otrosmot" value="1">Otros Motivos</td></tr>
-<tr><td colspan="2"><input type="checkbox" name="video" value="1">SELECCIONE SI LA PREGUNTA CONTIENE VIDEO</td></tr>
+<!--<tr><td colspan="2"><input type="checkbox" name="video" value="1">SELECCIONE SI LA PREGUNTA CONTIENE VIDEO</td></tr>-->
+<tr><td><b>Videos</b></td><td><input type="file" name="video"></td></tr>
 <tr><td><b>Ficheros</b></td><td><input type="file" name="fichero"></td></tr>
 <tr><td align="center" colspan="2"><input type="submit" class="envio" value="enviar" name="enviar"></td></tr>
 </table>

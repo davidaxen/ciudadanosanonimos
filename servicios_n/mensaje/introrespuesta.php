@@ -14,19 +14,33 @@ if ($ide!=null){;
 
 <?php  
 
-$sql1 = "INSERT INTO respuestamensajes (idempresa,idempleado,idmensaje,respuesta,textorespuesta) VALUES 
-(:ide,:idtrab,:id,:respuesta,:textotro)";
-//echo $sql1;
 
 
+if (!empty($textotro)) {
+	$sql1 = "INSERT INTO respuestamensajes (idempresa,idempleado,idmensaje,respuesta,textorespuesta) VALUES 
+	(:ide,:idtrab,:id,:resp,:textotro)";
 
-$result1=$conn->prepare($sql1);
-$result1->bindValue(':ide', $ide);
-$result1->bindValue(':idtrab', $idtrab);
-$result1->bindValue(':id', $id);
-$result1->bindValue(':respuesta', $respuesta);
-$result1->bindValue(':textotro', $textotro);
+	$result1=$conn->prepare($sql1);
+	$result1->bindParam(':ide', $ide);
+	$result1->bindParam(':idtrab', $idtrab);
+	$result1->bindParam(':id', $id);
+	$result1->bindParam(':resp', $respuesta);
+	$result1->bindParam(':textotro', $textotro);
+
+}else{
+	$sql1 = "INSERT INTO respuestamensajes (idempresa,idempleado,idmensaje,respuesta) VALUES 
+	(:ide,:idtrab,:id,:resp)";
+
+	$result1=$conn->prepare($sql1);
+	$result1->bindParam(':ide', $ide);
+	$result1->bindParam(':idtrab', $idtrab);
+	$result1->bindParam(':id', $id);
+	$result1->bindParam(':resp', $respuesta);
+}
+
 $result1->execute();
+
+
 //$result1=mysqli_query ($conn,$sql1) or die ("Invalid result ipuntcont1");
 
 
