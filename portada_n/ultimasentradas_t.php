@@ -4,7 +4,7 @@ include('bbdd.php');
 $fechac=date("Y-m-d",time());
 
 
-$sql1="SELECT * from mensajes where  idempresa='".$ide."' and fechafin>'".$fechac."' or fechafin is null and id not in (SELECT idmensaje FROM respuestamensajes WHERE idempleado='".$idtrab."') AND video = 0";
+$sql1="SELECT * from mensajes where  idempresa='".$ide."' and fechafin>'".$fechac."' or fechafin is null and id not in (SELECT idmensaje FROM respuestamensajes WHERE idempleado='".$idtrab."') AND pdf = 0";
 //echo $sql1;
 
 $result1=$conn->query($sql1);
