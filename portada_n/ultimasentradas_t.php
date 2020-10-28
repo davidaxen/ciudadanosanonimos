@@ -4,7 +4,7 @@ include('bbdd.php');
 $fechac=date("Y-m-d",time());
 
 
-$sql1="SELECT * from mensajes where  idempresa='".$ide."' and fechafin>'".$fechac."' or fechafin is null and id not in (SELECT idmensaje FROM respuestamensajes WHERE idempleado='".$idtrab."')";
+$sql1="SELECT * from mensajes where  idempresa='".$ide."' and fechafin>'".$fechac."' or fechafin is null and id not in (SELECT idmensaje FROM respuestamensajes WHERE idempleado='".$idtrab."') AND pdf = 0";
 //echo $sql1;
 
 $result1=$conn->query($sql1);
@@ -34,6 +34,7 @@ $row1=mysqli_num_rows($result1);*/
     display:inline-table;
 }
 
+
 .caja3{
 	 padding-top:5px;
 	 padding-left:5px;
@@ -62,6 +63,7 @@ $row1=mysqli_num_rows($result1);*/
     border: 0px solid #fff;
     text-align:center;
 }
+
 
 /*agregado nuedo SCROLL*/
 
@@ -118,9 +120,18 @@ $row1=mysqli_num_rows($result1);*/
 }
 
 #wrap {
-    float: left;
-    position: relative;
-    left: 48%;
+	margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%)
+}
+
+
+.container {
+	width: 100%;
+	position: relative;
 }
 
 .active, .dot:hover {
@@ -158,9 +169,7 @@ $row1=mysqli_num_rows($result1);*/
 <!--onload="setTimeout('refrescar1()', 5000);"-->
 <body >
 <?php 
-/*for ($j=0;$j<$row1;$j++){;
-mysqli_data_seek($result1,$j);
-$resultado1=mysqli_fetch_array($result1);*/
+
 if ($row) {
 
 $i=1;
@@ -174,11 +183,8 @@ $idmensaje=$row1mos['id'];
 
 
 $sql10="SELECT * from respuestamensajes where  idempresa='".$ide."' and id='".$idmensaje."' and idempleado='".$idtrab."'";
-//echo $sql10; 
 $result10=$conn->query($sql10);
 $row10=count($result10->fetchAll());
-/*$result10=mysqli_query ($conn,$sql10) or die ("Invalid result 1");
-$row10=mysqli_num_rows($result10);*/
 if ($row10==0){;
 
 ?>
@@ -264,9 +270,37 @@ if ($row10==0){;
 		<input style="" type="submit" class="envio" value="enviar" name="enviar">
 
 		</br></br></br>
+	<?php 
+		$sql1="SELECT count(*) from pdfs WHERE idmensaje=(SELECT id FROM mensajes WHERE id = :id)";
+
+		//echo "$sql1";
+
+		/*$result1=$conn->query($sql1);
+		$fetchAll1=$result1->fetchAll();
+		$row=count($fetchAll1);*/
+
+		$result1=$conn->prepare($sql1);
+		$result1->bindParam(':id', $idmensaje);
+		$result1->execute();
+		$check=$result1->fetch();
+      
+          if ($check[0] !=0) {
+          	$sql2="SELECT url from pdfs WHERE idmensaje=(SELECT id FROM mensajes WHERE id = :id)";
+          	$result2=$conn->prepare($sql2);
+			$result2->bindParam(':id', $idmensaje);
+			$result2->execute();
+          	$url=$result2->fetch();
+          	$urltotal=$url[0];
+          	$urlfinal = substr($urltotal, 5);
+          	echo "<a class='pdflink' target='_blank' href='../servicios_n/abrirpdf.php?file=".$urlfinal."'>Ver PDF</a>";
+          		?>
+
+	
 
 
-<?php 
+	<?php 
+ 		}
+
 	  $sql1="SELECT count(*) from videos WHERE idmensaje=(SELECT id FROM mensajes WHERE id = :id)";
       $result1=$conn->prepare($sql1);
 	  $result1->bindParam(':id', $idmensaje);
@@ -280,22 +314,16 @@ if ($row10==0){;
 			<tr>
 				<td>
 					<div style=" border: solid 5px; border-radius: 10px 10px 10px 10px; padding: 5px; align-content: center;" >
-			 			<iframe width="400" height="275" 
-
-			 			allowfullscreen="allowfullscreen"
-				       	mozallowfullscreen="mozallowfullscreen" 
-				        msallowfullscreen="msallowfullscreen" 
-				        oallowfullscreen="oallowfullscreen" 
-				        webkitallowfullscreen="webkitallowfullscreen"
-
-						src="<?php 
-				          $sql1="SELECT url from videos WHERE idmensaje=(SELECT id FROM mensajes WHERE id = :id)";
-				          $result1=$conn->prepare($sql1);
-						  $result1->bindParam(':id', $idmensaje);
-						  $result1->execute();
-				          $url=$result1->fetch(); 
-				          echo($url[0]);?>">
-						</iframe>
+						<video width="320" height="260" controls>
+						  <source src="<?php 
+						          $sql1="SELECT url from videos WHERE idmensaje=(SELECT id FROM mensajes WHERE id = :id)";
+						          $result1=$conn->prepare($sql1);
+								  $result1->bindParam(':id', $idmensaje);
+								  $result1->execute();
+						          $url=$result1->fetch(); 
+						          echo("../servicios_n/".$url[0]);?>">
+						Tu navegador no sorporta los videos.
+						</video>
 					</div>
 				</td>
 			</tr>
@@ -305,12 +333,8 @@ if ($row10==0){;
 
 	  	<?php 
 	  		}
-	  	?>
-	  
+	  	?>	  
 
-
-		
-		
 	</div>
 </div>
 
@@ -323,23 +347,24 @@ $i=$i+1;
 };?>
 
 <!--agregado nuedo SCROLL-->
-
-<!-- The dots/circles -->
+ <div class="container">
+ 	<div id="wrap" style="margin-top: 10px;">
+ 		<div>
 <?php 
 for ($i=1; $i <= $row; $i++) { 
 	
  ?>
-<div id="wrap" style="margin-top: 10px;">
-	<div style="text-align:center">
-	  <span class="dot" onclick="currentSlide(<?php echo $i; ?>)"></span>
-	</div>
-</div>
-
-<script>
-	currentSlide(1);
-</script>
+	<span class="dot" onclick="currentSlide(<?php echo $i; ?>)"></span>
+	<script>
+		currentSlide(1);
+	</script>
 
 <?php }
+
+?>		</div>
+	</div>
+ </div>
+<?php
 }else{
 ?>
 <div style="font-size: 15px; text-align: center;">GRACIAS POR RESPONDER A TODAS LAS PREGUNTAS</div>

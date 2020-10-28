@@ -108,11 +108,14 @@ setcookie("pag1",$pag1);
 				$pag='indexprueba'.$modulo.'.php'; 
 				//echo $pag;
 				include_once($pag);
-};
+}
 	
-	};		
+	}	
 	
-}else{;
+}else{
 
 include ('cierre.php');
-};?>
+
+}
+?>
+
