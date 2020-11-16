@@ -29,6 +29,7 @@ a {
     a:hover { text-decoration:underline; }
   
 #wrapper, #loginform {
+    border-radius: 2%;
     margin:0 auto;
     padding-bottom:25px;
     background:#EAF0F2;
@@ -40,6 +41,7 @@ a {
     #loginform p { margin: 5px; }
   
 #chatbox {
+    border-radius: 2%;
     background-image: url("marca4.png"); 
     background-color: white;
     text-align:left;
@@ -53,6 +55,7 @@ a {
      }
   
 #usermsg {
+    border-radius: 2%;
     height: 30px;
     width:395px;
     border:2px solid grey; }

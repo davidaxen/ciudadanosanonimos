@@ -102,6 +102,7 @@ $(document).ready(function () {
   <th><button class="tablinks" onclick="openCity(event, 'd0')" id="defaultOpen"><img src="../img/iconos/serviciose.png" width="32px" style="vertical-align:middle;"> Preguntas Lanzadas</button></th>
   <th><button class="tablinks" onclick="openCity(event, 'd1')" id="defaultOpen"><img src="../img/iconos/incidencias.png" width="32px" style="vertical-align:middle;"> Ultimos Resultados</button></th>
   <th><button class="tablinks" onclick="openCity(event, 'd2')" id="defaultOpen"><img src="../img/iconos/18-incidencia.png" width="32px" style="vertical-align:middle;"> Incidencias</button></th>
+    <th><button class="tablinks" onclick="openCity(event, 'd3')" id="defaultOpen"><img src="../img/iconos/18-incidencia.png" width="32px" style="vertical-align:middle;"> Chat</button></th>
 
 
   
@@ -127,6 +128,11 @@ $(document).ready(function () {
 <div id="d2" class="tabcontent">
   <h3><img src="../img/iconos/18-incidencia.png" width="32px" style="vertical-align:middle;"> Incidencias</h3>
   <p><iframe style="border:0" name="bloque0" src="portada_n/incidencias_t.php" width="100%" height="325" scrolling="no"></iframe></p>
+</div>
+
+<div id="d3" class="tabcontent">
+  <h3><img src="../img/iconos/18-incidencia.png" width="32px" style="vertical-align:middle;"> chat</h3>
+  <p><iframe style="border:0" name="bloque0" src="chat/index.php" width="100%" height="520" scrolling="no"></iframe></p>
 </div>
 
 
