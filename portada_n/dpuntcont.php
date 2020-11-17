@@ -48,4 +48,6 @@ include('../../portada_n/cabecera3.php');?>
 
 <?php } else {;
 include ('../../cierre.php');
+
  };?>
+

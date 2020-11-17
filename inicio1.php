@@ -115,5 +115,7 @@ setcookie("pag1",$pag1);
 }else{
 
 include ('cierre.php');
+
 }
 ?>
+

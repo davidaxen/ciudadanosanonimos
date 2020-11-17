@@ -7,14 +7,17 @@
 <style type="text/css">
 	/* CSS Document */
 body {
-    font:12px arial;
+    font-family: "Times New Roman", Times, serif;
     color: #222;
     text-align:center;
     padding:35px; }
   
 form, p, span {
+    font-family: Helvetica;
     margin:0;
     padding:0; }
+
+
   
 input { font:12px arial; }
   
@@ -25,32 +28,56 @@ a {
     a:hover { text-decoration:underline; }
   
 #wrapper, #loginform {
+    border-radius: 2%;
     margin:0 auto;
     padding-bottom:25px;
-    background:#EBF4FB;
+    background:#EAF0F2;
     width:504px;
-    border:1px solid #ACD8F0; }
+    border:3px solid grey; }
   
 #loginform { padding-top:18px; }
   
     #loginform p { margin: 5px; }
   
 #chatbox {
+    border-radius: 2%;
+    background-image: url("marca4.png"); 
+    background-color: white;
     text-align:left;
     margin:0 auto;
     margin-bottom:25px;
     padding:10px;
-    background:#fff;
     height:270px;
     width:430px;
-    border:1px solid #ACD8F0;
-    overflow:auto; }
+    border:2px solid grey;
+    
+     }
   
 #usermsg {
+    border-radius: 2%;
+    height: 30px;
     width:395px;
-    border:1px solid #ACD8F0; }
+    border:2px solid grey; }
   
-#submit { width: 60px; }
+
+.redondo{
+background-color: #EAF0F2;
+  border-color: black;
+  color: black;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+
+.redondo1:hover{
+  border-color: black;
+  color: white; 
+  background-color: black;
+  display: block;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
   
 .error { color: #ff0000; }
   
@@ -67,8 +94,7 @@ a {
 
 <div id="wrapper">
   <div id="menu">
-        <p class="welcome">Welcome<b></b></p>
-        <p class="logout"><a id="exit" href="#">Exit Chat</a></p>
+        <p style="font-family: Helvetica" class="welcome">Bienvenidos Ciudadanos Anonimos<b></b></p>
         <div style="clear:both"></div>
     </div>
     <div id="chatbox" >
@@ -83,11 +109,15 @@ a {
 		}
 		?>
     </div>
-     
+    <table align="center">
     <form name="message" action="">
-        <input name="usermsg" type="text" id="usermsg" size="63" />
-        <input name="submitmsg" type="submit"  id="submitmsg" value="Send" />
+        <tr>
+        <td><input name="usermsg" type="text" id="usermsg" size="63" placeholder="Escriba su mensaje aquí..." /></td>
+        <td><input class="redondo redondo1" type="submit"  id="submitmsg" value="enviar" /></td>
+        </tr>
+        
     </form>
+    </table>
 </div>
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3/jquery.min.js"></script>
 <script type="text/javascript">

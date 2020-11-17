@@ -15,13 +15,15 @@ $logo=$resultado['logo'];
 
 
 
-<HTML>
+<html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <TITLE>PROGRAMA DE GESTION DE CIUDADANOS ANONIMOS</TITLE>
-<meta name='Description' content='PROGRAMA DE GESTION DE CIUDADANOS ANONIMOS'>
-<meta name='viewport' content='width=device-width, initial-scale=1'>
-<link rel="stylesheet" href="solicitud.css">
+
+<link rel="stylesheet" type="text/css" href="boostrap1.css" media="screen" />
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script type="text/javascript" language="javascript" src="ajax.js"></script>
 <script>
 
@@ -41,37 +43,33 @@ function myFunction(valor) {
 
 
 </head>
-<body class='html' style='background-image:url(../img/iconos/portada_ca.jpg);
-  background-repeat: no-repeat;
-  background-size: cover;'>
-<div class='cuadro'>
-<div class='hijo' style='background-color:white'>
-<table>
+
+
+<body class='html' style='background-image:url(../img/iconos/portada_ca.jpg);'>
+
+<div class='wrapper fadeInDown'>
+  <div id='formContent'>
 <form name="form1" method="post" action="registro1.php"> 
 
-  <div class='imgcontainer'>
+  <div class='fadeIn first'>
     <img src='../img/logo-ciud-anonimos.png' width='250px'>
     <h3 style="text-align: center;color:#000">SOLICITUD DE PARTICIPACI&Oacute;N EN CIUDADANOS ANONIMOS</h3>
   </div>
 
-<tr>
-  <td><b>Nombre/Apodo</b><td>
-  <input tabindex="2" name="nombreemp" id="nombre" type="text" required/>
-</tr>
-<tr>
-  <td><b>E-mail</b></td>
-  <td><input tabindex="3" name="emailemp" id="emailemp" type="text" required onblur="emailc()"/></td>
-</tr>
-<tr>
-  <td><b>Contrase&ntilde;a</b></td>
-    <td><input style="width: 95%" type="password" tabindex=4 id="psw" name="psw" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Al menos una minuscula, una mayuscula, un numero y minimo 8 caracteres" required></td>
-    <td style= ><img src='../img/iconos/pass.png' width='32px' onclick="myFunction('psw')"  style='vertical-align:middle'></td>
-</tr>
+  <input placeholder="Nombre" class="fadeIn second" tabindex="2" name="nombreemp" id="nombre" type="text" required/>
+
+  <input placeholder="Correo Electrónico" class="fadeIn second" tabindex="3" name="emailemp" id="emailemp" type="text" required onblur="emailc()"/>
 
 
-<tr><td><b>Repetir Contrase&ntilde;a</b></td><td><input tabindex="5" name="psw2" id="psw2" required type="password" required  onblur="contrase()"  />
-<img src='../img/iconos/pass.png' width='32px' onclick="myFunction('psw2')"  style='vertical-align:middle'>
-</td></tr>
+    <input placeholder="Contraseña" class="fadeIn third" type="password" tabindex=4 id="psw" name="psw" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Al menos una minuscula, una mayuscula, un numero y minimo 8 caracteres" required>
+    <br>
+    <img align="center" src='../img/iconos/pass.png' width='32px' onclick="myFunction('psw')"  style='vertical-align:middle'>
+    <br>
+    <input placeholder="Repetir Contraseña" class="fadeIn third" tabindex="5" name="psw2" id="psw2" required type="password" required  onblur="contrase()"  />
+    <br>
+    <img src='../img/iconos/pass.png' width='32px' onclick="myFunction('psw2')"  style='vertical-align:middle'>
+    <br>
+
 
 <!--<div id="message">
   <h4>Condiciones para la contrase&ntilde;a:</h4>
@@ -81,43 +79,37 @@ function myFunction(valor) {
   <span id="length" class="invalid">Minimo <b>8 caracteres</b></span><br/>
 </div>-->
 
-<tr>
-  <td><b>Tel&eacute;fono Contacto</b></td>
-  <td><input tabindex="6" name="telcontacto" id="telcontacto" required type="text"/></td>
-</tr>
-<tr>
-  <td><b>Pais</b></td>
-  <td><?php include('provincias.php'); ?></td></tr>
-<tr>
-  <td><b>Ciudad</b></td>
-  <td><div id="listamunicipios">
+  <input class="fadeIn second" placeholder="telefono de Contacto" tabindex="6" name="telcontacto" id="telcontacto" required type="text"/>
+<br>
+  <b>Pais</b>
+  <br>
+  <?php include('provincias.php'); ?>
+  <br>
+  <b>Ciudad</b>
+  <div id="listamunicipios">
 
       <select name="ciudad" id="obj_municipio" >
-        <option>Seleccionar...</option>
+        <option class="fadeIn second">Seleccionar...</option>
       </select>
     </div>
 
-  </td>
-</tr>
-<tr>
-  <td colspan="2"><b>He podido leer y entiendo la <a href="https://www.ciudadanosanonimos.com/politica-y-aviso">Politica de Privacidad y Aviso Legal</a></td>
-  <td style="padding-top: 17px; padding-right: 10px;"><input name="politica" id="politica" required type="checkbox"/></td>
+    <br>
+    <div class="formFooter" >
+        <a class="underlineHover" href="https://www.ciudadanosanonimos.com/politica-y-aviso">Politica de Privacidad y Aviso Legal</a>
+         <input name="politica" id="politica" required type="checkbox"/>
+    </div>
 
-<input type="hidden" name="idpr" value="<?php  echo $idpr;?>">
-<tr>    
-    <td></td>
-    <td style="padding-left: 90px"><button>Enviar</button></td>
-    <td></td>
-</tr>
+
+ 
+
+
+<br>
+    <input type='submit' class="fadeIn fourth" type='submit' value='Enviar'>
 </form>
 
-</table>
-
 </div>
 </div>
-<p>
- 
-</p>
+</body>
 
 
 
@@ -244,31 +236,7 @@ myInput.onkeyup = function() {
   }
 }
 </script>
-
-
-
-<div style='background-color:white;height:220px;color:#fff;'>
-<div class='hijo2'>
-
-
-  <div class='imgcontainer'>
-<img src='../img/logo-ciud-anonimos.png' width='250px'>
-      <br/>CIUDADANOS ANONIMOS EN ACCION
-  </div>
-
-  <div class='container' style='column-count:2;background-color:white;'>
-<br/>
-<br/>
-<br/>
-
-<br/>
-<br/>
-<br/>        
-  </div>
-
-
-</div>
-</div>
+</html>
 
 <?php 
 } else {;
