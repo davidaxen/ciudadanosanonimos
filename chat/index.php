@@ -2,7 +2,6 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <title>Chat - Customer Module</title>
-<link type="text/css" rel="stylesheet" href="style.css" />
 </head>
  
 <style type="text/css">
@@ -76,6 +75,7 @@ a {
     	<?php
 		if(file_exists("log.html") && filesize("log.html") > 0){
 		    $handle = fopen("log.html", "r");
+
 		    $contents = fread($handle, filesize("log.html"));
 		    fclose($handle);
 		     
@@ -93,6 +93,11 @@ a {
 <script type="text/javascript">
 // jQuery Document
 setInterval (loadLog, 500);
+
+function eliminarTildes(texto) {
+    return texto.normalize('NFD').replace(/[\u0300-\u036f]/g,"");
+}
+
 function loadLog(){		
 	var oldscrollHeight = $("#chatbox").attr("scrollHeight") - 20; //Scroll height before the request
 	$.ajax({
@@ -110,10 +115,27 @@ function loadLog(){
 	});
 }
 
-$("#submitmsg").click(function(){	
-	var clientmsg = $("#usermsg").val();
-	$.post("post.php", {text: clientmsg});				
-	$("#usermsg").attr("value", "");
+$("#submitmsg").click(function(){
+    var groserias = ["puta", "puto","marica","pirobo","gonorrea"]
+    var textoEnviado = $("#usermsg").val();
+
+    var palabraSinTildes = eliminarTildes(textoEnviado);
+
+    for(var i = 0; i < groserias.length;i++){
+        regex = new RegExp("(^|\\s)"+groserias[i]+"($|(?=\\s))","gi");
+        textoEnviado = textoEnviado.replace(regex, function($0, $1){return "EsTaPaLaBrANoEsVaLiDa"});
+    }
+
+	//var clientmsg = $("#usermsg").val();
+    console.log(textoEnviado);
+    if (textoEnviado != "EsTaPaLaBrANoEsVaLiDa") {
+        var clientmsg = textoEnviado;
+        $.post("post.php", {text: clientmsg});              
+        $("#usermsg").attr("value", "");
+    }else{
+        alert("No se pueden introducir groserias");
+    }
+    
 	return false;
 });
 
