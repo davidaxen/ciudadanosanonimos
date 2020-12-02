@@ -168,9 +168,12 @@ $row1=mysqli_num_rows($result1);*/
 		<meta http-equiv="content-type" content="application/xhtml+xml; charset=ISO-8859-1">
 <!--onload="setTimeout('refrescar1()', 5000);"-->
 <body>
+
+
 <?php 
 
 if ($row) {
+	include("../donaciones/index.php");
 
 $i=1;
 foreach ($result1 as $row1mos) {

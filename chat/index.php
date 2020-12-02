@@ -108,6 +108,7 @@
 
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3/jquery.min.js"></script>
 <script type="text/javascript">
+
 // jQuery Document
 setInterval (loadLog, 500);
 function loadLog(){   
@@ -134,8 +135,16 @@ $("#submitmsg").click(function(){
   return false;
 });
 
+if(comprobador){
+    console.log("hola");
+    var newscrollHeight = $("#chatbox").attr("scrollHeight") - 20;
+    $("#chatbox").animate({ scrollTop: newscrollHeight }, 'normal');
+}else{
+    console.log("no");
+}
+
 $(document).ready(function(){
- 
+
 });
 </script>
 </body>
