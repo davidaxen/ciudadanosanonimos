@@ -3,11 +3,12 @@
 <head>
 
 <!-- cabecera -->
+  <link rel="stylesheet" type="text/css" href="cabecera.css">
   <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Convergence" />
   <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" >
   <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
 <!-- chat -->
-  <link rel="stylesheet" type="text/css" href="chat.css">
+  <link rel="stylesheet" type="text/css" href="chat1.css">
   <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
 
   <meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
@@ -52,18 +53,19 @@
 <div class="col-md-6 col-lg-7 col-md-offset-3" >
   <div class="panel panel-default chat-widget">
     <div class="panel-heading">
- 
       <h3 align="center"><i class="fa fa-comments"></i></h3>
       <h3 align="center" style="font-family: Helvetica" class="welcome">Bienvenidos Ciudadanos Anonimos</h3>
     </div>
+    
+    <div class="panel-body">
 
-            <?php
+       <?php
               if(file_exists("log.html") && filesize("log.html") > 0){
                 $handle = fopen("log.html", "r");
                  $contents = fread($handle, filesize("log.html"));
                 fclose($handle);
-              ?>
-   <div class="panel-body">
+          ?>
+
           <div class="message">
             <div class="message-text-wrapper">
               <div class="message-text" id="chatbox" >
@@ -75,22 +77,28 @@
             </div>
 
           </div>
-
-
-    </div>
-
-        <div align="center" class="panel-footer">
-          <div class="input-group">
-            <form style=" display: flex; justify-content: center; margin-top: 10%;"  name="message" action="">
-
-            <input class="form-control pr" type="text" id="usermsg" size="63" placeholder="Escriba su mensaje aquí..." /></td>
-            <button class="btn btn-primary" type="submit"  id="submitmsg" value="enviar"/>enviar</button>
-        
-            </form>
-          </div>
-        </div>
       </div>
-    </div>
+
+
+      <table  style="margin-bottom: 15px;" align="center">
+          <tr>
+            <td>
+              <div class="panel-footer">
+              <div class="input-group">
+            </td>
+            <td>
+              <form  name="message" action="">
+              <input class="form-control pr" type="text" id="usermsg" size="63" placeholder="Escriba su mensaje aquí..." />
+             <td>
+              <button class="btn btn-primary" type="submit"  id="submitmsg" value="enviar"/>enviar</button>
+              </form>
+              </td>
+              </div>
+              </div>
+            </td>
+          </tr>
+      </table>
+
   </div>
 </div>
 
