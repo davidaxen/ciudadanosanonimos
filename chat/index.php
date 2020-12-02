@@ -37,7 +37,7 @@ a {
   
 #loginform { padding-top:18px; }
   
-    #loginform p { margin: 5px; }
+#loginform p { margin: 5px; }
   
 #chatbox {
     border-radius: 2%;
@@ -50,7 +50,7 @@ a {
     height:270px;
     width:430px;
     border:2px solid grey;
-    
+    overflow:auto;    
      }
   
 #usermsg {
@@ -97,7 +97,7 @@ background-color: #EAF0F2;
         <p style="font-family: Helvetica" class="welcome">Bienvenidos Ciudadanos Anonimos<b></b></p>
         <div style="clear:both"></div>
     </div>
-    <div id="chatbox" >
+    <div class="chatbox" id="chatbox">
     	<?php
 		if(file_exists("log.html") && filesize("log.html") > 0){
 		    $handle = fopen("log.html", "r");
@@ -121,14 +121,20 @@ background-color: #EAF0F2;
 </div>
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3/jquery.min.js"></script>
 <script type="text/javascript">
-// jQuery Document
-setInterval (loadLog, 500);
+
+
+var comprobador;
+setInterval (loadLog, 100);
+
+/*objDiv.scrollTop = objDiv.scrollHeight;
+objDiv.scrollTop = objDiv.scrollHeight - objDiv.clientHeight;*/
 
 function eliminarTildes(texto) {
     return texto.normalize('NFD').replace(/[\u0300-\u036f]/g,"");
 }
 
-function loadLog(){		
+function loadLog(){
+    comprobador= true;
 	var oldscrollHeight = $("#chatbox").attr("scrollHeight") - 20; //Scroll height before the request
 	$.ajax({
 		url: "log.html",
@@ -138,9 +144,11 @@ function loadLog(){
 			
 			//Auto-scroll			
 			var newscrollHeight = $("#chatbox").attr("scrollHeight") - 20; //Scroll height after the request
+            //console.log(newscrollHeight +" - "+ oldscrollHeight);
 			if(newscrollHeight > oldscrollHeight){
+                //console.log("prueba");
 				$("#chatbox").animate({ scrollTop: newscrollHeight }, 'normal'); //Autoscroll to bottom of div
-			}				
+			}
 	  	},
 	});
 }
@@ -153,15 +161,16 @@ $("#submitmsg").click(function(){
 
     for(var i = 0; i < groserias.length;i++){
         regex = new RegExp("(^|\\s)"+groserias[i]+"($|(?=\\s))","gi");
-        textoEnviado = textoEnviado.replace(regex, function($0, $1){return "EsTaPaLaBrANoEsVaLiDa"});
+        palabraSinTildes = palabraSinTildes.replace(regex, function($0, $1){return "EsTaPaLaBrANoEsVaLiDa"});
     }
-
 	//var clientmsg = $("#usermsg").val();
-    console.log(textoEnviado);
-    if (textoEnviado != "EsTaPaLaBrANoEsVaLiDa") {
+    //console.log(textoEnviado);
+    if (palabraSinTildes != "EsTaPaLaBrANoEsVaLiDa" ) {
         var clientmsg = textoEnviado;
         $.post("post.php", {text: clientmsg});              
         $("#usermsg").attr("value", "");
+    }else if(palabraSinTildes == ""){
+        null;
     }else{
         alert("No se pueden introducir groserias");
     }
@@ -169,8 +178,16 @@ $("#submitmsg").click(function(){
 	return false;
 });
 
+if(comprobador){
+    console.log("hola");
+    var newscrollHeight = $("#chatbox").attr("scrollHeight") - 20;
+    $("#chatbox").animate({ scrollTop: newscrollHeight }, 'normal');
+}else{
+    console.log("no");
+}
+
 $(document).ready(function(){
- 
+
 });
 </script>
 </body>
