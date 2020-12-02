@@ -167,7 +167,7 @@ $row1=mysqli_num_rows($result1);*/
 		<meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
 		<meta http-equiv="content-type" content="application/xhtml+xml; charset=ISO-8859-1">
 <!--onload="setTimeout('refrescar1()', 5000);"-->
-<body >
+<body>
 <?php 
 
 if ($row) {
@@ -313,8 +313,9 @@ if ($row10==0){;
 	  	<table align="center" >
 			<tr>
 				<td>
-					<div style=" border: solid 5px; border-radius: 10px 10px 10px 10px; padding: 5px; align-content: center;" >
-						<video width="320" height="260" controls>
+					<div oncontextmenu="return false;" style=" border: solid 5px; border-radius: 10px 10px 10px 10px; padding: 5px; align-content: center;" >
+						<img src="../administracion_n/marca/marca video 2.png" width="320" height="260" style="position: absolute;">
+						<video width="320" height="260" controls disablepictureinpicture controlsList="nodownload">
 						  <source src="<?php 
 						          $sql1="SELECT url from videos WHERE idmensaje=(SELECT id FROM mensajes WHERE id = :id)";
 						          $result1=$conn->prepare($sql1);
