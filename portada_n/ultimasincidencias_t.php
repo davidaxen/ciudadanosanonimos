@@ -18,13 +18,14 @@ $mes=$mesa[1];
 };
 //dia='".$fechac."' and
 
-$sql="SELECT * from mensajes where idempresa=:ide and fechafin>:fechac or fechafin is null order by fechafin desc";
+$sql="SELECT * from mensajes where idempresa=$ide and fechafin>$fechac or fechafin is null order by fechafin desc";
 
-$result=$conn->prepare($sql);
-$result->bindParam(':ide',$ide);
+$result=$conn->query($sql);
+
+/*$result->bindParam(':ide',$ide);
 $result->bindParam(':fechac',$fechac);
-$result->execute();
-$resultado=$result->fetch();
+
+$result->execute();*/
 
 ?>
 
@@ -67,13 +68,9 @@ function refrescar()
         		</div>
   			</div>
 		<div class="[ container ]">
-  		<div class="[ collapse navbar-collapse ]" id="bs-example-navbar-collapse-1">
-       		<ul class="[ nav navbar-nav navbar-right ]">
-        		<li><a href="../portada_n/ultimasincidencias_t.php" class="[ animate ]" onclick="openCity(event, 'd0')" >ULTIMOS RESULTADOS</a></li>
-        		<li><a href="../incidencias_t.php" class="[ animate ]" onclick="openCity(event, 'd0')" >INCIDENCIAS</a></li>
-        		<li><a href="../chat/index.php" class="[ animate ]" onclick="openCity(event, 'd0')" >CHAT</a></li>
-        		<li><a href="../portada_n/salir.php" class="[ animate ]" onclick="openCity(event, 'd0')" >LOG OUT</a></li>
-     		</ul>
+  			<?php 
+				include_once("showmenu.php");
+			?>	
    		</div>
  	</nav>
 
@@ -100,7 +97,8 @@ function refrescar()
  								line-height: 20px; ">ULTIMOS RESULTADOS:</p>
 				</td>
 			</tr>
-<?php 
+
+<?php
 
 	foreach ($result as $rowmos) {
 
@@ -108,28 +106,19 @@ function refrescar()
 	$fechafin=$rowmos['fechafin'];
 	$texto=$rowmos['texto'];
 ?>
-<tr><td>  <?php echo "texto"; ?> </td></tr>
-
+	<tr>
+		<td>
+			<div align="center"  >
+			<?php  echo " ".$texto;?>
+			<div>
+		</td>
+	</tr>
 <?php 
 
 
 } ?>
-
-			<tr><td>&nbsp;</td></tr>
-			<tr><td>&nbsp;</td></tr>
-			<tr>
-				<td>
-					<div align="center" style=" text-align: center;
- 												font-family: Convergence; 
- 												font-size: 20px; 
- 												font-style: normal; 
- 												font-variant: normal; 
- 												font-weight: 400; 
- 												line-height: 20px;" >
-					<?php  echo " ".$texto;?>
-					<div>
-				</td>
-			</tr>
+			
+			
 		</table>
 	</div>
 </div>
