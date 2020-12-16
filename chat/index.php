@@ -42,8 +42,6 @@
     
     <div class="panel-body">
 
-       
-
           <div class="message" style="height: 520px">
             <div class="message-text-wrapper" style="height: 520px">
               <div class="message-text" id="chatbox" style="height: 530px; overflow-y: auto;">
