@@ -1,3 +1,5 @@
+
+
 <?php   
 include('bbdd.php');
 
@@ -163,14 +165,40 @@ $row1=mysqli_num_rows($result1);*/
 .nover {display:none}
 </style>
 
-		<link rel="stylesheet" href="/estilo/estilonuevo.php" type="text/css" media="screen" charset="utf-8" >
-		<meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
-		<meta http-equiv="content-type" content="application/xhtml+xml; charset=ISO-8859-1">
+<head>
+	<!-- cabecera -->
+  <link rel="stylesheet" type="text/css" href="cabecera.css">
+  <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Convergence" />
+  <!-- esta linea es la que hace que falle -->
+  <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" >
+  <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+
+<!-- esta linea es la que estaba de antes que cambiaras la parte visual de toda la pagina -->
+  <link rel="stylesheet" href="/estilo/estilonuevo.php" type="text/css" media="screen" charset="utf-8" >
+</head>
+
+		
 <!--onload="setTimeout('refrescar1()', 5000);"-->
-<body>
+<body >
+
+<nav class="[ navbar navbar-fixed-top ][ navbar-bootsnipp animate ]" role="navigation">
+        <div class="[ navbar-header ]">
+            <div class="[ animbrand ]">
+                <a class="[ navbar-brand ][ animate ]" href="../inicio1.php"><img src="../img/ciudadanoslogo.png"></a>
+            </div>
+        </div>
+    <div class="[ container ]">
+        <?php 
+          include_once("../portada_n/showmenu.php");
+        ?>
+      </div>
+  </nav>
+
+<div style=" margin-top: 15%;" class='wrapper fadeInDown' >
 <?php 
 
 if ($row) {
+	
 
 $i=1;
 foreach ($result1 as $row1mos) {
@@ -188,6 +216,7 @@ $row10=count($result10->fetchAll());
 if ($row10==0){;
 
 ?>
+
 		<!-- Next and previous buttons -->
 	<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
 	<a class="next" onclick="plusSlides(1)">&#10095;</a>
@@ -372,4 +401,6 @@ for ($i=1; $i <= $row; $i++) {
 <a href="/inicio1.php" target="_parent" style="text-align: center;">Volver al inicio</a>
 <?php
 } ?>
+
+</div>
 </body>

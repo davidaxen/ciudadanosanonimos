@@ -1,6 +1,9 @@
 <?php 
 include('bbdd.php');
 include ('../yo.php');
+if (isset($_REQUEST['idpr'])) {
+  $idpr = $_REQUEST['idpr'];
+}
 if ($idpr!=null){;
 
 $sql="SELECT * from proyectos where idproyectos='".$idpr."'";
@@ -84,11 +87,9 @@ $codvalidarinc=$emailemp.'#;&'.$psw;
 
 $sql1 = "INSERT INTO validar (email,nombreemp,nifemp,codvalidar,password,telcontacto,idpr,pais,localidad) 
 VALUES ('$emailemp','$nombreemp','$nifemp','$codvalidarinc','$pass','$telcontacto','$idpr','$pais','$ciudad')";
-echo $sql1;
+//echo $sql1;
 $result1=$conn->exec($sql1);
 //$result1=mysqli_query ($conn,$sql1) or die ("Invalid result iproveedores");
-
-
 
 ?>
 
