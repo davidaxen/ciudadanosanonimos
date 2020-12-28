@@ -1,4 +1,3 @@
-
 <?php 
 include('bbdd.php');
 //print_r($_COOKIE);
