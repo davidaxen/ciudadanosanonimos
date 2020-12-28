@@ -1,9 +1,9 @@
 <?php  
-include('bbdd.php');
+include('../servicios_n/mensaje/bbdd.php');
 if ($ide!=null){;
 
-include('../../portada_n/cabecera3.php');?>
-<link rel="stylesheet" type="text/css" href="formulario.css">
+?>
+<link rel="stylesheet" type="text/css" href="../servicios_n/mensaje/formulario.css">
 <script type="text/javascript" language="javascript" src="ajax.js"></script>
 
 <div id="main">
@@ -18,7 +18,7 @@ include('../../portada_n/cabecera3.php');?>
 <table class="tabla" align="center">
 
 <tr><td colspan="2"><p class="enc">ENVIO DE <?php  echo strtoupper($nc);?></p></td></tr>	
-<tr><td><b>Pais</b></td><td><?php include('provincias.php'); ?></td></tr>
+<tr><td><b>Pais</b></td><td><?php include('../servicios_n/mensaje/provincias.php'); ?></td></tr>
 <tr><td><b>Ciudad</b></td><td>
 <div id="listamunicipios">
       <select name="provincia" id="obj_municipio" >
