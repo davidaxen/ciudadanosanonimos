@@ -49,8 +49,8 @@ function myFunction(valor) {
 
 <div class='wrapper fadeInDown'>
   <div id='formContent'>
-<form name="form1" method="post" action="registro1.php"> 
-
+<form name="form1" method="post" action="registro1.php">
+  <input type="hidden" name="idpr" value="<?php echo $idpr ?>">
   <div class='fadeIn first'>
     <img src='../img/logo-ciud-anonimos.png' width='250px'>
     <h3 style="text-align: center;color:#000">SOLICITUD DE PARTICIPACI&Oacute;N EN CIUDADANOS ANONIMOS</h3>
@@ -88,21 +88,14 @@ function myFunction(valor) {
   <b>Ciudad</b>
   <div id="listamunicipios">
 
-      <select name="ciudad" id="obj_municipio" >
-        <option class="fadeIn second">Seleccionar...</option>
-      </select>
+      
+       <?php include('municipios.php'); ?>
     </div>
-
     <br>
     <div class="formFooter" >
         <a class="underlineHover" href="https://www.ciudadanosanonimos.com/politica-y-aviso">Politica de Privacidad y Aviso Legal</a>
          <input name="politica" id="politica" required type="checkbox"/>
     </div>
-
-
- 
-
-
 <br>
     <input type='submit' class="fadeIn fourth" type='submit' value='Enviar'>
 </form>
@@ -110,13 +103,8 @@ function myFunction(valor) {
 </div>
 </div>
 </body>
-
-
-
     <script language="javascript"> 
-    
-
-    
+        
     function emailc(){
       valueForm=document.form1.emailemp.value;
     var patron=/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,4})+$/;
@@ -159,10 +147,6 @@ function myFunction(valor) {
     
 
     </script>
-
-
-
-				
 <script>
 var myInput = document.getElementById("psw");
 var letter = document.getElementById("letter");

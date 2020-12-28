@@ -18,7 +18,8 @@ if (($ide!=null) or ($validar==0)){;
 if (($rgpd=='1') and ($avisolegal=='1')){;
 $sql1="UPDATE usuarios SET rgpd = '".$rgpd."', avisolegal = '".$avisolegal."' where user='".$gente."' and password='".$part."'";
 //echo $sql1;
-$result1=mysqli_query ($conn,$sql1) or die ("Invalid result usuarios");
+$result=$conn->exec($sql1);
+//$result1=mysqli_query ($conn,$sql1) or die ("Invalid result usuarios");
 
 };
 

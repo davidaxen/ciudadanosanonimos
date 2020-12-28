@@ -27,30 +27,13 @@
             </div>
         </div>
     <div class="[ container ]">
-      <div class="[ collapse navbar-collapse ]" id="bs-example-navbar-collapse-1">
-          <ul class="[ nav navbar-nav navbar-right ]">
-            <li><a href="../portada_n/ultimasincidencias_t.php" class="[ animate ]" onclick="openCity(event, 'd0')" >ULTIMOS RESULTADOS</a></li>
-            <li><a href="../incidencias_t.php" class="[ animate ]" onclick="openCity(event, 'd0')" >INCIDENCIAS</a></li>
-            <li><a href="../chat/index.php" class="[ animate ]" onclick="openCity(event, 'd0')" >CHAT</a></li>
-            <li><a href="../portada_n/salir.php" class="[ animate ]" onclick="openCity(event, 'd0')" >LOG OUT</a></li>
-        </ul>
+        <?php 
+          include_once("../portada_n/showmenu.php");
+        ?>
       </div>
   </nav>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-
-
  
-<div class="col-md-6 col-lg-7 col-md-offset-3" >
+<div class="col-md-6 col-lg-7 col-md-offset-3" style="margin-top: 120px">
   <div class="panel panel-default chat-widget">
     <div class="panel-heading">
       <h3 align="center"><i class="fa fa-comments"></i></h3>
@@ -59,6 +42,7 @@
     
     <div class="panel-body">
 
+<<<<<<< HEAD
 
 
           <div class="message">
@@ -72,6 +56,17 @@
                 fclose($handle);
        
                   echo $contents;
+=======
+          <div class="message" style="height: 520px">
+            <div class="message-text-wrapper" style="height: 520px">
+              <div class="message-text" id="chatbox" style="height: 530px; overflow-y: auto;">
+                <?php
+                  if(file_exists("log.html") && filesize("log.html") > 0){
+                    $handle = fopen("log.html", "r");
+                    $contents = fread($handle, filesize("log.html"));
+                    fclose($handle);
+                    echo $contents;
+>>>>>>> 71c741cfca31706157149309a5a0237fb7ac0a99
                   }
                 ?>
               </div>
@@ -109,9 +104,19 @@
 
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3/jquery.min.js"></script>
 <script type="text/javascript">
-// jQuery Document
-setInterval (loadLog, 500);
-function loadLog(){   
+
+var comprobador;
+setInterval (loadLog, 100);
+
+/*objDiv.scrollTop = objDiv.scrollHeight;
+objDiv.scrollTop = objDiv.scrollHeight - objDiv.clientHeight;*/
+
+function eliminarTildes(texto) {
+    return texto.normalize('NFD').replace(/[\u0300-\u036f]/g,"");
+}
+
+function loadLog(){
+  comprobador= true;
   var oldscrollHeight = $("#chatbox").attr("scrollHeight") - 20; //Scroll height before the request
   $.ajax({
     url: "log.html",
@@ -128,15 +133,57 @@ function loadLog(){
   });
 }
 
-$("#submitmsg").click(function(){ 
-  var clientmsg = $("#usermsg").val();
-  $.post("post.php", {text: clientmsg});        
-  $("#usermsg").attr("value", "");
+$("#submitmsg").click(function(){
+    var groseriaComprobada = true;
+    var groserias = ["puta", "puto","marica","pirobo","gonorrea"]
+    var textoEnviado = $("#usermsg").val().trim();
+
+   
+    if (textoEnviado != "") {
+      var palabraSinTildes = eliminarTildes(textoEnviado);
+
+      var palabrasSeparadas = palabraSinTildes.split(" ");
+      var arrayPalabrasSeparadas = new Array();
+
+      for(var i = 0; i < groserias.length;i++){
+
+        for (var j = 0; j< palabrasSeparadas.length; j++) {
+          arrayPalabrasSeparadas.push(palabrasSeparadas[j]);
+
+          if (arrayPalabrasSeparadas[j] == groserias[i]) {
+            groseriaComprobada = false
+          }
+
+          /*console.log(arrayPalabrasSeparadas[j]);
+          console.log(" ");*/
+        }
+
+      /*regex = new RegExp("(^|\\s)"+groserias[i]+"($|(?=\\s))","gi");
+      palabraSinTildes = palabraSinTildes.replace(regex, function($0, $1){return "EsTaPaLaBrANoEsVaLiDa123@@@#123"});*/
+      }
+      //var clientmsg = $("#usermsg").val();
+      //console.log(textoEnviado);
+
+      if (groseriaComprobada) {
+          var clientmsg = textoEnviado;
+          $.post("post.php", {text: clientmsg});              
+          $("#usermsg").attr("value", "");
+      }else{
+          alert("No se pueden introducir groserias");
+      }
+    }
+    
+    
   return false;
 });
 
+if(comprobador){
+    var newscrollHeight = $("#chatbox").attr("scrollHeight") - 20;
+    $("#chatbox").animate({ scrollTop: newscrollHeight }, 'normal');
+}
+
 $(document).ready(function(){
- 
+
 });
 </script>
 </body>
