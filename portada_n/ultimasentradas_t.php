@@ -90,11 +90,11 @@ $row1=mysqli_num_rows($result1);*/
 </head>
 
 <nav class="[ navbar navbar-fixed-top ][ navbar-bootsnipp animate ]" role="navigation">
-        <div class="[ navbar-header ]">
-            <div class="[ animbrand ]">
-                <a class="[ navbar-brand ][ animate ]" href="../inicio1.php"><img src="../img/ciudadanoslogo.png"></a>
-            </div>
+    <div class="[ navbar-header ]">
+        <div class="[ animbrand ]">
+            <a class="[ navbar-brand ][ animate ]" href="../inicio1.php"><img src="../img/ciudadanoslogo.png"></a>
         </div>
+
     <div class="[ container ]">
         <?php 
           include_once("../portada_n/showmenu.php");
@@ -104,8 +104,6 @@ $row1=mysqli_num_rows($result1);*/
 		
 <!--onload="setTimeout('refrescar1()', 5000);"-->
 <body style="background-image:url(../img/iconos/portada_ca.jpg)" >
-
-
 
 <div style=" margin-top: 15%;" class='wrapper fadeInDown' >
 <?php 

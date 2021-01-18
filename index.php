@@ -113,7 +113,7 @@ echo ("Este dominio no tiene acceso al sistema, comprueba todas la conexiones, p
 <?php if ($mobile_browser > 0) {;?>
 <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1">
 <?php };?>
-
+  
 <?php echo sprintf($pagina,$logo,$bdescarga,$idprt);?>
 
 

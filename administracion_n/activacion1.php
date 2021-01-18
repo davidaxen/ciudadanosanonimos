@@ -39,9 +39,7 @@ $idpr=$resultado['idpr'];
 
 if ($idpr!=null){;
 
-
 ?>
-
 
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -81,8 +79,6 @@ $idvalidar=$resultado['idvalidar'];
 $pais=$resultado['pais'];
 $localidad=strtoupper($resultado['localidad']);
 $nombreemp=strtoupper($resultado['nombreemp']);
-
-
 
 include('introempleados.php');
 
