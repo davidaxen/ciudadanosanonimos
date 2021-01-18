@@ -1,15 +1,15 @@
 <?php
-include('bbdd.php');
+include('../servicios_n/mensaje/bbdd.php');
 if ($ide!=null){;
 
-include('../../portada_n/cabecera3.php');?>
+?>
 
 <div id="main">
 <div class="titulo">
 <p class="enc">ACCIONES CON <?php  echo strtoupper($nc);?></p></div>
 <div class="contenido">
 
-<table><tr><td><?php include ('../../js/busqueda.php');?></td>
+<table><tr><td><?php include ('../js/busqueda.php');?></td>
 <td>
 <div class="main">
 
@@ -17,9 +17,9 @@ include('../../portada_n/cabecera3.php');?>
 <a href="dpuntcont.php">
 <span class="caja">
 <div style="position:relative">
-<img src="../../img/<?php  echo $ic;?>" width="64px">
+<img src="../img/<?php  echo $ic;?>" width="64px">
 <div style="position:absolute; top:0;right:0;">
-<img border="0"  src="../../img/plus.png" width="30" height="30" />
+<img border="0"  src="../img/plus.png" width="30" height="30" />
 </div>
 </div>
 <br/>Creacion</span></a>
@@ -74,7 +74,7 @@ $row10=count($result10->fetchAll());
 /*$result10=mysqli_query ($conn,$sql10) or die ("Invalid result0");
 $row10=mysqli_num_rows($result10);*/
 if ($row10==0){;?>
-<a href="modmensaje.php?id=<?php echo $idmensaje;?>"><img src="../../img/pencil.png" width="25px"></a>
+<a href="../servicios_n/mensaje/modmensaje.php?id=<?php echo $idmensaje;?>"><img src="../img/pencil.png" width="25px"></a>
 <?php };?>
 </td>
 </tr>
@@ -134,7 +134,7 @@ $row10=count($result10->fetchAll());
 $row10=mysqli_num_rows($result10);*/
 
 ?>
-<a href="infpuntcont.php?id=<?php echo $idmensaje;?>"><img src="../../img/pencil.png" width="25px"></a>
+<a href="infpuntcont.php?id=<?php echo $idmensaje;?>"><img src="../img/pencil.png" width="25px"></a>
 </td>
 </tr>
 
@@ -156,6 +156,6 @@ $row10=mysqli_num_rows($result10);*/
 
 
 <?php } else {;
-include ('../../cierre.php');
+include ('../cierre.php');
  }; ?>
 

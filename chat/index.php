@@ -51,6 +51,7 @@
                     $contents = fread($handle, filesize("log.html"));
                     fclose($handle);
                     echo $contents;
+
                   }
                 ?>
               </div>
