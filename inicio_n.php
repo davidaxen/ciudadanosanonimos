@@ -26,7 +26,7 @@ $result55=$conn->query($sql55);
 			$pass=base64_encode($output);
 
 
-$sql="select * from usuarios where user='".$user."' and password='".$pass."'";
+$sql="select * from usuarios where user='".$user."' and password='".$pass."' and validar = '1'";
 //echo $sql;
 $result=$conn->query($sql);
 $resultados=$result->fetch();

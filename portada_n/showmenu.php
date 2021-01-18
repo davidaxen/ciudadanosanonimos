@@ -4,6 +4,7 @@
     <li><a href="/portada_n/ultimasincidencias_t.php" class="[ animate ]" onclick="openCity(event, 'd0')" >ULTIMOS RESULTADOS</a></li>
     <li><a href="/incidencias_t.php" class="[ animate ]" onclick="openCity(event, 'd0')" >INCIDENCIAS</a></li>
     <li><a href="/chat/index.php" class="[ animate ]" onclick="openCity(event, 'd0')" >CHAT</a></li>
+    <li><a href="/portada_n/cuenta.php" class="[ animate ]" onclick="openCity(event, 'd0')" >MI CUENTA</a></li>
     <li><a href="/portada_n/salir.php" class="[ animate ]" onclick="openCity(event, 'd0')" >LOG OUT</a></li>
  </ul>
 </div>
