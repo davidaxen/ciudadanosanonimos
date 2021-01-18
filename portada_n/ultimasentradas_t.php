@@ -22,164 +22,72 @@ $row1=mysqli_num_rows($result1);*/
 </script>
 
 
-
 <style>
 
 
-.main3 {
-	 /*width: calc (100% - 200px);*/
-	 width:100%;
-	 position:relative;
-	 top:0px;
-    border: 0px solid #fff;
-    text-align:center;
-    display:inline-table;
-}
-
-
-.caja3{
-	 padding-top:5px;
-	 padding-left:5px;
-	 padding-right:5px;
-    border: 0px solid;
-    width: 100%;
-    height: 90px;
-    font-size: 18px;
-    /*border-bottom:5px inset #000;*/
-    /*vertical-align: middle;*/
-    margin:5px;
-    /*border-radius: 8px;*/
-    /*box-shadow: 1px 15px 18px #888888;*/
-	 display:inline-table;
-	 text-align:center;
-}
-
-.main6 {
-	 /*width: calc (100% - 200px);
-
-	 */
-	 top:10px; 
-	 width:100%;
-	 position:relative;
-	 padding:10px;
-    border: 0px solid #fff;
-    text-align:center;
-}
-
-
-/*agregado nuedo SCROLL*/
-
-.slideshow-container {
-  max-width: 1250px;
-  position: relative;
-  margin: auto;
-}
-
-.caja3 .numbertext {
-  font-size: 15px;
-  text-align: left;
-  top: 0;
-}
-
-
-.prev, .next {
-  cursor: pointer;
+/* Hide the browser's default radio button */
+.container input {
   position: absolute;
-  top: 50%;
-  width: auto;
-  margin-top: -50px;
-  vertical-align: center;
-  padding: 16px;
-  color: white;
-  font-weight: bold;
-  font-size: 18px;
-  transition: 0.6s ease;
-  border-radius: 0 3px 3px 0;
-  user-select: none;
-}
-
-/* Position the "next button" to the right */
-.next {
-  right: 0;
-  border-radius: 3px 0 0 3px;
-}
-
-/* On hover, add a black background color with a little bit see-through */
-.prev, .next {
-  background-color:black;
-}
-
-.dot {
+  opacity: 0;
   cursor: pointer;
-  height: 15px;
-  width: 15px;
-  float: left;
-  margin: 0 2px;
-  background-color: #bbb;
+}
+
+/* Create a custom radio button */
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: #eee;
   border-radius: 50%;
-  display: inline-block;
-  transition: background-color 0.6s ease;
 }
 
-#wrap {
-	margin: 0;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    margin-right: -50%;
-    transform: translate(-50%, -50%)
+/* On mouse-over, add a grey background color */
+.container:hover input ~ .checkmark {
+  background-color: #ccc;
 }
 
-
-.container {
-	width: 100%;
-	position: relative;
+/* When the radio button is checked, add a blue background */
+.container input:checked ~ .checkmark {
+  background-color: #2196F3;
 }
 
-.active, .dot:hover {
-  background-color: #717171;
+/* Create the indicator (the dot/circle - hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
 }
 
-
-.fade {
-  -webkit-animation-name: fade;
-  -webkit-animation-duration: 1.5s;
-  animation-name: fade;
-  animation-duration: 1.5s;
+/* Show the indicator (dot/circle) when checked */
+.container input:checked ~ .checkmark:after {
+  display: block;
 }
 
-@-webkit-keyframes fade {
-  from {opacity: .4}
-  to {opacity: 1}
+/* Style the indicator (dot/circle) */
+.container .checkmark:after {
+ 	top: 9px;
+	left: 9px;
+	width: 8px;
+	height: 8px;
+	border-radius: 50%;
+	background: white;
 }
 
-@keyframes fade {
-  from {opacity: .4}
-  to {opacity: 1}
-}
 
 </style>
 
-
-<style type="text/css" media="print">
-.nover {display:none}
-</style>
 
 <head>
 	<!-- cabecera -->
-  <link rel="stylesheet" type="text/css" href="cabecera.css">
+  <link rel="stylesheet" type="text/css" href="respuestas.css">
+  <link rel="stylesheet" type="text/css" href="../chat/cabecera.css">
   <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Convergence" />
-  <!-- esta linea es la que hace que falle -->
-  <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" >
-  <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
 
-<!-- esta linea es la que estaba de antes que cambiaras la parte visual de toda la pagina -->
-  <link rel="stylesheet" href="/estilo/estilonuevo.php" type="text/css" media="screen" charset="utf-8" >
+
+ 
 </head>
-
-		
-<!--onload="setTimeout('refrescar1()', 5000);"-->
-<body >
 
 <nav class="[ navbar navbar-fixed-top ][ navbar-bootsnipp animate ]" role="navigation">
         <div class="[ navbar-header ]">
@@ -191,8 +99,13 @@ $row1=mysqli_num_rows($result1);*/
         <?php 
           include_once("../portada_n/showmenu.php");
         ?>
-      </div>
-  </nav>
+     </div>
+ </nav>
+		
+<!--onload="setTimeout('refrescar1()', 5000);"-->
+<body style="background-image:url(../img/iconos/portada_ca.jpg)" >
+
+
 
 <div style=" margin-top: 15%;" class='wrapper fadeInDown' >
 <?php 
@@ -216,16 +129,15 @@ $row10=count($result10->fetchAll());
 if ($row10==0){;
 
 ?>
-
 		<!-- Next and previous buttons -->
 	<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
 	<a class="next" onclick="plusSlides(1)">&#10095;</a>
   	
 <form action="../servicios_n/mensaje/introrespuesta.php" method="post" enctype="multipart/form-data">
-<div class="slideshow-container" style="text-align: center;">
+<div class="slideshow-container" style="border-radius:10px; background-color: white; text-align: center;">
 	
 	<input type="hidden" name="id" value="<?php echo $idmensaje;?>">
-	<div class="mySlides fade">
+	<div class="mySlides">
 		<div style="float: right; font-size: 18px; position: absolute; left: 70%;">Hemos recibido un total de: 
 			<?php 
 				$sqlCount="SELECT COUNT(*) FROM respuestamensajes WHERE idmensaje=$idmensaje"; 
@@ -261,28 +173,51 @@ if ($row10==0){;
 		 ?>
 	 	<div class="main" style="text-align: center;">
 
+
+			<table style="margin: auto; 
+					border-collapse:separate;
+                    border-spacing: 10;
+                   	border: #56baed solid 8px;
+                    border-radius:10px;
+                    -moz-border-radius:10px;
+                    -webkit-border-radius: 5px; ">
+				<tr>
+
 			<?php 
 			foreach ($result2 as $row2mos) {
 			$valor=$row2mos['valor'];
 			$textores=$row2mos['texto'];
 			?>
-			<label>
-				<span class="caja">
-					 <b><?php echo strtoupper($textores);?></b><br/>
-					 <input type="radio" name="respuesta" value="<?php echo $valor;?>">
-				</span>
-			</label>
+			
+					<td style="width: 200px; text-align: center;" >
+						<div align="center">
+							<b style="color: red"><?php echo ("$textores");?></b>
+						</div>
+						
+						<div align="center" >
+						<label style="display: inline;" class="container">
+							<input type="radio" name="radio" value="<?php echo $valor;?>">
+							<span class="checkmark"></span>
+						</label>
+						</div>
+
+						</td>
+				
+
+
 
 			<?php };?>
+			</tr>
+			</table>
 			<?php 
+
 			if($otrosmot=='1'){ ?>
 			<label>
 				<span class="caja">
 				 <b>Otros Motivos</b>
 				 <br/>
 				 <input type="radio" name="respuesta" value="99" id="radiotext">
-				 <br/>
-				 <br/>
+				
 				 <input type="text" name="textotro" size="20" maxlength="250" onfocus="document.getElementById('radiotext').checked = true;">
 				</span>
 			</label>
@@ -294,11 +229,9 @@ if ($row10==0){;
 
 		</div>
 		
-		
 
-		<input style="" type="submit" class="envio" value="enviar" name="enviar">
 
-		</br></br></br>
+		</br>
 	<?php 
 		$sql1="SELECT count(*) from pdfs WHERE idmensaje=(SELECT id FROM mensajes WHERE id = :id)";
 
@@ -342,9 +275,9 @@ if ($row10==0){;
 	  	<table align="center" >
 			<tr>
 				<td>
-					<div oncontextmenu="return false;" style=" border: solid 5px; border-radius: 10px 10px 10px 10px; padding: 5px; align-content: center;" >
+					<div oncontextmenu="return false;" style="margin-bottom:10%; border: #56baed solid 8px; border-radius: 10px 10px 10px 10px; padding: 5px; align-content: center;" >
 						<img src="../administracion_n/marca/marca video 2.png" width="320" height="260" style="position: absolute;">
-						<video width="320" height="260" controls disablepictureinpicture controlsList="nodownload">
+						<video style="border-radius: 10px;" width="320" height="260" controls disablepictureinpicture controlsList="nodownload">
 						  <source src="<?php 
 						          $sql1="SELECT url from videos WHERE idmensaje=(SELECT id FROM mensajes WHERE id = :id)";
 						          $result1=$conn->prepare($sql1);
@@ -357,15 +290,28 @@ if ($row10==0){;
 					</div>
 				</td>
 			</tr>
+			<tr>
+				<td>
+
+				</td>
+			</tr>
 			
 		</table>
 
 
+
+
+
 	  	<?php 
 	  		}
-	  	?>	  
+	  	?>	 
+
+	  	 			<div align="center" style="margin-bottom: 10%">
+					<button type="submit" class="btn btn-primary" value="enviar" name="enviar">ENVIAR</button>
+					</div>
 
 	</div>
+
 </div>
 
 
@@ -378,7 +324,7 @@ $i=$i+1;
 
 <!--agregado nuedo SCROLL-->
  <div class="container">
- 	<div id="wrap" style="margin-top: 10px;">
+ 	<div id="wrap" style="">
  		<div>
 <?php 
 for ($i=1; $i <= $row; $i++) { 

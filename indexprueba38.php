@@ -153,9 +153,9 @@ $iconoport=$rowmos['icono'];
 ?>
 
     <td> 
-    <button class="tablinks" onclick="openCity(event, 'd<?php  echo $j;?>')" <?php if($j==0){;?>id="defaultOpen"<?php }?>>
-    <img src="../img/iconos/<?php echo $iconoport;?>" width="32px" style="vertical-align:middle;"> <?php  echo $tituloport;?></button>
-  </td>
+      <button class="tablinks" onclick="openCity(event, 'd<?php  echo $j;?>')" <?php if($j==0){;?>id="defaultOpen"<?php }?>>
+      <img src="../img/iconos/<?php echo $iconoport;?>" width="32px" style="vertical-align:middle;"> <?php  echo $tituloport;?> </button>
+    </td>
  <?php 
  $j=$j+1;
 };
@@ -177,6 +177,8 @@ $tituloport=$rowmos1['titulo'];
 $pagport=$rowmos1['pag'];
 $iconoport=$rowmos1['icono'];
 ?>
+
+
 <div id="d<?php  echo $j;?>" class="tabcontent">
   <h3> <img src="../img/iconos/<?php echo $iconoport;?>" width="32px" style="vertical-align:middle;"> <?php  echo $tituloport;?></h3>
   <p><iframe style="border:0" name="bloque<?php  echo $j;?>" src="portada_n/<?php  echo $pagport;?>" width="100%" height="325" scrolling="auto"></iframe></p>

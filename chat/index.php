@@ -42,21 +42,6 @@
     
     <div class="panel-body">
 
-<<<<<<< HEAD
-
-
-          <div class="message">
-            <div class="message-text-wrapper">
-              <div class="message-text" id="chatbox" >
-
-          <?php
-              if(file_exists("log.html") && filesize("log.html") > 0){
-                $handle = fopen("log.html", "r");
-                 $contents = fread($handle, filesize("log.html"));
-                fclose($handle);
-       
-                  echo $contents;
-=======
           <div class="message" style="height: 520px">
             <div class="message-text-wrapper" style="height: 520px">
               <div class="message-text" id="chatbox" style="height: 530px; overflow-y: auto;">
@@ -66,7 +51,7 @@
                     $contents = fread($handle, filesize("log.html"));
                     fclose($handle);
                     echo $contents;
->>>>>>> 71c741cfca31706157149309a5a0237fb7ac0a99
+
                   }
                 ?>
               </div>
