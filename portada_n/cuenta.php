@@ -1,11 +1,11 @@
-<?php   
+<?php
 include('bbdd.php');
 
 ?>
 <html>
 
 <script type="text/javascript">
-	
+
 	function desaparecer(){
 		document.getElementById('informacion').style.display = "none";
 		document.getElementById('formulario').style.display = "block";
@@ -22,7 +22,7 @@ include('bbdd.php');
 		var email = document.getElementById('email');
 		var telf = document.getElementById('telcontacto');
 		var mailPrincipal = document.getElementById('mailPrincipal').value;
-		
+
 		if (nombre.value == "") {
 			alert("El campo del nombre no puede estar vacio");
 			return false;
@@ -40,23 +40,31 @@ include('bbdd.php');
 			return true;
 		}
 
-		
+
 		return false;
 
 	}
+
 </script>
 
 <head>
 
 <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Convergence" />
-<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
 <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-<link rel="stylesheet" type="text/css" href="boostrapNav1.css">
+<link rel="stylesheet" type="text/css" href="boostrapUlt.css">
 <link rel="stylesheet" type="text/css" href="nav.js">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<style type="text/css" media="print">
+.nover {display:none}
+</style>
 
 </head>
-<?php 
+
+<?php
 if(isset($_COOKIE['gente'])){
 	$mail = $_COOKIE['gente'];
 	$sql = "SELECT * FROM validar WHERE email = :mail";
@@ -75,7 +83,7 @@ if(isset($_COOKIE['gente'])){
 
 ?>
 
-<body>
+<body style="background-image:url(../img/iconos/portada_ca.jpg)";>
 	<nav class="[ navbar navbar-fixed-top ][ navbar-bootsnipp animate ]" role="navigation">
 	    <div class="[ navbar-header ]">
 	        <div class="[ animbrand ]">
@@ -83,24 +91,36 @@ if(isset($_COOKIE['gente'])){
 	        </div>
 	    </div>
 		<div class="[ container ]">
-		<?php 
-			include_once("../portada_n/showmenu.php");
+		<?php
+			include_once("showmenu.php");
 		?>
 		</div>
 	</nav>
-
-	<div style="margin-top: 120px; text-align: center;" id="informacion">
-		<div>
-			<div>Nombre: <?php echo $resultado['nombreemp']; ?></div>
-			<div>Correo: <?php echo $resultado['email']; ?></div>
-			<div>Telefono de contacto: <?php echo $resultado['telcontacto']; ?></div>
-			<div>Pais: <?php echo $resultadoPais['pais']; ?></div>
+<br> <br> <br> <br> <br> <br> <br>
+	<div class="container fadeInDown" style="background-color: white; border-radius: 10px;" id="informacion">
+		<h2>Mi cuenta</h2>
+		<div class="form-group">
+			<label>Nombre:</label> <br>
+			<label><?php echo $resultado['nombreemp']; ?></label>
+		</div>
+		<div class="form-group">
+			<label>Correo:</label><br>
+			<label><?php echo $resultado['email']; ?></label>
+		</div>
+		<div class="form-group">
+			<label>Teléfono de contacto:</label> <br>
+			<label><?php echo $resultado['telcontacto']; ?></label>
+		</div>
+		<div class="form-group">
+			<label>País:</label> <br>
+			<label><?php echo $resultadoPais['pais']; ?></label>
+		</div>
 			<?php
 			if (isset($_REQUEST['comp'])) {
 				$data = $_REQUEST['comp'];
 			?>
 				<div id="msg">
-					<?php 
+					<?php
 						if ($data == 1) {
 							echo "Usuario actualizado";
 						}else if ($data == 2) {
@@ -114,30 +134,35 @@ if(isset($_COOKIE['gente'])){
 
 			<br>
 
-			<div><input type="button" value="Editar informacion" onclick="desaparecer()"></div>
+			<div><button type="button" class="btn btn-default" onclick="desaparecer()">Editar</button></div> <br>
 		</div>
-		
+
 	</div>
 
-	<div style="margin-top: 120px; text-align: center; display: none" id="formulario">
+	<div class="container fadeInDown" style="background-color: white; border-radius: 10px; display: none" id="formulario">
+		<h2>Editar información</h2>
 		<div>
 			<form method="POST" action="editar.php" onsubmit="return confirmarDatos()">
 				<input type="hidden" name="nombrePrincipal" value="<?php echo $resultado['nombreemp']; ?>">
 				<input type="hidden" name="telfPrincipal" value="<?php echo $resultado['telcontacto']; ?>">
 				<input type="hidden" name="idValidar" value="<?php echo $idValidar; ?>">
 				<input type="hidden" id="mailPrincipal" name="mailPrincipal" value="<?php echo $mail; ?>">
-
-				Nombre: <input type="text" id="nombre" name="nombre" value="<?php echo $resultado['nombreemp']; ?>">
-				<br><br>
-				Correo: <input type="text" id="email" name="email" value="<?php echo $resultado['email']; ?>">
-				<br><br>
-				Telefono de contacto: <input type="text" id="telcontacto" name="telcontacto" value="<?php echo $resultado['telcontacto']; ?>">
-				<br><br>
-				<input type="submit" name="enviar" value="Editar">
+				<div class="form-group col-xs-4">
+				<label for="nombre">Nombre:</label> <br>
+				<input type="text" style="text-align:left;" class="form-control" id="nombre" name="nombre" value="<?php echo $resultado['nombreemp']; ?>"><br>
+			</div>
+			<div class="form-group col-xs-4">
+				<label for="email">Correo:</label> <br>
+				<input type="text" style="text-align:left;" class="form-control" id="email" name="email" value="<?php echo $resultado['email']; ?>">
+			</div>
+			<div class="form-group col-xs-4">
+				<label for="telcontacto">Teléfono de contacto</label> <br>
+				<input type="text" style="text-align:left;" class="form-control" id="telcontacto" name="telcontacto" value="<?php echo $resultado['telcontacto']; ?>">
+			</div>
+			<br> <br>
+				<div><button type="submit" class="btn btn-default" value="Editar">Confirmar</button><button type="button" class="btn btn-default" onclick="mostrar()">Cancelar</button></div>
 			</form>
-			<br><br>
-			<div><input type="button" value="Mostrar informacion" onclick="mostrar()"></div>
-		</div>
+			<br>
 	</div>
 </body>
 
@@ -154,4 +179,3 @@ if(isset($_COOKIE['gente'])){
 
 }
 ?>
-
