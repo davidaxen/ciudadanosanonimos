@@ -1,6 +1,6 @@
 <?php
 include('bbdd.php');
-
+error_reporting(0);
 $sql1="SELECT * from mensajes where  idempresa='".$ide."'";
 if ($idcli!=0){;
 $sqln1="SELECT * from clientes where nif='".$gente."' and idempresas='".$ide."'";
@@ -87,7 +87,7 @@ $resultados10 = mysqli_fetch_array ($result10);*/
 $nombre=$resultados10['nombre'];
 $priape=$resultados10['1apellido'];
 $segape=$resultados10['2apellido'];
-$nombretrab=$nombre.' '.$priape.' '.$segape; 
+$nombretrab=$nombre.' '.$priape.' '.$segape;
 
 
 $sql11="SELECT * from clientes where idclientes='".$idempleado."' and idempresas='".$ide."'";
