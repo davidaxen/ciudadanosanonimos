@@ -9,7 +9,7 @@ $resultn1=$conn->query($sqln1);
 $resultadon1=$resultn1->fetchAll();
 
 //$resultn1=$conn->query($sqln1);
-//$resultadon1=$resultn1->fetch();
+//$resultadon1=$resultn1->fetch();	
 
 /*$resultn1=mysqli_query ($conn, $sqln1) or die ("Invalido resulto n1");
 $resultadon1=mysqli_fetch_array($resultn1);*/

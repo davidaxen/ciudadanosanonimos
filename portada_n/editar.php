@@ -170,9 +170,9 @@
 						    // main header (multipart mandatory)
 
 						    $headers = 'From: CIUDADANOS ANONIMOS EN ACCION - <info@ciudadanosanonimos.com>' . $eol;
-						if ($emailadmin2!=""){;   
+						if ($emailadmin2!=""){  
 						    $headers .= 'Cc: '.$emailadmin2  . $eol;
-						};
+						}
 
 						   $headers .= 'Bcc: ciudadanosanonimos@yahoo.com'  . $eol;
 
@@ -205,7 +205,7 @@
 						      }
 
 
-						};  
+						}
 			        
 			      } else {
 			        //echo "mail send ... ERROR!";
@@ -217,7 +217,7 @@
 			      }
 
 
-			};  
+			}  
 
 
 			header('Location: salir.php');
