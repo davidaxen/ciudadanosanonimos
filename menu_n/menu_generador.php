@@ -22,7 +22,7 @@ $nadr=$resultado11r['servicios'];
 </p></div>
 <div class="contenido">
 
-<?php 
+<?php
 include('menu_servicios.php');
 
 
@@ -57,7 +57,7 @@ $valorca=array_count_values($ca);
  if (count($cc)!=$valorcc[0]){;?>
 <div class="main">
 <span class="caja2"><b>Comunicaciones</b></span>
-<?php  
+<?php
 for ($j=0;$j<count($cc)+1;$j++){;
 if ($cc[$j]=='1'){;
 if ($ncc[$j]=='Mensaje'){;?>
