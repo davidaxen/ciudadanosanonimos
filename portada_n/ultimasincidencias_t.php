@@ -70,7 +70,7 @@ function refrescar()
 					</div>
         		</div>
   			</div>
-		<div class="[ container ]">
+		<div>
   			<?php 
 				include_once("showmenu.php");
 			?>	

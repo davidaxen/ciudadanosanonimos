@@ -29,7 +29,7 @@
                 </div>
             </div>
         </div>
-    <div class="[ container ]">
+    <div>
         <?php 
           include_once("../portada_n/showmenu.php");
         ?>

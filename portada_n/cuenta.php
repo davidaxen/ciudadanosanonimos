@@ -93,7 +93,7 @@ if(isset($_COOKIE['gente'])){
 						</div>
 	        </div>
 	    </div>
-		<div class="[ container ]">
+		<div>
 		<?php
 			include_once("showmenu.php");
 		?>

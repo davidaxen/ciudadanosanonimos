@@ -85,6 +85,8 @@ $row1=mysqli_num_rows($result1);*/
 
 
 
+
+
 </head>
 <body style="background-image:url(../img/iconos/portada_ca.jpg)";>
 	<nav class="[ navbar navbar-fixed-top ][ navbar-bootsnipp animate ]" role="navigation">
@@ -96,7 +98,7 @@ $row1=mysqli_num_rows($result1);*/
 				</div>
 	        </div>
 	    </div>
-		<div class="[ container ]">
+		<div >
 		<?php
 			include_once("showmenu.php");
 		?>
