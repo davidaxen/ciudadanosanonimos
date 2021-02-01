@@ -65,6 +65,9 @@ function refrescar()
   			<div class="[ navbar-header ]">
         		<div class="[ animbrand ]">
           			<a class="[ navbar-brand ][ animate ]" href="../inicio1.php"><img src="../img/ciudadanoslogo.png"></a>
+          			<div style="float: right; margin-top: 22px;">
+							<?php include ('../donaciones/index.php')?>
+					</div>
         		</div>
   			</div>
 		<div class="[ container ]">
