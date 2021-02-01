@@ -36,7 +36,7 @@
       </div>
   </nav>
  
-<div class="col-md-6 col-lg-7 col-md-offset-3" style="margin-top: 120px">
+<div class="col-md-6 col-lg-7 col-md-offset-3" style="margin-top: 160px">
   <div class="panel panel-default chat-widget">
     <div class="panel-heading">
       <h3 align="center"><i class="fa fa-comments"></i></h3>
