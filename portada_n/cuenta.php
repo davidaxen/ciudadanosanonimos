@@ -81,9 +81,12 @@ if(isset($_COOKIE['gente'])){
 	    <div class="[ navbar-header ]">
 	        <div class="[ animbrand ]">
 	            <a class="[ navbar-brand ][ animate ]" href="../inicio1.php"><img src="../img/ciudadanoslogo.png"></a>
+						<div style="float: right; margin-top: 22px;">
+							<?php include ('../donaciones/index.php')?>
+						</div>
 	        </div>
 	    </div>
-		<div class="[ container ]">
+		<div>
 		<?php
 			include_once("showmenu.php");
 		?>
@@ -147,7 +150,12 @@ if(isset($_COOKIE['gente'])){
 				</div>
 			</form>
 			<br>
+		</div>
 	</div>
+
+
+<div><p>hola</p></div>
+
 </body>
 
 <?php
@@ -169,6 +177,7 @@ if (isset($_REQUEST['comp'])) {
 <div style="margin-top: 120px; text-align: center;">
 	Error al identificar el usuario
 </div>
+
 
 <?php
 

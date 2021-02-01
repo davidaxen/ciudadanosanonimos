@@ -1,6 +1,4 @@
-
-
-<?php   
+<?php
 include('bbdd.php');
 
 $fechac=date("Y-m-d",time());
@@ -86,30 +84,35 @@ $row1=mysqli_num_rows($result1);*/
   <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Convergence" />
 
 
- 
-</head>
 
-<nav class="[ navbar navbar-fixed-top ][ navbar-bootsnipp animate ]" role="navigation">
-		<div class="[ navbar-header ]">
-			<div class="[ animbrand ]">
-  				<a class="[ navbar-brand ][ animate ]" href="../inicio1.php"><img src="../img/ciudadanoslogo.png"></a>
-			</div>		
-		</div>
-	<div class="[ container ]">
-		<?php 
+
+
+</head>
+<body style="background-image:url(../img/iconos/portada_ca.jpg)";>
+	<nav class="[ navbar navbar-fixed-top ][ navbar-bootsnipp animate ]" role="navigation">
+	    <div class="[ navbar-header ]">
+	        <div class="[ animbrand ]">
+	            <a class="[ navbar-brand ][ animate ]" href="../inicio1.php"><img src="../img/ciudadanoslogo.png"></a>
+	            <div style="float: right; margin-top: 22px;">
+							<?php include ('../donaciones/index.php')?>
+				</div>
+	        </div>
+	    </div>
+		<div >
+		<?php
 			include_once("showmenu.php");
-		?>	
-	</div>
-</nav>
-		
+		?>
+		</div>
+	</nav>
+
 <!--onload="setTimeout('refrescar1()', 5000);"-->
-<body style="background-image:url(../img/iconos/portada_ca.jpg)" >
+
 
 <div style=" margin-top: 15%;" class='wrapper fadeInDown' >
-<?php 
+<?php
 
 if ($row) {
-	
+
 
 $i=1;
 foreach ($result1 as $row1mos) {
@@ -130,15 +133,15 @@ if ($row10==0){;
 		<!-- Next and previous buttons -->
 	<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
 	<a class="next" onclick="plusSlides(1)">&#10095;</a>
-  	
+
 <form action="../servicios_n/mensaje/introrespuesta.php" method="post" enctype="multipart/form-data">
 <div class="slideshow-container" style="border-radius:10px; background-color: white; text-align: center;">
-	
+
 	<input type="hidden" name="id" value="<?php echo $idmensaje;?>">
 	<div class="mySlides">
-		<div style="float: right; font-size: 18px; position: absolute; left: 70%;">Hemos recibido un total de: 
-			<?php 
-				$sqlCount="SELECT COUNT(*) FROM respuestamensajes WHERE idmensaje=$idmensaje"; 
+		<div style="float: right; font-size: 18px; position: absolute; left: 70%;">Hemos recibido un total de:
+			<?php
+				$sqlCount="SELECT COUNT(*) FROM respuestamensajes WHERE idmensaje=$idmensaje";
 				$result=$conn->query($sqlCount);
 				$cantidad=$result->fetch();
 				echo "$cantidad[0]";
@@ -147,7 +150,7 @@ if ($row10==0){;
 		<!--<a href="../servicios_n/mensaje/responder.php?id=<?php echo $idmensaje;?>" target="_parent">-->
 		<span class="caja3">
 		<div class="numbertext" style="font-size: 20px;"><?php echo "$i/$row"; ?></div>
-		
+
 		<!--<img src="../img/pencil.png" class="cuadro">-->
 		<p><?php  echo $texto;?></p>
 		</span>
@@ -172,7 +175,7 @@ if ($row10==0){;
 	 	<div class="main" style="text-align: center;">
 
 
-			<table style="margin: auto; 
+			<table style="margin: auto;
 					border-collapse:separate;
                     border-spacing: 10;
                    	border: #56baed solid 8px;
@@ -181,17 +184,17 @@ if ($row10==0){;
                     -webkit-border-radius: 5px; ">
 				<tr>
 
-			<?php 
+			<?php
 			foreach ($result2 as $row2mos) {
 			$valor=$row2mos['valor'];
 			$textores=$row2mos['texto'];
 			?>
-			
+
 					<td style="width: 200px; text-align: center;" >
 						<div align="center">
 							<b style="color: red"><?php echo ("$textores");?></b>
 						</div>
-						
+
 						<div align="center" >
 						<label style="display: inline;" class="container">
 							<input type="radio" name="radio" value="<?php echo $valor;?>">
@@ -200,14 +203,14 @@ if ($row10==0){;
 						</div>
 
 						</td>
-				
+
 
 
 
 			<?php };?>
 			</tr>
 			</table>
-			<?php 
+			<?php
 
 			if($otrosmot=='1'){ ?>
 			<label>
@@ -215,7 +218,7 @@ if ($row10==0){;
 				 <b>Otros Motivos</b>
 				 <br/>
 				 <input type="radio" name="respuesta" value="99" id="radiotext">
-				
+
 				 <input type="text" name="textotro" size="20" maxlength="250" onfocus="document.getElementById('radiotext').checked = true;">
 				</span>
 			</label>
@@ -226,11 +229,11 @@ if ($row10==0){;
 
 
 		</div>
-		
+
 
 
 		</br>
-	<?php 
+	<?php
 		$sql1="SELECT count(*) from pdfs WHERE idmensaje=(SELECT id FROM mensajes WHERE id = :id)";
 
 		//echo "$sql1";
@@ -243,7 +246,7 @@ if ($row10==0){;
 		$result1->bindParam(':id', $idmensaje);
 		$result1->execute();
 		$check=$result1->fetch();
-      
+
           if ($check[0] !=0) {
           	$sql2="SELECT url from pdfs WHERE idmensaje=(SELECT id FROM mensajes WHERE id = :id)";
           	$result2=$conn->prepare($sql2);
@@ -255,16 +258,16 @@ if ($row10==0){;
           	echo "<a class='pdflink' target='_blank' href='../servicios_n/abrirpdf.php?file=".$urlfinal."'>Ver PDF</a>";
           		?>
 
-	
 
 
-	<?php 
+
+	<?php
  		}
 
 	  $sql1="SELECT count(*) from videos WHERE idmensaje=(SELECT id FROM mensajes WHERE id = :id)";
       $result1=$conn->prepare($sql1);
 	  $result1->bindParam(':id', $idmensaje);
-	  $result1->execute(); 
+	  $result1->execute();
 	  $data=$result1->fetch();
 
 	  if ($data[0] != 0) {
@@ -276,12 +279,12 @@ if ($row10==0){;
 					<div oncontextmenu="return false;" style="margin-bottom:10%; border: #56baed solid 8px; border-radius: 10px 10px 10px 10px; padding: 5px; align-content: center;" >
 						<img src="../administracion_n/marca/marca video 2.png" width="320" height="260" style="position: absolute;">
 						<video style="border-radius: 10px;" width="320" height="260" controls disablepictureinpicture controlsList="nodownload">
-						  <source src="<?php 
+						  <source src="<?php
 						          $sql1="SELECT url from videos WHERE idmensaje=(SELECT id FROM mensajes WHERE id = :id)";
 						          $result1=$conn->prepare($sql1);
 								  $result1->bindParam(':id', $idmensaje);
 								  $result1->execute();
-						          $url=$result1->fetch(); 
+						          $url=$result1->fetch();
 						          echo("../servicios_n/".$url[0]);?>">
 						Tu navegador no sorporta los videos.
 						</video>
@@ -293,21 +296,20 @@ if ($row10==0){;
 
 				</td>
 			</tr>
-			
+
 		</table>
 
 
 
 
 
-	  	<?php 
+	  	<?php
 	  		}
 	  	?>	 
   	 			<div align="center" style="padding-bottom: 20px">
 				<button type="submit" class="btn btn-primary" value="enviar" name="enviar">ENVIAR</button>
 					
-				</div>			
-					
+				</div>	
 
 	</div>
 
@@ -315,7 +317,7 @@ if ($row10==0){;
 
 
 </form>
-<?php 
+<?php
 };
 
 $i=$i+1;
@@ -325,9 +327,9 @@ $i=$i+1;
  <div class="container">
  	<div id="wrap" style="">
  		<div>
-<?php 
-for ($i=1; $i <= $row; $i++) { 
-	
+<?php
+for ($i=1; $i <= $row; $i++) {
+
  ?>
 	<span class="dot" onclick="currentSlide(<?php echo $i; ?>)"></span>
 	<script>
