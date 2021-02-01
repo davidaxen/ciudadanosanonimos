@@ -7,6 +7,8 @@ extract($_GET);
 extract($_POST);
 
 
+
+
 $tablet_browser = 0;
 $mobile_browser = 0;
 $body_class = 'desktop';
@@ -74,6 +76,11 @@ $idprt=1;
 	};
 
 if ($idprt!=null){;
+
+  if (isset($_REQUEST['msg'])) {
+    echo "<script> alert('".$_REQUEST['msg']."'); </script>";
+  }
+
 $sql="select * from proyectos where idproyectos='".$idprt."'";
 $result=$conn->query($sql);
 $resultrow=$conn->query($sql);

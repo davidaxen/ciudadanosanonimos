@@ -12,5 +12,5 @@
     <li><a href="/chat/index.php" class="[ animate ]" onclick="openCity(event, 'd0')" >CHAT</a></li>
     <li><a href="/portada_n/cuenta.php" class="[ animate ]" onclick="openCity(event, 'd0')" >MI CUENTA</a></li>
     <li><a href="/portada_n/salir.php" class="[ animate ]" onclick="openCity(event, 'd0')" >LOG OUT</a></li>
- </ul>
+</ul>
 </div>

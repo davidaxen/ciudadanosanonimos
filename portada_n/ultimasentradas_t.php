@@ -90,17 +90,17 @@ $row1=mysqli_num_rows($result1);*/
 </head>
 
 <nav class="[ navbar navbar-fixed-top ][ navbar-bootsnipp animate ]" role="navigation">
-    <div class="[ navbar-header ]">
-        <div class="[ animbrand ]">
-            <a class="[ navbar-brand ][ animate ]" href="../inicio1.php"><img src="../img/ciudadanoslogo.png"></a>
-        </div>
-
-    <div class="[ container ]">
-        <?php 
-          include_once("../portada_n/showmenu.php");
-        ?>
-     </div>
- </nav>
+		<div class="[ navbar-header ]">
+			<div class="[ animbrand ]">
+  				<a class="[ navbar-brand ][ animate ]" href="../inicio1.php"><img src="../img/ciudadanoslogo.png"></a>
+			</div>		
+		</div>
+	<div class="[ container ]">
+		<?php 
+			include_once("showmenu.php");
+		?>	
+	</div>
+</nav>
 		
 <!--onload="setTimeout('refrescar1()', 5000);"-->
 <body style="background-image:url(../img/iconos/portada_ca.jpg)" >
@@ -303,10 +303,11 @@ if ($row10==0){;
 	  	<?php 
 	  		}
 	  	?>	 
-
-	  	 			<div align="center" style="margin-bottom: 10%">
-					<button type="submit" class="btn btn-primary" value="enviar" name="enviar">ENVIAR</button>
-					</div>
+  	 			<div align="center" style="padding-bottom: 20px">
+				<button type="submit" class="btn btn-primary" value="enviar" name="enviar">ENVIAR</button>
+					
+				</div>			
+					
 
 	</div>
 
