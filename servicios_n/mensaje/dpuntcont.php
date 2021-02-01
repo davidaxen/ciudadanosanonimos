@@ -2,10 +2,21 @@
 include('bbdd.php');
 if ($ide!=null){;
 
-include('../../portada_n/cabecera3.php');?>
+//include('../../portada_n/cabecera3.php');?>
 <link rel="stylesheet" type="text/css" href="formulario.css">
 <script type="text/javascript" language="javascript" src="ajax.js"></script>
-
+<nav class="[ navbar navbar-fixed-top ][ navbar-bootsnipp animate ]" role="navigation">
+		<div class="[ navbar-header ]">
+				<div class="[ animbrand ]">
+						<a class="[ navbar-brand ][ animate ]" href="../inicio1.php"><img src="../img/ciudadanoslogo.png"></a>
+				</div>
+		</div>
+	<div class="[ container ]">
+	<?php
+		include_once("../../portada_n/showmenu2.php");
+	?>
+	</div>
+</nav>
 <div id="main">
 <div class="titulo">
 
