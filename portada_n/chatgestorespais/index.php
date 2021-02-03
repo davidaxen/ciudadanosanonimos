@@ -47,7 +47,7 @@
         </div>
     <div>
         <?php 
-          include_once("showmenu.php");
+          include_once("../showmenu.php");
         ?>
       </div>
   </nav>
