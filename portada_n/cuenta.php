@@ -1,10 +1,37 @@
 <?php
 include('bbdd.php');
 
+	$sqltusuario = "SELECT * FROM usuarios WHERE user = :gente";
+	$resultusuario=$conn->prepare($sqltusuario);
+	$resultusuario->bindParam(':gente', $_COOKIE['gente']);
+	$resultusuario->execute();
+	$resultadousuario = $resultusuario->fetch();
+
 ?>
 <html>
 
 <script type="text/javascript">
+
+	function executeAjax(iduser){
+
+		var tsolicitud = $('input[name=solicitud]:checked').val();
+		$.ajax({
+				url: "ajax_solicitud_tuser.php",
+				type: "POST",
+				dataType : 'json',
+				data: {
+					iduser: iduser,
+					tsolicitud: tsolicitud		
+				},
+				success: function(e){
+				  console.log(e.message);
+				
+				},
+				error: function(e) {
+			       console.log(e.message);
+			    }
+			});
+	}
 
 	function desaparecer(){
 		document.getElementById('informacion').style.display = "none";
@@ -12,16 +39,14 @@ include('bbdd.php');
 	}
 
 	function mostrar(){
-		document.getElementById('informacion').style.display = "block";
-		document.getElementById('formulario').style.display = "none";
-		document.getElementById('msg').style.display = "none";
+		window.location.replace("cuenta.php");
+
 	}
 
 	function confirmarDatos(){
 		var nombre = document.getElementById('nombre');
 		var email = document.getElementById('email');
 		var telf = document.getElementById('telcontacto');
-		var mailPrincipal = document.getElementById('mailPrincipal').value;
 
 		if (nombre.value == "") {
 			alert("El campo del nombre no puede estar vacio");
@@ -32,16 +57,10 @@ include('bbdd.php');
 		}else if (telf.value == "") {
 			alert("El campo del telefono no puede estar vacio");
 			return false;
-		}else{
-			if (email.value != mailPrincipal) {
-				var cambioCorreo = confirm("Si cambia de correo se le cerrara sesion y tendra que validarlo antes de volver a iniciar");
-				return cambioCorreo;
-			}
-			return true;
 		}
 
 
-		return false;
+		return true;
 
 	}
 
@@ -99,8 +118,8 @@ if(isset($_COOKIE['gente'])){
 		?>
 		</div>
 	</nav>
-<br> <br> <br> <br> <br> <br> <br>
-	<div class="container fadeInDown" style="background-color: white; border-radius: 10px;" id="informacion">
+
+	<div class="container fadeInDown" style="background-color: white; border-radius: 10px; margin-top: 220px" id="informacion">
 		<h2>Mi cuenta</h2>
 		<div class="form-group">
 			<label>Nombre:</label> <br>
@@ -118,23 +137,63 @@ if(isset($_COOKIE['gente'])){
 			<label>País:</label> <br>
 			<label><?php echo $resultadoPais['pais']; ?></label>
 		</div>
-			<?php
-			if (isset($_REQUEST['comp'])) {
-				$data = $_REQUEST['comp'];
-			?>
-				<div id="msg">
-					<?php
-						if ($data == 1) {
-							echo "Usuario actualizado";
-						}else if ($data == 2) {
-							echo "<script>alert('Este correo ya esta en uso');</script>";
-						}
-					?>
-				</div>
-			<?php
+		<div class="form-group">
+			<?php 
+			if ($resultadousuario['tusuario'] == 3) {
+				?>
+				<input type="checkbox" name="solicitud" id="solicitudcp" value="40" onclick="executeAjax(<?php echo $resultadousuario['id']; ?>)"> <label for="solicitudcp">Solicitar ser colaborador de codigo postal</label>
+				<?php
 			}
-			?>
+			 ?>
 
+			 <?php 
+			if ($resultadousuario['tusuario'] == 40) {
+				?>
+				<input type="checkbox" name="solicitud" id="solicitud" value="41"> <label for="solicitud">Solicitar ser gestor de codigo postal</label>
+				<br>
+				<input type="checkbox" name="solicitud" id="solicitudciu" value="50"> <label for="solicitudciu">Solicitar ser colaborador de ciudad</label>
+				<?php
+			}
+			 ?>
+
+			 <?php 
+			if ($resultadousuario['tusuario'] == 41) {
+				?>
+				<input type="checkbox" name="solicitud" id="solicitudciu" value="50"> <label for="solicitudciu">Solicitar ser colaborador de ciudad</label>
+				<?php
+			}
+			 ?>
+
+			 <?php 
+			if ($resultadousuario['tusuario'] == 50) {
+				?>
+				<input type="checkbox" name="solicitud" id="solicitudciu" value="51"> <label for="solicitudciu">Solicitar ser gestor de ciudad</label>
+				<br>
+				<input type="checkbox" name="solicitud" id="solicitudpais" value="60"> <label for="solicitudpais">Solicitar ser colaborador de pais</label>
+				<?php
+			}
+			 ?>
+
+			 <?php 
+			if ($resultadousuario['tusuario'] == 51) {
+				?>
+				<input type="checkbox" name="solicitud" id="solicitudpais" value="60"> <label for="solicitudpais">Solicitar ser colaborador de pais</label>
+				<?php
+			}
+			 ?>
+
+			 <?php 
+			if ($resultadousuario['tusuario'] == 60) {
+				?>
+				<input type="checkbox" name="solicitud" id="solicitudpais" value="61"> <label for="solicitudpais">Solicitar ser gestor de pais</label>
+				<?php
+			}
+			 ?>
+
+
+
+
+		</div>
 			<br>
 
 			<div><button type="button" class="btn btn-default" onclick="desaparecer()">Editar</button></div> <br>
@@ -142,10 +201,10 @@ if(isset($_COOKIE['gente'])){
 
 	</div>
 
-	<div class="container fadeInDown" style="background-color: white; border-radius: 10px; display: none" id="formulario">
+	<div class="container fadeInDown" style="background-color: white; border-radius: 10px; display: none; margin-top: 220px" id="formulario">
 		<h2>Editar información</h2>
 		<div>
-			<form method="POST" action="editar.php" onsubmit="return confirmarDatos()">
+			<form method="POST" id="formChangeData" action="editar.php" onsubmit="return confirmarDatos()">
 				<input type="hidden" name="nombrePrincipal" value="<?php echo $resultado['nombreemp']; ?>">
 				<input type="hidden" name="telfPrincipal" value="<?php echo $resultado['telcontacto']; ?>">
 				<input type="hidden" name="idValidar" value="<?php echo $idValidar; ?>">
@@ -163,7 +222,9 @@ if(isset($_COOKIE['gente'])){
 				<input type="text" style="text-align:left;" class="form-control" id="telcontacto" name="telcontacto" value="<?php echo $resultado['telcontacto']; ?>">
 			</div>
 			<br> <br>
-				<div><button type="submit" class="btn btn-default" value="Editar">Confirmar</button><button type="button" class="btn btn-default" onclick="mostrar()">Cancelar</button></div>
+				<div><button type="submit" class="btn btn-default" value="Editar">Confirmar</button>
+					<button type="button" class="btn btn-default" onclick="mostrar()">Cancelar</button>
+				</div>
 			</form>
 			<br>
 		</div>
@@ -175,6 +236,17 @@ if(isset($_COOKIE['gente'])){
 </body>
 
 <?php
+
+if (isset($_REQUEST['comp'])) {
+	$data = $_REQUEST['comp'];
+	if ($data == 1) {
+		echo "<script>alert('Datos actualizados');</script>";
+	}else if ($data == 2) {
+		echo "<script>alert('Este correo ya esta en uso');</script>";
+	}else if($data == 3){
+		echo "<script>alert('Te hemos enviado un mensaje de confirmacion a tu correo anterior');</script>";
+	}
+}
 
 }else{
 ?>

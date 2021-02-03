@@ -1,5 +1,4 @@
-<select class="fadeIn second" name="ciudad" id="obj_municipio" >
-<!--onchange="mostrarConsejos()">-->
+<select class="fadeIn second" name="ciudad" id="obj_municipio" onchange="mostrarCodigosPostales()">
 <option value="">Seleccionar...</option>
 <?php 
 require('bbdd.php');
@@ -13,4 +12,6 @@ while($row_mun = $rs_mun->fetch(PDO::FETCH_ASSOC)){
 <option value="<?php echo $row_mun['idciudad']; ?>"><?php echo $row_mun['ciudad']; ?></option>
 <?php } ?>                          
 </select>
+
+
 

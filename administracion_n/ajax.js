@@ -18,13 +18,12 @@ function objetoAjax(){
     }
     return xmlhttp;
 }
- 
+
+
 //==================
 function mostrarMunicipios(){
- 
     divResultado = document.getElementById('listamunicipios');
     prov=document.getElementById('obj_provincia').value;
- 
     ajax=objetoAjax();
     ajax.open("POST", "municipios.php");
     ajax.onreadystatechange=function() {
@@ -35,7 +34,8 @@ function mostrarMunicipios(){
     ajax.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
     ajax.send("idprov="+prov)
 }
- 
+
+
  
 //==================
 function mostrarConsejos(){

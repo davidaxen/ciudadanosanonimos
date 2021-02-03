@@ -115,7 +115,7 @@ case 1: $pag1="inicio1.php";$pag2="inicio2.php";setcookie("modulo",$modulo);setc
 case 2: $pag1="inicio1.php";$pag2="inicio2.php";setcookie("modulo",$modulo);setcookie("pag1",$pag1);setcookie("pag2",$pag2);break;
 case 3: $pag1="inicio1.php";$pag2="inicio1.php";setcookie("modulo",$modulo);setcookie("pag1",$pag1);setcookie("pag2",$pag2);break;
 case 4: $pag1="inicio1.php";$pag2="inicio1.php";setcookie("modulo",$modulo);setcookie("pag1",$pag1);setcookie("pag2",$pag2);break;
-default: $pag1="estamos1.php";break;
+default: $pag1="inicio1.php";break;
 };
 /*
 case 2: $pag1="inicio1c.php";$pag2="inicio2c.php";setcookie("modulo",$modulo);setcookie("pag1c",$pag1);setcookie("pag2c",$pag2);break;

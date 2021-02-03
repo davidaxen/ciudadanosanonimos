@@ -17,7 +17,165 @@
 		$telefono = $_REQUEST['telcontacto'];
 	}
 
-	$sqlCheckEmail = "SELECT count(*) as cant FROM validar WHERE email = :email AND idvalidar != :idvalidar";
+	$cambiado = false;
+
+	if ($telfPrincipal != $telefono || $nombrePrincipal != $nombre || $mailPrincipal != $email) {
+		$sqlUser = "SELECT * FROM usuarios WHERE user = :mailPrincipal";
+		$resultUser = $conn->prepare($sqlUser);
+		$resultUser->bindParam(':mailPrincipal', $mailPrincipal);
+		$resultUser->execute();
+		$resultadoUser = $resultUser->fetch();
+
+		if ($telfPrincipal != $telefono) {
+			$sqlUpdateTelefono = "UPDATE validar SET telcontacto = :telefono WHERE email = :mailPrincipal";
+			$resultUdateTelefono = $conn->prepare($sqlUpdateTelefono);
+			$resultUdateTelefono->bindParam(':telefono', $telefono);
+			$resultUdateTelefono->bindParam(':mailPrincipal', $mailPrincipal);
+			$resultUdateTelefono->execute();
+
+			$cambiado = true;
+
+		}
+
+		if ($nombrePrincipal != $nombre) {
+			$sqlUpdateNombre = "UPDATE validar SET nombreemp = :nombre WHERE email = :mailPrincipal";
+			$resultUpdateNombre = $conn->prepare($sqlUpdateNombre);
+			$resultUpdateNombre->bindParam(':nombre', $nombre);
+			$resultUpdateNombre->bindParam(':mailPrincipal', $mailPrincipal);
+			$resultUpdateNombre->execute();
+
+			$cambiado = true;
+
+		}
+
+		if ($mailPrincipal != $email) {
+
+			$sqlCheckEmail = "SELECT count(*) as cant FROM validar WHERE email = :email AND idvalidar != :idvalidar";
+			$resultCheckEmail = $conn->prepare($sqlCheckEmail);
+			$resultCheckEmail->bindParam(':email', $email);
+			$resultCheckEmail->bindParam(':idvalidar', $idValidar);
+			$resultCheckEmail->execute();
+			$resultadoCheckEmail = $resultCheckEmail->fetch();
+
+			if($resultadoCheckEmail['cant'] == 0){
+				$sqlInsertValidar2 = "INSERT INTO validar2 (idusuario, oldemail, newemail, validado) VALUES (:iduser, :oldemail, :newemail, 0)";
+				$resultInsertValidar2 = $conn->prepare($sqlInsertValidar2);
+				$resultInsertValidar2->bindParam(':iduser', $resultadoUser['id']);
+				$resultInsertValidar2->bindParam(':oldemail', $mailPrincipal);
+				$resultInsertValidar2->bindParam(':newemail', $email);
+				$resultInsertValidar2->execute();
+
+				$sqln="SELECT * from validar where email=:email";
+				$resultn = $conn->prepare($sqln);
+				$resultn->bindParam(':email', $mailPrincipal);
+				$resultn->execute();
+				$resultadon=$resultn->fetch();
+
+				$emailemp=$resultadon['email'];
+				$nombreemp=$resultadon['nombreemp'];
+				$nifemp=$resultadon['nifemp'];
+				$codvalidarinc=$resultadon['codvalidar'];
+				$pass=$resultadon['password'];
+				$telcontacto=$resultadon['telcontacto'];
+				$idpr=$resultadon['idpr'];
+				$pais=$resultadon['pais'];
+				$ciudad=$resultadon['localidad'];
+
+				$nombremp2=strtoupper($nombreemp);
+				$asunto="CONFIRMACION CAMBIO DE CORREO ELECTRONICO EN CIUDADANOS ANONIMOS";
+				//$href="http://control.ciudadanosanonimos.com/administracion_n/activacion1.php?".$codvalidarinc;
+			   //$mailto="sguinaldo@yahoo.com";
+			   $mailto=$mailPrincipal;
+			    //$message=$obs;
+			    $subject = $asunto;
+			    
+			    $message = "
+			        <html>
+			        <head>
+			        <title>$asunto</title>
+			        </head>
+			        <body><center>
+			        <table>
+			        <tr><td colspan='3' align='center'><img src='http://control.ciudadanosanonimos.com/img/logo-ciud-anonimos.png' width='250px'></td></tr>
+			        <tr><td colspan='3' >Bienvenidos al Portal de CIUDADANOS ANONIMOS</td></tr>
+			        <tr><td colspan='3' >Hola $nombremp2 :</td></tr>
+			        <tr><td colspan='3' >Hemos detectado que has cambiado la direccion de correo electronico a:</td></tr>
+			        <tr><td colspan='3' >$email</td></tr>
+			        <tr><td colspan='3' >Para completar el proceso de cambio de correo electronico debes entrar al enlace de activacion que te hemos enviado al nuevo correo:</td></tr>
+			        <tr><td colspan='3' >Para confirmar este cambio <a href='http://control.ciudadanosanonimos.com/administracion_n/confirmarCambio.php?oldMail=$mailPrincipal&newMail=$email'>PINCHE AQUI</a></td></tr>
+			        <tr><td colspan='3' >Se te enviara un mensaje al nuevo correo para validarlo</td></tr>
+			        <tr><td colspan='3' style='font-size:8px' ><p>&nbsp;</p>
+			Para m&aacute;s informaci&oacute;n puedes contactar con el Servicio de Atenci&oacute;n Directa.
+			Aviso: Este correo ha sido generado de forma autom&aacute;tica. Por favor, no responda a este mensaje. 
+			Para comunicar cualquier tipo de sugerencia, duda o comentario, utilice el apartado 'Contacta con nosotros' 
+			en http://www.ciudadanosanonimos.com. Este documento est&aacute; dirigido exclusivamente al destinatario especificado. 
+			La informaci&oacute;n contenida es confidencial y está legalmente protegida. Si usted recibe este mensaje por error, 
+			por favor comun&iacute;quelo inmediatamente al remitente y elim&iacute;nelo ya que usted no está autorizado al uso, revelaci&oacute;n, 
+			distribuci&oacute;n, impresi&oacute;n o copia de toda o alguna parte de la informaci&oacute;n contenida.
+			        </td></tr>
+			        </table>
+			        </center>
+			        </body>
+			        </html>";     
+			    
+
+			    // a random hash will be necessary to send mixed content
+			    $separator = md5(time());
+
+			    // carriage return type (we use a PHP end of line constant)
+			    $eol = PHP_EOL;
+
+			    // main header (multipart mandatory)
+
+			    $headers = 'From: CIUDADANOS ANONIMOS EN ACCION - <info@ciudadanosanonimos.com>' . $eol;
+
+			   $headers .= 'Bcc: ciudadanosanonimos@yahoo.com'  . $eol;
+
+
+
+			    $headers .= "Content-Type: text/html; charset=\"iso-8859-1\"" . $eol;
+			    $headers .= "Content-Transfer-Encoding: 8bit" . $eol . $eol;
+
+			    if (mail($mailto, $subject, $message, $headers)) {
+					
+			        /*echo "<center><table border=1 cellspacing=5 cellpadding=5><tr><th>MENSAJE ENVIADO SATISFACTORIAMENTE</th></tr></table></center>";
+			        echo $mailto."<br>";
+			        echo $subject."<br>";
+			        echo $message."<br>";
+			        echo $headers."<br>";*/
+			             
+			      } else {
+			        echo "<center><table border=1 cellspacing=5 cellpadding=5><tr><th>MENSAJE NO ENVIADO</th></tr></table></center>";
+			        echo $mailto."<br>";
+			        echo $subject."<br>";
+			        echo $message."<br>";
+			        echo $headers."<br>";
+			      }
+
+
+				$cambiado = true;
+				header('Location: cuenta.php?comp=3');
+				die();
+			}else{
+				header('Location: cuenta.php?comp=2');
+				die();
+			}
+
+			
+		}
+
+		if ($cambiado) {
+			header('Location: cuenta.php?comp=1');
+		}else{
+			header('Location: cuenta.php');
+		}
+
+	}else{
+		header('Location: cuenta.php');
+	}
+
+
+	/*$sqlCheckEmail = "SELECT count(*) as cant FROM validar WHERE email = :email AND idvalidar != :idvalidar";
 	$resultCheckEmail = $conn->prepare($sqlCheckEmail);
 	$resultCheckEmail->bindParam(':email', $email);
 	$resultCheckEmail->bindParam(':idvalidar', $idValidar);
@@ -25,14 +183,6 @@
 	$resultadoCheckEmail = $resultCheckEmail->fetch();
 
 	if($resultadoCheckEmail['cant'] == 0){
-		/*$sqlSelectCodValidar = "SELECT codvalidar FROM validar WHERE email = :mailPrincipal";
-		$resultSelectCodValidar = $conn->prepare($sqlSelectCodValidar);
-		$resultSelectCodValidar->bindParam(':mailPrincipal', $mailPrincipal);
-		$resultSelectCodValidar->execute();
-		$resultadoSelectCodValidar = $resultSelectCodValidar->fetch();
-
-		var_dump($resultadoSelectCodValidar);*/
-
 		$sqlUpdateValidar = "UPDATE validar SET nombreemp = :nombre, email = :email, telcontacto = :telefono, validar = '0' WHERE email = :mailPrincipal";
 		$resultUpdateValidar = $conn->prepare($sqlUpdateValidar);
 		$resultUpdateValidar->bindParam(':nombre', $nombre);
@@ -46,6 +196,8 @@
 		$resultUpdateUsuario->bindParam(':email', $email);
 		$resultUpdateUsuario->bindParam(':mailPrincipal', $mailPrincipal);
 		$resultUpdateUsuario->execute();
+
+
 
 		if ($mailPrincipal != $email) {
 			$sqln="SELECT * from validar where email=:email";
@@ -170,9 +322,9 @@
 						    // main header (multipart mandatory)
 
 						    $headers = 'From: CIUDADANOS ANONIMOS EN ACCION - <info@ciudadanosanonimos.com>' . $eol;
-						if ($emailadmin2!=""){;   
-						    $headers .= 'Cc: '.$emailadmin2  . $eol;
-						};
+							if ($emailadmin2!=""){  
+							    $headers .= 'Cc: '.$emailadmin2  . $eol;
+							}
 
 						   $headers .= 'Bcc: ciudadanosanonimos@yahoo.com'  . $eol;
 
@@ -187,13 +339,13 @@
 						     if (mail($mailto, $subject, $message, $headers)) {
 						        //echo "mail send ... OK"; // or use booleans here
 						     
-						        /*
+						        
 						        echo "<center><table border=1 cellspacing=5 cellpadding=5><tr><th>MENSAJE ENVIADO SATISFACTORIAMENTE</th></tr></table></center>";
 						        echo $mailto."<br>";
 						        echo $subject."<br>";
 						        echo $message."<br>";
 						        echo $headers."<br>"; 
-						        */      
+						             
 						        
 						      } else {
 						        //echo "mail send ... ERROR!";
@@ -205,7 +357,7 @@
 						      }
 
 
-						};  
+						}
 			        
 			      } else {
 			        //echo "mail send ... ERROR!";
@@ -217,8 +369,7 @@
 			      }
 
 
-			};  
-
+			}
 
 			header('Location: salir.php');
 		}else{
@@ -227,5 +378,5 @@
 
 	}else{
 		header('Location: cuenta.php?comp=2');
-	}
+	}*/
 ?>

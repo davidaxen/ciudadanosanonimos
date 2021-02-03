@@ -305,11 +305,11 @@ if ($row10==0){;
 
 	  	<?php
 	  		}
-	  	?>
-
-	  	 			<div align="center" style="margin-bottom: 10%">
-					<button type="submit" class="btn btn-primary" value="enviar" name="enviar">ENVIAR</button>
-					</div>
+	  	?>	 
+  	 			<div align="center" style="padding-bottom: 20px">
+				<button type="submit" class="btn btn-primary" value="enviar" name="enviar">ENVIAR</button>
+					
+				</div>	
 
 	</div>
 

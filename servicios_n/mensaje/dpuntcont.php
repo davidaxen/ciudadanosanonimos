@@ -15,6 +15,7 @@ if ($ide!=null){;
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
 <body style="background-image:url(../../img/iconos/portada_ca.jpg)";>
+
 <div id="main">
 <div class="titulo">
 
@@ -60,6 +61,7 @@ if ($ide!=null){;
 <tr><td colspan="2"><input class="input1" type="text" name="resp[4]" maxlength="250" size="100"></td></tr>
 <tr><td colspan="2"><input class="input1" type="checkbox" name="otrosmot" value="1">Otros Motivos</td></tr>
 <tr><td colspan="2"><input class="input1" type="checkbox" name="video" value="1">SELECCIONE SI LA PREGUNTA CONTIENE VIDEO</td></tr>
+<tr><td><b>Videos</b></td><td><input type="file" name="video"></td></tr>
 <tr><td><b>Ficheros</b></td><td><input type="file" name="fichero"></td></tr>
 <tr><td></td></tr>
 <tr><td align="center" colspan="2"><input class="button button5" type="submit" class="envio" value="ENVIAR" name="ENVIAR"></td></tr>

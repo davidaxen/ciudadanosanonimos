@@ -2,9 +2,9 @@
 error_reporting(0);
 include('bbdd.php');
 
+
+
 if ($ide!=null){;
-
-
  include('../../portada_n/cabecera3.php');?>
 
 <div id="main">
@@ -107,10 +107,9 @@ $result1=$conn->exec($sql1);
 LOS DATOS HAN SIDO INTRODUCCIDOS<p>
 
 
-<a href="dmensaje.php?dat=h" >Volver</a>
+<a href="dpuntcont.php" >Volver</a>
 </div>
 </div>
-
 
 
 <?php } else {;
