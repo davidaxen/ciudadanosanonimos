@@ -2,9 +2,9 @@
 error_reporting(0);
 include('bbdd.php');
 
-
-
 if ($ide!=null){;
+
+
  include('../../portada_n/cabecera3.php');?>
 
 <div id="main">
@@ -110,6 +110,11 @@ LOS DATOS HAN SIDO INTRODUCCIDOS<p>
 <a href="dpuntcont.php" >Volver</a>
 </div>
 </div>
+
+<?php 
+  header("location: dpuntcont.php?msg=Los pregunta ha sido introducida correctamente");
+  die();
+ ?>
 
 
 <?php } else {;

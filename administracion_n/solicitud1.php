@@ -27,6 +27,23 @@ $logo=$resultado['logo'];
 <script type="text/javascript" language="javascript" src="ajax.js"></script>
 <script>
 
+//==================
+function mostrarCodigosPostales(){
+ 
+    divResultado = document.getElementById('codigospostales');
+    mun=document.getElementById('obj_municipio').value;
+    ajax=objetoAjax();
+    ajax.open("POST", "codigospostales.php");
+    ajax.onreadystatechange=function() {
+        if (ajax.readyState==4) {
+            divResultado.innerHTML = ajax.responseText
+        }
+    }
+    ajax.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
+    ajax.send("idmun="+mun)
+}
+ 
+
 function myFunction(valor) {
 
   var x = document.getElementById(valor);
@@ -52,7 +69,7 @@ function myFunction(valor) {
 <form name="form1" method="post" action="registro1.php">
   <input type="hidden" name="idpr" value="<?php echo $idpr ?>">
   <div class='fadeIn first'>
-    <img src='../img/logo-ciud-anonimos.png' width='250px'>
+    <img src='../img/logo-ciud-anonimos.png' width='200px'>
     <h3 style="text-align: center;color:#000">SOLICITUD DE PARTICIPACI&Oacute;N EN CIUDADANOS ANONIMOS</h3>
   </div>
 
@@ -87,11 +104,13 @@ function myFunction(valor) {
   <br>
   <b>Ciudad</b>
   <div id="listamunicipios">
-
-      
        <?php include('municipios.php'); ?>
     </div>
-    <br>
+    <b>Codigo postal</b>
+  <div id="codigospostales">
+       <?php include('codigospostales.php'); ?>
+    </div>
+     
     <div class="formFooter" >
         <a class="underlineHover" href="https://www.ciudadanosanonimos.com/politica-y-aviso">Politica de Privacidad y Aviso Legal</a>
          <input name="politica" id="politica" required type="checkbox"/>
