@@ -1,10 +1,37 @@
 <?php
 include('bbdd.php');
 
+	$sqltusuario = "SELECT * FROM usuarios WHERE user = :gente";
+	$resultusuario=$conn->prepare($sqltusuario);
+	$resultusuario->bindParam(':gente', $_COOKIE['gente']);
+	$resultusuario->execute();
+	$resultadousuario = $resultusuario->fetch();
+
 ?>
 <html>
 
 <script type="text/javascript">
+
+	function executeAjax(iduser){
+
+		var tsolicitud = $('input[name=solicitud]:checked').val();
+		$.ajax({
+				url: "ajax_solicitud_tuser.php",
+				type: "POST",
+				dataType : 'json',
+				data: {
+					iduser: iduser,
+					tsolicitud: tsolicitud		
+				},
+				success: function(e){
+				  console.log(e.message);
+				
+				},
+				error: function(e) {
+			       console.log(e.message);
+			    }
+			});
+	}
 
 	function desaparecer(){
 		document.getElementById('informacion').style.display = "none";
@@ -20,7 +47,6 @@ include('bbdd.php');
 		var nombre = document.getElementById('nombre');
 		var email = document.getElementById('email');
 		var telf = document.getElementById('telcontacto');
-		//var mailPrincipal = document.getElementById('mailPrincipal').value;
 
 		if (nombre.value == "") {
 			alert("El campo del nombre no puede estar vacio");
@@ -111,12 +137,63 @@ if(isset($_COOKIE['gente'])){
 			<label>País:</label> <br>
 			<label><?php echo $resultadoPais['pais']; ?></label>
 		</div>
-			<?php
-			if (isset($_REQUEST['comp'])) {
-				$data = $_REQUEST['comp'];
+		<div class="form-group">
+			<?php 
+			if ($resultadousuario['tusuario'] == 3) {
+				?>
+				<input type="checkbox" name="solicitud" id="solicitudcp" value="40" onclick="executeAjax(<?php echo $resultadousuario['id']; ?>)"> <label for="solicitudcp">Solicitar ser colaborador de codigo postal</label>
+				<?php
 			}
-			?>
+			 ?>
 
+			 <?php 
+			if ($resultadousuario['tusuario'] == 40) {
+				?>
+				<input type="checkbox" name="solicitud" id="solicitud" value="41"> <label for="solicitud">Solicitar ser gestor de codigo postal</label>
+				<br>
+				<input type="checkbox" name="solicitud" id="solicitudciu" value="50"> <label for="solicitudciu">Solicitar ser colaborador de ciudad</label>
+				<?php
+			}
+			 ?>
+
+			 <?php 
+			if ($resultadousuario['tusuario'] == 41) {
+				?>
+				<input type="checkbox" name="solicitud" id="solicitudciu" value="50"> <label for="solicitudciu">Solicitar ser colaborador de ciudad</label>
+				<?php
+			}
+			 ?>
+
+			 <?php 
+			if ($resultadousuario['tusuario'] == 50) {
+				?>
+				<input type="checkbox" name="solicitud" id="solicitudciu" value="51"> <label for="solicitudciu">Solicitar ser gestor de ciudad</label>
+				<br>
+				<input type="checkbox" name="solicitud" id="solicitudpais" value="60"> <label for="solicitudpais">Solicitar ser colaborador de pais</label>
+				<?php
+			}
+			 ?>
+
+			 <?php 
+			if ($resultadousuario['tusuario'] == 51) {
+				?>
+				<input type="checkbox" name="solicitud" id="solicitudpais" value="60"> <label for="solicitudpais">Solicitar ser colaborador de pais</label>
+				<?php
+			}
+			 ?>
+
+			 <?php 
+			if ($resultadousuario['tusuario'] == 60) {
+				?>
+				<input type="checkbox" name="solicitud" id="solicitudpais" value="61"> <label for="solicitudpais">Solicitar ser gestor de pais</label>
+				<?php
+			}
+			 ?>
+
+
+
+
+		</div>
 			<br>
 
 			<div><button type="button" class="btn btn-default" onclick="desaparecer()">Editar</button></div> <br>
