@@ -110,7 +110,7 @@
 
 			<div style="text-align: center; margin-top: 50px">
 				<input type="submit" name="aceptarbtn" value="Aceptar">
-				<input type="submit" name="denegarbtn" value="Denegar">
+				<input style="background-color: #F08080" type="submit" name="denegarbtn" value="Denegar">
 			</div>
 		</form>
 
