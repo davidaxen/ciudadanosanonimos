@@ -1,4 +1,4 @@
-<?php 
+<?php
 include('bbdd.php');
 $idpr=1;
 if ($idpr!=null){;
@@ -29,7 +29,7 @@ $logo=$resultado['logo'];
 
 //==================
 function mostrarCodigosPostales(){
- 
+
     divResultado = document.getElementById('codigospostales');
     mun=document.getElementById('obj_municipio').value;
     ajax=objetoAjax();
@@ -42,7 +42,7 @@ function mostrarCodigosPostales(){
     ajax.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
     ajax.send("idmun="+mun)
 }
- 
+
 
 function myFunction(valor) {
 
@@ -57,8 +57,6 @@ function myFunction(valor) {
 
 </script>
 
-
-
 </head>
 
 
@@ -69,23 +67,21 @@ function myFunction(valor) {
 <form name="form1" method="post" action="registro1.php">
   <input type="hidden" name="idpr" value="<?php echo $idpr ?>">
   <div class='fadeIn first'>
-    <img src='../img/logo-ciud-anonimos.png' width='200px'>
     <h3 style="text-align: center;color:#000">SOLICITUD DE PARTICIPACI&Oacute;N EN CIUDADANOS ANONIMOS</h3>
   </div>
 
-  <input placeholder="Nombre" class="fadeIn second" tabindex="2" name="nombreemp" id="nombre" type="text" required/>
+  <input placeholder="Nombre" style="text-align:left;" class="fadeIn second" tabindex="2" name="nombreemp" id="nombre" type="text" required/>
 
-  <input placeholder="Correo Electrónico" class="fadeIn second" tabindex="3" name="emailemp" id="emailemp" type="text" required onblur="emailc()"/>
+  <input placeholder="Correo Electrónico" style="text-align:left;" class="fadeIn second" tabindex="3" name="emailemp" id="emailemp" type="text" required onblur="emailc()"/>
+  <input class="fadeIn second" style="text-align:left;" placeholder="Teléfono" tabindex="6" name="telcontacto" id="telcontacto" required type="text"/>
+  <br>
 
-
-    <input placeholder="Contraseña" class="fadeIn third" type="password" tabindex=4 id="psw" name="psw" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Al menos una minuscula, una mayuscula, un numero y minimo 8 caracteres" required>
+    <input placeholder="Contraseña" style="text-align:left; width: 79%;" class="fadeIn third" type="password" tabindex="4" id="psw" name="psw" pattern="(?=.\d)(?=.[a-z])(?=.*[A-Z]).{8,}" title="Al menos una minuscula, una mayuscula, un numero y minimo 8 caracteres" required>
+    <img align="center" src='../img/iconos/pass.png' width='32px' onclick="myFunction('psw')">
     <br>
-    <img align="center" src='../img/iconos/pass.png' width='32px' onclick="myFunction('psw')"  style='vertical-align:middle'>
-    <br>
-    <input placeholder="Repetir Contraseña" class="fadeIn third" tabindex="5" name="psw2" id="psw2" required type="password" required  onblur="contrase()"  />
-    <br>
-    <img src='../img/iconos/pass.png' width='32px' onclick="myFunction('psw2')"  style='vertical-align:middle'>
-    <br>
+    <input placeholder="Repetir Contraseña" style="text-align:left; width: 79%;" class="fadeIn third" tabindex="5" name="psw2" id="psw2" required type="password" required  onblur="contrase()"  />
+    <img src='../img/iconos/pass.png' width='32px' onclick="myFunction('psw2')">
+    <br><br>
 
 
 <!--<div id="message">
@@ -96,21 +92,22 @@ function myFunction(valor) {
   <span id="length" class="invalid">Minimo <b>8 caracteres</b></span><br/>
 </div>-->
 
-  <input class="fadeIn second" placeholder="telefono de Contacto" tabindex="6" name="telcontacto" id="telcontacto" required type="text"/>
-<br>
+
   <b>Pais</b>
-  <br>
   <?php include('provincias.php'); ?>
+  <br>
   <br>
   <b>Ciudad</b>
   <div id="listamunicipios">
        <?php include('municipios.php'); ?>
     </div>
+    <br>
     <b>Codigo postal</b>
   <div id="codigospostales">
        <?php include('codigospostales.php'); ?>
     </div>
-     
+    <br>
+
     <div class="formFooter" >
         <a class="underlineHover" href="https://www.ciudadanosanonimos.com/politica-y-aviso">Politica de Privacidad y Aviso Legal</a>
          <input name="politica" id="politica" required type="checkbox"/>
@@ -122,48 +119,48 @@ function myFunction(valor) {
 </div>
 </div>
 </body>
-    <script language="javascript"> 
-        
+    <script language="javascript">
+
     function emailc(){
       valueForm=document.form1.emailemp.value;
-    var patron=/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,4})+$/;
-    
+    var patron=/^\w+([\.-]?\w+)@\w+([\.-]?\w+)(\.\w{2,4})+$/;
+
     if(valueForm.search(patron)==0){
-    	var valormail=1;
+      var valormail=1;
     //alert (valormail);
-    } else { 
+    } else {
     alert ("La \"Direccion de Email\" no es correcta");
     document.form1.emailemp.value=null;
     document.form1.telcontacto.focus();
-    }  
-   } 
-    
+    }
+   }
+
     function contrase(){
      pasNew1=document.form1.psw;
 //alert (pasNew1.value);
-	pasNew2=document.form1.psw2;
+  pasNew2=document.form1.psw2;
 //alert (pasNew2.value);
 
-	if(pasNew1.value==pasNew2.value){
-    	var valorpass=1;
-	}else{
-			alert("La copia de la password no coincide");
-    		document.form1.psw2.value=null;
-			document.form1.nombremp.focus();	
-	}
-}	
-   
+  if(pasNew1.value==pasNew2.value){
+      var valorpass=1;
+  }else{
+      alert("La copia de la password no coincide");
+        document.form1.psw2.value=null;
+      document.form1.nombremp.focus();
+  }
+}
+
      function EsTelefonoMovil() {
     var telReg=/(^([0-9]{9,9})|^)$/;
-    if (!(telReg.test(form1.telcontacto.value))) { 
+    if (!(telReg.test(form1.telcontacto.value))) {
     alert('El telefono no es valido');
     document.form1.telcontacto.value=null;
     document.form1.nombremp.focus();
-	 document.form1.telcontacto.focus();
-    }    
+   document.form1.telcontacto.focus();
+    }
 
-     } 
-    
+     }
+
 
     </script>
 <script>
@@ -190,8 +187,8 @@ myInput.onkeyup = function() {
   // Validate lowercase letters
   var lowerCaseLetters = /[a-z]/g;
   //var lowerCaseLetters = /^[a-z]+$/;
-  if(myInput.value.match(lowerCaseLetters)) { 
-    myInput.setCustomValidity('');    
+  if(myInput.value.match(lowerCaseLetters)) {
+    myInput.setCustomValidity('');
     /*letter.classList.remove("invalid");
     letter.classList.add("valid");*/
   } else {
@@ -203,7 +200,7 @@ myInput.onkeyup = function() {
 
   // Validate capital letters
   var upperCaseLetters = /[A-Z]/g;
-  if(myInput.value.match(upperCaseLetters)) {  
+  if(myInput.value.match(upperCaseLetters)) {
 
     myInput.setCustomValidity('');
     /*capital.classList.remove("invalid");
@@ -217,7 +214,7 @@ myInput.onkeyup = function() {
 
   // Validate numbers
   var numbers = /[0-9]/g;
-  if(myInput.value.match(numbers)) {  
+  if(myInput.value.match(numbers)) {
     myInput.setCustomValidity('');
     /*number.classList.remove("invalid");
     number.classList.add("valid");*/
@@ -226,7 +223,7 @@ myInput.onkeyup = function() {
     /*number.classList.remove("valid");
     number.classList.add("invalid");*/
   }
-  
+
   // Validate length
   if(myInput.value.length >= 8) {
     myInput.setCustomValidity('');
@@ -241,7 +238,7 @@ myInput.onkeyup = function() {
 </script>
 </html>
 
-<?php 
+<?php
 } else {;
 
 include ('../cierre.php');

@@ -15,14 +15,14 @@
 	$result->execute();
 	$resultado = $result->fetch();
 
-	if ($resultadousuario['tusuario'] == 51) {
+	if ($resultadousuario['tusuario'] == 51 || $resultadousuario['tusuario'] == 52) {
 		$gestor = 1;
 	}else{
 		$gestor = 0;
 	}
 
 	$fecha = date("g:i A");
-	$sql1 = "INSERT INTO chatciudad (idusuario, idpais, idciudad, msg, timehour, chat, tuser) VALUES (".$resultadousuario['id'].",".$resultado['pais'].",".$resultado['localidad'].",'".stripslashes(htmlspecialchars($text))."','".$fecha."', 0, $gestor)";
+	$sql1 = "INSERT INTO chatciudad (idusuario, idvalidar, idpais, idciudad, msg, timehour, chat, tuser) VALUES (".$resultadousuario['id'].",".$resultado['idvalidar'].",".$resultado['pais'].",".$resultado['localidad'].",'".stripslashes(htmlspecialchars($text))."','".$fecha."', 0, $gestor)";
 	$conn->exec($sql1);
 
 
