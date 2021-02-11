@@ -22,7 +22,7 @@
 	}
 
 	$fecha = date("g:i A");
-	$sql1 = "INSERT INTO chatpais (idusuario, idpais, msg, timehour, chat, tuser) VALUES (".$resultadousuario['id'].",".$resultado['pais'].",'".stripslashes(htmlspecialchars($text))."','".$fecha."', 0, $gestor)";
+	$sql1 = "INSERT INTO chatpais (idusuario, idvalidar, idpais, msg, timehour, chat, tuser) VALUES (".$resultadousuario['id'].",".$resultado['idvalidar'].",".$resultado['pais'].",'".stripslashes(htmlspecialchars($text))."','".$fecha."', 0, $gestor)";
 	$conn->exec($sql1);
 
 

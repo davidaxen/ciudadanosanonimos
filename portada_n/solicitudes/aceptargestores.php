@@ -7,15 +7,17 @@
 	$result->execute();
 	$resultado = $result->fetch();
 
-	if ($resultado['tusuario'] == 51) {
-		$sqlsolicitudes = "SELECT * FROM solicitudes WHERE tsolicitud = 41";
-		$resultsolicitudes = $conn->query($sqlsolicitudes);
-		$resultadosolicitudes = $resultsolicitudes->fetchAll();
-	}else if ($resultado['tusuario'] == 61) {
-		$sqlsolicitudes = "SELECT * FROM solicitudes WHERE tsolicitud = 51";
-		$resultsolicitudes = $conn->query($sqlsolicitudes);
-		$resultadosolicitudes = $resultsolicitudes->fetchAll();
-	}
+	if ($resultado['tusuario'] == 51 || $resultado['tusuario'] == 52 || $resultado['tusuario'] == 61) {
+
+		if ($resultado['tusuario'] == 51 || $resultado['tusuario'] == 52) {
+			$sqlsolicitudes = "SELECT * FROM solicitudes WHERE tsolicitud = 41 AND aceptado = 0";
+			$resultsolicitudes = $conn->query($sqlsolicitudes);
+			$resultadosolicitudes = $resultsolicitudes->fetchAll();
+		}else if ($resultado['tusuario'] == 61) {
+			$sqlsolicitudes = "SELECT * FROM solicitudes WHERE tsolicitud = 51 AND aceptado = 0";
+			$resultsolicitudes = $conn->query($sqlsolicitudes);
+			$resultadosolicitudes = $resultsolicitudes->fetchAll();
+		}
 
 	
 
@@ -63,7 +65,8 @@
 			if (count($resultadosolicitudes) > 0 )  {
 				
 			?>
-		<form method="POST" action="execute.php">	
+		<form method="POST" action="execute.php">
+			<input type="hidden" name="typeaccept" value="1">
 			<table align="center" style="margin-top: 20px">
 				<tr>
 					<th style="width: 200px; text-align: center; height: 30px">Nombre</th>
@@ -92,11 +95,13 @@
 						
 					?>
 						<tr>
+							<input type="hidden" name="idsoli[]" id="idsoli" value="<?php echo $row['id'] ?>">
 							<td style="text-align: center;"><?php echo $resultadoinfo['nombreemp']; ?></td>
 							<td style="text-align: center;"><?php echo $resultadopais['pais']; ?></td>
 							<td style="text-align: center;"><?php echo $resultadociudad['ciudad']; ?></td>
 							<td style="text-align: center;"><?php echo $resultadoinfo['telcontacto']; ?></td>
-							<td style="text-align: center;"><input type="checkbox" name="idsoli[]" id="idsoli" value="<?php echo $row['id'] ?>"></td>
+							<td style="text-align: center;"><input type="submit" name="aceptarbtn" value="Aceptar"></td>
+							<td style="text-align: center;"><input style="background-color: #F08080" type="submit" name="denegarbtn" value="Denegar"></td>
 						</tr>
 					<?php
 
@@ -104,10 +109,10 @@
 				 ?>
 			</table>
 
-			<div style="text-align: center; margin-top: 50px">
+			<!--<div style="text-align: center; margin-top: 50px">
 				<input type="submit" name="aceptarbtn" value="Aceptar">
 				<input style="background-color: #F08080" type="submit" name="denegarbtn" value="Denegar">
-			</div>
+			</div>-->
 		</form>
 
 		<?php 
@@ -124,3 +129,11 @@
 </body>
 
 </html>
+
+<?php 
+
+    }else{
+      header("Location: /portada_n/ultimasentradas_t.php");
+    }
+
+ ?>

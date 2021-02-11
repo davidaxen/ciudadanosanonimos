@@ -27,17 +27,23 @@
 				<?php 
 					if ($row['idusuario'] == $resultadousuario['id']) {
 						if ($row['tuser'] == 1) {
-							echo "Tú (Gestor)";
+							echo $resultado['nombreemp']." (Tú)";
 						}else{
-							echo "Tú";
+							echo $resultado['nombreemp']." (Tú)";
 						}
 						
 					}else{
 
+						$sql2 = "SELECT * FROM validar WHERE idvalidar = :idvalidar";
+						$result2=$conn->prepare($sql2);
+						$result2->bindParam(':idvalidar', $row['idvalidar']);
+						$result2->execute();
+						$resultado2 = $result2->fetch();
+
 						if ($row['tuser'] == 1) {
-							echo "Anonimo (Gestor)";
+							echo $resultado2['nombreemp']." (Gestor)";
 						}else{
-							echo "Anonimo";
+							echo $resultado2['nombreemp'];
 						}
 					}
 				?> </b>: <?php echo $msg ?><br></div>
