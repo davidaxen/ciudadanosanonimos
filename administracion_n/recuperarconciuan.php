@@ -1,4 +1,4 @@
-<?php 
+<?php
 $sdato=$_SERVER['HTTP_USER_AGENT'];
 $dominio=$_SERVER['SERVER_NAME'];
 
@@ -18,7 +18,7 @@ $row=mysqli_num_rows($result);*/
 if ($row==0){
 ?>
 Este dominio no tiene acceso al sistema, por favor hable con el departamento de sistemas.
-<?php 	
+<?php
 	}else{;
 //$resultado=mysqli_fetch_array($result);
 $resultado=$resultmos->fetch();
@@ -32,38 +32,34 @@ $pie=$resultado['pie'];
 $reseteo=$resultado['reseteo'];
 ?>
 
-
-
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
+	<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Convergence" />
+	<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
   <meta http-equiv="Content-type" content="text/html;charset=UTF-8"/>
-<title>RECUPERACION DE CONTRASE&Ntilde;A <?php echo strtoupper($nombre);?><</title>  
-<link rel="stylesheet" href="solicitud.css">
+<title>RECUPERACION DE CONTRASE&Ntilde;A <?php echo strtoupper($nombre);?><</title>
 </head>
 
-<body class='html' style='background-image:url(../img/<?php echo $fondo;?>);
-  background-repeat: no-repeat;
-  background-size: cover;'>
-<div class='cuadro'>
-<div class='hijo' style='background-color:#f5f5f5;'>
-
-
-  <div class='imgcontainer'>
-    <img src='../img/<?php echo $logo;?>'>
-    <h3 style="text-align: center;color:#000000">RECUPERACION DE CONTRASE&Ntilde;A <?php echo strtoupper($nombre);?></h3>
-    <span class="tit3">Para poder recuperar la contrase&ntilde;a, necesitamos que nos indique su correo para poder enviarle un mensaje con ella</span>
-    <br><br>
+<body style="background-image:url(../img/iconos/portada_ca.jpg);">
+<div class="container" style="background-color: white; border-radius: 10px; margin-top: 100px; margin-left: 100px; margin-right: 600px;">
+	<h2>Recuperación de contraseña</h2>
+		<p>Indique su dirección de correo electrónico para poder enviar un mensaje con su contraseña</h3>
+		<div>
     <form action="sendmailrecuperarcon.php">
-    	<input type="text" name="mail" placeholder="Correo electronico">
-    	<input type="submit" name="submit" value="enviar">
-    </form>
+			<div class="form-group">
+				<label for="mail">Correo electrónico:</label> <br>
+				<input type="text" style="text-align:left;" class="form-control" name="mail">
+			</div>
+			<button type="submit" name="submit" class="btn btn-default" value="enviar">Enviar</button>
+    </form> <br>
   </div>
 
-
 </div>
-</div>
-
-
 
 <?php };?>
