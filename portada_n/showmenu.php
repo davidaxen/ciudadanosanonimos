@@ -54,6 +54,21 @@
 			
 		}
 	</script>
+	<style>
+		 @media (min-width: 992px){
+   		   .external-collapse.navbar-collapse {
+        	  display: -webkit-box!important;
+         	  display: -ms-flexbox!important;
+          	  display: flex!important;
+      }
+
+  }
+
+          .collapse {
+    	display: none;
+    	visibility: visible;
+}
+	</style>
 
 <div class="[ collapse navbar-collapse ]" id="bs-example-navbar-collapse-1">
 
@@ -84,12 +99,12 @@
    		
    		?>
    			<ul class="[ nav navbar-nav navbar-left mx-auto]">
-				<li class="[ animate ]"><a href="#" class="[ animate ]" onclick="changeOptions(1)" >RESPUESTAS</a></li>
+				<li  class="[ animate ]"><a href="#" class="[ animate ]" onclick="changeOptions(1)" >RESPUESTAS</a></li>
 				<li class="[ animate ]"><a href="#" class="[ animate ]" onclick="changeOptions(2)" >COLABORADOR C.P</a></li>
 				<li><a href="/portada_n/cuenta.php" class="[ animate ]">MI CUENTA</a></li>
 
 			</ul>
-			<br><br><br>
+			
 
 			<ul class="[ nav navbar-nav navbar-left ]" id="resp">
 
@@ -119,6 +134,7 @@
    	<?php if ($resultadousuario['tusuario'] == 41) {
    		
    		?>
+
    			<ul class="[ nav navbar-nav navbar-left mx-auto]">
 				<li class="[ animate ]"><a href="#" class="[ animate ]" onclick="changeOptions(1)" >RESPUESTAS</a></li>
 				<li class="[ animate ]"><a href="#" class="[ animate ]" onclick="changeOptions(2)" >COLABORADOR C.P</a></li>
