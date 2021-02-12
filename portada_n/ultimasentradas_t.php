@@ -79,25 +79,37 @@ $row1=mysqli_num_rows($result1);*/
 <head>
 	<!-- cabecera -->
   <link rel="stylesheet" type="text/css" href="respuestas.css">
-  <link rel="stylesheet" type="text/css" href="../chat/cabecera.css">
+  <link rel="stylesheet" type="text/css" href="cabecera.css">
   <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Convergence" />
 
 </head>
 <body style="background-image:url(../img/iconos/portada_ca.jpg)";>
 	<nav class="[ navbar navbar-fixed-top ][ navbar-bootsnipp animate ]" role="navigation">
-	    <div class="[ navbar-header ]">
-	        <div class="[ animbrand ]">
-	            <a class="[ navbar-brand ][ animate ]" href="../inicio1.php"><img src="../img/ciudadanoslogo.png"></a>
-	            <div style="float: right; margin-top: 22px;">
-							<?php include ('../donaciones/index.php')?>
-				</div>
-	        </div>
-	    </div>
-		<div >
-		<?php
-			include_once("showmenu.php");
-		?>
-		</div>
+		<table align="center">
+		<tr>
+			<td>
+	    		<div class="[ navbar-header ]">
+	        		<div class="[ animbrand ]">
+	            		<a style="float: none;" class="[ navbar-brand ][ animate ]" href="../inicio1.php"><img src="../img/ciudadanoslogo.png"></a>
+
+	        		</div>
+	    		</div>
+	    	</td>
+			<td>
+				<div align="center" >
+				<?php
+					include_once("showmenu.php");
+
+				?>	
+				<td>
+			      	<div style="float: right;">
+								<?php include ('../donaciones/index.php')?>
+					</div>
+				</td>
+			</div>
+			</td>
+		</tr>
+	</table>
 	</nav>
 
 <!--onload="setTimeout('refrescar1()', 5000);"-->
@@ -227,7 +239,7 @@ if ($row10==0){;
 
 
 
-		</br>
+		
 	<?php
 		$sql1="SELECT count(*) from pdfs WHERE idmensaje=(SELECT id FROM mensajes WHERE id = :id)";
 

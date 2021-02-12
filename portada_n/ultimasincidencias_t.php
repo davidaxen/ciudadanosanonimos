@@ -34,7 +34,8 @@ $result->execute();*/
 <head>
 	<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Convergence" />
 	<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-	<link rel="stylesheet" type="text/css" href="boostrapUlt.css">
+	<link rel="stylesheet" type="text/css" href="cabecera.css">
+	<link rel="stylesheet" type="text/css" href="ultimasincidencias_t.css">
 	<link rel="stylesheet" type="text/css" href="nav.js">
 
 
@@ -62,19 +63,31 @@ function refrescar()
 
 
 	<nav class="[ navbar navbar-fixed-top ][ navbar-bootsnipp animate ]" role="navigation">
-  			<div class="[ navbar-header ]">
-        		<div class="[ animbrand ]">
-          			<a class="[ navbar-brand ][ animate ]" href="../inicio1.php"><img src="../img/ciudadanoslogo.png"></a>
-          			<div style="float: right; margin-top: 22px;">
-							<?php include ('../donaciones/index.php')?>
+  					<table align="center">
+		<tr>
+			<td>
+	    		<div class="[ navbar-header ]">
+	        		<div class="[ animbrand ]">
+	            		<a style="float: none;" class="[ navbar-brand ][ animate ]" href="../inicio1.php"><img src="../img/ciudadanoslogo.png"></a>
+
+	        		</div>
+	    		</div>
+	    	</td>
+			<td>
+				<div align="center" >
+				<?php
+					include_once("showmenu.php");
+
+				?>	
+				<td>
+			      	<div style="float: right;">
+								<?php include ('../donaciones/index.php')?>
 					</div>
-        		</div>
-  			</div>
-		<div>
-  			<?php 
-				include_once("showmenu.php");
-			?>	
-   		</div>
+				</td>
+			</div>
+			</td>
+		</tr>
+	</table>
  	</nav>
 
 
