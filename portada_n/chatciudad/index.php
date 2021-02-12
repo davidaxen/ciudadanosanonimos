@@ -1,6 +1,15 @@
 <?php 
     include('../../bbdd.php');
     $mail = $_COOKIE['gente'];
+
+    $sqlcheckuser = "SELECT * FROM usuarios WHERE user = :mail";
+    $resultcheckuser=$conn->prepare($sqlcheckuser);
+    $resultcheckuser->bindParam(':mail', $mail);
+    $resultcheckuser->execute();
+    $resultadocheckuser = $resultcheckuser->fetch();
+
+    if ($resultadocheckuser['tusuario'] == 50 || $resultadocheckuser['tusuario'] == 51 || $resultadocheckuser['tusuario'] == 52 || $resultadocheckuser['tusuario'] == 42) {
+
     $sql = "SELECT * FROM validar WHERE email = :mail";
     $result=$conn->prepare($sql);
     $result->bindParam(':mail', $mail);
@@ -205,3 +214,11 @@ $(document).ready(function(){
 </script>
 </body>
 </html>
+
+  <?php 
+
+    }else{
+      header("Location: /portada_n/ultimasentradas_t.php");
+    }
+
+ ?>

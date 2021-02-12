@@ -9,6 +9,8 @@ if ($ide!=null){;
 	$resultuser->execute();
 	$resultadouser=$resultuser->fetch();
 
+	if ($resultadouser['tusuario'] == 41 || $resultadouser['tusuario'] == 42 || $resultadouser['tusuario'] == 51 || $resultadouser['tusuario'] == 52 || $resultadouser['tusuario'] == 61) {
+
 	$sqlvalidar = "SELECT * FROM validar WHERE email = :mail";
 	$resultvalidar=$conn->prepare($sqlvalidar);
 	$resultvalidar->bindParam(':mail', $_COOKIE['gente']);
@@ -90,11 +92,11 @@ if ($ide!=null){;
 
 <tr><td colspan="2"><h2 class="enc">ENVIO DE <?php  echo strtoupper($nc);?></h2></td></tr>
 <?php 
-if ($resultadouser['tusuario'] == 41) {
+if ($resultadouser['tusuario'] == 41 || $resultadouser['tusuario'] == 42) {
 ?>
 <tr><td><b>Codigo postal</b></td><td><?php echo $resultadovalidar['cp']; ?></td></tr>
 <?php
-}else if($resultadouser['tusuario'] == 51){
+}else if($resultadouser['tusuario'] == 51 || $resultadouser['tusuario'] == 52){
 	?>
 <tr><td><b>Ciudad</b></td><td><?php echo $resultado1['ciudad']; ?></td></tr>
 	<?php
@@ -140,7 +142,14 @@ if (isset($_REQUEST['msg'])) {
 </div>
 </div>
 </body>
-<?php } else {;
+<?php 
+
+
+	}else{
+	  header("Location: /portada_n/ultimasentradas_t.php");
+	}
+
+} else {;
 include ('../../cierre.php');
 
  };?>

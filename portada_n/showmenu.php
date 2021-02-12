@@ -21,10 +21,8 @@
 			var b = document.cookie.match('(^|;)\\s*menuselected\\s*=\\s*([^;]+)');
 
 			var x = b ? b.pop() : 1;
-    		console.log(b ? b.pop() : 1);
 
     		changeOptions(x);
-
 
 		});
 
@@ -77,7 +75,7 @@
    		
    		?>
 		<ul class="[ nav navbar-nav navbar-left mx-auto]">
-			<li class="[ animate ]"><a href="#" class="[ animate ]" onclick="changeOptions(1)" >RESPUESTAS</a></li>
+			<li class="[ animate ]"><a href="#" class="[ animate ]" onclick="changeOptions(1); return false;" >GENERAL</a></li>
 			<li><a href="/portada_n/cuenta.php" class="[ animate ]" >MI CUENTA</a></li>
 		</ul>
 		<br><br><br>
@@ -99,8 +97,9 @@
    		
    		?>
    			<ul class="[ nav navbar-nav navbar-left mx-auto]">
-				<li  class="[ animate ]"><a href="#" class="[ animate ]" onclick="changeOptions(1)" >RESPUESTAS</a></li>
-				<li class="[ animate ]"><a href="#" class="[ animate ]" onclick="changeOptions(2)" >COLABORADOR C.P</a></li>
+
+				<li class="[ animate ]"><a href="#" class="[ animate ]" onclick="changeOptions(1); return false;" >GENERAL</a></li>
+				<li class="[ animate ]"><a href="#" class="[ animate ]" onclick="changeOptions(2); return false;" >MI CODIGO POSTAL</a></li>
 				<li><a href="/portada_n/cuenta.php" class="[ animate ]">MI CUENTA</a></li>
 
 			</ul>
@@ -136,9 +135,9 @@
    		?>
 
    			<ul class="[ nav navbar-nav navbar-left mx-auto]">
-				<li class="[ animate ]"><a href="#" class="[ animate ]" onclick="changeOptions(1)" >RESPUESTAS</a></li>
-				<li class="[ animate ]"><a href="#" class="[ animate ]" onclick="changeOptions(2)" >COLABORADOR C.P</a></li>
-				<li class="[ animate ]"><a href="#" class="[ animate ]" onclick="changeOptions(3)" >GESTOR C.P</a></li>
+				<li class="[ animate ]"><a href="#" class="[ animate ]" onclick="changeOptions(1); return false;" >GENERAL</a></li>
+				<li class="[ animate ]"><a href="#" class="[ animate ]" onclick="changeOptions(2); return false;" >MI CODIGO POSTAL</a></li>
+				<!--<li class="[ animate ]"><a href="#" class="[ animate ]" onclick="changeOptions(3)" >GESTOR C.P</a></li>-->
 				<li><a href="/portada_n/cuenta.php" class="[ animate ]" >MI CUENTA</a></li>
 
 			</ul>
@@ -158,15 +157,55 @@
 
 				<li><a href="/portada_n/chatcp/index.php" class="[ animate ]" onclick="openCity(event, 'd0')" >CHAT C.P</a></li>
 				<li><a href="/portada_n/calendario.php" class="[ animate ]" onclick="openCity(event, 'd0')" >CALENDARIO</a></li>
+				<li><a href="/portada_n/mensaje/dpuntcont.php" class="[ animate ]" onclick="openCity(event, 'd0')" >PREGUNTAS C.P</a></li>
+				<li><a href="/portada_n/solicitudes/aceptarcolaboradores.php" class="[ animate ]" onclick="openCity(event, 'd0')" >ACEPTAR COLABORADOR C.P</a></li>
+		    
+	 		</ul>
+
+	 		<ul class="[ nav navbar-nav navbar-left ]" id="gest" style="display: none;">
+				
+	 		</ul>
+
+	 <?php 
+   		} 
+   	?>
+
+   	<?php if ($resultadousuario['tusuario'] == 42) {
+   		
+   		?>
+   			<ul class="[ nav navbar-nav navbar-left mx-auto]">
+				<li class="[ animate ]"><a href="#" class="[ animate ]" onclick="changeOptions(1); return false;" >GENERAL</a></li>
+				<li class="[ animate ]"><a href="#" class="[ animate ]" onclick="changeOptions(2); return false;" >MI CODIGO POSTAL</a></li>
+				<li class="[ animate ]"><a href="#" class="[ animate ]" onclick="changeOptions(3); return false;" >MI CIUDAD</a></li>
+				<li><a href="/portada_n/cuenta.php" class="[ animate ]" >MI CUENTA</a></li>
+
+			</ul>
+			<br><br><br>
+
+			<ul class="[ nav navbar-nav navbar-left ]" id="resp">
+
+				<li><a href="/portada_n/ultimasentradas_t.php" class="[ animate ]" onclick="openCity(event, 'd0')" >ULTIMAS ENTRADAS</a></li>
+				<li><a href="/portada_n/ultimasincidencias_t.php" class="[ animate ]" onclick="openCity(event, 'd0')" >ULTIMOS RESULTADOS</a></li>
+				<li><a href="/incidencias_t.php" class="[ animate ]" onclick="openCity(event, 'd0')" >INCIDENCIAS</a></li>
+				<li><a href="/chat/index.php" class="[ animate ]" onclick="openCity(event, 'd0')" >CHAT</a></li>
+				<li><a href="/portada_n/salir.php" class="[ animate ]" onclick="openCity(event, 'd0')" >LOG OUT</a></li>
+		    
+	 		</ul>
+
+	 		<ul class="[ nav navbar-nav navbar-left ]" id="colab" style="display: none;">
+
+				<li><a href="/portada_n/chatcp/index.php" class="[ animate ]" onclick="openCity(event, 'd0')" >CHAT C.P</a></li>
+				<li><a href="/portada_n/calendario.php" class="[ animate ]" onclick="openCity(event, 'd0')" >CALENDARIO</a></li>
+				<li><a href="/portada_n/mensaje/dpuntcont.php" class="[ animate ]" onclick="openCity(event, 'd0')" >PREGUNTAS C.P</a></li>
+				<li><a href="/portada_n/solicitudes/aceptarcolaboradores.php" class="[ animate ]" onclick="openCity(event, 'd0')" >ACEPTAR COLABORADOR C.P</a></li>
 		    
 	 		</ul>
 
 	 		<ul class="[ nav navbar-nav navbar-left ]" id="gest" style="display: none;">
 
-				<li><a href="/portada_n/chatgestorescp/index.php" class="[ animate ]" onclick="openCity(event, 'd0')" >CHAT GESTORES C.P</a></li>
-				<li><a href="/portada_n/mensaje/dpuntcont.php" class="[ animate ]" onclick="openCity(event, 'd0')" >PREGUNTAS C.P</a></li>
-				<li><a href="/portada_n/solicitudes/aceptarcolaboradores.php" class="[ animate ]" onclick="openCity(event, 'd0')" >ACEPTAR COLABORADOR C.P</a></li>
-		    
+				<li><a href="/portada_n/chatciudad/index.php" class="[ animate ]" onclick="openCity(event, 'd0')" >CHAT CIUDAD</a></li>
+				<li><a href="/portada_n/calendario.php" class="[ animate ]" onclick="openCity(event, 'd0')" >CALENDARIO</a></li>
+				
 	 		</ul>
 
 	 <?php 
@@ -177,8 +216,8 @@
    		
    		?>
    			<ul class="[ nav navbar-nav navbar-left mx-auto]">
-				<li class="[ animate ]"><a href="#" class="[ animate ]" onclick="changeOptions(1)" >RESPUESTAS</a></li>
-				<li class="[ animate ]"><a href="#" class="[ animate ]" onclick="changeOptions(2)" >COLABORADOR CIUDAD</a></li>
+				<li class="[ animate ]"><a href="#" class="[ animate ]" onclick="changeOptions(1); return false;" >GENERAL</a></li>
+				<li class="[ animate ]"><a href="#" class="[ animate ]" onclick="changeOptions(2); return false;" >MI CIUDAD</a></li>
 				<li><a href="/portada_n/cuenta.php" class="[ animate ]" >MI CUENTA</a></li>
 
 			</ul>
@@ -213,9 +252,8 @@
    		
    		?>
    			<ul class="[ nav navbar-nav navbar-left mx-auto]">
-				<li class="[ animate ]"><a href="#" class="[ animate ]" onclick="changeOptions(1)" >RESPUESTAS</a></li>
-				<li class="[ animate ]"><a href="#" class="[ animate ]" onclick="changeOptions(2)" >COLABORADOR CIUDAD</a></li>
-				<li class="[ animate ]"><a href="#" class="[ animate ]" onclick="changeOptions(3)" >GESTOR CIUDAD</a></li>
+				<li class="[ animate ]"><a href="#" class="[ animate ]" onclick="changeOptions(1); return false;" >GENERAL</a></li>
+				<li class="[ animate ]"><a href="#" class="[ animate ]" onclick="changeOptions(2); return false;" >MI CIUDAD</a></li>
 				<li><a href="/portada_n/cuenta.php" class="[ animate ]" >MI CUENTA</a></li>
 
 			</ul>
@@ -235,15 +273,57 @@
 
 				<li><a href="/portada_n/chatciudad/index.php" class="[ animate ]" onclick="openCity(event, 'd0')" >CHAT CIUDAD</a></li>
 				<li><a href="/portada_n/calendario.php" class="[ animate ]" onclick="openCity(event, 'd0')" >CALENDARIO</a></li>
+				<li><a href="/portada_n/mensaje/dpuntcont.php" class="[ animate ]" onclick="openCity(event, 'd0')" >PREGUNTAS CIUDAD</a></li>
+				<li><a href="/portada_n/solicitudes/aceptarcolaboradores.php" class="[ animate ]" onclick="openCity(event, 'd0')" >ACEPTAR COLABORADOR CIUDAD</a></li>
+				<li><a href="/portada_n/solicitudes/aceptargestores.php" class="[ animate ]" onclick="openCity(event, 'd0')" >ACEPTAR GESTOR C.P</a></li>
+		    
+	 		</ul>
+
+	 		<ul class="[ nav navbar-nav navbar-left ]" id="gest" style="display: none;">
+				
+		    
+	 		</ul>
+
+	 <?php 
+   		} 
+   	?>
+
+   	<?php if ($resultadousuario['tusuario'] == 52) {
+   		
+   		?>
+   			<ul class="[ nav navbar-nav navbar-left mx-auto]">
+				<li class="[ animate ]"><a href="#" class="[ animate ]" onclick="changeOptions(1); return false;" >GENERAL</a></li>
+				<li class="[ animate ]"><a href="#" class="[ animate ]" onclick="changeOptions(2); return false;" >MI CIUDAD</a></li>
+				<li class="[ animate ]"><a href="#" class="[ animate ]" onclick="changeOptions(3); return false;" >MI PAIS</a></li>
+				<li><a href="/portada_n/cuenta.php" class="[ animate ]" >MI CUENTA</a></li>
+
+			</ul>
+		
+			<br><br><br>
+			<ul class="[ nav navbar-nav navbar-left ]" id="resp">
+
+				<li><a href="/portada_n/ultimasentradas_t.php" class="[ animate ]" onclick="openCity(event, 'd0')" >ULTIMAS ENTRADAS</a></li>
+				<li><a href="/portada_n/ultimasincidencias_t.php" class="[ animate ]" onclick="openCity(event, 'd0')" >ULTIMOS RESULTADOS</a></li>
+				<li><a href="/incidencias_t.php" class="[ animate ]" onclick="openCity(event, 'd0')" >INCIDENCIAS</a></li>
+				<li><a href="/chat/index.php" class="[ animate ]" onclick="openCity(event, 'd0')" >CHAT</a></li>
+				<li><a href="/portada_n/salir.php" class="[ animate ]" onclick="openCity(event, 'd0')" >LOG OUT</a></li>
+		    
+	 		</ul>
+
+	 		<ul class="[ nav navbar-nav navbar-left ]" id="colab" style="display: none;">
+
+				<li><a href="/portada_n/chatciudad/index.php" class="[ animate ]" onclick="openCity(event, 'd0')" >CHAT CIUDAD</a></li>
+				<li><a href="/portada_n/calendario.php" class="[ animate ]" onclick="openCity(event, 'd0')" >CALENDARIO</a></li>
+				<li><a href="/portada_n/mensaje/dpuntcont.php" class="[ animate ]" onclick="openCity(event, 'd0')" >PREGUNTAS CIUDAD</a></li>
+				<li><a href="/portada_n/solicitudes/aceptarcolaboradores.php" class="[ animate ]" onclick="openCity(event, 'd0')" >ACEPTAR COLABORADOR CIUDAD</a></li>
+				<li><a href="/portada_n/solicitudes/aceptargestores.php" class="[ animate ]" onclick="openCity(event, 'd0')" >ACEPTAR GESTOR C.P</a></li>
 		    
 	 		</ul>
 
 	 		<ul class="[ nav navbar-nav navbar-left ]" id="gest" style="display: none;">
 
-				<li><a href="/portada_n/chatgestoresciudad/index.php" class="[ animate ]" onclick="openCity(event, 'd0')" >CHAT GESTORES</a></li>
-				<li><a href="/portada_n/mensaje/dpuntcont.php" class="[ animate ]" onclick="openCity(event, 'd0')" >PREGUNTAS CIUDAD</a></li>
-				<li><a href="/portada_n/solicitudes/aceptarcolaboradores.php" class="[ animate ]" onclick="openCity(event, 'd0')" >ACEPTAR COLABORADOR CIUDAD</a></li>
-				<li><a href="/portada_n/solicitudes/aceptargestores.php" class="[ animate ]" onclick="openCity(event, 'd0')" >ACEPTAR GESTOR C.P</a></li>
+				<li><a href="/portada_n/chatpais/index.php" class="[ animate ]" onclick="openCity(event, 'd0')" >CHAT PAIS</a></li>
+				<li><a href="/portada_n/calendario.php" class="[ animate ]" onclick="openCity(event, 'd0')" >CALENDARIO</a></li>
 		    
 	 		</ul>
 
@@ -255,8 +335,8 @@
    		
    		?>
    			<ul class="[ nav navbar-nav navbar-left mx-auto]">
-				<li class="[ animate ]"><a href="#" class="[ animate ]" onclick="changeOptions(1)" >RESPUESTAS</a></li>
-				<li class="[ animate ]"><a href="#" class="[ animate ]" onclick="changeOptions(2)" >COLABORADOR PAIS</a></li>
+				<li class="[ animate ]"><a href="#" class="[ animate ]" onclick="changeOptions(1); return false;" >GENERAL</a></li>
+				<li class="[ animate ]"><a href="#" class="[ animate ]" onclick="changeOptions(2); return false;" >MI PAIS</a></li>
 				<li><a href="/portada_n/cuenta.php" class="[ animate ]" >MI CUENTA</a></li>
 
 			</ul>
@@ -292,9 +372,9 @@
    		
    		?>
    			<ul class="[ nav navbar-nav navbar-left mx-auto]">
-				<li class="[ animate ]"><a href="#" class="[ animate ]" onclick="changeOptions(1)" >RESPUESTAS</a></li>
-				<li class="[ animate ]"><a href="#" class="[ animate ]" onclick="changeOptions(2)" >COLABORADOR PAIS</a></li>
-				<li class="[ animate ]"><a href="#" class="[ animate ]" onclick="changeOptions(3)" >GESTOR PAIS</a></li>
+				<li class="[ animate ]"><a href="#" class="[ animate ]" onclick="changeOptions(1); return false;" >GENERAL</a></li>
+				<li class="[ animate ]"><a href="#" class="[ animate ]" onclick="changeOptions(2); return false;" >MI PAIS</a></li>
+				<!--<li class="[ animate ]"><a href="#" class="[ animate ]" onclick="changeOptions(3)" >GESTOR PAIS</a></li>-->
 				<li><a href="/portada_n/cuenta.php" class="[ animate ]" >MI CUENTA</a></li>
 
 			</ul>
@@ -312,18 +392,17 @@
 
 	 		<ul class="[ nav navbar-nav navbar-left ]" id="colab" style="display: none;">
 
-				<li><a href="/portada_n/chatpais/index.php" class="[ animate ]" onclick="openCity(event, 'd0')" >CHAT PAIS</a></li>
+				<li><a href="/portada_n/chatpais/index.php" class="[ animate ]" onclick="changeOptions(2)" >CHAT PAIS</a></li>
 				<li><a href="/portada_n/calendario.php" class="[ animate ]" onclick="openCity(event, 'd0')" >CALENDARIO</a></li>
+				<li><a href="/portada_n/mensaje/dpuntcont.php" class="[ animate ]" onclick="openCity(event, 'd0')" >PREGUNTAS PAIS</a></li>
+				<li><a href="/portada_n/solicitudes/aceptarcolaboradores.php" class="[ animate ]" onclick="openCity(event, 'd0')" >ACEPTAR COLABORADOR PAIS</a></li>
+				<li><a href="/portada_n/solicitudes/aceptargestores.php" class="[ animate ]" onclick="openCity(event, 'd0')" >ACEPTAR GESTOR CIUDAD</a></li>
 		    
 	 		</ul>
 
 
 	 		<ul class="[ nav navbar-nav navbar-left ]" id="gest" style="display: none;">
-
-				<li><a href="/portada_n/chatgestorespais/index.php" class="[ animate ]" onclick="openCity(event, 'd0')" >CHAT GESTORES</a></li>
-				<li><a href="/portada_n/mensaje/dpuntcont.php" class="[ animate ]" onclick="openCity(event, 'd0')" >PREGUNTAS PAIS</a></li>
-				<li><a href="/portada_n/solicitudes/aceptarcolaboradores.php" class="[ animate ]" onclick="openCity(event, 'd0')" >ACEPTAR COLABORADOR PAIS</a></li>
-				<li><a href="/portada_n/solicitudes/aceptargestores.php" class="[ animate ]" onclick="openCity(event, 'd0')" >ACEPTAR GESTOR CIUDAD</a></li>
+				
 		    
 	 		</ul>
 

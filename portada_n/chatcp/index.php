@@ -1,6 +1,15 @@
 <?php 
     include('../../bbdd.php');
     $mail = $_COOKIE['gente'];
+
+    $sqlcheckuser = "SELECT * FROM usuarios WHERE user = :mail";
+    $resultcheckuser=$conn->prepare($sqlcheckuser);
+    $resultcheckuser->bindParam(':mail', $mail);
+    $resultcheckuser->execute();
+    $resultadocheckuser = $resultcheckuser->fetch();
+
+    if ($resultadocheckuser['tusuario'] == 40 || $resultadocheckuser['tusuario'] == 41 || $resultadocheckuser['tusuario'] == 42) {
+
     $sql = "SELECT * FROM validar WHERE email = :mail";
     $result=$conn->prepare($sql);
     $result->bindParam(':mail', $mail);
@@ -33,6 +42,7 @@
 
 
   <nav class="[ navbar navbar-fixed-top ][ navbar-bootsnipp animate ]" role="navigation">
+<<<<<<< HEAD
     <table align="">
     <tr>
       <td>
@@ -54,6 +64,20 @@
                 <?php include ('../../donaciones/index.php')?>
           </div>
         </td>
+=======
+        <div class="[ navbar-header ]">
+            <div class="[ animbrand ]">
+                <a class="[ navbar-brand ][ animate ]" href="../../inicio1.php"><img src="../../img/ciudadanoslogo.png"></a>
+                <div style="float: right; margin-top: 22px;">
+                  <?php include ('../../donaciones/index.php')?>
+                </div>
+            </div>
+        </div>
+    <div>
+        <?php 
+          include_once("../showmenu.php");
+        ?>
+>>>>>>> d1e77a98b0e50e9f3f83b36f33080c82d1cf467c
       </div>
       </td>
     </tr>
@@ -64,7 +88,7 @@
   <div class="panel panel-default chat-widget">
     <div class="panel-heading">
       <h3 align="center"><i class="fa fa-comments"></i></h3>
-      <h3 align="center" style="font-family: Helvetica" class="welcome">Chat colaboradores codigo postal (<?php echo $resultado['cp']; ?>)</h3>
+      <h3 align="center" style="font-family: Helvetica" class="welcome">Chat codigo postal (<?php echo $resultado['cp']; ?>)</h3>
     </div>
     
     <div class="panel-body">
@@ -198,3 +222,11 @@ $(document).ready(function(){
 </script>
 </body>
 </html>
+
+  <?php 
+
+    }else{
+      header("Location: /portada_n/ultimasentradas_t.php");
+    }
+
+ ?>

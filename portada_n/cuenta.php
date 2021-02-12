@@ -7,15 +7,31 @@ include('bbdd.php');
 	$resultusuario->execute();
 	$resultadousuario = $resultusuario->fetch();
 
+	$sqlsoli = "SELECT * FROM solicitudes WHERE idusuario = :idusuario AND aceptado = 0";
+	$resultsoli=$conn->prepare($sqlsoli);
+	$resultsoli->bindParam(':idusuario', $resultadousuario['id']);
+	$resultsoli->execute();
+	$resultadosoli = $resultsoli->fetch();
+
+	if ($resultadosoli != null) {
+		$solicitado = 1;
+		$tsolicitud = $resultadosoli['tsolicitud'];
+	}else{
+		$solicitado = 0;
+		$tsolicitud = 0;
+	}
+
 ?>
 <html>
 
 <script type="text/javascript">
 
-	function executeAjax(iduser){
+	function executeAjax(iduser, tsolicitud){
+		var checksoli = document.getElementById('solimade').value;
+		var tsolicitudold = document.getElementById('tiposoli').value;
 
-		var tsolicitud = $('input[name=solicitud]:checked').val();
-		$.ajax({
+		if (checksoli != 1) {
+			$.ajax({
 				url: "ajax_solicitud_tuser.php",
 				type: "POST",
 				dataType : 'json',
@@ -24,13 +40,50 @@ include('bbdd.php');
 					tsolicitud: tsolicitud		
 				},
 				success: function(e){
-				  console.log(e.message);
+				  	console.log(e.message);
 				
 				},
 				error: function(e) {
-			       console.log(e.message);
+			       	console.log(e.message);
 			    }
 			});
+
+			var texto = "";
+			if (tsolicitud == 40) {
+				texto = "colaborador de codigo postal";
+			}else if (tsolicitud == 41 || tsolicitud == 42) {
+				texto = "gestor de codigo postal";
+			}else if (tsolicitud == 50) {
+				texto = "colaborador de ciudad";
+			}else if (tsolicitud == 51 || tsolicitud == 52) {
+				texto = "gestor de ciudad";
+			}else if (tsolicitud == 60) {
+				texto = "colaborador de pais";
+			}else if (tsolicitud == 61 || tsolicitud == 62) {
+				texto = "gestor de pais";
+			}
+
+			alert('Tu solicitud para ser '+texto+' ha sido enviada correctamente, espera que algun gestor te acepte');
+			document.getElementById('solimade').value = 1;
+			document.getElementById('tiposoli').value = tsolicitud;
+		}else{
+			var texto = "";
+			if (tsolicitudold == 40) {
+				texto = "colaborador de codigo postal";
+			}else if (tsolicitudold == 41 || tsolicitudold == 42) {
+				texto = "gestor de codigo postal";
+			}else if (tsolicitudold == 50) {
+				texto = "colaborador de ciudad";
+			}else if (tsolicitudold == 51 || tsolicitudold == 52) {
+				texto = "gestor de ciudad";
+			}else if (tsolicitudold == 60) {
+				texto = "colaborador de pais";
+			}else if (tsolicitudold == 61 || tsolicitudold == 62) {
+				texto = "gestor de pais";
+			}
+			alert('Ya has solicitado ser '+texto+', debes esperar a ser aceptado antes de volver a solicitar');
+		}
+		
 	}
 
 	function desaparecer(){
@@ -134,6 +187,8 @@ if(isset($_COOKIE['gente'])){
 
 	<div class="container fadeInDown" style="background-color: white; border-radius: 10px; margin-top: 220px" id="informacion">
 		<h2>Mi cuenta</h2>
+		<input type="hidden" name="solimade" id="solimade" value="<?php echo $solicitado; ?>">
+		<input type="hidden" name="tiposoli" id="tiposoli" value="<?php echo $tsolicitud; ?>">
 		<div class="form-group">
 			<label>Nombre:</label> <br>
 			<label><?php echo $resultado['nombreemp']; ?></label>
@@ -154,7 +209,7 @@ if(isset($_COOKIE['gente'])){
 			<?php 
 			if ($resultadousuario['tusuario'] == 3) {
 				?>
-				<input type="checkbox" name="solicitud" id="solicitudcp" value="40" onclick="executeAjax(<?php echo $resultadousuario['id']; ?>)"> <label for="solicitudcp">Solicitar ser colaborador de codigo postal</label>
+				<button class="btn btn-default" name="solicitud" id="solicitud" onclick="executeAjax(<?php echo $resultadousuario['id']; ?>, 40)"><b>Solicitar ser colaborador de codigo postal</b></button>
 				<?php
 			}
 			 ?>
@@ -162,9 +217,13 @@ if(isset($_COOKIE['gente'])){
 			 <?php 
 			if ($resultadousuario['tusuario'] == 40) {
 				?>
-				<input type="checkbox" name="solicitud" id="solicitud" value="41"> <label for="solicitud">Solicitar ser gestor de codigo postal</label>
+				<button class="btn btn-default" name="solicitud" id="solicitud" onclick="executeAjax(<?php echo $resultadousuario['id']; ?>, 41)"><b>Solicitar ser gestor de codigo postal</b></button>
 				<br>
-				<input type="checkbox" name="solicitud" id="solicitudciu" value="50"> <label for="solicitudciu">Solicitar ser colaborador de ciudad</label>
+				<button class="btn btn-default" name="solicitud" id="solicitud" onclick="executeAjax(<?php echo $resultadousuario['id']; ?>, 50)"><b>Solicitar ser colaborador de ciudad</b></button>
+
+				<!--<input type="checkbox" name="solicitud" id="solicitud" value="41"> <label for="solicitud">Solicitar ser gestor de codigo postal</label>
+				<br>
+				<input type="checkbox" name="solicitud" id="solicitudciu" value="50"> <label for="solicitudciu">Solicitar ser colaborador de ciudad</label>-->
 				<?php
 			}
 			 ?>
@@ -172,7 +231,8 @@ if(isset($_COOKIE['gente'])){
 			 <?php 
 			if ($resultadousuario['tusuario'] == 41) {
 				?>
-				<input type="checkbox" name="solicitud" id="solicitudciu" value="50"> <label for="solicitudciu">Solicitar ser colaborador de ciudad</label>
+				<button class="btn btn-default" name="solicitud" id="solicitud" onclick="executeAjax(<?php echo $resultadousuario['id']; ?>, 42)"><b>Solicitar ser colaborador de ciudad</b></button>
+				<!--<input type="checkbox" name="solicitud" id="solicitudciu" value="50"> <label for="solicitudciu">Solicitar ser colaborador de ciudad</label>-->
 				<?php
 			}
 			 ?>
@@ -180,9 +240,12 @@ if(isset($_COOKIE['gente'])){
 			 <?php 
 			if ($resultadousuario['tusuario'] == 50) {
 				?>
-				<input type="checkbox" name="solicitud" id="solicitudciu" value="51"> <label for="solicitudciu">Solicitar ser gestor de ciudad</label>
+				<button class="btn btn-default" name="solicitud" id="solicitud" onclick="executeAjax(<?php echo $resultadousuario['id']; ?>, 51)"><b>Solicitar ser gestor de ciudad</b></button>
+				<br><br>
+				<button class="btn btn-default" name="solicitud" id="solicitud" onclick="executeAjax(<?php echo $resultadousuario['id']; ?>, 60)"><b>Solicitar ser colaborador de pais</b></button>
+				<!--<input type="checkbox" name="solicitud" id="solicitudciu" value="51"> <label for="solicitudciu">Solicitar ser gestor de ciudad</label>
 				<br>
-				<input type="checkbox" name="solicitud" id="solicitudpais" value="60"> <label for="solicitudpais">Solicitar ser colaborador de pais</label>
+				<input type="checkbox" name="solicitud" id="solicitudpais" value="60"> <label for="solicitudpais">Solicitar ser colaborador de pais</label>-->
 				<?php
 			}
 			 ?>
@@ -190,7 +253,8 @@ if(isset($_COOKIE['gente'])){
 			 <?php 
 			if ($resultadousuario['tusuario'] == 51) {
 				?>
-				<input type="checkbox" name="solicitud" id="solicitudpais" value="60"> <label for="solicitudpais">Solicitar ser colaborador de pais</label>
+				<button class="btn btn-default" name="solicitud" id="solicitud" onclick="executeAjax(<?php echo $resultadousuario['id']; ?>, 52)"><b>Solicitar ser colaborador de pais</b></button>
+				<!--<input type="checkbox" name="solicitud" id="solicitudpais" value="60"> <label for="solicitudpais">Solicitar ser colaborador de pais</label>-->
 				<?php
 			}
 			 ?>
@@ -198,7 +262,8 @@ if(isset($_COOKIE['gente'])){
 			 <?php 
 			if ($resultadousuario['tusuario'] == 60) {
 				?>
-				<input type="checkbox" name="solicitud" id="solicitudpais" value="61"> <label for="solicitudpais">Solicitar ser gestor de pais</label>
+				<button class="btn btn-default" name="solicitud" id="solicitud" onclick="executeAjax(<?php echo $resultadousuario['id']; ?>, 61)"><b>Solicitar ser gestor de pais</b></button>
+				<!--<input type="checkbox" name="solicitud" id="solicitudpais" value="61"> <label for="solicitudpais">Solicitar ser gestor de pais</label>-->
 				<?php
 			}
 			 ?>
@@ -242,9 +307,6 @@ if(isset($_COOKIE['gente'])){
 			<br>
 		</div>
 	</div>
-
-
-<div><p>hola</p></div>
 
 </body>
 
