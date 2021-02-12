@@ -225,6 +225,15 @@ if(isset($_COOKIE['gente'])){
 			 ?>
 
 			 <?php 
+			if ($resultadousuario['tusuario'] == 42) {
+				?>
+				<button class="btn btn-default" name="solicitud" id="solicitud" onclick="executeAjax(<?php echo $resultadousuario['id']; ?>, 50)"><b>Solicitar ser gestor de ciudad</b></button>
+				<!--<input type="checkbox" name="solicitud" id="solicitudciu" value="50"> <label for="solicitudciu">Solicitar ser colaborador de ciudad</label>-->
+				<?php
+			}
+			 ?>
+
+			 <?php 
 			if ($resultadousuario['tusuario'] == 50) {
 				?>
 				<button class="btn btn-default" name="solicitud" id="solicitud" onclick="executeAjax(<?php echo $resultadousuario['id']; ?>, 51)"><b>Solicitar ser gestor de ciudad</b></button>
@@ -241,6 +250,15 @@ if(isset($_COOKIE['gente'])){
 			if ($resultadousuario['tusuario'] == 51) {
 				?>
 				<button class="btn btn-default" name="solicitud" id="solicitud" onclick="executeAjax(<?php echo $resultadousuario['id']; ?>, 52)"><b>Solicitar ser colaborador de pais</b></button>
+				<!--<input type="checkbox" name="solicitud" id="solicitudpais" value="60"> <label for="solicitudpais">Solicitar ser colaborador de pais</label>-->
+				<?php
+			}
+			 ?>
+
+			 <?php 
+			if ($resultadousuario['tusuario'] == 52) {
+				?>
+				<button class="btn btn-default" name="solicitud" id="solicitud" onclick="executeAjax(<?php echo $resultadousuario['id']; ?>, 61)"><b>Solicitar ser gestor de pais</b></button>
 				<!--<input type="checkbox" name="solicitud" id="solicitudpais" value="60"> <label for="solicitudpais">Solicitar ser colaborador de pais</label>-->
 				<?php
 			}

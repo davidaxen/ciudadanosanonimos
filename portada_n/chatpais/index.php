@@ -196,7 +196,8 @@
   }
 
   $(document).ready(function(){
-
+    var newscrollHeight = $("#chatbox").attr("scrollHeight") - 20;
+    $("#chatbox").animate({ scrollTop: newscrollHeight }, 'normal');
   });
   </script>
   </body>

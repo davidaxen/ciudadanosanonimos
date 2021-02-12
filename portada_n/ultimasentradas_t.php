@@ -4,9 +4,8 @@ include('bbdd.php');
 $fechac=date("Y-m-d",time());
 
 
-$sql1="SELECT * from mensajes where  idempresa='".$ide."' and fechafin>'".$fechac."' or fechafin is null and id not in (SELECT idmensaje FROM respuestamensajes WHERE idempleado='".$idtrab."') AND pdf = 0";
+$sql1="SELECT * from mensajes where  idempresa='".$ide."' and fechafin>'".$fechac."' or fechafin is null and id not in (SELECT idmensaje FROM respuestamensajes WHERE idempleado='".$idtrab."') AND pdf = 0 order by id asc";
 //echo $sql1;
-
 $result1=$conn->query($sql1);
 $result1row=$conn->query($sql1);
 $row=count($result1row->fetchAll());
@@ -82,10 +81,6 @@ $row1=mysqli_num_rows($result1);*/
   <link rel="stylesheet" type="text/css" href="respuestas.css">
   <link rel="stylesheet" type="text/css" href="../chat/cabecera.css">
   <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Convergence" />
-
-
-
-
 
 </head>
 <body style="background-image:url(../img/iconos/portada_ca.jpg)";>
@@ -257,9 +252,6 @@ if ($row10==0){;
           	$urlfinal = substr($urltotal, 5);
           	echo "<a class='pdflink' target='_blank' href='../servicios_n/abrirpdf.php?file=".$urlfinal."'>Ver PDF</a>";
           		?>
-
-
-
 
 	<?php
  		}
