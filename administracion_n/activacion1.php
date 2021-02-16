@@ -47,6 +47,11 @@ if ($idpr!=null){;
   <meta http-equiv="Content-type" content="text/html;charset=UTF-8"/>
 <title>VALIDACION DE ALTA EN CIUDADANOS ANONIMOS</title>  
 <link rel="stylesheet" href="solicitud.css">
+<link rel="stylesheet" type="text/css" href="../portada_n/ultimasincidencias_t.css">
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 </head>
 
 <body class='html' style='background-image:url(../img/iconos/portada_ca.jpg);
@@ -56,9 +61,11 @@ if ($idpr!=null){;
 <div class='hijo' style='background-color:#f5f5f5'>
 
 
-  <div class='imgcontainer'>
-    <img src='../img/logo-ciud-anonimos.png' width='250px'>
-    <h3 style="text-align: center;color:#000">VALIDACION DE ALTA EN CIUDADANOS ANONIMOS</h3>
+ <div style="max-width: 650px; margin-left: 28%; border-radius: 25px;" class='fadeInDown'>
+   <div class='formContent' style='background-color:#f5f5f5; border-radius: 9px;'>
+      <img src='../img/logo-ciud-anonimos.png' width='250px'>
+      <h3 style="text-align: center;color:#000">VALIDACION DE ALTA EN CIUDADANOS ANONIMOS</h3>
+    </div>
   </div>
     <h4 style="text-align: center;color:#000">
 <?php    
@@ -103,32 +110,7 @@ echo 'Hemos detectado un problema con la validaci&oacute;n vuelva a probar el en
 
 </div>
 </div>
-<p style="padding:150px;">
- 
-</p>
 
-<div class='cuadro' style='background-color:#c5c5c5;height:220px;color:#fff;'>
-<div class='hijo2'>
-
-
-  <div class='imgcontainer'>
-<img src='../img/logo-ciud-anonimos.png' width='250px'>
-      <br/>CIUDADANOS ANONIMOS EN ACCION
-  </div>
-
-  <div class='container' style='column-count:2;background-color:transparent;'>
-<br/>
-<br/>
-<br/>
-
-<br/>
-<br/>
-<br/>        
-  </div>
-
-
-</div>
-</div>
 
 <?php 
 } else {;
