@@ -54,6 +54,7 @@ include('bbdd.php');
 
 
 		<nav class="[ navbar navbar-fixed-top ][ navbar-bootsnipp animate ]" role="navigation">
+
   		<table style="margin-left: 20px; width: 100%">
 		<tr>
 			<td style="width: 20%; ">
