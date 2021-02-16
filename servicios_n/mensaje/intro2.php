@@ -22,6 +22,13 @@ $resultado=$result->fetch();
 $id=$resultado['id'];
 $idn=$id+1;
 
+$idpais = $_REQUEST['pais'];
+$localidad = $_REQUEST['localidad'];
+$cp = $_REQUEST['cp'];
+$fechafin = $_REQUEST['fechafin'];
+$texto = $_REQUEST['texto'];
+$resp = $_REQUEST['resp'];
+
 
 $day=date('Y-m-d H:i:s', time());
 $sql1 = "INSERT INTO mensajes (id,idempresa,idempleado,texto,user,dia,pais,localidad,provincia,cp,";
@@ -83,8 +90,8 @@ if (in_array($extensionPDF, $allowedExtsPDF)) {
           $sqlpdf= "INSERT INTO pdfs (url, idmensaje) VALUES ('pdfs/$idn/$rutapdf', '$idn')";
           $resultpdf=$conn->exec($sqlpdf);
 
-          $sqlmarcadeagua="UPDATE mensajes SET video=1 WHERE id = $idn";
-          $resultmarcadeagua=$conn->exec($sqlmarcadeagua);
+          /*$sqlmarcadeagua="UPDATE mensajes SET video=1 WHERE id = $idn";
+          $resultmarcadeagua=$conn->exec($sqlmarcadeagua);*/
       }
     }
 }
@@ -112,6 +119,9 @@ LOS DATOS HAN SIDO INTRODUCCIDOS<p>
 </div>
 
 
-<?php } else {;
+<?php
+ header("location: dpuntcont.php?msg=La pregunta ha sido introducida correctamente");
+  die();
+ } else {;
 include ('../../cierre.php');
  };?>

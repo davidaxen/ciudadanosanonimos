@@ -70,6 +70,8 @@ $j=$j+1;
 </body>
 
 </html>
-<?php }else{;
+<?php 
+header("Location: portada_n/ultimasincidencias.php");
+}else{;
 include ('cierre.php');
 };?>

@@ -3,9 +3,14 @@ include('bbdd.php');
 
 $fechac=date("Y-m-d",time());
 
+$mail = $_COOKIE['gente'];
+$sqltusuario = "SELECT * FROM usuarios WHERE user = :gente";
+$resultusuario=$conn->prepare($sqltusuario);
+$resultusuario->bindParam(':gente', $mail);
+$resultusuario->execute();
+$resultadousuario = $resultusuario->fetch();
 
-$sql1="SELECT * from mensajes where  idempresa='".$ide."' and fechafin>'".$fechac."' or fechafin is null and id not in (SELECT idmensaje FROM respuestamensajes WHERE idempleado='".$idtrab."') AND pdf = 0 order by id asc";
-//echo $sql1;
+$sql1="SELECT * from mensajes where fechafin>'".$fechac."' or fechafin is null and id not in (SELECT idmensaje FROM respuestamensajes WHERE iduser='".$resultadousuario['id']."') AND pdf = 0 order by id asc";
 $result1=$conn->query($sql1);
 $result1row=$conn->query($sql1);
 $row=count($result1row->fetchAll());
@@ -85,9 +90,9 @@ $row1=mysqli_num_rows($result1);*/
 </head>
 <body style="background-image:url(../img/iconos/portada_ca.jpg)";>
 	<nav class="[ navbar navbar-fixed-top ][ navbar-bootsnipp animate ]" role="navigation">
-		<table align="center">
+		<table style="margin-left: 20px; width: 100%">
 		<tr>
-			<td>
+			<td style="width: 20%">
 	    		<div class="[ navbar-header ]">
 	        		<div class="[ animbrand ]">
 	            		<a style="float: none;" class="[ navbar-brand ][ animate ]" href="../inicio1.php"><img src="../img/ciudadanoslogo.png"></a>
@@ -95,18 +100,18 @@ $row1=mysqli_num_rows($result1);*/
 	        		</div>
 	    		</div>
 	    	</td>
-			<td>
-				<div align="center" >
+			<td style="width: 65%; ">
+				<div>
 				<?php
 					include_once("showmenu.php");
 
 				?>	
-				<td>
-			      	<div style="float: right;">
-								<?php include ('../donaciones/index.php')?>
-					</div>
-				</td>
-			</div>
+				</div>
+			</td>
+			<td>
+		      	<div>
+						<?php include ('../donaciones/index.php')?>
+				</div>
 			</td>
 		</tr>
 	</table>
@@ -131,8 +136,9 @@ $texto=$row1mos['texto'];
 $idmensaje=$row1mos['id'];
 
 
-$sql10="SELECT * from respuestamensajes where  idempresa='".$ide."' and id='".$idmensaje."' and idempleado='".$idtrab."'";
+$sql10="SELECT * from respuestamensajes where id='".$idmensaje."' and iduser='".$resultadousuario['id']."'";
 $result10=$conn->query($sql10);
+//var_dump($sql10);
 $row10=count($result10->fetchAll());
 if ($row10==0){;
 
@@ -145,6 +151,7 @@ if ($row10==0){;
 <div class="slideshow-container" style="border-radius:10px; background-color: white; text-align: center;">
 
 	<input type="hidden" name="id" value="<?php echo $idmensaje;?>">
+	<input type="hidden" name="iduser" value="<?php echo $resultadousuario['id']?>">
 	<div class="mySlides">
 		<div style="float: right; font-size: 18px; position: absolute; left: 70%;">Hemos recibido un total de:
 			<?php
@@ -204,7 +211,7 @@ if ($row10==0){;
 
 						<div align="center" >
 						<label style="display: inline;" class="container">
-							<input type="radio" name="radio" value="<?php echo $valor;?>">
+							<input type="radio" name="respuesta" value="<?php echo $valor;?>">
 							<span class="checkmark"></span>
 						</label>
 						</div>
