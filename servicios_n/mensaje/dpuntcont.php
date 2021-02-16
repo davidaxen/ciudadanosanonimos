@@ -60,12 +60,21 @@ if ($ide!=null){;
 <tr><td colspan="2"><input class="input1" type="text" name="resp[3]" maxlength="250" size="100"></td></tr>
 <tr><td colspan="2"><input class="input1" type="text" name="resp[4]" maxlength="250" size="100"></td></tr>
 <tr><td colspan="2"><input class="input1" type="checkbox" name="otrosmot" value="1">Otros Motivos</td></tr>
-<tr><td colspan="2"><input class="input1" type="checkbox" name="video" value="1">SELECCIONE SI LA PREGUNTA CONTIENE VIDEO</td></tr>
 <tr><td><b>Videos</b></td><td><input type="file" name="video"></td></tr>
 <tr><td><b>Ficheros</b></td><td><input type="file" name="fichero"></td></tr>
 <tr><td></td></tr>
 <tr><td align="center" colspan="2"><input class="button button5" type="submit" class="envio" value="ENVIAR" name="ENVIAR"></td></tr>
 </table>
+
+<?php
+if (isset($_REQUEST['msg'])) {
+	?>
+	
+	<div style="text-align: center; font-size: 26px"><?php echo $_REQUEST['msg']; ?></div>
+
+<?php
+}
+?>
 </form>
 </div>
 </div>

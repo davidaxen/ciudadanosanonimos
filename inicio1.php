@@ -15,6 +15,7 @@ $result->bindParam(':gente', $gente);
 $result->bindParam(':part', $part);
 $result->execute();
 $resultados=$result->fetch();
+
 /*$result=mysqli_query ($conn, $sql) or die ("Invalid result sql");
 $resultados = mysqli_fetch_array ($result);*/
 				
@@ -102,7 +103,8 @@ setcookie("pag1",$pag1);
 				setcookie("dia1",$dia1);
 				setcookie("hora1",$hora1);
 				};
-				
+				$modulo = $resultados['modulo'];
+				setcookie("modulo",$modulo);
 				//var_dump($modulo);
 				$pag='indexprueba'.$modulo.'.php'; 
 				//echo $pag;
