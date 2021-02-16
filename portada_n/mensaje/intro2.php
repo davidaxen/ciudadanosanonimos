@@ -1,11 +1,13 @@
 <?php  
-error_reporting(0);
+//error_reporting(0);
 include('bbdd.php');
 
+var_dump($_REQUEST);
+
+
+
 if ($ide!=null){;
-
-
- include('../../portada_n/cabecera3.php');?>
+?>
 
 <div id="main">
 <div class="titulo">
@@ -14,7 +16,7 @@ if ($ide!=null){;
 
 
 <?php  
-if ($tabla=='intro'){;
+if ($_REQUEST['tabla']=='intro'){;
 
 $sql="select * from mensajes order by id desc";
 $result=$conn->query($sql);
@@ -22,6 +24,12 @@ $resultado=$result->fetch();
 $id=$resultado['id'];
 $idn=$id+1;
 
+$idpais = $_REQUEST['pais'];
+$localidad = $_REQUEST['localidad'];
+$cp = $_REQUEST['cp'];
+$fechafin = $_REQUEST['fechafin'];
+$texto = $_REQUEST['texto'];
+$resp = $_REQUEST['resp'];
 
 $day=date('Y-m-d H:i:s', time());
 $sql1 = "INSERT INTO mensajes (id,idempresa,idempleado,texto,user,dia,pais,localidad,provincia,cp,";
@@ -34,13 +42,13 @@ if($fechafin!=null){;
 	$sql1.="'$fechafin',";
 };
 $sql1.="'$fichero','$otrosmot')";
-$result1=$conn->exec($sql1);
+$conn->exec($sql1);
 
 for ($j=0;$j<count($resp);$j++){;
 	if ($resp[$j]!=null){;
 		$sql10 = "INSERT INTO respuesta (idmensaje,idempresa,valor,texto) VALUES 
 		('$idn','$ide','$j','$resp[$j]')";
-		$result10=$conn->exec($sql10);
+		$conn->exec($sql10);
 
 	};
 };
@@ -48,7 +56,7 @@ for ($j=0;$j<count($resp);$j++){;
 $allowedExts = array("mp4", "wma");
 $extension = pathinfo($_FILES['video']['name'], PATHINFO_EXTENSION);
 if (in_array($extension, $allowedExts)) {
-    $nuevarutavideo="../videos/".$idn;
+    $nuevarutavideo="../../servicios_n/videos/".$idn;
 
     if (file_exists("$nuevarutavideo/" . $_FILES["video"]["name"])){
       	echo "El video: " . $_FILES["video"]["name"] . " ya ha sido enviado ";
@@ -69,7 +77,7 @@ if (in_array($extension, $allowedExts)) {
 $allowedExtsPDF = array("pdf");
 $extensionPDF = pathinfo($_FILES['fichero']['name'], PATHINFO_EXTENSION);
 if (in_array($extensionPDF, $allowedExtsPDF)) {
-  $nuevarutapdf="../pdfs/".$idn;
+  $nuevarutapdf="../../servicios_n/pdfs/".$idn;
 
   if (file_exists("$nuevarutapdf/" . $_FILES["fichero"]["name"])){
         echo "El pdf: " . $_FILES["fichero"]["name"] . " ya ha sido enviado ";
@@ -83,8 +91,8 @@ if (in_array($extensionPDF, $allowedExtsPDF)) {
           $sqlpdf= "INSERT INTO pdfs (url, idmensaje) VALUES ('pdfs/$idn/$rutapdf', '$idn')";
           $resultpdf=$conn->exec($sqlpdf);
 
-          $sqlmarcadeagua="UPDATE mensajes SET video=1 WHERE id = $idn";
-          $resultmarcadeagua=$conn->exec($sqlmarcadeagua);
+          /*$sqlmarcadeagua="UPDATE mensajes SET pdf=1 WHERE id = $idn";
+          $resultmarcadeagua=$conn->exec($sqlmarcadeagua);*/
       }
     }
 }
@@ -112,7 +120,7 @@ LOS DATOS HAN SIDO INTRODUCCIDOS<p>
 </div>
 
 <?php 
-  header("location: dpuntcont.php?msg=Los pregunta ha sido introducida correctamente");
+  header("location: dpuntcont.php?msg=La pregunta ha sido introducida correctamente");
   die();
  ?>
 

@@ -10,22 +10,15 @@
 
     if ($resultadocheckuser['tusuario'] == 50 || $resultadocheckuser['tusuario'] == 51 || $resultadocheckuser['tusuario'] == 52 || $resultadocheckuser['tusuario'] == 42) {
 
-    $sql = "SELECT * FROM validar WHERE email = :mail";
-    $result=$conn->prepare($sql);
-    $result->bindParam(':mail', $mail);
-    $result->execute();
-    $resultado = $result->fetch();
-
     $sql1 = "SELECT * FROM ciudades WHERE idciudad = :idciudad";
     $result1=$conn->prepare($sql1);
-    $result1->bindParam(':idciudad', $resultado['localidad']);
+    $result1->bindParam(':idciudad', $resultadocheckuser['localidad']);
     $result1->execute();
     $resultado1 = $result1->fetch();
 
  ?>
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
 <head>
 
 <!-- cabecera -->
@@ -33,6 +26,7 @@
   <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Convergence" />
   <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" >
   <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+  <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 <!-- chat -->
   <link rel="stylesheet" type="text/css" href="chat1.css">
   <link rel="stylesheet" type="text/css" href="../ultimasincidencias_t.css">
@@ -48,9 +42,9 @@
 
 
   <nav class="[ navbar navbar-fixed-top ][ navbar-bootsnipp animate ]" role="navigation">
-    <table align="">
+    <table style="margin-left: 20px; width: 100%">
     <tr>
-      <td>
+      <td style="width: 20%;">
           <div class="[ navbar-header ]">
               <div class="[ animbrand ]">
                   <a style="float: none;" class="[ navbar-brand ][ animate ]" href="../inicio1.php"><img src="../../img/ciudadanoslogo.png"></a>
@@ -58,18 +52,19 @@
               </div>
           </div>
         </td>
-      <td>
+      <td style="width: 65%;">
         <div >
         <?php
           include_once("../../portada_n/showmenu.php");
 
         ?>  
-        <td>
-              <div>
-                <?php include ('../../donaciones/index.php')?>
-          </div>
-        </td>
+        
       </div>
+      </td>
+      <td>
+          <div>
+              <?php include ('../../donaciones/index.php')?>
+          </div>
       </td>
     </tr>
   </table>
@@ -209,7 +204,8 @@ if(comprobador){
 }
 
 $(document).ready(function(){
-
+  var newscrollHeight = $("#chatbox").attr("scrollHeight") - 20;
+  $("#chatbox").animate({ scrollTop: newscrollHeight }, 'normal');
 });
 </script>
 </body>

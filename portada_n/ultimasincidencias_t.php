@@ -5,6 +5,7 @@ include('bbdd.php');
 
 $fecha=$_GET["fecha"];
 
+
 $año= strtok($fecha, '-');
 $mes= strtok('-');
 $dia= strtok('-');
@@ -18,8 +19,14 @@ $mes=$mesa[1];
 };
 //dia='".$fechac."' and
 
-$sql="SELECT * from mensajes where idempresa=$ide and fechafin>$fechac or fechafin is null order by fechafin desc";
+$mail = $_COOKIE['gente'];
+$sqltusuario = "SELECT * FROM usuarios WHERE user = :gente";
+$resultusuario=$conn->prepare($sqltusuario);
+$resultusuario->bindParam(':gente', $mail);
+$resultusuario->execute();
+$resultadousuario = $resultusuario->fetch();
 
+$sql="SELECT * from mensajes where id in (SELECT idmensaje FROM respuestamensajes WHERE iduser=".$resultadousuario['id'].") order by fechafin desc ";
 $result=$conn->query($sql);
 
 /*$result->bindParam(':ide',$ide);
@@ -47,15 +54,18 @@ $result->execute();*/
 	<meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
 	<meta http-equiv="content-type" content="application/xhtml+xml; charset=ISO-8859-1">
 
-	<script>
-function refrescar()
-{
-	window.location.reload();
-}
+<script>
+	function refrescar()
+	{
+		window.location.reload();
+	}
+
 </script>
 
 <style type="text/css" media="print">
 .nover {display:none}
+
+
 </style>
 
 </head>
@@ -63,9 +73,9 @@ function refrescar()
 
 
 	<nav class="[ navbar navbar-fixed-top ][ navbar-bootsnipp animate ]" role="navigation">
-  					<table align="center">
+		<table style="margin-left: 20px; width: 100%">
 		<tr>
-			<td>
+			<td style="width: 20%;">
 	    		<div class="[ navbar-header ]">
 	        		<div class="[ animbrand ]">
 	            		<a style="float: none;" class="[ navbar-brand ][ animate ]" href="../inicio1.php"><img src="../img/ciudadanoslogo.png"></a>
@@ -73,18 +83,19 @@ function refrescar()
 	        		</div>
 	    		</div>
 	    	</td>
-			<td>
-				<div align="center" >
+			<td style="width: 65%;">
+				<div>
 				<?php
 					include_once("showmenu.php");
 
 				?>	
-				<td>
-			      	<div style="float: right;">
-								<?php include ('../donaciones/index.php')?>
-					</div>
-				</td>
-			</div>
+				
+				</div>
+			</td>
+			<td>
+		      	<div>
+					<?php include ('../donaciones/index.php')?>
+				</div>
 			</td>
 		</tr>
 	</table>
@@ -92,11 +103,11 @@ function refrescar()
 
 
 
-<div style=" display: flex; justify-content: center; margin-top: 15%;" class='wrapper fadeInDown' >
+<div style=" display: flex; justify-content: center; margin-top: 15%" class='wrapper fadeInDown' >
 	<div id='formContent' >	
 		<table  style=" display: flex; justify-content: center;" >
 			<tr>
-				<td><i class="fas fa-book" style="font-size: 30px"></i></td>
+				<td style="text-align: center;"><i class="fas fa-book" style="font-size: 30px"></i></td>
 			</tr>
 
 				<tr><td>&nbsp;</td></tr>
@@ -110,7 +121,7 @@ function refrescar()
  								font-style: normal; 
  								font-variant: normal; 
  								font-weight: 400; 
- 								line-height: 20px; ">ULTIMOS RESULTADOS:</p>
+ 								line-height: 20px; ">TUS ULTIMAS RESPUESTAS:</p>
 				</td>
 			</tr>
 
@@ -124,8 +135,10 @@ function refrescar()
 ?>
 	<tr>
 		<td>
-			<div align="center"  >
-			<?php  echo " ".$texto;?>
+			<div align="center">
+				<span onclick="openmodal(<?php echo $idmensaje; ?>);">
+					<?php  echo " ".$texto;?>
+				</span>
 			<div>
 		</td>
 	</tr>
@@ -139,6 +152,92 @@ function refrescar()
 	</div>
 </div>
 	
+
+	<div id="myModal" class="modal">
+		<div class="modal-content">
+		</div>
+	</div>
+
+	<script>
+	// Get the modal
+	var modal = document.getElementById("myModal");
+
+	// Get the button that opens the modal
+	var btn = document.getElementById("myBtn");
+
+	// Get the <span> element that closes the modal
+	var span = document.getElementsByClassName("close")[0];
+
+
+	function openmodal(id) {
+		 modal.style.display = "block";
+
+		 $.ajax({
+          	type : 'post',
+			url : 'ajaxmodal.php', // in here you should put your query 
+			data :  'id='+id, // here you pass your id via ajax .
+			success : function(html){
+				// now you can show output in your modal 
+				$('.modal-content').show().html(html);
+			}
+		});
+	}
+
+	// When the user clicks on <span> (x), close the modal
+	span.onclick = function() {
+	  modal.style.display = "none";
+	}
+
+	// When the user clicks anywhere outside of the modal, close it
+	window.onclick = function(event) {
+	  if (event.target == modal) {
+	    modal.style.display = "none";
+	  }
+	}
+	</script>
+
+	<style>
+		.modal {
+		  display: none; /* Hidden by default */
+		  position: fixed; /* Stay in place */
+		  z-index: 2; /* Sit on top */
+		  padding-top: 100px; /* Location of the box */
+		  left: 0;
+		  top: 0;
+		  width: 100%; /* Full width */
+		  height: 100%; /* Full height */
+		  overflow: auto; /* Enable scroll if needed */
+		  background-color: rgb(0,0,0); /* Fallback color */
+		  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+		}
+
+		/* Modal Content */
+		.modal-content {
+		  background-color: #fefefe;
+		  margin: auto;
+		  top: 30%;
+		  padding: 20px;
+		  border: 1px solid #888;
+		  width: 80%;
+		}
+
+		/* The Close Button */
+		.close {
+		  color: #aaaaaa;
+		  float: right;
+		  font-size: 28px;
+		  font-weight: bold;
+		}
+
+		.close:hover,
+		.close:focus {
+		  color: #000;
+		  text-decoration: none;
+		  cursor: pointer;
+		}
+
+	</style>
+
 </body>
 </html>
 

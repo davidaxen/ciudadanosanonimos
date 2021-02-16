@@ -46,7 +46,7 @@
 							echo $resultado2['nombreemp'];
 						}
 					}
-				?> </b>: <?php echo $msg ?><br></div>
+				?></b>: <?php echo $msg ?><br></div>
 		<?php
 	}
  ?>

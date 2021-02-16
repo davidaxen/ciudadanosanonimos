@@ -54,9 +54,10 @@ include('bbdd.php');
 
 
 		<nav class="[ navbar navbar-fixed-top ][ navbar-bootsnipp animate ]" role="navigation">
-  					<table align="center">
+
+  		<table style="margin-left: 20px; width: 100%">
 		<tr>
-			<td>
+			<td style="width: 20%; ">
 	    		<div class="[ navbar-header ]">
 	        		<div class="[ animbrand ]">
 	            		<a style="float: none;" class="[ navbar-brand ][ animate ]" href="../inicio1.php"><img src="../img/ciudadanoslogo.png"></a>
@@ -64,18 +65,19 @@ include('bbdd.php');
 	        		</div>
 	    		</div>
 	    	</td>
-			<td>
-				<div align="center" >
-				<?php
-					include_once("portada_n/showmenu.php");
+			<td style="width: 65%; ">
+				<div>
+					<?php
+						include_once("portada_n/showmenu.php");
 
-				?>	
-				<td>
-			      	<div style="float: right;">
-								<?php include ('donaciones/index.php')?>
-					</div>
-				</td>
-			</div>
+					?>	
+					
+				</div>
+			</td>
+			<td>
+		      	<div>
+							<?php include ('donaciones/index.php')?>
+				</div>
 			</td>
 		</tr>
 	</table>

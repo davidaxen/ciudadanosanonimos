@@ -52,9 +52,9 @@ if ($ide!=null){;
 </div>
 </div>
 <nav class="[ navbar navbar-fixed-top ][ navbar-bootsnipp animate ]" role="navigation">
-		<table align="center">
+		<table style="margin-left: 20px; width: 100%">
 		<tr>
-			<td>
+			<td style="width: 20%;">
 	    		<div class="[ navbar-header ]">
 	        		<div class="[ animbrand ]">
 	            		<a style="float: none;" class="[ navbar-brand ][ animate ]" href="../inicio1.php"><img src="../../img/ciudadanoslogo.png"></a>
@@ -62,15 +62,15 @@ if ($ide!=null){;
 	        		</div>
 	    		</div>
 	    	</td>
-			<td>
-				<div align="center" >
+			<td style="width: 65%;">
+				<div>
 				<?php
 					include_once("../../portada_n/showmenu.php");
 
 				?>	
 				<td>
-			      	<div style="float: right;">
-								<?php include ('../../donaciones/index.php')?>
+			      	<div>
+						<?php include ('../../donaciones/index.php')?>
 					</div>
 				</td>
 			</div>
@@ -84,7 +84,7 @@ if ($ide!=null){;
 <input type="hidden" name="tabla" value="intro">
 <table class="tabla" align="center">
 
-
+	<input type="hidden" name="user" value="<?php echo $resultadouser['id'];?>">
 	<input type="hidden" name="pais" value="<?php echo $resultado2['idpais']; ?>">
 	<input type="hidden" name="localidad" value="<?php echo $resultado1['ciudad']; ?>">
 	<input type="hidden" name="cp" value="<?php echo $resultadovalidar['cp'] ?>">
@@ -119,7 +119,6 @@ if ($resultadouser['tusuario'] == 41 || $resultadouser['tusuario'] == 42) {
 <tr><td colspan="2"><input class="input1" type="text" name="resp[3]" maxlength="250" size="100"></td></tr>
 <tr><td colspan="2"><input class="input1" type="text" name="resp[4]" maxlength="250" size="100"></td></tr>
 <tr><td colspan="2"><input class="input1" type="checkbox" name="otrosmot" value="1">Otros Motivos</td></tr>
-<tr><td colspan="2"><input class="input1" type="checkbox" name="video" value="1">SELECCIONE SI LA PREGUNTA CONTIENE VIDEO</td></tr>
 <tr><td><b>Videos</b></td><td><input type="file" name="video"></td></tr>
 <tr><td><b>Ficheros</b></td><td><input type="file" name="fichero"></td></tr>
 <tr><td></td></tr>

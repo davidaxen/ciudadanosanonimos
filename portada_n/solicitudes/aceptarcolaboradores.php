@@ -49,10 +49,9 @@
 
 <body style="background-image:url(../../img/iconos/portada_ca.jpg)">
 	<nav class="[ navbar navbar-fixed-top ][ navbar-bootsnipp animate ]" role="navigation">
-<<<<<<< HEAD
-		<table align="center">
+		<table style="margin-left: 20px; width: 100%">
 		<tr>
-			<td>
+			<td style="width: 20%;">
 	    		<div class="[ navbar-header ]">
 	        		<div class="[ animbrand ]">
 	            		<a style="float: none;" class="[ navbar-brand ][ animate ]" href="../inicio1.php"><img src="../../img/ciudadanoslogo.png"></a>
@@ -60,36 +59,22 @@
 	        		</div>
 	    		</div>
 	    	</td>
-			<td>
+			<td style="width: 65%;">
 				<div align="center" >
 				<?php
 					include_once("../../portada_n/showmenu.php");
 
 				?>	
-				<td>
-			      	<div style="float: right;">
-								<?php include ('../../donaciones/index.php')?>
-					</div>
-				</td>
+				
 			</div>
+			</td>
+			<td>
+		      	<div>
+							<?php include ('../../donaciones/index.php')?>
+				</div>
 			</td>
 		</tr>
 	</table>
-=======
-	    <div class="[ navbar-header ]">
-	        <div class="[ animbrand ]">
-	            <a class="[ navbar-brand ][ animate ]" href="../../inicio1.php"><img src="../../img/ciudadanoslogo.png"></a>
-				<div style="float: right; margin-top: 22px;">
-					<?php include ('../../donaciones/index.php')?>
-				</div>
-	        </div>
-	    </div>
-		<div>
-		<?php
-			include_once("../showmenu.php");
-		?>
-		</div>
->>>>>>> d1e77a98b0e50e9f3f83b36f33080c82d1cf467c
 	</nav>
 
 	<div class="container fadeInDown" style="background-color: white; border-radius: 10px; margin-top: 220px">
@@ -112,10 +97,6 @@
 						$sqluser = "SELECT * FROM usuarios WHERE id= ".$row['idusuario'];
 						$resultuser = $conn->query($sqluser);
 						$resultadouser = $resultuser->fetch();
-						
-						$sqlinfo = "SELECT * FROM validar WHERE email='".$resultadouser['user']."'";
-						$resultinfo = $conn->query($sqlinfo);
-						$resultadoinfo = $resultinfo->fetch();
 
 						$sqlpais = "SELECT * FROM paises WHERE idpais=".$resultadoinfo['pais'];
 						$resultpais = $conn->query($sqlpais);
@@ -130,10 +111,10 @@
 					<input type="hidden" name="typeaccept" value="0">
 						<tr>
 							<input type="hidden" name="idsoli" id="idsoli" value="<?php echo $row['id'] ?>">
-							<td style="text-align: center;"><?php echo $resultadoinfo['nombreemp']; ?></td>
+							<td style="text-align: center;"><?php echo $resultadouser['nombreemp']; ?></td>
 							<td style="text-align: center;"><?php echo $resultadopais['pais']; ?></td>
 							<td style="text-align: center;"><?php echo $resultadociudad['ciudad']; ?></td>
-							<td style="text-align: center;"><?php echo $resultadoinfo['telcontacto']; ?></td>
+							<td style="text-align: center;"><?php echo $resultadouser['telcontacto']; ?></td>
 							<td style="text-align: center;"><input type="submit" name="aceptarbtn" value="Aceptar"></td>
 							<td style="text-align: center;"><input style="background-color: #F08080" type="submit" name="denegarbtn" value="Denegar"></td>
 						</tr>

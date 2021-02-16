@@ -1,9 +1,9 @@
 <?php
 include('bbdd.php');
-
+	$mail = $_COOKIE['gente'];
 	$sqltusuario = "SELECT * FROM usuarios WHERE user = :gente";
 	$resultusuario=$conn->prepare($sqltusuario);
-	$resultusuario->bindParam(':gente', $_COOKIE['gente']);
+	$resultusuario->bindParam(':gente', $mail);
 	$resultusuario->execute();
 	$resultadousuario = $resultusuario->fetch();
 
@@ -139,28 +139,19 @@ include('bbdd.php');
 
 <?php
 if(isset($_COOKIE['gente'])){
-	$mail = $_COOKIE['gente'];
-	$sql = "SELECT * FROM validar WHERE email = :mail";
-	$result=$conn->prepare($sql);
-	$result->bindParam(':mail', $mail);
-	$result->execute();
-	$resultado = $result->fetch();
-
-	$idValidar = $resultado['idvalidar'];
-	$idPais = $resultado['pais'];
+	$idPais = $resultadousuario['pais'];
 
 	$sqlPais = "SELECT pais FROM paises WHERE idpais = $idPais";
-
 	$resultPais=$conn->query($sqlPais);
 	$resultadoPais=$resultPais->fetch();
 
 ?>
 
-<body style="background-image:url(../img/iconos/portada_ca.jpg)";>
+<body style="background-image:url(../img/iconos/portada_ca.jpg)">
 	<nav class="[ navbar navbar-fixed-top ][ navbar-bootsnipp animate ]" role="navigation">
-		<table align="center">
+		<table style="margin-left: 20px; width: 100%">
 		<tr>
-			<td>
+			<td style="width: 20%;">
 	    		<div class="[ navbar-header ]">
 	        		<div class="[ animbrand ]">
 	            		<a style="float: none;" class="[ navbar-brand ][ animate ]" href="../inicio1.php"><img src="../img/ciudadanoslogo.png"></a>
@@ -168,18 +159,19 @@ if(isset($_COOKIE['gente'])){
 	        		</div>
 	    		</div>
 	    	</td>
-			<td>
+			<td style="width: 65%;">
 				<div>
 				<?php
 					include_once("showmenu.php");
 
 				?>	
-				<td>
-			      	<div style="">
-								<?php include ('../donaciones/index.php')?>
-					</div>
-				</td>
+				
 			</div>
+			</td>
+			<td>
+		      	<div>
+					<?php include ('../donaciones/index.php')?>
+				</div>
 			</td>
 		</tr>
 	</table>
@@ -191,15 +183,15 @@ if(isset($_COOKIE['gente'])){
 		<input type="hidden" name="tiposoli" id="tiposoli" value="<?php echo $tsolicitud; ?>">
 		<div class="form-group">
 			<label>Nombre:</label> <br>
-			<label><?php echo $resultado['nombreemp']; ?></label>
+			<label><?php echo $resultadousuario['nombreemp']; ?></label>
 		</div>
 		<div class="form-group">
 			<label>Correo:</label><br>
-			<label><?php echo $resultado['email']; ?></label>
+			<label><?php echo $resultadousuario['user']; ?></label>
 		</div>
 		<div class="form-group">
 			<label>Teléfono de contacto:</label> <br>
-			<label><?php echo $resultado['telcontacto']; ?></label>
+			<label><?php echo $resultadousuario['telcontacto']; ?></label>
 		</div>
 		<div class="form-group">
 			<label>País:</label> <br>
@@ -238,6 +230,15 @@ if(isset($_COOKIE['gente'])){
 			 ?>
 
 			 <?php 
+			if ($resultadousuario['tusuario'] == 42) {
+				?>
+				<button class="btn btn-default" name="solicitud" id="solicitud" onclick="executeAjax(<?php echo $resultadousuario['id']; ?>, 50)"><b>Solicitar ser gestor de ciudad</b></button>
+				<!--<input type="checkbox" name="solicitud" id="solicitudciu" value="50"> <label for="solicitudciu">Solicitar ser colaborador de ciudad</label>-->
+				<?php
+			}
+			 ?>
+
+			 <?php 
 			if ($resultadousuario['tusuario'] == 50) {
 				?>
 				<button class="btn btn-default" name="solicitud" id="solicitud" onclick="executeAjax(<?php echo $resultadousuario['id']; ?>, 51)"><b>Solicitar ser gestor de ciudad</b></button>
@@ -254,6 +255,15 @@ if(isset($_COOKIE['gente'])){
 			if ($resultadousuario['tusuario'] == 51) {
 				?>
 				<button class="btn btn-default" name="solicitud" id="solicitud" onclick="executeAjax(<?php echo $resultadousuario['id']; ?>, 52)"><b>Solicitar ser colaborador de pais</b></button>
+				<!--<input type="checkbox" name="solicitud" id="solicitudpais" value="60"> <label for="solicitudpais">Solicitar ser colaborador de pais</label>-->
+				<?php
+			}
+			 ?>
+
+			 <?php 
+			if ($resultadousuario['tusuario'] == 52) {
+				?>
+				<button class="btn btn-default" name="solicitud" id="solicitud" onclick="executeAjax(<?php echo $resultadousuario['id']; ?>, 61)"><b>Solicitar ser gestor de pais</b></button>
 				<!--<input type="checkbox" name="solicitud" id="solicitudpais" value="60"> <label for="solicitudpais">Solicitar ser colaborador de pais</label>-->
 				<?php
 			}
@@ -283,21 +293,20 @@ if(isset($_COOKIE['gente'])){
 		<h2>Editar información</h2>
 		<div>
 			<form method="POST" id="formChangeData" action="editar.php" onsubmit="return confirmarDatos()">
-				<input type="hidden" name="nombrePrincipal" value="<?php echo $resultado['nombreemp']; ?>">
-				<input type="hidden" name="telfPrincipal" value="<?php echo $resultado['telcontacto']; ?>">
-				<input type="hidden" name="idValidar" value="<?php echo $idValidar; ?>">
+				<input type="hidden" name="nombrePrincipal" value="<?php echo $resultadousuario['nombreemp']; ?>">
+				<input type="hidden" name="telfPrincipal" value="<?php echo $resultadousuario['telcontacto']; ?>">
 				<input type="hidden" id="mailPrincipal" name="mailPrincipal" value="<?php echo $mail; ?>">
 				<div class="form-group col-xs-4">
 				<label for="nombre">Nombre:</label> <br>
-				<input type="text" style="text-align:left;" class="form-control" id="nombre" name="nombre" value="<?php echo $resultado['nombreemp']; ?>"><br>
+				<input type="text" style="text-align:left;" class="form-control" id="nombre" name="nombre" value="<?php echo $resultadousuario['nombreemp']; ?>"><br>
 			</div>
 			<div class="form-group col-xs-4">
 				<label for="email">Correo:</label> <br>
-				<input type="text" style="text-align:left;" class="form-control" id="email" name="email" value="<?php echo $resultado['email']; ?>">
+				<input type="text" style="text-align:left;" class="form-control" id="email" name="email" value="<?php echo $resultadousuario['user']; ?>">
 			</div>
 			<div class="form-group col-xs-4">
 				<label for="telcontacto">Teléfono de contacto</label> <br>
-				<input type="text" style="text-align:left;" class="form-control" id="telcontacto" name="telcontacto" value="<?php echo $resultado['telcontacto']; ?>">
+				<input type="text" style="text-align:left;" class="form-control" id="telcontacto" name="telcontacto" value="<?php echo $resultadousuario['telcontacto']; ?>">
 			</div>
 			<br> <br>
 				<div><button type="submit" class="btn btn-default" value="Editar">Confirmar</button>

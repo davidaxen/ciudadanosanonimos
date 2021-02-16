@@ -22,10 +22,9 @@
 
 
   <nav class="[ navbar navbar-fixed-top ][ navbar-bootsnipp animate ]" role="navigation">
-        <div class="[ navbar-header ]">
-    <table style="" >
+    <table style="margin-left: 20px; width: 100%">
     <tr>
-      <td>
+      <td style="width: 20%;">
           <div class="[ navbar-header ]">
               <div class="[ animbrand ]">
                   <a style="float: none;" class="[ navbar-brand ][ animate ]" href="../inicio1.php"><img src="../img/ciudadanoslogo.png"></a>
@@ -33,19 +32,20 @@
               </div>
           </div>
         </td>
-      <td>
-        <div >
-        <?php
-          include_once("../portada_n/showmenu.php");
+      <td style="width: 65%;">
+        <div>
+          <?php
+            include_once("../portada_n/showmenu.php");
 
-        ?>  
-        <td>
-              <div style="float: right;">
+          ?>  
+          
+        </div>
+      </td>
+      <td>
+          <div>
                 <?php include ('../donaciones/index.php')?>
           </div>
         </td>
-      </div>
-      </td>
     </tr>
   </table>
   </nav>
@@ -63,12 +63,10 @@
             <div class="message-text-wrapper" style="height: 520px">
               <div class="message-text" id="chatbox" style="height: 530px; overflow-y: auto;">
                 <?php
-                  if(file_exists("log.html") && filesize("log.html") > 0){
-                    $handle = fopen("log.html", "r");
-                    $contents = fread($handle, filesize("log.html"));
+                  if(file_exists("log.php") && filesize("log.php") > 0){
+                    $handle = fopen("log.php", "r");
+                    $contents = fread($handle, filesize("log.php"));
                     fclose($handle);
-                    echo $contents;
-
                   }
                 ?>
               </div>
@@ -121,13 +119,14 @@ function loadLog(){
   comprobador= true;
   var oldscrollHeight = $("#chatbox").attr("scrollHeight") - 20; //Scroll height before the request
   $.ajax({
-    url: "log.html",
+    url: "log.php",
     cache: false,
     success: function(html){    
       $("#chatbox").html(html); //Insert chat log into the #chatbox div 
       
       //Auto-scroll     
       var newscrollHeight = $("#chatbox").attr("scrollHeight") - 20; //Scroll height after the request
+      //console.log(newscrollHeight +" "+ oldscrollHeight);
       if(newscrollHeight > oldscrollHeight){
         $("#chatbox").animate({ scrollTop: newscrollHeight }, 'normal'); //Autoscroll to bottom of div
       }       
@@ -185,7 +184,8 @@ if(comprobador){
 }
 
 $(document).ready(function(){
-
+  var newscrollHeight = $("#chatbox").attr("scrollHeight") - 20;
+  $("#chatbox").animate({ scrollTop: newscrollHeight }, 'normal');
 });
 </script>
 </body>

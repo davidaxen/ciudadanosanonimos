@@ -81,11 +81,11 @@
 		<br><br><br>
 	   <ul class="[ nav navbar-nav navbar-left ]">
 
-	    <li><a href="/portada_n/ultimasentradas_t.php" class="[ animate ]" onclick="openCity(event, 'd0')" >ULTIMAS ENTRADAS</a></li>
-	    <li><a href="/portada_n/ultimasincidencias_t.php" class="[ animate ]" onclick="openCity(event, 'd0')" >ULTIMOS RESULTADOS</a></li>
-	    <li><a href="/incidencias_t.php" class="[ animate ]" onclick="openCity(event, 'd0')" >INCIDENCIAS</a></li>
-	    <li><a href="/chat/index.php" class="[ animate ]" onclick="openCity(event, 'd0')" >CHAT</a></li>
-	    <li><a href="/portada_n/salir.php" class="[ animate ]" onclick="openCity(event, 'd0')" >LOG OUT</a></li>
+	    <li><a href="/portada_n/ultimasentradas_t.php" class="[ animate ]">TUS PREGUNTAS</a></li>
+	    <li><a href="/portada_n/ultimasincidencias_t.php" class="[ animate ]">RESULTADOS</a></li>
+	    <li><a href="/incidencias_t.php" class="[ animate ]">INCIDENCIAS</a></li>
+	    <!--<li><a href="/chat/index.php" class="[ animate ]">CHAT</a></li>-->
+	    <li><a href="/portada_n/salir.php" class="[ animate ]" >LOG OUT</a></li>
 	    
 	 </ul>
 
@@ -103,22 +103,22 @@
 				<li><a href="/portada_n/cuenta.php" class="[ animate ]">MI CUENTA</a></li>
 
 			</ul>
-			
+			<br><br><br>
 
 			<ul class="[ nav navbar-nav navbar-left ]" id="resp">
 
-				<li><a href="/portada_n/ultimasentradas_t.php" class="[ animate ]" onclick="openCity(event, 'd0')" >ULTIMAS ENTRADAS</a></li>
-				<li><a href="/portada_n/ultimasincidencias_t.php" class="[ animate ]" onclick="openCity(event, 'd0')" >ULTIMOS RESULTADOS</a></li>
-				<li><a href="/incidencias_t.php" class="[ animate ]" onclick="openCity(event, 'd0')" >INCIDENCIAS</a></li>
-				<li><a href="/portada_n/chatcp/index.php" class="[ animate ]" onclick="openCity(event, 'd0')" >CHAT</a></li>
-				<li><a href="/portada_n/salir.php" class="[ animate ]" onclick="openCity(event, 'd0')" >LOG OUT</a></li>
+				<li><a href="/portada_n/ultimasentradas_t.php" class="[ animate ]">TUS PREGUNTAS</a></li>
+				<li><a href="/portada_n/ultimasincidencias_t.php" class="[ animate ]">RESULTADOS</a></li>
+				<li><a href="/incidencias_t.php" class="[ animate ]">INCIDENCIAS</a></li>
+				<!--<li><a href="/chat/index.php" class="[ animate ]">CHAT</a></li>-->
+				<li><a href="/portada_n/salir.php" class="[ animate ]">LOG OUT</a></li>
 		    
 	 		</ul>
 
 	 		<ul class="[ nav navbar-nav navbar-left ]" id="colab" style="display: none;">
 
-				<li><a href="/portada_n/chatcp/index.php" class="[ animate ]" onclick="openCity(event, 'd0')" >CHAT C.P</a></li>
-				<li><a href="/portada_n/calendario.php" class="[ animate ]" onclick="openCity(event, 'd0')" >CALENDARIO</a></li>
+				<li><a href="/portada_n/chatcp/index.php" class="[ animate ]">CHAT C.P</a></li>
+				<!--<li><a href="/portada_n/calendario.php" class="[ animate ]">CALENDARIO</a></li>-->
 		    
 	 		</ul>
 
@@ -145,20 +145,20 @@
 
 			<ul class="[ nav navbar-nav navbar-left ]" id="resp">
 
-				<li><a href="/portada_n/ultimasentradas_t.php" class="[ animate ]" onclick="openCity(event, 'd0')" >ULTIMAS ENTRADAS</a></li>
-				<li><a href="/portada_n/ultimasincidencias_t.php" class="[ animate ]" onclick="openCity(event, 'd0')" >ULTIMOS RESULTADOS</a></li>
-				<li><a href="/incidencias_t.php" class="[ animate ]" onclick="openCity(event, 'd0')" >INCIDENCIAS</a></li>
-				<li><a href="/chat/index.php" class="[ animate ]" onclick="openCity(event, 'd0')" >CHAT</a></li>
-				<li><a href="/portada_n/salir.php" class="[ animate ]" onclick="openCity(event, 'd0')" >LOG OUT</a></li>
+				<li><a href="/portada_n/ultimasentradas_t.php" class="[ animate ]">TUS PREGUNTAS</a></li>
+				<li><a href="/portada_n/ultimasincidencias_t.php" class="[ animate ]">RESULTADOS</a></li>
+				<li><a href="/incidencias_t.php" class="[ animate ]">INCIDENCIAS</a></li>
+				<!--<li><a href="/chat/index.php" class="[ animate ]">CHAT</a></li>-->
+				<li><a href="/portada_n/salir.php" class="[ animate ]">LOG OUT</a></li>
 		    
 	 		</ul>
 
 	 		<ul class="[ nav navbar-nav navbar-left ]" id="colab" style="display: none;">
 
-				<li><a href="/portada_n/chatcp/index.php" class="[ animate ]" onclick="openCity(event, 'd0')" >CHAT C.P</a></li>
-				<li><a href="/portada_n/calendario.php" class="[ animate ]" onclick="openCity(event, 'd0')" >CALENDARIO</a></li>
-				<li><a href="/portada_n/mensaje/dpuntcont.php" class="[ animate ]" onclick="openCity(event, 'd0')" >PREGUNTAS C.P</a></li>
-				<li><a href="/portada_n/solicitudes/aceptarcolaboradores.php" class="[ animate ]" onclick="openCity(event, 'd0')" >ACEPTAR COLABORADOR C.P</a></li>
+				<li><a href="/portada_n/chatcp/index.php" class="[ animate ]">CHAT C.P</a></li>
+				<!--<li><a href="/portada_n/calendario.php" class="[ animate ]">CALENDARIO</a></li>-->
+				<li><a href="/portada_n/mensaje/dpuntcont.php" class="[ animate ]">PREGUNTAS C.P</a></li>
+				<li><a href="/portada_n/solicitudes/aceptarcolaboradores.php" class="[ animate ]">ACEPTAR COLABORADOR C.P</a></li>
 		    
 	 		</ul>
 
@@ -184,27 +184,27 @@
 
 			<ul class="[ nav navbar-nav navbar-left ]" id="resp">
 
-				<li><a href="/portada_n/ultimasentradas_t.php" class="[ animate ]" onclick="openCity(event, 'd0')" >ULTIMAS ENTRADAS</a></li>
-				<li><a href="/portada_n/ultimasincidencias_t.php" class="[ animate ]" onclick="openCity(event, 'd0')" >ULTIMOS RESULTADOS</a></li>
-				<li><a href="/incidencias_t.php" class="[ animate ]" onclick="openCity(event, 'd0')" >INCIDENCIAS</a></li>
-				<li><a href="/chat/index.php" class="[ animate ]" onclick="openCity(event, 'd0')" >CHAT</a></li>
-				<li><a href="/portada_n/salir.php" class="[ animate ]" onclick="openCity(event, 'd0')" >LOG OUT</a></li>
+				<li><a href="/portada_n/ultimasentradas_t.php" class="[ animate ]">TUS PREGUNTAS</a></li>
+				<li><a href="/portada_n/ultimasincidencias_t.php" class="[ animate ]">RESULTADOS</a></li>
+				<li><a href="/incidencias_t.php" class="[ animate ]">INCIDENCIAS</a></li>
+				<!--<li><a href="/chat/index.php" class="[ animate ]">CHAT</a></li>-->
+				<li><a href="/portada_n/salir.php" class="[ animate ]">LOG OUT</a></li>
 		    
 	 		</ul>
 
 	 		<ul class="[ nav navbar-nav navbar-left ]" id="colab" style="display: none;">
 
-				<li><a href="/portada_n/chatcp/index.php" class="[ animate ]" onclick="openCity(event, 'd0')" >CHAT C.P</a></li>
-				<li><a href="/portada_n/calendario.php" class="[ animate ]" onclick="openCity(event, 'd0')" >CALENDARIO</a></li>
-				<li><a href="/portada_n/mensaje/dpuntcont.php" class="[ animate ]" onclick="openCity(event, 'd0')" >PREGUNTAS C.P</a></li>
-				<li><a href="/portada_n/solicitudes/aceptarcolaboradores.php" class="[ animate ]" onclick="openCity(event, 'd0')" >ACEPTAR COLABORADOR C.P</a></li>
+				<li><a href="/portada_n/chatcp/index.php" class="[ animate ]">CHAT C.P</a></li>
+				<!--<li><a href="/portada_n/calendario.php" class="[ animate ]">CALENDARIO</a></li>-->
+				<li><a href="/portada_n/mensaje/dpuntcont.php" class="[ animate ]">PREGUNTAS C.P</a></li>
+				<li><a href="/portada_n/solicitudes/aceptarcolaboradores.php" class="[ animate ]">ACEPTAR COLABORADOR C.P</a></li>
 		    
 	 		</ul>
 
 	 		<ul class="[ nav navbar-nav navbar-left ]" id="gest" style="display: none;">
 
-				<li><a href="/portada_n/chatciudad/index.php" class="[ animate ]" onclick="openCity(event, 'd0')" >CHAT CIUDAD</a></li>
-				<li><a href="/portada_n/calendario.php" class="[ animate ]" onclick="openCity(event, 'd0')" >CALENDARIO</a></li>
+				<li><a href="/portada_n/chatciudad/index.php" class="[ animate ]">CHAT CIUDAD</a></li>
+				<!--<li><a href="/portada_n/calendario.php" class="[ animate ]">CALENDARIO</a></li>-->
 				
 	 		</ul>
 
@@ -225,18 +225,18 @@
 
 			<ul class="[ nav navbar-nav navbar-left ]" id="resp">
 
-				<li><a href="/portada_n/ultimasentradas_t.php" class="[ animate ]" onclick="openCity(event, 'd0')" >ULTIMAS ENTRADAS</a></li>
-				<li><a href="/portada_n/ultimasincidencias_t.php" class="[ animate ]" onclick="openCity(event, 'd0')" >ULTIMOS RESULTADOS</a></li>
-				<li><a href="/incidencias_t.php" class="[ animate ]" onclick="openCity(event, 'd0')" >INCIDENCIAS</a></li>
-				<li><a href="/chat/index.php" class="[ animate ]" onclick="openCity(event, 'd0')" >CHAT</a></li>
-				<li><a href="/portada_n/salir.php" class="[ animate ]" onclick="openCity(event, 'd0')" >LOG OUT</a></li>
+				<li><a href="/portada_n/ultimasentradas_t.php" class="[ animate ]">TUS PREGUNTAS</a></li>
+				<li><a href="/portada_n/ultimasincidencias_t.php" class="[ animate ]">RESULTADOS</a></li>
+				<li><a href="/incidencias_t.php" class="[ animate ]">INCIDENCIAS</a></li>
+				<!--<li><a href="/chat/index.php" class="[ animate ]">CHAT</a></li>-->
+				<li><a href="/portada_n/salir.php" class="[ animate ]">LOG OUT</a></li>
 		    
 	 		</ul>
 
 	 		<ul class="[ nav navbar-nav navbar-left ]" id="colab" style="display: none;">
 
-				<li><a href="/portada_n/chatciudad/index.php" class="[ animate ]" onclick="openCity(event, 'd0')" >CHAT CIUDAD</a></li>
-				<li><a href="/portada_n/calendario.php" class="[ animate ]" onclick="openCity(event, 'd0')" >CALENDARIO</a></li>
+				<li><a href="/portada_n/chatciudad/index.php" class="[ animate ]">CHAT CIUDAD</a></li>
+				<!--<li><a href="/portada_n/calendario.php" class="[ animate ]">CALENDARIO</a></li>-->
 		    
 	 		</ul>
 
@@ -261,21 +261,21 @@
 			<br><br><br>
 			<ul class="[ nav navbar-nav navbar-left ]" id="resp">
 
-				<li><a href="/portada_n/ultimasentradas_t.php" class="[ animate ]" onclick="openCity(event, 'd0')" >ULTIMAS ENTRADAS</a></li>
-				<li><a href="/portada_n/ultimasincidencias_t.php" class="[ animate ]" onclick="openCity(event, 'd0')" >ULTIMOS RESULTADOS</a></li>
-				<li><a href="/incidencias_t.php" class="[ animate ]" onclick="openCity(event, 'd0')" >INCIDENCIAS</a></li>
-				<li><a href="/chat/index.php" class="[ animate ]" onclick="openCity(event, 'd0')" >CHAT</a></li>
-				<li><a href="/portada_n/salir.php" class="[ animate ]" onclick="openCity(event, 'd0')" >LOG OUT</a></li>
+				<li><a href="/portada_n/ultimasentradas_t.php" class="[ animate ]">TUS PREGUNTAS</a></li>
+				<li><a href="/portada_n/ultimasincidencias_t.php" class="[ animate ]">RESULTADOS</a></li>
+				<li><a href="/incidencias_t.php" class="[ animate ]">INCIDENCIAS</a></li>
+				<!--<li><a href="/chat/index.php" class="[ animate ]">CHAT</a></li>-->
+				<li><a href="/portada_n/salir.php" class="[ animate ]">LOG OUT</a></li>
 		    
 	 		</ul>
 
 	 		<ul class="[ nav navbar-nav navbar-left ]" id="colab" style="display: none;">
 
-				<li><a href="/portada_n/chatciudad/index.php" class="[ animate ]" onclick="openCity(event, 'd0')" >CHAT CIUDAD</a></li>
-				<li><a href="/portada_n/calendario.php" class="[ animate ]" onclick="openCity(event, 'd0')" >CALENDARIO</a></li>
-				<li><a href="/portada_n/mensaje/dpuntcont.php" class="[ animate ]" onclick="openCity(event, 'd0')" >PREGUNTAS CIUDAD</a></li>
-				<li><a href="/portada_n/solicitudes/aceptarcolaboradores.php" class="[ animate ]" onclick="openCity(event, 'd0')" >ACEPTAR COLABORADOR CIUDAD</a></li>
-				<li><a href="/portada_n/solicitudes/aceptargestores.php" class="[ animate ]" onclick="openCity(event, 'd0')" >ACEPTAR GESTOR C.P</a></li>
+				<li><a href="/portada_n/chatciudad/index.php" class="[ animate ]">CHAT CIUDAD</a></li>
+				<!--<li><a href="/portada_n/calendario.php" class="[ animate ]">CALENDARIO</a></li>-->
+				<li><a href="/portada_n/mensaje/dpuntcont.php" class="[ animate ]">PREGUNTAS CIUDAD</a></li>
+				<li><a href="/portada_n/solicitudes/aceptarcolaboradores.php" class="[ animate ]">ACEPTAR COLABORADOR CIUDAD</a></li>
+				<li><a href="/portada_n/solicitudes/aceptargestores.php" class="[ animate ]">ACEPTAR GESTOR C.P</a></li>
 		    
 	 		</ul>
 
@@ -302,28 +302,28 @@
 			<br><br><br>
 			<ul class="[ nav navbar-nav navbar-left ]" id="resp">
 
-				<li><a href="/portada_n/ultimasentradas_t.php" class="[ animate ]" onclick="openCity(event, 'd0')" >ULTIMAS ENTRADAS</a></li>
-				<li><a href="/portada_n/ultimasincidencias_t.php" class="[ animate ]" onclick="openCity(event, 'd0')" >ULTIMOS RESULTADOS</a></li>
-				<li><a href="/incidencias_t.php" class="[ animate ]" onclick="openCity(event, 'd0')" >INCIDENCIAS</a></li>
-				<li><a href="/chat/index.php" class="[ animate ]" onclick="openCity(event, 'd0')" >CHAT</a></li>
-				<li><a href="/portada_n/salir.php" class="[ animate ]" onclick="openCity(event, 'd0')" >LOG OUT</a></li>
+				<li><a href="/portada_n/ultimasentradas_t.php" class="[ animate ]">TUS PREGUNTAS</a></li>
+				<li><a href="/portada_n/ultimasincidencias_t.php" class="[ animate ]">RESULTADOS</a></li>
+				<li><a href="/incidencias_t.php" class="[ animate ]">INCIDENCIAS</a></li>
+				<!--<li><a href="/chat/index.php" class="[ animate ]">CHAT</a></li>-->
+				<li><a href="/portada_n/salir.php" class="[ animate ]">LOG OUT</a></li>
 		    
 	 		</ul>
 
 	 		<ul class="[ nav navbar-nav navbar-left ]" id="colab" style="display: none;">
 
-				<li><a href="/portada_n/chatciudad/index.php" class="[ animate ]" onclick="openCity(event, 'd0')" >CHAT CIUDAD</a></li>
-				<li><a href="/portada_n/calendario.php" class="[ animate ]" onclick="openCity(event, 'd0')" >CALENDARIO</a></li>
-				<li><a href="/portada_n/mensaje/dpuntcont.php" class="[ animate ]" onclick="openCity(event, 'd0')" >PREGUNTAS CIUDAD</a></li>
-				<li><a href="/portada_n/solicitudes/aceptarcolaboradores.php" class="[ animate ]" onclick="openCity(event, 'd0')" >ACEPTAR COLABORADOR CIUDAD</a></li>
-				<li><a href="/portada_n/solicitudes/aceptargestores.php" class="[ animate ]" onclick="openCity(event, 'd0')" >ACEPTAR GESTOR C.P</a></li>
+				<li><a href="/portada_n/chatciudad/index.php" class="[ animate ]" >CHAT CIUDAD</a></li>
+				<!--<li><a href="/portada_n/calendario.php" class="[ animate ]">CALENDARIO</a></li>-->
+				<li><a href="/portada_n/mensaje/dpuntcont.php" class="[ animate ]" >PREGUNTAS CIUDAD</a></li>
+				<li><a href="/portada_n/solicitudes/aceptarcolaboradores.php" class="[ animate ]">ACEPTAR COLABORADOR CIUDAD</a></li>
+				<li><a href="/portada_n/solicitudes/aceptargestores.php" class="[ animate ]">ACEPTAR GESTOR C.P</a></li>
 		    
 	 		</ul>
 
 	 		<ul class="[ nav navbar-nav navbar-left ]" id="gest" style="display: none;">
 
-				<li><a href="/portada_n/chatpais/index.php" class="[ animate ]" onclick="openCity(event, 'd0')" >CHAT PAIS</a></li>
-				<li><a href="/portada_n/calendario.php" class="[ animate ]" onclick="openCity(event, 'd0')" >CALENDARIO</a></li>
+				<li><a href="/portada_n/chatpais/index.php" class="[ animate ]">CHAT PAIS</a></li>
+				<!--<li><a href="/portada_n/calendario.php" class="[ animate ]" onclick="openCity(event, 'd0')" >CALENDARIO</a></li>-->
 		    
 	 		</ul>
 
@@ -344,18 +344,18 @@
 			<br><br><br>
 			<ul class="[ nav navbar-nav navbar-left ]" id="resp">
 
-				<li><a href="/portada_n/ultimasentradas_t.php" class="[ animate ]" onclick="openCity(event, 'd0')" >ULTIMAS ENTRADAS</a></li>
-				<li><a href="/portada_n/ultimasincidencias_t.php" class="[ animate ]" onclick="openCity(event, 'd0')" >ULTIMOS RESULTADOS</a></li>
-				<li><a href="/incidencias_t.php" class="[ animate ]" onclick="openCity(event, 'd0')" >INCIDENCIAS</a></li>
-				<li><a href="/chat/index.php" class="[ animate ]" onclick="openCity(event, 'd0')" >CHAT</a></li>
-				<li><a href="/portada_n/salir.php" class="[ animate ]" onclick="openCity(event, 'd0')" >LOG OUT</a></li>
+				<li><a href="/portada_n/ultimasentradas_t.php" class="[ animate ]">TUS PREGUNTAS</a></li>
+				<li><a href="/portada_n/ultimasincidencias_t.php" class="[ animate ]">RESULTADOS</a></li>
+				<li><a href="/incidencias_t.php" class="[ animate ]">INCIDENCIAS</a></li>
+				<!--<li><a href="/chat/index.php" class="[ animate ]">CHAT</a></li>-->
+				<li><a href="/portada_n/salir.php" class="[ animate ]">LOG OUT</a></li>
 		    
 	 		</ul>
 
 	 		<ul class="[ nav navbar-nav navbar-left ]" id="colab" style="display: none;">
 
-				<li><a href="/portada_n/chatpais/index.php" class="[ animate ]" onclick="openCity(event, 'd0')" >CHAT PAIS</a></li>
-				<li><a href="/portada_n/calendario.php" class="[ animate ]" onclick="openCity(event, 'd0')" >CALENDARIO</a></li>
+				<li><a href="/portada_n/chatpais/index.php" class="[ animate ]">CHAT PAIS</a></li>
+				<!--<li><a href="/portada_n/calendario.php" class="[ animate ]">CALENDARIO</a></li>-->
 		    
 	 		</ul>
 
@@ -382,21 +382,21 @@
 
 			<ul class="[ nav navbar-nav navbar-left ]" id="resp">
 
-				<li><a href="/portada_n/ultimasentradas_t.php" class="[ animate ]" onclick="openCity(event, 'd0')" >ULTIMAS ENTRADAS</a></li>
-				<li><a href="/portada_n/ultimasincidencias_t.php" class="[ animate ]" onclick="openCity(event, 'd0')" >ULTIMOS RESULTADOS</a></li>
-				<li><a href="/incidencias_t.php" class="[ animate ]" onclick="openCity(event, 'd0')" >INCIDENCIAS</a></li>
-				<li><a href="/chat/index.php" class="[ animate ]" onclick="openCity(event, 'd0')" >CHAT</a></li>
-				<li><a href="/portada_n/salir.php" class="[ animate ]" onclick="openCity(event, 'd0')" >LOG OUT</a></li>
+				<li><a href="/portada_n/ultimasentradas_t.php" class="[ animate ]">TUS PREGUNTAS</a></li>
+				<li><a href="/portada_n/ultimasincidencias_t.php" class="[ animate ]">RESULTADOS</a></li>
+				<li><a href="/incidencias_t.php" class="[ animate ]">INCIDENCIAS</a></li>
+				<!--<li><a href="/chat/index.php" class="[ animate ]">CHAT</a></li>-->
+				<li><a href="/portada_n/salir.php" class="[ animate ]">LOG OUT</a></li>
 		    
 	 		</ul>
 
 	 		<ul class="[ nav navbar-nav navbar-left ]" id="colab" style="display: none;">
 
-				<li><a href="/portada_n/chatpais/index.php" class="[ animate ]" onclick="changeOptions(2)" >CHAT PAIS</a></li>
-				<li><a href="/portada_n/calendario.php" class="[ animate ]" onclick="openCity(event, 'd0')" >CALENDARIO</a></li>
-				<li><a href="/portada_n/mensaje/dpuntcont.php" class="[ animate ]" onclick="openCity(event, 'd0')" >PREGUNTAS PAIS</a></li>
-				<li><a href="/portada_n/solicitudes/aceptarcolaboradores.php" class="[ animate ]" onclick="openCity(event, 'd0')" >ACEPTAR COLABORADOR PAIS</a></li>
-				<li><a href="/portada_n/solicitudes/aceptargestores.php" class="[ animate ]" onclick="openCity(event, 'd0')" >ACEPTAR GESTOR CIUDAD</a></li>
+				<li><a href="/portada_n/chatpais/index.php" class="[ animate ]">CHAT PAIS</a></li>
+				<!--<li><a href="/portada_n/calendario.php" class="[ animate ]">CALENDARIO</a></li>-->
+				<li><a href="/portada_n/mensaje/dpuntcont.php" class="[ animate ]">PREGUNTAS PAIS</a></li>
+				<li><a href="/portada_n/solicitudes/aceptarcolaboradores.php" class="[ animate ]">ACEPTAR COLABORADOR PAIS</a></li>
+				<li><a href="/portada_n/solicitudes/aceptargestores.php" class="[ animate ]">ACEPTAR GESTOR CIUDAD</a></li>
 		    
 	 		</ul>
 
