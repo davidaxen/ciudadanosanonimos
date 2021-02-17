@@ -16,6 +16,13 @@ include('bbdd.php');
 <link rel="stylesheet" type="text/css" href="portada_n/cabecera.css">
 <link rel="stylesheet" type="text/css" href="nav.js">
 
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+
 <script>
 	function validateForm(){
   		var data = document.getElementById("informacion").value;
@@ -52,6 +59,19 @@ include('bbdd.php');
 					 display: flex!important;
 			 }
 	 }
+	
+	@media(max-width:768px) {
+    .navbar .navbar-nav>.nav-item {
+        float: none;
+        margin-left: .1rem;
+    }
+    .navbar .navbar-nav {
+        float:none !important;
+    }
+    .navbar .collapse.in, .navbar .collapsing  {
+        clear:both;
+    }
+}
 
 </style>
 
@@ -77,13 +97,15 @@ include('bbdd.php');
 	    		</div>
 	    	</td>
 			<td style="width: 65%; ">
-				<nav class="navbar">
+				<nav class="navbar navbar-expand-lg navbar-light">
 									<div class="navbar-header">
+										
 											<button type="button" class="navbar-toggler" data-toggle="collapse" data-target=".navbar-collapse">
 											<span class="navbar-toggler-icon"></span>
 											</button>
 											<div class="pull-left">
-											</div>
+											
+										</div>
 									</div>
 									<div class="navbar-collapse collapse">
 										<div>
