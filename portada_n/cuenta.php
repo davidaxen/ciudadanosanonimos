@@ -37,11 +37,11 @@ include('bbdd.php');
 				dataType : 'json',
 				data: {
 					iduser: iduser,
-					tsolicitud: tsolicitud		
+					tsolicitud: tsolicitud
 				},
 				success: function(e){
 				  	console.log(e.message);
-				
+
 				},
 				error: function(e) {
 			       	console.log(e.message);
@@ -83,7 +83,7 @@ include('bbdd.php');
 			}
 			alert('Ya has solicitado ser '+texto+', debes esperar a ser aceptado antes de volver a solicitar');
 		}
-		
+
 	}
 
 	function desaparecer(){
@@ -120,21 +120,40 @@ include('bbdd.php');
 </script>
 
 <head>
-
-<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Convergence" />
-<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+	<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+	<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Convergence" />
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css"></script>
+	<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+	<script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <link rel="stylesheet" type="text/css" href="ultimasincidencias_t.css">
 <link rel="stylesheet" type="text/css" href="cabecera.css">
-<link rel="stylesheet" type="text/css" href="nav.js">
+<link rel="stylesheet" type="text/css" href="../nav.js">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+<script src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
 <style type="text/css" media="print">
 .nover {display:none}
 </style>
+<style>
+@media (min-width: 1192px){
+		 .external-collapse.navbar-collapse {
+				 display: -webkit-box!important;
+				 display: -ms-flexbox!important;
+				 display: flex!important;
+		 }
 
+ }
+
+ @media (min-width: 768px){
+		 .hid {
+					visibility: hidden;
+		 }
+}
+</style>
 </head>
 
 <?php
@@ -147,11 +166,14 @@ if(isset($_COOKIE['gente'])){
 
 ?>
 
-<body style="background-image:url(../img/iconos/portada_ca.jpg)">
-	<nav class="[ navbar navbar-fixed-top ][ navbar-bootsnipp animate ]" role="navigation">
-		<table style="margin-left: 20px; width: 100%">
+<body   style="background-image:url(../img/iconos/portada_ca.jpg)"; >
+
+
+		<nav class="[ navbar navbar-fixed-top ][ navbar-bootsnipp animate ]" role="navigation">
+
+  		<table style="margin-left: 20px; width: 100%">
 		<tr>
-			<td style="width: 20%;">
+			<td style="width: 20%; ">
 	    		<div class="[ navbar-header ]">
 	        		<div class="[ animbrand ]">
 	            		<a style="float: none;" class="[ navbar-brand ][ animate ]" href="../inicio1.php"><img src="../img/ciudadanoslogo.png"></a>
@@ -159,23 +181,37 @@ if(isset($_COOKIE['gente'])){
 	        		</div>
 	    		</div>
 	    	</td>
-			<td style="width: 65%;">
-				<div>
-				<?php
-					include_once("showmenu.php");
+			<td style="width: 65%; ">
+				<nav class="navbar navbar-expand-lg navbar-light">
+									<div class="navbar-header">
+											<button type="button" class="navbar-toggler hid" data-toggle="collapse" data-target=".navbar-collapse" aria-expanded="false">
+											Menu
+											</button>
+											<div class="pull-left">
+											</div>
+									</div>
+									<div class="navbar-collapse collapse">
+										<div>
+							<?php
+								include_once("showmenu.php");
 
-				?>	
-				
-			</div>
-			</td>
-			<td>
-		      	<div>
-					<?php include ('../donaciones/index.php')?>
-				</div>
-			</td>
-		</tr>
-	</table>
-	</nav>
+							?>
+							<td>
+										<div>
+									<?php include ('../donaciones/index.php')?>
+								</div>
+							</td>
+						</div>
+									</div>
+
+					</nav>
+
+
+
+						</td>
+					</tr>
+				</table>
+				</nav>
 
 	<div class="container fadeInDown" style="background-color: white; border-radius: 10px; margin-top: 220px" id="informacion">
 		<h2>Mi cuenta</h2>
@@ -198,7 +234,7 @@ if(isset($_COOKIE['gente'])){
 			<label><?php echo $resultadoPais['pais']; ?></label>
 		</div>
 		<div class="form-group">
-			<?php 
+			<?php
 			if ($resultadousuario['tusuario'] == 3) {
 				?>
 				<button class="btn btn-default" name="solicitud" id="solicitud" onclick="executeAjax(<?php echo $resultadousuario['id']; ?>, 40)"><b>Solicitar ser colaborador de codigo postal</b></button>
@@ -206,7 +242,7 @@ if(isset($_COOKIE['gente'])){
 			}
 			 ?>
 
-			 <?php 
+			 <?php
 			if ($resultadousuario['tusuario'] == 40) {
 				?>
 				<button class="btn btn-default" name="solicitud" id="solicitud" onclick="executeAjax(<?php echo $resultadousuario['id']; ?>, 41)"><b>Solicitar ser gestor de codigo postal</b></button>
@@ -220,7 +256,7 @@ if(isset($_COOKIE['gente'])){
 			}
 			 ?>
 
-			 <?php 
+			 <?php
 			if ($resultadousuario['tusuario'] == 41) {
 				?>
 				<button class="btn btn-default" name="solicitud" id="solicitud" onclick="executeAjax(<?php echo $resultadousuario['id']; ?>, 42)"><b>Solicitar ser colaborador de ciudad</b></button>
@@ -229,7 +265,7 @@ if(isset($_COOKIE['gente'])){
 			}
 			 ?>
 
-			 <?php 
+			 <?php
 			if ($resultadousuario['tusuario'] == 42) {
 				?>
 				<button class="btn btn-default" name="solicitud" id="solicitud" onclick="executeAjax(<?php echo $resultadousuario['id']; ?>, 50)"><b>Solicitar ser gestor de ciudad</b></button>
@@ -238,7 +274,7 @@ if(isset($_COOKIE['gente'])){
 			}
 			 ?>
 
-			 <?php 
+			 <?php
 			if ($resultadousuario['tusuario'] == 50) {
 				?>
 				<button class="btn btn-default" name="solicitud" id="solicitud" onclick="executeAjax(<?php echo $resultadousuario['id']; ?>, 51)"><b>Solicitar ser gestor de ciudad</b></button>
@@ -251,7 +287,7 @@ if(isset($_COOKIE['gente'])){
 			}
 			 ?>
 
-			 <?php 
+			 <?php
 			if ($resultadousuario['tusuario'] == 51) {
 				?>
 				<button class="btn btn-default" name="solicitud" id="solicitud" onclick="executeAjax(<?php echo $resultadousuario['id']; ?>, 52)"><b>Solicitar ser colaborador de pais</b></button>
@@ -260,7 +296,7 @@ if(isset($_COOKIE['gente'])){
 			}
 			 ?>
 
-			 <?php 
+			 <?php
 			if ($resultadousuario['tusuario'] == 52) {
 				?>
 				<button class="btn btn-default" name="solicitud" id="solicitud" onclick="executeAjax(<?php echo $resultadousuario['id']; ?>, 61)"><b>Solicitar ser gestor de pais</b></button>
@@ -269,7 +305,7 @@ if(isset($_COOKIE['gente'])){
 			}
 			 ?>
 
-			 <?php 
+			 <?php
 			if ($resultadousuario['tusuario'] == 60) {
 				?>
 				<button class="btn btn-default" name="solicitud" id="solicitud" onclick="executeAjax(<?php echo $resultadousuario['id']; ?>, 61)"><b>Solicitar ser gestor de pais</b></button>
