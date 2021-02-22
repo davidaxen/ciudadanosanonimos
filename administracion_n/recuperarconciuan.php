@@ -50,7 +50,7 @@ $reseteo=$resultado['reseteo'];
 <body style="background-image:url(../img/iconos/portada_ca.jpg);">
 <div class=' fadeInDown'>
 	<div align="center" class='formContent' style="background-color: white; border-radius: 15px; margin-top: 19%; margin-left: 32%; max-width: 650px">
-	<h2 style="margin-top: 12%">Recuperación de contraseña</h2>
+	<h2>Recuperación de contraseña</h2>
 		<p>Indique su dirección de correo electrónico para poder enviar un mensaje con su contraseña</p>
 		<div>
     	<form action="sendmailrecuperarcon.php">

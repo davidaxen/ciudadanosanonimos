@@ -5,9 +5,10 @@ include('bbdd.php');
 <html>
 
 <head>
-
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
 <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Convergence" />
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css"></script>
 <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
@@ -59,6 +60,7 @@ include('bbdd.php');
 					 display: -ms-flexbox!important;
 					 display: flex!important;
 			 }
+
 	 }
 	
 	@media(max-width:768px) {
@@ -74,6 +76,11 @@ include('bbdd.php');
     }
 }
 
+	 @media (min-width: 768px){
+ 			 .hid {
+ 				visibility: hidden;
+ 			 }
+}
 </style>
 
 		<meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
@@ -100,9 +107,8 @@ include('bbdd.php');
 			<td style="width: 65%; ">
 				<nav class="navbar navbar-expand-lg navbar-light">
 									<div class="navbar-header">
-										
-											<button type="button" class="navbar-toggler" data-toggle="collapse" data-target=".navbar-collapse">
-											<span class="navbar-toggler-icon"></span>
+											<button type="button" class="navbar-toggler hid" data-toggle="collapse" data-target=".navbar-collapse" aria-expanded="false">
+
 											</button>
 											<div class="pull-left">
 											
@@ -114,13 +120,8 @@ include('bbdd.php');
 								include_once("portada_n/showmenu.php");
 
 							?>
-							<td>
-										<div>
-									<?php include ('donaciones/index.php')?>
-								</div>
-							</td>
 						</div>
-									</div>
+					</div>
 
 					</nav>
 
@@ -130,6 +131,7 @@ include('bbdd.php');
 					</tr>
 				</table>
 				</nav>
+				<br> <br>
 <div class='wrapper fadeInDown' >
 <div id='formContent' >
 	<i class="fas fa-exclamation-triangle  fa-lg fa-fw" style="font-size: 30px"></i>

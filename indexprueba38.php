@@ -22,18 +22,50 @@ include('portada_n/cabecera.php');
 
 	</div>
 	</div>
-<nav class="[ navbar navbar-fixed-top ][ navbar-bootsnipp animate ]" role="navigation">
-		<div class="[ navbar-header ]">
-				<div class="[ animbrand ]">
-						<a class="[ navbar-brand ][ animate ]" href="../inicio1.php"><img src="../img/ciudadanoslogo.png"></a>
-				</div>
-		</div>
-	<div class="[ container ]">
-	<?php
-		include_once("portada_n/showmenu3.php");
-	?>
-	</div>
-</nav>
+		<nav class="[ navbar navbar-fixed-top ][ navbar-bootsnipp animate ]" role="navigation">
+
+  		<table style="margin-left: 20px; width: 100%">
+		<tr>
+			<td style="width: 20%; ">
+	    		<div class="[ navbar-header ]">
+	        		<div class="[ animbrand ]">
+	            		<a style="float: none;" class="[ navbar-brand ][ animate ]" href="inicio1.php"><img src="../img/ciudadanoslogo.png"></a>
+
+	        		</div>
+	    		</div>
+	    	</td>
+			<td style="width: 65%; ">
+				<nav class="navbar navbar-expand-lg navbar-light">
+									<div class="navbar-header">
+											<button type="button" class="navbar-toggler hid" data-toggle="collapse" data-target=".navbar-collapse" aria-expanded="false">
+
+											</button>
+											<div class="pull-left">
+											
+										</div>
+									</div>
+									<div class="navbar-collapse collapse">
+										<div>
+							<?php
+								include_once("portada_n/showmenu3.php");
+
+							?>
+							<td>
+										<div>
+									<?php include ('donaciones/index.php')?>
+								</div>
+							</td>
+						</div>
+									</div>
+
+					</nav>
+
+
+
+						</td>
+					</tr>
+				</table>
+				</nav>
 
 <?php
 $sql="select * from portadapag,paginapor where paginapor.idpag=portadapag.idpag and idempresa='".$ide."' order by idportada asc";

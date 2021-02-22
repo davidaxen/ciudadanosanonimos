@@ -46,11 +46,6 @@
           include_once("../../portada_n/showmenu.php");
 
         ?>  
-        <td>
-              <div style="float: right;">
-                <?php include ('../../donaciones/index.php')?>
-          </div>
-        </td>
       </div>
       </td>
     </tr>
