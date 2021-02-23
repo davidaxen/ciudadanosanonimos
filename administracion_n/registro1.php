@@ -1,4 +1,6 @@
 <?php 
+error_reporting(0);
+
 include('bbdd.php');
 include ('../yo.php');
 
@@ -19,14 +21,18 @@ $logo=$resultado['logo'];
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-  <meta http-equiv="Content-type" content="text/html;charset=UTF-8"/>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8"/>
 <title>REGISTRO EN <?php  echo strtoupper($nombre);?></title>  
 <link rel="stylesheet" href="solicitud.css">
+<link rel="stylesheet" type="text/css" href="../portada_n/ultimasincidencias_t.css">
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 </head>
 
 <body class='html' style='background-image:url(../img/iconos/portada_ca.jpg);
-  background-repeat: no-repeat;
-  background-size: cover;'>
+  background-repeat: no-repeat;'>
   
 <?php
 $sqln="SELECT * from validar where email='".$emailemp."'";
@@ -45,44 +51,22 @@ if ($j>0){;
 if($validar==1){;
 ?> 
   
- <div class='cuadro'>
-<div class='hijo' style='background-color:#f5f5f5'>
+
+ <div style="max-width: 650px; margin-left: 28%; border-radius: 25px;" class='fadeInDown'>
+ <div class='formContent' style='background-color:#f5f5f5; border-radius: 9px;'>
 
 
-  <div class='imgcontainer'>
-    <img src='../img/logo-ciud-anonimos.png' width='250px'>
-    <h3 style="text-align: center;color:#000">SOLICITUD DE ALTA EN CIUDADANOS ANONIMOS</h3>
+    <div class=''>
+      <img src='../img/logo-ciud-anonimos.png' width='250px'>
+      <h3 style="text-align: center;color:#000">SOLICITUD DE ALTA EN CIUDADANOS ANONIMOS</h3>
+    </div>
+      <h4 style="text-align: center;color:#000">Hemos comprobado que ya figuras dentro del sistema.</h4>
+
   </div>
-    <h4 style="text-align: center;color:#000">Hemos comprobado que ya figuras dentro del sistema.</h4>
-
 </div>
-</div>
-<p style="padding:150px;">
- 
-</p>
-
-<div class='cuadro' style='background-color:#c5c5c5;height:220px;color:#fff;'>
-<div class='hijo2'>
 
 
-  <div class='imgcontainer'>
-<img src='../img/logo-ciud-anonimos.png' width='250px'>
-      <br/>CIUDADANOS ANONIMOS EN ACCION
-  </div>
 
-  <div class='container' style='column-count:2;background-color:transparent;'>
-<br/>
-<br/>
-<br/>
-
-<br/>
-<br/>
-<br/>        
-  </div>
-
-
-</div>
-</div>
 <?php
 };
 
@@ -90,48 +74,24 @@ if($validar==0){;
 
 ?> 
   
- <div class='cuadro'>
-<div class='hijo' style='background-color:#f5f5f5'>
+ <div style="max-width: 850px; margin-left: 28%; margin-top: 2%; border-radius: 25px;" class='fadeInDown'>
+  <div class='formContent' style='background-color:#f5f5f5; border-radius: 9px;'>
 
-
-  <div class='imgcontainer'>
-    <img src='../img/logo-ciud-anonimos.png' width='250px'>
-    <h3 style="text-align: center;color:#000">SOLICITUD DE ALTA EN CIUDADANOS ANONIMOS</h3>
-  </div>
+    <div class='imgcontainer'>
+      <img src='../img/logo-ciud-anonimos.png' width='250px'>
+      <h3 style="text-align: center;color:#000">SOLICITUD DE ALTA EN CIUDADANOS ANONIMOS</h3>
+    </div>
     <h4 style="text-align: center;color:#000">Hemos comprobado que ya figuras dentro del sistema.<br/>
     Pero no has validado el acceso al sistema.<br/>
     En breve recibir&aacute; un correo electr&oacute;nico el cual tendr&aacute; que pinchar sobre el enlace
     para Validar el ALTA   
     </h4>
+    <div align="center"><a style="text-decoration: none;" class="underlineHover" href="../index.php">Volver al Inicio</a></div>
 
-</div>
-</div>
-<p style="padding:150px;">
- 
-</p>
-
-<div class='cuadro' style='background-color:#c5c5c5;height:220px;color:#fff;'>
-<div class='hijo2'>
-
-
-  <div class='imgcontainer'>
-<img src='../img/logo-ciud-anonimos.png' width='250px'>
-      <br/>CIUDADANOS ANONIMOS EN ACCION
   </div>
-
-  <div class='container' style='column-count:2;background-color:transparent;'>
-<br/>
-<br/>
-<br/>
-
-<br/>
-<br/>
-<br/>        
-  </div>
-
-
 </div>
-</div>
+
+
 
 <?php
 
@@ -148,7 +108,8 @@ $ciudad=$resultadon['localidad'];
 
 
 $nombremp2=strtoupper($nombreemp);
-$asunto="ALTA DE SERVICIO EN CIUDADANOS ANONIMOS";
+
+$asunto="";
 $href="http://control.ciudadanosanonimos.com/administracion_n/activacion1.php?".$codvalidarinc;
    //$mailto="sguinaldo@yahoo.com";
    $mailto=$emailemp;
@@ -158,31 +119,40 @@ $href="http://control.ciudadanosanonimos.com/administracion_n/activacion1.php?".
     $message = "
         <html>
         <head>
-        <title>$asunto</title>
+        <title>ALTA DE SERVICIO EN CIUDADANOS ANONIMOS</title>
+        <link rel=\"stylesheet\" type=\"text/css\" href=\"../portada_n/ultimasincidencias_t.css\">
+        <link rel=\"stylesheet\" href=\"solicitud.css\">
+        <link href=\"//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css\" rel=\"stylesheet\" id=\"bootstrap-css\">
+
+        <script src=\"//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js\"></script>
+        <script src=\"//code.jquery.com/jquery-1.11.1.min.js\"></script>
         </head>
-        <body><center>
-        <table>
-        <tr><td colspan='3' align='center'><img src='http://control.ciudadanosanonimos.com/img/logo-ciud-anonimos.png' width='250px'></td></tr>
-        <tr><td colspan='3' >Bienvenidos al Portal de CIUDADANOS ANONIMOS</td></tr>
-        <tr><td colspan='3' >Hola $nombremp2 :</td></tr>
-        <tr><td colspan='3' >Bienvenidos al Portal de CIUDADANOS ANONIMOS, a continuaci&oacute;n le indicamos los datos de acceso</td></tr>
-        <tr><td colspan='3' >Datos de Acceso:</td></tr>
-        <tr><td colspan='3' >Usuario: $emailemp</td></tr>
-        <tr><td colspan='3' >Para completar el proceso de alta debes seguir el siguiente enlace:</td></tr>
-        <tr><td colspan='3' ><a href='$href'>Validar el ALTA</a></td></tr>
-        <tr><td colspan='3' >Si no te funciona el enlace de 'Validar el ALTA' puedes copiar esta direcci&oacute;n en tu navegador para 
-        confirmar de la activaci&oacute;n: $href </td></tr>
-        <tr><td colspan='3' style='font-size:8px' ><p>&nbsp;</p>
-Para m&aacute;s informaci&oacute;n puedes contactar con el Servicio de Atenci&oacute;n Directa.
-Aviso: Este correo ha sido generado de forma autom&aacute;tica. Por favor, no responda a este mensaje. 
-Para comunicar cualquier tipo de sugerencia, duda o comentario, utilice el apartado 'Contacta con nosotros' 
-en http://www.ciudadanosanonimos.com. Este documento est&aacute; dirigido exclusivamente al destinatario especificado. 
-La informaci&oacute;n contenida es confidencial y está legalmente protegida. Si usted recibe este mensaje por error, 
-por favor comun&iacute;quelo inmediatamente al remitente y elim&iacute;nelo ya que usted no está autorizado al uso, revelaci&oacute;n, 
-distribuci&oacute;n, impresi&oacute;n o copia de toda o alguna parte de la informaci&oacute;n contenida.
-        </td></tr>
-        </table>
-        </center>
+        <body>
+      <div style=\"max-width: 850px; margin-left: 28%; margin-top: 2.9%; border-radius: 25px;\" class='fadeInDown'>
+      <div align=\"center\" class='formContent' style='background-color:#f5f5f5; border-radius: 9px;'>
+        <div><img src='http://control.ciudadanosanonimos.com/img/logo-ciud-anonimos.png' width='250px'></div>
+        <div>ALTA DE SERVICIO EN CIUDADANOS ANONIMOS</div>
+        <div>Bienvenidos al Portal de CIUDADANOS ANONIMOS</div>
+        <div>Hola $nombremp2 :</div>
+        <div>Bienvenidos al Portal de CIUDADANOS ANONIMOS, a continuaci&oacute;n le indicamos los datos de acceso</div>
+        <div>Datos de Acceso:</div>
+        <div>Usuario: $emailemp</div>
+        <div>Para completar el proceso de alta debes seguir el siguiente enlace:</div>
+        <div><a href='$href'>Validar el ALTA</a></div>
+        <div>Si no te funciona el enlace de 'Validar el ALTA' puedes copiar esta direcci&oacute;n en tu navegador para 
+        confirmar de la activaci&oacute;n: $href </div>
+        <div><p>&nbsp;</p>
+            Para m&aacute;s informaci&oacute;n puedes contactar con el Servicio de Atenci&oacute;n Directa.
+            Aviso: Este correo ha sido generado de forma autom&aacute;tica. Por favor, no responda a este mensaje. 
+            Para comunicar cualquier tipo de sugerencia, duda o comentario, utilice el apartado 'Contacta con nosotros' 
+            en http://www.ciudadanosanonimos.com. Este documento est&aacute; dirigido exclusivamente al destinatario especificado. 
+            La informaci&oacute;n contenida es confidencial y está legalmente protegida. Si usted recibe este mensaje por error, 
+            por favor comun&iacute;quelo inmediatamente al remitente y elim&iacute;nelo ya que usted no está autorizado al uso, revelaci&oacute;n, 
+            distribuci&oacute;n, impresi&oacute;n o copia de toda o alguna parte de la informaci&oacute;n contenida.
+          </div>
+          <div>From: CIUDADANOS ANONIMOS EN ACCION - Bcc: ciudadanosanonimos@yahoo.com Content-Type: text/html; charset=\"iso-8859-1\" Content-Transfer-Encoding: 8bit</div>
+       </div>
+       </div>
         </body>
         </html>";     
     
@@ -223,11 +193,29 @@ if ($emailadmin2!=""){;
         
       } else {
         //echo "mail send ... ERROR!";
-        echo "<center><table border=1 cellspacing=5 cellpadding=5><tr><th>MENSAJE NO ENVIADO</th></tr></table></center>";
+        echo "
+        <html>
+        <head>
+        <link rel=\"stylesheet\" type=\"text/css\" href=\"../portada_n/ultimasincidencias_t.css\">
+        <link href=\"//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css\" rel=\"stylesheet\" id=\"bootstrap-css\">
+
+        <script src=\"//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js\"></script>
+        <script src=\"//code.jquery.com/jquery-1.11.1.min.js\"></script>
+        </head>
+        <body>
+        <div>
+        <div style=\"max-width: 150px; margin-left: 47%; margin-top: 5%; border-radius: 25px;\" class='fadeInDown'>
+          <div align=\"center\" class='formContent' style='background-color:#f5f5f5; border-radius: 9px;'>
+            <div>MENSAJE NO ENVIADO</div>
+          </div>
+        </div>
+        </body>
+        </html>";
+
         echo $mailto."<br>";
         echo $subject."<br>";
-        echo $message."<br>";
-        echo $headers."<br>";
+       // echo $message."<br>";
+        //echo $headers."<br>";
       }
 
 
@@ -243,9 +231,8 @@ if ($emailadmin2!=""){;
 }else{;
 ?>  
   
-<div class='cuadro'>
-<div class='hijo' style='background-color:#f5f5f5'>
-
+<div style="max-width: 850px; margin-left: 28%; margin-top: 2%; border-radius: 25px;" class='fadeInDown'>
+  <div class='formContent' style='background-color:#f5f5f5; border-radius: 9px;'>
 
   <div class='imgcontainer'>
     <img src='../img/logo-ciud-anonimos.png' width='250px'>
@@ -256,32 +243,8 @@ if ($emailadmin2!=""){;
 
 </div>
 </div>
-<p style="padding:150px;">
- 
-</p>
-
-<div class='cuadro' style='background-color:#c5c5c5;height:220px;color:#fff;'>
-<div class='hijo2'>
 
 
-  <div class='imgcontainer'>
-<img src='../img/logo-ciud-anonimos.png' width='250px'>
-      <br/>CIUDADANOS ANONIMOS EN ACCION
-  </div>
-
-  <div class='container' style='column-count:2;background-color:transparent;'>
-<br/>
-<br/>
-<br/>
-
-<br/>
-<br/>
-<br/>        
-  </div>
-
-
-</div>
-</div>
 
 <?php
 $codvalidarinc=$emailemp.'#;&'.$psw;
@@ -310,7 +273,7 @@ $result1=$conn->exec($sql1);
 
 <?php
 $nombremp2=strtoupper($nombreemp);
-$asunto="ALTA DE SERVICIO EN CIUDADANOS ANONIMOS";
+$asunto="ALTA EN SERVICIO EN CIUDADANOS ANONIMOS";
 $href="http://control.ciudadanosanonimos.com/administracion_n/activacion1.php?".$codvalidarinc;
    //$mailto="sguinaldo@yahoo.com";
    $mailto=$emailemp;
@@ -320,33 +283,43 @@ $href="http://control.ciudadanosanonimos.com/administracion_n/activacion1.php?".
     $message = "
         <html>
         <head>
-        <title>$asunto</title>
+        <title>ALTA DE SERVICIO EN CIUDADANOS ANONIMOS</title>
+        <link rel=\"stylesheet\" type=\"text/css\" href=\"../portada_n/ultimasincidencias_t.css\">
+        <link href=\"//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css\" rel=\"stylesheet\" id=\"bootstrap-css\">
+
+        <script src=\"//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js\"></script>
+        <script src=\"//code.jquery.com/jquery-1.11.1.min.js\"></script>
         </head>
-        <body><center>
-        <table>
-        <tr><td colspan='3' align='center'><img src='http://control.ciudadanosanonimos.com/img/logo-ciud-anonimos.png' width='250px'></td></tr>
-        <tr><td colspan='3' >Bienvenidos al Portal de CIUDADANOS ANONIMOS</td></tr>
-        <tr><td colspan='3' >Hola $nombremp2 :</td></tr>
-        <tr><td colspan='3' >Bienvenidos al Portal de CIUDADANOS ANONIMOS, a continuaci&oacute;n le indicamos los datos de acceso</td></tr>
-        <tr><td colspan='3' >Datos de Acceso:</td></tr>
-        <tr><td colspan='3' >Usuario: $emailemp</td></tr>
-        <tr><td colspan='3' >Para completar el proceso de alta debes seguir el siguiente enlace:</td></tr>
-        <tr><td colspan='3' ><a href='$href'>Validar el ALTA</a></td></tr>
-        <tr><td colspan='3' >Si no te funciona el enlace de 'Validar el ALTA' puedes copiar esta direcci&oacute;n en tu navegador para 
-        confirmar de la activaci&oacute;n: $href </td></tr>
-        <tr><td colspan='3' style='font-size:8px' ><p>&nbsp;</p>
-Para m&aacute;s informaci&oacute;n puedes contactar con el Servicio de Atenci&oacute;n Directa.
-Aviso: Este correo ha sido generado de forma autom&aacute;tica. Por favor, no responda a este mensaje. 
-Para comunicar cualquier tipo de sugerencia, duda o comentario, utilice el apartado 'Contacta con nosotros' 
-en http://www.ciudadanosanonimos.com. Este documento est&aacute; dirigido exclusivamente al destinatario especificado. 
-La informaci&oacute;n contenida es confidencial y está legalmente protegida. Si usted recibe este mensaje por error, 
-por favor comun&iacute;quelo inmediatamente al remitente y elim&iacute;nelo ya que usted no está autorizado al uso, revelaci&oacute;n, 
-distribuci&oacute;n, impresi&oacute;n o copia de toda o alguna parte de la informaci&oacute;n contenida.
-        </td></tr>
-        </table>
-        </center>
+        <body>
+      <div style=\"max-width: 850px; margin-left: 28%; margin-top: 1%; border-radius: 25px;\" class='fadeInDown'>
+      <div align=\"center\" class='formContent' style='background-color:#f5f5f5; border-radius: 9px;'>
+        <div><img src='http://control.ciudadanosanonimos.com/img/logo-ciud-anonimos.png' width='250px'></div>
+        <div>Bienvenidos al Portal de CIUDADANOS ANONIMOS</div>
+        <div>Hola $nombremp2 :</div>
+        <div>Bienvenidos al Portal de CIUDADANOS ANONIMOS, a continuaci&oacute;n le indicamos los datos de acceso</div>
+        <div>Datos de Acceso:</div>
+        <div>Usuario: $emailemp</div>
+        <div>Para completar el proceso de alta debes seguir el siguiente enlace:</div>
+        <div><a href='$href'>Validar el ALTA</a></div>
+        <div>Si no te funciona el enlace de 'Validar el ALTA' puedes copiar esta direcci&oacute;n en tu navegador para 
+        confirmar de la activaci&oacute;n: $href </div>
+        <div><p>&nbsp;</p>
+            Para m&aacute;s informaci&oacute;n puedes contactar con el Servicio de Atenci&oacute;n Directa.
+            Aviso: Este correo ha sido generado de forma autom&aacute;tica. Por favor, no responda a este mensaje. 
+            Para comunicar cualquier tipo de sugerencia, duda o comentario, utilice el apartado 'Contacta con nosotros' 
+            en http://www.ciudadanosanonimos.com. Este documento est&aacute; dirigido exclusivamente al destinatario especificado. 
+            La informaci&oacute;n contenida es confidencial y está legalmente protegida. Si usted recibe este mensaje por error, 
+            por favor comun&iacute;quelo inmediatamente al remitente y elim&iacute;nelo ya que usted no está autorizado al uso, revelaci&oacute;n, 
+            distribuci&oacute;n, impresi&oacute;n o copia de toda o alguna parte de la informaci&oacute;n contenida.
+          </div>
+       
+       </div>
+       </div>
         </body>
         </html>";     
+
+        var_dump($message);
+         
     
 
     // a random hash will be necessary to send mixed content
@@ -389,7 +362,7 @@ if ($emailadmin2!=""){;
         echo $mailto."<br>";
         echo $subject."<br>";
         echo $message."<br>";
-        echo $headers."<br>";
+       // echo $headers."<br>";
       }
       
 ?>

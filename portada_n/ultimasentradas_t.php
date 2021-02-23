@@ -90,13 +90,36 @@ $row1=mysqli_num_rows($result1);*/
   <link rel="stylesheet" type="text/css" href="respuestas.css">
   <link rel="stylesheet" type="text/css" href="cabecera.css">
   <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Convergence" />
+  <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+  <script src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<style>
+@media (min-width: 1192px){
+     .external-collapse.navbar-collapse {
+         display: -webkit-box!important;
+         display: -ms-flexbox!important;
+         display: flex!important;
+     }
 
+ }
+
+ @media (min-width: 768px){
+     .hid {
+          visibility: hidden;
+     }
+}
+</style>
+  <meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
+  <meta http-equiv="content-type" content="application/xhtml+xml; charset=ISO-8859-1">
 </head>
-<body style="background-image:url(../img/iconos/portada_ca.jpg)";>
-	<nav class="[ navbar navbar-fixed-top ][ navbar-bootsnipp animate ]" role="navigation">
-		<table style="margin-left: 20px; width: 100%">
+<body   style="background-image:url(../img/iconos/portada_ca.jpg)"; >
+
+
+		<nav class="[ navbar navbar-fixed-top ][ navbar-bootsnipp animate ]" role="navigation">
+
+  		<table style="margin-left: 20px; width: 100%">
 		<tr>
-			<td style="width: 20%">
+			<td style="width: 20%; ">
 	    		<div class="[ navbar-header ]">
 	        		<div class="[ animbrand ]">
 	            		<a style="float: none;" class="[ navbar-brand ][ animate ]" href="../inicio1.php"><img src="../img/ciudadanoslogo.png"></a>
@@ -105,22 +128,31 @@ $row1=mysqli_num_rows($result1);*/
 	    		</div>
 	    	</td>
 			<td style="width: 65%; ">
-				<div>
-				<?php
-					include_once("showmenu.php");
+				<nav class="navbar navbar-expand-lg navbar-light">
+									<div class="navbar-header">
+											<button type="button" class="navbar-toggler hid" data-toggle="collapse" data-target=".navbar-collapse" aria-expanded="false">
+											Menu
+											</button>
+											<div class="pull-left">
+											</div>
+									</div>
+									<div class="navbar-collapse collapse">
+										<div>
+							<?php
+								include_once("showmenu.php");
 
-				?>	
-				</div>
-			</td>
-			<td>
-		      	<div>
-						<?php include ('../donaciones/index.php')?>
-				</div>
-			</td>
-		</tr>
-	</table>
-	</nav>
+							?>
+						</div>
+									</div>
 
+					</nav>
+
+
+
+						</td>
+					</tr>
+				</table>
+				</nav>
 <!--onload="setTimeout('refrescar1()', 5000);"-->
 
 
@@ -250,7 +282,7 @@ if ($row10==0){;
 
 
 
-		
+
 	<?php
 		$sql1="SELECT count(*) from pdfs WHERE idmensaje=(SELECT id FROM mensajes WHERE id = :id)";
 
@@ -320,11 +352,11 @@ if ($row10==0){;
 
 	  	<?php
 	  		}
-	  	?>	 
+	  	?>
   	 			<div align="center" style="padding-bottom: 20px">
 				<button type="submit" class="btn btn-primary" value="enviar" name="enviar">ENVIAR</button>
-					
-				</div>	
+
+				</div>
 
 	</div>
 
