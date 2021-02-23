@@ -66,11 +66,6 @@
         
       </div>
       </td>
-      <td>
-          <div>
-            <?php include ('../../donaciones/index.php')?>
-          </div>
-      </td>
     </tr>
   </table>
   </nav>

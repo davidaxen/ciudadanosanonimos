@@ -68,11 +68,6 @@ if ($ide!=null){;
 					include_once("../../portada_n/showmenu.php");
 
 				?>	
-				<td>
-			      	<div>
-						<?php include ('../../donaciones/index.php')?>
-					</div>
-				</td>
 			</div>
 			</td>
 		</tr>
