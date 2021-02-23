@@ -1,6 +1,6 @@
 <?php
 include('bbdd.php');
-
+$ide = 21;
 if ($ide!=null){;
 
 	$sqluser = "SELECT * FROM usuarios WHERE user = :mail";
@@ -81,6 +81,7 @@ if ($ide!=null){;
 <div class="container fadeInDown" style="background-color: white; border-radius: 10px; margin-top: 140px">
 <br>
 <form action="intro2.php" method="post" enctype="multipart/form-data">
+<input type="hidden" name="ide" value="21">
 <input type="hidden" name="tabla" value="intro">
 <table class="tabla" align="center">
 
@@ -90,7 +91,7 @@ if ($ide!=null){;
 	<input type="hidden" name="cp" value="<?php echo $resultadovalidar['cp'] ?>">
 
 
-<tr><td colspan="2"><h2 class="enc">ENVIO DE <?php  echo strtoupper($nc);?></h2></td></tr>
+<tr><td colspan="2"><h2 class="enc">ENVIO DE PREGUNTAS</h2></td></tr>
 <?php 
 if ($resultadouser['tusuario'] == 41 || $resultadouser['tusuario'] == 42) {
 ?>

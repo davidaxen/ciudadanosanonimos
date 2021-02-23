@@ -1,5 +1,6 @@
 <?php
 include('bbdd.php');
+$ide = 21;
 if ($ide!=null){;
 
 ?>
@@ -29,7 +30,7 @@ if ($ide!=null){;
 		</div>
 	<div class="[ container ]">
 	<?php
-		include_once("../../portada_n/showmenu4.php");
+		include_once("../../portada_n/showmenu2.php");
 	?>
 	</div>
 </nav>
@@ -37,10 +38,11 @@ if ($ide!=null){;
 <div class="container fadeInDown" style="background-color: white; border-radius: 10px;">
 <br>
 <form action="intro2.php" method="post" enctype="multipart/form-data">
+<input type="hidden" name="ide" value="21">
 <input type="hidden" name="tabla" value="intro">
 <table class="tabla" align="center">
 
-<tr><td colspan="2"><h2 class="enc">ENVIO DE <?php  echo strtoupper($nc);?></h2></td></tr>
+<tr><td colspan="2"><h2 class="enc">ENVIO DE PREGUNTAS</h2></td></tr>
 <tr><td><b>Pais</b></td><td><?php include('provincias.php'); ?></td></tr>
 <tr><td><b>Ciudad</b></td><td>
 <div id="listamunicipios">

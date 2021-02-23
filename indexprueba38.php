@@ -35,34 +35,6 @@ include('portada_n/cabecera.php');
 	</div>
 </nav>
 
-<?php
-$sql="select * from portadapag,paginapor where paginapor.idpag=portadapag.idpag and idempresa='".$ide."' order by idportada asc";
-//echo $sql;
-$result=$conn->query($sql);
-$resultmos=$conn->query($sql);
-$resultmos1=$conn->query($sql);
-
-?>
-
-<?php
-
-$j=0;
-foreach ($resultmos1 as $rowmos1) {
-$tituloport=$rowmos1['titulo'];
-$pagport=$rowmos1['pag'];
-$iconoport=$rowmos1['icono'];
-?>
-
-
-
-
-<?php
-$j=$j+1;
-};
-?>
-
-
-
 
 </div>
 </div>

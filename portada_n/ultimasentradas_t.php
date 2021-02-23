@@ -10,6 +10,10 @@ $resultusuario->bindParam(':gente', $mail);
 $resultusuario->execute();
 $resultadousuario = $resultusuario->fetch();
 
+$paisuser = $resultadousuario['pais'];
+$localidaduser = $resultadousuario['localidad'];
+$cpuser = $resultadousuario['cp'];
+
 $sql1="SELECT * from mensajes where fechafin>'".$fechac."' or fechafin is null and id not in (SELECT idmensaje FROM respuestamensajes WHERE iduser='".$resultadousuario['id']."') AND pdf = 0 order by id asc";
 $result1=$conn->query($sql1);
 $result1row=$conn->query($sql1);

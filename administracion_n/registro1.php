@@ -1,9 +1,8 @@
 <?php 
 include('bbdd.php');
 include ('../yo.php');
-if (isset($_REQUEST['idpr'])) {
-  $idpr = $_REQUEST['idpr'];
-}
+
+$idpr=1;
 if ($idpr!=null){;
 
 $sql="SELECT * from proyectos where idproyectos='".$idpr."'";
