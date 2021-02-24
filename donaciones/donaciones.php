@@ -6,8 +6,6 @@
   <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
   <link rel="stylesheet" type="text/css" href="estilo.css">
   <link rel="stylesheet" type="text/css" href="../portada_n/cabecera.css">
-
-
   <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
   <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 
@@ -18,41 +16,24 @@
 
       <table style="margin-left: 20px; width: 100%">
     <tr>
-      <td style="width: 20%; ">
+      <td style="width: 20%; text-align: left;">
           <div class="[ navbar-header ]">
               <div class="[ animbrand ]">
-                  <a style="float: none;" class="[ navbar-brand ][ animate ]" href="../inicio1.php"><img src="../img/ciudadanoslogo.png"></a>
+                  <a style="margin-left: 0px;" class="[ navbar-brand ][ animate ]" href="../inicio1.php"><img src="../img/ciudadanoslogo.png"></a>
 
               </div>
           </div>
         </td>
       <td style="width: 65%; ">
-        <nav class="navbar navbar-expand-lg navbar-light">
-                  <div class="navbar-header">
-                      <button type="button" class="navbar-toggler hid" data-toggle="collapse" data-target=".navbar-collapse" aria-expanded="false">
-
-                      </button>
-                      <div class="pull-left">
-                      
-                    </div>
-                  </div>
-                  <div class="navbar-collapse collapse">
-                    <div>
+        
               <?php
                 include_once("../portada_n/showmenu.php");
 
               ?>
-            </div>
-          </div>
-
-          </nav>
-
-
-
-            </td>
-          </tr>
-        </table>
-        </nav>
+          </td>
+        </tr>
+      </table>
+      </nav>
  
 <div style="background-color: white; border-radius: 10px; padding-top: 15px; max-width: 450px; margin-left: 650px; margin-top: 13%;" align="center" class="wrapper fadeInDown">
   <div   class="formContent">

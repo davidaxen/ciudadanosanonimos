@@ -2,8 +2,8 @@
 include('bbdd.php');
 
 if ($com=='comprobacion'){;
-
-include('portada_n/cabecera.php');
+header("Location: portada_n/ultimasincidencias.php");
+//include('portada_n/cabecera.php');
 ?>
 
 <meta charset="utf-8">
@@ -14,12 +14,9 @@ include('portada_n/cabecera.php');
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css"></script>
 <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <link rel="stylesheet" type="text/css" href="portada_n/boostrapUlt.css">
 <link rel="stylesheet" type="text/css" href="nav.js">
 
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
 <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
 <script src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
@@ -44,7 +41,7 @@ include('portada_n/cabecera.php');
 <body   style="background-image:url(../img/iconos/portada_ca.jpg)"; >
 
 
-		<nav class="[ navbar navbar-fixed-top ][ navbar-bootsnipp animate ]" role="navigation">
+		<!--<nav class="[ navbar navbar-fixed-top ][ navbar-bootsnipp animate ]" role="navigation">
 
   		<table style="margin-left: 20px; width: 100%">
 		<tr>
@@ -58,18 +55,7 @@ include('portada_n/cabecera.php');
 	    		</div>
 	    	</td>
 			<td style="width: 65%; ">
-				<nav class="navbar navbar-expand-lg navbar-light">
-									<div class="navbar-header">
-											<button type="button" class="navbar-toggler hid" data-toggle="collapse" data-target=".navbar-collapse" aria-expanded="false">
-
-											Menu
-											</button>
-											<div class="pull-left">
-											</div>
-
-									</div>
-									<div class="navbar-collapse collapse">
-										<div>
+				
 							<?php
 								include_once("portada_n/showmenu3.php");
 
@@ -79,17 +65,12 @@ include('portada_n/cabecera.php');
 									<?php include ('donaciones/index.php')?>
 								</div>
 							</td>
-						</div>
-									</div>
-
-					</nav>
-
 
 
 						</td>
 					</tr>
 				</table>
-				</nav>
+				</nav>-->
 
 
 </div>
@@ -99,7 +80,7 @@ include('portada_n/cabecera.php');
 
 </html>
 <?php
-header("Location: portada_n/ultimasincidencias.php");
+
 }else{;
 include ('cierre.php');
 };?>

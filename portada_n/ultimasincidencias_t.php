@@ -100,32 +100,15 @@ $result->execute();*/
 	    		</div>
 	    	</td>
 			<td style="width: 65%; ">
-				<nav class="navbar navbar-expand-lg navbar-light">
-									<div class="navbar-header">
-											<button type="button" class="navbar-toggler hid" data-toggle="collapse" data-target=".navbar-collapse" aria-expanded="false">
-											Menu
-											</button>
-											<div class="pull-left">
-											</div>
-									</div>
-									<div class="navbar-collapse collapse">
-										<div>
+				
 							<?php
 								include_once("showmenu.php");
 
 							?>
-
-						</div>
-									</div>
-
-					</nav>
-
-
-
-						</td>
-					</tr>
-				</table>
-				</nav>
+					</td>
+				</tr>
+			</table>
+			</nav>
 
 
 
@@ -158,6 +141,7 @@ $result->execute();*/
 	$idmensaje=$rowmos['id'];
 	$fechafin=$rowmos['fechafin'];
 	$texto=$rowmos['texto'];
+
 ?>
 	<tr>
 		<td style="text-align: left;">
