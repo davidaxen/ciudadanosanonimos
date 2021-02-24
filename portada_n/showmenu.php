@@ -129,7 +129,7 @@
 				<li><a href="/portada_n/ultimasentradas_t.php" class="[ animate ]">TUS PREGUNTAS</a></li>
 				<li><a href="/portada_n/ultimasincidencias_t.php" class="[ animate ]">RESULTADOS</a></li>
 				<li><a href="/incidencias_t.php" class="[ animate ]">INCIDENCIAS</a></li>
-				<li><a href="../donaciones/donaciones.php" class="[ animate ]">AYÚDANOS A CRECER</a></li>
+				<li><a href="/donaciones/donaciones.php" class="[ animate ]">AYÚDANOS A CRECER</a></li>
 				<!--<li><a href="/chat/index.php" class="[ animate ]">CHAT</a></li>-->
 				<li><a href="/portada_n/salir.php" class="[ animate ]">LOG OUT</a></li>
 		    
@@ -168,7 +168,7 @@
 				<li><a href="/portada_n/ultimasentradas_t.php" class="[ animate ]">TUS PREGUNTAS</a></li>
 				<li><a href="/portada_n/ultimasincidencias_t.php" class="[ animate ]">RESULTADOS</a></li>
 				<li><a href="/incidencias_t.php" class="[ animate ]">INCIDENCIAS</a></li>
-				<li><a href="../donaciones/donaciones.php" class="[ animate ]">AYÚDANOS A CRECER</a></li>
+				<li><a href="/donaciones/donaciones.php" class="[ animate ]">AYÚDANOS A CRECER</a></li>
 				<!--<li><a href="/chat/index.php" class="[ animate ]">CHAT</a></li>-->
 				<li><a href="/portada_n/salir.php" class="[ animate ]">LOG OUT</a></li>
 		    
@@ -208,7 +208,7 @@
 				<li><a href="/portada_n/ultimasentradas_t.php" class="[ animate ]">TUS PREGUNTAS</a></li>
 				<li><a href="/portada_n/ultimasincidencias_t.php" class="[ animate ]">RESULTADOS</a></li>
 				<li><a href="/incidencias_t.php" class="[ animate ]">INCIDENCIAS</a></li>
-				<li><a href="../donaciones/donaciones.php" class="[ animate ]">AYÚDANOS A CRECER</a></li>
+				<li><a href="/donaciones/donaciones.php" class="[ animate ]">AYÚDANOS A CRECER</a></li>
 				<!--<li><a href="/chat/index.php" class="[ animate ]">CHAT</a></li>-->
 				<li><a href="/portada_n/salir.php" class="[ animate ]">LOG OUT</a></li>
 		    
@@ -250,7 +250,7 @@
 				<li><a href="/portada_n/ultimasentradas_t.php" class="[ animate ]">TUS PREGUNTAS</a></li>
 				<li><a href="/portada_n/ultimasincidencias_t.php" class="[ animate ]">RESULTADOS</a></li>
 				<li><a href="/incidencias_t.php" class="[ animate ]">INCIDENCIAS</a></li>
-				<li><a href="../donaciones/donaciones.php" class="[ animate ]">AYÚDANOS A CRECER</a></li>
+				<li><a href="/donaciones/donaciones.php" class="[ animate ]">AYÚDANOS A CRECER</a></li>
 				<!--<li><a href="/chat/index.php" class="[ animate ]">CHAT</a></li>-->
 				<li><a href="/portada_n/salir.php" class="[ animate ]">LOG OUT</a></li>
 		    
@@ -287,7 +287,7 @@
 				<li><a href="/portada_n/ultimasentradas_t.php" class="[ animate ]">TUS PREGUNTAS</a></li>
 				<li><a href="/portada_n/ultimasincidencias_t.php" class="[ animate ]">RESULTADOS</a></li>
 				<li><a href="/incidencias_t.php" class="[ animate ]">INCIDENCIAS</a></li>
-				<li><a href="../donaciones/donaciones.php" class="[ animate ]">AYÚDANOS A CRECER</a></li>
+				<li><a href="/donaciones/donaciones.php" class="[ animate ]">AYÚDANOS A CRECER</a></li>
 				<!--<li><a href="/chat/index.php" class="[ animate ]">CHAT</a></li>-->
 				<li><a href="/portada_n/salir.php" class="[ animate ]">LOG OUT</a></li>
 		    
@@ -329,7 +329,7 @@
 				<li><a href="/portada_n/ultimasentradas_t.php" class="[ animate ]">TUS PREGUNTAS</a></li>
 				<li><a href="/portada_n/ultimasincidencias_t.php" class="[ animate ]">RESULTADOS</a></li>
 				<li><a href="/incidencias_t.php" class="[ animate ]">INCIDENCIAS</a></li>
-				<li><a href="../donaciones/donaciones.php" class="[ animate ]">AYÚDANOS A CRECER</a></li>
+				<li><a href="/donaciones/donaciones.php" class="[ animate ]">AYÚDANOS A CRECER</a></li>
 				<!--<li><a href="/chat/index.php" class="[ animate ]">CHAT</a></li>-->
 				<li><a href="/portada_n/salir.php" class="[ animate ]">LOG OUT</a></li>
 		    
@@ -372,7 +372,7 @@
 				<li><a href="/portada_n/ultimasentradas_t.php" class="[ animate ]">TUS PREGUNTAS</a></li>
 				<li><a href="/portada_n/ultimasincidencias_t.php" class="[ animate ]">RESULTADOS</a></li>
 				<li><a href="/incidencias_t.php" class="[ animate ]">INCIDENCIAS</a></li>
-				<li><a href="../donaciones/donaciones.php" class="[ animate ]">AYÚDANOS A CRECER</a></li>
+				<li><a href="/donaciones/donaciones.php" class="[ animate ]">AYÚDANOS A CRECER</a></li>
 				<!--<li><a href="/chat/index.php" class="[ animate ]">CHAT</a></li>-->
 				<li><a href="/portada_n/salir.php" class="[ animate ]">LOG OUT</a></li>
 		    
@@ -411,7 +411,7 @@
 				<li><a href="/portada_n/ultimasentradas_t.php" class="[ animate ]">TUS PREGUNTAS</a></li>
 				<li><a href="/portada_n/ultimasincidencias_t.php" class="[ animate ]">RESULTADOS</a></li>
 				<li><a href="/incidencias_t.php" class="[ animate ]">INCIDENCIAS</a></li>
-				<li><a href="../donaciones/donaciones.php" class="[ animate ]">AYÚDANOS A CRECER</a></li>
+				<li><a href="/donaciones/donaciones.php" class="[ animate ]">AYÚDANOS A CRECER</a></li>
 				<!--<li><a href="/chat/index.php" class="[ animate ]">CHAT</a></li>-->
 				<li><a href="/portada_n/salir.php" class="[ animate ]">LOG OUT</a></li>
 		    
