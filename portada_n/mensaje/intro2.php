@@ -2,10 +2,6 @@
 //error_reporting(0);
 include('bbdd.php');
 
-var_dump($_REQUEST);
-
-
-
 if ($ide!=null){;
 ?>
 

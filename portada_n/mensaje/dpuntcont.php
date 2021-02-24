@@ -1,6 +1,6 @@
 <?php
 include('bbdd.php');
-
+$ide = 21;
 if ($ide!=null){;
 
 	$sqluser = "SELECT * FROM usuarios WHERE user = :mail";
@@ -10,22 +10,16 @@ if ($ide!=null){;
 	$resultadouser=$resultuser->fetch();
 
 	if ($resultadouser['tusuario'] == 41 || $resultadouser['tusuario'] == 42 || $resultadouser['tusuario'] == 51 || $resultadouser['tusuario'] == 52 || $resultadouser['tusuario'] == 61) {
-
-	$sqlvalidar = "SELECT * FROM validar WHERE email = :mail";
-	$resultvalidar=$conn->prepare($sqlvalidar);
-	$resultvalidar->bindParam(':mail', $_COOKIE['gente']);
-	$resultvalidar->execute();
-	$resultadovalidar=$resultvalidar->fetch();
-
+		
 	$sql1 = "SELECT * FROM ciudades WHERE idciudad = :idciudad";
     $result1=$conn->prepare($sql1);
-    $result1->bindParam(':idciudad', $resultadovalidar['localidad']);
+    $result1->bindParam(':idciudad', $resultadouser['localidad']);
     $result1->execute();
     $resultado1 = $result1->fetch();
 
 	$sql2 = "SELECT * FROM paises WHERE idpais = :idpais";
     $result2=$conn->prepare($sql2);
-    $result2->bindParam(':idpais', $resultadovalidar['pais']);
+    $result2->bindParam(':idpais', $resultadouser['pais']);
     $result2->execute();
     $resultado2 = $result2->fetch();
 	
@@ -76,20 +70,21 @@ if ($ide!=null){;
 <div class="container fadeInDown" style="background-color: white; border-radius: 10px; margin-top: 140px">
 <br>
 <form action="intro2.php" method="post" enctype="multipart/form-data">
+<input type="hidden" name="ide" value="21">
 <input type="hidden" name="tabla" value="intro">
 <table class="tabla" align="center">
 
 	<input type="hidden" name="user" value="<?php echo $resultadouser['id'];?>">
 	<input type="hidden" name="pais" value="<?php echo $resultado2['idpais']; ?>">
 	<input type="hidden" name="localidad" value="<?php echo $resultado1['ciudad']; ?>">
-	<input type="hidden" name="cp" value="<?php echo $resultadovalidar['cp'] ?>">
+	<input type="hidden" name="cp" value="<?php echo $resultadouser['cp'] ?>">
 
 
-<tr><td colspan="2"><h2 class="enc">ENVIO DE <?php  echo strtoupper($nc);?></h2></td></tr>
+<tr><td colspan="2"><h2 class="enc">ENVIO DE PREGUNTAS</h2></td></tr>
 <?php 
 if ($resultadouser['tusuario'] == 41 || $resultadouser['tusuario'] == 42) {
 ?>
-<tr><td><b>Codigo postal</b></td><td><?php echo $resultadovalidar['cp']; ?></td></tr>
+<tr><td><b>Codigo postal</b></td><td><?php echo $resultadouser['cp']; ?></td></tr>
 <?php
 }else if($resultadouser['tusuario'] == 51 || $resultadouser['tusuario'] == 52){
 	?>

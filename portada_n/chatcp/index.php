@@ -23,8 +23,6 @@
 <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Convergence" />
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css"></script>
   <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 <!-- chat -->
   <link rel="stylesheet" type="text/css" href="chat1.css">
   <link rel="stylesheet" type="text/css" href="../ultimasincidencias_t.css">
@@ -69,28 +67,11 @@
 	    		</div>
 	    	</td>
 			<td style="width: 65%; ">
-				<nav class="navbar navbar-expand-lg navbar-light">
-									<div class="navbar-header">
-											<button type="button" class="navbar-toggler hid" data-toggle="collapse" data-target=".navbar-collapse" aria-expanded="false">
-											Menu
-											</button>
-											<div class="pull-left">
-											</div>
-									</div>
-									<div class="navbar-collapse collapse">
-										<div>
+				
 							<?php
 								include_once("../showmenu.php");
 
 							?>
-
-						</div>
-									</div>
-
-					</nav>
-
-
-
 						</td>
 					</tr>
 				</table>
