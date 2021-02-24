@@ -7,7 +7,7 @@
 	$result->execute();
 	$resultado = $result->fetch();
 
-	if ($resultado['tusuario'] == 51 || $resultado['tusuario'] == 52 || $resultado['tusuario'] == 61) {
+	if ($resultado['tusuario'] == 51 || $resultado['tusuario'] == 52 || $resultado['tusuario'] == 61 || $resultado['tusuario'] == 1) {
 
 		if ($resultado['tusuario'] == 51 || $resultado['tusuario'] == 52) {
 			$sqlsolicitudes = "SELECT * FROM solicitudes WHERE tsolicitud = 41 AND aceptado = 0";
@@ -15,6 +15,10 @@
 			$resultadosolicitudes = $resultsolicitudes->fetchAll();
 		}else if ($resultado['tusuario'] == 61) {
 			$sqlsolicitudes = "SELECT * FROM solicitudes WHERE tsolicitud = 51 AND aceptado = 0";
+			$resultsolicitudes = $conn->query($sqlsolicitudes);
+			$resultadosolicitudes = $resultsolicitudes->fetchAll();
+		}else if ($resultado['tusuario'] == 1) {
+			$sqlsolicitudes = "SELECT * FROM solicitudes WHERE tsolicitud = 61 AND aceptado = 0";
 			$resultsolicitudes = $conn->query($sqlsolicitudes);
 			$resultadosolicitudes = $resultsolicitudes->fetchAll();
 		}
@@ -56,13 +60,17 @@
 	    		</div>
 	    	</td>
 			<td style="width: 65%;">
-				<div align="center" >
 				<?php
-					include_once("../../portada_n/showmenu.php");
+
+					if ($resultado['tusuario'] == 1) {
+						include_once("../../portada_n/showmenu2.php");
+					}else{
+						include_once("../../portada_n/showmenu.php");
+					}
+					
 
 				?>	
 				
-			</div>
 			</td>
 		</tr>
 	</table>

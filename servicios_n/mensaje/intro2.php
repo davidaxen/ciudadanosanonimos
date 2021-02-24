@@ -4,8 +4,7 @@ include('bbdd.php');
 
 
 
-if ($ide!=null){;
- include('../../portada_n/cabecera3.php');?>
+if ($ide!=null){?>
 
 <div id="main">
 <div class="titulo">
@@ -41,13 +40,13 @@ if($fechafin!=null){;
 	$sql1.="'$fechafin',";
 };
 $sql1.="'$fichero','$otrosmot')";
-$result1=$conn->exec($sql1);
+$conn->exec($sql1);
 
 for ($j=0;$j<count($resp);$j++){;
 	if ($resp[$j]!=null){;
 		$sql10 = "INSERT INTO respuesta (idmensaje,idempresa,valor,texto) VALUES 
 		('$idn','$ide','$j','$resp[$j]')";
-		$result10=$conn->exec($sql10);
+		$conn->exec($sql10);
 
 	};
 };

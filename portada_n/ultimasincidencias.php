@@ -1,17 +1,16 @@
 <?php
 include('bbdd.php');
-error_reporting(0);
-$sql1="SELECT * from mensajes where  idempresa='".$ide."'";
-if ($idcli!=0){;
-$sqln1="SELECT * from clientes where nif='".$gente."' and idempresas='".$ide."'";
-$resultn1=$conn->query($sqln1);
-$resultadon1=$resultn1->fetch();
+//error_reporting(0);
+$ide = 21;
 
-/*$resultn1=mysqli_query ($conn, $sqln1) or die ("Invalido resulto n1");
-$resultadon1=mysqli_fetch_array($resultn1);*/
-$idclienten1=$resultadon1['idclientes'];
-//$sql1.=" and idpiscina='".$idclienten1."'";
-};
+$sqluser = "SELECT * FROM usuarios WHERE user = :mail";
+$resultuser=$conn->prepare($sqluser);
+$resultuser->bindParam(':mail', $_COOKIE['gente']);
+$resultuser->execute();
+$resultadouser=$resultuser->fetch();
+
+$sql1="SELECT * from mensajes where user = ".$resultadouser['id'];
+
 //$sql1.=" order by tiempo desc, hora desc limit 0,5";
 //echo $sql1;
 
@@ -41,12 +40,9 @@ function refrescar()
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css"></script>
 <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <link rel="stylesheet" type="text/css" href="boostrapUlt.css">
 <link rel="stylesheet" type="text/css" href="nav.js">
 <meta charset="utf-8">
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
 <script src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
 <style>
@@ -85,40 +81,19 @@ function refrescar()
 	    		</div>
 	    	</td>
 			<td style="width: 65%; ">
-				<nav class="navbar navbar-expand-lg navbar-light">
-									<div class="navbar-header">
-											<button type="button" class="navbar-toggler hid" data-toggle="collapse" data-target=".navbar-collapse" aria-expanded="false">
-											Menu
-											</button>
-											<div class="pull-left">
-											</div>
-									</div>
-									<div class="navbar-collapse collapse">
-										<div>
 							<?php
-								include_once("showmenu3.php");
+								include_once("showmenu2.php");
 
 							?>
-							<td>
-										<div>
-									<?php include ('../donaciones/index.php')?>
-								</div>
-							</td>
-						</div>
-									</div>
-
-					</nav>
-
-
-
 						</td>
 					</tr>
 				</table>
 				</nav>
 <br> <br> <br> <br> <br> <br> <br>
-<div class="container fadeInDown" style="background-color: white; border-radius: 10px;">
+<div class="container fadeInDown" style="background-color: white; border-radius: 10px; padding-bottom: 20px">
 <table style="width:100%;">
-<tr class="enctab"><td>Puesto de Trabajo</td><td>Empleado</td><!--<td>Dia</td><td>Hora</td>--><td>Informacion</td><!--<td>Asignar</td>--></tr>
+
+	<h2 style="text-align: center;">Tus preguntas realizadas</h2>
 
 <?php
 /*for ($j=0;$j<$row1;$j++){;
@@ -136,34 +111,34 @@ $lon=$row1mos['lon'];*/
 $texto=$row1mos['texto'];
 
 
-$sql10="SELECT * from empleados where idempleado='".$idempleado."' and idempresa='".$ide."'";
+/*$sql10="SELECT * from empleados where idempleado='".$idempleado."' and idempresa='".$ide."'";
 $result10=$conn->query($sql10);
-$resultados10=$result10->fetch();
+$resultados10=$result10->fetch();*/
 
 /*$result10=mysqli_query ($conn,$sql10) or die ("Invalid result 10");
 $resultados10 = mysqli_fetch_array ($result10);*/
 
-$nombre=$resultados10['nombre'];
+/*$nombre=$resultados10['nombre'];
 $priape=$resultados10['1apellido'];
 $segape=$resultados10['2apellido'];
-$nombretrab=$nombre.' '.$priape.' '.$segape;
+$nombretrab=$nombre.' '.$priape.' '.$segape;*/
 
 
-$sql11="SELECT * from clientes where idclientes='".$idempleado."' and idempresas='".$ide."'";
+/*$sql11="SELECT * from clientes where idclientes='".$idempleado."' and idempresas='".$ide."'";
 $result11=$conn->query($sql11);
 $result11fetch=$conn->query($sql11);
 
 $resultados11=$result11->fetch();
-$row11=count($result11fetch->fetchAll());
+$row11=count($result11fetch->fetchAll());*/
 
 /*$result11=mysqli_query ($conn,$sql11) or die ("Invalid result 11");
 $resultados11 = mysqli_fetch_array ($result11);
 $row11=mysqli_num_rows($result11);*/
-if ($row11==0){;
+/*if ($row11==0){;
 $nombrecom="Fuera de Puesto";
 }else{;
 $nombrecom=$resultados11['nombre'];
-};
+};*/
 $f=fmod($j,2);
 ?>
 <?php if ($f==0){;?>
@@ -172,8 +147,8 @@ $f=fmod($j,2);
 <tr class="dattab">
 <?php };?>
 
-<td><?php  echo strtoupper($nombrecom);?></td>
-<td><?php  echo strtoupper($nombretrab);?></td>
+<!--<td><?php  echo strtoupper($nombrecom);?></td>
+<td><?php  echo strtoupper($nombretrab);?></td>-->
 <!--<td><?php  echo strtoupper($dia);?></td>
 <td><?php  echo strtoupper($hora);?></td>-->
 <td><?php  echo strtoupper($texto);?></td>

@@ -100,47 +100,30 @@ $result->execute();*/
 	    		</div>
 	    	</td>
 			<td style="width: 65%; ">
-				<nav class="navbar navbar-expand-lg navbar-light">
-									<div class="navbar-header">
-											<button type="button" class="navbar-toggler hid" data-toggle="collapse" data-target=".navbar-collapse" aria-expanded="false">
-											Menu
-											</button>
-											<div class="pull-left">
-											</div>
-									</div>
-									<div class="navbar-collapse collapse">
-										<div>
+				
 							<?php
 								include_once("showmenu.php");
 
 							?>
-
-						</div>
-									</div>
-
-					</nav>
-
-
-
-						</td>
-					</tr>
-				</table>
-				</nav>
+					</td>
+				</tr>
+			</table>
+			</nav>
 
 
 
 <div style=" display: flex; justify-content: center; margin-top: 15%" class='wrapper fadeInDown' >
-	<div id='formContent' >
-		<table  style=" display: flex; justify-content: center;" >
+	<div id='formContent' >	
+		<table style=" display: flex; justify-content: center;" >
 			<tr>
-				<td style="text-align: center;"><i class="fas fa-book" style="font-size: 30px"></i></td>
+				<td colspan="2" style="text-align: center;"><i class="fas fa-book" style="font-size: 30px"></i></td>
 			</tr>
 
-				<tr><td>&nbsp;</td></tr>
-				<tr><td>&nbsp;</td></tr>
+				<tr><td colspan="2">&nbsp;</td></tr>
+				<tr><td colspan="2">&nbsp;</td></tr>
 
 			<tr>
-				<td>
+				<td colspan="2">
 					<p style=" 	text-align: center;
  								font-family: Convergence;
  								font-size: 20px;
@@ -158,15 +141,20 @@ $result->execute();*/
 	$idmensaje=$rowmos['id'];
 	$fechafin=$rowmos['fechafin'];
 	$texto=$rowmos['texto'];
+
 ?>
 	<tr>
-		<td>
-			<div align="center">
-				<span onclick="openmodal(<?php echo $idmensaje; ?>);">
-					<?php  echo " ".$texto;?>
-				</span>
-			<div>
+		<td style="text-align: left;">
+			<span>
+				<?php echo " ".$texto;?>
+			</span>
 		</td>
+		<td style="text-align: top; padding-left: 10px">
+			<img src="./grafico.png" onclick="openmodal(<?php echo $idmensaje;?>)" style="height: 30px; width: 30px;" />
+		</td>
+	</tr>
+	<tr>
+		<td colspan="2">&nbsp;</td>
 	</tr>
 <?php
 
