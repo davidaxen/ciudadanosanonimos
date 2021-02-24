@@ -92,7 +92,6 @@ $row1=mysqli_num_rows($result1);*/
   <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Convergence" />
   <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
   <script src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 <style>
 @media (min-width: 1192px){
      .external-collapse.navbar-collapse {
@@ -128,31 +127,14 @@ $row1=mysqli_num_rows($result1);*/
 	    		</div>
 	    	</td>
 			<td style="width: 65%; ">
-				<nav class="navbar navbar-expand-lg navbar-light">
-									<div class="navbar-header">
-											<button type="button" class="navbar-toggler hid" data-toggle="collapse" data-target=".navbar-collapse" aria-expanded="false">
-											Menu
-											</button>
-											<div class="pull-left">
-											</div>
-									</div>
-									<div class="navbar-collapse collapse">
-										<div>
-							<?php
-								include_once("showmenu.php");
+					<?php
+						include_once("showmenu.php");
 
-							?>
-						</div>
-									</div>
-
-					</nav>
-
-
-
-						</td>
-					</tr>
-				</table>
-				</nav>
+					?>
+				</td>
+			</tr>
+		</table>
+		</nav>
 <!--onload="setTimeout('refrescar1()', 5000);"-->
 
 

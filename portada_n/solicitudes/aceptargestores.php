@@ -60,7 +60,6 @@
 	    		</div>
 	    	</td>
 			<td style="width: 65%;">
-				<div align="center" >
 				<?php
 
 					if ($resultado['tusuario'] == 1) {
@@ -72,7 +71,6 @@
 
 				?>	
 				
-			</div>
 			</td>
 		</tr>
 	</table>
