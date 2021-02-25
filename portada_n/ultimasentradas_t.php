@@ -98,7 +98,9 @@ $row1=mysqli_num_rows($result1);*/
   <meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
   <meta http-equiv="content-type" content="application/xhtml+xml; charset=ISO-8859-1">
 </head>
+
 <body   style="background-image:url(../img/iconos/portada_ca.jpg); margin-top: 15%"; >
+
 
 		<nav style="background-color: transparent;" class="[ navbar navbar-fixed-top ][ navbar-bootsnipp animate ]" role="navigation">
 
@@ -115,7 +117,6 @@ $row1=mysqli_num_rows($result1);*/
 		</table>
 		</nav>
 <!--onload="setTimeout('refrescar1()', 5000);"-->
-
 
 
 <?php
