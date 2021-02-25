@@ -89,42 +89,24 @@ $row1=mysqli_num_rows($result1);*/
 	<!-- cabecera -->
   <link rel="stylesheet" type="text/css" href="respuestas.css">
   <link rel="stylesheet" type="text/css" href="cabecera.css">
+  <link rel="stylesheet" type="text/css" href="ultimasincidencias_t.css">
+
   <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Convergence" />
   <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
   <script src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
-<style>
-@media (min-width: 1192px){
-     .external-collapse.navbar-collapse {
-         display: -webkit-box!important;
-         display: -ms-flexbox!important;
-         display: flex!important;
-     }
 
- }
-
- @media (min-width: 768px){
-     .hid {
-          visibility: hidden;
-     }
-}
-</style>
   <meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
   <meta http-equiv="content-type" content="application/xhtml+xml; charset=ISO-8859-1">
 </head>
-<body style="background-image:url(../img/iconos/portada_ca.jpg); margin-top: 15%"; >
 
-		<nav class="[ navbar navbar-fixed-top ][ navbar-bootsnipp animate ]" role="navigation">
+<body   style="background-image:url(../img/iconos/portada_ca.jpg); margin-top: 15%"; >
+
+
+		<nav style="background-color: transparent;" class="[ navbar navbar-fixed-top ][ navbar-bootsnipp animate ]" role="navigation">
 
   		<table style="margin-left: 20px; width: 100%">
 		<tr>
-			<td style="width: 20%; ">
-	    		<div class="[ navbar-header ]">
-	        		<div class="[ animbrand ]">
-	            		<a style="float: none;" class="[ navbar-brand ][ animate ]" href="../inicio1.php"><img src="../img/ciudadanoslogo.png"></a>
 
-	        		</div>
-	    		</div>
-	    	</td>
 			<td style="width: 65%; ">
 					<?php
 						include_once("showmenu.php");
@@ -137,7 +119,6 @@ $row1=mysqli_num_rows($result1);*/
 <!--onload="setTimeout('refrescar1()', 5000);"-->
 
 
-<div class='wrapper fadeInDown' >
 <?php
 
 if ($row) {
@@ -160,17 +141,18 @@ $row10=count($result10->fetchAll());
 if ($row10==0){;
 
 ?>
-		<!-- Next and previous buttons -->
-	<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-	<a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+<div class='wrapper fadeInDown' style="border-radius:10px; background-color: transparent; text-align: center; min-height: 0%; max-width: 650px; margin:auto;">
+	<div id='formContent' >
+<br><br>
 
 <form action="../servicios_n/mensaje/introrespuesta.php" method="post" enctype="multipart/form-data">
-<div class="slideshow-container" style="border-radius:10px; background-color: white; text-align: center; margin: auto;">
+
 
 	<input type="hidden" name="id" value="<?php echo $idmensaje;?>">
 	<input type="hidden" name="iduser" value="<?php echo $resultadousuario['id']?>">
 	<div class="mySlides">
-		<div style="float: right; font-size: 18px; position: absolute; left: 70%;">Hemos recibido un total de:
+		<div>Hemos recibido un total de:
 			<?php
 				$sqlCount="SELECT COUNT(*) FROM respuestamensajes WHERE idmensaje=$idmensaje";
 				$result=$conn->query($sqlCount);
@@ -179,12 +161,11 @@ if ($row10==0){;
 
 			?> respuestas</div>
 		<!--<a href="../servicios_n/mensaje/responder.php?id=<?php echo $idmensaje;?>" target="_parent">-->
-		<span class="caja3">
 		<div class="numbertext" style="font-size: 20px;"><?php echo "$i/$row"; ?></div>
 
 		<!--<img src="../img/pencil.png" class="cuadro">-->
 		<p><?php  echo $texto;?></p>
-		</span>
+		
 		<!--</a>-->
 
 		<?php
@@ -203,6 +184,21 @@ if ($row10==0){;
 			$result2->bindParam(':id', $idmensaje);
 			$result2->execute();
 		 ?>
+
+
+<table align="center">
+	<tr>
+		<td width="350">
+			<a style="background-color: transparent; position: relative; width: 100%" class="prev" onclick="plusSlides(-1)">&#10094;</a>
+		</td>
+		<td width="200">&nbsp;</td>
+		<td width="350">
+		<div align="right"><a style="background-color: transparent; position: relative;" class="next" onclick="plusSlides(1)">&#10095;</a><div>
+		</td>
+	</tr>
+</table>
+
+
 	 	<div class="main" style="text-align: center;">
 
 
@@ -340,7 +336,7 @@ if ($row10==0){;
 				</div>
 
 	</div>
-
+</div>
 </div>
 
 

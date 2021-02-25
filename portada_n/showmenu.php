@@ -11,81 +11,110 @@
 ?>
 
 <head>
-	  <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" >
-	  <script src="//maxcdn.bootstrapcdn.com"></script>
 
-	  <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-		<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
-		<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Convergence" />
-		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css"></script>
-		<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-		<script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
-		<link rel="stylesheet" type="text/css" href="incidencias_t.css">
-		<link rel="stylesheet" type="text/css" href="portada_n/cabecera.css">
-		<link rel="stylesheet" type="text/css" href="nav.js">
+	 
+
+<meta charset="utf-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
+
+<!-- Bootstrap CSS -->
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
 
 
-		
+<!--fontawesome-->
+
+<script defer src="https://use.fontawesome.com/releases/v5.0.13/js/all.js" integrity="sha384-xymdQtn1n3lH2wcu0qhcdaOpQwyoarkgLVxC/wZ5q7h9gHtxICrpcaSUfygqZGOe" crossorigin="anonymous"></script>
+
 </head>
 
-	<script type="text/javascript">
-		$('document').ready(function(){
 
-			var b = document.cookie.match('(^|;)\\s*menuselected\\s*=\\s*([^;]+)');
 
-			var x = b ? b.pop() : 1;
+</style>
 
-    		changeOptions(x);
+<script type="text/javascript">
+	
+	function redireccion(ruta) {
+		window.location.href = ruta;
+	}
 
-		});
 
-		
-		function changeOptions(selected) {
-			document.cookie = "menuselected=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/";
-			
-			if (selected == 1) {
-				document.getElementById('colab').style.display = "none";
-				document.getElementById('gest').style.display = "none";
-				document.getElementById('resp').style.display = "block";
 
-			}else if (selected == 2) {
-				document.getElementById('resp').style.display = "none";
-				document.getElementById('gest').style.display = "none";
-				document.getElementById('colab').style.display = "block";
 
-			}else if (selected == 3) {
-				document.getElementById('resp').style.display = "none";
-				document.getElementById('colab').style.display = "none";
-				document.getElementById('gest').style.display = "block";
-			}
+</script>
 
-			document.cookie = "menuselected="+selected+"; path=/";
+<div>
 
-			//window.location.reload();
-			
-		}
-	</script>
-
-<div class="[ collapse navbar-collapse ]" id="bs-example-navbar-collapse-1">
 
 
    	<?php if ($resultadousuario['tusuario'] == 3) {
    		
    		?>
-		<ul class="[ nav navbar-nav navbar-left mx-auto]">
-			<li class="[ animate ]"><a href="#" class="[ animate ]" onclick="changeOptions(1); return false;" >GENERAL</a></li>
-			<li><a href="/portada_n/cuenta.php" class="[ animate ]" >MI CUENTA</a></li>
-		</ul>
-		<br><br><br>
-	   <ul class="[ nav navbar-nav navbar-left ]">
 
-	    <li><a href="/portada_n/ultimasentradas_t.php" class="[ animate ]">TUS PREGUNTAS</a></li>
-	    <li><a href="/portada_n/ultimasincidencias_t.php" class="[ animate ]">RESULTADOS</a></li>
-	    <li><a href="/incidencias_t.php" class="[ animate ]">INCIDENCIAS</a></li>
-	    <!--<li><a href="/chat/index.php" class="[ animate ]">CHAT</a></li>-->
-	    <li><a href="/portada_n/salir.php" class="[ animate ]" >LOG OUT</a></li>
-	    
-	 </ul>
+
+   		<nav  class="navbar navbar-expand-md navbar-light bg-dark fixed-top">
+
+					<a class="navbar-brand"><img src="../img/ciudadanoslogo.png"></a>
+						<button type="button" class="navbar-toggler bg-light" data-toggle="collapse" data-target="#nav">
+						<span class="navbar-toggler-icon"></span>
+						</button>
+
+					<div class="collapse navbar-collapse justify-content-between" id="nav">
+						<ul class="navbar-nav">
+
+
+					<div class="btn-group">
+					<li class="nav-item dropdown" data-toggle="dropdown">
+
+					<a class="nav-link text-light font-weight-bold px-3 dropdown-toggle" href="/portada_n/cuenta.php">MI CUENTA</a>
+
+					</li>
+					</div>
+
+				<div class="btn-group">
+
+					<li class="nav-item">
+
+					<a class="nav-link text-light font-weight-bold px-3" href="/portada_n/cuenta.php">TUS PREGUNTAS</a>
+
+					</li>
+
+				</div>
+
+				<div class="btn-group">
+					<li class="nav-item">
+
+					<a class="nav-link text-light font-weight-bold px-3" href="/portada_n/ultimasentradas_t.php">RESULTADOS</a>
+
+					</li>
+				</div>
+
+				<div class="btn-group">
+					<li class="nav-item">
+
+					<a class="nav-link text-light font-weight-bold px-3" href="/incidencias_t.php">INCIDENCIAS</a>
+
+					</li>
+				</div>
+
+				<div class="btn-group">
+					<li class="nav-item">
+
+					<a class="nav-link text-light font-weight-bold px-3" href="/portada_n/salir.php">LOG OUT</a>
+
+					</li>
+				</div>
+
+				</ul>
+
+					</div>
+
+					</nav>
 
 	 <?php 
    		} 
@@ -94,37 +123,90 @@
    	<?php if ($resultadousuario['tusuario'] == 40) {
    		
    		?>
-   			<ul class="[ nav navbar-nav navbar-left mx-auto]">
 
-				<li class="[ animate ]"><a href="#" class="[ animate ]" onclick="changeOptions(1); return false;" >GENERAL</a></li>
-				<li class="[ animate ]"><a href="#" class="[ animate ]" onclick="changeOptions(2); return false;" >MI CODIGO POSTAL</a></li>
-				<li><a href="/portada_n/cuenta.php" class="[ animate ]">MI CUENTA</a></li>
+   		<nav style="background-color: white" class="navbar navbar-expand-md navbar-light  fixed-top">
 
-			</ul>
-			<br><br><br>
+					<a class="navbar-brand"><img src="/img/ciudadanoslogo.png"></a>
+						<button type="button" class="navbar-toggler bg-light" data-toggle="collapse" data-target="#nav">
+						<span class="navbar-toggler-icon"></span>
+						</button>
 
-			<ul class="[ nav navbar-nav navbar-left ]" id="resp">
+					<div class="collapse navbar-collapse justify-content-between" id="nav">
+						<ul class="navbar-nav">
+							<div class="btn-group">
+								<li class="nav-item dropdown" data-toggle="dropdown">
+									<a class="nav-link font-weight-bold px-3 dropdown-toggle" href="#">GENERAL</a>
 
-				<li><a href="/portada_n/ultimasentradas_t.php" class="[ animate ]">TUS PREGUNTAS</a></li>
-				<li><a href="/portada_n/ultimasincidencias_t.php" class="[ animate ]">RESULTADOS</a></li>
-				<li><a href="/incidencias_t.php" class="[ animate ]">INCIDENCIAS</a></li>
-				<li><a href="/donaciones/donaciones.php" class="[ animate ]">AYÚDANOS A CRECER</a></li>
-				<!--<li><a href="/chat/index.php" class="[ animate ]">CHAT</a></li>-->
-				<li><a href="/portada_n/salir.php" class="[ animate ]">LOG OUT</a></li>
-		    
-	 		</ul>
+										<div class="dropdown-menu">
 
-	 		<ul class="[ nav navbar-nav navbar-left ]" id="colab" style="display: none;">
+											<a  class="dropdown-item" onclick="redireccion('/portada_n/ultimasentradas_t.php');" href="/portada_n/ultimasentradas_t.php">TUS PREGUNTAS</a>
 
-				<li><a href="/portada_n/chatcp/index.php" class="[ animate ]">CHAT C.P</a></li>
-				<!--<li><a href="/portada_n/calendario.php" class="[ animate ]">CALENDARIO</a></li>-->
-		    
-	 		</ul>
+											<a class="dropdown-item" onclick="redireccion('/portada_n/ultimasincidencias_t.php');" href="/portada_n/ultimasincidencias_t.php">RESULTADOS</a>
 
-	 		<ul class="[ nav navbar-nav navbar-left ]" id="gest" style="display: none;">
-		    
-	 		</ul>
+											<a class="dropdown-item" onclick="redireccion('/incidencias_t.php');" href="/incidencias_t.php">INCIDENCIAS</a>
 
+
+										</div>
+
+								</li>
+
+							</div>
+
+					<div class="btn-group">
+					<li class="nav-item dropdown" data-toggle="dropdown">
+
+					<a class="nav-link font-weight-bold px-3 dropdown-toggle" href="#">MI CODIGO POSTAL</a>
+
+					<div class="dropdown-menu">
+
+						<a class="dropdown-item" onclick="redireccion('/portada_n/chatcp/index.php');" href="/portada_n/chatcp/index.php">CHAT C.P</a>
+
+					</div>
+
+					</li>
+					</div>
+
+				<div class="btn-group">
+
+					<li class="nav-item">
+
+					<a class="nav-link font-weight-bold px-3" href="/portada_n/cuenta.php">MI CUENTA</a>
+
+					</li>
+
+				</div>
+
+
+
+
+				<div class="btn-group">
+					<li class="nav-item">
+
+					<a  class="nav-link font-weight-bold px-3" href="/portada_n/salir.php">LOG OUT</a>
+
+					</li>
+				</div>
+
+				<div align="center" style="border: 2px solid grey; border-radius: 10px" class="btn-group">
+
+					<li class="nav-item">
+
+					<a class="nav-link font-weight-bold px-3" href="/donaciones/donaciones.php">CUOTA DE PARTICIPACIÓN<br><span style="font-size: 12px; ">-Ayúdanos a crecer-</span></a>
+
+					</li>
+
+				</div>
+
+
+
+				</ul>
+
+					</div>
+
+					</nav>
+   		
+ 
+	 		
 	 <?php 
    		} 
    	?>
@@ -133,38 +215,76 @@
    		
    		?>
 
-   			<ul class="[ nav navbar-nav navbar-left mx-auto]">
-				<li class="[ animate ]"><a href="#" class="[ animate ]" onclick="changeOptions(1); return false;" >GENERAL</a></li>
-				<li class="[ animate ]"><a href="#" class="[ animate ]" onclick="changeOptions(2); return false;" >MI CODIGO POSTAL</a></li>
-				<!--<li class="[ animate ]"><a href="#" class="[ animate ]" onclick="changeOptions(3)" >GESTOR C.P</a></li>-->
-				<li><a href="/portada_n/cuenta.php" class="[ animate ]" >MI CUENTA</a></li>
+   		<nav class="navbar navbar-expand-md navbar-light bg-dark fixed-top">
 
-			</ul>
-			<br><br><br>
+					<a class="navbar-brand"><img src="../img/ciudadanoslogo.png"></a>
+						<button type="button" class="navbar-toggler bg-light" data-toggle="collapse" data-target="#nav">
+						<span class="navbar-toggler-icon"></span>
+						</button>
 
-			<ul class="[ nav navbar-nav navbar-left ]" id="resp">
+					<div class="collapse navbar-collapse justify-content-between" id="nav">
+						<ul class="navbar-nav">
+							<div class="btn-group">
+								<li class="nav-item dropdown" data-toggle="dropdown">
+									<a class="nav-link text-light font-weight-bold px-3 dropdown-toggle" href="#">GENERAL</a>
 
-				<li><a href="/portada_n/ultimasentradas_t.php" class="[ animate ]">TUS PREGUNTAS</a></li>
-				<li><a href="/portada_n/ultimasincidencias_t.php" class="[ animate ]">RESULTADOS</a></li>
-				<li><a href="/incidencias_t.php" class="[ animate ]">INCIDENCIAS</a></li>
-				<li><a href="/donaciones/donaciones.php" class="[ animate ]">AYÚDANOS A CRECER</a></li>
-				<!--<li><a href="/chat/index.php" class="[ animate ]">CHAT</a></li>-->
-				<li><a href="/portada_n/salir.php" class="[ animate ]">LOG OUT</a></li>
-		    
-	 		</ul>
+										<div class="dropdown-menu">
 
-	 		<ul class="[ nav navbar-nav navbar-left ]" id="colab" style="display: none;">
+											<a class="dropdown-item" onclick="redireccion('/portada_n/ultimasentradas_t.php');" href="/portada_n/ultimasentradas_t.php">TUS PREGUNTAS</a>
 
-				<li><a href="/portada_n/chatcp/index.php" class="[ animate ]">CHAT C.P</a></li>
-				<!--<li><a href="/portada_n/calendario.php" class="[ animate ]">CALENDARIO</a></li>-->
-				<li><a href="/portada_n/mensaje/dpuntcont.php" class="[ animate ]">PREGUNTAS C.P</a></li>
-				<li><a href="/portada_n/solicitudes/aceptarcolaboradores.php" class="[ animate ]">ACEPTAR COLABORADOR C.P</a></li>
-		    
-	 		</ul>
+											<a class="dropdown-item" onclick="redireccion('/portada_n/ultimasincidencias_t.php');" href="/portada_n/ultimasincidencias_t.php">RESULTADOS</a>
 
-	 		<ul class="[ nav navbar-nav navbar-left ]" id="gest" style="display: none;">
-				
-	 		</ul>
+											<a class="dropdown-item" onclick="redireccion('/incidencias_t.php');" href="/incidencias_t.php">INCIDENCIAS</a>
+
+											<a class="dropdown-item" onclick="redireccion('/donaciones/donaciones.php');" href="/donaciones/donaciones.php">AYÚDANOS A CRECER</a>
+
+										</div>
+
+								</li>
+
+							</div>
+
+					<div class="btn-group">
+					<li class="nav-item dropdown" data-toggle="dropdown">
+
+					<a class="nav-link text-light font-weight-bold px-3 dropdown-toggle" href="#">MI CODIGO POSTAL</a>
+
+					<div class="dropdown-menu">
+
+						<a class="dropdown-item" onclick="redireccion('/portada_n/chatcp/index.php');" href="/portada_n/chatcp/index.php">CHAT C.P</a>
+
+						<a class="dropdown-item" onclick="redireccion('/portada_n/mensaje/dpuntcont.php');" href="/portada_n/mensaje/dpuntcont.php">PREGUNTAS C.P</a>
+
+						<a class="dropdown-item" onclick="redireccion('/portada_n/solicitudes/aceptarcolaboradores.php');" href="/portada_n/solicitudes/aceptarcolaboradores.php">ACEPTAR COLABORADOR C.P</a>
+
+					</div>
+
+					</li>
+					</div>
+
+				<div class="btn-group">
+
+					<li class="nav-item">
+
+						<a class="nav-link text-light font-weight-bold px-3" href="/portada_n/cuenta.php">MI CUENTA</a>
+
+					</li>
+
+				</div>
+
+				<div class="btn-group">
+					<li class="nav-item">
+
+						<a class="nav-link text-light font-weight-bold px-3" href="/portada_n/salir.php">LOG OUT</a>
+
+					</li>
+				</div>
+
+				</ul>
+
+					</div>
+
+					</nav>
 
 	 <?php 
    		} 
@@ -173,41 +293,92 @@
    	<?php if ($resultadousuario['tusuario'] == 42) {
    		
    		?>
-   			<ul class="[ nav navbar-nav navbar-left mx-auto]">
-				<li class="[ animate ]"><a href="#" class="[ animate ]" onclick="changeOptions(1); return false;" >GENERAL</a></li>
-				<li class="[ animate ]"><a href="#" class="[ animate ]" onclick="changeOptions(2); return false;" >MI CODIGO POSTAL</a></li>
-				<li class="[ animate ]"><a href="#" class="[ animate ]" onclick="changeOptions(3); return false;" >MI CIUDAD</a></li>
-				<li><a href="/portada_n/cuenta.php" class="[ animate ]" >MI CUENTA</a></li>
 
-			</ul>
-			<br><br><br>
+  		<nav class="navbar navbar-expand-md navbar-light bg-dark fixed-top">
 
-			<ul class="[ nav navbar-nav navbar-left ]" id="resp">
+					<a class="navbar-brand"><img src="../img/ciudadanoslogo.png"></a>
+						<button type="button" class="navbar-toggler bg-light" data-toggle="collapse" data-target="#nav">
+						<span class="navbar-toggler-icon"></span>
+						</button>
 
-				<li><a href="/portada_n/ultimasentradas_t.php" class="[ animate ]">TUS PREGUNTAS</a></li>
-				<li><a href="/portada_n/ultimasincidencias_t.php" class="[ animate ]">RESULTADOS</a></li>
-				<li><a href="/incidencias_t.php" class="[ animate ]">INCIDENCIAS</a></li>
-				<li><a href="/donaciones/donaciones.php" class="[ animate ]">AYÚDANOS A CRECER</a></li>
-				<!--<li><a href="/chat/index.php" class="[ animate ]">CHAT</a></li>-->
-				<li><a href="/portada_n/salir.php" class="[ animate ]">LOG OUT</a></li>
-		    
-	 		</ul>
+					<div class="collapse navbar-collapse justify-content-between" id="nav">
+						<ul class="navbar-nav">
+							<div class="btn-group">
+								<li class="nav-item dropdown" data-toggle="dropdown">
+									<a class="nav-link text-light font-weight-bold px-3 dropdown-toggle" href="#">GENERAL</a>
 
-	 		<ul class="[ nav navbar-nav navbar-left ]" id="colab" style="display: none;">
+										<div class="dropdown-menu">
 
-				<li><a href="/portada_n/chatcp/index.php" class="[ animate ]">CHAT C.P</a></li>
-				<!--<li><a href="/portada_n/calendario.php" class="[ animate ]">CALENDARIO</a></li>-->
-				<li><a href="/portada_n/mensaje/dpuntcont.php" class="[ animate ]">PREGUNTAS C.P</a></li>
-				<li><a href="/portada_n/solicitudes/aceptarcolaboradores.php" class="[ animate ]">ACEPTAR COLABORADOR C.P</a></li>
-		    
-	 		</ul>
+											<a class="dropdown-item" onclick="redireccion('/portada_n/ultimasentradas_t.php');" href="/portada_n/ultimasentradas_t.php">TUS PREGUNTAS</a>
 
-	 		<ul class="[ nav navbar-nav navbar-left ]" id="gest" style="display: none;">
+											<a class="dropdown-item" onclick="redireccion('/portada_n/ultimasincidencias_t.php');" href="/portada_n/ultimasincidencias_t.php">RESULTADOS</a>
 
-				<li><a href="/portada_n/chatciudad/index.php" class="[ animate ]">CHAT CIUDAD</a></li>
-				<!--<li><a href="/portada_n/calendario.php" class="[ animate ]">CALENDARIO</a></li>-->
-				
-	 		</ul>
+											<a class="dropdown-item" onclick="redireccion('/incidencias_t.php');" href="/incidencias_t.php">INCIDENCIAS</a>
+
+											<a class="dropdown-item" onclick="redireccion('/donaciones/donaciones.php');" href="/donaciones/donaciones.php">AYÚDANOS A CRECER</a>
+
+										</div>
+
+								</li>
+
+							</div>
+
+					<div class="btn-group">
+					<li class="nav-item dropdown" data-toggle="dropdown">
+
+					<a class="nav-link text-light font-weight-bold px-3 dropdown-toggle" href="#">MI CODIGO POSTAL</a>
+
+					<div class="dropdown-menu">
+
+						<a class="dropdown-item" onclick="redireccion('/portada_n/chatcp/index.php');" href="/portada_n/chatcp/index.php">CHAT C.P</a>
+
+						<a class="dropdown-item" onclick="redireccion('/portada_n/mensaje/dpuntcont.php');" href="/portada_n/mensaje/dpuntcont.php">PREGUNTAS C.P</a>
+
+						<a class="dropdown-item" onclick="redireccion('/portada_n/solicitudes/aceptarcolaboradores.php');" href="/portada_n/solicitudes/aceptarcolaboradores.php">ACEPTAR COLABORADOR C.P</a>
+
+					</div>
+
+					</li>
+					</div>
+
+
+				<div class="btn-group">
+					<li class="nav-item dropdown" data-toggle="dropdown">
+
+					<a class="nav-link text-light font-weight-bold px-3 dropdown-toggle" href="#">MI CIUDAD</a>
+
+					<div class="dropdown-menu">
+
+						<a class="dropdown-item" onclick="redireccion('/portada_n/chatciudad/index.php');" href="/portada_n/chatciudad/index.php">CHAT CIUDAD</a>
+
+					</div>
+
+					</li>
+					</div>
+
+				<div class="btn-group">
+
+					<li class="nav-item">
+
+						<a class="nav-link text-light font-weight-bold px-3" href="/portada_n/cuenta.php">MI CUENTA</a>
+
+					</li>
+
+				</div>
+
+				<div class="btn-group">
+					<li class="nav-item">
+
+						<a class="nav-link text-light font-weight-bold px-3" href="/portada_n/salir.php">LOG OUT</a>
+
+					</li>
+				</div>
+
+				</ul>
+
+					</div>
+
+					</nav>
 
 	 <?php 
    		} 
@@ -216,35 +387,75 @@
    	<?php if ($resultadousuario['tusuario'] == 50) {
    		
    		?>
-   			<ul class="[ nav navbar-nav navbar-left mx-auto]">
-				<li class="[ animate ]"><a href="#" class="[ animate ]" onclick="changeOptions(1); return false;" >GENERAL</a></li>
-				<li class="[ animate ]"><a href="#" class="[ animate ]" onclick="changeOptions(2); return false;" >MI CIUDAD</a></li>
-				<li><a href="/portada_n/cuenta.php" class="[ animate ]" >MI CUENTA</a></li>
 
-			</ul>
-			<br><br><br>
+  		<nav class="navbar navbar-expand-md navbar-light bg-dark fixed-top">
 
-			<ul class="[ nav navbar-nav navbar-left ]" id="resp">
+					<a class="navbar-brand"><img src="../img/ciudadanoslogo.png"></a>
+						<button type="button" class="navbar-toggler bg-light" data-toggle="collapse" data-target="#nav">
+						<span class="navbar-toggler-icon"></span>
+						</button>
 
-				<li><a href="/portada_n/ultimasentradas_t.php" class="[ animate ]">TUS PREGUNTAS</a></li>
-				<li><a href="/portada_n/ultimasincidencias_t.php" class="[ animate ]">RESULTADOS</a></li>
-				<li><a href="/incidencias_t.php" class="[ animate ]">INCIDENCIAS</a></li>
-				<li><a href="/donaciones/donaciones.php" class="[ animate ]">AYÚDANOS A CRECER</a></li>
-				<!--<li><a href="/chat/index.php" class="[ animate ]">CHAT</a></li>-->
-				<li><a href="/portada_n/salir.php" class="[ animate ]">LOG OUT</a></li>
-		    
-	 		</ul>
+					<div class="collapse navbar-collapse justify-content-between" id="nav">
+						<ul class="navbar-nav">
+							<div class="btn-group">
+								<li class="nav-item dropdown" data-toggle="dropdown">
+									<a class="nav-link text-light font-weight-bold px-3 dropdown-toggle" href="#">GENERAL</a>
 
-	 		<ul class="[ nav navbar-nav navbar-left ]" id="colab" style="display: none;">
+										<div class="dropdown-menu">
 
-				<li><a href="/portada_n/chatciudad/index.php" class="[ animate ]">CHAT CIUDAD</a></li>
-				<!--<li><a href="/portada_n/calendario.php" class="[ animate ]">CALENDARIO</a></li>-->
-		    
-	 		</ul>
+											<a class="dropdown-item" onclick="redireccion('/portada_n/ultimasentradas_t.php');" href="/portada_n/ultimasentradas_t.php">TUS PREGUNTAS</a>
 
-	 		<ul class="[ nav navbar-nav navbar-left ]" id="gest" style="display: none;">
-		    
-	 		</ul>
+											<a class="dropdown-item" onclick="redireccion('/portada_n/ultimasincidencias_t.php');" href="/portada_n/ultimasincidencias_t.php">RESULTADOS</a>
+
+											<a class="dropdown-item" onclick="redireccion('/incidencias_t.php');" href="/incidencias_t.php">INCIDENCIAS</a>
+
+											<a class="dropdown-item" onclick="redireccion('/donaciones/donaciones.php');" href="/donaciones/donaciones.php">AYÚDANOS A CRECER</a>
+
+										</div>
+
+								</li>
+
+							</div>
+
+
+				<div class="btn-group">
+					<li class="nav-item dropdown" data-toggle="dropdown">
+
+					<a class="nav-link text-light font-weight-bold px-3 dropdown-toggle" href="#">MI CIUDAD</a>
+
+					<div class="dropdown-menu">
+
+						<a class="dropdown-item" onclick="redireccion('/portada_n/chatciudad/index.php');" href="/portada_n/chatciudad/index.php">CHAT CIUDAD</a>
+
+					</div>
+
+					</li>
+					</div>
+
+				<div class="btn-group">
+
+					<li class="nav-item">
+
+						<a class="nav-link text-light font-weight-bold px-3" href="/portada_n/cuenta.php">MI CUENTA</a>
+
+					</li>
+
+				</div>
+
+				<div class="btn-group">
+					<li class="nav-item">
+
+						<a class="nav-link text-light font-weight-bold px-3" href="/portada_n/salir.php">LOG OUT</a>
+
+					</li>
+				</div>
+
+				</ul>
+
+					</div>
+
+					</nav>
+
 
 	 <?php 
    		} 
@@ -253,39 +464,80 @@
    	<?php if ($resultadousuario['tusuario'] == 51) {
    		
    		?>
-   			<ul class="[ nav navbar-nav navbar-left mx-auto]">
-				<li class="[ animate ]"><a href="#" class="[ animate ]" onclick="changeOptions(1); return false;" >GENERAL</a></li>
-				<li class="[ animate ]"><a href="#" class="[ animate ]" onclick="changeOptions(2); return false;" >MI CIUDAD</a></li>
-				<li><a href="/portada_n/cuenta.php" class="[ animate ]" >MI CUENTA</a></li>
 
-			</ul>
-		
-			<br><br><br>
-			<ul class="[ nav navbar-nav navbar-left ]" id="resp">
+<nav class="navbar navbar-expand-md navbar-light bg-dark fixed-top">
 
-				<li><a href="/portada_n/ultimasentradas_t.php" class="[ animate ]">TUS PREGUNTAS</a></li>
-				<li><a href="/portada_n/ultimasincidencias_t.php" class="[ animate ]">RESULTADOS</a></li>
-				<li><a href="/incidencias_t.php" class="[ animate ]">INCIDENCIAS</a></li>
-				<li><a href="/donaciones/donaciones.php" class="[ animate ]">AYÚDANOS A CRECER</a></li>
-				<!--<li><a href="/chat/index.php" class="[ animate ]">CHAT</a></li>-->
-				<li><a href="/portada_n/salir.php" class="[ animate ]">LOG OUT</a></li>
-		    
-	 		</ul>
+					<a class="navbar-brand"><img src="../img/ciudadanoslogo.png"></a>
+						<button type="button" class="navbar-toggler bg-light" data-toggle="collapse" data-target="#nav">
+						<span class="navbar-toggler-icon"></span>
+						</button>
 
-	 		<ul class="[ nav navbar-nav navbar-left ]" id="colab" style="display: none;">
+					<div class="collapse navbar-collapse justify-content-between" id="nav">
+						<ul class="navbar-nav">
+							<div class="btn-group">
+								<li class="nav-item dropdown" data-toggle="dropdown">
+									<a class="nav-link text-light font-weight-bold px-3 dropdown-toggle" href="#">GENERAL</a>
 
-				<li><a href="/portada_n/chatciudad/index.php" class="[ animate ]">CHAT CIUDAD</a></li>
-				<!--<li><a href="/portada_n/calendario.php" class="[ animate ]">CALENDARIO</a></li>-->
-				<li><a href="/portada_n/mensaje/dpuntcont.php" class="[ animate ]">PREGUNTAS CIUDAD</a></li>
-				<li><a href="/portada_n/solicitudes/aceptarcolaboradores.php" class="[ animate ]">ACEPTAR COLABORADOR CIUDAD</a></li>
-				<li><a href="/portada_n/solicitudes/aceptargestores.php" class="[ animate ]">ACEPTAR GESTOR C.P</a></li>
-		    
-	 		</ul>
+										<div class="dropdown-menu">
 
-	 		<ul class="[ nav navbar-nav navbar-left ]" id="gest" style="display: none;">
-				
-		    
-	 		</ul>
+											<a class="dropdown-item" onclick="redireccion('/portada_n/ultimasentradas_t.php');" href="/portada_n/ultimasentradas_t.php">TUS PREGUNTAS</a>
+
+											<a class="dropdown-item" onclick="redireccion('/portada_n/ultimasincidencias_t.php');" href="/portada_n/ultimasincidencias_t.php">RESULTADOS</a>
+
+											<a class="dropdown-item" onclick="redireccion('/incidencias_t.php');" href="/incidencias_t.php">INCIDENCIAS</a>
+
+											<a class="dropdown-item" onclick="redireccion('/donaciones/donaciones.php');" href="/donaciones/donaciones.php">AYÚDANOS A CRECER</a>
+
+										</div>
+
+								</li>
+
+							</div>
+
+
+				<div class="btn-group">
+					<li class="nav-item dropdown" data-toggle="dropdown">
+
+					<a class="nav-link text-light font-weight-bold px-3 dropdown-toggle" href="#">MI CIUDAD</a>
+
+					<div class="dropdown-menu">
+
+						<a class="dropdown-item" onclick="redireccion('/portada_n/chatciudad/index.php');" href="/portada_n/chatciudad/index.php">CHAT CIUDAD</a>
+
+						<a class="dropdown-item" onclick="redireccion('/portada_n/mensaje/dpuntcont.php');" href="/portada_n/mensaje/dpuntcont.php">PREGUNTAS CIUDAD</a>
+
+						<a class="dropdown-item" onclick="redireccion('/portada_n/solicitudes/aceptarcolaboradores.php');" href="/portada_n/solicitudes/aceptarcolaboradores.php">ACEPTAR COLABORADOR CIUDAD</a>
+
+						<a class="dropdown-item" onclick="redireccion('/portada_n/solicitudes/aceptargestores.php');" href="/portada_n/solicitudes/aceptargestores.php">ACEPTAR GESTOR C.P</a>
+
+					</div>
+
+					</li>
+					</div>
+
+				<div class="btn-group">
+
+					<li class="nav-item">
+
+						<a class="nav-link text-light font-weight-bold px-3" href="/portada_n/cuenta.php">MI CUENTA</a>
+
+					</li>
+
+				</div>
+
+				<div class="btn-group">
+					<li class="nav-item">
+
+						<a class="nav-link text-light font-weight-bold px-3" href="/portada_n/salir.php">LOG OUT</a>
+
+					</li>
+				</div>
+
+				</ul>
+
+					</div>
+
+					</nav>
 
 	 <?php 
    		} 
@@ -294,42 +546,96 @@
    	<?php if ($resultadousuario['tusuario'] == 52) {
    		
    		?>
-   			<ul class="[ nav navbar-nav navbar-left mx-auto]">
-				<li class="[ animate ]"><a href="#" class="[ animate ]" onclick="changeOptions(1); return false;" >GENERAL</a></li>
-				<li class="[ animate ]"><a href="#" class="[ animate ]" onclick="changeOptions(2); return false;" >MI CIUDAD</a></li>
-				<li class="[ animate ]"><a href="#" class="[ animate ]" onclick="changeOptions(3); return false;" >MI PAIS</a></li>
-				<li><a href="/portada_n/cuenta.php" class="[ animate ]" >MI CUENTA</a></li>
 
-			</ul>
-		
-			<br><br><br>
-			<ul class="[ nav navbar-nav navbar-left ]" id="resp">
 
-				<li><a href="/portada_n/ultimasentradas_t.php" class="[ animate ]">TUS PREGUNTAS</a></li>
-				<li><a href="/portada_n/ultimasincidencias_t.php" class="[ animate ]">RESULTADOS</a></li>
-				<li><a href="/incidencias_t.php" class="[ animate ]">INCIDENCIAS</a></li>
-				<li><a href="/donaciones/donaciones.php" class="[ animate ]">AYÚDANOS A CRECER</a></li>
-				<!--<li><a href="/chat/index.php" class="[ animate ]">CHAT</a></li>-->
-				<li><a href="/portada_n/salir.php" class="[ animate ]">LOG OUT</a></li>
-		    
-	 		</ul>
+<nav class="navbar navbar-expand-md navbar-light bg-dark fixed-top">
 
-	 		<ul class="[ nav navbar-nav navbar-left ]" id="colab" style="display: none;">
+					<a class="navbar-brand"><img src="../img/ciudadanoslogo.png"></a>
+						<button type="button" class="navbar-toggler bg-light" data-toggle="collapse" data-target="#nav">
+						<span class="navbar-toggler-icon"></span>
+						</button>
 
-				<li><a href="/portada_n/chatciudad/index.php" class="[ animate ]" >CHAT CIUDAD</a></li>
-				<!--<li><a href="/portada_n/calendario.php" class="[ animate ]">CALENDARIO</a></li>-->
-				<li><a href="/portada_n/mensaje/dpuntcont.php" class="[ animate ]" >PREGUNTAS CIUDAD</a></li>
-				<li><a href="/portada_n/solicitudes/aceptarcolaboradores.php" class="[ animate ]">ACEPTAR COLABORADOR CIUDAD</a></li>
-				<li><a href="/portada_n/solicitudes/aceptargestores.php" class="[ animate ]">ACEPTAR GESTOR C.P</a></li>
-		    
-	 		</ul>
+					<div class="collapse navbar-collapse justify-content-between" id="nav">
+						<ul class="navbar-nav">
+							<div class="btn-group">
+								<li class="nav-item dropdown" data-toggle="dropdown">
+									<a class="nav-link text-light font-weight-bold px-3 dropdown-toggle" href="#">GENERAL</a>
 
-	 		<ul class="[ nav navbar-nav navbar-left ]" id="gest" style="display: none;">
+										<div class="dropdown-menu">
 
-				<li><a href="/portada_n/chatpais/index.php" class="[ animate ]">CHAT PAIS</a></li>
-				<!--<li><a href="/portada_n/calendario.php" class="[ animate ]" onclick="openCity(event, 'd0')" >CALENDARIO</a></li>-->
-		    
-	 		</ul>
+											<a class="dropdown-item" onclick="redireccion('/portada_n/ultimasentradas_t.php');" href="/portada_n/ultimasentradas_t.php">TUS PREGUNTAS</a>
+
+											<a class="dropdown-item" onclick="redireccion('/portada_n/ultimasincidencias_t.php');" href="/portada_n/ultimasincidencias_t.php">RESULTADOS</a>
+
+											<a class="dropdown-item" onclick="redireccion('/incidencias_t.php');" href="/incidencias_t.php">INCIDENCIAS</a>
+
+											<a class="dropdown-item" onclick="redireccion('/donaciones/donaciones.php');" href="/donaciones/donaciones.php">AYÚDANOS A CRECER</a>
+
+										</div>
+
+								</li>
+
+							</div>
+
+
+				<div class="btn-group">
+					<li class="nav-item dropdown" data-toggle="dropdown">
+
+					<a class="nav-link text-light font-weight-bold px-3 dropdown-toggle" href="#">MI CIUDAD</a>
+
+					<div class="dropdown-menu">
+
+						<a class="dropdown-item" onclick="redireccion('/portada_n/chatciudad/index.php');" href="/portada_n/chatciudad/index.php">CHAT CIUDAD</a>
+
+						<a class="dropdown-item" onclick="redireccion('/portada_n/mensaje/dpuntcont.php');" href="/portada_n/mensaje/dpuntcont.php">PREGUNTAS CIUDAD</a>
+
+						<a class="dropdown-item" onclick="redireccion('/portada_n/solicitudes/aceptarcolaboradores.php');" href="/portada_n/solicitudes/aceptarcolaboradores.php">ACEPTAR COLABORADOR CIUDAD</a>
+
+						<a class="dropdown-item" onclick="redireccion('/portada_n/solicitudes/aceptargestores.php');" href="/portada_n/solicitudes/aceptargestores.php">ACEPTAR GESTOR C.P</a>
+
+					</div>
+
+					</li>
+					</div>
+
+
+				<div class="btn-group">
+					<li class="nav-item dropdown" data-toggle="dropdown">
+
+					<a class="nav-link text-light font-weight-bold px-3 dropdown-toggle" href="#">MI PAIS</a>
+
+					<div class="dropdown-menu">
+
+						<a class="dropdown-item" onclick="redireccion('/portada_n/chatpais/index.php');" href="/portada_n/chatpais/index.php">CHAT PAIS</a>
+
+					</div>
+
+					</li>
+					</div>
+
+				<div class="btn-group">
+
+					<li class="nav-item">
+
+						<a class="nav-link text-light font-weight-bold px-3" href="/portada_n/cuenta.php">MI CUENTA</a>
+
+					</li>
+
+				</div>
+
+				<div class="btn-group">
+					<li class="nav-item">
+
+						<a class="nav-link text-light font-weight-bold px-3" href="/portada_n/salir.php">LOG OUT</a>
+
+					</li>
+				</div>
+
+				</ul>
+
+					</div>
+
+					</nav>
 
 	 <?php 
    		} 
@@ -338,36 +644,75 @@
    	<?php if ($resultadousuario['tusuario'] == 60) {
    		
    		?>
-   			<ul class="[ nav navbar-nav navbar-left mx-auto]">
-				<li class="[ animate ]"><a href="#" class="[ animate ]" onclick="changeOptions(1); return false;" >GENERAL</a></li>
-				<li class="[ animate ]"><a href="#" class="[ animate ]" onclick="changeOptions(2); return false;" >MI PAIS</a></li>
-				<li><a href="/portada_n/cuenta.php" class="[ animate ]" >MI CUENTA</a></li>
 
-			</ul>
+
+<nav class="navbar navbar-expand-md navbar-light bg-dark fixed-top">
+
+					<a class="navbar-brand"><img src="../img/ciudadanoslogo.png"></a>
+						<button type="button" class="navbar-toggler bg-light" data-toggle="collapse" data-target="#nav">
+						<span class="navbar-toggler-icon"></span>
+						</button>
+
+					<div class="collapse navbar-collapse justify-content-between" id="nav">
+						<ul class="navbar-nav">
+							<div class="btn-group">
+								<li class="nav-item dropdown" data-toggle="dropdown">
+									<a class="nav-link text-light font-weight-bold px-3 dropdown-toggle" href="#">GENERAL</a>
+
+										<div class="dropdown-menu">
+
+											<a class="dropdown-item" onclick="redireccion('/portada_n/ultimasentradas_t.php');" href="/portada_n/ultimasentradas_t.php">TUS PREGUNTAS</a>
+
+											<a class="dropdown-item" onclick="redireccion('/portada_n/ultimasincidencias_t.php');" href="/portada_n/ultimasincidencias_t.php">RESULTADOS</a>
+
+											<a class="dropdown-item" onclick="redireccion('/incidencias_t.php');" href="/incidencias_t.php">INCIDENCIAS</a>
+
+											<a class="dropdown-item" onclick="redireccion('/donaciones/donaciones.php');" href="/donaciones/donaciones.php">AYÚDANOS A CRECER</a>
+
+										</div>
+
+								</li>
+
+							</div>
+
+				<div class="btn-group">
+					<li class="nav-item dropdown" data-toggle="dropdown">
+
+					<a class="nav-link text-light font-weight-bold px-3 dropdown-toggle" href="#">MI PAIS</a>
+
+					<div class="dropdown-menu">
+
+						<a class="dropdown-item" onclick="redireccion('/portada_n/chatpais/index.php');" href="/portada_n/chatpais/index.php">CHAT PAIS</a>
+
+					</div>
+
+					</li>
+					</div>
+
+				<div class="btn-group">
+
+					<li class="nav-item">
+
+						<a class="nav-link text-light font-weight-bold px-3" href="/portada_n/cuenta.php">MI CUENTA</a>
+
+					</li>
+
+				</div>
+
+				<div class="btn-group">
+					<li class="nav-item">
+
+						<a class="nav-link text-light font-weight-bold px-3" href="/portada_n/salir.php">LOG OUT</a>
+
+					</li>
+				</div>
+
+				</ul>
+
+					</div>
+
+					</nav>
 		
-			<br><br><br>
-			<ul class="[ nav navbar-nav navbar-left ]" id="resp">
-
-				<li><a href="/portada_n/ultimasentradas_t.php" class="[ animate ]">TUS PREGUNTAS</a></li>
-				<li><a href="/portada_n/ultimasincidencias_t.php" class="[ animate ]">RESULTADOS</a></li>
-				<li><a href="/incidencias_t.php" class="[ animate ]">INCIDENCIAS</a></li>
-				<li><a href="../donaciones/donaciones.php" class="[ animate ]">AYÚDANOS A CRECER</a></li>
-				<!--<li><a href="/chat/index.php" class="[ animate ]">CHAT</a></li>-->
-				<li><a href="/portada_n/salir.php" class="[ animate ]">LOG OUT</a></li>
-		    
-	 		</ul>
-
-	 		<ul class="[ nav navbar-nav navbar-left ]" id="colab" style="display: none;">
-
-				<li><a href="/portada_n/chatpais/index.php" class="[ animate ]">CHAT PAIS</a></li>
-				<!--<li><a href="/portada_n/calendario.php" class="[ animate ]">CALENDARIO</a></li>-->
-		    
-	 		</ul>
-
-	 		<ul class="[ nav navbar-nav navbar-left ]" id="gest" style="display: none;">
-		    
-	 		</ul>
-
 
 
 	 <?php 
@@ -376,41 +721,80 @@
    	<?php if ($resultadousuario['tusuario'] == 61) {
    		
    		?>
-   			<ul class="[ nav navbar-nav navbar-left mx-auto]">
-				<li class="[ animate ]"><a href="#" class="[ animate ]" onclick="changeOptions(1); return false;" >GENERAL</a></li>
-				<li class="[ animate ]"><a href="#" class="[ animate ]" onclick="changeOptions(2); return false;" >MI PAIS</a></li>
-				<!--<li class="[ animate ]"><a href="#" class="[ animate ]" onclick="changeOptions(3)" >GESTOR PAIS</a></li>-->
-				<li><a href="/portada_n/cuenta.php" class="[ animate ]" >MI CUENTA</a></li>
-
-			</ul>
-			<br><br><br>
-
-			<ul class="[ nav navbar-nav navbar-left ]" id="resp">
-
-				<li><a href="/portada_n/ultimasentradas_t.php" class="[ animate ]">TUS PREGUNTAS</a></li>
-				<li><a href="/portada_n/ultimasincidencias_t.php" class="[ animate ]">RESULTADOS</a></li>
-				<li><a href="/incidencias_t.php" class="[ animate ]">INCIDENCIAS</a></li>
-				<li><a href="../donaciones/donaciones.php" class="[ animate ]">AYÚDANOS A CRECER</a></li>
-				<!--<li><a href="/chat/index.php" class="[ animate ]">CHAT</a></li>-->
-				<li><a href="/portada_n/salir.php" class="[ animate ]">LOG OUT</a></li>
-		    
-	 		</ul>
-
-	 		<ul class="[ nav navbar-nav navbar-left ]" id="colab" style="display: none;">
-
-				<li><a href="/portada_n/chatpais/index.php" class="[ animate ]">CHAT PAIS</a></li>
-				<!--<li><a href="/portada_n/calendario.php" class="[ animate ]">CALENDARIO</a></li>-->
-				<li><a href="/portada_n/mensaje/dpuntcont.php" class="[ animate ]">PREGUNTAS PAIS</a></li>
-				<li><a href="/portada_n/solicitudes/aceptarcolaboradores.php" class="[ animate ]">ACEPTAR COLABORADOR PAIS</a></li>
-				<li><a href="/portada_n/solicitudes/aceptargestores.php" class="[ animate ]">ACEPTAR GESTOR CIUDAD</a></li>
-		    
-	 		</ul>
 
 
-	 		<ul class="[ nav navbar-nav navbar-left ]" id="gest" style="display: none;">
-				
-		    
-	 		</ul>
+<nav class="navbar navbar-expand-md navbar-light bg-dark fixed-top">
+
+					<a class="navbar-brand"><img src="../img/ciudadanoslogo.png"></a>
+						<button type="button" class="navbar-toggler bg-light" data-toggle="collapse" data-target="#nav">
+						<span class="navbar-toggler-icon"></span>
+						</button>
+
+					<div class="collapse navbar-collapse justify-content-between" id="nav">
+						<ul class="navbar-nav">
+							<div class="btn-group">
+								<li class="nav-item dropdown" data-toggle="dropdown">
+									<a class="nav-link text-light font-weight-bold px-3 dropdown-toggle" href="#">GENERAL</a>
+
+										<div class="dropdown-menu">
+
+											<a class="dropdown-item" onclick="redireccion('/portada_n/ultimasentradas_t.php');" href="/portada_n/ultimasentradas_t.php">TUS PREGUNTAS</a>
+
+											<a class="dropdown-item" onclick="redireccion('/portada_n/ultimasincidencias_t.php');" href="/portada_n/ultimasincidencias_t.php">RESULTADOS</a>
+
+											<a class="dropdown-item" onclick="redireccion('/incidencias_t.php');" href="/incidencias_t.php">INCIDENCIAS</a>
+
+											<a class="dropdown-item" onclick="redireccion('/donaciones/donaciones.php');" href="/donaciones/donaciones.php">AYÚDANOS A CRECER</a>
+
+										</div>
+
+								</li>
+
+							</div>
+
+				<div class="btn-group">
+					<li class="nav-item dropdown" data-toggle="dropdown">
+
+					<a class="nav-link text-light font-weight-bold px-3 dropdown-toggle" href="#">MI PAIS</a>
+
+					<div class="dropdown-menu">
+
+						<a class="dropdown-item" onclick="redireccion('/portada_n/chatpais/index.php');" href="/portada_n/chatpais/index.php">CHAT PAIS</a>
+
+						<a class="dropdown-item" onclick="redireccion('/portada_n/mensaje/dpuntcont.php');" href="/portada_n/mensaje/dpuntcont.php">PREGUNTAS PAIS</a>
+
+						<a class="dropdown-item" onclick="redireccion('/portada_n/solicitudes/aceptarcolaboradores.php');" href="/portada_n/solicitudes/aceptarcolaboradores.php">ACEPTAR COLABORADOR PAIS</a>
+
+						<a class="dropdown-item" onclick="redireccion('/portada_n/solicitudes/aceptargestores.php');" href="/portada_n/solicitudes/aceptargestores.php">ACEPTAR GESTOR CIUDAD</a>
+
+					</div>
+
+					</li>
+					</div>
+
+				<div class="btn-group">
+
+					<li class="nav-item">
+
+						<a class="nav-link text-light font-weight-bold px-3" href="/portada_n/cuenta.php">MI CUENTA</a>
+
+					</li>
+
+				</div>
+
+				<div class="btn-group">
+					<li class="nav-item">
+
+						<a class="nav-link text-light font-weight-bold px-3" href="/portada_n/salir.php">LOG OUT</a>
+
+					</li>
+				</div>
+
+				</ul>
+
+					</div>
+
+					</nav>
 
 	 <?php 
    		} 

@@ -33,7 +33,7 @@
 </head>
  
 
-<body style="background-image:url(../../img/iconos/portada_ca.jpg)" >
+<body style="background-image:url(../../img/iconos/portada_ca.jpg); margin-top: 3%"; >
 
 
   <nav class="[ navbar navbar-fixed-top ][ navbar-bootsnipp animate ]" role="navigation">
@@ -52,13 +52,14 @@
       </div>
   </nav>
  
-<div class="col-md-6 col-lg-7 col-md-offset-3" style="margin-top: 160px">
-  <div class="panel panel-default chat-widget">
-    <div class="panel-heading">
+<div class='wrapper fadeInDown' style="border-radius:10px; background-color: transparent; text-align: center; min-height: 0%; max-width: 850px; margin:auto;">
+  <div id='formContent' style="max-width: 850px; background-color: transparent;" >
+  <div style="background-color: white; border-radius: 10px; padding-top: 2%" class="panel panel-default chat-widget">
+    <div style="border-radius: 10px" class="panel-heading">
       <h3 align="center"><i class="fa fa-comments"></i></h3>
-      <h3 align="center" style="font-family: Helvetica" class="welcome">Chat gestores pais (<?php echo $resultado1['pais']; ?>)</h3>
+      <h3 align="center" style="font-family: Helvetica" class="welcome">Chat gestores pais (<?php echo $resultadocheckuser['pais']; ?>)</h3>
     </div>
-    
+
     <div class="panel-body">
 
           <div class="message" style="height: 520px">
@@ -69,7 +70,6 @@
                     $handle = fopen("log.php", "r");
                     $contents = fread($handle, filesize("log.php"));
                     fclose($handle);
-
                   }
                 ?>
               </div>
@@ -79,22 +79,23 @@
       </div>
 
 
-      <table  style="margin-bottom: 15px;" align="center">
+      <table style="margin-bottom: 15px;" align="center">
           <tr>
-            <td>
-              <div class="panel-footer">
-              <div class="input-group">
-            </td>
-            <td>
-              <form  name="message" action="">
-              <input class="form-control pr" type="text" id="usermsg" size="63" placeholder="Escriba su mensaje aquí..." />
-             <td>
-              <button class="btn btn-primary" type="submit"  id="submitmsg" value="enviar"/>enviar</button>
-              </form>
+              <td>
+                <div class="panel-footer">
+                <div class="input-group">
               </td>
-              </div>
-              </div>
-            </td>
+              <td>
+                <form  name="message" action="">
+                <div align="center">
+                  <input class="form-control pr" type="text" id="usermsg" size="63" placeholder="Escriba su mensaje aquí..." /><button class="btn btn-primary" type="submit"  id="submitmsg" value="enviar"/>enviar</button>
+                </div>
+                </form>
+              </td>
+              <td>
+                </div>
+                </div>
+              </td>
           </tr>
       </table>
 
