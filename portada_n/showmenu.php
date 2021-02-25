@@ -23,6 +23,8 @@
 		<link rel="stylesheet" type="text/css" href="incidencias_t.css">
 		<link rel="stylesheet" type="text/css" href="portada_n/cabecera.css">
 		<link rel="stylesheet" type="text/css" href="nav.js">
+
+
 		
 </head>
 
@@ -63,21 +65,6 @@
 			
 		}
 	</script>
-	<style>
-		 @media (min-width: 992px){
-   		   .external-collapse.navbar-collapse {
-        	  display: -webkit-box!important;
-         	  display: -ms-flexbox!important;
-          	  display: flex!important;
-      }
-
-  }
-
-          .collapse {
-    	display: none;
-    	visibility: visible;
-}
-	</style>
 
 <div class="[ collapse navbar-collapse ]" id="bs-example-navbar-collapse-1">
 

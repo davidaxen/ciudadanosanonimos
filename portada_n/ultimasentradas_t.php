@@ -111,8 +111,7 @@ $row1=mysqli_num_rows($result1);*/
   <meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
   <meta http-equiv="content-type" content="application/xhtml+xml; charset=ISO-8859-1">
 </head>
-<body   style="background-image:url(../img/iconos/portada_ca.jpg)"; >
-
+<body style="background-image:url(../img/iconos/portada_ca.jpg); margin-top: 15%"; >
 
 		<nav class="[ navbar navbar-fixed-top ][ navbar-bootsnipp animate ]" role="navigation">
 
@@ -138,7 +137,7 @@ $row1=mysqli_num_rows($result1);*/
 <!--onload="setTimeout('refrescar1()', 5000);"-->
 
 
-<div style=" margin-top: 15%;" class='wrapper fadeInDown' >
+<div class='wrapper fadeInDown' >
 <?php
 
 if ($row) {
@@ -166,7 +165,7 @@ if ($row10==0){;
 	<a class="next" onclick="plusSlides(1)">&#10095;</a>
 
 <form action="../servicios_n/mensaje/introrespuesta.php" method="post" enctype="multipart/form-data">
-<div class="slideshow-container" style="border-radius:10px; background-color: white; text-align: center;">
+<div class="slideshow-container" style="border-radius:10px; background-color: white; text-align: center; margin: auto;">
 
 	<input type="hidden" name="id" value="<?php echo $idmensaje;?>">
 	<input type="hidden" name="iduser" value="<?php echo $resultadousuario['id']?>">

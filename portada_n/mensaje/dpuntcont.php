@@ -10,21 +10,27 @@ if ($ide!=null){;
 	$resultadouser=$resultuser->fetch();
 
 	if ($resultadouser['tusuario'] == 41 || $resultadouser['tusuario'] == 42 || $resultadouser['tusuario'] == 51 || $resultadouser['tusuario'] == 52 || $resultadouser['tusuario'] == 61) {
-		
-	$sql1 = "SELECT * FROM ciudades WHERE idciudad = :idciudad";
-    $result1=$conn->prepare($sql1);
-    $result1->bindParam(':idciudad', $resultadouser['localidad']);
-    $result1->execute();
-    $resultado1 = $result1->fetch();
 
-	$sql2 = "SELECT * FROM paises WHERE idpais = :idpais";
-    $result2=$conn->prepare($sql2);
-    $result2->bindParam(':idpais', $resultadouser['pais']);
-    $result2->execute();
-    $resultado2 = $result2->fetch();
-	
+	if ($resultadouser['localidad'] != 0) {
+		$sql1 = "SELECT * FROM ciudades WHERE idciudad = :idciudad";
+	    $result1=$conn->prepare($sql1);
+	    $result1->bindParam(':idciudad', $resultadouser['localidad']);
+	    $result1->execute();
+	    $resultado1 = $result1->fetch();
+	}else{
+		$resultado1['ciudad'] = "unknown";
+	}
 
-	
+	if ($resultadouser['pais'] != 0) {
+		$sql2 = "SELECT * FROM paises WHERE idpais = :idpais";
+		$result2=$conn->prepare($sql2);
+		$result2->bindParam(':idpais', $resultadouser['pais']);
+		$result2->execute();
+		$resultado2 = $result2->fetch();
+	}else{
+		$resultado2['idpais'] = "0";
+	}
+
 ?>
 <head>
 <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Convergence" />

@@ -1,22 +1,22 @@
 <?php 
 include('bbdd.php');
 
-if ($ide!=null) {
-	$sql1="INSERT INTO incidencias (idempresa,idempleado,texto) VALUES (:ide,:idtrab,:incidencia)";
+$mail = $_COOKIE['gente'];
+$sqltusuario = "SELECT * FROM usuarios WHERE user = :gente";
+$resultusuario=$conn->prepare($sqltusuario);
+$resultusuario->bindParam(':gente', $mail);
+$resultusuario->execute();
+$resultadousuario = $resultusuario->fetch();
 
-	$result1=$conn->prepare($sql1);
-	$result1->bindValue(':ide', $ide);
-	$result1->bindValue(':idtrab', $idtrab);
-	$result1->bindValue(':incidencia', $incidencia);
-	$result1->execute();
+$sql1="INSERT INTO incidencias (iduser,texto) VALUES (:iduser,:incidencia)";
 
+$result1=$conn->prepare($sql1);
+$result1->bindValue(':iduser', $resultadousuario['id']);
+$result1->bindValue(':incidencia', $incidencia);
+$result1->execute();
 
-}else {
-	include ('../../cierre.php');
-}
-
+header("location: /incidencias_t.php?msg=1")
  ?>
-
 <link rel="stylesheet" href="/estilo/estilonuevo.php" type="text/css" media="screen" charset="utf-8" >
  <body>
  	<strong><p style="text-align: center; font-family: Palatino, 'Palatino Linotype', serif; font-size: 18px;">Gracias por tu aportacion... Trabajaremos para seguir mejorando.</p></strong>
