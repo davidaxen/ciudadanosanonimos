@@ -120,37 +120,22 @@ include('bbdd.php');
 </script>
 
 <head>
-	<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-	<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
-	<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Convergence" />
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css"></script>
-	<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-	<script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+	
+
+  <link rel="stylesheet" type="text/css" href="cabecera.css">
+  <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Convergence" />
+  <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+  <script src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
+
+  <meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
+  <meta http-equiv="content-type" content="application/xhtml+xml; charset=ISO-8859-1">
+	
+	
 <link rel="stylesheet" type="text/css" href="ultimasincidencias_t.css">
 <link rel="stylesheet" type="text/css" href="cabecera.css">
-<link rel="stylesheet" type="text/css" href="../nav.js">
-<meta charset="utf-8">
-<script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
-<script src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
-<style type="text/css" media="print">
-.nover {display:none}
-</style>
-<style>
-@media (min-width: 1192px){
-		 .external-collapse.navbar-collapse {
-				 display: -webkit-box!important;
-				 display: -ms-flexbox!important;
-				 display: flex!important;
-		 }
 
- }
 
- @media (min-width: 768px){
-		 .hid {
-					visibility: hidden;
-		 }
-}
-</style>
+
 </head>
 
 <?php
@@ -170,27 +155,18 @@ if(isset($_COOKIE['gente'])){
 
   		<table style="margin-left: 20px; width: 100%">
 		<tr>
-			<td style="width: 20%; ">
-	    		<div class="[ navbar-header ]">
-	        		<div class="[ animbrand ]">
-	            		<a style="float: none;" class="[ navbar-brand ][ animate ]" href="../inicio1.php"><img src="../img/ciudadanoslogo.png"></a>
 
-	        		</div>
-	    		</div>
-	    	</td>
 			<td style="width: 65%; ">
-				
-						<?php
-							include_once("showmenu.php");
+					<?php
+						include_once("showmenu.php");
 
-						?>
+					?>
+				</td>
+			</tr>
+		</table>
+		</nav>
 
-					</td>
-				</tr>
-			</table>
-			</nav>
-
-	<div class="container fadeInDown" style="background-color: white; border-radius: 10px; margin-top: 220px" id="informacion">
+	<div class="container fadeInDown" style="background-color: white; border-radius: 10px; margin-top: 7%" id="informacion">
 		<h2>Mi cuenta</h2>
 		<input type="hidden" name="solimade" id="solimade" value="<?php echo $solicitado; ?>">
 		<input type="hidden" name="tiposoli" id="tiposoli" value="<?php echo $tsolicitud; ?>">
@@ -222,9 +198,9 @@ if(isset($_COOKIE['gente'])){
 			 <?php
 			if ($resultadousuario['tusuario'] == 40) {
 				?>
-				<button class="btn btn-default" name="solicitud" id="solicitud" onclick="executeAjax(<?php echo $resultadousuario['id']; ?>, 41)"><b>Solicitar ser gestor de codigo postal</b></button>
-				<br>
-				<button class="btn btn-default" name="solicitud" id="solicitud" onclick="executeAjax(<?php echo $resultadousuario['id']; ?>, 50)"><b>Solicitar ser colaborador de ciudad</b></button>
+				<button style="border-color: black" class="btn btn-default" name="solicitud" id="solicitud" onclick="executeAjax(<?php echo $resultadousuario['id']; ?>, 41)"><b>Solicitar ser gestor de codigo postal</b></button>
+				<br><br>
+				<button style="border-color: black" class="btn btn-default" name="solicitud" id="solicitud" onclick="executeAjax(<?php echo $resultadousuario['id']; ?>, 50)"><b>Solicitar ser colaborador de ciudad</b></button>
 
 				<!--<input type="checkbox" name="solicitud" id="solicitud" value="41"> <label for="solicitud">Solicitar ser gestor de codigo postal</label>
 				<br>
@@ -297,7 +273,7 @@ if(isset($_COOKIE['gente'])){
 		</div>
 			<br>
 
-			<div><button type="button" class="btn btn-default" onclick="desaparecer()">Editar</button></div> <br>
+			<div><button style="border-color: black" type="button" class="btn btn-default" onclick="desaparecer()">Editar</button></div> <br>
 		</div>
 
 	</div>

@@ -3,39 +3,41 @@
 <html>
 <head>
   <title>Ayudanos a crecer</title>
-  <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
   <link rel="stylesheet" type="text/css" href="estilo.css">
+
+<!-- Required meta tags -->
   <link rel="stylesheet" type="text/css" href="../portada_n/cabecera.css">
-  <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
-  <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Convergence" />
+  <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+  <script src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
+
+  <meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
+  <meta http-equiv="content-type" content="application/xhtml+xml; charset=ISO-8859-1">
+
+<!--This is used for search icon. Instead putting icon manually it is loaded from fontawesome-->
 
 </head>
-<body style="background-image:url(../img/iconos/portada_ca.jpg)";>
+<body style="background-image:url(../img/iconos/portada_ca.jpg); padding-top: 14%;";>
 
-      <nav class="[ navbar navbar-fixed-top ][ navbar-bootsnipp animate ]" role="navigation">
+  <!-- navbar -->
+    <nav style="background-color:transparent;" class="[ navbar navbar-fixed-top ][ navbar-bootsnipp animate ]" role="navigation">
 
       <table style="margin-left: 20px; width: 100%">
     <tr>
-      <td style="width: 20%; text-align: left;">
-          <div class="[ navbar-header ]">
-              <div class="[ animbrand ]">
-                  <a style="margin-left: 0px;" class="[ navbar-brand ][ animate ]" href="../inicio1.php"><img src="../img/ciudadanoslogo.png"></a>
 
-              </div>
-          </div>
+      <td>
+          <?php
+            include_once("../portada_n/showmenu.php");
+
+          ?>
         </td>
-      <td style="width: 65%; ">
-        
-              <?php
-                include_once("../portada_n/showmenu.php");
+      </tr>
+    </table>
+    </nav>
 
-              ?>
-          </td>
-        </tr>
-      </table>
-      </nav>
+
  
-<div style="background-color: white; border-radius: 10px; padding-top: 15px; max-width: 450px; margin-left: 650px; margin-top: 13%;" align="center" class="wrapper fadeInDown">
+<div style="background-color: white; border-radius: 10px; padding-top: 15px; max-width: 450px; margin:auto; " align="center" class="wrapper fadeInDown">
   <div   class="formContent">
     <div id="smart-button-container">
 
