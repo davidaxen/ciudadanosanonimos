@@ -25,7 +25,7 @@ $result=$conn->exec($sql1);
 
 ?>
 <script type="text/javascript">
-window.location="https://control.ciudadanosanonimos.com/inicio1.php";
+window.location="https://control.ciudadanosanonimos.com/donaciones/donaciones.php";
 </script>
 
 </div>

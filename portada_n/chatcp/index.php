@@ -146,7 +146,7 @@
           </nav>
 
 <div class='wrapper fadeInDown' style="border-radius:10px; background-color: transparent; text-align: center; min-height: 0%; max-width: 850px; margin:auto;">
-  <div id='formContent' style="max-width: 850px; background-color: transparent;" >
+  <div id='formContent' style="max-width: 850px; background-color: transparent; text-align: left;" >
   <div style="background-color: white; border-radius: 10px; padding-top: 2%" class="panel panel-default chat-widget">
     <div style="border-radius: 10px" class="panel-heading">
       <h3 align="center"><i class="fa fa-comments"></i></h3>

@@ -45,12 +45,6 @@
     <table style="margin-left: 20px; width: 100%">
     <tr>
       <td style="width: 20%;">
-          <div class="[ navbar-header ]">
-              <div class="[ animbrand ]">
-                  <a style="float: none;" class="[ navbar-brand ][ animate ]" href="../inicio1.php"><img src="../../img/ciudadanoslogo.png"></a>
-
-              </div>
-          </div>
         </td>
       <td style="width: 65%;">
         <div >

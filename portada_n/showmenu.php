@@ -55,7 +55,7 @@
    		?>
 
 
-   		<nav  class="navbar navbar-expand-md navbar-light bg-dark fixed-top">
+   		<nav style="background-color: white"  class="navbar navbar-expand-md navbar-light fixed-top">
 
 					<a class="navbar-brand"><img src="../img/ciudadanoslogo.png"></a>
 						<button type="button" class="navbar-toggler bg-light" data-toggle="collapse" data-target="#nav">
@@ -196,6 +196,14 @@
 				</div>
 
 
+				<div class="btn-group">
+					<li class="nav-item">
+
+					<div><img src="/img/usaa.png"></div>
+
+					</li>
+				</div>
+
 
 				</ul>
 
@@ -213,7 +221,7 @@
    		
    		?>
 
-   		<nav class="navbar navbar-expand-md navbar-light bg-dark fixed-top">
+   		<nav style="background-color: white"  class="navbar navbar-expand-md navbar-light fixed-top">
 
 					<a class="navbar-brand"><img src="../img/ciudadanoslogo.png"></a>
 						<button type="button" class="navbar-toggler bg-light" data-toggle="collapse" data-target="#nav">
@@ -277,6 +285,17 @@
 
 					</li>
 				</div>
+
+				<div align="center" style="border: 2px solid grey; border-radius: 10px" class="btn-group">
+
+					<li class="nav-item">
+
+					<a class="nav-link font-weight-bold px-3" href="/donaciones/donaciones.php">CUOTA DE PARTICIPACIÓN<br><span style="font-size: 12px; ">-Ayúdanos a crecer-</span></a>
+
+					</li>
+
+				</div>
+
 
 				</ul>
 
@@ -292,7 +311,7 @@
    		
    		?>
 
-  		<nav class="navbar navbar-expand-md navbar-light bg-dark fixed-top">
+  		<nav style="background-color: white"  class="navbar navbar-expand-md navbar-light fixed-top">
 
 					<a class="navbar-brand"><img src="../img/ciudadanoslogo.png"></a>
 						<button type="button" class="navbar-toggler bg-light" data-toggle="collapse" data-target="#nav">
@@ -372,6 +391,18 @@
 					</li>
 				</div>
 
+
+				<div align="center" style="border: 2px solid grey; border-radius: 10px" class="btn-group">
+
+					<li class="nav-item">
+
+					<a class="nav-link font-weight-bold px-3" href="/donaciones/donaciones.php">CUOTA DE PARTICIPACIÓN<br><span style="font-size: 12px; ">-Ayúdanos a crecer-</span></a>
+
+					</li>
+
+				</div>
+
+
 				</ul>
 
 					</div>
@@ -386,18 +417,22 @@
    		
    		?>
 
-  		<nav class="navbar navbar-expand-md navbar-light bg-dark fixed-top">
+  		<nav style="background-color: white"  class="navbar navbar-expand-md navbar-light fixed-top">
 
 					<a class="navbar-brand"><img src="../img/ciudadanoslogo.png"></a>
+
 						<button type="button" class="navbar-toggler bg-light" data-toggle="collapse" data-target="#nav">
 						<span class="navbar-toggler-icon"></span>
 						</button>
+				
 
+
+				
 					<div class="collapse navbar-collapse justify-content-between" id="nav">
 						<ul class="navbar-nav">
 							<div class="btn-group">
 								<li class="nav-item dropdown" data-toggle="dropdown">
-									<a class="nav-link text-light font-weight-bold px-3 dropdown-toggle" href="#">GENERAL</a>
+									<a class="nav-link font-weight-bold px-3 dropdown-toggle" href="#">GENERAL</a>
 
 										<div class="dropdown-menu">
 
@@ -419,7 +454,7 @@
 				<div class="btn-group">
 					<li class="nav-item dropdown" data-toggle="dropdown">
 
-					<a class="nav-link text-light font-weight-bold px-3 dropdown-toggle" href="#">MI CIUDAD</a>
+					<a class="nav-link  font-weight-bold px-3 dropdown-toggle" href="#">MI CIUDAD</a>
 
 					<div class="dropdown-menu">
 
@@ -434,7 +469,7 @@
 
 					<li class="nav-item">
 
-						<a class="nav-link text-light font-weight-bold px-3" href="/portada_n/cuenta.php">MI CUENTA</a>
+						<a class="nav-link  font-weight-bold px-3" href="/portada_n/cuenta.php">MI CUENTA</a>
 
 					</li>
 
@@ -443,10 +478,38 @@
 				<div class="btn-group">
 					<li class="nav-item">
 
-						<a class="nav-link text-light font-weight-bold px-3" href="/portada_n/salir.php">LOG OUT</a>
+						<a class="nav-link font-weight-bold px-3" href="/portada_n/salir.php">LOG OUT</a>
 
 					</li>
 				</div>
+
+					<div align="center" style="border: 2px solid grey; border-radius: 10px" class="btn-group">
+
+					<li class="nav-item">
+
+					<a class="nav-link font-weight-bold px-3" href="/donaciones/donaciones.php">CUOTA DE PARTICIPACIÓN<br><span style="font-size: 12px; ">-Ayúdanos a crecer-</span></a>
+
+					</li>
+
+				</div>
+
+				<div style="padding-top: 1%;">
+				<table>	
+					<tr>
+						<td>
+							<div><img width="20" height="10" src="/img/usaa.png"></div>
+					
+							<div style="padding-top: 20%"><img width="20" height="10" src="/img/bandera.png"></div> 
+					
+							<div  style="padding-top: 20%"><img width="20" height="10" src="/img/israaael.png"></div>
+						</td>
+					</tr>
+				<table>
+				</div>
+					
+
+
+
 
 				</ul>
 
@@ -463,7 +526,7 @@
    		
    		?>
 
-<nav class="navbar navbar-expand-md navbar-light bg-dark fixed-top">
+<nav style="background-color: white"  class="navbar navbar-expand-md navbar-light fixed-top">
 
 					<a class="navbar-brand"><img src="../img/ciudadanoslogo.png"></a>
 						<button type="button" class="navbar-toggler bg-light" data-toggle="collapse" data-target="#nav">
@@ -530,6 +593,18 @@
 
 					</li>
 				</div>
+
+
+				<div align="center" style="border: 2px solid grey; border-radius: 10px" class="btn-group">
+
+					<li class="nav-item">
+
+					<a class="nav-link font-weight-bold px-3" href="/donaciones/donaciones.php">CUOTA DE PARTICIPACIÓN<br><span style="font-size: 12px; ">-Ayúdanos a crecer-</span></a>
+
+					</li>
+
+				</div>
+
 
 				</ul>
 
@@ -546,7 +621,7 @@
    		?>
 
 
-<nav class="navbar navbar-expand-md navbar-light bg-dark fixed-top">
+<nav style="background-color: white"  class="navbar navbar-expand-md navbar-light fixed-top">
 
 					<a class="navbar-brand"><img src="../img/ciudadanoslogo.png"></a>
 						<button type="button" class="navbar-toggler bg-light" data-toggle="collapse" data-target="#nav">
@@ -629,6 +704,18 @@
 					</li>
 				</div>
 
+				<div align="center" style="border: 2px solid grey; border-radius: 10px" class="btn-group">
+
+					<li class="nav-item">
+
+					<a class="nav-link font-weight-bold px-3" href="/donaciones/donaciones.php">CUOTA DE PARTICIPACIÓN<br><span style="font-size: 12px; ">-Ayúdanos a crecer-</span></a>
+
+					</li>
+
+				</div>
+
+
+
 				</ul>
 
 					</div>
@@ -644,7 +731,7 @@
    		?>
 
 
-<nav class="navbar navbar-expand-md navbar-light bg-dark fixed-top">
+<nav style="background-color: white"  class="navbar navbar-expand-md navbar-light fixed-top">
 
 					<a class="navbar-brand"><img src="../img/ciudadanoslogo.png"></a>
 						<button type="button" class="navbar-toggler bg-light" data-toggle="collapse" data-target="#nav">
@@ -703,6 +790,17 @@
 						<a class="nav-link text-light font-weight-bold px-3" href="/portada_n/salir.php">LOG OUT</a>
 
 					</li>
+				</div>
+
+
+				<div align="center" style="border: 2px solid grey; border-radius: 10px" class="btn-group">
+
+					<li class="nav-item">
+
+					<a class="nav-link font-weight-bold px-3" href="/donaciones/donaciones.php">CUOTA DE PARTICIPACIÓN<br><span style="font-size: 12px; ">-Ayúdanos a crecer-</span></a>
+
+					</li>
+
 				</div>
 
 				</ul>
@@ -721,7 +819,7 @@
    		?>
 
 
-<nav class="navbar navbar-expand-md navbar-light bg-dark fixed-top">
+<nav style="background-color: white"  class="navbar navbar-expand-md navbar-light fixed-top">
 
 					<a class="navbar-brand"><img src="../img/ciudadanoslogo.png"></a>
 						<button type="button" class="navbar-toggler bg-light" data-toggle="collapse" data-target="#nav">
@@ -787,6 +885,17 @@
 
 					</li>
 				</div>
+
+
+				<div align="center" style="border: 2px solid grey; border-radius: 10px" class="btn-group">
+
+					<li class="nav-item">
+
+					<a class="nav-link font-weight-bold px-3" href="/donaciones/donaciones.php">CUOTA DE PARTICIPACIÓN<br><span style="font-size: 12px; ">-Ayúdanos a crecer-</span></a>
+
+					</li>
+
+				</div>				
 
 				</ul>
 
