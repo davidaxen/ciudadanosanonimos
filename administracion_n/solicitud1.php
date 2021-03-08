@@ -67,8 +67,9 @@ function myFunction(valor) {
 <form name="form1" method="post" action="registro1.php">
   <input type="hidden" name="idpr" value="<?php echo $idpr ?>">
   <div class='fadeIn first'>
+     <div><img src="../img/ciudadanoslogo.png"></div>
     <h3 style="text-align: center;color:#000">SOLICITUD DE PARTICIPACI&Oacute;N EN CIUDADANOS ANONIMOS</h3>
-  </div>
+     </div>
 
   <input placeholder="Nombre" style="text-align:left;" class="fadeIn second" tabindex="2" name="nombreemp" id="nombre" type="text" required/>
 

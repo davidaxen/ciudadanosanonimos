@@ -368,8 +368,11 @@ for ($i=1; $i <= $row; $i++) {
 <?php
 }else{
 ?>
+<div class='wrapper fadeInDown' style="border-radius:10px; background-color: transparent; text-align: center; min-height: 0%; max-width: 650px; margin:auto;">
+	<div id='formContent' >
 <div style="font-size: 15px; text-align: center;">GRACIAS POR RESPONDER A TODAS LAS PREGUNTAS</div>
-<a href="/inicio1.php" target="_parent" style="text-align: center;">Volver al inicio</a>
+</div>
+</div>
 <?php
 } ?>
 

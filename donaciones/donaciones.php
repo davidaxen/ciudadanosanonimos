@@ -40,7 +40,7 @@
 <div style="background-color: white; border-radius: 10px; padding-top: 15px; max-width: 450px; margin:auto; " align="center" class="wrapper fadeInDown">
   <div   class="formContent">
     <div id="smart-button-container">
-
+        <div><img src="../img/ciudadanoslogo.png"></div>
           <p><strong>CUOTA DE SERVICIO</strong></p>
 
           <select id="item-options"><option value="cuota" price="1">cuota - 1 USD</option></select>

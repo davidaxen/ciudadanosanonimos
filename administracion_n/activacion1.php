@@ -57,16 +57,12 @@ if ($idpr!=null){;
 <body class='html' style='background-image:url(../img/iconos/portada_ca.jpg);
   background-repeat: no-repeat;
   background-size: cover;'>
-<div class='cuadro'>
-<div class='hijo' style='background-color:#f5f5f5'>
-
 
  <div style="max-width: 650px; margin-left: 28%; border-radius: 25px;" class='fadeInDown'>
    <div class='formContent' style='background-color:#f5f5f5; border-radius: 9px;'>
       <img src='../img/logo-ciud-anonimos.png' width='250px'>
       <h3 style="text-align: center;color:#000">VALIDACION DE ALTA EN CIUDADANOS ANONIMOS</h3>
-    </div>
-  </div>
+   
     <h4 style="text-align: center;color:#000">
 <?php    
 
@@ -108,8 +104,8 @@ echo 'Hemos detectado un problema con la validaci&oacute;n vuelva a probar el en
     </h4>
 
 
-</div>
-</div>
+ </div>
+ </div>
 
 
 <?php 
