@@ -318,7 +318,7 @@ $href="http://control.ciudadanosanonimos.com/administracion_n/activacion1.php?".
         </body>
         </html>";     
 
-        var_dump($message);
+        //var_dump($message);
          
     
 

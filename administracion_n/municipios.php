@@ -1,5 +1,16 @@
+<?php 
+if (isset($_COOKIE['lang']) && $_COOKIE['lang']!='') {
+    $idioma=strtolower($_COOKIE['lang']);
+  }else{
+    $idioma='es';
+  }
+
+  include($_SERVER['DOCUMENT_ROOT']."/lang/$idioma.php");
+
+   ?>
+
 <select class="fadeIn second" name="ciudad" id="obj_municipio" onchange="mostrarCodigosPostales()">
-<option value="">Seleccionar...</option>
+<option value=""><?php echo $SELECCIONAR ?></option>
 <?php 
 require('bbdd.php');
 $sql2="SELECT * FROM ciudades WHERE idpais='".$_POST['idprov']."' order by ciudad asc"; 

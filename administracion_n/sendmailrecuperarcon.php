@@ -9,7 +9,6 @@
 		$result->execute();
 		$resultado=$result->fetch();
 
-
 		$pass=$resultado['password'];
 		$output=FALSE;
 		$key=hash('sha256', SECRET_KEY);
@@ -17,7 +16,7 @@
 		$output=openssl_decrypt(base64_decode($pass), METHOD, $key, 0, $iv);
 		$passdecrypted=$output;
 
-		$emailemp=$resultado['email'];
+		$emailemp=$resultado['user'];
 		$nombreemp=$resultado['nombreemp'];
 		$nifemp=$resultado['nifemp'];
 		$codvalidarinc=$resultado['codvalidar'];
@@ -65,29 +64,21 @@
 
 
 		    $headers = 'From: CIUDADANOS ANONIMOS EN ACCION - <info@ciudadanosanonimos.com>' . $eol;
-			if ($emailadmin2!=""){;   
-			    $headers .= 'Cc: '.$emailadmin2  . $eol;
-			};
-
 		   $headers .= 'Bcc: ciudadanosanonimos@yahoo.com'  . $eol;
 
 
 
 		    $headers .= "Content-Type: text/html; charset=\"iso-8859-1\"" . $eol;
 		    $headers .= "Content-Transfer-Encoding: 8bit" . $eol . $eol;
-		   
-		    
-
+	
 		     if (mail($mailto, $subject, $message, $headers)) {
-		        header("/index.php?msg=Te hemos enviado un correo con la contraseña");
-		        die();
+		        header("location:/index.php?msg=Te hemos enviado un correo con la contraseña");
+		        
 		        
 		      } else {
 		        header("location:javascript://history.go(-1)");
 		      }
 
-		      header("/index.php?msg=Te hemos enviado un correo con la contraseña");
-		      die();
 
 				
 			}else{

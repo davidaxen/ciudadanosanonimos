@@ -11,6 +11,14 @@ $resultado=mysqli_fetch_array($result);*/
 $nombre=$resultado['nombre'];
 $logo=$resultado['logo'];
 
+if (isset($_COOKIE['lang']) && $_COOKIE['lang']!='') {
+    $idioma=strtolower($_COOKIE['lang']);
+  }else{
+    $idioma='es';
+  }
+
+  include($_SERVER['DOCUMENT_ROOT']."/lang/$idioma.php");
+
 ?>
 
 
@@ -67,19 +75,20 @@ function myFunction(valor) {
 <form name="form1" method="post" action="registro1.php">
   <input type="hidden" name="idpr" value="<?php echo $idpr ?>">
   <div class='fadeIn first'>
-    <h3 style="text-align: center;color:#000">SOLICITUD DE PARTICIPACI&Oacute;N EN CIUDADANOS ANONIMOS</h3>
-  </div>
+     <div><img src="../img/ciudadanoslogo.png"></div>
+    <h3 style="text-align: center;color:#000"><?php echo $TITULOREG; ?></h3>
+     </div>
 
-  <input placeholder="Nombre" style="text-align:left;" class="fadeIn second" tabindex="2" name="nombreemp" id="nombre" type="text" required/>
+  <input placeholder="<?php echo $INPUTNAME; ?>" style="text-align:left;" class="fadeIn second" tabindex="2" name="nombreemp" id="nombre" type="text" required/>
 
-  <input placeholder="Correo Electrónico" style="text-align:left;" class="fadeIn second" tabindex="3" name="emailemp" id="emailemp" type="text" required onblur="emailc()"/>
-  <input class="fadeIn second" style="text-align:left;" placeholder="Teléfono" tabindex="6" name="telcontacto" id="telcontacto" required type="text"/>
+  <input placeholder="<?php echo $INPUTCORREO; ?>" style="text-align:left;" class="fadeIn second" tabindex="3" name="emailemp" id="emailemp" type="text" required onblur="emailc()"/>
+  <input class="fadeIn second" style="text-align:left;" placeholder="<?php echo $INPUTTELF; ?>" tabindex="6" name="telcontacto" id="telcontacto" required type="text"/>
   <br>
 
-    <input placeholder="Contraseña" style="text-align:left; width: 79%;" class="fadeIn third" type="password" tabindex="4" id="psw" name="psw" pattern="(?=.\d)(?=.[a-z])(?=.*[A-Z]).{8,}" title="Al menos una minuscula, una mayuscula, un numero y minimo 8 caracteres" required>
+    <input placeholder="<?php echo $INPUTPASS; ?>" style="text-align:left; width: 79%;" class="fadeIn third" type="password" tabindex="4" id="psw" name="psw" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="<?php echo $TITLEPASS; ?>" required>
     <img align="center" src='../img/iconos/pass.png' width='32px' onclick="myFunction('psw')">
     <br>
-    <input placeholder="Repetir Contraseña" style="text-align:left; width: 79%;" class="fadeIn third" tabindex="5" name="psw2" id="psw2" required type="password" required  onblur="contrase()"  />
+    <input placeholder="<?php echo $INPUTREPPASS; ?>" style="text-align:left; width: 79%;" class="fadeIn third" tabindex="5" name="psw2" id="psw2" required type="password" required  onblur="contrase()"  />
     <img src='../img/iconos/pass.png' width='32px' onclick="myFunction('psw2')">
     <br><br>
 
@@ -93,27 +102,38 @@ function myFunction(valor) {
 </div>-->
 
 
-  <b>Pais</b>
+  <b><?php echo $PAISLABEL; ?></b>
   <?php include('provincias.php'); ?>
   <br>
   <br>
-  <b>Ciudad</b>
+  <b><?php echo $CIUDADLABEL; ?></b>
   <div id="listamunicipios">
        <?php include('municipios.php'); ?>
     </div>
     <br>
-    <b>Codigo postal</b>
+<!--    <b>Codigo postal</b>
   <div id="codigospostales">
-       <?php include('codigospostales.php'); ?>
+       <?php //include('codigospostales.php'); ?>
     </div>
     <br>
-
+-->
     <div class="formFooter" >
-        <a class="underlineHover" href="https://www.ciudadanosanonimos.com/politica-y-aviso">Politica de Privacidad y Aviso Legal</a>
+      <?php 
+        if ($idioma != "es") {
+          ?>
+          <a class="underlineHover" href="https://www.ciudadanosanonimos.com/<?php echo $idioma; ?>/politica-y-aviso"><?php echo $POLITICADEPRIV; ?></a>
+          <?php
+        }else{
+          ?>
+          <a class="underlineHover" href="https://www.ciudadanosanonimos.com/politica-y-aviso"><?php echo $POLITICADEPRIV; ?></a>
+          <?php
+        }
+       ?>
+        
          <input name="politica" id="politica" required type="checkbox"/>
     </div>
 <br>
-    <input type='submit' class="fadeIn fourth" type='submit' value='Enviar'>
+    <input type='submit' class="fadeIn fourth" type='submit' value='<?php echo $ENVIAR; ?>'>
 </form>
 
 </div>
@@ -129,7 +149,7 @@ function myFunction(valor) {
       var valormail=1;
     //alert (valormail);
     } else {
-    alert ("La \"Direccion de Email\" no es correcta");
+    alert (<?php echo $ALERTEMAILERROR; ?>);
     document.form1.emailemp.value=null;
     document.form1.telcontacto.focus();
     }
@@ -144,7 +164,7 @@ function myFunction(valor) {
   if(pasNew1.value==pasNew2.value){
       var valorpass=1;
   }else{
-      alert("La copia de la password no coincide");
+      alert(<?php echo $ALERTCOPIAERROR; ?>);
         document.form1.psw2.value=null;
       document.form1.nombremp.focus();
   }
@@ -153,7 +173,7 @@ function myFunction(valor) {
      function EsTelefonoMovil() {
     var telReg=/(^([0-9]{9,9})|^)$/;
     if (!(telReg.test(form1.telcontacto.value))) {
-    alert('El telefono no es valido');
+    alert(<?php echo $ALERTETELEFONOERROR; ?>);
     document.form1.telcontacto.value=null;
     document.form1.nombremp.focus();
    document.form1.telcontacto.focus();
@@ -192,7 +212,7 @@ myInput.onkeyup = function() {
     /*letter.classList.remove("invalid");
     letter.classList.add("valid");*/
   } else {
-    myInput.setCustomValidity('Tiene que haber alguna mínuscula');
+    myInput.setCustomValidity(<?php echo $ALERTEMINUSERROR; ?>);
     /*letter.classList.remove("valid");
     letter.classList.add("invalid");*/
   }
@@ -206,7 +226,7 @@ myInput.onkeyup = function() {
     /*capital.classList.remove("invalid");
     capital.classList.add("valid");*/
   } else {
-    myInput.setCustomValidity('Tiene que haber alguna mayúscula');
+    myInput.setCustomValidity(<?php echo $ALERTEMAYUSERROR; ?>);
     /*capital.classList.remove("valid");
     capital.classList.add("invalid");*/
   }
@@ -219,7 +239,7 @@ myInput.onkeyup = function() {
     /*number.classList.remove("invalid");
     number.classList.add("valid");*/
   } else {
-    myInput.setCustomValidity('Tiene que haber mínimo un numero');
+    myInput.setCustomValidity(<?php echo $ALERTENUMEROERROR; ?>);
     /*number.classList.remove("valid");
     number.classList.add("invalid");*/
   }
@@ -230,7 +250,7 @@ myInput.onkeyup = function() {
     /*length.classList.remove("invalid");
     length.classList.add("valid");*/
   } else {
-    myInput.setCustomValidity('Mínimo 8 caracteres');
+    myInput.setCustomValidity(<?php echo $ALERTEMINCARACERROR; ?>);
     /*length.classList.remove("valid");
     length.classList.add("invalid");*/
   }

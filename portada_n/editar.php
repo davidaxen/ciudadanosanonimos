@@ -38,7 +38,7 @@
 			$sqlUpdateNombre = "UPDATE usuarios SET nombreemp = :nombre WHERE id = :id";
 			$resultUpdateNombre = $conn->prepare($sqlUpdateNombre);
 			$resultUpdateNombre->bindParam(':nombre', $nombre);
-			$resultUpdateNombre->bindParam(':id', $resultadoUser);
+			$resultUpdateNombre->bindParam(':id', $resultadoUser['id']);
 			$resultUpdateNombre->execute();
 
 			$cambiado = true;
