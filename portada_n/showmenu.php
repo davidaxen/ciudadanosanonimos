@@ -274,6 +274,14 @@
 				</div>
 
 
+				<div class="btn-group">
+					<li class="nav-item">
+
+					<div><img src="/img/usaa.png"></div>
+
+					</li>
+				</div>
+
 
 				</ul>
 
@@ -363,7 +371,6 @@
 					</li>
 
 				</div>
-
 
 				</ul>
 
@@ -469,7 +476,6 @@
 
 				</div>
 
-
 				</ul>
 
 					</div>
@@ -490,7 +496,10 @@
 						<button type="button" class="navbar-toggler bg-light" data-toggle="collapse" data-target="#nav">
 						<span class="navbar-toggler-icon"></span>
 						</button>
+				
 
+
+				
 					<div class="collapse navbar-collapse justify-content-between" id="nav">
 						<ul class="navbar-nav">
 							<div class="btn-group">
@@ -542,7 +551,26 @@
 						<a class="nav-link font-weight-bold px-3" href="/portada_n/salir.php">LOG OUT</a>
 
 					</li>
+
 				</div>
+
+				<div style="padding-top: 1%;">
+				<table>	
+					<tr>
+						<td>
+							<div><img width="20" height="10" src="/img/usaa.png"></div>
+					
+							<div style="padding-top: 20%"><img width="20" height="10" src="/img/bandera.png"></div> 
+					
+							<div  style="padding-top: 20%"><img width="20" height="10" src="/img/israaael.png"></div>
+						</td>
+					</tr>
+				<table>
+				</div>
+					
+
+
+
 
 					<div align="center" style="border: 2px solid grey; border-radius: 10px" class="btn-group">
 
@@ -648,7 +676,6 @@
 					</li>
 
 				</div>
-
 
 				</ul>
 
