@@ -67,6 +67,9 @@ if (in_array($extension, $allowedExts)) {
         $rutavideo= $_FILES["video"]["name"];
       	$sqlvideo= "INSERT INTO videos (url, idmensaje) VALUES ('videos/$idn/$rutavideo', '$idn')";
         $resultvideo=$conn->exec($sqlvideo);
+
+        $sqlvideosupdate="UPDATE mensajes SET video=1 WHERE id = $idn";
+        $resultvideosupdate=$conn->exec($sqlvideosupdate);
       }
 
     }
@@ -89,8 +92,8 @@ if (in_array($extensionPDF, $allowedExtsPDF)) {
           $sqlpdf= "INSERT INTO pdfs (url, idmensaje) VALUES ('pdfs/$idn/$rutapdf', '$idn')";
           $resultpdf=$conn->exec($sqlpdf);
 
-          /*$sqlmarcadeagua="UPDATE mensajes SET video=1 WHERE id = $idn";
-          $resultmarcadeagua=$conn->exec($sqlmarcadeagua);*/
+          $sqlmarcadeagua="UPDATE mensajes SET pdf=1 WHERE id = $idn";
+          $resultmarcadeagua=$conn->exec($sqlmarcadeagua);
       }
     }
 }

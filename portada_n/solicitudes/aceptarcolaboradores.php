@@ -32,15 +32,13 @@
  <head>
 
 <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Convergence" />
-<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+  <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+  <script src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
+
 <link rel="stylesheet" type="text/css" href="../cabecera.css">
 <link rel="stylesheet" type="text/css" href="../ultimasincidencias_t.css">
 <link rel="stylesheet" type="text/css" href="../nav.js">
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
 <style type="text/css" media="print">
 .nover {display:none}
 </style>
@@ -72,7 +70,8 @@
 	</table>
 	</nav>
 
-	<div class="container fadeInDown" style="background-color: white; border-radius: 10px; margin-top: 220px">
+	<div class='wrapper fadeInDown' style="border-radius:10px; background-color: transparent; text-align: center; min-height: 0%; max-width: 850px; margin:auto;">
+	<div id='formContent' style="max-width: 900px;">
 		<div style="text-align: center;"><h2>Lista de solicitudes</h2></div>
 		<?php 
 			if (count($resultadosolicitudes) > 0 )  {
@@ -81,10 +80,11 @@
 		
 			<table align="center" style="margin-top: 20px">
 				<tr>
-					<th style="width: 200px; text-align: center; height: 30px">Nombre</th>
-					<th style="width: 200px; text-align: center;">Pais</th>
-					<th style="width: 200px; text-align: center;">Localidad</th>
-					<th style="width: 200px; text-align: center;">Telefono</th>
+					<th style="text-align: center; height: 30px">Nombre</th>
+					<th style="text-align: center;">Pais</th>
+					<th style="text-align: center;">Localidad</th>
+					<th style="text-align: center;">Telefono</th>
+					<th style="text-align: center;"></th>
 					<th style="text-align: center;"></th>
 				</tr>
 				<?php
@@ -110,8 +110,7 @@
 							<td style="text-align: center;"><?php echo $resultadopais['pais']; ?></td>
 							<td style="text-align: center;"><?php echo $resultadociudad['ciudad']; ?></td>
 							<td style="text-align: center;"><?php echo $resultadouser['telcontacto']; ?></td>
-							<td style="text-align: center;"><input type="submit" name="aceptarbtn" value="Aceptar"></td>
-							<td style="text-align: center;"><input style="background-color: #F08080" type="submit" name="denegarbtn" value="Denegar"></td>
+							<td style="text-align: center;"><div align="center"><button class="btn btn-primary" type="submit" name="aceptarbtn" value="Aceptar">Aceptar</button> <button class="btn btn-danger" style="background-color: #F08080; " type="submit" name="denegarbtn" value="Denegar">Denegar</button></td>
 						</tr>
 					</form>
 					<?php
@@ -134,6 +133,7 @@
 
 		 ?>
 	</div>
+</div>
 
 </body>
 

@@ -1,7 +1,6 @@
 <?php
 include('bbdd.php');
 //error_reporting(0);
-$ide = 21;
 
 $sqluser = "SELECT * FROM usuarios WHERE user = :mail";
 $resultuser=$conn->prepare($sqluser);
@@ -41,6 +40,7 @@ function refrescar()
 <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
 <link rel="stylesheet" type="text/css" href="boostrapUlt.css">
+<link rel="stylesheet" type="text/css" href="ultimasincidencias_t.css">
 <link rel="stylesheet" type="text/css" href="nav.js">
 <meta charset="utf-8">
 <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
@@ -65,7 +65,7 @@ function refrescar()
 <meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
 <meta http-equiv="content-type" content="application/xhtml+xml; charset=ISO-8859-1">
 <!--<body onload="setTimeout('refrescar()', 5000);">-->
-<body   style="background-image:url(../img/iconos/portada_ca.jpg)"; >
+<body  style="background-image:url(../img/iconos/portada_ca.jpg)"; >
 
 
 		<nav class="[ navbar navbar-fixed-top ][ navbar-bootsnipp animate ]" role="navigation">
@@ -89,11 +89,28 @@ function refrescar()
 					</tr>
 				</table>
 				</nav>
-<br> <br> <br> <br> <br> <br> <br>
-<div class="container fadeInDown" style="background-color: white; border-radius: 10px; padding-bottom: 20px">
-<table style="width:100%;">
 
-	<h2 style="text-align: center;">Tus preguntas realizadas</h2>
+<div style=" display: flex; justify-content: center;" class='wrapper fadeInDown' >
+	<div id='formContent' style="background-color: white">	
+		<table style=" display: flex; justify-content: center;">
+			<tr>
+				<td colspan="2" style="text-align: center;"></td>
+			</tr>
+
+				<tr><td colspan="2">&nbsp;</td></tr>
+				<tr><td colspan="2">&nbsp;</td></tr>
+
+			<tr>
+				<td colspan="2" style="width: 70%">
+					<p style=" 	text-align: center;
+ 								font-family: Convergence;
+ 								font-size: 20px;
+ 								font-style: normal;
+ 								font-variant: normal;
+ 								font-weight: 400;
+ 								line-height: 20px; ">Tus preguntas realizadas:</p>
+				</td>
+			</tr>
 
 <?php
 /*for ($j=0;$j<$row1;$j++){;
@@ -101,13 +118,14 @@ mysqli_data_seek($result1,$j);
 $resultados1 = mysqli_fetch_array ($result1);*/
 $j=0;
 foreach ($result1 as $row1mos) {
-$idempleado=$row1mos['idempleado'];
-/*$idpiscina=$row1mos['idpiscina'];
+/*$idempleado=$row1mos['idempleado'];
+$idpiscina=$row1mos['idpiscina'];
 $dia=$row1mos['dia'];
 $hora=$row1mos['hora'];
 $tiempo=$row1mos['tiempo'];
 $lat=$row1mos['lat'];
 $lon=$row1mos['lon'];*/
+$idmensaje=$row1mos['id'];
 $texto=$row1mos['texto'];
 
 
@@ -152,6 +170,9 @@ $f=fmod($j,2);
 <!--<td><?php  echo strtoupper($dia);?></td>
 <td><?php  echo strtoupper($hora);?></td>-->
 <td><?php  echo strtoupper($texto);?></td>
+<td style="text-align: right; padding-left: 10px">
+	<img src="./grafico.png" onclick="openmodal(<?php echo $idmensaje;?>);" style="height: 30px; width: 30px;" />
+</td>
 <!--<td><a href="../servicios_n/trabajo/ipuntcont.php?idclientesinc=<?php  echo $idempleado;?>&descripcion=<?php  echo $texto;?>" target="_parent"><img src="../img/asignacion.png" width="20px"></a></td>-->
 
 </tr>
@@ -160,4 +181,90 @@ $j=$j+1;
 };?>
 </table>
 </div>
+</div>
+
+<div id="myModal" class="modal">
+		<div class="modal-content">
+		</div>
+	</div>
+
+	<script>
+	// Get the modal
+	var modal = document.getElementById("myModal");
+
+	// Get the button that opens the modal
+	var btn = document.getElementById("myBtn");
+
+	// Get the <span> element that closes the modal
+	var span = document.getElementsByClassName("close")[0];
+
+
+	function openmodal(id) {
+		 modal.style.display = "block";
+
+		 $.ajax({
+          	type : 'post',
+			url : 'ajaxmodal.php', // in here you should put your query
+			data :  'id='+id, // here you pass your id via ajax .
+			success : function(html){
+				// now you can show output in your modal
+				$('.modal-content').show().html(html);
+			}
+		});
+	}
+
+	// When the user clicks on <span> (x), close the modal
+	span.onclick = function() {
+	  modal.style.display = "none";
+	}
+
+	// When the user clicks anywhere outside of the modal, close it
+	window.onclick = function(event) {
+	  if (event.target == modal) {
+	    modal.style.display = "none";
+	  }
+	}
+	</script>
+
+	<style>
+		.modal {
+		  display: none; /* Hidden by default */
+		  position: fixed; /* Stay in place */
+		  z-index: 2; /* Sit on top */
+		  padding-top: 100px; /* Location of the box */
+		  left: 0;
+		  top: 0;
+		  width: 100%; /* Full width */
+		  height: 100%; /* Full height */
+		  overflow: auto; /* Enable scroll if needed */
+		  background-color: rgb(0,0,0); /* Fallback color */
+		  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+		}
+
+		/* Modal Content */
+		.modal-content {
+		  background-color: #fefefe;
+		  margin: auto;
+		  top: 30%;
+		  padding: 20px;
+		  border: 1px solid #888;
+		  width: 80%;
+		}
+
+		/* The Close Button */
+		.close {
+		  color: #aaaaaa;
+		  float: right;
+		  font-size: 28px;
+		  font-weight: bold;
+		}
+
+		.close:hover,
+		.close:focus {
+		  color: #000;
+		  text-decoration: none;
+		  cursor: pointer;
+		}
+
+	</style>
 </body>

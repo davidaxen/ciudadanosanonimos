@@ -99,7 +99,7 @@ $result->execute();*/
  								font-style: normal;
  								font-variant: normal;
  								font-weight: 400;
- 								line-height: 20px; ">TUS ULTIMAS RESPUESTAS:</p>
+ 								line-height: 20px; "><?php echo $TITULOULTINCIDENCIAS; ?></p>
 				</td>
 			</tr>
 

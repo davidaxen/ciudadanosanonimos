@@ -37,7 +37,6 @@ include('bbdd.php');
 
 
 
-
 </head>
 
 
@@ -74,16 +73,26 @@ include('bbdd.php');
 		<tr><td>&nbsp;</td></tr>
 		<tr>
 		<td>
-			<form method="POST" action="introincidencias.php" onsubmit="return validateForm()">
+
+			<form method="POST" action="/portada_n/introincidencias.php" onsubmit="return validateForm()">
 				<div>
 					<div>
 						<textarea style=" resize: none; height: 150px; border-radius: 10px; " class="form-control" id="informacion" rows="1" cols="50" name="incidencia" placeholder="Incidencias, dudas, comentarios..."></textarea>
+
 					</div>
 				</div>
 
 				<div style="text-align: center; margin-top: 20px;">
 					<input type="submit" class="envio" value="enviar" name="enviar">
 				</div>
+				<?php 
+					if (isset($_REQUEST['msg'])) {
+						
+					?>
+					<strong><p style="text-align: center; font-family: Palatino, 'Palatino Linotype', serif; font-size: 18px;">Gracias por tu aportacion... Trabajaremos para seguir mejorando.</p></strong>
+					<?php 
+					}
+				 ?>
 			</form>
 
 		</td>

@@ -1,4 +1,4 @@
-<select class="fadeIn second" name="ciudad" id="obj_municipio">
+<select class="fadeIn second" name="localidad" id="obj_municipio">
 <option value="">Seleccionar...</option>
 <?php 
 require('bbdd.php');

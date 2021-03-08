@@ -9,17 +9,25 @@ if ($ide!=null){
 	$resultadouser=$resultuser->fetch();
 	if ($resultadouser['tusuario'] == 1) {
 	
-	$sql1 = "SELECT * FROM ciudades WHERE idciudad = :idciudad";
-    $result1=$conn->prepare($sql1);
-    $result1->bindParam(':idciudad', $resultadouser['localidad']);
-    $result1->execute();
-    $resultado1 = $result1->fetch();
+	if ($resultadouser['localidad'] != 0) {
+		$sql1 = "SELECT * FROM ciudades WHERE idciudad = :idciudad";
+	    $result1=$conn->prepare($sql1);
+	    $result1->bindParam(':idciudad', $resultadouser['localidad']);
+	    $result1->execute();
+	    $resultado1 = $result1->fetch();
+	}else{
+		$resultado1['ciudad'] = "";
+	}
 
-	$sql2 = "SELECT * FROM paises WHERE idpais = :idpais";
-    $result2=$conn->prepare($sql2);
-    $result2->bindParam(':idpais', $resultadouser['pais']);
-    $result2->execute();
-    $resultado2 = $result2->fetch();
+	if ($resultadouser['pais'] != 0) {
+		$sql2 = "SELECT * FROM paises WHERE idpais = :idpais";
+		$result2=$conn->prepare($sql2);
+		$result2->bindParam(':idpais', $resultadouser['pais']);
+		$result2->execute();
+		$resultado2 = $result2->fetch();
+	}else{
+		$resultado2['idpais'] = "0";
+	}
 
 ?>
 <head>

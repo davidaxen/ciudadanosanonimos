@@ -1,6 +1,5 @@
 <?php 
 	include('bbdd.php');
-
 	$typeaccept = $_REQUEST['typeaccept'];
 	$idsoli = $_REQUEST['idsoli'];
 	if ($idsoli != null) {
