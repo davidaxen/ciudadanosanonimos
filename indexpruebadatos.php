@@ -4,18 +4,36 @@ include('bbdd.php');
 
 if ($com=='comprobacion'){;
 
-
-
+$sqltusuario = "SELECT * FROM usuarios WHERE user = :gente";
+$resultusuario=$conn->prepare($sqltusuario);
+$resultusuario->bindParam(':gente', $_COOKIE['gente']);
+$resultusuario->execute();
+$resultadousuario = $resultusuario->fetch();
 
 $sql56="select * from proyectos where idproyectos='".$idpr."'";
 //echo $sql56;
 $result56=$conn->query($sql56);
 $resultados56=$result56->fetch();
 
+if (isset($_COOKIE['lang']) && $_COOKIE['lang']!='') {
+	$idiomacookie=strtolower($_COOKIE['lang']);
+}else{
+	$idiomacookie='es';
+}
+
+$idioma = $resultadousuario['lang'];
+if ($idiomacookie != $idioma) {
+	include($_SERVER['DOCUMENT_ROOT']."/lang/$idiomacookie.php");
+	$sqlupdatelang = "UPDATE usuarios SET lang = '".$idiomacookie."' WHERE id = ".$resultadousuario['id'].";";
+	$conn->exec($sqlupdatelang);
+}else{
+	include($_SERVER['DOCUMENT_ROOT']."/lang/$idioma.php");
+}
+
 /*$result56=mysqli_query ($conn, $sql56) or die ("Invalid result sql56");
 $resultados56 = mysqli_fetch_array ($result56);*/
-$rgpdt=$resultados56['rgpd'];
-$avisolegalt=$resultados56['avisolegal'];
+//$rgpdt=$resultados56['rgpd'];
+//$avisolegalt=$resultados56['avisolegal'];
 
  ?>
 
@@ -52,10 +70,10 @@ $avisolegalt=$resultados56['avisolegal'];
 <?php //include ('estilo/tab.htm');?>
 
 <?php 
-$sql="select * from portadapag,paginapor where paginapor.idpag=portadapag.idpag and idempresa='".$ide."' and paginapor.idpag in ('1','2') order by idportada asc";
-//echo $sql;
+/*$sql="select * from portadapag,paginapor where paginapor.idpag=portadapag.idpag and idempresa='".$ide."' and paginapor.idpag in ('1','2') order by idportada asc";
+echo $sql;
 $result=$conn->query($sql56);
-$row=count($result->fetchAll());
+$row=count($result->fetchAll());*/
 
 /*$result=mysqli_query ($conn, $sql) or die ("Invalid result idempresas");
 $row=mysqli_num_rows($result);*/
@@ -73,25 +91,25 @@ $row=mysqli_num_rows($result);*/
 					<tr>
 						<td>
 							 <div align="center"><textarea style="border-radius: 10px" name="rgpdt" disabled cols="80" rows="15">
-							<?php echo $rgpdt;?></textarea></div>
+							<?php echo $RGPD;?></textarea></div>
 						</td>
 					<tr>
 						<td>
-							<div align="center"><input type='checkbox' name='rgpd' value="1">Aceptaci&oacute;n de RGPD</div>
+							<div align="center"><input type='checkbox' name='rgpd' value="1"><?php echo $CHECKRGPD; ?></div>
 						</td>
 					</tr>
 						<td>
-							<div align="center"><textarea style="border-radius: 10px" name="avisolegalt" disabled cols="80" rows="15"><?php echo $avisolegalt;?></textarea></div>
+							<div align="center"><textarea style="border-radius: 10px" name="avisolegalt" disabled cols="80" rows="15"><?php echo $AVISOLEGAL;?></textarea></div>
 						</td>
 					<tr>
 						<td>
-							<div align="center"><input type='checkbox' name="avisolegal" value="1">Aceptaci&oacute;n de Aviso Legal</div>
+							<div align="center"><input type='checkbox' name="avisolegal" value="1"><?php echo $CHECKAVISOLEGAL; ?></div>
 						</td>
 					</tr>
 					</tr>
 					<tr>	
 						<td colspan="4">
-							<div align="center"><input type="submit" name="enviar"></div>
+							<div align="center"><input type="submit" name="enviar" value="<?php echo $ENVIAR ?>"></div>
 						</td>	
 					</tr>
 			</table>

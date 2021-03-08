@@ -1,8 +1,9 @@
 <?php  
 include('bbdd.php');
 
+$ide = 21;
 if (($ide!=null) or ($validar==0)){;
- include('../portada_n/cabecera2.php');
+ //include('../portada_n/cabecera2.php');
  ?>
 
 
@@ -25,7 +26,7 @@ $result=$conn->exec($sql1);
 
 ?>
 <script type="text/javascript">
-window.location="https://control.ciudadanosanonimos.com/donaciones/donaciones.php";
+window.location="/donaciones/donaciones.php";
 </script>
 
 </div>

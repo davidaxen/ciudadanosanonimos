@@ -14,7 +14,8 @@ $paisuser = $resultadousuario['pais'];
 $localidaduser = $resultadousuario['localidad'];
 $cpuser = $resultadousuario['cp'];
 
-$sql1="SELECT * from mensajes where fechafin>'".$fechac."' or fechafin is null and id not in (SELECT idmensaje FROM respuestamensajes WHERE iduser='".$resultadousuario['id']."') AND pdf = 0 order by id asc";
+$sql1="SELECT * from mensajes where (fechafin>'".$fechac."' or fechafin is null) and id not in (SELECT idmensaje FROM respuestamensajes WHERE iduser='".$resultadousuario['id']."') AND pais in ('0','".$paisuser."') order by id asc";
+//echo $sql1;
 $result1=$conn->query($sql1);
 $result1row=$conn->query($sql1);
 $row=count($result1row->fetchAll());
@@ -122,6 +123,10 @@ $row1=mysqli_num_rows($result1);*/
 <?php
 
 if ($row) {
+?>
+<div class='wrapper fadeInDown' style="border-radius:10px; background-color: transparent; text-align: center; min-height: 0%; max-width: 650px; margin:auto;">
+	<div id='formContent' >
+<?php
 
 
 $i=1;
@@ -142,9 +147,7 @@ if ($row10==0){;
 
 ?>
 
-<div class='wrapper fadeInDown' style="border-radius:10px; background-color: transparent; text-align: center; min-height: 0%; max-width: 650px; margin:auto;">
-	<div id='formContent' >
-<br><br>
+
 
 <form action="../servicios_n/mensaje/introrespuesta.php" method="post" enctype="multipart/form-data">
 
@@ -152,14 +155,14 @@ if ($row10==0){;
 	<input type="hidden" name="id" value="<?php echo $idmensaje;?>">
 	<input type="hidden" name="iduser" value="<?php echo $resultadousuario['id']?>">
 	<div class="mySlides">
-		<div>Hemos recibido un total de:
+		<div><?php echo $CONTEOPREGUNTAS;?>
 			<?php
 				$sqlCount="SELECT COUNT(*) FROM respuestamensajes WHERE idmensaje=$idmensaje";
 				$result=$conn->query($sqlCount);
 				$cantidad=$result->fetch();
 				echo "$cantidad[0]";
 
-			?> respuestas</div>
+			?> <?php echo $RESPUESTAS;?></div>
 		<!--<a href="../servicios_n/mensaje/responder.php?id=<?php echo $idmensaje;?>" target="_parent">-->
 		<div class="numbertext" style="font-size: 20px;"><?php echo "$i/$row"; ?></div>
 
@@ -242,7 +245,7 @@ if ($row10==0){;
 			if($otrosmot=='1'){ ?>
 			<label>
 				<span class="caja">
-				 <b>Otros Motivos</b>
+				 <b><?php echo $OTROSMOTIVOS;?></b>
 				 <br/>
 				 <input type="radio" name="respuesta" value="99" id="radiotext">
 
@@ -282,7 +285,7 @@ if ($row10==0){;
           	$url=$result2->fetch();
           	$urltotal=$url[0];
           	$urlfinal = substr($urltotal, 5);
-          	echo "<a class='pdflink' target='_blank' href='../servicios_n/abrirpdf.php?file=".$urlfinal."'>Ver PDF</a>";
+          	echo "<a class='pdflink' target='_blank' href='../servicios_n/abrir_pdf.php?file=".$urlfinal."'>Ver PDF</a>";
           		?>
 
 	<?php
@@ -310,7 +313,7 @@ if ($row10==0){;
 								  $result1->execute();
 						          $url=$result1->fetch();
 						          echo("../servicios_n/".$url[0]);?>">
-						Tu navegador no sorporta los videos.
+						<?php echo $NAVEGADORVIDEO;?>
 						</video>
 					</div>
 				</td>
@@ -331,13 +334,12 @@ if ($row10==0){;
 	  		}
 	  	?>
   	 			<div align="center" style="padding-bottom: 20px">
-				<button type="submit" class="btn btn-primary" value="enviar" name="enviar">ENVIAR</button>
+				<button type="submit" class="btn btn-primary" value="enviar" name="enviar"><?php echo $ENVIAR;?></button>
 
 				</div>
 
 	</div>
-</div>
-</div>
+
 
 
 </form>
@@ -346,7 +348,6 @@ if ($row10==0){;
 
 $i=$i+1;
 };?>
-
 <!--agregado nuedo SCROLL-->
  <div class="container">
  	<div id="wrap" style="">
@@ -370,7 +371,7 @@ for ($i=1; $i <= $row; $i++) {
 ?>
 <div class='wrapper fadeInDown' style="border-radius:10px; background-color: transparent; text-align: center; min-height: 0%; max-width: 650px; margin:auto;">
 	<div id='formContent' >
-<div style="font-size: 15px; text-align: center;">GRACIAS POR RESPONDER A TODAS LAS PREGUNTAS</div>
+<div style="font-size: 15px; text-align: center;"><?php echo $GRACIASPREGUNTAS; ?></div>
 </div>
 </div>
 <?php
