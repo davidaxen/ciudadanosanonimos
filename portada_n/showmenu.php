@@ -103,28 +103,36 @@
    		?>
 
 
-   		<nav style="padding-left: 10%; background-color: white"  class="navbar navbar-expand-md navbar-light fixed-top">
+   		<nav style="padding-left: 10%; background-color: white;"  class="navbar navbar-expand-md navbar-light fixed-top">
    				
 					<a class="navbar-brand"><img src="../img/ciudadanoslogo.png"></a>
 						<button type="button" class="navbar-toggler bg-light" data-toggle="collapse" data-target="#nav">
 						<span class="navbar-toggler-icon"></span>
 						</button>
 
-					<table> 
-				          <tr>
-				            <td>
-						
+				
+
+
+					<div class="collapse navbar-collapse justify-content-between" id="nav">
+						<ul class="navbar-nav">
+
+
+
+				<div style="padding-top: 1.5%" class="btn-group">
+
+					<li class="btn-group">
+				
 							<div><a class="nav-link font-weight-bold px-3" href="#" onclick="changeLang(1, <?php echo $resultadousuario['id']; ?>); return false;"><img height="10" width="20" src="/img/bandera_esp.png"></a></div>
 						
 								<a class="nav-link font-weight-bold px-3" href="#" onclick="changeLang(2, <?php echo $resultadousuario['id']; ?>); return false;"><img height="10" width="20" src="/img/bandera_usa.png"></a>
 							
 								<a class="nav-link font-weight-bold px-3" href="#" onclick="changeLang(3, <?php echo $resultadousuario['id']; ?>); return false;"><img height="10" width="20" src="/img/bandera_he.png"></a>
-							</td>
-				          </tr>
-				        <table>
+					
+				
+				      </li>
+					
+				</div>
 
-					<div class="collapse navbar-collapse justify-content-between" id="nav">
-						<ul class="navbar-nav">
 					<div class="btn-group">
 
 						<li class="nav-item">
@@ -134,7 +142,6 @@
 						</li>
 					</div>
 
-				
 
 				<div class="btn-group">
 					<li class="nav-item">
@@ -189,7 +196,7 @@
 
 					</div>
 
-					</nav>
+			</nav>
 
 	 <?php 
    		} 
