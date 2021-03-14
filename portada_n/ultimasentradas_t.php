@@ -108,7 +108,7 @@ $row1=mysqli_num_rows($result1);*/
   		<table style="margin-left: 20px; width: 100%">
 		<tr>
 
-			<td style="width: 65%; ">
+			<td style="width: 65%;">
 					<?php
 						include_once("showmenu.php");
 
@@ -126,6 +126,7 @@ if ($row) {
 ?>
 <div class='wrapper fadeInDown' style="border-radius:10px; background-color: transparent; text-align: center; min-height: 0%; max-width: 650px; margin:auto;">
 	<div id='formContent' >
+		
 <?php
 
 
@@ -150,7 +151,6 @@ if ($row10==0){;
 
 
 <form action="../servicios_n/mensaje/introrespuesta.php" method="post" enctype="multipart/form-data">
-
 
 	<input type="hidden" name="id" value="<?php echo $idmensaje;?>">
 	<input type="hidden" name="iduser" value="<?php echo $resultadousuario['id']?>">
