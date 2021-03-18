@@ -110,104 +110,22 @@
 	}
 </style>
 </head>
-<body style="background-image:url(../img/iconos/portada_ca.jpg); padding-top: 14%;";>
+<body style="background-image:url(../img/iconos/portada_ca.jpg); padding-top: 14%;"; id="alturalinea">
 
-  <!-- navbar -->
+<nav style="background-color: transparent;" class="[ navbar navbar-fixed-top ][ navbar-bootsnipp animate ]" role="navigation">
 
-      <nav style="padding-left: 10%; background-color: white;"  class="navbar navbar-expand-md navbar-light fixed-top">
-          
-          <a class="navbar-brand"><img src="<?php echo $LOGOPRIN;?>"></a>
-            <button type="button" class="navbar-toggler bg-light" data-toggle="collapse" data-target="#nav">
-            <span class="navbar-toggler-icon"></span>
-            </button>
+<table style="margin-left: 20px; width: 100%">
+<tr>
 
-        
+<td style="width: 65%; ">
+    <?php
+      include_once("../portada_n/showmenu.php");
 
-
-          <div class="collapse navbar-collapse justify-content-between" id="nav">
-            <ul class="navbar-nav" id="alturalinea">
-
-
-
-        <div class="btn-group">
-
-          <li class="btn-group">
-        
-              <div><a class="nav-link font-weight-bold px-3" href="#" onclick="changeLang(1, <?php echo $resultadousuario['id']; ?>); return false;"><img height="10" width="20" src="/img/bandera_esp.png"></a></div>
-            
-                <a class="nav-link font-weight-bold px-3" href="#" onclick="changeLang(2, <?php echo $resultadousuario['id']; ?>); return false;"><img height="10" width="20" src="/img/bandera_usa.png"></a>
-              
-                <a class="nav-link font-weight-bold px-3" href="#" onclick="changeLang(3, <?php echo $resultadousuario['id']; ?>); return false;"><img height="10" width="20" src="/img/bandera_he.png"></a>
-          
-        
-              </li>
-          
-        </div>
-
-          <div class="btn-group">
-
-            <li class="nav-item">
-
-            <a class="nav-link font-weight-bold px-3" href="/portada_n/ultimasentradas_t.php"><?php echo $MENU_TUSPREGUNTAS; ?></a>
-
-            </li>
-          </div>
-
-
-        <div class="btn-group">
-          <li class="nav-item">
-
-          <a class="nav-link font-weight-bold px-3" href="/portada_n/ultimasincidencias_t.php"><?php echo $MENU_RESULTADOS; ?></a>
-
-          </li>
-        </div>
-
-        <div class="btn-group">
-          <li class="nav-item">
-
-          <a class="nav-link font-weight-bold px-3" href="/portada_n/incidencias_t.php"><?php echo $MENU_INCIDENCIAS; ?></a>
-
-          </li>
-        </div>
-
-            <div class="btn-group">
-
-            <li class="nav-item">
-
-            <a class="nav-link font-weight-bold px-3" href="/portada_n/cuenta.php"><?php echo $MENU_MICUENTA; ?></a>
-
-            </li>
-
-          </div>
-
-        <div class="btn-group">
-          <li class="nav-item">
-
-          <a class="nav-link font-weight-bold px-3" href="/portada_n/salir.php"><?php echo $MENU_SALIR; ?></a>
-
-          </li>
-        </div>
-
-        <div align="center" style="border: 2px solid grey; border-radius: 10px" class="btn-group">
-
-          <li class="nav-item">
-
-          <a class="nav-link font-weight-bold px-3" href="/donaciones/donaciones.php"><?php echo $RUTAAPORTACION; ?></a>
-
-          </li>
-
-        </div>
-
-        
-
-        </div>
-
-
-        </ul>
-
-          </div>
-
-      </nav>
+    ?>
+  </td>
+</tr>
+</table>
+</nav>
 
 
 
