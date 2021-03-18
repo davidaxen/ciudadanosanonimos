@@ -1,12 +1,18 @@
 <?php 	
+	$LOGOPRIN='/img/logo-ciud-anonimos-en.png';
+	$LOGOPRIN2='logo-ciud-anonimos-en.png';
 	//MENU
 	$MENU_TUSPREGUNTAS = 'YOUR QUESTIONS';
 	$MENU_RESULTADOS = 'RESULTS';
 	$MENU_INCIDENCIAS = 'INCIDENCES';
 	$MENU_MICUENTA = 'MY ACCOUNT';
 	$MENU_SALIR = 'LOG OUT';
-	$RUTAAPORTACION = '/img/cuota-ayudanos.png';
-
+	$RUTAAPORTACION = 'SERVICE FEE<BR><span style=\'font-size:10px\'>-Help us qrow-</span>';
+	$MENU_GENERAL='GENERAL';
+	$MENU_PAIS='MY COUNTRY';
+	$MENU_PAISCHAT='CHAT COUNTRY';
+	$MENU_PAISPREGUNTA='COUNTRY QUESTION';
+	
 	//IDIOMAS
 	$IDIOMA_ES = 'SPANISH';
 	$IDIOMA_EN = 'ENGLISH';
@@ -44,26 +50,56 @@
 	$ALERTCORREOUSO = 'This email is already in use';
 	$ALERTMSGCONFIRMACION = 'We sent you a confirmation message to your previous email';
 
+	$TITULOCAMBIARCONTRA = 'Change password';
+	$LABELCAMBIARCONTRA = 'New password:';
+	$LABELCONTRAACTUAL = 'Current password:';
+	$LABELREPETIRCONTRA = 'Repeat new password:';
+	$BTN_CAMBIARPASS = 'Change password';
+
+	//AJAXCAMBIARCONTRA.PHP
+	$MENSAJE1CAMBIARCONTRA = 'Password changed successfully';
+	$MENSAJE2CAMBIARCONTRA = 'The password must contain at least one lower case, one upper case, one number and at least 8 characters';
+	$MENSAJE3CAMBIARCONTRA = 'The new password must match the repeated one';
+	$MENSAJE4CAMBIARCONTRA = 'Wrong current password';
+
 	//CUOTA DE SERVICIO
 	$AYUDANOSCRECER = 'Help us grow';
 	$CUOTASERV = 'SERVICE FEE';
 	$MSGPRIN = 'To maintain the movement, it is necessary to contribute a minimum fee of one US dollar per year for Ciudadanos Anonimos';
-	$CUOTAUSD = 'fee - 1 USD';
+	$CUOTAUSD = 'minimum fee - 1 USD';
 	$AYUDANOSCRECER2 = 'Help us grow by contributing what you can';
-
+	$IMPCA = 'Quota Amount plus Contribution';
+	$COMENT='Comments';
+	$PCOMENT='Please provide a comment';
+	$TOTALCOMENT='TOTAL CONTRIBUTION: ';		
+	
 	//GENERAL
 	$ENVIAR = 'SEND';
-
+	$PINCHA_A= 'CLICK HERE';
 	//LOGIN
 	$TITULO1 = 'WE ARE ALL IMPORTANT';
 	$TITULO2 = 'WE ALL HAVE VALUE';
 	$INPUTNAME = 'Name';
-	$INPUTPASS = 'Password';
+	$INPUTPASS = 'Password: ';
 	$BTNENTRAR = 'LOG IN';
 	$HREFRECUCON = 'Recover password';
 
+	//pregunta
+
+	$TIT_PREG='An anonymous citizens website is a tool for citizens that allows them to express 
+	their opinions on decision-making by government officials.
+Your voice is heard and is the determining voice !!
+This is a referendum!
+The people will have their say, and the Knesset members will do!
+Whoever does not fulfill the will of the people, will be fired!';	
+	$PREG_G='Are you in favor of removing the confidentiality for thirty years imposed on the decisions of the Corona Commission?';
+	$RES_PREG_1='Yes';
+	$RES_PREG_2='No';
+
+
 	//SOLICITUD1.php
-	$TITULOREG = 'APPLICATION FOR PARTICIPATION IN CIUDADANOS ANONIMOS';
+	$TITULOREG = 'APPLICATION FOR PARTICIPATION IN ANONYMOUS CITIZENS';
+	$TITULOREG2 = 'PARTICIPATION IN ANONYMOUS CITIZENS';
 	$INPUTCORREO = 'Email';
 	$INPUTTELF = 'Phone Number';
 	$INPUTREPPASS = 'Repeat password';
@@ -82,7 +118,52 @@
 	$ALERTEMAYUSERROR = 'There must be some upper case';
 	$ALERTENUMEROERROR = 'There must be at least one number';
 	$ALERTEMINCARACERROR = 'Minimum 8 characters';
+	
+	//dpuntcont.php
+	$TITULOPRE='SENDING QUESTIONS';
+	$CPLABEL = 'Postal Code';
+	$FECHAF='finish date';
+	$PREG='question';
+	$RESP='<b>Proposed Answers</b>* just fill in the necessary spaces';
+	$VIDEO='Videos';
+	$FICH='Files';
+	$O_MOT='Other Motives';
 
+	//registro1.php
+		$TITULOREG00 = 'We have verified that you are already in the system.';
+	   $TITULOREG01 = 'We have verified that you are already in the system.<br/>But you have not validated access to the system. You will receive shortly an email which you will have to click on the link to Validate the REGISTRATION';
+		$TITULOREG02 = 'You will receive an email shortly which you will have to click on the link to Validate the REGISTRATION';
+   	$TITULOREG03 = 'You will shortly receive an email which you will have to click to enter our application and see the results';
+    	$VOLVERI='Back to top';    	
+    	$MASINFO07='Welcome to the Citizens Anonymous Portal,';
+    	$MASINFO06='below we indicate the access data';
+    	$MASINFO05='Access data:';
+    	$MASINFO04='User: ';
+    	$MASINFO03='To complete the registration process you must follow the following link:';
+    	$MASINFO02='Validate the HIGH';
+    	$MASINFO01='If the Validate registration link does not work for you, you can copy this address into your browser to confirm activation:';
+		$MASINFO00='For more information you can contact the Direct Attention Service.
+             Notice: This email has been generated automatically. Please do not reply to this message.
+             To communicate any type of suggestion, doubt or comment, use the Contact us section at http://www.ciudadanosanonimos.com. This document is intended for the specified recipient only.
+             The information contained is confidential and is legally protected. If you receive this message by mistake,
+             please notify the sender immediately and delete it as you are not authorized to use, disclose,
+             distribution, printing or copying of all or any part of the information contained.';
+
+	//activacion1.php
+		$TITULOACT = 'VALIDATION OF REGISTRATION IN CITIZENS ANONYMOUS';
+$ACT01='We have detected that the registration process has already occurred<br/>';
+$ACT02='To access click';
+$ACT03='Here';
+$ACT04='<br/>The validation is processed and you can access click';
+$ACT05='We have detected a problem with the validation, retest the link and if not send an email to';
+
+//recuperarconciuan.php
+$TITULORECC='PASSWORD RECOVERY';
+$REC01='Enter your email address to be able to send a message with your password';
+//'Indique su dirección de correo electrónico para poder enviar un mensaje con su contraseña';
+$REC02='This domain does not have access to the system, please speak to the IT department.';
+$TITULORECUPERAR='PASSWORD IN CITIZENS ANONYMOUS';
+$MSJREC='We have sent you an email with the password.';
 	//INDEXPRUEBADATOS.PHP
 	$CHECKRGPD="RGPD acceptance";
 	$CHECKAVISOLEGAL="Acceptance of Legal Notice";

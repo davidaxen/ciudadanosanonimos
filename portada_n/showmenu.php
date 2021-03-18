@@ -60,9 +60,9 @@
 	function changeLang(lang, iduser){
 		console.log(lang);
 		switch(lang){
-			case 1: document.cookie="lang=es;"; break;
-			case 2: document.cookie="lang=en;"; break;
-			case 3: document.cookie="lang=he;"; break;
+			case 1: document.cookie="lang=es; path=/;"; break;
+			case 2: document.cookie="lang=en; path=/;"; break;
+			case 3: document.cookie="lang=he; path=/;"; break;
 		}
 
 		$.ajax({
@@ -96,16 +96,15 @@
 </script>
 
 <div>
+ 
 
-
-   	<?php if ($resultadousuario['tusuario'] == 3) {
-   		
+   	<?php if ($resultadousuario['tusuario'] == 3) {		
    		?>
 
 
    		<nav style="padding-left: 10%; background-color: white;"  class="navbar navbar-expand-md navbar-light fixed-top">
-   				
-					<a class="navbar-brand"><img src="../img/ciudadanoslogo.png"></a>
+   				<!--../img/ciudadanoslogo.png-->
+					<a class="navbar-brand"><img src="<?php echo $LOGOPRIN;?>"></a>
 						<button type="button" class="navbar-toggler bg-light" data-toggle="collapse" data-target="#nav">
 						<span class="navbar-toggler-icon"></span>
 						</button>
@@ -118,7 +117,7 @@
 
 
 
-				<div style="padding-top: 1.5%" class="btn-group">
+				<div style="padding-top: 0.8%" class="btn-group">
 
 					<li class="btn-group">
 				
@@ -181,7 +180,7 @@
 
 					<li class="nav-item">
 
-					<a class="nav-link font-weight-bold px-3" href="/donaciones/donaciones.php"><img src="<?php echo $RUTAAPORTACION; ?>"></a>
+					<a class="nav-link font-weight-bold px-3" href="/donaciones/donaciones.php"><?php echo $RUTAAPORTACION; ?></a>
 
 					</li>
 
@@ -281,14 +280,6 @@
 				</div>
 
 
-				<div class="btn-group">
-					<li class="nav-item">
-
-					<div><img src="/img/usaa.png"></div>
-
-					</li>
-				</div>
-
 
 				</ul>
 
@@ -378,6 +369,7 @@
 					</li>
 
 				</div>
+
 
 				</ul>
 
@@ -483,6 +475,7 @@
 
 				</div>
 
+
 				</ul>
 
 					</div>
@@ -503,10 +496,7 @@
 						<button type="button" class="navbar-toggler bg-light" data-toggle="collapse" data-target="#nav">
 						<span class="navbar-toggler-icon"></span>
 						</button>
-				
 
-
-				
 					<div class="collapse navbar-collapse justify-content-between" id="nav">
 						<ul class="navbar-nav">
 							<div class="btn-group">
@@ -558,26 +548,7 @@
 						<a class="nav-link font-weight-bold px-3" href="/portada_n/salir.php">LOG OUT</a>
 
 					</li>
-
 				</div>
-
-				<div style="padding-top: 1%;">
-				<table>	
-					<tr>
-						<td>
-							<div><img width="20" height="10" src="/img/usaa.png"></div>
-					
-							<div style="padding-top: 20%"><img width="20" height="10" src="/img/bandera.png"></div> 
-					
-							<div  style="padding-top: 20%"><img width="20" height="10" src="/img/israaael.png"></div>
-						</td>
-					</tr>
-				<table>
-				</div>
-					
-
-
-
 
 					<div align="center" style="border: 2px solid grey; border-radius: 10px" class="btn-group">
 
@@ -683,6 +654,7 @@
 					</li>
 
 				</div>
+
 
 				</ul>
 
@@ -893,26 +865,45 @@
    		?>
 
 
-			<nav style="padding-left: 10%; background-color: white"  class="navbar navbar-expand-md navbar-light fixed-top">
-
-					<a class="navbar-brand"><img src="/img/ciudadanoslogo.png"></a>
+		<nav style="padding-left: 10%; background-color: white"  class="navbar navbar-expand-md navbar-light fixed-top">
+   		
+	
+					<a class="navbar-brand"><img src="<?php echo $LOGOPRIN;?>"></a>
 						<button type="button" class="navbar-toggler bg-light" data-toggle="collapse" data-target="#nav">
 						<span class="navbar-toggler-icon"></span>
 						</button>
+
+					<table> 
+				          <tr>
+				            <td>
+						
+							<div><a class="nav-link font-weight-bold px-3" href="#" onclick="changeLang(1, <?php echo $resultadousuario['id']; ?>); return false;"><img height="10" width="20" src="/img/bandera_esp.png"></a></div>
+						
+								<a class="nav-link font-weight-bold px-3" href="#" onclick="changeLang(2, <?php echo $resultadousuario['id']; ?>); return false;"><img height="10" width="20" src="/img/bandera_usa.png"></a>
+							
+								<a class="nav-link font-weight-bold px-3" href="#" onclick="changeLang(3, <?php echo $resultadousuario['id']; ?>); return false;"><img height="10" width="20" src="/img/bandera_he.png"></a>
+							</td>
+				          </tr>
+				        <table>
+
+
+				
+
+
 
 					<div class="collapse navbar-collapse justify-content-between" id="nav">
 						<ul class="navbar-nav">
 							<div class="btn-group">
 								<li class="nav-item dropdown" data-toggle="dropdown">
-									<a class="nav-link font-weight-bold px-3 dropdown-toggle" href="#">GENERAL</a>
+									<a class="nav-link font-weight-bold px-3 dropdown-toggle" href="#"><?php echo $MENU_GENERAL; ?></a>
 
 										<div class="dropdown-menu">
 
-											<a class="dropdown-item" onclick="redireccion('/portada_n/ultimasentradas_t.php');" href="/portada_n/ultimasentradas_t.php">TUS PREGUNTAS</a>
+											<a class="dropdown-item" onclick="redireccion('/portada_n/ultimasentradas_t.php');" href="/portada_n/ultimasentradas_t.php"><?php echo $MENU_TUSPREGUNTAS; ?></a>
 
-											<a class="dropdown-item" onclick="redireccion('/portada_n/ultimasincidencias_t.php');" href="/portada_n/ultimasincidencias_t.php">RESULTADOS</a>
+											<a class="dropdown-item" onclick="redireccion('/portada_n/ultimasincidencias_t.php');" href="/portada_n/ultimasincidencias_t.php"><?php echo $MENU_RESULTADOS; ?></a>
 
-											<a class="dropdown-item" onclick="redireccion('/incidencias_t.php');" href="/incidencias_t.php">INCIDENCIAS</a>
+											<a class="dropdown-item" onclick="redireccion('/incidencias_t.php');" href="/incidencias_t.php"><?php echo $MENU_INCIDENCIAS; ?></a>
 
 										</div>
 
@@ -923,28 +914,31 @@
 				<div class="btn-group">
 					<li class="nav-item dropdown" data-toggle="dropdown">
 
-					<a class="nav-link font-weight-bold px-3 dropdown-toggle" href="#">MI PAIS</a>
+					<a class="nav-link font-weight-bold px-3 dropdown-toggle" href="#"><?php echo $MENU_PAIS; ?></a>
 
 					<div class="dropdown-menu">
+<!--
+						<a class="dropdown-item" onclick="redireccion('/portada_n/chatpais/index.php');" href="/portada_n/chatpais/index.php"><?php echo $MENU_PAISCHAT; ?></a>
+-->
+						<a class="dropdown-item" onclick="redireccion('/portada_n/mensaje/dpuntcont.php');" href="/portada_n/mensaje/dpuntcont.php"><?php echo $MENU_PAISPREGUNTA; ?></a>
 
-						<a class="dropdown-item" onclick="redireccion('/portada_n/chatpais/index.php');" href="/portada_n/chatpais/index.php">CHAT PAIS</a>
-
-						<a class="dropdown-item" onclick="redireccion('/portada_n/mensaje/dpuntcont.php');" href="/portada_n/mensaje/dpuntcont.php">PREGUNTAS PAIS</a>
-
+<!--
 						<a class="dropdown-item" onclick="redireccion('/portada_n/solicitudes/aceptarcolaboradores.php');" href="/portada_n/solicitudes/aceptarcolaboradores.php">ACEPTAR COLABORADOR PAIS</a>
 
-						<!--<a class="dropdown-item" onclick="redireccion('/portada_n/solicitudes/aceptargestores.php');" href="/portada_n/solicitudes/aceptargestores.php">ACEPTAR GESTOR CIUDAD</a>-->
+						<a class="dropdown-item" onclick="redireccion('/portada_n/solicitudes/aceptargestores.php');" href="/portada_n/solicitudes/aceptargestores.php">ACEPTAR GESTOR CIUDAD</a>-->
 
 					</div>
 
 					</li>
 					</div>
 
+			
+
 				<div class="btn-group">
 
 					<li class="nav-item">
 
-						<a class="nav-link font-weight-bold px-3" href="/portada_n/cuenta.php">MI CUENTA</a>
+						<a class="nav-link font-weight-bold px-3" href="/portada_n/cuenta.php"><?php echo $MENU_MICUENTA; ?></a>
 
 					</li>
 
@@ -953,7 +947,7 @@
 				<div class="btn-group">
 					<li class="nav-item">
 
-						<a class="nav-link font-weight-bold px-3" href="/portada_n/salir.php">LOG OUT</a>
+						<a class="nav-link font-weight-bold px-3" href="/portada_n/salir.php"><?php echo $MENU_SALIR; ?>	</a>
 
 					</li>
 				</div>
@@ -963,10 +957,7 @@
 
 					<li class="nav-item">
 
-					<a class="nav-link font-weight-bold px-3" href="/donaciones/donaciones.php"><img src="/img/cuota-ayudanos.png">	
-					</a>
-<!--					<span style="font-size: 12px;">CUOTA DE PARTICIPACIÓN</span><br><span style="font-size: 10px;">-Ayúdanos a crecer-</span>-->
-
+					<a class="nav-link font-weight-bold px-3" href="/donaciones/donaciones.php"><?php echo $RUTAAPORTACION; ?></a>
 					</li>
 
 				</div>				

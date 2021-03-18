@@ -5,7 +5,7 @@
 
 <span class="close">&times;</span>
 
-<style type="text/css">
+<style>
 	
 	#vertgraph {
      width: 378px;
@@ -165,7 +165,7 @@ $(document).ready(function() {
 });
 </script>
 
-<style type="text/css">
+<style>
 @import "lesshat";
 
 @barHeight: 20px;

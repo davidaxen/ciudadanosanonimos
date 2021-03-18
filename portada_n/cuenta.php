@@ -91,6 +91,11 @@ include('bbdd.php');
 		document.getElementById('formulario').style.display = "block";
 	}
 
+	function desaparecerpass(){
+		document.getElementById('informacion').style.display = "none";
+		document.getElementById('cambiarpass').style.display = "block";
+	}
+
 	function mostrar(){
 		window.location.replace("cuenta.php");
 
@@ -115,6 +120,41 @@ include('bbdd.php');
 
 		return true;
 
+	}
+
+	function showPass(valor) {
+
+	  var x = document.getElementById(valor);
+	  if (x.type === 'password') {
+	    x.type = 'text';
+	  } else {
+	    x.type = 'password';
+	  }
+
+	}
+
+	function cambiarcontra() {
+		
+		var fd = new FormData(document.getElementById('formChangePass'));
+		$.ajax({
+				url: "ajaxcambiarcontra.php",
+				type: "POST",
+				data: fd,
+				processData: false,
+        		contentType: false,
+				success: function(data){
+				  	alert(data);
+				  	console.log(data);
+
+				  	if (data == document.getElementById('mensajeidioma').value) {
+				  		location.reload();
+				  	}
+
+				},
+				error: function(data) {
+			       	console.log(data.message);
+			    }
+			});
 	}
 
 </script>
@@ -272,7 +312,11 @@ if(isset($_COOKIE['gente'])){
 
 		</div>
 	
-			<div><button style="border-color: black" type="button" class="btn btn-default" onclick="desaparecer()"><?php echo $BTN_EDITAR; ?></button></div> <br>
+			<div>
+				<button style="border-color: black" type="button" class="btn btn-default" onclick="desaparecer()"><?php echo $BTN_EDITAR; ?></button>
+				<button style="border-color: black" type="button" class="btn btn-default" onclick="desaparecerpass()"><?php echo $BTN_CAMBIARPASS; ?></button>
+			</div>
+			 <br>		
 		</div>
 
 	</div>
@@ -303,6 +347,39 @@ if(isset($_COOKIE['gente'])){
 			</form>
 			<br>
 		</div>
+
+		
+	</div>
+
+	<div class="container fadeInDown" style="background-color: white; border-radius: 10px; display: none; margin-top: 160px" id="cambiarpass">
+		<h2><?php echo $TITULOCAMBIARCONTRA; ?></h2>
+		<input type="hidden" name="mensajeidioma" id="mensajeidioma" value="<?php echo $MENSAJE1CAMBIARCONTRA; ?>">
+		<form method="POST" id="formChangePass">
+			<input type="hidden" name="iduser" id="iduser" value="<?php echo $resultadousuario['id']; ?>">
+			<div class="form-group col-xs-4">
+				<label for="passprin"><?php echo $LABELCONTRAACTUAL; ?></label> <br>
+				<input type="password" style="text-align:left;" class="form-control" id="passprin" name="passprin" value="">
+				<img align="center" src='../img/iconos/pass.png' width='32px' onclick="showPass('passprin')">
+			</div>
+			<div class="form-group col-xs-4">
+				<label for="newpass"><?php echo $LABELCAMBIARCONTRA; ?></label> <br>
+				<input type="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" style="text-align:left;" class="form-control" id="newpass" name="newpass" title="<?php echo $TITLEPASS; ?>" required>
+				<img align="center" src='../img/iconos/pass.png' width='32px' onclick="showPass('newpass')">
+			</div>
+
+			<div class="form-group col-xs-4">
+				<label for="newpass2"><?php echo $LABELREPETIRCONTRA; ?></label> <br>
+				<input type="password" style="text-align:left;" class="form-control" id="newpass2" name="newpass2" required >
+				<img align="center" src='../img/iconos/pass.png' width='32px' onclick="showPass('newpass2')">
+			</div>
+
+			<br> <br>
+			<div>
+				<button type="button" style="border-color: blue" class="btn btn-default" onclick="cambiarcontra()" value="Editar"><?php echo $BTN_CONFIRMAR; ?></button>
+				<button type="button" style="border-color: red" class="btn btn-default" onclick="mostrar()"><?php echo $BTN_CANCELAR; ?></button>
+			</div>
+		</form>
+		<br>
 	</div>
 
 </body>
