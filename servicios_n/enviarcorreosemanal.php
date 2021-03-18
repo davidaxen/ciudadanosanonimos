@@ -7,6 +7,26 @@
 
 	foreach ($resultadousuario as $rowmos){
 
+		$sqlmensajes = "SELECT count(*) as cant FROM mensajes WHERE pais = :pais";
+		$resultmensajes=$conn->prepare($sqlmensajes);
+		$resultmensajes->bindParam(':pais', $rowmos['pais']);
+		$resultmensajes->execute();
+		$resultadomensajes = $resultmensajes->fetch();
+
+		/*var_dump($rowmos['id']);
+		var_dump($resultadomensajes['cant']);*/
+
+		$sqlrespmen = "SELECT count(*) as cant FROM respuestamensajes WHERE iduser = :iduser";
+		$resultrespmen=$conn->prepare($sqlrespmen);
+		$resultrespmen->bindParam(':iduser', $rowmos['id']);
+		$resultrespmen->execute();
+		$resultadorespmen = $resultrespmen->fetch();
+
+		/*var_dump($resultadorespmen['cant']);
+
+		echo "<br>";
+		echo "<br>";*/
+
 		$email=$rowmos['user'];
 		$nombreemp=$rowmos['nombreemp'];
 		$nombremp2=strtoupper($nombreemp);
@@ -48,12 +68,14 @@
 		$headers .= 'Bcc: ciudadanosanonimos@yahoo.com'  . $eol;
 		$headers .= "Content-Type: text/html; charset=\"iso-8859-1\"" . $eol;
 		$headers .= "Content-Transfer-Encoding: 8bit" . $eol . $eol;
+		
+		if ($resultadomensajes['cant'] != $resultadorespmen['cant']) {
+			
+			// Este usuario tiene preguntas
 
-
-		//COMENTAR O DESCOMENTAR LA SIGUIENTE LINEA PARA QUE SE ENVIE LOS CORREOS
-		//mail($mailto, $subject, $message, $headers);;
-
-		 
+			//COMENTAR O DESCOMENTAR LA SIGUIENTE LINEA PARA QUE SE ENVIE LOS CORREOS
+			//mail($mailto, $subject, $message, $headers);
+		}		 
 
 	}
 
