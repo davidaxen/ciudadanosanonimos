@@ -104,7 +104,11 @@
   }
 
 </script>
-
+<style>
+	#alturalinea {
+		line-height: 1.15;
+	}
+</style>
 </head>
 <body style="background-image:url(../img/iconos/portada_ca.jpg); padding-top: 14%;";>
 
@@ -121,7 +125,7 @@
 
 
           <div class="collapse navbar-collapse justify-content-between" id="nav">
-            <ul class="navbar-nav">
+            <ul class="navbar-nav" id="alturalinea">
 
 
 
