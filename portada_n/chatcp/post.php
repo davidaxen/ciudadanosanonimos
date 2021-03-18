@@ -9,13 +9,6 @@
 	$resultusuario->execute();
 	$resultadousuario = $resultusuario->fetch();
 
-	$mail = $_COOKIE['gente'];
-	$sql = "SELECT * FROM validar WHERE email = :mail";
-	$result=$conn->prepare($sql);
-	$result->bindParam(':mail', $mail);
-	$result->execute();
-	$resultado = $result->fetch();
-
 	if ($resultadousuario['tusuario'] == 41 || $resultadousuario['tusuario'] == 42) {
 		$gestor = 1;
 	}else{
@@ -23,7 +16,7 @@
 	}
 
 	$fecha = date("g:i A");
-	$sql1 = "INSERT INTO chatcp (idusuario, idvalidar, idpais, cp, msg, timehour, chat, tuser) VALUES (".$resultadousuario['id'].",".$resultado['idvalidar'].",".$resultado['pais'].",".$resultado['cp'].",'".stripslashes(htmlspecialchars($text))."','".$fecha."', 0, $gestor)";
+	$sql1 = "INSERT INTO chatcp (idusuario, idpais, cp, msg, timehour, chat, tuser) VALUES (".$resultadousuario['id'].",".$resultadousuario['pais'].",".$resultadousuario['cp'].",'".stripslashes(htmlspecialchars($text))."','".$fecha."', 0, $gestor)";
 	$conn->exec($sql1);
 
 

@@ -29,37 +29,21 @@ $resultadousuario = $resultusuario->fetch();
 $sql="SELECT * from mensajes where id in (SELECT idmensaje FROM respuestamensajes WHERE iduser=".$resultadousuario['id'].") order by fechafin desc ";
 $result=$conn->query($sql);
 
-/*$result->bindParam(':ide',$ide);
-$result->bindParam(':fechac',$fechac);
-
-$result->execute();*/
-
-?>
-
-
-<?php 
-	error_reporting(0);
-	include('bbdd.php');
-	$sqltusuario = "SELECT * FROM usuarios WHERE user = :gente";
-	$resultusuario=$conn->prepare($sqltusuario);
-	$resultusuario->bindParam(':gente', $_COOKIE['gente']);
-	$resultusuario->execute();
-	$resultadousuario = $resultusuario->fetch();
-
 	if (isset($_COOKIE['lang']) && $_COOKIE['lang']!='') {
-		$idiomacookie=strtolower($_COOKIE['lang']);
-	}else{
-		$idiomacookie='es';
-	}
+    $idiomacookie=strtolower($_COOKIE['lang']);
+  }else{
+    $idiomacookie='es';
+  }
 
-	$idioma = $resultadousuario['lang'];
-	if ($idiomacookie != $idioma) {
-		include($_SERVER['DOCUMENT_ROOT']."/lang/$idiomacookie.php");
-		$sqlupdatelang = "UPDATE usuarios SET lang = '".$idiomacookie."' WHERE id = ".$resultadousuario['id'].";";
-		$conn->exec($sqlupdatelang);
-	}else{
-		include($_SERVER['DOCUMENT_ROOT']."/lang/$idioma.php");
-	}
+  $idioma = $resultadousuario['lang'];
+  if ($idiomacookie != $idioma) {
+    include($_SERVER['DOCUMENT_ROOT']."/lang/$idiomacookie.php");
+    $sqlupdatelang = "UPDATE usuarios SET lang = '".$idiomacookie."' WHERE id = ".$resultadousuario['id'].";";
+    $conn->exec($sqlupdatelang);
+  }else{
+    include($_SERVER['DOCUMENT_ROOT']."/lang/$idioma.php");
+  }
+  
 	
 ?>
 
@@ -112,9 +96,9 @@ $result->execute();*/
 	function changeLang(lang, iduser){
 		console.log(lang);
 		switch(lang){
-			case 1: document.cookie="lang=es;"; break;
-			case 2: document.cookie="lang=en;"; break;
-			case 3: document.cookie="lang=he;"; break;
+			case 1: document.cookie="lang=es; path=/;"; break;
+			case 2: document.cookie="lang=en; path=/;"; break;
+			case 3: document.cookie="lang=he; path=/;"; break;
 		}
 
 		$.ajax({
@@ -153,28 +137,30 @@ $result->execute();*/
 <body   style="background-image:url(../img/iconos/portada_ca.jpg)"; >
 
 
-	
-  <nav style="padding-left: 10%; background-color: white;"  class="navbar navbar-expand-md navbar-light fixed-top">
+<nav style="padding-left: 10%; background-color: white;"  class="navbar navbar-expand-md navbar-light fixed-top">
    				
-					<a class="navbar-brand"><img src="../img/ciudadanoslogo.png"></a>
+					<a class="navbar-brand"><img src="<?php echo $LOGOPRIN;?>"></a>
 						<button type="button" class="navbar-toggler bg-light" data-toggle="collapse" data-target="#nav">
 						<span class="navbar-toggler-icon"></span>
 						</button>
+
+				
+
 
 					<div class="collapse navbar-collapse justify-content-between" id="nav">
 						<ul class="navbar-nav">
 
 
 
-				<div style="padding-top: 0.6%" class="btn-group">
+				<div  class="btn-group">
 
 					<li class="btn-group">
 				
-							<div><a class="nav-link font-weight-bold px-3" href="#" onclick="changeLang(1, <?php echo $resultadousuario['id']; ?>); return false;"><img height="11" width="20" src="/img/bandera_esp.png"></a></div>
+							<div><a class="nav-link font-weight-bold px-3" href="#" onclick="changeLang(1, <?php echo $resultadousuario['id']; ?>); return false;"><img height="10" width="20" src="/img/bandera_esp.png"></a></div>
 						
-								<a class="nav-link font-weight-bold px-3" href="#" onclick="changeLang(2, <?php echo $resultadousuario['id']; ?>); return false;"><img height="11" width="20" src="/img/bandera_usa.png"></a>
+								<a class="nav-link font-weight-bold px-3" href="#" onclick="changeLang(2, <?php echo $resultadousuario['id']; ?>); return false;"><img height="10" width="20" src="/img/bandera_usa.png"></a>
 							
-								<a class="nav-link font-weight-bold px-3" href="#" onclick="changeLang(3, <?php echo $resultadousuario['id']; ?>); return false;"><img height="11" width="20" src="/img/bandera_he.png"></a>
+								<a class="nav-link font-weight-bold px-3" href="#" onclick="changeLang(3, <?php echo $resultadousuario['id']; ?>); return false;"><img height="10" width="20" src="/img/bandera_he.png"></a>
 					
 				
 				      </li>
@@ -229,7 +215,7 @@ $result->execute();*/
 
 					<li class="nav-item">
 
-					<a class="nav-link font-weight-bold px-3" href="/donaciones/donaciones.php"><img src="<?php echo $RUTAAPORTACION; ?>"></a>
+					<a class="nav-link font-weight-bold px-3" href="/donaciones/donaciones.php"><?php echo $RUTAAPORTACION; ?></a>
 
 					</li>
 
@@ -244,7 +230,7 @@ $result->execute();*/
 
 					</div>
 
-</nav>
+			</nav>
 
 
 <div style=" display: flex; justify-content: center; margin-top: 15%" class='wrapper fadeInDown' >
@@ -306,6 +292,19 @@ $result->execute();*/
 		<div class="modal-content">
 		</div>
 	</div>
+
+	<style>
+		.modal{
+			background:rgba(1,1,1,0.5);
+		}
+
+		.modal-content{
+			position: absolute;
+			left: 50%;
+			top: 50%;
+			transform: translate(-50%, -50%);
+		}
+	</style>
 
 	<script>
 	// Get the modal

@@ -8,35 +8,30 @@
 	$resultusuario->execute();
 	$resultadousuario = $resultusuario->fetch();
 
-	
-	$sql = "SELECT * FROM validar WHERE email = :mail";
-	$result=$conn->prepare($sql);
-	$result->bindParam(':mail', $mail);
-	$result->execute();
-	$resultado = $result->fetch();
-
-	$sql1="SELECT * FROM chatcp WHERE chat = 0 AND idpais =".$resultado['pais']." AND cp=".$resultado['cp'];
+	$sql1="SELECT * FROM chatcp WHERE chat = 0 AND idpais =".$resultadousuario['pais']." AND cp=".$resultadousuario['cp'];
 	$result1=$conn->query($sql1);
 	$resultado1=$result1->fetchAll();
 
 	foreach ($resultado1 as $row) {
 		$timehour = $row['timehour'];
 		$msg = $row['msg'];
+		$pdf = $row['pdf'];
+		if ($pdf == 0) {	
 		?>
 			<div class='msgln'>(<?php echo $timehour ?>) <b> 
 				<?php 
 					if ($row['idusuario'] == $resultadousuario['id']) {
 						if ($row['tuser'] == 1) {
-							echo $resultado['nombreemp']." (Tú)";
+							echo $resultadousuario['nombreemp']." (Tú)";
 						}else{
-							echo $resultado['nombreemp']." (Tú)";
+							echo $resultadousuario['nombreemp']." (Tú)";
 						}
 						
 					}else{
 
-						$sql2 = "SELECT * FROM validar WHERE idvalidar = :idvalidar";
+						$sql2 = "SELECT * FROM usuarios WHERE id = :idusuario";
 						$result2=$conn->prepare($sql2);
-						$result2->bindParam(':idvalidar', $row['idvalidar']);
+						$result2->bindParam(':idusuario', $row['idusuario']);
 						$result2->execute();
 						$resultado2 = $result2->fetch();
 
@@ -48,5 +43,34 @@
 					}
 				?></b>: <?php echo $msg ?><br></div>
 		<?php
+		}else{
+			?>
+			<div class='msgln'>(<?php echo $timehour ?>) <b> 
+				<?php 
+					if ($row['idusuario'] == $resultadousuario['id']) {
+						if ($row['tuser'] == 1) {
+							echo $resultadousuario['nombreemp']." (Tú)";
+						}else{
+							echo $resultadousuario['nombreemp']." (Tú)";
+						}
+						
+					}else{
+
+						$sql2 = "SELECT * FROM usuarios WHERE id = :idusuario";
+						$result2=$conn->prepare($sql2);
+						$result2->bindParam(':idusuario', $row['idusuario']);
+						$result2->execute();
+						$resultado2 = $result2->fetch();
+
+						if ($row['tuser'] == 1) {
+							echo $resultado2['nombreemp']." (Gestor)";
+						}else{
+							echo $resultado2['nombreemp'];
+						}
+					}
+				?></b>: Archivo: <a target="_blank" href="<?php echo "abrir_pdf.php?file=".$row['id']."/".$msg; ?>"><?php echo $msg; ?></a><br></div>
+			<?php
+
+		}
 	}
  ?>
