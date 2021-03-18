@@ -130,7 +130,11 @@ $result=$conn->query($sql);
 	}
 
 </script>
-
+<style>
+	#alturalinea {
+		line-height: 1.15;
+	}
+</style>
 
 </head>
 
@@ -148,7 +152,7 @@ $result=$conn->query($sql);
 
 
 					<div class="collapse navbar-collapse justify-content-between" id="nav">
-						<ul class="navbar-nav">
+						<ul class="navbar-nav" id="alturalinea">
 
 
 
