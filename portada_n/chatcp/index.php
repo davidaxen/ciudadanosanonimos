@@ -18,7 +18,6 @@
 
 
 
-  <link rel="stylesheet" type="text/css" href="../../cabecera.css">
   <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Convergence" />
   <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
   <script src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
@@ -28,12 +27,24 @@
 
     <link rel="stylesheet" type="text/css" href="../ultimasincidencias_t.css">
     <link rel="stylesheet" type="text/css" href="chat1.css">
-
+    <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+    <script src="http://malsup.github.com/jquery.form.js"></script> 
 
     <meta charset="utf-8">
 
 </head>
 
+<style>
+  input[type="file"] {
+    display: none;
+}
+.custom-file-upload {
+    border: 1px solid #ccc;
+    display: inline-block;
+    padding: 6px 12px;
+    cursor: pointer;
+}
+</style>
 
 <body   style="background-image:url(../../img/iconos/portada_ca.jpg); margin-top: 5%"; >
 
@@ -88,8 +99,20 @@
                 <div class="input-group">
               </td>
               <td>
+
+                    <div id="yourBtn" onclick="getFile()"><i style="width: 30px; height: 40px; color: #BC0000" class="far fa-file-pdf"></i></div>
+                      <div style='height: 0px;width:0px; overflow:hidden;'>
+                        <form method="POST" action="postpdf.php" id="form" enctype="multipart/form-data">
+                          <input type="file" name="archivo" id="archivo" onchange="ajaxsubmit()">
+                        </form>
+                      </div>
+              </td>
+              <td>
+                
                 <form  name="message" action="">
                 <div align="center">
+                  
+                  
                   <input class="form-control pr" type="text" id="usermsg" size="63" placeholder="Escriba su mensaje aquí..." /><button class="btn btn-primary" type="submit"  id="submitmsg" value="enviar"/>enviar</button>
                 </div>
                 </form>
@@ -104,21 +127,20 @@
   </div>
 </div>
 
-
-
-
-
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3/jquery.min.js"></script>
 <script type="text/javascript">
 
 var comprobador;
-setInterval (loadLog, 100);
+setInterval (loadLog, 500);
 
 /*objDiv.scrollTop = objDiv.scrollHeight;
 objDiv.scrollTop = objDiv.scrollHeight - objDiv.clientHeight;*/
 
 function eliminarTildes(texto) {
     return texto.normalize('NFD').replace(/[\u0300-\u036f]/g,"");
+}
+
+function getFile(){
+     document.getElementById("archivo").click();
 }
 
 function loadLog(){
@@ -138,6 +160,42 @@ function loadLog(){
       },
   });
 }
+
+/*$('#archivo').change(function() {
+  $("#formulario").ajaxForm({url: 'server.php', type: 'post'})
+  var file_data = $('.archivo').prop('files')[0]
+  var form_data = new FormData();                  
+  form_data.append('file', file_data);
+  //alert(formdata);
+  $.ajax({
+    url: "postpdf.php",
+    type: "POST",
+    dataType : 'json',
+    data: form_data,
+    success: function(e){
+          console.log(e.message);
+      },
+  });
+});*/
+
+function ajaxsubmit(){
+    var fd = new FormData(document.getElementById('form'));
+
+    $.ajax({
+        url : "postpdf.php",
+        type: "POST",
+        data : fd,
+        processData: false,
+        contentType: false,
+        success: function(data){
+           console.log(data);
+       }
+    });
+}
+
+/*$("#formulario").submit(function(event){
+    
+  });*/
 
 $("#submitmsg").click(function(){
     var groseriaComprobada = true;

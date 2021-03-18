@@ -1,12 +1,17 @@
 <?php 
+$LOGOPRIN='/img/logo-ciud-anonimos.png';
+$LOGOPRIN2='logo-ciud-anonimos.png';	
 	//MENU
 	$MENU_TUSPREGUNTAS = 'TUS PREGUNTAS';
 	$MENU_RESULTADOS = 'RESULTADOS';
-	$MENU_INCIDENCIAS = 'INCIDENCIAS';
+	$MENU_INCIDENCIAS = 'SUGERENCIAS';
 	$MENU_MICUENTA = 'MI CUENTA';
 	$MENU_SALIR = 'SALIR';
-	$RUTAAPORTACION = '/img/cuota-ayudanos.png';
-
+	$RUTAAPORTACION = 'CUOTA DE SERVICIOS<BR><span style=\'font-size:10px\'>-Ayudanos a crecer-</span>';
+	$MENU_GENERAL='GENERAL';
+	$MENU_PAIS='MI PAIS';
+	$MENU_PAISCHAT='CHAT PAIS';
+	$MENU_PAISPREGUNTA='PREGUNTA PAIS';
 	//IDIOMAS
 	$IDIOMA_ES = 'ESPAÑOL';
 	$IDIOMA_EN = 'INGLES';
@@ -44,26 +49,53 @@
 	$ALERTCORREOUSO = 'Este correo ya esta en uso';
 	$ALERTMSGCONFIRMACION = 'Te hemos enviado un mensaje de confirmacion a tu correo anterior';
 
+	$TITULOCAMBIARCONTRA = 'Cambiar contraseña';
+	$LABELCAMBIARCONTRA = 'Nueva contraseña:';
+	$LABELCONTRAACTUAL = 'Contraseña actual:';
+	$LABELREPETIRCONTRA = 'Repetir nueva contraseña:';
+	$BTN_CAMBIARPASS = 'Cambiar contraseña';
+
+	//AJAXCAMBIARCONTRA.PHP
+	$MENSAJE1CAMBIARCONTRA = 'Contraseña cambiada correctamente';
+	$MENSAJE2CAMBIARCONTRA = 'La contraseña debe contener al menos una minuscula, una mayuscula, un numero y minimo 8 caracteres';
+	$MENSAJE3CAMBIARCONTRA = 'La nueva contraseña debe coincidir con la repetida';
+	$MENSAJE4CAMBIARCONTRA = 'Contraseña actual erronea';
+
 	//CUOTA DE SERVICIO
 	$AYUDANOSCRECER = 'Ayudanos a crecer';
 	$CUOTASERV = 'CUOTA DE SERVICIO';
 	$MSGPRIN = 'Para mantener el movimiento es preciso aportar una cuota minima de un dolar americano anual por Ciudadanos Anonimos';
-	$CUOTAUSD = 'cuota - 1 USD';
+	$CUOTAUSD = 'Cuota Minima - 1 USD';
 	$AYUDANOSCRECER2 = 'Ayudanos a crecer aportando lo que puedas';
-
-	//GENERAL
+	$IMPCA = 'Importe de Cuota mas Aportacion';
+	$COMENT='Comentarios';
+	$PCOMENT='Por favor indique un comentario';
+	$TOTALCOMENT='TOTAL APORTACION: ';
+	//GENERALL
 	$ENVIAR = 'ENVIAR';
-
+	$PINCHA_A= 'PINCHA AQUI';
 	//LOGIN
 	$TITULO1 = 'TODOS SOMOS IMPORTANTES';
 	$TITULO2 = 'TODOS TENEMOS VALOR';
 	$INPUTNAME = 'Nombre';
-	$INPUTPASS = 'Contraseña';
+	$INPUTPASS = 'Contraseña: ';
 	$BTNENTRAR = 'ENTRAR';
 	$HREFRECUCON = 'Recuperar Contraseña';
 
+	//pregunta
+	$TIT_PREG='Ciudadano Anónimo es una herramienta para los ciudadanos que les permite expresar sus opiniones sobre la toma de decisiones por parte de los funcionarios gubernamentales.
+Tu voz se escucha y es la voz determinante !!
+¡Esto es un referéndum!
+¡La gente tendrá su opinión y los miembros de la Knesset lo harán!
+¡Quien no cumpla la voluntad del pueblo, será despedido!';	
+	$PREG_G='¿Está a favor de eliminar la confidencialidad por treinta años impuesta a las decisiones de la Comisión Corona?';
+	$RES_PREG_1='Si';
+	$RES_PREG_2='No';
+	
+
 	//SOLICITUD1.php
 	$TITULOREG = 'SOLICITUD DE PARTICIPACIÓN EN CIUDADANOS ANONIMOS';
+	$TITULOREG2 = 'PARTICIPACIÓN EN CIUDADANOS ANONIMOS';
 	$INPUTCORREO = 'Correo Electrónico';
 	$INPUTTELF = 'Teléfono';
 	$INPUTREPPASS = 'Repetir Contraseña';
@@ -82,7 +114,57 @@
 	$ALERTENUMEROERROR = 'Tiene que haber mínimo un numero';
 	$ALERTEMINCARACERROR = 'Mínimo 8 caracteres';
 
+	//dpuntcont.php
+	$TITULOPRE='ENVIO DE PREGUNTAS';
+	$CPLABEL = 'Código Postal';
+	$FECHAF='Fecha de Finalización';
+	$PREG='Pregunta';
+	$RESP='<b>Respuestas propuestas</b> * solo rellena los espacios necesarios';
+	$O_MOT='Otros Motivos';
+	$VIDEO='Videos';
+	$FICH='Ficheros';
 
+
+	//registro1.php
+		$TITULOREG00 = 'Hemos comprobado que ya figuras dentro del sistema.';
+	   $TITULOREG01 = 'Hemos comprobado que ya figuras dentro del sistema.<br/>Pero no has validado el acceso al sistema. En breve recibir&aacute; un correo electr&oacute;nico el cual tendr&aacute; que pinchar sobre el enlace
+    para Validar el ALTA ';
+    	$TITULOREG02 = 'En breve recibir&aacute; un correo electr&oacute;nico el cual tendr&aacute; que pinchar sobre el enlace para Validar el ALTA ';
+   	$TITULOREG03 = 'En breve recibir&aacute; un correo electr&oacute;nico el cual tendr&aacute; que pinchar para poder entrar en nuestra aplicacion y poder ver los resultados';
+
+    	$VOLVERI='Volver al Inicio';
+    	$MASINFO07='Bienvenidos al Portal de CIUDADANOS ANONIMOS,';
+    	$MASINFO06=' A continuaci&oacute;n le indicamos los datos de acceso';
+    	$MASINFO05='Datos de Acceso:';
+    	$MASINFO04='Usuario: ';
+    	$MASINFO03='Para completar el proceso de alta debes seguir el siguiente enlace:';
+    	$MASINFO02='Validar el ALTA';
+    	$MASINFO01='Si no te funciona el enlace de \'Validar el ALTA\' puedes copiar esta direcci&oacute;n en tu navegador para 
+        confirmar de la activaci&oacute;n:';
+		$MASINFO00='Para m&aacute;s informaci&oacute;n puedes contactar con el Servicio de Atenci&oacute;n Directa.
+            Aviso: Este correo ha sido generado de forma autom&aacute;tica. Por favor, no responda a este mensaje. 
+            Para comunicar cualquier tipo de sugerencia, duda o comentario, utilice el apartado \'Contacta con nosotros\' 
+            en http://www.ciudadanosanonimos.com. Este documento est&aacute; dirigido exclusivamente al destinatario especificado. 
+            La informaci&oacute;n contenida es confidencial y está legalmente protegida. Si usted recibe este mensaje por error, 
+            por favor comun&iacute;quelo inmediatamente al remitente y elim&iacute;nelo ya que usted no está autorizado al uso, revelaci&oacute;n, 
+            distribuci&oacute;n, impresi&oacute;n o copia de toda o alguna parte de la informaci&oacute;n contenida.';
+
+
+
+	//activacion1.php
+		$TITULOACT = 'VALIDACION DE ALTA EN CIUDADANOS ANONIMOS';
+$ACT01='Hemos detectado que ya se ha producido el proceso de alta<br/>';
+$ACT02='Para acceder pinche';
+$ACT03='Aqu&iacute;';
+$ACT04='<br/>La validaci&oacute;n esta tramitada ya puede acceder pinche';
+$ACT05='Hemos detectado un problema con la validaci&oacute;n vuelva a probar el enlace y sino envie un correo a';
+
+//recuperarconciuan.php
+$TITULORECC='RECUPERACION DE CONTRASE&Ntilde;A';
+$REC01='Indique su dirección de correo electrónico para poder enviar un mensaje con su contraseña';;
+$REC02='Este dominio no tiene acceso al sistema, por favor hable con el departamento de sistemas.';
+$TITULORECUPERAR='CONTRASEÑA EN CIUDADANOS ANONIMOS';
+$MSJREC='Te hemos enviado un correo con la contraseña';
 	//INDEXPRUEBADATOS.PHP
 	$CHECKRGPD="Aceptación de RGPD";
 	$CHECKAVISOLEGAL="Aceptación de Aviso Legal";
@@ -194,7 +276,10 @@ Ley Organica 3/2018, de 5 de diciembre, de Proteccion de Datos Personales y gara
 NORMATIVA DE Sociedad de la informacion y telecomunicaciones
 Ley 34/2002, de 11 de julio, de servicios de la sociedad de la informacion y de comercio electronico
 Ley 9/2014, de 9 de mayo, General de Telecomunicaciones
-Las presentes Condiciones Generales de Uso se regiran por la legislacion espa&Ntilde;ola y, en especial, a la legislacion en materia de proteccion de datos de caracter personal (Ley Organica 3/2018, de 5 de diciembre, de Proteccion de Datos Personales y garantia de los derechos digitales, ademas del Reglamento General de Proteccion de Datos 2016/679 de la Union Europea) y a la legislacion en materia de servicios de la sociedad de la informacion (Ley 34/2002, de 11 de julio, de servicios de la sociedad de la informacion y de comercio electronico). Cualquier controversia sera resuelta ante los Tribunales de Madrid.";
+Las presentes Condiciones Generales de Uso se regiran por la legislacion espa&Ntilde;ola y, en especial, a la legislacion en materia de proteccion de datos de caracter personal (Ley Organica 3/2018, de 5 de diciembre, de Proteccion de Datos Personales y garantia de 
+los derechos digitales, ademas del Reglamento General de Proteccion de Datos 2016/679 de la Union Europea) y a la legislacion 
+en materia de servicios de la sociedad de la informacion (Ley 34/2002, de 11 de julio, de servicios de la sociedad de la 
+informacion y de comercio electronico). Cualquier controversia sera resuelta ante los Tribunales de Madrid.";
 
 
  ?>
