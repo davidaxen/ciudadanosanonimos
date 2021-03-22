@@ -117,7 +117,7 @@
 
 
 
-				<div style="padding-top: 0.8%" class="btn-group">
+		
 
 					<li class="btn-group">
 				
@@ -130,35 +130,33 @@
 				
 				      </li>
 					
-				</div>
+				
+					
 
-					<div class="btn-group">
-
-						<li class="nav-item">
+					<li class="nav-item">
 
 						<a class="nav-link font-weight-bold px-3" href="/portada_n/ultimasentradas_t.php"><?php echo $MENU_TUSPREGUNTAS; ?></a>
 
 						</li>
-					</div>
+					
 
 
-				<div class="btn-group">
 					<li class="nav-item">
 
 					<a class="nav-link font-weight-bold px-3" href="/portada_n/ultimasincidencias_t.php"><?php echo $MENU_RESULTADOS; ?></a>
 
 					</li>
-				</div>
+			
 
-				<div class="btn-group">
+				
 					<li class="nav-item">
 
 					<a class="nav-link font-weight-bold px-3" href="/portada_n/incidencias_t.php"><?php echo $MENU_INCIDENCIAS; ?></a>
 
 					</li>
-				</div>
+				
 
-						<div class="btn-group">
+						
 
 						<li class="nav-item">
 
@@ -166,15 +164,15 @@
 
 						</li>
 
-					</div>
+				
 
-				<div class="btn-group">
+				
 					<li class="nav-item">
 
 					<a class="nav-link font-weight-bold px-3" href="/portada_n/salir.php"><?php echo $MENU_SALIR; ?></a>
 
 					</li>
-				</div>
+				
 
 				<div align="center" style="border: 2px solid grey; border-radius: 10px" class="btn-group">
 
@@ -186,16 +184,15 @@
 
 				</div>
 
-				
-
-				</div>
-
 
 				</ul>
+				</div>
 
-					</div>
-
+					
 			</nav>
+
+			</div>
+
 
 	 <?php 
    		} 

@@ -162,7 +162,6 @@ include('bbdd.php');
 <head>
 	
 
-  <link rel="stylesheet" type="text/css" href="cabecera.css">
   <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Convergence" />
   <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
   <script src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
@@ -172,7 +171,7 @@ include('bbdd.php');
 	
 	
 <link rel="stylesheet" type="text/css" href="ultimasincidencias_t.css">
-<link rel="stylesheet" type="text/css" href="cabecera.css">
+
 
 
 
@@ -188,23 +187,16 @@ if(isset($_COOKIE['gente'])){
 
 ?>
 
-<body   style="background-image:url(../img/iconos/portada_ca.jpg)"; >
+<body   style="background-image:url(../img/iconos/portada_ca.jpg)" >
 
 
-		<nav class="[ navbar navbar-fixed-top ][ navbar-bootsnipp animate ]" role="navigation">
 
-  		<table style="margin-left: 20px; width: 100%">
-		<tr>
-
-			<td style="width: 65%; ">
+  	
 					<?php
 						include_once("showmenu.php");
 
 					?>
-				</td>
-			</tr>
-		</table>
-		</nav>
+			
 
 	<div class="container fadeInDown" style="background-color: white; border-radius: 10px; margin-top: 7%" id="informacion">
 		<h2><?php echo $TITULOCUENTA;?></h2>
