@@ -173,7 +173,11 @@ include('bbdd.php');
 <link rel="stylesheet" type="text/css" href="ultimasincidencias_t.css">
 
 
-
+<style>
+	#alturalinea {
+		line-height: 1.15;
+	}
+</style>
 
 </head>
 
@@ -187,7 +191,7 @@ if(isset($_COOKIE['gente'])){
 
 ?>
 
-<body   style="background-image:url(../img/iconos/portada_ca.jpg)" >
+<body   style="background-image:url(../img/iconos/portada_ca.jpg)" id="alturalinea">
 
 
 
@@ -198,7 +202,7 @@ if(isset($_COOKIE['gente'])){
 					?>
 			
 
-	<div class="container fadeInDown" style="background-color: white; border-radius: 10px; margin-top: 7%" id="informacion">
+	<div class="container fadeInDown" style="background-color: white; border-radius: 10px; margin-top: 10%" id="informacion">
 		<h2><?php echo $TITULOCUENTA;?></h2>
 		<input type="hidden" name="solimade" id="solimade" value="<?php echo $solicitado; ?>">
 		<input type="hidden" name="tiposoli" id="tiposoli" value="<?php echo $tsolicitud; ?>">

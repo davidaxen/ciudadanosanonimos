@@ -126,7 +126,7 @@ $result=$conn->query($sql);
 
   
 					<?php
-						include_once("showmenu.php");
+						include_once("showmenu_t.php");
 
 					?>
 		

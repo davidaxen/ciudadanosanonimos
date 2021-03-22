@@ -82,7 +82,9 @@ $row1=mysqli_num_rows($result1);*/
 	background: white;
 }
 
-
+#alturalinea {
+		line-height: 1.15;
+	}
 
 
 </style>
@@ -100,7 +102,7 @@ $row1=mysqli_num_rows($result1);*/
   <meta http-equiv="content-type" content="application/xhtml+xml; charset=ISO-8859-1">
 </head>
 
-<body   style="background-image:url(../img/iconos/portada_ca.jpg); margin-top: 15%;"  >
+<body   style="background-image:url(../img/iconos/portada_ca.jpg); margin-top: 15%;" id="alturalinea" >
 
 
   	

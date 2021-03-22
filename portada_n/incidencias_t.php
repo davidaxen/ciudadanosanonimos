@@ -34,13 +34,17 @@ include('bbdd.php');
 
 <!--<strong><p style="text-align: center; font-family: Palatino, 'Palatino Linotype', serif; font-size: 18px;">Estamos trabajando en ello...</p></strong>-->
 
-
+<style>
+	#alturalinea {
+		line-height: 1.15;
+	}
+</style>
 
 
 </head>
 
 
-<body  style="background-image:url(/img/iconos/portada_ca.jpg); margin-top: 10%"; >
+<body  style="background-image:url(/img/iconos/portada_ca.jpg); margin-top: 10%"; id="alturalinea">
 
 
 

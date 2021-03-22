@@ -96,7 +96,7 @@
 <body style="background-image:url(../img/iconos/portada_ca.jpg); padding-top: 14%;"; id="alturalinea">
 
     <?php
-      include_once("../portada_n/showmenu.php");
+      include_once("../portada_n/showmenu_t.php");
 
     ?>
  

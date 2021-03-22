@@ -1,3 +1,4 @@
+<!-- Mismo archivo pero adaptado a portada_n/ultimasincidencias_t.php y donaciones/donaciones.php -->
 <?php 
 	error_reporting(0);
 	include('bbdd.php');
@@ -47,12 +48,15 @@
 <style>
     #padmarg {
         padding-top: 0px;
-        margin-top: 5px;
+        margin-top: 0px;
     }
-</style>	
+   
+   #line {
+       line-height: 12px;
+       margin-top: 0.30%;
+   }
+</style>
 </head>
-
-
 
 
 
@@ -118,7 +122,7 @@
 
 
 					<div class="collapse navbar-collapse justify-content-between" id="nav">
-						<ul class="navbar-nav">
+						<ul class="navbar-nav" id="line">
 
 
 
@@ -179,11 +183,11 @@
 					</li>
 				
 
-				<div align="center" style="border: 2px solid grey; border-radius: 10px" class="btn-group">
+				<div align="center" style="border: 2px solid grey; border-radius: 10px;" class="btn-group">
 
 					<li class="nav-item">
 
-					<a class="nav-link font-weight-bold px-3" href="/donaciones/donaciones.php"><?php echo $RUTAAPORTACION; ?></a>
+					<a class="nav-link font-weight-bold px-3" id="lin" href="/donaciones/donaciones.php"><?php echo $RUTAAPORTACION; ?></a>
 
 					</li>
 
