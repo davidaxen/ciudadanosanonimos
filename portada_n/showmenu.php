@@ -49,6 +49,13 @@
         padding-top: 0px;
         margin-top: 5px;
     }
+	@media only screen 
+    and (min-device-width: 300px)
+    and (max-device-width: 900px)  {
+		#quer {
+			padding-left: 10px;
+		}
+	 }
 </style>	
 </head>
 
@@ -107,7 +114,7 @@
    		?>
 
 
-   		<nav style="background-color: white;"  class="navbar navbar-expand-md navbar-light fixed-top">
+   		<nav style="background-color: white;"  class="navbar navbar-expand-md navbar-light fixed-top" id=quer>
    				<!--../img/ciudadanoslogo.png-->
 					<a class="navbar-brand"><img src="<?php echo $LOGOPRIN;?>"></a>
 						<button type="button" class="navbar-toggler bg-light" data-toggle="collapse" data-target="#nav">

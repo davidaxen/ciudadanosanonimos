@@ -86,7 +86,14 @@ $row1=mysqli_num_rows($result1);*/
 		line-height: 1.15;
 	}
 
-
+	@media only screen 
+    and (min-device-width: 300px)
+    and (max-device-width: 900px) 
+     {
+		#alturalinea {
+			margin-top: 50% !important;
+		}
+	 }
 </style>
 
 

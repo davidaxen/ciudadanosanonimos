@@ -38,13 +38,22 @@ include('bbdd.php');
 	#alturalinea {
 		line-height: 1.15;
 	}
+	@media only screen 
+    and (min-device-width: 300px)
+    and (max-device-width: 900px) 
+     {
+		#alturalinea {
+			margin-top: 50% !important;
+		}
+	 }
+
 </style>
 
 
 </head>
 
 
-<body  style="background-image:url(/img/iconos/portada_ca.jpg); margin-top: 10%"; id="alturalinea">
+<body  style="background-image:url(/img/iconos/portada_ca.jpg); margin-top: 15%"; id="alturalinea">
 
 
 

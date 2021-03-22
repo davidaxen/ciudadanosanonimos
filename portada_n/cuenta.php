@@ -177,6 +177,15 @@ include('bbdd.php');
 	#alturalinea {
 		line-height: 1.15;
 	}
+	@media only screen 
+    and (min-device-width: 300px)
+    and (max-device-width: 900px) 
+     {
+		#alturalinea {
+			margin-top: 50% !important;
+		}
+	 }
+
 </style>
 
 </head>
@@ -202,7 +211,7 @@ if(isset($_COOKIE['gente'])){
 					?>
 			
 
-	<div class="container fadeInDown" style="background-color: white; border-radius: 10px; margin-top: 10%" id="informacion">
+	<div class="container fadeInDown" style="background-color: white; border-radius: 10px; margin-top: 15%" id="informacion">
 		<h2><?php echo $TITULOCUENTA;?></h2>
 		<input type="hidden" name="solimade" id="solimade" value="<?php echo $solicitado; ?>">
 		<input type="hidden" name="tiposoli" id="tiposoli" value="<?php echo $tsolicitud; ?>">
