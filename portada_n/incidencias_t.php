@@ -6,7 +6,7 @@ include('bbdd.php');
 
 <head>
   <link rel="stylesheet" type="text/css" href="respuestas.css">
-  <link rel="stylesheet" type="text/css" href="portada_n/cabecera.css">
+ 
   <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Convergence" />
   <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
   <script src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
@@ -34,28 +34,35 @@ include('bbdd.php');
 
 <!--<strong><p style="text-align: center; font-family: Palatino, 'Palatino Linotype', serif; font-size: 18px;">Estamos trabajando en ello...</p></strong>-->
 
+<style>
+	#alturalinea {
+		line-height: 1.15;
+	}
+	@media only screen 
+    and (min-device-width: 300px)
+    and (max-device-width: 900px) 
+     {
+		#alturalinea {
+			margin-top: 50% !important;
+		}
+	 }
 
+</style>
 
 
 </head>
 
 
-<body  style="background-image:url(/img/iconos/portada_ca.jpg); margin-top: 10%"; >
+<body  style="background-image:url(/img/iconos/portada_ca.jpg); margin-top: 15%"; id="alturalinea">
 
-		<nav style="background-color: transparent;" class="[ navbar navbar-fixed-top ][ navbar-bootsnipp animate ]" role="navigation">
 
-  		<table style="margin-left: 20px; width: 100%">
-		<tr>
 
-			<td style="width: 65%; ">
+  		
 					<?php
 						include_once("showmenu.php");
 
 					?>
-				</td>
-			</tr>
-		</table>
-		</nav>
+		
 
 				
 <div class='wrapper fadeInDown' style="border-radius:10px; background-color: transparent; text-align: center; min-height: 0%; max-width: 650px; margin:auto;">
