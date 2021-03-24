@@ -101,6 +101,24 @@ include('bbdd.php');
 
 	}
 
+	function ajaxanalista(iduser, tipo) {
+		$.ajax({
+			url: "ajaxsolicitudanalista.php",
+			type: "POST",
+			data: {
+				iduser: iduser,
+				tipo: tipo
+			},
+			success: function(e){
+			  	console.log(e);
+
+			},
+			error: function(e) {
+		       	console.log(e.message);
+		    }
+		});
+	}
+
 	function confirmarDatos(){
 		var nombre = document.getElementById('nombre');
 		var email = document.getElementById('email');
@@ -308,17 +326,30 @@ if(isset($_COOKIE['gente'])){
 			 ?>
 
 
-
-
 		</div>
+
+			<div>
+			 	<label>¿Quieres ser <a target="_blank" href="https://www.ciudadanosanonimos.com/formas-de-participar-2/">analista</a>?</label>
+			 	<br>
+			 	<input type="checkbox" name="an_cp" id="an_cp" onclick="ajaxanalista(<?php echo $resultadousuario['id']; ?>, 1)" <?php if ($resultadousuario['an_cp'] == 1) {?> checked <?php } ?> > <label for="an_cp">Analista Codigo Postal</label>
+			 	<br>
+			 	<input type="checkbox" name="an_loc" id="an_loc" onclick="ajaxanalista(<?php echo $resultadousuario['id']; ?>, 2)" <?php if ($resultadousuario['an_loc'] == 1) {?> checked <?php } ?> > <label for="an_loc">Analista Localidad</label>
+			 	<br>
+			 	<input type="checkbox" name="an_pro" id="an_pro" onclick="ajaxanalista(<?php echo $resultadousuario['id']; ?>, 3)" <?php if ($resultadousuario['an_pro'] == 1) {?> checked <?php } ?> > <label for="an_pro">Analista Provincia</label>
+			 	<br>
+			 	<input type="checkbox" name="an_com" id="an_com" onclick="ajaxanalista(<?php echo $resultadousuario['id']; ?>, 4)" <?php if ($resultadousuario['an_com'] == 1) {?> checked <?php } ?> > <label for="an_com">Analista Comunidad</label>
+			 	<br>
+			 	<input type="checkbox" name="an_pais" id="an_pais" onclick="ajaxanalista(<?php echo $resultadousuario['id']; ?>, 5)" <?php if ($resultadousuario['an_pais'] == 1) {?> checked <?php } ?> > <label for="an_pais">Analista Pais</label>
+			 </div>
+			 <br>
 	
 			<div>
 				<button style="border-color: black" type="button" class="btn btn-default" onclick="desaparecer()"><?php echo $BTN_EDITAR; ?></button>
 				<button style="border-color: black" type="button" class="btn btn-default" onclick="desaparecerpass()"><?php echo $BTN_CAMBIARPASS; ?></button>
-			</div>
-			 <br>		
-		</div>
 
+			</div>
+			<br>		 	
+		</div>
 	</div>
 
 	<div class="container fadeInDown" style="background-color: white; border-radius: 10px; display: none; margin-top: 220px" id="formulario">

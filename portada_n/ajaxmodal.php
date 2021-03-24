@@ -130,7 +130,7 @@
 			$total = $cantrespuestas[$i]*100;
 
 			$porcentajefinal = ($cantrespuestas[$i]/$totalcantresp) * 100;
-			echo $nombrespuestas[$i].": ".$cantrespuestas[$i]."<br>";
+			echo $nombrespuestas[$i].": ".round($porcentajefinal)."%<br>";
 
 			?>
 			<span class="barra-fondo">
@@ -141,7 +141,7 @@
 
 		if ($resultadopreg['otrosmot'] == 1) {
 			$porcentajefinal = ($cantrespuestas[99]/$totalcantresp) * 100;
-			echo $nombrespuestas[99].": ".$cantrespuestas[99]."<br>";
+			echo $nombrespuestas[99].": ".round($porcentajefinal)."%<br>";
 			?>
 			<span class="barra-fondo">
     			<li class="barras" data-value="<?php echo round($porcentajefinal); ?>"></li>
