@@ -44,23 +44,6 @@
 <!--This is used for search icon. Instead putting icon manually it is loaded from fontawesome-->
 
 
-<meta charset="utf-8">
-
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
-
-<!-- Bootstrap CSS -->
-
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
-
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
-
-
-<!--fontawesome-->
-
-<script defer src="https://use.fontawesome.com/releases/v5.0.13/js/all.js" integrity="sha384-xymdQtn1n3lH2wcu0qhcdaOpQwyoarkgLVxC/wZ5q7h9gHtxICrpcaSUfygqZGOe" crossorigin="anonymous"></script>
-
 <script type="text/javascript">
   
   function redireccion(ruta) {
@@ -112,20 +95,12 @@
 </head>
 <body style="background-image:url(../img/iconos/portada_ca.jpg); padding-top: 14%;"; id="alturalinea">
 
-<nav style="background-color: transparent;" class="[ navbar navbar-fixed-top ][ navbar-bootsnipp animate ]" role="navigation">
-
-<table style="margin-left: 20px; width: 100%">
-<tr>
-
-<td style="width: 65%; ">
     <?php
-      include_once("../portada_n/showmenu.php");
+      include_once("../portada_n/showmenu_t.php");
 
     ?>
-  </td>
-</tr>
-</table>
-</nav>
+ 
+
 
 
 

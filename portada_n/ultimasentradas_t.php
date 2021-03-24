@@ -82,41 +82,42 @@ $row1=mysqli_num_rows($result1);*/
 	background: white;
 }
 
+#alturalinea {
+		line-height: 1.15;
+	}
 
+	@media only screen 
+    and (min-device-width: 300px)
+    and (max-device-width: 900px) 
+     {
+		#alturalinea {
+			margin-top: 50% !important;
+		}
+	 }
 </style>
 
 
 <head>
 	<!-- cabecera -->
   <link rel="stylesheet" type="text/css" href="respuestas.css">
-  <link rel="stylesheet" type="text/css" href="cabecera.css">
   <link rel="stylesheet" type="text/css" href="ultimasincidencias_t.css">
 
   <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Convergence" />
   <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
-  <script src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
 
   <meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
   <meta http-equiv="content-type" content="application/xhtml+xml; charset=ISO-8859-1">
 </head>
 
-<body   style="background-image:url(../img/iconos/portada_ca.jpg); margin-top: 15%"; >
+<body   style="background-image:url(../img/iconos/portada_ca.jpg); margin-top: 15%;" id="alturalinea" >
 
 
-		<nav style="background-color: transparent;" class="[ navbar navbar-fixed-top ][ navbar-bootsnipp animate ]" role="navigation">
-
-  		<table style="margin-left: 20px; width: 100%">
-		<tr>
-
-			<td style="width: 65%;">
+  	
 					<?php
 						include_once("showmenu.php");
 
 					?>
-				</td>
-			</tr>
-		</table>
-		</nav>
+			
 <!--onload="setTimeout('refrescar1()', 5000);"-->
 
 

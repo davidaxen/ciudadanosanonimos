@@ -52,31 +52,13 @@ $result=$conn->query($sql);
 <head>
 	
 	<link rel="stylesheet" type="text/css" href="ultimasincidencias_t.css">
-	<link rel="stylesheet" type="text/css" href="portada_n/cabecera.css">
   	<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Convergence" />
   	<script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
-  	<script src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
+
 
   <meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
   <meta http-equiv="content-type" content="application/xhtml+xml; charset=ISO-8859-1">
 
-
-<meta charset="utf-8">
-
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
-
-<!-- Bootstrap CSS -->
-
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
-
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
-
-
-<!--fontawesome-->
-
-<script defer src="https://use.fontawesome.com/releases/v5.0.13/js/all.js" integrity="sha384-xymdQtn1n3lH2wcu0qhcdaOpQwyoarkgLVxC/wZ5q7h9gHtxICrpcaSUfygqZGOe" crossorigin="anonymous"></script>
 
 <script>
 	function refrescar()
@@ -134,6 +116,14 @@ $result=$conn->query($sql);
 	#alturalinea {
 		line-height: 1.15;
 	}
+	@media only screen 
+    and (min-device-width: 300px)
+    and (max-device-width: 900px) 
+     {
+		#alturalinea {
+			margin-top: 50% !important;
+		}
+	 }
 </style>
 
 </head>
@@ -141,20 +131,14 @@ $result=$conn->query($sql);
 <body   style="background-image:url(../img/iconos/portada_ca.jpg);"; id="alturalinea">
 
 
-<nav style="background-color: transparent;" class="[ navbar navbar-fixed-top ][ navbar-bootsnipp animate ]" role="navigation">
 
-  		<table style="margin-left: 20px; width: 100%">
-		<tr>
-
-			<td style="width: 65%; ">
+  
 					<?php
-						include_once("showmenu.php");
+						include_once("showmenu_t.php");
 
 					?>
-				</td>
-			</tr>
-		</table>
-		</nav>
+		
+
 
 
 

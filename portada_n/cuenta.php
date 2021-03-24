@@ -180,7 +180,6 @@ include('bbdd.php');
 <head>
 	
 
-  <link rel="stylesheet" type="text/css" href="cabecera.css">
   <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Convergence" />
   <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
   <script src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
@@ -190,9 +189,22 @@ include('bbdd.php');
 	
 	
 <link rel="stylesheet" type="text/css" href="ultimasincidencias_t.css">
-<link rel="stylesheet" type="text/css" href="cabecera.css">
 
 
+<style>
+	#alturalinea {
+		line-height: 1.15;
+	}
+	@media only screen 
+    and (min-device-width: 300px)
+    and (max-device-width: 900px) 
+     {
+		#alturalinea {
+			margin-top: 50% !important;
+		}
+	 }
+
+</style>
 
 </head>
 
@@ -206,25 +218,18 @@ if(isset($_COOKIE['gente'])){
 
 ?>
 
-<body   style="background-image:url(../img/iconos/portada_ca.jpg)"; >
+<body   style="background-image:url(../img/iconos/portada_ca.jpg)" id="alturalinea">
 
 
-		<nav class="[ navbar navbar-fixed-top ][ navbar-bootsnipp animate ]" role="navigation">
 
-  		<table style="margin-left: 20px; width: 100%">
-		<tr>
-
-			<td style="width: 65%; ">
+  	
 					<?php
 						include_once("showmenu.php");
 
 					?>
-				</td>
-			</tr>
-		</table>
-		</nav>
+			
 
-	<div class="container fadeInDown" style="background-color: white; border-radius: 10px; margin-top: 7%" id="informacion">
+	<div class="container fadeInDown" style="background-color: white; border-radius: 10px; margin-top: 15%" id="informacion">
 		<h2><?php echo $TITULOCUENTA;?></h2>
 		<input type="hidden" name="solimade" id="solimade" value="<?php echo $solicitado; ?>">
 		<input type="hidden" name="tiposoli" id="tiposoli" value="<?php echo $tsolicitud; ?>">
