@@ -100,8 +100,11 @@ a hover: {text-decoration:none}
 
 <?php 
 $sql33="select * from portadai where idempresa='".$idempresas."'";
-$result33=mysqli_query ($conn,$sql33) or die ("Invalid result232");
-$soco33=mysqli_fetch_array($result33);
+$result33=$conn->query($sql33);
+$soco33=$result33->fetch();
+
+/*$result33=mysqli_query ($conn,$sql33) or die ("Invalid result232");
+$soco33=mysqli_fetch_array($result33);*/
 $ttg=0;
 for ($tg=2;$tg<count($soco33);$tg++){;
 if ($soco33[$tg]==1){;

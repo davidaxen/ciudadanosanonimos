@@ -30,9 +30,18 @@ if ($datos!='datos'){;
 <?php 
 }else{;
 
-$sql="SELECT * from ayuda where menu='".$menu."' order by seccion asc,subseccion asc"; 
-$result=mysqli_query ($conn,$sql) or die ("Invalid result");
-$row=mysqli_num_rows($result);
+$sql="SELECT * from ayuda where menu=:menu order by seccion asc,subseccion asc";
+
+$result=$conn->prepare($sql);
+$resultmos=$conn->prepare($sql);
+$result->bindParam(':menu',$menu);
+$result->execute(); 
+//$result=$conn->query($sql);
+//$resultmos=$conn->query($sql);
+$num_rows=$result->fetchAll();
+$row=count($num_rows);
+//$result=mysqli_query ($conn,$sql) or die ("Invalid result");
+//$row=mysqli_num_rows($result);
 
 switch($menu){;
 case '1':$valormenu="Administrar";break;
@@ -50,12 +59,17 @@ case '5':$valormenu="Ayuda";break;
 
 <tr class="enctab"><td>Modulo</td><td>Seccion</td><td>Texto</td></tr>
 <?php 
-for ($i=0; $i<$row; $i++){;
-mysqli_data_seek($result, $i);
-$resultado=mysqli_fetch_array($result);
-$seccion=$resultado['seccion'];
-$subseccion=$resultado['subseccion'];
-$titulo=$resultado['titulo'];
+
+foreach ($resultmos as $row1) {
+	$seccion=$row1['seccion'];
+	$subseccion=$row1['subseccion'];
+	$titulo=$row1['titulo'];
+//for ($i=0; $i<$row; $i++){;
+//mysqli_data_seek($result, $i);
+//$resultado=mysqli_fetch_array($result);
+//$seccion=$resultado['seccion'];
+//$subseccion=$resultado['subseccion'];
+//$titulo=$resultado['titulo'];
 ?>
 <tr class="dattab">
 <td><?php  echo$seccion;?></td>

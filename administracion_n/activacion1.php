@@ -15,10 +15,15 @@ $parte=explode('?',$url);
 $parte2=explode('#;&',$parte2des);
 
 		
-$sql="SELECT * from validar where codvalidar='".$parte[1]."'"; 
+$sql="SELECT * from validar where codvalidar=:parte"; 
 //echo $sql;
-$result=mysqli_query ($conn,$sql) or die ("Invalid result");
-$resultado=mysqli_fetch_array($result);
+$result=$conn->prepare($sql);
+$result->bindParam(':parte', $parte[1]);
+$result->execute();
+$resultado=$result->fetch();
+
+/*$result=mysqli_query ($conn,$sql) or die ("Invalid result");
+$resultado=mysqli_fetch_array($result);*/
 $emailbbdd=$resultado['email'];
 $passbbdd=$resultado['password'];
 $validar=$resultado['validar'];
@@ -34,9 +39,7 @@ $idpr=$resultado['idpr'];
 
 if ($idpr!=null){;
 
-
 ?>
-
 
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -44,19 +47,22 @@ if ($idpr!=null){;
   <meta http-equiv="Content-type" content="text/html;charset=UTF-8"/>
 <title>VALIDACION DE ALTA EN CIUDADANOS ANONIMOS</title>  
 <link rel="stylesheet" href="solicitud.css">
+<link rel="stylesheet" type="text/css" href="../portada_n/ultimasincidencias_t.css">
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 </head>
 
 <body class='html' style='background-image:url(../img/iconos/portada_ca.jpg);
   background-repeat: no-repeat;
   background-size: cover;'>
-<div class='cuadro'>
-<div class='hijo' style='background-color:#f5f5f5'>
 
-
-  <div class='imgcontainer'>
-    <img src='../img/logo-ciud-anonimos.png' width='250px'>
-    <h3 style="text-align: center;color:#000">VALIDACION DE ALTA EN CIUDADANOS ANONIMOS</h3>
-  </div>
+ <div style="max-width: 650px; margin-left: 28%; border-radius: 25px;" class='fadeInDown'>
+   <div class='formContent' style='background-color:#f5f5f5; border-radius: 9px;'>
+      <img src='../img/logo-ciud-anonimos.png' width='250px'>
+      <h3 style="text-align: center;color:#000">VALIDACION DE ALTA EN CIUDADANOS ANONIMOS</h3>
+   
     <h4 style="text-align: center;color:#000">
 <?php    
 
@@ -77,12 +83,13 @@ $pais=$resultado['pais'];
 $localidad=strtoupper($resultado['localidad']);
 $nombreemp=strtoupper($resultado['nombreemp']);
 
-
-
 include('introempleados.php');
 
-$sql="UPDATE validar SET validar='1' where idvalidar='".$idvalidar."'"; 
-$result=mysqli_query ($conn,$sql) or die ("Invalid result");
+$sql="UPDATE validar SET validar='1' where idvalidar=:idvalidar"; 
+$result=$conn->prepare($sql);
+$result->bindParam(':idvalidar', $idvalidar);
+$result->execute();
+//$result=mysqli_query ($conn,$sql) or die ("Invalid result");
 
 
 echo '<br/>La validaci&oacute;n esta tramitada ya puede acceder pinche <a href="http://control.ciudadanosanonimos.com?idpr='.$idpr.'" target="_blank">Aqu&iacute;</a><br/>';
@@ -97,34 +104,9 @@ echo 'Hemos detectado un problema con la validaci&oacute;n vuelva a probar el en
     </h4>
 
 
-</div>
-</div>
-<p style="padding:150px;">
- 
-</p>
+ </div>
+ </div>
 
-<div class='cuadro' style='background-color:#c5c5c5;height:220px;color:#fff;'>
-<div class='hijo2'>
-
-
-  <div class='imgcontainer'>
-<img src='../img/logo-ciud-anonimos.png' width='250px'>
-      <br/>CIUDADANOS ANONIMOS EN ACCION
-  </div>
-
-  <div class='container' style='column-count:2;background-color:transparent;'>
-<br/>
-<br/>
-<br/>
-
-<br/>
-<br/>
-<br/>        
-  </div>
-
-
-</div>
-</div>
 
 <?php 
 } else {;

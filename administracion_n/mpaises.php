@@ -27,8 +27,14 @@ if ($datos!='datos'){;
 }else{;
 
 $sql="SELECT * from pais"; 
-$result=mysqli_query ($conn,$sql) or die ("Invalid result");
-$row=mysqli_num_rows($result);
+//$result=mysqli_query ($conn,$sql) or die ("Invalid result");
+
+$result=$conn->prepare($sql);
+$resultmos=$conn->prepare($sql);
+$num_rows=$result->fetchAll();
+$row=count($num_rows);
+
+//$row=mysqli_num_rows($result);
 ?>
 <?include ('../js/busqueda.php');?>
 
@@ -37,11 +43,16 @@ $row=mysqli_num_rows($result);
 <tr class="enctab"><td>Cod Pais</td><td>Pais</td><td>Opciones</td></tr>
 </thead>
 <?php  
-for ($i=0; $i<$row; $i++){;
-mysqli_data_seek($result, $i);
-$resultado=mysqli_fetch_array($result);
-$idpais=$resultado['idpais'];
-$nombrepais=$resultado['nombrepais'];
+
+foreach ($resultmos as $row1) {
+
+	$idpais=$row1['idpais'];
+$nombrepais=$row1['nombrepais'];
+//for ($i=0; $i<$row; $i++){;
+//mysqli_data_seek($result, $i);
+//$resultado=mysqli_fetch_array($result);
+//$idpais=$resultado['idpais'];
+//$nombrepais=$resultado['nombrepais'];
 ?>
 <tr class="dattab">
 <td><?php  echo $idpais;?></td>

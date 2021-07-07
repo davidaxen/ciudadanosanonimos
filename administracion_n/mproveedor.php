@@ -5,13 +5,19 @@ if ($ide!=null){;
 
 
 $sql31="select * from menuadministracionnombre where idempresa='".$ide."'";
-$result31=mysqli_query ($conn,$sql31) or die ("Invalid result menucontabilidad");
-$resultado31=mysqli_fetch_array($result31);
+$result31=$conn->query($sql31);
+$resultado31=$result31->fetch();
+
+/*result31=mysqli_query ($conn,$sql31) or die ("Invalid result menucontabilidad");
+$resultado31=mysqli_fetch_array($result31);*/
 $nc=$resultado31['proveedor'];
 
 $sql32="select * from menuadministracionimg where idempresa='".$ide."'";
-$result32=mysqli_query ($conn,$sql32) or die ("Invalid result menucontabilidad");
-$resultado32=mysqli_fetch_array($result32);
+$result32=$conn->query($sql32);
+$resultado32=$result32->fetch();
+
+/*$result32=mysqli_query ($conn,$sql32) or die ("Invalid result menucontabilidad");
+$resultado32=mysqli_fetch_array($result32);*/
 $ic=$resultado32['proveedor'];
 
 include('../portada_n/cabecera2.php');?>
@@ -38,8 +44,13 @@ Estado <select name="estadoe">
 
 $sql="SELECT * from proveedores where idempresas='".$ide."' and estado='".$estadoe."' order by idproveedor asc"; 
 //echo  $sql;
-$result=mysqli_query ($conn,$sql) or die ("Invalid result");
-$row=mysqli_num_rows($result);
+$result=$conn->query($sql);
+$resultmos=$conn->query($sql);
+$resultado=$result->fetchAll();
+$row=count($resultado);
+
+/*$result=mysqli_query ($conn,$sql) or die ("Invalid result");
+$row=mysqli_num_rows($result);*/
 //echo  $row;
 ?>
 
@@ -57,13 +68,14 @@ echo  "No tiene ning&uacuten proveedor dado de ";
 <table width="800" class="table-bordered table pull-right" id="mytable">
 	
 	<?php 
-for ($i=0; $i<$row; $i++){;
+/*for ($i=0; $i<$row; $i++){;
 mysqli_data_seek($result, $i);
-$resultado=mysqli_fetch_array($result);
-$idproveedor=$resultado['idproveedor'];
-$nombre=$resultado['nombre'];
-$nif=$resultado['nif'];
-$estado=$resultado['estado'];
+$resultado=mysqli_fetch_array($result);*/
+foreach ($resultmos as $rowmos) {
+$idproveedor=$rowmos['idproveedor'];
+$nombre=$rowmos['nombre'];
+$nif=$rowmos['nif'];
+$estado=$rowmos['estado'];
 ?>
 <tr class="menor1">
 <td><?php  echo $idproveedor;?></td>

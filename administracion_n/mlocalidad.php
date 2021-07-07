@@ -26,9 +26,14 @@ if ($datos!='datos'){;
 <?php 
 }else{;
 
-$sql="SELECT * from municipios"; 
-$result=mysqli_query ($conn,$sql) or die ("Invalid result");
-$row=mysqli_num_rows($result);
+$sql="SELECT * from municipios";
+
+$result=$conn->prepare($sql);
+$resultmos=$conn->prepare($sql);
+$num_rows=$result->fetchAll();
+$row=count($num_rows);
+//$result=mysqli_query ($conn,$sql) or die ("Invalid result");
+//$row=mysqli_num_rows($result);
 ?>
 <?include ('../js/busqueda.php');?>
 
@@ -37,12 +42,18 @@ $row=mysqli_num_rows($result);
 <tr class="enctab"><td>Cod Municipio</td><td>Municipio</td><td>Provincia</td><td>Opciones</td></tr>
 </thead>
 <?php  
-for ($i=0; $i<$row; $i++){;
-mysqli_data_seek($result, $i);
-$resultado=mysqli_fetch_array($result);
-$id=$resultado['id'];
-$municipio=$resultado['municipio'];
-$idprovincia=$resultado['provincia_id'];
+
+foreach ($resultmos as $row1) {
+	
+	$id=$row1['id'];
+	$municipio=$row1['municipio'];
+	$idprovincia=$row1['provincia_id'];
+//for ($i=0; $i<$row; $i++){;
+//mysqli_data_seek($result, $i);
+//$resultado=mysqli_fetch_array($result);
+//$id=$resultado['id'];
+//$municipio=$resultado['municipio'];
+//$idprovincia=$resultado['provincia_id'];
 ?>
 <tr class="dattab">
 <td><?php  echo $id;?></td>

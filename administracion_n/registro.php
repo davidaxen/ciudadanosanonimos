@@ -108,12 +108,20 @@ tracking"></a></div></noscript>
 
 <?php 
 $sql1="select * from usuarios where user='".$email."'";
-$result1=mysqli_query ($conn,$sql1) or die ("Invalid result 1");
-$row1=mysqli_affected_rows();
+$result1=$conn->query($sql1);
+$resultado1=$result1->fetchAll();
+$row1=count($resultado1);
+
+/*$result1=mysqli_query ($conn,$sql1) or die ("Invalid result 1");
+$row1=mysqli_affected_rows();*/
 
 $sql10="select * from validar where email='".$email."'";
-$result10=mysqli_query ($conn,$sql10) or die ("Invalid result 1");
-$row10=mysqli_affected_rows();
+$result10=$conn->query($sql10);
+$resultado10=$result10->fetchAll();
+$row10=count($resultado10);
+
+/*$result10=mysqli_query ($conn,$sql10) or die ("Invalid result 1");
+$row10=mysqli_affected_rows();*/
 
 
 $abc=array('A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z','a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z');
@@ -131,13 +139,17 @@ if (($row1==0) and ($row10==0)){;
 
 $sql="select * from validar order by idvalidar desc";
 //echo $sql.'<br/>';
-$result=mysqli_query ($conn,$sql) or die ("Invalid result 1");
-$row=mysqli_affected_rows();
+$result=$conn->query($sql);
+$resultado=$result->fetchAll();
+$row=count($resultado);
+
+/*$result=mysqli_query ($conn,$sql) or die ("Invalid result 1");
+$row=mysqli_affected_rows();*/
 
 if ($row==0){;
 $idvalidar=1;
 }else{;
-$idvalidar=mysqli_result($result,0,'idvalidar');
+$idvalidar=$resultado[0]['idvalidar'];
 $idvalidar=$idvalidar+1;
 };
 
@@ -163,7 +175,8 @@ $dat.=$f;
 $sql13 = "INSERT INTO validar(idvalidar,email,password,validar,codvalidar,datovalidar) 
 VALUES ('$idvalidar','$email','$passwordNew1','0','$confirmar','$valor1')";
 //echo $sql13;
-$result13=mysqli_query ($conn,$sql13) or die ("Invalid result iclientes");
+//$result13=mysqli_query ($conn,$sql13) or die ("Invalid result iclientes");
+$result13=$conn->exec($sql13);
 
 
 

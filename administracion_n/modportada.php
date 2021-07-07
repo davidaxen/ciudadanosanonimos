@@ -53,8 +53,10 @@ a hover: {text-decoration:none}
 
 <?php 
 $sql33="select * from portadai where idempresa='".$idempresas."'";
-$result33=mysqli_query ($conn,$sql33) or die ("Invalid result232");
-$soco33=mysqli_fetch_array($result33);
+$result33=$conn->query($sql33);
+$soco33=$result33->fetch();
+/*$result33=mysqli_query ($conn,$sql33) or die ("Invalid result232");
+$soco33=mysqli_fetch_array($result33);*/
 $ttg=0;
 for ($tg=2;$tg<count($soco33);$tg++){;
 if ($soco33[$tg]==1){;
@@ -73,66 +75,91 @@ $ttg=6-$ttg;
 <input type="hidden" name="idcm" value="20">
 <?php 
 $sql23="select * from empresas where idempresas='".$idempresas."' ";
-$result23=mysqli_query ($conn,$sql23) or die ("Invalid result23");
+$result23=$conn->query($sql23);
+$soco=$result23->fetch();
+
+/*$result23=mysqli_query ($conn,$sql23) or die ("Invalid result23");
 $soco=mysqli_fetch_array($result23);
 $row=mysqli_num_rows($result23);
-$col=mysqli_num_fields($result23);
+$col=mysqli_num_fields($result23);*/
 
-mysqli_field_seek($result23, 2);
-$usera=mysqli_fetch_field($result23)->name;
+/*mysqli_field_seek($result23, 2);
+$usera=mysqli_fetch_field($result23)->name;*/
 
 
 $sql2s="select * from servicios where idempresa='".$idempresas."' ";
-$result2s=mysqli_query ($conn,$sql2s) or die ("Invalid result2p");
+$result2s=$conn->query($sql2s);
+$socos=$result2s->fetch();
+
+/*$result2s=mysqli_query ($conn,$sql2s) or die ("Invalid result2p");
 $socos=mysqli_fetch_array($result2s);
 $rows=mysqli_num_rows($result2s);
-$cols=mysqli_num_fields($result2s);
+$cols=mysqli_num_fields($result2s);*/
 
 
 $sql2si="select * from menuserviciosimg where idempresa='".$idempresas."' ";
-$result2si=mysqli_query ($conn,$sql2si) or die ("Invalid result2p");
+$result2si=$conn->query($sql2si);
+$socosi=$result2si->fetch();
+
+/*$result2si=mysqli_query ($conn,$sql2si) or die ("Invalid result2p");
 $socosi=mysqli_fetch_array($result2si);
 $rowsi=mysqli_num_rows($result2si);
-$colsi=mysqli_num_fields($result2si);
+$colsi=mysqli_num_fields($result2si);*/
 
 $sql2sn="select * from menuserviciosnombre where idempresa='".$idempresas."' ";
-$result2sn=mysqli_query ($conn,$sql2sn) or die ("Invalid result2p");
+$result2sn=$conn->query($sql2sn);
+$socosn=$result2sn->fetch();
+
+/*$result2sn=mysqli_query ($conn,$sql2sn) or die ("Invalid result2p");
 $socosn=mysqli_fetch_array($result2sn);
 $rowsn=mysqli_num_rows($result2sn);
-$colsn=mysqli_num_fields($result2sn);
+$colsn=mysqli_num_fields($result2sn);*/
 
 
 $sql2p="select * from portadai where idempresa='".$idempresas."' ";
-$result2p=mysqli_query ($conn,$sql2p) or die ("Invalid result2p");
+$result2p=$conn->query($sql2p);
+$socop=$result2p->fetch();
+
+/*$result2p=mysqli_query ($conn,$sql2p) or die ("Invalid result2p");
 $socop=mysqli_fetch_array($result2p);
 $rowp=mysqli_num_rows($result2p);
-$colp=mysqli_num_fields($result2p);
+$colp=mysqli_num_fields($result2p);*/
 
 
 $sql2h="select * from hoja where idempresa='".$idempresas."' ";
-$result2h=mysqli_query ($conn,$sql2h) or die ("Invalid result2h");
+$result2h=$conn->query($sql2h);
+$socoh=$result2h->fetch();
+
+/*$result2h=mysqli_query ($conn,$sql2h) or die ("Invalid result2h");
 $socoh=mysqli_fetch_array($result2h);
 $rowh=mysqli_num_rows($result2h);
-$colh=mysqli_num_fields($result2h);
+$colh=mysqli_num_fields($result2h);*/
 
 
 $sql2e="select * from etiquetas where idempresa='".$idempresas."' ";
-$result2e=mysqli_query ($conn,$sql2e) or die ("Invalid result2e");
+$result2e=$conn->query($sql2e);
+$socoe=$result2e->fetch();
+
+/*$result2e=mysqli_query ($conn,$sql2e) or die ("Invalid result2e");
 $socoe=mysqli_fetch_array($result2e);
 $rowe=mysqli_num_rows($result2e);
-$cole=mysqli_num_fields($result2e);
+$cole=mysqli_num_fields($result2e);*/
 
 
 $sql25="select * from usuarios where idempresas='".$idempresas."' ";
-$result25=mysqli_query ($conn,$sql25) or die ("Invalid result23");
+$result25=$conn->query($sql25);
+$socou=$result25->fetch();
+
+/*$result25=mysqli_query ($conn,$sql25) or die ("Invalid result23");
 $socou=mysqli_fetch_array($result25);
 $rowu=mysqli_num_rows($result25);
-$colu=mysqli_num_fields($result25);
+$colu=mysqli_num_fields($result25);*/
 
 
 for ($j=0;$j<1;$j++){;
-mysqli_field_seek($result23, $j);
-$nomb23=mysqli_fetch_field($result23)->name;
+/*mysqli_field_seek($result23, $j);
+$nomb23=mysqli_fetch_field($result23)->name;*/
+$nomb23=$result23->getColumnMeta($j,['name']);
 ?>
 <input type="hidden" name="datosa[<?php  echo$j;?>]" value="<?php  echo$soco[$j];?>">
 <input type="hidden" name="nombrea[<?php  echo$j;?>]" value="<?php  echo$nomb23;?>">
@@ -141,8 +168,9 @@ $nomb23=mysqli_fetch_field($result23)->name;
 
 <?php 
 for ($j=2;$j<$cols;$j++){;
-mysqli_field_seek($result2s, $j);
-$nomb2s=mysqli_fetch_field($result2s)->name;
+/*mysqli_field_seek($result2s, $j);
+$nomb2s=mysqli_fetch_field($result2s)->name;*/
+$nomb2s=$result2s->getColumnMeta($j,['name']);
 ?>
 <input type="hidden" name="datossa[<?php  echo$j;?>]" value="<?php  echo$socos[$j];?>">
 <input type="hidden" name="nombresa[<?php  echo$j;?>]" value="<?php  echo$nomb2s;?>">
@@ -150,24 +178,27 @@ $nomb2s=mysqli_fetch_field($result2s)->name;
 
 
 <?php for ($j=2;$j<$colp;$j++){;
-mysqli_field_seek($result2p, $j);
-$nomb2p=mysqli_fetch_field($result2p)->name;
+/*mysqli_field_seek($result2p, $j);
+$nomb2p=mysqli_fetch_field($result2p)->name;*/
+$nomb2p=$result2p->getColumnMeta($j,['name']);
 ?>
 <input type="hidden" name="datospa[<?php  echo$j;?>]" value="<?php  echo$socop[$j];?>">
 <input type="hidden" name="nombrepa[<?php  echo$j;?>]" value="<?php  echo$nomb2p;?>">
 <?php };?>
 
 <?php for ($j=2;$j<$colh;$j++){;
-mysqli_field_seek($result2h, $j);
-$nomb2h=mysqli_fetch_field($result2h)->name;
+/*mysqli_field_seek($result2h, $j);
+$nomb2h=mysqli_fetch_field($result2h)->name;*/
+$nomb2h=$result2h->getColumnMeta($j,['name']);
 ?>
 <input type="hidden" name="datosha[<?php  echo$j;?>]" value="<?php  echo$socoh[$j];?>">
 <input type="hidden" name="nombreha[<?php  echo$j;?>]" value="<?php  echo$nomb2h;?>">
 <?php };?>
 
 <?php for ($j=2;$j<$cole;$j++){;
-mysqli_field_seek($result2e, $j);
-$nomb2e=mysqli_fetch_field($result2e)->name;
+/*mysqli_field_seek($result2e, $j);
+$nomb2e=mysqli_fetch_field($result2e)->name;*/
+$nomb2e=$result2e->getColumnMeta($j,['name']);
 ?>
 <input type="hidden" name="datosea[<?php  echo$j;?>]" value="<?php  echo$socoe[$j];?>">
 <input type="hidden" name="nombreea[<?php  echo$j;?>]" value="<?php  echo$nomb2e;?>">
@@ -196,8 +227,9 @@ for ($t=0;$t<$cols;$t++){;
 $i=$t+2;
 $y=$t+2;
 $u=$t+3;
-mysqli_field_seek($result2s, $i);
-$nomb2s=mysqli_fetch_field($result2s)->name;
+/*mysqli_field_seek($result2s, $i);
+$nomb2s=mysqli_fetch_field($result2s)->name;*/
+$nomb2s=$result2s->getColumnMeta($j,['name']);
 ?>
 <?php if($socos[$i]==1){?>
 

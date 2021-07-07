@@ -1,105 +1,382 @@
-<?php   
+<?php
 include('bbdd.php');
 
 $fechac=date("Y-m-d",time());
 
+$mail = $_COOKIE['gente'];
+$sqltusuario = "SELECT * FROM usuarios WHERE user = :gente";
+$resultusuario=$conn->prepare($sqltusuario);
+$resultusuario->bindParam(':gente', $mail);
+$resultusuario->execute();
+$resultadousuario = $resultusuario->fetch();
 
-$sql1="SELECT * from mensajes where  idempresa='".$ide."' and fechafin>'".$fechac."' or fechafin is null";
-//echo $sql1; 
-$result1=mysqli_query ($conn,$sql1) or die ("Invalid result 1");
-$row1=mysqli_num_rows($result1);
+$paisuser = $resultadousuario['pais'];
+$localidaduser = $resultadousuario['localidad'];
+$cpuser = $resultadousuario['cp'];
+
+$sql1="SELECT * from mensajes where (fechafin>'".$fechac."' or fechafin is null) and id not in (SELECT idmensaje FROM respuestamensajes WHERE iduser='".$resultadousuario['id']."') AND pais in ('0','".$paisuser."') order by id asc";
+//echo $sql1;
+$result1=$conn->query($sql1);
+$result1row=$conn->query($sql1);
+$row=count($result1row->fetchAll());
+
+/*$result1=mysqli_query ($conn,$sql1) or die ("Invalid result 1");
+$row1=mysqli_num_rows($result1);*/
 
 ?>
-<style>
-.main3 {
-	 /*width: calc (100% - 200px);*/
-	 width:100%;
-	 position:relative;
-	 top:0px;
-    border: 0px solid #fff;
-    text-align:center;
-    display:inline-table;
-}
-
-.caja3{
-	 padding-top:5px;
-	 padding-left:5px;
-	 padding-right:5px;
-    border: 0px solid ;
-    text-align:center;
-    min-width: 100px;
-    height: 90px;
-    border-bottom:5px inset #000;
-    vertical-align: middle;
-    margin:5px;
-    border-radius: 8px;
-    background-color:white;
-    box-shadow: 1px 15px 18px #888888;
-	 display:inline-table;
-	 text-align:center;
-}
-
-
-.main6 {
-	 /*width: calc (100% - 200px);
-
-	 */
-	 top:10px; 
-	 width:100%;
-	 position:relative;
-	 padding:10px;
-    border: 0px solid #fff;
-    text-align:center;
-}
-
-
-
-
-</style>
-<script>
-
-function refrescar1()
-{
-	window.location.reload();
-}
+<script src="../js/ultimasentradas_tjs.js">
 
 </script>
-<style type="text/css" media="print">
-.nover {display:none}
+
+
+<style>
+
+
+/* Hide the browser's default radio button */
+.container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+/* Create a custom radio button */
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: #eee;
+  border-radius: 50%;
+}
+
+/* On mouse-over, add a grey background color */
+.container:hover input ~ .checkmark {
+  background-color: #ccc;
+}
+
+/* When the radio button is checked, add a blue background */
+.container input:checked ~ .checkmark {
+  background-color: #2196F3;
+}
+
+/* Create the indicator (the dot/circle - hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the indicator (dot/circle) when checked */
+.container input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the indicator (dot/circle) */
+.container .checkmark:after {
+ 	top: 9px;
+	left: 9px;
+	width: 8px;
+	height: 8px;
+	border-radius: 50%;
+	background: white;
+}
+
+#alturalinea {
+		line-height: 1.15;
+	}
+
+	@media only screen 
+    and (min-device-width: 300px)
+    and (max-device-width: 900px) 
+     {
+		#alturalinea {
+			margin-top: 50% !important;
+		}
+	 }
 </style>
 
-		<link rel="stylesheet" href="/estilo/estilonuevo.php" type="text/css" media="screen" charset="utf-8" >
-		<meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
-		<meta http-equiv="content-type" content="application/xhtml+xml; charset=ISO-8859-1">
-<!--onload="setTimeout('refrescar1()', 5000);"-->
-<body  >
-<?php 
-for ($j=0;$j<$row1;$j++){;
-mysqli_data_seek($result1,$j);
-$resultado1=mysqli_fetch_array($result1);
-$pais=$resultado1['pais'];
-$provincia=$resultado1['provincia'];
-$localidad=$resultado1['localidad'];
-$cp=$resultado1['cp'];
-$texto=$resultado1['texto'];
-$idmensaje=$resultado1['id'];
 
-$sql10="SELECT * from respuestamensajes where  idempresa='".$ide."' and id='".$idmensaje."' and idempleado='".$idtrab."'";
-//echo $sql10; 
-$result10=mysqli_query ($conn,$sql10) or die ("Invalid result 1");
-$row10=mysqli_num_rows($result10);
+<head>
+	<!-- cabecera -->
+  <link rel="stylesheet" type="text/css" href="respuestas.css">
+  <link rel="stylesheet" type="text/css" href="ultimasincidencias_t.css">
+
+  <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Convergence" />
+  <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+
+  <meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
+  <meta http-equiv="content-type" content="application/xhtml+xml; charset=ISO-8859-1">
+</head>
+
+<body   style="background-image:url(../img/iconos/portada_ca.jpg); margin-top: 15%;" id="alturalinea" >
+
+
+  	
+					<?php
+						include_once("showmenu.php");
+
+					?>
+			
+<!--onload="setTimeout('refrescar1()', 5000);"-->
+
+
+<?php
+
+if ($row) {
+?>
+<div class='wrapper fadeInDown' style="border-radius:10px; background-color: transparent; text-align: center; min-height: 0%; max-width: 650px; margin:auto;">
+	<div id='formContent' >
+		
+<?php
+
+
+$i=1;
+foreach ($result1 as $row1mos) {
+$pais=$row1mos['pais'];
+$provincia=$row1mos['provincia'];
+$localidad=$row1mos['localidad'];
+$cp=$row1mos['cp'];
+$texto=$row1mos['texto'];
+$idmensaje=$row1mos['id'];
+
+
+$sql10="SELECT * from respuestamensajes where id='".$idmensaje."' and iduser='".$resultadousuario['id']."'";
+$result10=$conn->query($sql10);
+//var_dump($sql10);
+$row10=count($result10->fetchAll());
 if ($row10==0){;
+
 ?>
 
-<a href="../servicios_n/mensaje/responder.php?id=<?php echo $idmensaje;?>" target="_parent"> 
-<span class="caja3">
-<img src="../img/pencil.png" class="cuadro">
-<p><?php  echo $texto;?></p>
-</span>
-</a>
 
-<?php 
+
+<form action="../servicios_n/mensaje/introrespuesta.php" method="post" enctype="multipart/form-data">
+
+	<input type="hidden" name="id" value="<?php echo $idmensaje;?>">
+	<input type="hidden" name="iduser" value="<?php echo $resultadousuario['id']?>">
+	<div class="mySlides">
+		<div><?php echo $CONTEOPREGUNTAS;?>
+			<?php
+				$sqlCount="SELECT COUNT(*) FROM respuestamensajes WHERE idmensaje=$idmensaje";
+				$result=$conn->query($sqlCount);
+				$cantidad=$result->fetch();
+				echo "$cantidad[0]";
+
+			?> <?php echo $RESPUESTAS;?></div>
+		<!--<a href="../servicios_n/mensaje/responder.php?id=<?php echo $idmensaje;?>" target="_parent">-->
+		<div class="numbertext" style="font-size: 20px;"><?php echo "$i/$row"; ?></div>
+
+		<!--<img src="../img/pencil.png" class="cuadro">-->
+		<p><?php  echo $texto;?></p>
+		
+		<!--</a>-->
+
+		<?php
+			$sql="SELECT * from mensajes where id=:id";
+			$result=$conn->prepare($sql);
+			$result->bindParam(':id', $idmensaje);
+			$result->execute();
+			$resultado=$result->fetch();
+
+			$texto=$resultado['texto'];
+			$fichero=$resultado['fichero'];
+			$otrosmot=$resultado['otrosmot'];
+
+			$sql2="SELECT * from respuesta where idmensaje=:id";
+			$result2=$conn->prepare($sql2);
+			$result2->bindParam(':id', $idmensaje);
+			$result2->execute();
+		 ?>
+
+
+<table align="center">
+	<tr>
+		<td width="350">
+			<a style="background-color: transparent; position: relative; width: 100%" class="prev" onclick="plusSlides(-1)">&#10094;</a>
+		</td>
+		<td width="200">&nbsp;</td>
+		<td width="350">
+		<div align="right"><a style="background-color: transparent; position: relative;" class="next" onclick="plusSlides(1)">&#10095;</a><div>
+		</td>
+	</tr>
+</table>
+
+
+	 	<div class="main" style="text-align: center;">
+
+
+			<table style="margin: auto;
+					border-collapse:separate;
+                    border-spacing: 10;
+                   	border: #56baed solid 8px;
+                    border-radius:10px;
+                    -moz-border-radius:10px;
+                    -webkit-border-radius: 5px; ">
+				<tr>
+
+			<?php
+			foreach ($result2 as $row2mos) {
+			$valor=$row2mos['valor'];
+			$textores=$row2mos['texto'];
+			?>
+
+					<td style="width: 200px; text-align: center;" >
+						<div align="center">
+							<b style="color: red"><?php echo ("$textores");?></b>
+						</div>
+
+						<div align="center" >
+						<label style="display: inline;" class="container">
+							<input type="radio" name="respuesta" value="<?php echo $valor;?>">
+							<span class="checkmark"></span>
+						</label>
+						</div>
+
+						</td>
+
+
+
+
+			<?php };?>
+			</tr>
+			</table>
+			<?php
+
+			if($otrosmot=='1'){ ?>
+			<label>
+				<span class="caja">
+				 <b><?php echo $OTROSMOTIVOS;?></b>
+				 <br/>
+				 <input type="radio" name="respuesta" value="99" id="radiotext">
+
+				 <input type="text" name="textotro" size="20" maxlength="250" onfocus="document.getElementById('radiotext').checked = true;">
+				</span>
+			</label>
+
+
+			<?php } ?>
+
+
+
+		</div>
+
+
+
+
+	<?php
+		$sql1="SELECT count(*) from pdfs WHERE idmensaje=(SELECT id FROM mensajes WHERE id = :id)";
+
+		//echo "$sql1";
+
+		/*$result1=$conn->query($sql1);
+		$fetchAll1=$result1->fetchAll();
+		$row=count($fetchAll1);*/
+
+		$result1=$conn->prepare($sql1);
+		$result1->bindParam(':id', $idmensaje);
+		$result1->execute();
+		$check=$result1->fetch();
+
+          if ($check[0] !=0) {
+          	$sql2="SELECT url from pdfs WHERE idmensaje=(SELECT id FROM mensajes WHERE id = :id)";
+          	$result2=$conn->prepare($sql2);
+			$result2->bindParam(':id', $idmensaje);
+			$result2->execute();
+          	$url=$result2->fetch();
+          	$urltotal=$url[0];
+          	$urlfinal = substr($urltotal, 5);
+          	echo "<a class='pdflink' target='_blank' href='../servicios_n/abrir_pdf.php?file=".$urlfinal."'>Ver PDF</a>";
+          		?>
+
+	<?php
+ 		}
+
+	  $sql1="SELECT count(*) from videos WHERE idmensaje=(SELECT id FROM mensajes WHERE id = :id)";
+      $result1=$conn->prepare($sql1);
+	  $result1->bindParam(':id', $idmensaje);
+	  $result1->execute();
+	  $data=$result1->fetch();
+
+	  if ($data[0] != 0) {
+	  	?>
+
+	  	<table align="center" >
+			<tr>
+				<td>
+					<div oncontextmenu="return false;" style="margin-bottom:10%; border: #56baed solid 8px; border-radius: 10px 10px 10px 10px; padding: 5px; align-content: center;" >
+						<img src="../administracion_n/marca/marca video 2.png" width="320" height="260" style="position: absolute;">
+						<video style="border-radius: 10px;" width="320" height="260" controls disablepictureinpicture controlsList="nodownload">
+						  <source src="<?php
+						          $sql1="SELECT url from videos WHERE idmensaje=(SELECT id FROM mensajes WHERE id = :id)";
+						          $result1=$conn->prepare($sql1);
+								  $result1->bindParam(':id', $idmensaje);
+								  $result1->execute();
+						          $url=$result1->fetch();
+						          echo("../servicios_n/".$url[0]);?>">
+						<?php echo $NAVEGADORVIDEO;?>
+						</video>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td>
+
+				</td>
+			</tr>
+
+		</table>
+
+
+
+
+
+	  	<?php
+	  		}
+	  	?>
+  	 			<div align="center" style="padding-bottom: 20px">
+				<button type="submit" class="btn btn-primary" value="enviar" name="enviar"><?php echo $ENVIAR;?></button>
+
+				</div>
+
+	</div>
+
+
+
+</form>
+<?php
 };
-};?>
 
+$i=$i+1;
+};?>
+<!--agregado nuedo SCROLL-->
+ <div class="container">
+ 	<div id="wrap" style="">
+ 		<div>
+<?php
+for ($i=1; $i <= $row; $i++) {
+
+ ?>
+	<span class="dot" onclick="currentSlide(<?php echo $i; ?>)"></span>
+	<script>
+		currentSlide(1);
+	</script>
+
+<?php }
+
+?>		</div>
+	</div>
+ </div>
+<?php
+}else{
+?>
+<div class='wrapper fadeInDown' style="border-radius:10px; background-color: transparent; text-align: center; min-height: 0%; max-width: 650px; margin:auto;">
+	<div id='formContent' >
+<div style="font-size: 15px; text-align: center;"><?php echo $GRACIASPREGUNTAS; ?></div>
+</div>
+</div>
+<?php
+} ?>
+
+</div>
 </body>

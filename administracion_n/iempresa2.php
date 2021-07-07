@@ -60,17 +60,20 @@ if ($idprt==null){;
 <td>
 <?php 
 
-$sql="select * from proyectos where gestorproyecto='".$ide."' order by idproyectos asc"; 
-$result=mysqli_query ($conn,$sql) or die ("Invalid result idproyectos");
-$row=mysqli_num_rows($result);
+$sql="select * from proyectos where gestorproyecto='".$ide."' order by idproyectos asc";
+$result=$conn->query($sql);
+
+/*$result=mysqli_query ($conn,$sql) or die ("Invalid result idproyectos");
+$row=mysqli_num_rows($result);*/
 ?>
 <select name="idprt">
 <?php 
-for ($i=0;$i<$row;$i++){;
+/*for ($i=0;$i<$row;$i++){;
 mysqli_data_seek($result,$i);
-$resultado=mysqli_fetch_array($result);
-$idproyectos=$resultado['idproyectos'];
-$nombrep=$resultado['nombre'];
+$resultado=mysqli_fetch_array($result);*/
+foreach ($result as $rowmos) {
+$idproyectos=$rowmos['idproyectos'];
+$nombrep=$rowmos['nombre'];
 ?>
 <option value="<?php  echo$idproyectos;?>" ><?php  echo$nombrep;?>
 <?php };?>
@@ -143,17 +146,20 @@ $nombrep=$resultado['nombre'];
 <td>Pais</td>
 <td>
 <?php 
-$sql="select * from pais order by nombrepais asc"; 
-$result=mysqli_query ($conn,$sql) or die ("Invalid result empleados");
-$row=mysqli_num_rows($result);
+$sql="select * from pais order by nombrepais asc";
+$result=$conn->query($sql);
+
+/*$result=mysqli_query ($conn,$sql) or die ("Invalid result empleados");
+$row=mysqli_num_rows($result);*/
 ?>
 <select name="pais2">
 <?php 
-for ($i;$i<$row;$i++){;
+/*for ($i;$i<$row;$i++){;
 mysqli_data_seek($result,$i);
-$resultado=mysqli_fetch_array($result);
-$idpais=$resultado['idpais'];
-$nombrepais=$resultado['nombrepais'];
+$resultado=mysqli_fetch_array($result);*/
+foreach ($result as $rowmos) {
+$idpais=$rowmos['idpais'];
+$nombrepais=$rowmos['nombrepais'];
 ?>
 <option value="<?php  echo$idpais;?>" <?php if ($idpais==724){;?>selected<?php };?> ><?php  echo$nombrepais;?>
 <?php };?>
@@ -234,35 +240,44 @@ $camposc=array('mensaje','incidenciasplus');
 $camposa=array('cuadrante','jornadas');
 
 $sqlopc="select * from precioproyectos where idproyectos='".$idprt."' and estado='1'";
-$resultopc=mysqli_query ($conn,$sqlopc) or die ("Invalid resultopc");
+$resultopc=$conn->query($sqlopc);
+
+//$resultopc=mysqli_query ($conn,$sqlopc) or die ("Invalid resultopc");
 
 for($numqr=0;$numqr<count($camposqr);$numqr++){;
-mysqli_data_seek($resultopc,$numqr);
-$resultadoopc=mysqli_fetch_array($resultopc);
+/*mysqli_data_seek($resultopc,$numqr);
+$resultadoopc=mysqli_fetch_array($resultopc);*/
+$resultadoopc=$resultopc->fetch();
 $pqr[]=$resultadoopc[$camposqr[$numqr]];
 };
 for($nump=0;$nump<count($camposp);$nump++){;
-mysqli_data_seek($resultopc,$nump);
-$resultadoopc=mysqli_fetch_array($resultopc);
+/*mysqli_data_seek($resultopc,$nump);
+$resultadoopc=mysqli_fetch_array($resultopc);*/
+$resultadoopc=$resultopc->fetch();
 $pp[]=$resultadoopc[$camposp[$nump]];
 };
 
 for($numc=0;$numc<count($camposc);$numc++){;
-mysqli_data_seek($resultopc,$numc);
-$resultadoopc=mysqli_fetch_array($resultopc);
+/*mysqli_data_seek($resultopc,$numc);
+$resultadoopc=mysqli_fetch_array($resultopc);*/
+$resultadoopc=$resultopc->fetch();
 $pc[]=$resultadoopc[$camposc[$numc]];
 };
 
 for($numa=0;$numa<count($camposa);$numa++){;
-mysqli_data_seek($resultopc,$numa);
-$resultadoopc=mysqli_fetch_array($resultopc);
+/*mysqli_data_seek($resultopc,$numa);
+$resultadoopc=mysqli_fetch_array($resultopc);*/
+$resultadoopc=$resultopc->fetch();
 $pa[]=$resultadoopc[$camposa[$numa]];
 };
 
 
 $sql="select * from proyectos where idproyectos='".$idprt."'";
-$result=mysqli_query ($conn,$sql) or die ("Invalid result menuproyectos");
-$resultado=mysqli_fetch_array($result);
+$result=$conn->query($sql);
+$resultado=$result->fetch();
+
+/*$result=mysqli_query ($conn,$sql) or die ("Invalid result menuproyectos");
+$resultado=mysqli_fetch_array($result);*/
 $tipoprecios=$resultado['tipoprecios'];
 for($numqr=0;$numqr<count($camposqr);$numqr++){;
 $cqr[]=$resultado[$camposqr[$numqr]];
@@ -282,8 +297,11 @@ $ca[]=$resultado[$camposa[$numa]];
 
 
 $sql31="select * from proyectosnombre where idproyectos='".$idprt."'";
-$result31=mysqli_query ($conn,$sql31) or die ("Invalid result menucontabilidad");
-$resultado31=mysqli_fetch_array($result31);
+$result31=$conn->query($sql31);
+$resultado31=$result31->fetch();
+
+/*$result31=mysqli_query ($conn,$sql31) or die ("Invalid result menucontabilidad");
+$resultado31=mysqli_fetch_array($result31);*/
 for($numqr=0;$numqr<count($camposqr);$numqr++){;
 $ncqr[]=$resultado31[$camposqr[$numqr]];
 };
@@ -301,8 +319,11 @@ $nca[]=$resultado31[$camposa[$numa]];
 
 
 $sql32="select * from proyectosimg where idproyectos='".$idprt."'";
-$result32=mysqli_query ($conn,$sql32) or die ("Invalid result menucontabilidad");
-$resultado32=mysqli_fetch_array($result32);
+$result32=$conn->query($sql32);
+$resultado32=$result32->fetch();
+
+/*$result32=mysqli_query ($conn,$sql32) or die ("Invalid result menucontabilidad");
+$resultado32=mysqli_fetch_array($result32);*/
 for($numqr=0;$numqr<count($camposqr);$numqr++){;
 $icqr[]=$resultado32[$camposqr[$numqr]];
 };
@@ -424,14 +445,17 @@ if ($tipoprecios==1){;
 <ul>
 <?php 		
 $sqlemp="select * from precioempleados where idproyectos='".$idprt."' and estado='1'";
-$resultemp=mysqli_query ($conn,$sqlemp) or die ("Invalid result precioempleados");
+$resultemp=$conn->query($sqlemp);
+
+/*$resultemp=mysqli_query ($conn,$sqlemp) or die ("Invalid result precioempleados");
 $rowemp=mysqli_num_rows($resultemp);
 for ($j=0;$j<$rowemp;$j++){;
 mysqli_data_seek($resultemp,$j);
-$resultadoemp=mysqli_fetch_array($resultemp);
-$nombregrupo=$resultadoemp['nombregrupo'];
-$numempleados=$resultadoemp['numempleados'];
-$preciogrupo=$resultadoemp['preciogrupo'];
+$resultadoemp=mysqli_fetch_array($resultemp);*/
+foreach($resultemp as $rowempmos){
+$nombregrupo=$rowempmos['nombregrupo'];
+$numempleados=$rowempmos['numempleados'];
+$preciogrupo=$rowempmos['preciogrupo'];
 ?>
 <input type="radio" name="paqtrabajadores" value="<?php  echo$numempleados;?>" onclick="myFuncion22()"><?php  echo$nombregrupo;?> - <?php  echo$preciogrupo;?>  &euro;/a&ntilde;o
 <?php 
@@ -472,14 +496,17 @@ function myFuncion23(){
 <ul>
 <?php 		
 $sqlcli="select * from preciocliente where idproyectos='".$idprt."' and estado='1'";
-$resultcli=mysqli_query ($conn,$sqlcli) or die ("Invalid result preciocliente");
+$resultcli=$conn->query($sqlcli);
+
+/*$resultcli=mysqli_query ($conn,$sqlcli) or die ("Invalid result preciocliente");
 $rowcli=mysqli_num_rows($resultcli);
 for ($j=0;$j<$rowcli;$j++){;
 mysqli_data_seek($resultcli,$j);
-$resultadocli=mysqli_fetch_array($resultcli);
-$nombregrupo=$resultadocli['nombregrupo'];
-$numclientes=$resultadocli['numcliente'];
-$preciogrupo=$resultadocli['preciogrupo'];
+$resultadocli=mysqli_fetch_array($resultcli);*/
+foreach($resultcli as $rowclimos){
+$nombregrupo=$rowclimos['nombregrupo'];
+$numclientes=$rowclimos['numcliente'];
+$preciogrupo=$rowclimos['preciogrupo'];
 ?>
 <input type="radio" name="paqclientes" value="<?php  echo$numclientes;?>" onclick="myFuncion23()"><?php  echo$nombregrupo;?> - <?php  echo$preciogrupo;?>  &euro;/a&ntilde;o
 <?php 
@@ -494,14 +521,17 @@ $preciogrupo=$resultadocli['preciogrupo'];
 <ul>
 <?php 		
 $sqlperso="select * from preciopersonalizacion where idproyectos='".$idprt."' and estado='1'";
-$resultperso=mysqli_query ($conn,$sqlperso) or die ("Invalid result precioperso");
+$resultperso=$conn->query($sqlperso);
+
+/*$resultperso=mysqli_query ($conn,$sqlperso) or die ("Invalid result precioperso");
 $rowperso=mysqli_num_rows($resultperso);
 for ($j=0;$j<$rowperso;$j++){;
 mysqli_data_seek($resultperso,$j);
-$resultadoperso=mysqli_fetch_array($resultperso);
-$nombregrupo=$resultadoperso['nombregrupo'];
-$nomvar=$resultadoperso['nombrevariable'];
-$preciogrupo=$resultadoperso['preciogrupo'];
+$resultadoperso=mysqli_fetch_array($resultperso);*/
+foreach($resultperso as $rowpersomos){
+$nombregrupo=$rowpersomos['nombregrupo'];
+$nomvar=$rowpersomos['nombrevariable'];
+$preciogrupo=$rowpersomos['preciogrupo'];
 ?>
 <input type="checkbox" name="nomvar[<?php  echo$j;?>]" value="1"><?php  echo$nombregrupo;?> - <?php  echo$preciogrupo;?>  &euro;/a&ntilde;o
 <?php 
@@ -521,18 +551,22 @@ $preciogrupo=$resultadoperso['preciogrupo'];
 <?php 
 $sqlopc="select * from precioopc where idpr='".$idprt."'";
 //echo $sqlopc;
-$resultopc=mysqli_query ($conn,$sqlopc) or die ("Invalid resultopc");
-$rowopc=mysqli_num_rows($resultopc);
+$resultopc=$conn->query($sqlopc);
+
+/*$resultopc=mysqli_query ($conn,$sqlopc) or die ("Invalid resultopc");
+$rowopc=mysqli_num_rows($resultopc);*/
 ?>
 <table>
 <tr><td>Opci&oacute;n</td><td>
 <select name="opcion" onchange="myFuncion24()">
 <option value=""></option>
-<?php for ($jopc=0;$jopc<$rowopc;$jopc++){;
+<?php 
+/*for ($jopc=0;$jopc<$rowopc;$jopc++){;
 mysqli_data_seek($resultopc,$jopc);
-$resultadoopc=mysqli_fetch_array($resultopc);
-$nombreopc=$resultadoopc['nombre'];
-$idopc=$resultadoopc['idopcion'];
+$resultadoopc=mysqli_fetch_array($resultopc);*/
+foreach ($resultopc as $rowopcmos) {
+$nombreopc=$rowopcmos['nombre'];
+$idopc=$rowopcmos['idopcion'];
 ?>
 
 <option value="<?php  echo$idopc;?>"><?php  echo$nombreopc;?></option>
@@ -551,8 +585,12 @@ $dat=array('cuadrante','entrada','incidencia','mensaje','alarma','accdiarias','a
 
 $sqlpn="select * from proyectosnombre where idproyectos='".$idprt."'";
 //echo $sqlpn;
-$resultpn=mysqli_query ($conn,$sqlpn) or die ("Invalid resultpn");
-$resultadopn=mysqli_fetch_array($resultpn);
+$resultpn=$conn->query($sqlpn);
+$resultpnmos=$conn->query($sqlpn);
+$resultadopn=$resultpn->fetch();
+
+/*$resultpn=mysqli_query ($conn,$sqlpn) or die ("Invalid resultpn");
+$resultadopn=mysqli_fetch_array($resultpn);*/
 for ($pn=0;$pn<count($dat);$pn++){;
 $encab[$pn]=$resultadopn[$dat[$pn]];
 };
@@ -569,19 +607,21 @@ var valor=formulario.opcion.value;
 
 
 switch(valor){
-<?php for ($jopc=0;$jopc<$rowopc;$jopc++){;
+<?php 
+/*for ($jopc=0;$jopc<$rowopc;$jopc++){;
 mysqli_data_seek($resultopc,$jopc);
-$resultadoopc=mysqli_fetch_array($resultopc);
-$idopc2=$resultadoopc['idopcion'];
-$caracopc=$resultadoopc['caracteristicas'];
-$precioopc=$resultadoopc['precio'];
-$caracprecioopc=$resultadoopc['caracprecio'];
+$resultadoopc=mysqli_fetch_array($resultopc);*/
+foreach ($resultopc as $rowopcmos) {
+$idopc2=$rowopcmos['idopcion'];
+$caracopc=$rowopcmos['caracteristicas'];
+$precioopc=$rowopcmos['precio'];
+$caracprecioopc=$rowopcmos['caracprecio'];
 
 
 $caracopc="Servicios Incluidos:<br/>";
 $caracopc.="<div id='divicolumna22'><ul>";
 for ($t=0;$t<count($encab);$t++){;
-$vcar=$resultadoopc[$dat[$t]];
+$vcar=$rowopcmos[$dat[$t]];
 if($vcar=='1'){
 $caracopc.="<li>".$encab[$t]."</li>";
 };

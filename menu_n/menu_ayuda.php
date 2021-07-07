@@ -7,8 +7,11 @@ if ($ide!=null){;
  include('../estilo/acordeon.php');
  
 $sql11r="select * from usuariosnombre where idempresas='".$ide."'";
-$result11r=mysqli_query ($conn,$sql11r) or die ("Invalid result menucontabilidad");
-$resultado11r=mysqli_fetch_array($result11r);
+$result11r=$conn->query($sql11r);
+$resultado11r=$result11r->fetch();
+
+/*$result11r=mysqli_query ($conn,$sql11r) or die ("Invalid result menucontabilidad");
+$resultado11r=mysqli_fetch_array($result11r);*/
 $nadr=$resultado11r['servicios'];
 $nadr2=$resultado11r['ayuda'];
 ?>
@@ -23,8 +26,11 @@ $nadr2=$resultado11r['ayuda'];
 
 <?php 
 $sql="select * from menuadministracion where user='".$gente."' and idempresa='".$ide."'";
-$result=mysqli_query ($conn,$sql) or die ("Invalid result menucontabilidad");
-$resultado=mysqli_fetch_array($result);
+$result=$conn->query($sql);
+$resultado=$result->fetch();
+
+/*$result=mysqli_query ($conn,$sql) or die ("Invalid result menucontabilidad");
+$resultado=mysqli_fetch_array($result);*/
 $c1[]=$resultado['empresas'];
 $c1[]=$resultado['clientes'];
 $c1[]=$resultado['puestos'];
@@ -38,8 +44,11 @@ $c1[]=$resultado['visita'];
 
 
 $sql="select * from administrar where idempresa='".$ide."'";
-$result=mysqli_query ($conn,$sql) or die ("Invalid result menucontabilidad");
-$resultado=mysqli_fetch_array($result);
+$result=$conn->query($sql);
+$resultado=$result->fetch();
+
+/*$result=mysqli_query ($conn,$sql) or die ("Invalid result menucontabilidad");
+$resultado=mysqli_fetch_array($result);*/
 $c2[]=$resultado['empresas'];
 $c2[]=$resultado['clientes'];
 $c2[]=$resultado['puestos'];
@@ -64,8 +73,11 @@ $c[$t]=0;
 
 
 $sql31="select * from menuadministracionnombre where idempresa='".$ide."'";
-$result31=mysqli_query ($conn,$sql31) or die ("Invalid result menucontabilidad");
-$resultado31=mysqli_fetch_array($result31);
+$result31=$conn->query($sql31);
+$resultado31=$result31->fetch();
+
+/*$result31=mysqli_query ($conn,$sql31) or die ("Invalid result menucontabilidad");
+$resultado31=mysqli_fetch_array($result31);*/
 $nc[]=$resultado31['empresas'];
 $nc[]=$resultado31['clientes'];
 $nc[]=$resultado31['puestos'];
@@ -80,8 +92,11 @@ $nc[]=$resultado31['visita'];
 
 
 $sql32="select * from menuadministracionimg where idempresa='".$ide."'";
-$result32=mysqli_query ($conn,$sql32) or die ("Invalid result menucontabilidad");
-$resultado32=mysqli_fetch_array($result32);
+$result32=$conn->query($sql32);
+$resultado32=$result32->fetch();
+
+/*$result32=mysqli_query ($conn,$sql32) or die ("Invalid result menucontabilidad");
+$resultado32=mysqli_fetch_array($result32);*/
 $ic[]=$resultado32['empresas'];
 $ic[]=$resultado32['clientes'];
 $ic[]=$resultado32['puestos'];
@@ -96,8 +111,11 @@ $ic[]=$resultado32['visita'];
 
 
 $sql33="select * from menuadministracionayuda where idempresa='".$ide."'";
-$result33=mysqli_query ($conn,$sql33) or die ("Invalid result menuadministracionayuda");
-$resultado33=mysqli_fetch_array($result33);
+$result33=$conn->query($sql33);
+$resultado33=$result33->fetch();
+
+/*$result33=mysqli_query ($conn,$sql33) or die ("Invalid result menuadministracionayuda");
+$resultado33=mysqli_fetch_array($result33);*/
 $enc[]=$resultado33['empresas'];
 $enc[]=$resultado33['clientes'];
 $enc[]=$resultado33['puestos'];

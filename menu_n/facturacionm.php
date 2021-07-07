@@ -19,7 +19,23 @@ $ide=$mi_array['ide'];
 
 
 $sql="select * from menufacturacion where user='".$user."' and idempresa='".$ide."'";
-$result=mysqli_query ($conn,$conn,$sql) or die ("Invalid result menuempleados");
+$result=$conn->query($sql);
+$resultado=$result->fetchAll();
+
+$f1=$resultado[0]['clientes'];
+$f2=$resultado[0]['proveedores'];
+$f3=$resultado[0]['facturas'];
+$f4=$resultado[0]['facturasa'];
+$f5=$resultado[0]['facturasb'];
+$f6=$resultado[0]['facturasc'];
+$f11=$resultado[0]['facturasd'];
+$f7=$resultado[0][,'albaran'];
+$f8=$resultado[0]['facturasrecibidas'];
+$f9=$resultado[0]['hacienda'];
+$f10=$resultado[0]['banco'];
+$f11=$resultado[0]['gestores'];
+
+/*$result=mysqli_query ($conn,$conn,$sql) or die ("Invalid result menuempleados");
 $f1=mysqli_result($result,0,'clientes');
 $f2=mysqli_result($result,0,'proveedores');
 $f3=mysqli_result($result,0,'facturas');
@@ -31,7 +47,7 @@ $f7=mysqli_result($result,0,'albaran');
 $f8=mysqli_result($result,0,'facturasrecibidas');
 $f9=mysqli_result($result,0,'hacienda');
 $f10=mysqli_result($result,0,'banco');
-$f11=mysqli_result($result,0,'gestores');
+$f11=mysqli_result($result,0,'gestores');*/
 ?>
 <html>
 <head runat="server" >

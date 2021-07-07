@@ -26,10 +26,15 @@ a hover: {text-decoration:none}
 		
 </style>
 <?php 
-$sqlprep="select * from previopago where idempresas='".$ide."'";
-$resultprep=mysqli_query ($conn,$sqlprep) or die ("Invalid resultprep");
-$idpr=mysqli_result($resultprep,0,'idproyectos');
-$opcion=mysqli_result($resultprep,0,'opcion');
+$sqlprep="select * from previopago where idempresas=:ide";
+$resultprep=$conn->prepare($sqlprep);
+$resultprep->bindParam(':ide', $ide);
+$resultprep->execute();
+$resultadoprep=$resultprep->fetchAll();
+
+//$resultprep=mysqli_query ($conn,$sqlprep) or die ("Invalid resultprep");
+$idpr=$resultadoprep[0]['idproyectos'];
+$opcion=$resultadoprep[0]['opcion'];
 
  
 
@@ -37,21 +42,39 @@ $dat=array('cuadrante','entrada','incidencia','mensaje','alarma','accdiarias','a
 
 
 
-$sqlpn="select * from proyectosnombre where idproyectos='".$idpr."'";
+$sqlpn="select * from proyectosnombre where idproyectos=:idpr";
 //echo $sqlpn;
-$resultpn=mysqli_query ($conn,$sqlpn) or die ("Invalid resultpn");
+$resultpn=$conn->prepare($sqlpn);
+$resultpn->bindParam(':idpr', $idpr);
+$resultpn->execute();
+$resultadopn=$resultpn->fetchAll();
+
+//$resultpn=mysqli_query ($conn,$sqlpn) or die ("Invalid resultpn");
 for ($pn=0;$pn<count($dat);$pn++){;
-$encab[$pn]=mysqli_result($resultpn,0,$dat[$pn]);
+$encab[$pn]=$resultadoprep[0][$dat[$pn]];
 };
 //print_r($encab);
 
-$sqlopc="select * from precioopc where idpr='".$idpr."' and idopcion='".$opcion."'";
-$resultopc=mysqli_query ($conn,$sqlopc) or die ("Invalid resultopc");
+$sqlopc="select * from precioopc where idpr=:idpr and idopcion=:opcion";
+$resultopc=$conn->prepare($sqlopc);
+$resultopc->bindParam(':idpr', $idpr);
+$resultopc->bindParam(':opcion', $opcion);
+$resultopc->execute();
+$resultadopc=$resultopc->fetchAll();
+
 $jopc=0;
-$nombreopc=mysqli_result($resultopc,$jopc,'nombre');
+
+//$nombreopc=mysqli_result($resultopc,$jopc,'nombre');
+$precio=$resultadopc[$jopc]['precio'];
+$caracprecioopc=$resultadopc[$jopc][$jopc,'caracprecio'];
+$variablesopc=$resultadopc[$jopc][$jopc,'variables'];
+
+//$resultopc=mysqli_query ($conn,$sqlopc) or die ("Invalid resultopc");
+
+/*$nombreopc=mysqli_result($resultopc,$jopc,'nombre');
 $precio=mysqli_result($resultopc,$jopc,'precio');
 $caracprecioopc=mysqli_result($resultopc,$jopc,'caracprecio');
-$variablesopc=mysqli_result($resultopc,$jopc,'variables');
+$variablesopc=mysqli_result($resultopc,$jopc,'variables');*/
 
 
 $caracopc="<div id='divicolumna22'>";
@@ -68,9 +91,11 @@ $caracopc.="</ul></div>";
 
 
 $sqliva="select * from iva order by fecha desc";
-$resultiva=mysqli_query ($conn,$sqliva) or die ("Invalid resultiva");
+$resultiva=$conn->query($sqliva);
+$resultadoiva=$resultiva->fetchAll();
+//$resultiva=mysqli_query ($conn,$sqliva) or die ("Invalid resultiva");
 $jiva=0;
-$iva=mysqli_result($resultiva,$jiva,'iva');
+$iva=$resultadoiva[$jiva]['iva'];
 
 $precioiva=($precio*($iva/100))+$precio;
 

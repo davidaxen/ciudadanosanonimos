@@ -5,88 +5,64 @@ extract($_COOKIE);
 
 if ($com=='comprobacion'){;
 
-include('portada_n/cabecera.php');?>
+?>
 
-<style>
-.main3 {
-	 /*width: calc (100% - 200px);*/
-	 width:100%;
-	 position:relative;
-	 top:0px;
-    border: 0px solid #fff;
-    text-align:center;
-    display:inline-table;
-}
+<head>
 
-.caja3{
-	 padding-top:5px;
-	 padding-left:5px;
-	 padding-right:5px;
-    border: 0px solid <?php  echo $colorborder;?>;
-    text-align:center;
-    min-width: 100px;
-    height: 90px;
-    border-bottom:5px inset #000;
-    vertical-align: middle;
-    margin:5px;
-    border-radius: 8px;
-    background-color:white;
-    box-shadow: 1px 15px 18px #888888;
-	 display:inline-table;
-	 text-align:center;
-}
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<link rel="stylesheet" type="text/css" href="boostrapNav.css">
+<link rel="stylesheet" type="text/css" href="nav.js">
+</head>
 
+<body style="background-image:url(img/iconos/portada_ca.jpg)"; >
+<nav class="[ navbar navbar-fixed-top ][ navbar-bootsnipp animate ]" role="navigation">
+  <div class="[ navbar-header ]">
+        <div class="[ animbrand ]">
+          <a class="[ navbar-brand ][ animate ]" href="inicio1.php"><img src="img/ciudadanoslogo.png"></a>
+        </div>
+  </div>
+<div class="[ container ]">
 
-.main6 {
-	 /*width: calc (100% - 200px);
-
-	 */
-	 top:10px; 
-	 width:100%;
-	 position:relative;
-	 padding:10px;
-    border: 0px solid #fff;
-    text-align:center;
-}
-
-
-
-
-</style>
-
-
-
-<div id="main">
-
-<div class="main3">
-<span><?php // include('portada_n/portada2_t.php');?></span>
-
-</div>
-
-
-<div class="main6">
-<?php include ('estilo/tab.htm');?>
-
-
-
-<div class="tab">
-
-  <button class="tablinks" onclick="openCity(event, 'd0')" id="defaultOpen"><img src="../img/iconos/serviciose.png" width="32px" style="vertical-align:middle;"> Preguntas Lanzadas</button>
-  <button class="tablinks" onclick="openCity(event, 'd1')" id="defaultOpen"><img src="../img/iconos/incidencias.png" width="32px" style="vertical-align:middle;"> Ultimos Resultados</button>
-<!--  <button class="tablinks" onclick="openCity(event, 'd2')" id="defaultOpen"><img src="../img/iconos/mensajes.png" width="32px" style="vertical-align:middle;"> Ultimos mensajes enviados con respuesta</button>-->
-</div>
-
-
+  <?php 
+    include_once("/portada_n/showmenu.php");
+  ?>
+ </nav>
+<br>
+<br>
+<br>
+<br>
+<br>
+   <div id="d0" class="tabcontent">
 
 <div id="d0" class="tabcontent">
-  <h3><img src="../img/iconos/serviciose.png" width="32px" style="vertical-align:middle;"> Preguntas Lanzadas</h3>
-  <p><iframe style="border:0" name="bloque0" src="portada_n/ultimasentradas_t.php" width="100%" height="325" scrolling="auto"></iframe></p>
+  <h3 align="center" style="color: white;" ><img src="../img/iconos/serviciose.png" width="32px" style="vertical-align:middle;"> Preguntas Lanzadas</h3>
+
+  <p><a style="border:0" name="bloque0" src="portada_n/ultimasentradas_t.php" width="100%" height="680" scrolling="auto"></a></p>
+
 </div>
 
-<div id="d1" class="tabcontent">
-  <h3><img src="../img/iconos/incidencias.png" width="32px" style="vertical-align:middle;"> Ultimos Resultados</h3>
-  <p><iframe style="border:0" name="bloque0" src="portada_n/ultimasincidencias_t.php" width="100%" height="325" scrolling="auto"></iframe></p>
+
+
 </div>
+  
+<!--  <button class="tablinks" onclick="openCity(event, 'd2')" id="defaultOpen"><img src="../img/iconos/mensajes.png" width="32px" style="vertical-align:middle;"> Ultimos mensajes enviados con respuesta</button>-->
+
+
+
+
+
+
+
+
+
+</div>
+
+
+
+  <!--<p><iframe style="border:0;" name="bloque0" src="portada_n/videos_t.php" width="25%" height="25%" scrolling="no"></iframe></p>-->
+
 
 <!--
 <div id="d2" class="tabcontent">
@@ -98,12 +74,7 @@ include('portada_n/cabecera.php');?>
 <?php include ('js/tabjs.htm');?>
 
 
-
-</div>
-
-</div>
-    
-
+<?php header("Location: portada_n/ultimasentradas_t.php") ?>
 </body>
 
 </html>

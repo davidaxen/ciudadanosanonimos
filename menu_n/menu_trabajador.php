@@ -5,9 +5,18 @@ include('bbdd.php');
 if ($ide!=null){;
  include('../portada_n/cabecera2.php');
  
-$sql11r="select * from usuariosnombre where idempresas='".$ide."'";
-$result11r=mysqli_query ($conn,$sql11r) or die ("Invalid result menucontabilidad");
-$resultado11r=mysqli_fetch_array($result11r);
+$sql11r="select * from usuariosnombre where idempresas=:ide";
+
+
+$result11r=$conn->prepare($sql11r);
+$result11r->bindParam(':ide',$ide);
+$result11r->execute();
+$resultado11r=$result11r->fetch();
+
+//$result11r=$conn->query($sql11r);
+//$resultado11r=$result11r->fetch();
+//$result11r=mysqli_query ($conn,$sql11r) or die ("Invalid result menucontabilidad");
+//$resultado11r=mysqli_fetch_array($result11r);
 $nadr=$resultado11r['informes'];
 ?>
 
@@ -27,19 +36,8 @@ $valorcp=array_count_values($cp1i);
 $valorcc=array_count_values($cc1i);
 $valorca=array_count_values($ca1i);
 
- if (count($cqr1i)!=$valorcqr[0]){;?>
-<div class="main">
-<span class="caja2"><b>Tareas Frecuentes</b></span>
-<?php  
-for ($j=0;$j<count($cqr1i)+1;$j++){;
-if ($cqr1i[$j]=='1'){;?><a href="<?php  echo $encqri[$j];?>?dat=i"><span class="caja">
-<img src="../img/<?php  echo $icqri[$j];?>" width="64px"><br/>
-<?php  echo $ncqri[$j];?></span></a>
-<?php };
-$j=count($cqr1i)+1;
-};?>
-</div>
-<?php };?>
+?>
+<?php ;?>
 
 <!--
 <?php if (count($cp)!=$valorcp[0]){;?>
@@ -68,23 +66,16 @@ if ($cp[$j]=='1'){;
  <img src="../img/<?php  echo $icci[$j];?>" width="64px"><br/>
  <?php  echo $ncci[$j];?></span></a>
  <?php };
-  if ($ncci[$j]=='Incidencias'){;?>
- <a href="<?php  echo $encci[$j];?>?dat=i"><span class="caja">
- <img src="../img/<?php  echo $icci[$j];?>" width="64px"><br/>
- <?php  echo $ncci[$j];?></span></a>
- <?php };
+ ?>
+ <?php ;
  };?>
 </div>
 <?php };
  if (count($ca1i)!=$valorca[0]){;?>
 <div class="main">
-<span class="caja2"><b>Avisos de Asistencia</b></span>
 <?php  for ($j=0;$j<count($ca1i)+1;$j++){;
- if ($ncai[$j]=='Jornadas'){;?>
- <a href="<?php  echo $encai[$j];?>?dat=i"><span class="caja">
- <img src="../img/<?php  echo $icai[$j];?>" width="64px"><br/>
- <?php  echo $ncai[$j];?></span></a>
- <?php };
+?>
+ <?php
   };?>
 </div>
 <?php };?>

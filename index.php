@@ -7,6 +7,8 @@ extract($_GET);
 extract($_POST);
 
 
+
+
 $tablet_browser = 0;
 $mobile_browser = 0;
 $body_class = 'desktop';
@@ -74,10 +76,36 @@ $idprt=1;
 	};
 
 if ($idprt!=null){;
+
+  if (isset($_REQUEST['msg'])) {
+    echo "<script> alert('".$_REQUEST['msg']."'); </script>";
+  }
+
 $sql="select * from proyectos where idproyectos='".$idprt."'";
-$result=mysqli_query ($conn, $sql) or die ("Este dominio no tiene acceso al sistema, por favor hable con el departamento Tecnico");
+$result=$conn->query($sql);
+$resultrow=$conn->query($sql);
+
+if (isset($_COOKIE['lang']) && $_COOKIE['lang']!='') {
+    $idioma=strtolower($lang);
+  }else{
+    $idioma='es';
+  }
+
+  include_once($_SERVER['DOCUMENT_ROOT']."/lang/$idioma.php");
+
+$row=count($resultrow->fetchAll());
+$resultados=$result->fetch();
+/*
+$resultados[]=$TITULO1;
+$resultados[]=$TITULO2;
+$resultados[]=$INPUTNAME;
+$resultados[]=$INPUTPASS;
+$resultados[]=$BTENTRAR;
+$resultados[]=$HREFRECUCON;
+*/
+/*$result=mysqli_query ($conn, $sql) or die ("Este dominio no tiene acceso al sistema, por favor hable con el departamento Tecnico");
 $row=mysqli_num_rows($result);
-$resultados = mysqli_fetch_array ($result);
+$resultados = mysqli_fetch_array ($result);*/
 
 
 if ($row==0){
@@ -86,6 +114,14 @@ echo ("Este dominio no tiene acceso al sistema, comprueba todas la conexiones, p
 
 	}else{;
 	$logo = $resultados['logo'];
+$logo=$LOGOPRIN2;
+$tit1=$TITULO1;
+$tit2=$TITULO2;
+$inpn=$INPUTCORREO;
+$inpp=$INPUTPASS;
+$bte=$BTNENTRAR;
+$hrec=$HREFRECUCON;
+	
 	$bdescarga=$resultados['botondescarga'];
    $fondo=$resultados['fondo'];
    $colorcentral=$resultados['colorfondo'];
@@ -93,6 +129,10 @@ echo ("Este dominio no tiene acceso al sistema, comprueba todas la conexiones, p
    $colorlateral=$resultados['colorlateral'];
    //$icono=$resultados['icono'];
    $pagina=$resultados['pagina'];
+   //echo "$pagina";
+   //echo "$logo";
+   //echo "$bdescarga";
+   //echo "$idprt";
 
 //setcookie("colorarriba",$colorarriba);
 //setcookie("colorcentral",$colorcentral);
@@ -103,8 +143,8 @@ echo ("Este dominio no tiene acceso al sistema, comprueba todas la conexiones, p
 <?php if ($mobile_browser > 0) {;?>
 <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1">
 <?php };?>
-
-<?php echo sprintf($pagina,$logo,$bdescarga,$idprt);?>
+  
+<?php echo sprintf($pagina,$logo,$bdescarga,$idprt,$tit1,$tit2,$inpn,$inpp,$bte,$hrec);?>
 
 
 <?php };?>

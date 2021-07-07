@@ -4,17 +4,25 @@ if ($nif2!=null){;
 $usuario2=$nif2;
 $sql24="select * from usuarios where user='".$usuario2."' and password='".$clave2."'";
 //echo $sql24;
-$result24=mysqli_query ($conn,$sql24) or die ("Invalid result24");
-$row24=mysqli_num_rows($result24);
+$result24=$conn->query($sql24);
+$row24=count($result24->fetchAll());
+
+/*$result24=mysqli_query ($conn,$sql24) or die ("Invalid result24");
+$row24=mysqli_num_rows($result24);*/
 
 if ($row24==0){;
 $sql23="select idempresas from empresas order by idempresas desc";
-$result23=mysqli_query ($conn,$sql23) or die ("Invalid result23");
-$row=mysqli_num_rows($result23);
+$result23=$conn->query($sql23);
+$result23mos=$conn->query($sql23);
+$row=count($result23mos->fetchAll());
+
+/*$result23=mysqli_query ($conn,$sql23) or die ("Invalid result23");
+$row=mysqli_num_rows($result23);*/
 if ($row==0){;
 $idempresas="1";
 }else{;
-$resultado23=mysqli_fetch_array($result23);
+$resultado23=$result23->fetch();
+//$resultado23=mysqli_fetch_array($result23);
 $idemp=$resultado23['idempresas'];
 $idempresas=$idemp+1;
 };
@@ -107,29 +115,40 @@ VALUES ('$idempresas','$nombre2','$nif2','$domicilio2','$cp2','$ncc2','$nombrer'
 '$falta','$mesalta','$yearalta','$diaalta',
 '$colorarriba','$colorlateral','$colorcentral')";
 //echo $sql1.'<br/>';
-$result1=mysqli_query ($conn,$sql1) or die ("Invalid result icarnet");
+$result1=$conn->exec($sql1);
+
+//$result1=mysqli_query ($conn,$sql1) or die ("Invalid result icarnet");
 
 
 $sql2 = "INSERT INTO usuarios (user,password,idempresas,administracion,servicios,informes,datoslateral,portada,datoslateral2,documentacion,idpr,estado,ayuda) 
 VALUES ('$usuario2','$clave2','$idempresas','1','1','1','1','1','1','1','$idpr','$estadot','1')";
 //echo $sql2.'<br/>';
-$result2=mysqli_query ($conn,$sql2) or die ("Invalid result sql2");
+$result2=$conn->exec($sql2);
+
+//$result2=mysqli_query ($conn,$sql2) or die ("Invalid result sql2");
 
 $sql11 = "INSERT INTO puntservicios (idempresas,idpccat,idpcsubcat,subcategoria,rellr,rellg,rellb,activo) VALUES ('$idempresas','1','1','ENTRADA','255','255','255','1')";
 //echo $sql11.'<br/>';
-$result11=mysqli_query ($conn,$sql11) or die ("Invalid result sql11");
+$result11=$conn->exec($sql11);
+//$result11=mysqli_query ($conn,$sql11) or die ("Invalid result sql11");
 
 $sql11a = "INSERT INTO puntservicios (idempresas,idpccat,idpcsubcat,subcategoria,rellr,rellg,rellb,activo) VALUES ('$idempresas','1','2','SALIDA','255','255','255','1')";
 //echo $sql11a.'<br/>';
-$result11a=mysqli_query ($conn,$sql11a) or die ("Invalid result sql11a");
+$result11a=$conn->exec($sql11a);
+
+//$result11a=mysqli_query ($conn,$sql11a) or die ("Invalid result sql11a");
 
 $sql11p = "INSERT INTO portadapag (idempresa,idpag) VALUES ('$idempresas','1')";
 //echo $sql11p.'<br/>';
-$result11p=mysqli_query ($conn,$sql11p) or die ("Invalid result sql11p");
+$result11p=$conn->exec($sql11p);
+
+//$result11p=mysqli_query ($conn,$sql11p) or die ("Invalid result sql11p");
 
 $sql11p1 = "INSERT INTO portadapag (idempresa,idpag) VALUES ('$idempresas','2')";
 //echo $sql11p1.'<br/>';
-$result11p1=mysqli_query ($conn,$sql11p1) or die ("Invalid result sql11p1");
+$result11p1=$conn->exec($sql11p1);
+
+//$result11p1=mysqli_query ($conn,$sql11p1) or die ("Invalid result sql11p1");
 
 if (isset($datoadm)==false){;
 $datoadm=array(1,1,1,0,1,1,1,1,1,1);
@@ -138,12 +157,16 @@ $datoadm=array(1,1,1,0,1,1,1,1,1,1);
 $sql3 = "INSERT INTO menuadministracion (user,idempresa,clientes,gestores,empleados,empresas,empresa,usuario,visita,proveedor,puestos,vecinos) 
 VALUES ('$usuario2','$idempresas','$datoadm[0]','$datoadm[1]','$datoadm[2]','$datoadm[3]','$datoadm[4]','$datoadm[5]','$datoadm[6]','$datoadm[7]','$datoadm[8]','$datoadm[9]')";
 //echo $sql3.'<br/>';
-$result3=mysqli_query ($conn,$sql3) or die ("Invalid result sql3");
+$result3=$conn->exec($sql3);
+
+//$result3=mysqli_query ($conn,$sql3) or die ("Invalid result sql3");
 
 $sql3 = "INSERT INTO administrar (idempresa,clientes,gestores,empleados,empresas,empresa,usuario,visita,proveedor,puestos,vecinos) 
 VALUES ('$idempresas','1','1','1','0','1','1','1','1','1','1')";
 //echo $sql3.'<br/>';
-$result3=mysqli_query ($conn,$sql3) or die ("Invalid result sql3a");
+$result3=$conn->exec($sql3);
+
+//$result3=mysqli_query ($conn,$sql3) or die ("Invalid result sql3a");
 
 $dato=array('menuadministracionenlace','menuadministracionimg','menuadministracionnombre',
 'menuinformeenlace','menuinformeimg','menuinformenombre',
@@ -152,7 +175,9 @@ $dato=array('menuadministracionenlace','menuadministracionimg','menuadministraci
 for($j=0;$j<count($dato);$j++){;
 $sql13 = "INSERT INTO ".$dato[$j]." (idempresa) VALUES ('$idempresas')";
 //echo $sql13;
-$result13=mysqli_query ($conn,$sql13) or die ("Invalid result sql13[".$j."]");
+$result13=$conn->exec($sql13);
+
+//$result13=mysqli_query ($conn,$sql13) or die ("Invalid result sql13[".$j."]");
 };
 $dato=array('usuariosenlace','usuariosimg','usuariosnombre');
 
@@ -160,7 +185,9 @@ $dato=array('usuariosenlace','usuariosimg','usuariosnombre');
 for($j=0;$j<count($dato);$j++){;
 $sql13 = "INSERT INTO ".$dato[$j]." (idempresas) VALUES ('$idempresas')";
 //echo $sql13;
-$result13=mysqli_query ($conn,$sql13) or die ("Invalid result sql13[".$j."]");
+$result13=$conn->exec($sql13);
+
+//$result13=mysqli_query ($conn,$sql13) or die ("Invalid result sql13[".$j."]");
 };
 
 $datbbdd=array('servicios','hoja','etiquetas','portadai','menuinforme','menuservicios');
@@ -211,7 +238,9 @@ $sqlvarios.=",";
 $sqlvarios.=")";
 
 //echo $sqlvarios.'<br/>';
-$resultvarios=mysqli_query ($conn,$sqlvarios) or die ("Invalid result sqlvarios[".$ht."]");
+$resultvarios=$conn->exec($sqlvarios);
+
+//$resultvarios=mysqli_query ($conn,$sqlvarios) or die ("Invalid result sqlvarios[".$ht."]");
 
 };
 

@@ -26,16 +26,26 @@ $sql10="SELECT * from almcontratos where idempresa='".$ide."' and fecha between 
 }else{;
 $sql10="select idcliente from datos_vigilancia where idempresa='".$ide."'";
 };
-$result10=mysqli_query ($conn,$sql10) or die ("Invalid result10");
-$row10=mysqli_num_rows($result10);
+
+$result=$conn->query($sql10);
+$resultmos=$conn->query($sql10);
+$num_rows=$result->fetchAll();
+$row10=count($num_rows);
+
+//$result10=mysqli_query ($conn,$sql10) or die ("Invalid result10");
+//$row10=mysqli_num_rows($result10);
 
 $sql0="select idclientes,nombre from clientes where idempresas='".$ide."' and estado='1'";
 if ($row10!=0){;
 $sql0.=" and idclientes in (";
-for ($t=0;$t<$row10;$t++){;
-mysqli_data_seek($result10,$t);
-$resultado10=mysqli_fetch_array($result10);
-$idcli=$resultado10['idcliente'];
+
+foreach ($resultmos as $row10) {
+
+
+//for ($t=0;$t<$row10;$t++){;
+//mysqli_data_seek($result10,$t);
+//$resultado10=mysqli_fetch_array($result10);
+$idcli=$row10['idcliente'];
 $sql0.="'".$idcli."'";
 if($t!=($row10-1)){;
 $sql0.=",";
@@ -44,8 +54,13 @@ $sql0.=",";
 $sql0.=")";
 };
 
-$result0=mysqli_query ($conn,$sql0) or die ("Invalid result0");
-$row0=mysqli_num_rows($result0);
+$result0=$conn->query($sql0);
+$result0mos=$conn->query($sql0);
+$num_rows=$result->fetchAll();
+$row0=count($num_rows);
+
+//$result0=mysqli_query ($conn,$sql0) or die ("Invalid result0");
+//$row0=mysqli_num_rows($result0);
 
 
 ?>
@@ -56,11 +71,15 @@ $row0=mysqli_num_rows($result0);
 <option value=" "> 
 <option value="0">Sin determinar
 <?php  
-for ($j=0; $j<$row0; $j++){;
-mysqli_data_seek($result0,$j);
-$resultado0=mysqli_fetch_array($result0);
-$idp=$resultado0['idclientes'];
-$nombrep=$resultado0['nombre'];
+
+foreach ($result0mos as $row0) {
+	
+
+//for ($j=0; $j<$row0; $j++){;
+//mysqli_data_seek($result0,$j);
+//$resultado0=mysqli_fetch_array($result0);
+$idp=$row0['idclientes'];
+$nombrep=$row0['nombre'];
 ?>
 <option value="<?php  echo $idp?>"><?php  echo $nombrep?>
 <?php };?>
@@ -117,8 +136,13 @@ $t102=date("Y-n-j",mktime(0,0,0,$mes+1,1,$año));
 $t=round(($t11-$t10)/86400,0);
 
 $sql10="select idempleado from datos_personal where idempresa='".$ide."' and idcliente='".$clientes."'";
-$result10=mysqli_query ($conn,$sql10) or die ("Invalid result10");
-$row10=mysqli_num_rows($result10);
+
+$result10=$conn->query($sql10);
+$result0mos=$conn->query($sql10);
+$num_rows=$result->fetchAll();
+$row10=count($num_rows);
+//$result10=mysqli_query ($conn,$sql10) or die ("Invalid result10");
+//$row10=mysqli_num_rows($result10);
 
 
 
@@ -128,10 +152,14 @@ $sql0.=" and estado='1'";
 };
 if ($row10!=0){;
 $sql0.=" and idempleado in (";
-for ($ñ=0;$ñ<$row10;$ñ++){;
-mysqli_data_seek($result10,$ñ);
-$resultado10=mysqli_fetch_array($result10);
-$idempl=$resultado10['idempleado'];
+
+foreach ($result0mos as $row10) {
+	
+
+//for ($ñ=0;$ñ<$row10;$ñ++){;
+//mysqli_data_seek($result10,$ñ);
+//$resultado10=mysqli_fetch_array($result10);
+$idempl=$row10['idempleado'];
 $sql0.="'".$idempl."'";
 if($ñ!=($row10-1)){;
 $sql0.=",";
@@ -139,12 +167,22 @@ $sql0.=",";
 };
 $sql0.=")";
 };
-$result0=mysqli_query ($conn,$sql0) or die ("Invalid result0");
-$row0=mysqli_num_rows($result0);
+
+$result0=$conn->query($sql0);
+$num_rows=$result->fetchAll();
+$row0=count($num_rows);
+
+//$result0=mysqli_query ($conn,$sql0) or die ("Invalid result0");
+//$row0=mysqli_num_rows($result0);
 
 $sql10="select idclientes,nombre from clientes where idempresas='".$ide."' and idclientes='".$clientes."'";
-$result10=mysqli_query ($conn,$sql10) or die ("Invalid result0");
-$resultado10=mysqli_fetch_array($result10);
+
+$result10=$conn->query($sql10);
+$resultado10=$result10->fetch();
+$num_rows=$result10->fetchAll();
+$row0=count($num_rows);
+//$result10=mysqli_query ($conn,$sql10) or die ("Invalid result0");
+//$resultado10=mysqli_fetch_array($result10);
 $nombrep=$resultado10['nombre'];
 ?>
 <p>
@@ -161,8 +199,14 @@ $nombrep=$resultado10['nombre'];
 <?php if ($ide=='10'){;
 $año=date("Y",time());
 $sql10="SELECT * from almcontratos where idempresa='".$ide."' and idcliente='".$clientes."' and fecha between '".$año."-01-01' and '".$año."-12-31'";
-$result10=mysqli_query ($conn,$sql10) or die ("Invalid result");
-$resultado10=mysqli_fetch_array($result10);
+
+$result10=$conn->query($sql10);
+$resultado10=$result10->fetch();
+//$num_rows=$result10->fetchAll();
+//$row0=count($num_rows);
+
+//$result10=mysqli_query ($conn,$sql10) or die ("Invalid result");
+//$resultado10=mysqli_fetch_array($result10);
 $idcontrato=$resultado10['id'];
 $tcontrato=$resultado10['tcontrato'];
 
@@ -174,13 +218,26 @@ case 9: $dmes='numero de horas durante septiembre';$texto='numero de horas contr
 };
 
 $sql11="SELECT * from ocontratoemp where idcontrato='".$tcontrato."' and nombre='".$dmes."'";
-$result11=mysqli_query ($conn,$sql11) or die ("Invalid result");
-$resultado11=mysqli_fetch_array($result11);
+
+$result11=$conn->query($sql11);
+$resultado11=$result11->fetch();
+//$num_rows=$result10->fetchAll();
+//$row0=count($num_rows);
+
+//$result11=mysqli_query ($conn,$sql11) or die ("Invalid result");
+//$resultado11=mysqli_fetch_array($result11);
 $orden=$resultado11['orden'];
 
 $sql12="SELECT * from almocontratos where idalmcontrato='".$idcontrato."' and orden='".$orden."'";
-$result12=mysqli_query ($conn,$sql12) or die ("Invalid result");
-$resultado12=mysqli_fetch_array($result12);
+
+
+$result12=$conn->query($sql12);
+$resultado12=$result12->fetch();
+//$num_rows=$result10->fetchAll();
+//$row0=count($num_rows);
+
+//$result12=mysqli_query ($conn,$sql12) or die ("Invalid result");
+//$resultado12=mysqli_fetch_array($result12);
 $valor=$resultado12['dato'];
 ?>
 
@@ -210,19 +267,31 @@ $t2=date("Y-n-j",mktime(0,0,0,$mes,$f,$año));?>
 <td><input type="hidden" name="fecha[<?php  echo $f;?>]" value="<?php  echo $t2;?>"><?php  echo $t1;?></td>
 <?php  
 $sqldf="select * from diasfestivos where año='".$año."' and mes='".$mes."' and dia='".$f."'"; 
-$resultdf=mysqli_query ($conn,$sqldf) or die ("Invalid query");
-$rowdf=mysqli_num_rows($resultdf);
+
+$resultdf=$conn->query($sqldf);
+$resultadomos=$resultdf->fetch();
+$num_rows=$resultdf->fetchAll();
+$rowdf=count($num_rows);
+
+
+//$resultdf=mysqli_query ($conn,$sqldf) or die ("Invalid query");
+//$rowdf=mysqli_num_rows($resultdf);
 ?>
 <td>
 <select name="empleados[<?php  echo $f;?>]" <?php if ($rowdf==1){;?>id="menusel"<?php };?> >
 <option value=" "> 
-<?php  for ($j=0; $j<$row0; $j++){;
-mysqli_data_seek($result0,$j);
-$resultado0=mysqli_fetch_array($result0);
-$idce=$resultado0['idempleado'];
-$nombree=$resultado0['nombre'];
-$apellidope=$resultado0['pa'];
-$apellidose=$resultado0['sa'];?>
+<?php  
+
+foreach ($resultadomos as $row0) {
+
+
+//for ($j=0; $j<$row0; $j++){;
+//mysqli_data_seek($result0,$j);
+//$resultado0=mysqli_fetch_array($result0);
+$idce=$row0['idempleado'];
+$nombree=$row0['nombre'];
+$apellidope=$row0['pa'];
+$apellidose=$row0['sa'];?>
 <option value="<?php  echo $idce?>"><?php  echo strtoupper($nombree)?> <?php  echo strtoupper($apellidope)?> <?php  echo strtoupper($apellidose)?>
 <?php };?>
 </select>

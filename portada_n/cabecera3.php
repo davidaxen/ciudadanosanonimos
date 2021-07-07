@@ -75,13 +75,13 @@ $(document).ready(function() {
 <body>
 
 <div class="encabezado">
-<img src="../../img/<?php  echo $imgpr;?>" height="75px">
-<div class="cartel" ><?php  include('../../menu_n/cartel.php');?>
+<img src="../img/<?php  echo $imgpr;?>" height="75px">
+<div class="cartel" ><?php  include('../menu_n/cartel.php');?>
 
 <?php if ($dispositivo=='movil'){;?>
-<?php  include('../../menu_n/submenumovil.php');?>
+<?php  include('../menu_n/submenumovil.php');?>
 <?php }else{;?>
-<?php  include('../../menu_n/submenu.php');?>
+<?php  include('../menu_n/submenu.php');?>
 <?php };?>
 </div>
 </div>

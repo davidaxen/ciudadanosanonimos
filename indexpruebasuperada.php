@@ -8,8 +8,11 @@ if ($com=='comprobacion'){;
 
 $sql56="select * from proyectos where idproyectos='".$idpr."'";
 //echo $sql56;
-$result56=mysqli_query ($conn, $sql56) or die ("Invalid result sql56");
-$resultados56 = mysqli_fetch_array ($result56);
+$result56=$conn->query($sql56);
+$resultados56=$result56->fetch();
+
+/*$result56=mysqli_query ($conn, $sql56) or die ("Invalid result sql56");
+$resultados56 = mysqli_fetch_array ($result56);*/
 $dprueba=$resultados56['diasprueba'];
 
 
@@ -234,8 +237,11 @@ alert (form.fiva.value)
 <?php 
 $sql="select * from portadapag,paginapor where paginapor.idpag=portadapag.idpag and idempresa='".$ide."' and paginapor.idpag in ('1','2') order by idportada asc";
 //echo $sql;
-$result=mysqli_query ($conn, $sql) or die ("Invalid result idempresas");
-$row=mysqli_num_rows($result);
+$result=$conn->query($sql);
+$row=count($result->fetchAll());
+
+/*$result=mysqli_query ($conn, $sql) or die ("Invalid result idempresas");
+$row=mysqli_num_rows($result);*/
 ?>
 </div>
 
@@ -255,8 +261,11 @@ a hover: {text-decoration:none}
 
 <?php 
 $sql33="select * from portadai where idempresa='".$idempresacontrol."'";
-$result33=mysqli_query ($conn,$sql33) or die ("Invalid result232");
-$soco33=mysqli_fetch_array($result33);
+$result33=$conn->query($sql33);
+$soco33=$result33->fetch();
+
+/*$result33=mysqli_query ($conn,$sql33) or die ("Invalid result232");
+$soco33=mysqli_fetch_array($result33);*/
 $ttg=0;
 for ($tg=2;$tg<count($soco33);$tg++){;
 if ($soco33[$tg]==1){;
@@ -276,80 +285,106 @@ $ttg=6-$ttg;
 
 <?php 
 $sql23="select * from empresas where idempresas='".$idempresacontrol."' ";
-$result23=mysqli_query ($conn,$sql23) or die ("Invalid result23");
+$result23=$conn->query($sql23);
+$soco=$result23->fetch();
+
+/*$result23=mysqli_query ($conn,$sql23) or die ("Invalid result23");
 $soco=mysqli_fetch_array($result23);
 $row=mysqli_num_rows($result23);
-$col=mysqli_field_count($result23);
+$col=mysqli_field_count($result23);*/
 
-mysqli_field_seek($result23, 2);
-$usera=mysqli_fetch_field($result23)->name;
+/*mysqli_field_seek($result23, 2);
+$usera=mysqli_fetch_field($result23)->name;*/
 
 
 $sql2s="select * from servicios where idempresa='".$idempresacontrol."' ";
-$result2s=mysqli_query ($conn,$sql2s) or die ("Invalid result2p");
+$result2s=$conn->query($sql2s);
+$socos=$result2s->fetch();
+
+/*$result2s=mysqli_query ($conn,$sql2s) or die ("Invalid result2p");
 //$bbddp=mysqli_fetch_array($result2p);
 $socos=mysqli_fetch_array($result2s);
 $rows=mysqli_num_rows($result2s);
-$cols=mysqli_field_count($result2s);
+$cols=mysqli_field_count($result2s);*/
 
 $sql2si="select * from menuserviciosimg where idempresa='".$idempresacontrol."' ";
-$result2si=mysqli_query ($conn,$sql2si) or die ("Invalid result2p");
+$result2si=$conn->query($sql2si);
+$socosi=$result2si->fetch();
+
+/*$result2si=mysqli_query ($conn,$sql2si) or die ("Invalid result2p");
 //$bbddp=mysqli_fetch_array($result2p);
 $socosi=mysqli_fetch_array($result2si);
 $rowsi=mysqli_num_rows($result2si);
-$colsi=mysqli_field_count($result2si);
+$colsi=mysqli_field_count($result2si);*/
 
 $sql2sn="select * from menuserviciosnombre where idempresa='".$idempresacontrol."' ";
-$result2sn=mysqli_query ($conn,$sql2sn) or die ("Invalid result2p");
+$result2sn=$conn->query($sql2sn);
+$socosn=$result2sn->fetch();
+
+/*$result2sn=mysqli_query ($conn,$sql2sn) or die ("Invalid result2p");
 //$bbddp=mysqli_fetch_array($result2p);
 $socosn=mysqli_fetch_array($result2sn);
 $rowsn=mysqli_num_rows($result2sn);
-$colsn=mysqli_field_count($result2sn);
+$colsn=mysqli_field_count($result2sn);*/
 
 
 $sql2p="select * from portadai where idempresa='".$idempresacontrol."' ";
-$result2p=mysqli_query ($conn,$sql2p) or die ("Invalid result2p");
+$result2p=$conn->query($sql2p);
+$socop=$result2p->fetch();
+
+/*$result2p=mysqli_query ($conn,$sql2p) or die ("Invalid result2p");
 //$bbddp=mysqli_fetch_array($result2p);
 $socop=mysqli_fetch_array($result2p);
 $rowp=mysqli_num_rows($result2p);
-$colp=mysqli_field_count($result2p);
+$colp=mysqli_field_count($result2p);*/
 
 
 $sql2h="select * from hoja where idempresa='".$idempresacontrol."' ";
-$result2h=mysqli_query ($conn,$sql2h) or die ("Invalid result2h");
+$result2h=$conn->query($sql2h);
+$socoh=$result2h->fetch();
+
+/*$result2h=mysqli_query ($conn,$sql2h) or die ("Invalid result2h");
 //$bbddh=mysqli_fetch_array($result2h);
 $socoh=mysqli_fetch_array($result2h);
 $rowh=mysqli_num_rows($result2h);
-$colh=mysqli_field_count($result2h);
+$colh=mysqli_field_count($result2h);*/
 
 
 $sql2e="select * from etiquetas where idempresa='".$idempresacontrol."' ";
-$result2e=mysqli_query ($conn,$sql2e) or die ("Invalid result2e");
+$result2e=$conn->query($sql2e);
+$socoe=$result2e->fetch();
+
+/*$result2e=mysqli_query ($conn,$sql2e) or die ("Invalid result2e");
 //$bbdde=mysqli_fetch_array($result2e);
 $socoe=mysqli_fetch_array($result2e);
 $rowe=mysqli_num_rows($result2e);
-$cole=mysqli_field_count($result2e);
+$cole=mysqli_field_count($result2e);*/
 
 
 
 $sql25="select * from usuarios where idempresas='".$idempresacontrol."' ";
-$result25=mysqli_query ($conn,$sql25) or die ("Invalid result23");
+$result25=$conn->query($sql25);
+$socou=$result25->fetch();
+
+/*$result25=mysqli_query ($conn,$sql25) or die ("Invalid result23");
 $socou=mysqli_fetch_array($result25);
 $rowu=mysqli_num_rows($result25);
-$colu=mysqli_field_count($result25);
+$colu=mysqli_field_count($result25);*/
 
 
 for ($j=0;$j<14;$j++){;
-mysqli_field_seek($result23, $j);
-$nomb23=mysqli_fetch_field($result23)->name;
+/*mysqli_field_seek($result23, $j);
+$nomb23=mysqli_fetch_field($result23)->name;*/
+$nomb23=$result23->getColumnMeta($j, ['name']);
 ?>
 <input type="hidden" name="datosa[<?php  echo $j;?>]" value="<?php  echo $soco[$j];?>">
 <input type="hidden" name="nombrea[<?php  echo $j;?>]" value="<?php  echo $nomb23;?>">
 <?php };?>
 
 <?php for ($j=38;$j<41;$j++){;
-mysqli_field_seek($result23, $j);
-$nomb23=mysqli_fetch_field($result23)->name;
+/*mysqli_field_seek($result23, $j);
+$nomb23=mysqli_fetch_field($result23)->name;*/
+$nomb23=$result23->getColumnMeta($j, ['name']);
 ?>
 <input type="hidden" name="datosa[<?php  echo $j;?>]" value="<?php  echo $soco[$j];?>">
 <input type="hidden" name="nombrea[<?php  echo $j;?>]" value="<?php  echo $nomb23;?>">
@@ -419,21 +454,24 @@ $nomb23=mysqli_fetch_field($result23)->name;
 <td>Pais</td>
 <td>
 <?php 
-$sql="select * from paises order by pais asc"; 
-$result=mysqli_query ($conn,$sql) or die ("Invalid result empleados");
-$row=mysqli_num_rows($result);
+$sql="select * from paises order by pais asc";
+$result=$conn->query($sql);
+
+/*$result=mysqli_query ($conn,$sql) or die ("Invalid result empleados");
+$row=mysqli_num_rows($result);*/
 ?>
 <?php $i=11;?>
 <select name="paisn">
 <?php $idpaisa=$soco[$i];?>
 <?php 
-for ($i;$i<$row;$i++){;
+/*for ($i;$i<$row;$i++){;
 mysqli_data_seek($result, $i);
-$resultado=mysqli_fetch_array($result);
-$idpais1=$resultado['idpais'];
-$npais1=$resultado['pais'];
-$sig1=$resultado['sig'];
-$numsig1=$resultado['numsig'];
+$resultado=mysqli_fetch_array($result);*/
+foreach ($result as $rowmos) {
+$idpais1=$rowmos['idpais'];
+$npais1=$rowmos['pais'];
+$sig1=$rowmos['sig'];
+$numsig1=$rowmos['numsig'];
 $valorpais=$idpais1."-".$sig1."-".$numsig1;
 ?>
 <option value="<?php  echo $valorpais;?>" <?php if ($idpais==$idpaisa){;?>selected<?php };?> ><?php  echo $npais1;?>

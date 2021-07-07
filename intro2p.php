@@ -1,8 +1,9 @@
 <?php  
 include('bbdd.php');
 
+$ide = 21;
 if (($ide!=null) or ($validar==0)){;
- include('../portada_n/cabecera2.php');
+ //include('../portada_n/cabecera2.php');
  ?>
 
 
@@ -18,13 +19,14 @@ if (($ide!=null) or ($validar==0)){;
 if (($rgpd=='1') and ($avisolegal=='1')){;
 $sql1="UPDATE usuarios SET rgpd = '".$rgpd."', avisolegal = '".$avisolegal."' where user='".$gente."' and password='".$part."'";
 //echo $sql1;
-$result1=mysqli_query ($conn,$sql1) or die ("Invalid result usuarios");
+$result=$conn->exec($sql1);
+//$result1=mysqli_query ($conn,$sql1) or die ("Invalid result usuarios");
 
 };
 
 ?>
 <script type="text/javascript">
-window.location="https://control.ciudadanosanonimos.com/inicio1.php";
+window.location="/donaciones/donaciones.php";
 </script>
 
 </div>

@@ -76,7 +76,11 @@ $hora=date("H:i",time());
 
 $sql10 = "INSERT INTO fichero (idempresa,nomfichero,mes,año,carpeta,idclientes,idgestor) VALUES ('$ide','$nomfich1','$mesfactura','$anofactura','$path','$idclientes','$idgestor')";
 //echo $sql1;
-$result10=mysqli_query ($conn,$sql10) or die ("Invalid result icarnet");
+//$result10=mysqli_query ($conn,$sql10) or die ("Invalid result icarnet");
+
+$result10=$conn->query($sql10);
+
+
 }else{;
 echo('Correo no enviado, error');
 };

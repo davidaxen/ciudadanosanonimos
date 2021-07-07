@@ -27,8 +27,14 @@ if ($datos!='datos'){;
 }else{;
 
 $sql="SELECT * from comunidades"; 
-$result=mysqli_query ($conn,$sql) or die ("Invalid result");
-$row=mysqli_num_rows($result);
+
+$result=$conn->prepare($sql);
+$resultmos=$conn->prepare($sql);
+$num_rows=$result->fetchAll();
+$row=count($num_rows);
+
+//$result=mysqli_query ($conn,$sql) or die ("Invalid result");
+//$row=mysqli_num_rows($result);
 ?>
 <?include ('../js/busqueda.php');?>
 
@@ -37,12 +43,18 @@ $row=mysqli_num_rows($result);
 <tr class="enctab"><td>Cod Pais</td><td>Pais</td><td>Cod Pais</td><td>Opciones</td></tr>
 </thead>
 <?php  
-for ($i=0; $i<$row; $i++){;
-mysqli_data_seek($result, $i);
-$resultado=mysqli_fetch_array($result);
-$id=$resultado['id'];
-$comunidad=$resultado['comunidad'];
-$idpais=$resultado['idpais'];
+
+foreach ($resultmos as $row1) {
+	
+	$id=$row1['id'];
+	$comunidad=$row1['comunidad'];
+	$idpais=$row1['idpais'];
+//for ($i=0; $i<$row; $i++){;
+//mysqli_data_seek($result, $i);
+//$resultado=mysqli_fetch_array($result);
+//$id=$resultado['id'];
+//$comunidad=$resultado['comunidad'];
+//$idpais=$resultado['idpais'];
 ?>
 <tr class="dattab">
 <td><?php  echo $id;?></td>

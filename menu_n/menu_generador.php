@@ -5,9 +5,14 @@ if ($ide!=null){;
 include('../portada_n/cabecera2.php');
 
 $sql11r="select * from usuariosnombre where idempresas='".$ide."'";
-$result11r=mysqli_query ($conn,$sql11r) or die ("Invalid result menucontabilidad");
-$resultado11r=mysqli_fetch_array($result11r);
+
+$result11r=$conn->query($sql11r);
+$resultado11r=$result11r->fetch();
+
+/*$result11r=mysqli_query ($conn,$sql11r) or die ("Invalid result menucontabilidad");
+$resultado11r=mysqli_fetch_array($result11r);*/
 $nadr=$resultado11r['servicios'];
+
 ?>
 
 <div id="main">
@@ -17,7 +22,7 @@ $nadr=$resultado11r['servicios'];
 </p></div>
 <div class="contenido">
 
-<?php 
+<?php
 include('menu_servicios.php');
 
 
@@ -52,7 +57,7 @@ $valorca=array_count_values($ca);
  if (count($cc)!=$valorcc[0]){;?>
 <div class="main">
 <span class="caja2"><b>Comunicaciones</b></span>
-<?php  
+<?php
 for ($j=0;$j<count($cc)+1;$j++){;
 if ($cc[$j]=='1'){;
 if ($ncc[$j]=='Mensaje'){;?>

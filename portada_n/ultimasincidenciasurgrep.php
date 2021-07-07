@@ -18,10 +18,15 @@ $mes=$mesa[1];
 
 
 $sql="select * from empresas where nifrepresentante='".$nifrep."' and estado>0";
-$result=mysqli_query ($conn,$sql) or die ("Invalid result 0");
-$row=mysqli_affected_rows();
+
+$result=$conn->query($sql);
+$num_rows=$result->fetchAll();
+$row=count($num_rows);
+
+//$result=mysqli_query ($conn,$sql) or die ("Invalid result 0");
+//$row=mysqli_affected_rows();
 for ($j=0;$j<$row;$j++){;
-$idempresas=mysqli_result($result,$j,'idempresas');
+$idempresas=$num_rows['idempresas'];
 $lista.=$idempresas;
 if($j!=($row-1)){;
 $lista.=',';
@@ -30,8 +35,14 @@ $lista.=',';
 
 
 $sql1="SELECT * from almpcinci where  idempresas in (".$lista.") and urgente='1' and idempleadoresp='0' order by tiempo desc, hora desc limit 0,40"; 
-$result1=mysqli_query ($conn,$sql1) or die ("Invalid result 1");
-$row1=mysqli_affected_rows();
+
+$result1=$conn->query($sql1);
+$resultmos=$conn->query($sql);
+$num_rows=$result1->fetchAll();
+$row1=count($num_rows);
+
+//$result1=mysqli_query ($conn,$sql1) or die ("Invalid result 1");
+//$row1=mysqli_affected_rows();
 /*
 $sql01="SELECT * from categorias where idpccat='".$idpccat."'"; 
 $result01=mysqli_query ($conn,$sql01) or die ("Invalid result 1");
@@ -64,39 +75,56 @@ function refrescar()
 <td>Puesto de Trabajo</td><td>Empleado</td><td>Dia</td><td>Hora</td><td>Informacion</td><td>Asignar</td></tr>
 
 <?php 
-for ($j=0;$j<$row1;$j++){;
 
-$idempresas=mysqli_result($result1,$j,'idempresas');
-$idempleado=mysqli_result($result1,$j,'idempleado');
-$idpiscina=mysqli_result($result1,$j,'idpiscina');
-$dia=mysqli_result($result1,$j,'dia');
-$hora=mysqli_result($result1,$j,'hora');
-$tiempo=mysqli_result($result1,$j,'tiempo');
-$lat=mysqli_result($result1,$j,'lat');
-$lon=mysqli_result($result1,$j,'lon');
-$texto=mysqli_result($result1,$j,'texto');
-$urgente=mysqli_result($result1,$j,'urgente');
+foreach ($resultmos as $row1) {
+
+//for ($j=0;$j<$row1;$j++){;
+
+$idempresas=$row1['idempresas'];
+$idempleado=$row1['idempleado'];
+$idpiscina=$row1['idpiscina'];
+$dia=$row1['dia'];
+$hora=$row1['hora'];
+$tiempo=$row1['tiempo'];
+$lat=$row1['lat'];
+$lon=$row1['lon']);
+$texto=$row1['texto'];
+$urgente=$row1['urgente'];
 
 $sql11="select * from empresas where idempresas='".$idempresas."'";
-$result11=mysqli_query ($conn,$sql11) or die ("Invalid result 11");
-$nombreemp=mysqli_result($result11,0,'nombre');
 
+$result11=$conn->query($sql11);
+$num_rows=$result11->fetchAll();
+$row=count($num_rows);
 
-$sql10="SELECT * from empleados where idempleado='".$idempleado."' and idempresa='".$idempresas."'"; 
-$result10=mysqli_query ($conn,$sql10) or die ("Invalid result 10");
-$nombre=mysqli_result($result10,0,'nombre');
-$priape=mysqli_result($result10,0,'1apellido');
-$segape=mysqli_result($result10,0,'2apellido');
+//$result11=mysqli_query ($conn,$sql11) or die ("Invalid result 11");
+$nombreemp=$num_rows[0]['nombre'];
+
+$sql10="SELECT * from empleados where idempleado='".$idempleado."' and idempresa='".$idempresas."'";
+
+$result10=$conn->query($sql10);
+$num_rows=$result10->fetchAll();
+$row=count($num_rows);
+
+//$result10=mysqli_query ($conn,$sql10) or die ("Invalid result 10");
+$nombre=$num_rows['nombre'];
+$priape=$num_rows['1apellido'];
+$segape=$num_rows['2apellido'];
 $nombretrab=$nombre.' '.$priape.' '.$segape;
 
 
 $sql13="SELECT * from clientes where idclientes='".$idpiscina."' and idempresas='".$idempresas."'"; 
-$result13=mysqli_query ($conn,$sql13) or die ("Invalid result 13");
-$row13=mysqli_affected_rows();
+
+$result13=$conn->query($sql13);
+$num_rows=$result13->fetchAll();
+$row13=count($num_rows);
+
+//$result13=mysqli_query ($conn,$sql13) or die ("Invalid result 13");
+//$row13=mysqli_affected_rows();
 if ($row13==0){;
 $nombrecom="Fuera de Puesto";
 }else{;
-$nombrecom=mysqli_result($result13,0,'nombre');
+$nombrecom=$num_rows[0]['nombre'];
 };
 ?>
 <?php if ($urgente=='0'){;?>

@@ -9,12 +9,19 @@ $dia= strtok('-');
 $fechac=$dia.'/'.$mes.'/'.$año;
 
 $sql01="SELECT * from categorias where idpccat='".$idpccat."'"; 
-$result01=mysqli_query ($conn,$sql01) or die ("Invalid result 1");
-$categoria=mysqli_result($result01,0,'nombre');
 
-$sql1="SELECT * from almpc where dia='".$fecha."' and idempresas='".$ide."' and idpccat='".$idpccat."' order by id,idempleado"; 
-$result1=mysqli_query ($conn,$sql1) or die ("Invalid result 1");
-$row1=mysqli_affected_rows();
+$result01=$conn->query($sql01);
+//$result01=mysqli_query ($conn,$sql01) or die ("Invalid result 1");
+$categoria=$num_rows[0]['nombre'];
+//$categoria=mysqli_result($result01,0,'nombre');
+$sql1="SELECT * from almpc where dia='".$fecha."' and idempresas='".$ide."' and idpccat='".$idpccat."' order by id,idempleado";
+
+$result1=$conn->query($sql1);
+$resultmos1=$conn->query($sql1);
+$num_rows=$result1->fetchAll();
+$row=count($num_rows);
+//$result1=mysqli_query ($conn,$sql1) or die ("Invalid result 1");
+//$row1=mysqli_affected_rows();
 ?>
 
 <?php 
@@ -29,31 +36,44 @@ if ($ide!=null){;
 <div class="contenido">
 <table border="0">
 <tr class="subenc6"><td>Personal</td><td>Telefonos</td><td>Puesto de Trabajo</td><td>Hora</td><td>Tipo</td><td>Mapa</td></tr>
-<?php for ($j=0;$j<$row1;$j++){;
-$idempleado=mysqli_result($result1,$j,'idempleado');
-$idpiscina=mysqli_result($result1,$j,'idpiscina');
-$hora=mysqli_result($result1,$j,'hora');
-$idpcsubcat=mysqli_result($result1,$j,'idpcsubcat');
-$tiempo=mysqli_result($result1,$j,'tiempo');
-$lat=mysqli_result($result1,$j,'lat');
-$lon=mysqli_result($result1,$j,'lon');
+<?php 
+
+foreach ($resultmos1 as $row1) {
+
+//for ($j=0;$j<$row1;$j++){;
+
+$idempleado=$row1['idempleado'];
+$idpiscina=$row1['idpiscina'];
+$hora=$row1['hora'];
+$idpcsubcat=$row1['idpcsubcat'];
+$tiempo=$row1['tiempo'];
+$lat=$row1['lat'];
+$lon=$row1['lon'];
 
 $sql12="SELECT * from pcsubcat where idpccat='4' and idpcsubcat='".$idpcsubcat."'"; 
-$result12=mysqli_query ($conn,$sql12) or die ("Invalid result 10");
-$subcategoria=mysqli_result($result12,0,'subcategoria');
+
+$result12=$conn->query($sql12);
+
+//$result12=mysqli_query ($conn,$sql12) or die ("Invalid result 10");
+$subcategoria=$num_rows[0]['subcategoria'];
 
 
-$sql10="SELECT * from empleados where idempleado='".$idempleado."' and idempresa='".$ide."'"; 
-$result10=mysqli_query ($conn,$sql10) or die ("Invalid result 10");
-$nombre=mysqli_result($result10,0,'nombre');
-$priape=mysqli_result($result10,0,'1apellido');
-$segape=mysqli_result($result10,0,'2apellido');
-$tele1=mysqli_result($result10,0,'tele1');
-$tele2=mysqli_result($result10,0,'tele2');
+$sql10="SELECT * from empleados where idempleado='".$idempleado."' and idempresa='".$ide."'";
+
+$result10=$conn->query($sql10);
+//$result10=mysqli_query ($conn,$sql10) or die ("Invalid result 10");
+$nombre=$num_rows[0]['nombre'];
+$priape=$num_rows[0]['1apellido'];
+$segape=$num_rows[0]['2apellido'];
+$tele1=$num_rows[0]['tele1'];
+$tele2=$num_rows[0]['tele2'];
 $nombretrab=$nombre.' '.$priape.' '.$segape;
-$sql11="SELECT * from clientes where idclientes='".$idpiscina."' and idempresas='".$ide."'"; 
-$result11=mysqli_query ($conn,$sql11) or die ("Invalid result 11");
-$nombrecom=mysqli_result($result11,0,'nombre');
+$sql11="SELECT * from clientes where idclientes='".$idpiscina."' and idempresas='".$ide."'";
+
+$result11=$conn->query($sql11);
+
+//$result11=mysqli_query ($conn,$sql11) or die ("Invalid result 11");
+$nombrecom=$num_rows[0]['nombre'];
 
 ?>
 <tr class="subenc7"><td><?php  echo strtoupper($nombretrab);?></td>

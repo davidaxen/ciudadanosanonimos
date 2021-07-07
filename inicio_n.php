@@ -14,7 +14,9 @@ $img=null;
 
 if($img==null){;
 $sql55 = "INSERT INTO visitas (usuario,dia,hora,ip) VALUES ('$user','$dt','$tm','$ip')";
-$result55=mysqli_query ($conn, $sql55) or die ("Invalid result user");
+$result55=$conn->query($sql55);
+
+//$result55=mysqli_query ($conn, $sql55) or die ("Invalid result user");
 };
 
 			$output=FALSE;
@@ -24,10 +26,13 @@ $result55=mysqli_query ($conn, $sql55) or die ("Invalid result user");
 			$pass=base64_encode($output);
 
 
-$sql="select * from usuarios where user='".$user."' and password='".$pass."'";
+$sql="select * from usuarios where user='".$user."' and password='".$pass."' and validar = '1'";
 //echo $sql;
-$result=mysqli_query ($conn, $sql) or die ("Invalid result idempresas");
-$resultados = mysqli_fetch_array ($result);
+$result=$conn->query($sql);
+$resultados=$result->fetch();
+
+/*$result=mysqli_query ($conn, $sql) or die ("Invalid result idempresas");
+$resultados = mysqli_fetch_array ($result);*/
 	$idusuario=$resultados['id'];
 	$estado=$resultados['estado'];
 	$validar=$resultados['validar'];
@@ -59,8 +64,11 @@ $resultados = mysqli_fetch_array ($result);
 				
 	$sql1="select * from empresas where idempresas='".$ide."'"; 
 	//echo $sql1;
-	$result1=mysqli_query ($conn, $sql1) or die ("Invalid result sql1 ");
-	$resultados1 = mysqli_fetch_array ($result1);
+	$result1=$conn->query($sql1);
+	$resultados1=$result1->fetch();
+
+	/*$result1=mysqli_query ($conn, $sql1) or die ("Invalid result sql1 ");
+	$resultados1 = mysqli_fetch_array ($result1);*/
 				$nemp=$resultados1['nombre'];
 				$img=$resultados1['logotipo'];
 				$imgpeq=$resultados1['logotipopeq'];
@@ -107,7 +115,7 @@ case 1: $pag1="inicio1.php";$pag2="inicio2.php";setcookie("modulo",$modulo);setc
 case 2: $pag1="inicio1.php";$pag2="inicio2.php";setcookie("modulo",$modulo);setcookie("pag1",$pag1);setcookie("pag2",$pag2);break;
 case 3: $pag1="inicio1.php";$pag2="inicio1.php";setcookie("modulo",$modulo);setcookie("pag1",$pag1);setcookie("pag2",$pag2);break;
 case 4: $pag1="inicio1.php";$pag2="inicio1.php";setcookie("modulo",$modulo);setcookie("pag1",$pag1);setcookie("pag2",$pag2);break;
-default: $pag1="estamos1.php";break;
+default: $pag1="inicio1.php";break;
 };
 /*
 case 2: $pag1="inicio1c.php";$pag2="inicio2c.php";setcookie("modulo",$modulo);setcookie("pag1c",$pag1);setcookie("pag2c",$pag2);break;

@@ -15,9 +15,14 @@ $parte=explode('?',$url);
 $parte2=explode('#;&',$parte2des);
 
 		
-$sql="SELECT * from validar where codvalidar='".$parte[1]."'"; 
-$result=mysqli_query ($conn,$sql) or die ("Invalid result");
-$resultado=mysqli_fetch_array($result);
+$sql="SELECT * from validar where codvalidar=:parte"; 
+$result=$conn->prepare($sql);
+$result->bindParam(':parte', $parte[1]);
+$result->execute();
+$resultado=$result->fetch();
+
+/*$result=mysqli_query ($conn,$sql) or die ("Invalid result");
+$resultado=mysqli_fetch_array($result);*/
 $nifbbdd=$resultado['nifemp'];
 $passbbdd=$resultado['password'];
 $validar=$resultado['validar'];
@@ -89,8 +94,12 @@ $dat2=array('50-log.png','blanco-peq.png','pp_firma.png','50-a4.jpg','50-hoja1.p
 
 include('introempresa.php');
 
-$sql="UPDATE validar SET validar='1' where idvalidar='".$idvalidar."'"; 
-$result=mysqli_query ($conn,$sql) or die ("Invalid result");
+$sql="UPDATE validar SET validar='1' where idvalidar=:idvalidar";
+$result=$conn->prepare($sql);
+$result->bindParam(':idvalidar', $idvalidar);
+$result->execute();
+
+//$result=mysqli_query ($conn,$sql) or die ("Invalid result");
 
 
 echo 'La validaci&oacute;n esta tramitada ya puede acceder pinche <a href="https://control.nativecbc.com?idpr='.$idpr.'" target="_blank">Aqu&iacute;</a><br/>';

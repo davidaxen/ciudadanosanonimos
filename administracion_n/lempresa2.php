@@ -44,8 +44,14 @@ if ($datos!='datos'){;
 
 
 $sqlp="select * from proyectos where gestorproyecto='".$ide."' order by idproyectos asc"; 
-$resultp=mysqli_query ($conn,$sqlp) or die ("Invalid result idproyectos");
-$rowp=mysqli_num_rows($resultp);
+$resultp=$conn->query($sqlp);
+$resultpmos1=$conn->query($sqlp);
+$resultpmos2=$conn->query($sqlp);
+$resultadoprow=$resultp->fetchAll();
+$rowp=count($resultadoprow);
+
+/*$resultp=mysqli_query ($conn,$sqlp) or die ("Invalid result idproyectos");
+$rowp=mysqli_num_rows($resultp);*/
 
 
 
@@ -54,15 +60,17 @@ $sql="SELECT * from empresas where estado='".$estador."' ";
 if ($rowp>0){;
 $sql.=" and idproyectos ";
 if ($rowp==1){
-	$resultadop=mysqli_fetch_array($resultp);
+	$resultadop=$resultpmos1->fetch();
+	//$resultadop=mysqli_fetch_array($resultp);
 	$idprt=$resultadop['idproyectos'];
 $sql.=" ='".$idprt."'";	
 	}else{;
 $sql.=" in (";		
-	for ($j=0;$j<$rowp;$j++){
-		mysqli_data_seek($resultp,$j);
-	$resultadop=mysqli_fetch_array($resultp);
-	$idprt=$resultadop['idproyectos'];		
+	/*for ($j=0;$j<$rowp;$j++){
+	mysqli_data_seek($resultp,$j);
+	$resultadop=mysqli_fetch_array($resultp);*/
+	foreach ($resultpmos2 as $rowpmos) {
+	$idprt=$rowpmos['idproyectos'];		
 		$sql.=$idprt;
 		$t=$j+1;
 		if($t<$rowp){
@@ -78,8 +86,10 @@ $sql.=")";
 
 $sql.=" order by idempresas asc"; 
 //echo $sql;
-$result=mysqli_query ($conn,$sql) or die ("Invalid result");
-$row=mysqli_num_rows($result);
+$result=$conn->query($sql);
+
+/*$result=mysqli_query ($conn,$sql) or die ("Invalid result");
+$row=mysqli_num_rows($result);*/
 ?>
 <table><tr><td><?php include ('../js/busqueda.php');?></td>
 
@@ -115,17 +125,19 @@ $row=mysqli_num_rows($result);
 <thead>
 <tr class="enctab"><td>Nº Empresa</td><td>Nombre Empresa</td><td>NIF</td><td>Dom.</td><td>Loc.</td><td>CP.</td><td>Nº Cuenta</td><td>Logotipo</td></tr>
 </thead>
-<?php  for ($i=0; $i<$row; $i++){;
+<?php  
+/*for ($i=0; $i<$row; $i++){;
 mysqli_data_seek($result, $i);
-$resultado=mysqli_fetch_array($result);
-$idempresas=$resultado['idempresas'];
-$nombre=$resultado['nombre'];
-$nif=$resultado['nif'];
-$domicilio=$resultado['domicilio'];
-$localidad=$resultado['localidad'];
-$cp=$resultado['cp'];
-$ncc=$resultado['ncc'];
-$logotipo=$resultado['logotipo'];
+$resultado=mysqli_fetch_array($result);*/
+foreach ($result as $rowmos) {
+$idempresas=$rowmos['idempresas'];
+$nombre=$rowmos['nombre'];
+$nif=$rowmos['nif'];
+$domicilio=$rowmos['domicilio'];
+$localidad=$rowmos['localidad'];
+$cp=$rowmos['cp'];
+$ncc=$rowmos['ncc'];
+$logotipo=$rowmos['logotipo'];
 ?>
 <tr class="dattab">
 <td><?php  echo $idempresas;?></td>

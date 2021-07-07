@@ -46,7 +46,6 @@ $sql1 = "INSERT INTO previopago
 precio,cuadrante,entrada,incidencia,mensaje,alarma,accdiarias,
 accmantenimiento,niveles,productos,revision,trabajo,siniestro,
 control,mediciones,jornadas,informes,ruta,envases,incidenciasplus)
-
 VALUES 
 ('$ide','$idpr','$tprecios','$opcion','$licadm','$lictra','$liccli','1','$personalizacion',
 '$precio','$cuadrante','$entrada','$incidencia','$mensaje','$alarma','$accdiarias',
@@ -60,8 +59,8 @@ print_r($_COOKIE);
 print_r($_GET);
 print_r($_POST);
 */
-
-$result1=mysqli_query ($conn,$sql1) or die ("Invalid result icarnet");
+$result1=$conn->exec($sql1);
+//$result1=mysqli_query ($conn,$sql1) or die ("Invalid result icarnet");
 ?>
 
 

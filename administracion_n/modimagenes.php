@@ -34,8 +34,11 @@ a hover: {text-decoration:none}
 
 <?php 
 $sql33="select * from portadai where idempresa='".$idempresas."'";
-$result33=mysqli_query ($conn,$sql33) or die ("Invalid result232");
-$soco33=mysqli_fetch_array($result33);
+$result33=$conn->query($sql33);
+$soco33=$result33->fetch();
+
+/*$result33=mysqli_query ($conn,$sql33) or die ("Invalid result232");
+$soco33=mysqli_fetch_array($result33);*/
 $ttg=0;
 for ($tg=2;$tg<count($soco33);$tg++){;
 if ($soco33[$tg]==1){;
@@ -55,17 +58,21 @@ $ttg=6-$ttg;
 <input type="hidden" name="idempresas" value="<?php  echo $idempresas;?>">
 <?php 
 $sql23="select * from empresas where idempresas='".$idempresas."' ";
-$result23=mysqli_query ($conn,$sql23) or die ("Invalid result23");
+$result23=$conn->query($sql23);
+$soco=$result23->fetch();
+
+/*$result23=mysqli_query ($conn,$sql23) or die ("Invalid result23");
 $soco=mysqli_fetch_array($result23);
 $row=mysqli_num_rows($result23);
-$col=mysqli_field_count($result23);
+$col=mysqli_field_count($result23);*/
 
-mysqli_field_seek($result23, 2);
-$usera=mysqli_fetch_field($result23)->name;
+/*mysqli_field_seek($result23, 2);
+$usera=mysqli_fetch_field($result23)->name;*/
 
 for ($j=14;$j<23;$j++){;
-mysqli_field_seek($result23, $j);
-$nomb23=mysqli_fetch_field($result23)->name;
+/*mysqli_field_seek($result23, $j);
+$nomb23=mysqli_fetch_field($result23)->name;*/
+$nomb23=$result23->getColumnMeta($j,['name']);
 ?>
 <input type="hidden" name="datosa[<?php  echo$j;?>]" value="<?php  echo$soco[$j];?>">
 <input type="hidden" name="nombrea[<?php  echo$j;?>]" value="<?php  echo$nomb23;?>">

@@ -65,25 +65,31 @@ if ($com=='comprobacion'){;
 <?php include ('estilo/tab.htm');?>
 
 <?php 
-$sql="select * from portadapag,paginapor where paginapor.idpag=portadapag.idpag and idempresa='".$ide."' and paginapor.idpag in ('1','2') order by idportada asc";
+$sql="select * from portadapag,paginapor where paginapor.idpag=portadapag.idpag and idempresa=:ide and paginapor.idpag in ('1','2') order by idportada asc";
 //echo $sql;
-$result=mysqli_query ($conn, $sql) or die ("Invalid result idempresas");
-$row=mysqli_num_rows($result);
+$result=$conn->prepare($sql);
+$result->bindParam(':ide', $ide);
+$result->execute();
+/*$result=mysqli_query ($conn, $sql) or die ("Invalid result idempresas");
+$row=mysqli_num_rows($result);*/
 ?>
 
 
 <div class="tab">
 <?php 
-for ($j=0;$j<$row;$j++){;
+/*for ($j=0;$j<$row;$j++){;
 mysqli_data_seek($result,$j);
-$resultado=mysqli_fetch_array($result);
-$titulo=$resultado['titulo'];
-$pagport=$resultado['pag'];
+$resultado=mysqli_fetch_array($result);*/
+$j=0;
+foreach ($result as $rowmos) {
+$titulo=$rowmos['titulo'];
+$pagport=$rowmos['pag'];
 ?>
 
   <button class="tablinks" onclick="openCity(event, 'd<?php  echo $j;?>')" <?php if($j==0){;?>id="defaultOpen"<?php }?> ><?php  echo $titulo;?></button>
   
  <?php 
+ $j=$j+1;
 };
 ?> 
 </div>
@@ -92,11 +98,13 @@ $pagport=$resultado['pag'];
 
 
 <?php 
-for ($j=0;$j<$row;$j++){;
+/*for ($j=0;$j<$row;$j++){;
 mysqli_data_seek($result,$j);
-$resultado=mysqli_fetch_array($result);
-$titulo=$resultado['titulo'];
-$pagport=$resultado['pag'];
+$resultado=mysqli_fetch_array($result);*/
+$j=0;
+foreach ($result as $rowmos) {
+$titulo=$rowmos['titulo'];
+$pagport=$rowmos['pag'];
 ?>
 <div id="d<?php  echo $j;?>" class="tabcontent">
   <h3><?php  echo $titulo;?></h3>
@@ -105,6 +113,7 @@ $pagport=$resultado['pag'];
 
 
 <?php 
+$j=$j+1;
 };
 ?>
 <?php include ('js/tabjs.htm');?>

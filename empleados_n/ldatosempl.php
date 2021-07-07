@@ -40,22 +40,33 @@ if ($idempl!=null){;?>
 
 <?php 
 $sql="select * from empleados where idempresa='".$ide."' and idempleado='".$idempl."' order by idempleado desc"; 
-$result=mysqli_query ($conn,$sql) or die ("Invalid result clientes");
-$arrayempleado=mysqli_fetch_array($result);
+
+$result=$conn->query($sql);
+$arrayempleado=$result10->fetchAll();
+//$result=mysqli_query ($conn,$sql) or die ("Invalid result clientes");
+//$arrayempleado=mysqli_fetch_array($result);
 
 $sql22="select * from pais where idpais='".$arrayempleado[17]."'";
-$result22=mysqli_query ($conn,$sql22) or die ("Invalid result clientes");
-$resultado22=mysqli_fetch_array($result22);
-$nacionalidad1=$esultado22['nombrepais'];
 
+$result22=$conn->query($sql22);
+$resultado22=$result22->fetchAll();
+//$row=count($num_rows);
+//$result22=mysqli_query ($conn,$sql22) or die ("Invalid result clientes");
+//$resultado22=mysqli_fetch_array($result22);
+$nacionalidad1=$resultado22['nombrepais'];
 
-$sql1="select * from estudios where idestudios='".$arrayempleado[9]."'"; 
-$result1=mysqli_query ($conn,$sql1) or die ("Invalid result estudios");
-$row=mysqli_num_rows($result);
+$sql1="select * from estudios where idestudios='".$arrayempleado[9]."'";
+
+$result1=$conn->query($sql1);
+$row=count($num_rows);
+
+//$result1=mysqli_query ($conn,$sql1) or die ("Invalid result estudios");
+//$row=mysqli_num_rows($result);
 if ($row==0){;
 $nombreestudios="";
 }else{;
-$resultado1=mysqli_fetch_array($result1);
+$resultado1=$result10->fetchAll();
+//$resultado1=mysqli_fetch_array($result1);
 $nombreestudios=$resultado1['nombreestudios'];
 };
 

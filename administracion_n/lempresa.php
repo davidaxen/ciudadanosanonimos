@@ -25,9 +25,12 @@ if ($datos!='datos'){;
 <?php 
 }else{;
 
-$sql="SELECT * from empresas where estado='".$estador."' order by idempresas asc"; 
-$result=mysqli_query ($conn,$sql) or die ("Invalid result");
-$row=mysqli_num_rows($result);
+$sql="SELECT * from empresas where estado=:estador order by idempresas asc";
+$result=$conn->prepare($sql);
+$result->bindParam(':estador', $estador);
+$result->execute();
+/*$result=mysqli_query ($conn,$sql) or die ("Invalid result");
+$row=mysqli_num_rows($result);*/
 ?>
 <?include ('../js/busqueda.php');?>
 
@@ -36,17 +39,19 @@ $row=mysqli_num_rows($result);
 <thead>
 <tr class="enctab"><td>Nº Empresa</td><td>Nombre Empresa</td><td>NIF</td><td>Dom.</td><td>Loc.</td><td>CP.</td><td>Nº Cuenta</td><td>Logotipo</td></tr>
 </thead>
-<?php  for ($i=0; $i<$row; $i++){;
+<?php  
+/*for ($i=0; $i<$row; $i++){;
 mysqli_data_seek($result, $i);
-$resultado=mysqli_fetch_array($result);
-$idempresas=$resultado['idempresas'];
-$nombre=$resultado['nombre'];
-$nif=$resultado['nif'];
-$domicilio=$resultado['domicilio'];
-$localidad=$resultado['localidad'];
-$cp=$resultado['cp'];
-$ncc=$resultado['ncc'];
-$logotipo=$resultado['logotipo'];
+$resultado=mysqli_fetch_array($result);*/
+foreach ($result as $rowmos) {
+$idempresas=$rowmos['idempresas'];
+$nombre=$rowmos['nombre'];
+$nif=$rowmos['nif'];
+$domicilio=$rowmos['domicilio'];
+$localidad=$rowmos['localidad'];
+$cp=$rowmos['cp'];
+$ncc=$rowmos['ncc'];
+$logotipo=$rowmos['logotipo'];
 ?>
 <tr class="dattab">
 <td><?php  echo $idempresas;?></td>

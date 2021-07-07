@@ -19,8 +19,14 @@ if ($enviar==null){;
 
 $sql="select distinct(idcomunidad) as comunidad from cuadrante where idempresas='".$ide."'";
 //echo $sql;
-$result=mysqli_query ($conn,$sql) or die ("invalid result");
-$row=mysqli_num_rows($result);
+
+$result=$conn->query($sql);
+$resultmos=$conn->query($sql);
+$num_rows=$result10->fetchAll();
+$row=count($num_rows);
+
+//$result=mysqli_query ($conn,$sql) or die ("invalid result");
+//$row=mysqli_num_rows($result);
 
 ?>
 <form action="mcuadrante.php" method="post">
@@ -30,15 +36,23 @@ $row=mysqli_num_rows($result);
 <select name="clientes">
 <option value=" "> 
 <option value="0">sin determinar
-<?php  
-for ($j=0; $j<$row; $j++){;
-$resultado=mysqli_fetch_array($result);
-$idp=$resultado['comunidad'];
+<?php 
+
+foreach ($resultmos as $row) {
+
+//for ($j=0; $j<$row; $j++){;
+//$resultado=mysqli_fetch_array($result);
+$idp=$row['comunidad'];
 $sql0="select idclientes,nombre from clientes where idempresas='".$ide."' and idclientes='".$idp."' and estado='1'";
-$result0=mysqli_query ($conn,$sql0) or die ("Invalid result0");
-$row0=mysqli_num_rows($result0);
+
+$result0=$conn->query($sql0);
+$resultado0=$result0->fetchAll();
+$row0=count($num_rows);
+
+//$result0=mysqli_query ($conn,$sql0) or die ("Invalid result0");
+//$row0=mysqli_num_rows($result0);
 if ($row0==1){;
-$resultado0=mysqli_fetch_array($result0);
+//$resultado0=mysqli_fetch_array($result0);
 $nombrep=$resulado0['nombre'];
 ?>
 <option value="<?php  echo $idp?>"><?php  echo $nombrep;?>
@@ -102,16 +116,26 @@ $t10=date('Y-n-j',mktime(0,0,0,$mes,$dia,$año));
 $sql20="select idempleado,horas,visita from cuadrante where idcomunidad='".$clientes."' and idempresas='".$ide."' and fecha='".$t10."' and turno='".$turno."'";
 //echo $sql20;
 
-$result20=mysqli_query ($conn,$sql20) or die ("Invalid result0");
-$row20=mysqli_num_rows($result20);
+$result20=$conn->query($sql20);
+$resultado20=$result20->fetchAll();
+$row20=count($num_rows);
+
+//$result20=mysqli_query ($conn,$sql20) or die ("Invalid result0");
+//$row20=mysqli_num_rows($result20);
 if ($row20==1){;
-$resultado20=mysqli_fetch_array($result20);
+//$resultado20=mysqli_fetch_array($result20);
 $empleado=$resultado20['idempleado'];
 $horas=$resultado20['horas'];
 $visita=$resultado20['visita'];
 
 $sql30="select idempleado, nombre, 1apellido as pa, 2apellido as sa from empleados where idempresa='".$ide."' and idempleado='".$empleado."'";
 //echo $sql30;
+
+$result30=$conn->query($sql30);
+//$resultmos=$conn->query($sql);
+$resultado30=$result30->fetchAll();
+//$row=count($num_rows);
+
 $result30=mysqli_query ($conn,$sql30) or die ("Invalid result0");
 $resultado30=mysqli_fetch_array($result30);
 $anombree=$resultado30['nombre'];
@@ -122,12 +146,23 @@ $aapellidose=$resultado30['sa'];
 
 
 $sql11="select idempleado from datos_personal where idempresa='".$ide."' and idcliente='".$clientes."'";
-$result11=mysqli_query ($conn,$sql11) or die ("Invalid result10");
-$row11=mysqli_num_rows($result11);
+
+$result11=$conn->query($sql11);
+//$resultmos=$conn->query($sql);
+$num_rows=$result10->fetchAll();
+$row11=count($num_rows);
+//$result11=mysqli_query ($conn,$sql11) or die ("Invalid result10");
+//$row11=mysqli_num_rows($result11);
 
 $sql10="select idclientes,nombre from clientes where idempresas='".$ide."' and idclientes='".$clientes."'";
-$result10=mysqli_query ($conn,$sql10) or die ("Invalid result0");
-$resultado10=mysqli_fetch_array($result10);
+//$result10=mysqli_query ($conn,$sql10) or die ("Invalid result0");
+
+$result10=$conn->query($sql10);
+//$resultmos=$conn->query($sql);
+$resultado10=$result10->fetchAll();
+//$row=count($num_rows);
+
+//$resultado10=mysqli_fetch_array($result10);
 $nombrep=$resultado10['nombre'];
 ?>
 <p>
@@ -170,8 +205,13 @@ case 3: $d="Noche";break;
 <?php $idce=mysqli_result($result11,$j,idempleado);?>
 <?php 
 $sql0="select nombre, 1apellido as pa, 2apellido as sa from empleados where idempresa='".$ide."' and idempleado='".$idce."'";
-$result0=mysqli_query ($conn,$sql0) or die ("Invalid result0");
-$resultado0=mysqli_fetch_array($result0);
+
+$result0=$conn->query($sql0);
+$resultado0=$result0->fetchAll();
+//$row=count($num_rows);
+
+//$result0=mysqli_query ($conn,$sql0) or die ("Invalid result0");
+//$resultado0=mysqli_fetch_array($result0);
 $nombree=$resultado['nombre'];
 $apellidope=$resultado['pa'];
 $apellidose=$resultado['sa'];?>

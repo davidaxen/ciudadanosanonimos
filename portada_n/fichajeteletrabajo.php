@@ -84,8 +84,12 @@ echo 'observaciones '.$valor.'<br/>';
 */
 $sqlcent="select * from almpc where idempresas='".$ide."' and idempleado='".$idtrab."' and idpccat='1' order by id desc";
 //echo $sqlcent.'<br/>';
-$resultcent=mysqli_query ($conn,$sqlcent) or die ("Invalid result comprobar entrada");
-$resultado=mysqli_fetch_array($resultcent);
+
+$resultcent=$conn->query($sqlcent);
+$resultado=$result->fetchAll();
+
+//$resultcent=mysqli_query ($conn,$sqlcent) or die ("Invalid result comprobar entrada");
+//$resultado=mysqli_fetch_array($resultcent);
 $idcoment=$resultado['idpiscina'];
 $idpcsubcat=$resultado['idpcsubcat'];
 $horaant=$resultado['hora'];
@@ -98,27 +102,38 @@ if ($idpcsubcat=='2'){;
 
 $sql11 = "INSERT INTO almpc (idempresas,idempleado,idpiscina,idpccat,idpcsubcat,dia,hora,lat,lon,obs,cantidad,otro) VALUES ('$ide','$idtrab','1','1','1','$diaa','$hora','$lat','$lon','$valor','$cantidad','$idotro')";
 //echo $sql11.'<br/>';
-$result11=mysqli_query ($conn,$sql11) or die ("Invalid result icarnet");
+
+$result11=$conn->query($sql11);
+
+//$result11=mysqli_query ($conn,$sql11) or die ("Invalid result icarnet");
 echo "Se ha producido la entrada en el puesto de Teletrabajo con fecha $diaa y hora $hora";
 }else{;
 
 if ($idcoment==1){;
 $sql11 = "INSERT INTO almpc (idempresas,idempleado,idpiscina,idpccat,idpcsubcat,dia,hora,lat,lon,obs,cantidad,otro) VALUES ('$ide','$idtrab','1','1','2','$diaa','$hora','$lat','$lon','$valor','$cantidad','$idotro')";
 //echo $sql11.'<br/>';
-$result11=mysqli_query ($conn,$sql11) or die ("Invalid result icarnet");
+
+$result11=$conn->query($sql11);
+
+//$result11=mysqli_query ($conn,$sql11) or die ("Invalid result icarnet");
 echo "Se ha producido la salida en el puesto de Teletrabajo con fecha $diaa y hora $hora";
 }else{;
 $sql11 = "INSERT INTO almpc (idempresas,idempleado,idpiscina,idpccat,idpcsubcat,dia,hora,lat,lon,obs,cantidad,otro) VALUES ('$ide','$idtrab','$idcoment','1','2','$diaa','$hora','$lat','$lon','$valor','$cantidad','$idotro')";
 //echo $sql11.'<br/>';
-$result11=mysqli_query ($conn,$sql11) or die ("Invalid result icarnet");
+$result11=$conn->query($sql11);
+//$result11=mysqli_query ($conn,$sql11) or die ("Invalid result icarnet");
 $hora=date("H:i:s", time()+0.001);
 $sql11 = "INSERT INTO almpc (idempresas,idempleado,idpiscina,idpccat,idpcsubcat,dia,hora,lat,lon,obs,cantidad,otro) VALUES ('$ide','$idtrab','1','1','1','$diaa','$hora','$lat','$lon','$valor','$cantidad','$idotro')";
 //echo $sql11.'<br/>';
-$result11=mysqli_query ($conn,$sql11) or die ("Invalid result icarnet");
+$result11=$conn->query($sql11);
+//$result11=mysqli_query ($conn,$sql11) or die ("Invalid result icarnet");
 $hora=date("H:i:s", time()+0.001);
 $sql11 = "INSERT INTO almpc (idempresas,idempleado,idpiscina,idpccat,idpcsubcat,dia,hora,lat,lon,obs,cantidad,otro) VALUES ('$ide','$idtrab','1','1','2','$diaa','$hora','$lat','$lon','$valor','$cantidad','$idotro')";
 //echo $sql11.'<br/>';
-$result11=mysqli_query ($conn,$sql11) or die ("Invalid result icarnet");
+
+$result11=$conn->query($sql11);
+
+//$result11=mysqli_query ($conn,$sql11) or die ("Invalid result icarnet");
 echo "Hemos detectado que habeis entrado en otro puesto de trabajo, procedemos al ajuste del sistema con fecha $diaa y hora $hora";
 
 };
